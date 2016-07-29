@@ -1,5 +1,5 @@
 {
-  "name": "Nuxeo-documentation-website",
+  "name": "nuxeo-docs-builder",
   "description": "doc.nuxeo.com built using Metalsmith",
   "license": "UNLICENSED",
   "private": true,

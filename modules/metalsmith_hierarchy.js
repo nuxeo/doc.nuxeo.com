@@ -42,6 +42,9 @@ var hierarchy = function (options) {
         if (schema_err) {
             return done(schema_err);
         }
+        if (!Array.isArray(options)) {
+            return done();
+        }
 
         var metadata = metalsmith.metadata();
         var hierarchies = {};
