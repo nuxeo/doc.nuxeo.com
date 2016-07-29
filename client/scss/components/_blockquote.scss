@@ -1,0 +1,41 @@
+blockquote.bubble {
+    border: none;
+    padding: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    &.nuxeo-icon .svg-icon {
+        top: 0.5rem;
+        left: 0;
+    }
+}
+
+blockquote.quotes {
+    color: black;
+    border: none;
+    padding: 0;
+    margin-bottom: 0;
+    &::before,
+    &::after {
+        color: $nuxeo-color-accent;
+        font-size: 50px;
+        font-weight: 800;
+        vertical-align: text-bottom;
+        line-height: 5px;
+    }
+    &::before {
+        content: open-quote;
+        margin-right: 10px;
+    }
+    &::after {
+        content: close-quote;
+        margin-left: 10px;
+    }
+}
+cite {
+    font-style: normal;
+    color: #333;
+    .person {
+        color: $primary-color;
+        font-family: Ademi;
+    }
+}

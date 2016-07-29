@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var path = require('path');
+
+
+if (!(process.argv[2])) {
+    throw new Error('Missing Filename parameter');
+}
+
+var stats_filepath = (path.isAbsolute(process.argv[2])) ? process.argv[2] : path.join(process.cwd(), process.argv[2]);
+
+// Work out absolute from ..
+var stats = require(stats_filepath);
+
+var trimmed = {
+    errors           : stats.errors,
+    assetsByChunkName: stats.assetsByChunkName,
+    publicPath       : stats.publicPath
+};
+
+console.log(JSON.stringify(trimmed));

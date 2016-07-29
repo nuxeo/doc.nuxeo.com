@@ -1,0 +1,831 @@
+body {
+    background-color: $nuxeo-color-footer;
+}
+#off-canvas {
+    background-color: $nuxeo-color-footer;
+    padding-top: 2rem;
+
+    ul {
+        margin-left: 0.6rem;
+        ul {
+            margin-left: 1.2rem;
+        }
+    }
+
+    li {
+        list-style: none;
+
+        > div {
+            position: relative;
+            padding: 0.1rem 0 0.1rem 0.4rem;
+
+            > i {
+                position: absolute;
+                top: 5px;
+                left: -4px;
+                color: white;
+                font-size: .85rem;
+                transition: color .2s ease;
+                cursor: pointer;
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+    a {
+        padding-left: .7rem;
+        color: white;
+        display: block;
+        font-size: .85rem;
+        transition: color .2s ease;
+
+        &.active {
+            font-weight: bold;
+            color: $primary-color;
+        }
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
+.js-off-canvas-exit {
+    background: none;
+}
+
+h2.small {
+    font-size: 1.1rem;
+}
+.strong {
+    font-family: Ademi;
+}
+.fg-primary {
+    color: $primary-color;
+}
+.fg-accent {
+    color: $nuxeo-color-accent;
+}
+a.fg-white {
+    color: white;
+    transition: all .2s ease;
+    &:hover {
+        color: $primary-color;
+    }
+    &.button.hollow {
+        border-color: white;
+        color: white;
+        &:hover {
+            background-color: white;
+            color: $primary-color;
+        }
+        &.hover-accent:hover {
+            background-color: $nuxeo-color-accent;
+            border-color: $nuxeo-color-accent;
+            color: white;
+        }
+    }
+}
+.fg-white {
+    color: white;
+    a {
+        @extend a.fg-white;
+    }
+}
+.fg-light-blue {
+    color: $nuxeo-color-light-blue;
+}
+.fg-light-gray {
+    color: $nuxeo-color-light-gray;
+}
+.fg-black {
+    color: black;
+}
+a.hover-white:hover {
+    color: white;
+}
+a.button.hover-bg-accent:hover {
+    background-color: $nuxeo-color-accent;
+}
+.bg-primary {
+    background-color: $primary-color;
+}
+.bg-white {
+    background-color: white;
+}
+.bg-light-blue {
+    background-color: rgba(93,153,189,0.2);
+}
+
+a.button.large-padding {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.heading-underline {
+    display: inline-block;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom-color: currentColor;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+
+    &.heading-underline-title-case {
+        text-transform: capitalize;
+    }
+}
+.heading-equal-bg-padding {
+    padding: 0.7rem 1rem 0.4rem;
+}
+.body-small {
+    p, li {
+        font-size: $nuxeo-body-small;
+        line-height: 1.8;
+    }
+}
+.text-large {
+    font-size: $nuxeo-body-large;
+}
+.text-larger {
+    font-size: $nuxeo-body-larger;
+}
+
+.body-large {
+    p,
+    li,
+    a,
+    blockquote {
+        @extend .text-large;
+    }
+}
+
+.underline {
+    text-decoration: underline;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+.text-shadow-primary {
+    text-shadow: $primary-color 0 0 10px;
+}
+.muted {
+    color: #333;
+}
+
+.border-gray {
+    border-color: #999;
+}
+
+.border-gray-light {
+    border-color: #ccc;
+}
+
+.no-box,
+.button.no-box {
+    border-width: 0;
+}
+.medium-box {
+    border-style: solid;
+    border-width: 2px;
+    &.hollow {
+        border-width: 2px;
+    }
+}
+.fat-box {
+    border-style: solid;
+    border-width: 3px;
+    &.hollow {
+        border-width: 3px;
+    }
+}
+.fat-bottom {
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+}
+.thin-right {
+    border-right-style: solid;
+    border-right-width: 1px;
+}
+.thin-top-bottom {
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+.button {
+    padding-bottom: 0.5em;
+}
+.button.hollow {
+    &:hover,
+    &.active {
+        background-color: $primary-color;
+        border-color: $primary-color;
+        color: white;
+    }
+    &.squash-right {
+        border-right: 0;
+    }
+}
+
+.animate {
+    transition: all .2s ease;
+}
+.round {
+    border-radius: 2000px;
+}
+
+pre {
+    background: #eee;
+    white-space: pre-wrap;
+    font-family: "Courier 10 Pitch",Courier,monospace;
+    font-size: 15px !important;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1.6em;
+    > code {
+        border: none;
+        background: transparent;
+    }
+}
+
+// Spacing and padding
+.nuxeo-section {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+.nuxeo-space {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.nuxeo-space-top {
+    margin-top: 2rem;
+}
+.nuxeo-space-top-small {
+    margin-top: 1rem;
+}
+.nuxeo-space-top-tiny {
+    margin-top: 3px;
+}
+.nuxeo-space-bottom {
+    margin-bottom: 2rem;
+}
+.nuxeo-pad-right {
+    padding-right: 1rem;
+}
+.nuxeo-pad-left {
+    padding-left: 1rem;
+}
+.nuxeo-box-pad {
+    padding: 1rem;
+}
+hr.expanded {
+    width: 100%;
+    max-width: 100%;
+}
+
+.squash {
+    margin: 0;
+}
+.squash-down {
+    margin-bottom: 0;
+}
+.squash-up {
+    margin-bottom: 0;
+}
+// Main Nuxeo header menu
+#nuxeo-menu {
+    z-index: 5;
+}
+.title-bar {
+    background: $primary-color;
+}
+.nuxeo-menu,
+.nuxeo-sub-menu {
+    background-color: white;
+    width: 100%;
+}
+#search-box {
+    color: #333;
+    position: absolute;
+    right: 0;
+    top: -10px;
+    border: 5px solid $primary-color;
+    width: 30rem;
+    z-index: 6;
+    transition: all .2s ease;
+
+    input {
+        height: 1.9rem;
+        background-color: lighten($primary-color, 35%);
+        border: 0;
+        margin: 0;
+        padding: 0 0.5rem;
+        // font-size: $nuxeo-body-small;
+    }
+}
+.nuxeo-menu {
+    padding-top: 0.25rem;
+    height: 3.75rem;
+    .sticky-ctas {
+        transition: all .2s ease;
+        z-index: 0;
+        position: absolute;
+        height: 100%;
+        top: -200%;
+        right: 0;
+
+        .svg-icon svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        .search-button,
+        .download-link {
+            height: 100%;
+            width: 4rem;
+        }
+        .search-button {
+            background-color: white;
+            &:hover,
+            &:active,
+            &.active {
+                background-color: $primary-color;
+            }
+        }
+        .download-link {
+            line-height: 2;
+            .svg-icon svg {
+                width: 18px;
+                height: 18px;
+                margin-top: 7px;
+            }
+        }
+    }
+    &.is-stuck .sticky-ctas {
+        top: 0;
+    }
+    &.is-stuck #search-box {
+        top: 60px;
+    }
+}
+
+.dropdown.menu .is-dropdown-submenu.first-sub {
+    &.open-left {
+        top: 100%;
+        left: -5.5rem;
+    }
+}
+
+// In Page Sub-menu
+.nuxeo-sub-menu {
+    .text-center ul.centered {
+        display: inline-block;
+    }
+}
+.nuxeo-sub-menu-link {
+    text-align: center;
+    color: #333;
+    line-height: 1.5;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-bottom-color: white;
+    white-space: nowrap;
+    transition: all .2s ease;
+
+    &:focus {
+        color: #333;
+    }
+    &.active,
+    &:hover {
+        color: $primary-color;
+        border-bottom-color: $primary-color;
+    }
+}
+
+.hanging-indent {
+    position: relative;
+    span.index {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &.indent-medium {
+        padding-left: 3rem;
+    }
+}
+
+#toc_list {
+    .active {
+        background-color: darken($primary-color, 15%);
+    }
+    .text-left {
+        text-align: left;
+    }
+    .h2 a {
+        font-weight: bold;
+        font-size: .9em;
+    }
+    .h3 {
+        // Normal styling
+    }
+    .h4 a {
+        font-style: italic;
+        font-size: .8em;
+    }
+}
+
+
+// Icons
+$svg-medium-size: 36px;
+$svg-large-size: 48px;
+$svg-xlarge-size: 80px;
+.nuxeo-icon {
+    position: relative;
+    &.nuxeo-icon-medium {
+        padding-left: calc(1rem + 36px);
+        .svg-icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            svg {
+                width: $svg-medium-size;
+                height: $svg-medium-size;
+            }
+        }
+    }
+    &.nuxeo-icon-large {
+        padding-left: calc(1rem + 48px);
+        .svg-icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            svg {
+                width: $svg-large-size;
+                height: $svg-large-size;
+            }
+        }
+    }
+    &.nuxeo-icon-xlarge {
+        padding-left: calc(1rem + 80px);
+        .svg-icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            svg {
+                width: $svg-xlarge-size;
+                height: $svg-xlarge-size;
+            }
+        }
+    }
+}
+.svg-medium svg {
+    width: $svg-medium-size;
+    height: $svg-medium-size;
+}
+.svg-large svg {
+    width: $svg-large-size;
+    height: $svg-large-size;
+}
+.svg-xlarge svg {
+    width: $svg-xlarge-size;
+    height: $svg-xlarge-size;
+}
+svg path,
+svg text {
+    transition: all .2s ease;
+    .svg-gray & {
+        fill: #999;
+    }
+    .svg-light-blue & {
+        fill: $nuxeo-color-light-blue;
+        a:hover & {
+            fill: white;
+        }
+    }
+    .svg-white & {
+        fill: white;
+    }
+    .svg-accent & {
+        fill: $nuxeo-color-accent;
+    }
+    a:hover .svg-hover-white &,
+    button:hover .svg-hover-white &,
+    a.active .svg-hover-white &,
+    button.active .svg-hover-white & {
+        fill: white;
+    }
+}
+
+svg {
+    .flip-h & {
+        transform: scaleX(-1);
+        filter: FlipH;
+    }
+    .flip-v & {
+        transform: scaleY(-1);
+        filter: FlipV;
+    }
+
+    .rotate-180 & {
+        transform: rotate(0.5turn);
+    }
+    .rotate-cw & {
+        transform: rotate(90deg);
+    }
+    .rotate-ccw & {
+        transform: rotate(-90deg);
+    }
+}
+
+
+.home-banner {
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 320px;
+    color: white;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+
+    .fg-primary {
+        @extend .fg-primary;
+    }
+
+    &.home-banner-slim {
+        min-height: 255px;
+    }
+
+    h1 {
+        margin-bottom: 1.5rem;
+        color: #f1f2f3;
+
+        &::after {
+            background: #f1f2f3;
+        }
+    }
+    h2 {
+        color: #f1f2f3;
+        border-color: #f1f2f3;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+    .cta-container {
+        text-align: right;
+        margin-top: 4rem;
+        margin-right: 6rem;
+    }
+    ul {
+        margin-left: 1.9rem;
+        list-style-image: url(/assets/imgs/components/list-white.png);
+    }
+    li {
+        font-size: 1.4rem;
+        padding-left: 0.4rem;
+        line-height: 1.3;
+    }
+}
+
+#side-menu-button {
+    position: absolute;
+    top: 2.8rem;
+    right: 3.3rem;
+    z-index: 5;
+    &.hide-for-large {
+        right: 0.5rem;
+    }
+}
+#page-information-button {
+    position: absolute;
+    top: 2.8rem;
+    right: 0.5rem;
+    z-index: 5;
+}
+#page-information {
+    &.reveal {
+        position: absolute;
+        top: 2.8rem!important; /* override inline style injected from JS */
+        right: 0.5rem;
+        left: auto;
+    }
+    .close-button {
+        z-index: 1;
+    }
+    .content {
+        position: relative;
+        padding-top: 2rem;
+        font-size: $nuxeo-body-small;
+    }
+    .summary {
+        position: absolute;
+        top: 0;
+    }
+}
+
+// Medium
+@media screen and #{breakpoint(medium down)} {
+    .row.expanded.home-banner {
+        p {
+            font-size: 1.2rem;
+        }
+    }
+    #side-menu-button {
+        right: 0.5rem;
+    }
+}
+
+// Small
+@media screen and #{breakpoint(small down)} {
+    .row.expanded.home-banner {
+        p {
+            font-size: 1rem;
+        }
+    }
+    #side-menu-button {
+        top: 3.5rem;
+        right: 0;
+    }
+}
+
+// Call to action buttons
+a.cta-button {
+    font-family: Ademi;
+    font-size: 1rem;
+    color: white;
+    background-color: $nuxeo-color-accent;
+    text-transform: uppercase;
+    padding: 0.85rem 1rem 0.5rem;
+
+    &:hover {
+        background-color: darken($nuxeo-color-accent, 20%);
+    }
+
+    &.cta-button-default {
+        background-color: $primary-color;
+        &:hover {
+            background-color: darken($primary-color, 20%);
+        }
+    }
+}
+
+.breadcrumb {
+    font-size: $nuxeo-body-small;
+    margin-bottom: 1rem;
+}
+
+article {
+    color: #333;
+    h1, h2 {
+        font-size: 2.2rem;
+    }
+    h1 {
+        color: $primary-color;
+    }
+}
+
+.top-bar {
+    background: white;
+    ul {
+        background: white;
+    }
+    a {
+        padding: 0.8rem 1rem;
+        &.download-link {
+            font-size: 1.1rem;
+        }
+    }
+    .small {
+        font-family: Ademi;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+
+        a {
+            color: gray;
+            transition: all .2s ease;
+            &:hover {
+                color: black;
+            }
+        }
+    }
+
+    .search-button {
+        background-color: transparent;
+        padding-bottom: 0.85em;
+        &:hover,
+        &:active,
+        &.active {
+            background-color: $primary-color;
+        }
+        .svg-icon svg {
+            width: 15px;
+            height: 15px;
+        }
+    }
+    .download-link {
+        position: relative;
+        z-index: 6;
+        padding: 0.8rem 1rem;
+        .svg-icon {
+            padding-right: 1.6rem;
+            svg {
+                position: absolute;
+                top: 11px;
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+}
+
+.nuxeo-logo {
+    width: 170px;
+    margin-left: -10px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    &.small {
+        margin-left: 20px;
+    }
+}
+#menu-container {
+    height: 60px;
+    border-bottom: 1px solid #bfbfbf;
+}
+.nuxeo-logo-container {
+    font-size: 1.5rem;
+    white-space: nowrap;
+}
+#main-menu {
+    .nuxeo-logo {
+        margin-bottom: 0;
+        width: 170px;
+        // margin-top: 19px;
+    }
+    li.menu-link a {
+        // padding-top: 25px;
+        font-family: Ademi;
+        font-size: 0.8rem;
+        color: black;
+        transition: color .2s ease;
+        &:hover {
+            color: $primary-color;
+        }
+        // Remove arrows
+        &::after {
+            border: none;
+        }
+    }
+    li.menu-sub-item {
+        padding-left: 1rem;
+        a {
+            color: #808080;
+            padding: 0.5rem 1rem;
+        }
+    }
+}
+
+.main-section {
+    margin-top: 2rem;
+}
+
+footer {
+    background-color: $nuxeo-color-footer;
+    font-size: $nuxeo-body-small;
+    padding-top: 2rem;
+    padding-bottom: 6rem;
+    color: white;
+
+    ul {
+        list-style-type: none;
+        list-style-position: outside;
+    }
+    li:first-of-type {
+        font-weight: 700;
+    }
+    li a {
+        display: block;
+    }
+    a {
+        transition: all .2s ease;
+        color: white;
+        &:hover {
+            color: $primary-color;
+        }
+    }
+    .copyright {
+        padding-left: 1.25rem;
+    }
+    .social a {
+        .fa-inverse {
+            transition: all .2s ease;
+            color: #404040;
+        }
+        &:hover {
+            color: $primary-color;
+            .fa-inverse {
+                color: white;
+            }
+        }
+    }
+}

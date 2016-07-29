@@ -1,0 +1,12 @@
+{{#if id}}
+<div class="flex-video {{! widescreen }}">
+    <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+    <div class="wistia_responsive_padding" style="padding:95.59% 0 28px 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:{{#if height}}{{height}}{{else}}100%{{/if}};left:0;position:absolute;top:0;width:{{#if width}}{{width}}{{else}}100%{{/if}};">
+        <div class="wistia_embed wistia_async_{{id}} videoFoam=true" style="height:{{#if height}}{{height}}{{else}}100%{{/if}};width:{{#if width}}{{width}}{{else}}100%{{/if}}">&nbsp;</div>
+    </div></div>
+    {{!--
+    <iframe src="//fast.wistia.net/embed/iframe/{{id}}" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="{{#if width}}{{width}}{{else}}620{{/if}}" height="{{#if height}}{{height}}{{else}}349{{/if}}"></iframe>
+    <script src="//fast.wistia.net/assets/external/E-v1.js" async></script>
+    --}}
+</div>
+{{/if}}

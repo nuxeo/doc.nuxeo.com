@@ -1,0 +1,32 @@
+default:
+    site:
+        # Standard Site Configuration
+        url: http://doc.nuxeo.com
+        name: Nuxeo Documentation
+        twitter: nuxeo
+        segment_write_key: "4qquvje3fv"
+
+        # For RSS feeds
+        title: 'Nuxeo Documentation'
+        author: 'Nuxeo'
+    page_defaults:
+        -
+            pattern: "**/*.{md,html}"
+            defaults:
+                meta:
+                    page-tag:
+                        - CMIS
+        -
+            pattern: "**/*.md"
+            defaults:
+                layout: 'default.hbs'
+    markdown_options:
+        langPrefix : ''
+        gfm        : true
+        tables     : true
+        pedantic   : false
+        smartypants: false
+development:
+    isDev: true
+    site:
+        segment_write_key: ""

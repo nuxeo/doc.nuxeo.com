@@ -1,0 +1,38 @@
+.callout.nuxeo {
+    border: none;
+    background-color: $light-gray;
+    position: relative;
+    padding-left: 3rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    .fa { //-stack
+        font-size: 1.4rem;
+        position: absolute;
+        left: 1rem;
+    }
+    &.success, &.tip {
+        border-left: 4px solid darken($success-color, 15%);
+    }
+    &.hint, &.info {
+        border-left: 4px solid $primary-color;
+    }
+    &.warning, &.note {
+        border-left: 4px solid $warning-color;
+    }
+}
+
+.callout {
+    border: none;
+    border-radius: .5rem;
+
+    .title {
+        background-color: scale-color($secondary-color, $callout-background-fade);;
+        border-bottom: 1px solid $callout-border;
+        border-top-left-radius: 0.43rem;
+        border-top-right-radius: 0.43rem;
+        font-weight: bold;
+        margin: -1rem -1rem 2rem;
+        padding: .3rem .5rem 0;
+    }
+}

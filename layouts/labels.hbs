@@ -1,0 +1,20 @@
+{{> header_standard}}
+<!-- {{> information}} -->
+<div class="row">
+    <div class="column">
+        {{> breadcrumb}}
+        <h1 id="page-title">{{title}}</h1>
+
+        <div class="row small-up-1 medium-up-2">
+            {{#each (sort_object (obj_key lists list_key))}}
+                <div class="column">
+                    <a href="/{{../path}}/{{sluggy this.key}}/">
+                        <h2 class="small strong">{{this.key}}</h2>
+                    </a>
+                </div>
+            {{/each}}
+        </div>
+
+    </div>
+</div>
+{{> footer_standard}}

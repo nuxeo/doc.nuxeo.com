@@ -1,0 +1,26 @@
+{{> header_standard}}
+{{> information}}
+<div class="row">
+    <div class="column">
+        {{> breadcrumb}}
+        <h1 id="page-title">{{title}}</h1>
+    </div>
+    <div id="content" class="column {{#if toc}}toc large-9{{/if}}">
+        {{{contents}}}
+    </div>
+    {{#if toc}}
+    <div id="toc" class="column large-3" data-sticky-container>
+        <nav class="columns sticky" data-sticky data-anchor="content" data-sticky-on="large">
+            <ul id="toc_list" class="vertical menu" data-magellan data-bar-offset="50">
+            </ul>
+        </nav>
+    </div>
+    {{/if}}
+    <div class="column medium-6 medium-offset-6 text-right">
+        {{#each labels as |label|}}
+            <a class="button hollow small" href="/{{../hierarchy.space_path}}/label/{{sluggy label}}">{{label}}</a>
+        {{/each}}
+    </div>
+</div>
+
+{{> footer_standard}}

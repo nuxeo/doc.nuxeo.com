@@ -1,0 +1,13 @@
+<div class="breadcrumb {{class}}">
+    <a href="/">Home</a>
+    &gt;
+    {{#each hierarchy.parents}}
+        <a href="{{this.url}}">{{this.name}}</a>
+        &gt;
+    {{/each}}
+    {{#if name}}
+        {{name}}
+    {{else}}
+        {{title}}
+    {{/if}}
+</div>

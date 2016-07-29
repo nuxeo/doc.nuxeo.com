@@ -1,0 +1,9 @@
+<div class="callout {{type}} nuxeo">
+{{#unless no_icon}}<i class="fa fa-{{#if (condition type '===' 'tip')}}check-circle{{/if}}{{!
+              }}{{#if (condition type '===' 'success')}}check-circle{{/if}}{{!
+              }}{{#if (condition type '===' 'hint')}}info-circle{{/if}}{{!
+              }}{{#if (condition type '===' 'info')}}info-circle{{/if}}{{!
+              }}{{#if (condition type '===' 'warning')}}exclamation-triangle{{/if}}{{!
+              }}{{#if (condition type '===' 'note')}}exclamation-triangle{{/if}}"></i>{{/unless}}
+{{> @partial-block }}
+</div>
