@@ -51,7 +51,10 @@ var excerpts = function (options) {
                 return done(err);
             }
             // Convert to array if it's a string
-            value.pattern = (typeof value.pattern === 'string') ? [value.pattern] : value.pattern;
+            value.forEach(function (option, option_index) {
+                var value_option = value[option_index];
+                value_option.pattern = (typeof value_option.pattern === 'string') ? [value_option.pattern] : value_option.pattern;
+            });
             options = value;
         });
 

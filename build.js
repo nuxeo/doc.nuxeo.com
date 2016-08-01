@@ -13,4 +13,4 @@ var builder     = require('./lib/builder');
 
 var config = {};
 
-builder(config, path.join(__dirname, 'src'));
+builder(config, path.join(__dirname, 'src'), path.join(__dirname, 'site'));

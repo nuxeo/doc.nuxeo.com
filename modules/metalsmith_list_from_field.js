@@ -8,13 +8,13 @@ var get = require('lodash.get');
 var sortby = require('lodash.sortby');
 var Joi = require('joi');
 
-var schema = Joi.object().keys({
+var schema = Joi.array().items(Joi.object().keys({
     pattern        : [Joi.array().min(1).required(), Joi.string().required()],
     field          : Joi.string().required(),
     key_name       : Joi.string().required(),
     fields_to_store: Joi.object().optional(),
     sort_field     : Joi.string().optional()
-});
+}));
 
 var list_from_field = function (options) {
     debug('Options: %o', options);
@@ -29,46 +29,57 @@ var list_from_field = function (options) {
                 return done(err);
             }
             // Convert to array if it's a string
-            value.pattern = (typeof value.pattern === 'string') ? [value.pattern] : value.pattern;
+            value.forEach(function (option, option_index) {
+                var value_option = value[option_index];
+                value_option.pattern = (typeof value_option.pattern === 'string') ? [value_option.pattern] : value_option.pattern;
+            });
             options = value;
         });
 
-        metadata.lists = metadata.lists || {};
-        metadata.lists[options.key_name] = metadata.lists[options.key_name] || {};
+        if (options && options.length) {
+            options.forEach(function (option) {
+                metadata.lists = metadata.lists || {};
+                metadata.lists[option.key_name] = metadata.lists[option.key_name] || {};
+            });
 
-        Object.keys(files).forEach(function (filepath) {
-            debug('Filepath: %s', filepath);
-            var file = files[filepath];
-            var fields;
-            if (multimatch(filepath, options.pattern).length) {
-                fields = get(file, options.field);
-                if (typeof fields === 'string') {
-                    fields = [fields];
-                }
-
-                if (fields) {
-                    if (options.fields_to_store) {
-                        var page_fields = {};
-                        Object.keys(options.fields_to_store).forEach(function (new_key) {
-                            var search_key = options.fields_to_store[new_key];
-                            page_fields[new_key] = get(file, search_key);
-                        });
-                        debug('page_fields: %o', page_fields);
-                    }
-                    fields.forEach(function (field) {
-                        debug('field value: %s', field);
-                        metadata.lists[options.key_name][field] = metadata.lists[options.key_name][field] || [];
-                        if (options.fields_to_store) {
-                            metadata.lists[options.key_name][field].push(page_fields);
+            Object.keys(files).forEach(function (filepath) {
+                debug('Filepath: %s', filepath);
+                var file = files[filepath];
+                var fields;
+                options.forEach(function (option) {
+                    if (multimatch(filepath, option.pattern).length) {
+                        fields = get(file, option.field);
+                        if (typeof fields === 'string') {
+                            fields = [fields];
                         }
-                    });
-                }
-            }
-        });
 
-        Object.keys(metadata.lists[options.key_name]).forEach(function (field) {
-            metadata.lists[options.key_name][field] = sortby(metadata.lists[options.key_name][field], options.sort_field);
-        });
+                        if (fields) {
+                            if (option.fields_to_store) {
+                                var page_fields = {};
+                                Object.keys(option.fields_to_store).forEach(function (new_key) {
+                                    var search_key = option.fields_to_store[new_key];
+                                    page_fields[new_key] = get(file, search_key);
+                                });
+                                debug('page_fields: %o', page_fields);
+                            }
+                            fields.forEach(function (field) {
+                                debug('field value: %s', field);
+                                metadata.lists[option.key_name][field] = metadata.lists[option.key_name][field] || [];
+                                if (option.fields_to_store) {
+                                    metadata.lists[option.key_name][field].push(page_fields);
+                                }
+                            });
+                        }
+                    }
+                });
+            });
+
+            options.forEach(function (option) {
+                Object.keys(metadata.lists[option.key_name]).forEach(function (field) {
+                    metadata.lists[option.key_name][field] = sortby(metadata.lists[option.key_name][field], option.sort_field);
+                });
+            });
+        }
 
         // debug('lists %s: %o', options.key_name, metadata.lists[options.key_name]);
         done();
