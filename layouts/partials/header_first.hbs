@@ -27,9 +27,9 @@
 
     {{> meta_tags}}
 
-    <link rel="stylesheet" href="/assets/css/docs.css" />
+    <link rel="stylesheet" href="/assets/css/{{css.md5}}/docs.css" />
     {{#if style}}
-    <link rel="stylesheet" href="/assets/css/{{style}}.css">
+    <link rel="stylesheet" href="/assets/css/{{css.md5}}/{{style}}.css">
     {{/if}}
 
     {{!-- Meta templates: https://moz.com/blog/meta-data-templates-123 --}}
