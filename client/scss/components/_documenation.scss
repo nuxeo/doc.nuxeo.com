@@ -26,8 +26,20 @@
     border: none;
     border-radius: .5rem;
 
+    &.code {
+        background-color: $nuxeo-color-code-background;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        .title {
+            margin-bottom: 0;
+        }
+        pre {
+            padding: 0.6em;
+        }
+    }
     .title {
-        background-color: scale-color($secondary-color, $callout-background-fade);;
+        background-color: $light-gray;
         border-bottom: 1px solid $callout-border;
         border-top-left-radius: 0.43rem;
         border-top-right-radius: 0.43rem;
