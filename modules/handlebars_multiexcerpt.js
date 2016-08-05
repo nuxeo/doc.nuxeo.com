@@ -1,7 +1,7 @@
 'use strict';
-var debug_lib     = require('debug');
-// var debug         = debug_lib('handlebars-multiexcerpt');
-var error         = debug_lib('handlebars-multiexcerpt:error');
+var debug_lib = require('debug');
+// var debug = debug_lib('handlebars-multiexcerpt');
+var error = debug_lib('handlebars-multiexcerpt:error');
 var slug = require('slug');
 slug.defaults.modes.pretty.lower = true;
 var slug_map = function (str) {

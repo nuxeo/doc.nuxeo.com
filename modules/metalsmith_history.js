@@ -4,6 +4,7 @@ var debug_lib = require('debug');
 var debug = debug_lib('metalsmith-history');
 var error = debug_lib('metalsmith-history:error');
 var Joi = require('joi');
+// var path = require('path');
 var multimatch = require('multimatch');
 var moment = require('moment');
 var execSync = require('child_process').execSync;
@@ -15,12 +16,12 @@ var schema = Joi.object().keys({
     reverse: Joi.bool().optional().default(false)
 });
 
-var get_history = function (filepath, file, options) {
+var get_history = function (source_path, filepath, file, options) {
     var git_history;
     file.history = file.history || [];
 
     // Synchonous method otherwise the template doesn't have the information in time.
-    git_history = execSync("git log --pretty=format:'%cn%x09%cd%x09%s' src/" + filepath, {encoding: 'utf8'}).split('\n');
+    git_history = execSync('cd ' + source_path + " && git log --pretty=format:'%cn%x09%cd%x09%s' " + filepath, {encoding: 'utf8'}).split('\n');
 
     // debug('git_history: %o', git_history);
     git_history.forEach(function (history_item_raw) {
@@ -53,6 +54,7 @@ var get_history = function (filepath, file, options) {
 var list_from_field = function (options) {
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
+        var files_source = metalsmith.source();
         // Check options fits schema
         schema.validate(options, function (err, value) {
             /* eslint consistent-return: 0 */
@@ -72,7 +74,7 @@ var list_from_field = function (options) {
             var file = files[filepath];
 
             if (multimatch(filepath, options.pattern).length) {
-                get_history(filepath, file, options);
+                get_history(files_source, filepath, file, options);
             }
         });
 

@@ -1,5 +1,8 @@
 'use strict';
 
+// var debug_lib = require('debug');
+// var debug = debug_lib('multiexcerpts-open-close-positions');
+// var error = debug_lib('multiexcerpts-open-close-positions:error');
 var sortby = require('lodash.sortby');
 
 var open_close_positions = function (placeholder_positions, key_field, position_field) {
