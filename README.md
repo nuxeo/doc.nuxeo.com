@@ -41,6 +41,23 @@ The broswer defaults to `chromium-browser` but can be changed with the following
 npm config set Nuxeo-website:browser firefox
 ```
 
+## Releasing changes
+As this module is used via [npm](https://www.npmjs.com/), it's a good practice to bump the version when we make changes.
+
+Node packages follow Semantic Versioning ([SemVer](http://semver.org/)), versions a described by a `MAJOR.MINOR.PATCH` version.
+
+After you've committed your code, run **one** of the following:
+```bash
+npm version major # incompatible API changes
+npm version minor # add functionality in a backwards-compatible manner
+npm version patch # backwards-compatible bug fixes
+```
+Then push the version commit and the tags:
+```bash
+git push && git push --tags
+```
+
+
 ## Project Structure
 ### `assets`
 Any files in this directory will be copied to `site/assets` and can be referenced in html and templates. e.g. An image called `your_img.png` could be referenced by the following:
