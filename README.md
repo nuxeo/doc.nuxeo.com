@@ -57,13 +57,9 @@ Then push the version commit and the tags:
 git push && git push --tags
 ```
 
-
 ## Project Structure
 ### `assets`
-Any files in this directory will be copied to `site/assets` and can be referenced in html and templates. e.g. An image called `your_img.png` could be referenced by the following:
-```html
-<img src="/assets/your_img.png" alt="">
-```
+Any files in this directory will be copied to `site/assets`.
 
 ### `client`
 Client side styles (SCSS) and JavaScript.
@@ -76,48 +72,6 @@ Nuxeo specific modules.
 
 ### `site`
 Generated output of the site. This is what will be served in production.
-
-### `src`
-Source Markdown and HTML files for content.
-
-#### Mandatory frontmatter
-All `.md` (Markdown) content files should have a YAML frontmatter defined at the top of the file. e.g.
-
-```md
----
-layout: default.hbs
-title: Title of the page
-description: A description for search engines and social media to consume.
-
----
-
-Content of page goes here.
-```
-
-#### Global optional frontmatter
-##### `style`
-Define a page specific style sheet. Defined in `client/scss/`. e.g. To use `client/scss/home.scss`, the front-matter would be:
-```md
----
-...
-style: home
-...
----
-Page content here.
-```
-##### `script`
-Define a page specific JavaScript. Defined in `client/js/`. e.g. To use `client/scss/home.js`, the front-matter would be:
-```md
----
-...
-script: home
-...
----
-Page content here.
-```
-
-You also need to add an entry to `webpack.config.js`. See `main.js` as an example.
-
 
 ### `test`
 Unit tests for modules.
@@ -142,28 +96,3 @@ Error: `Error: Invalid frontmatter in file: {filepath}`
 Run YAML linter to locate the issue with:
 
 `npm run yaml_lint {filepath}`
-
-# Markdown and Handlebars
-## Excerpts
-Excerpts are to reuse content within the same page. In contrast Multi-excerpts can be reused in any page.
-### Definition
-```handlebars
-{{! excerpt name="foo"}}
-Reuse the text **foo** in this page only.
-{{! /excerpt}}
-```
-or
-``handlebars
-{{! multiexcerpt name="bar"}}
-Reuse the text **bar** in any page.
-{{! /multiexcerpt}}
-```
-
-### Use
-```handlebars
-{{excerpt 'foo'}}
-```
-or
-```handlebars
-{{multiexcerpt 'bar'}}
-```
