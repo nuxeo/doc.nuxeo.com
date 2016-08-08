@@ -24,12 +24,6 @@ cd doc.nuxeo.com
 npm install
 ```
 
-Run npm install
-
-```bash
-npm install
-```
-
 ## Run Locally
 ```bash
 npm run dev
