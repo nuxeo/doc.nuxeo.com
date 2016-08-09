@@ -86,7 +86,7 @@ var multiexcerpts = function (options) {
             }
             catch (err) {
                 error('%s: page: %s, %s', options.placeholder, file.title, err);
-                return done(new Error('Page: ', file.title, err));
+                return done(new Error('Page: ' + file.title + '\n\n' + err));
             }
             debug('placeholder_positions: %o', placeholder_positions);
 
