@@ -78,7 +78,7 @@
     "poststart": "npm run verify",
     "dev": "NODE_ENV=development nodemon --exec 'npm run compile'",
     "precompile": "npm run test",
-    "compile": "npm run build_css && npm run build_css_postcss && npm run build_js",
+    "compile": "npm run default_redirects && npm run build_css && npm run build_css_postcss && npm run build_js",
     "postcompile": "./bin/trim-webpack-stats webpack.stats.json > ./lib/webpack.stats.json && cp css.md5 ./lib && npm run verify_assets",
     "prebuild_js": "rm -rf ./assets/js/*",
     "build_js": "webpack --json > webpack.stats.json",
@@ -91,8 +91,11 @@
     "browser_sync": "browser-sync start --server site --browser=$npm_package_config_browser",
     "lint": "eslint --ignore-pattern node_modules --ignore-pattern site/ **/*.js",
     "yaml_lint": "js-yaml -t > /dev/null",
+    "default_redirects": "cp ./redirects_default.yml ./redirects.yml",
     "dev_platform": "npm run browser_sync & NODE_ENV=development nodemon --exec 'npm run compile && npm run dev_build_platform && browser-sync reload'",
-    "dev_build_platform": "node build && cp -r ../doc.nuxeo.com-platform-spaces/assets/* ./site/assets && cp -r assets/* ./site/assets"
+    "dev_static": "npm run browser_sync & NODE_ENV=development nodemon --exec 'npm run compile && npm run dev_build_static && browser-sync reload'",
+    "dev_build_platform": "node build && cp -r ../doc.nuxeo.com-platform-spaces/assets ./site/ && cp -r assets/* ./site/assets/",
+    "dev_build_static": "node build && cp -r ../doc.nuxeo.com-static-spaces/assets ./site/ && cp -r assets/* ./site/assets/"
   },
   "repository": {
     "type": "git",

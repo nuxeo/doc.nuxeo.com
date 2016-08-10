@@ -86,6 +86,7 @@ var hierarchy = function (options) {
 
                     }
 
+                    // TODO: Put version in the correct place
                     file.hierarchy.path = option.space_path + '/' + (file.hierarchy.version_path ? file.hierarchy.version_path + '/' : '');
                     var current_item = hierarchies[option.space_path];
                     debug('Space: %s, path: %o', option.space_path, filepath_split, current_item);

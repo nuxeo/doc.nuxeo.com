@@ -39,3 +39,4 @@ npm-debug.log.*
 
 # Generated nginx redirects file
 redirects.txt
+redirects.yml

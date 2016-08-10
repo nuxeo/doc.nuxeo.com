@@ -1,0 +1,18 @@
+{{> header_standard}}
+{{> information}}
+<div class="row">
+    <div class="column">
+        {{> breadcrumb}}
+        <h1>{{title}}</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column">
+        {{#> callout type='warning'}}
+            [Please follow the redirect for this page]({{redirect}}).
+        {{/callout}}
+    </div>
+</div>
+
+{{> footer_standard}}
