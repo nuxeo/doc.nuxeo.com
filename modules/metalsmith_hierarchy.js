@@ -100,8 +100,8 @@ var hierarchy = function (options) {
                                 done(new Error('Issue with file: ' + filepath + ' Error: ' + e));
                             }
 
-                            // Don't include hidden or redirect pages.
-                            if (!file.hidden && !file.redirect) {
+                            // Don't include hidden pages
+                            if (!file.hidden) {
                                 current_item.children = current_item.children || [];
                                 current_item.children.push({
                                     id        : id,
@@ -140,8 +140,8 @@ var hierarchy = function (options) {
                 /* eslint no-cond-assign: 0, no-loop-func: 0 */
                 if (multimatch(filepath, [option.space_path + '/**/*']).length && multimatch(filepath.split('/').pop(), option.file_pattern).length) {
                     // error('File: %s, Space: %s, Version: %s', filepath, file.hierarchy.space_path, file.hierarchy.version);
-                    // Don't include hidden or redirect pages.
-                    if (!file.hidden && !file.redirect) {
+                    // Don't include hidden pages
+                    if (!file.hidden) {
                         var root = trees[file.hierarchy.space_path] = trees[file.hierarchy.space_path] || tree.parse(hierarchies[file.hierarchy.space_path]);
 
                         var node = root.first(function (item) {
