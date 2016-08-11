@@ -28,6 +28,8 @@ var file_contents_preprocess = function () {
                 fs.writeFileSync(redirects_file, yaml_string);
             }
             catch (e) {
+                error('Redirects: %o', redirects);
+                error('Problem encoding to YAML or writing file: %s', e);
                 return done(new Error('YAML Conversion Failed with: ' + e + '\n\nredirects: ' + util.inspect(redirects, { showHidden: true, depth: null })));
             }
             return done(void 0);
@@ -38,8 +40,8 @@ var file_contents_preprocess = function () {
             redirects = yaml.safeLoad(fs.readFileSync(redirects_file, 'utf8')) || {};
         }
         catch (e) {
-            error('Failed to load: %s: %j', redirects_file, e);
-            done(e);
+            redirects = {};
+            error('Failed to load: %s: %j', redirects_file);
         }
 
         var matches = [];
