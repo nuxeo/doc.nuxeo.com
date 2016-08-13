@@ -26,10 +26,14 @@ build/Release
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
 
+# pre-build files
+temp/
+
 # Build output
 site/
 pre-src/
 client/css/
+repositories/
 
 /css.md5
 /webpack.stats.json
@@ -40,3 +44,4 @@ npm-debug.log.*
 # Generated nginx redirects file
 redirects.txt
 redirects.yml
+

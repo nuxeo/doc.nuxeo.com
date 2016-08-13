@@ -51,7 +51,7 @@ var hierarchy = function (options) {
         options.forEach(function (option) {
             hierarchies[option.space_path] = hierarchies[option.space_path] || {
                 id  : option.space_path,
-                path: 'nxdoc',
+                path: option.space_path,
                 slug: '',
                 name: option.space_name
             };
@@ -216,6 +216,7 @@ var hierarchy = function (options) {
         });
         metadata.hierarchies = hierarchies;
 
+        // 2nd
         // JSON files for space hierarchies
         Object.keys(hierarchies).forEach(function (space) {
             files[space + '.json'] = {contents: new Buffer(JSON.stringify(hierarchies[space]))};

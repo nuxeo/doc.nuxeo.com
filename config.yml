@@ -26,6 +26,17 @@ default:
         tables     : true
         pedantic   : false
         smartypants: false
+    repositories:
+        static:
+            url: git@github.com:nuxeo/doc.nuxeo.com-static-spaces.git
+            branches:
+                - master
+        platform:
+            url: git@github.com:nuxeo/doc.nuxeo.com-platform-spaces.git
+            branches:
+                - master
+                # - version-test
+
 development:
     isDev: true
     site:
