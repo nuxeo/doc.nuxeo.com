@@ -9,8 +9,6 @@ var get = require('lodash.get');
 var set = require('lodash.set');
 var Joi = require('joi');
 
-var placeholder_replacement = require('./placeholder_replacement');
-
 var schema = Joi.array().min(1).items(Joi.object().keys({
     pattern     : [Joi.array().min(1).required(), Joi.string().required()],
     fields      : Joi.array().optional().default(['excerpt']),
@@ -30,6 +28,9 @@ var special_methods = {
         var match = re_definition.exec(file.contents.toString());
 
         return (match) ? match[1] : void 0;
+    },
+    from_metadata_key: function (file, metadata, key) {
+        return (metadata && metadata.excerpts && key) ? get(metadata, key) : void 0;
     }
 };
 
@@ -58,15 +59,21 @@ var excerpts = function (options) {
             options = value;
         });
 
+        var metadata = metalsmith.metadata();
+
         Object.keys(files).forEach(function (filepath) {
             var file = files[filepath];
             options.forEach(function (option) {
+                var key = get(file, option.metadata_key);
                 if (multimatch(filepath, option.pattern).length) {
                     var excerpt;
                     option.fields.forEach(function (field) {
                         if (!excerpt) {
-                            if (special_methods[field]) {
-                                excerpt = special_methods[field](file);
+                            if (typeof field === 'function') {
+                                excerpt = field(file, metadata, key);
+                            }
+                            else if (special_methods[field]) {
+                                excerpt = special_methods[field](file, metadata, key);
                             }
                             else {
                                 excerpt = get(file, field);
@@ -78,12 +85,10 @@ var excerpts = function (options) {
                     debug('Setting %s to %s', option.fields[0], excerpt);
                     set(file, option.fields[0], excerpt);
 
-                    if (excerpt && option.metadata_key) {
-                        var metadata = metalsmith.metadata();
-                        var metadata_key = placeholder_replacement(option.metadata_key, file, true);
-                        debug('Setting metadata %s to %s', metadata_key, excerpt);
+                    if (excerpt && key) {
+                        debug('Setting metadata %s to %s', key, excerpt);
                         metadata.excerpts = metadata.excerpts || {};
-                        metadata.excerpts[metadata_key] = excerpt;
+                        metadata.excerpts[key] = excerpt;
                     }
                 }
             });

@@ -42,15 +42,14 @@ var multiexcerpts = function (options) {
             var file = files[filepath];
             var contents = file.contents.toString();
             var match;
-            var key;
+            var key = file.url.key.full;
             var placeholder_positions = [];
+            debug('filepath: %s, key: %s', filepath, key);
 
             // Get opening placeholder positions
             while ((match = re_definition.exec(contents)) !== null) {
                 // page as key: space:page-name else space:page-name:name-of-excerpt
                 debug('%s: page: %s, name: %s', options.placeholder, file.title, match[2]);
-
-                key = (options.page_is_key) ? slug(file.hierarchy.space_path) + '/' + slug(file.title) : match[2] && slug(file.hierarchy.space_path) + '/' + slug(file.title) + '/' + slug(match[2]);
 
                 placeholder_positions.push({
                     key     : key,
@@ -82,7 +81,7 @@ var multiexcerpts = function (options) {
 
             // Get the open and closed positions of the nested placeholders
             try {
-                placeholder_positions = open_close_positions(placeholder_positions, 'key', 'position');
+                placeholder_positions = open_close_positions(placeholder_positions, 'name', 'position');
             }
             catch (err) {
                 error('%s: page: %s, %s', options.placeholder, file.title, err);
@@ -94,17 +93,14 @@ var multiexcerpts = function (options) {
             if (placeholder_positions.length) {
                 metadata[options.placeholder] = metadata[options.placeholder] || {};
                 placeholder_positions.forEach(function (placeholder) {
-
-                    if (metadata[options.placeholder][placeholder.key]) {
-                        error('%s - %s already defined in: %s. Duplicate in space: %s, page: %s', options.placeholder, placeholder.key, metadata[options.placeholder][placeholder.key].page, file.hierarchy.space_path, file.title);
+                    var placeholder_key = key + '/' + slug(placeholder.key);
+                    debug('placeholder key: %s', placeholder.key);
+                    if (metadata[options.placeholder][placeholder_key]) {
+                        error('%s - Duplicate placeholder: %s', placeholder_key);
                     }
                     else {
-                        metadata[options.placeholder][placeholder.key] = {
-                            page   : file.title,
-                            space  : file.hierarchy.space_path,
-                            content: contents.substring(placeholder.start, placeholder.end)
-                        };
-                        debug('%s - Set: %s', options.placeholder, placeholder.key);
+                        metadata[options.placeholder][placeholder_key] = contents.substring(placeholder.start, placeholder.end);
+                        debug('%s - Set: %s', options.placeholder, placeholder_key);
                         // debug('content: %s', metadata[options.placeholder][placeholder.key].content);
                     }
                 });
