@@ -35,7 +35,7 @@ var multiexcerpts = function (options) {
         });
 
         var metadata = metalsmith.metadata();
-        var re_definition = new RegExp('{{! ' + options.placeholder + '( +name=["\'](.+)["\'])}}', 'gm');
+        var re_definition = new RegExp('{{! ' + options.placeholder + '( +name=["\'](.+?)["\'])}}', 'gm');
         var closing_placeholder = '{{! /multiexcerpt}}';
 
         Object.keys(files).forEach(function (filepath) {
@@ -96,7 +96,7 @@ var multiexcerpts = function (options) {
                     var placeholder_key = key + '/' + slug(placeholder.key);
                     debug('placeholder key: %s', placeholder.key);
                     if (metadata[options.placeholder][placeholder_key]) {
-                        error('%s - Duplicate placeholder: %s', placeholder_key);
+                        error('%s - Duplicate placeholder: %s', options.placeholder, placeholder_key);
                     }
                     else {
                         metadata[options.placeholder][placeholder_key] = contents.substring(placeholder.start, placeholder.end);

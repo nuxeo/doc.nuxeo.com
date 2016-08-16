@@ -7,7 +7,6 @@ var Joi = require('joi');
 var path = require('path');
 var multimatch = require('multimatch');
 var slug = require('slug');
-var extend = require('lodash.assignin');
 slug.defaults.modes.pretty.lower = true;
 
 var schema = Joi.object().keys({
@@ -95,7 +94,7 @@ var urls = function (options) {
                 // Add to url.key
                 if (file.slug) {
                     file.url.key.slug = file.slug;
-                    file.url.key.parts.push(file.slug);
+                    file.url.key.parts.push(file.url.key.slug);
                 }
 
                 // Set full key and new_filepath
@@ -103,7 +102,10 @@ var urls = function (options) {
                     file.url.key.full = file.url.key.parts.join(path.sep);
                     file.url.new_filepath = file.url.key.full + file_path_info.ext;
                 }
-                debug('Filepath: %s, url: %o', filepath, file.url);
+                else {
+                    error('Full url could not be assigned to: %s', filepath);
+                }
+                debug('Filepath: %s, url: %o', filepath, file.url.full);
             }
             else {
                 debug('Ignorning: %s', filepath);
