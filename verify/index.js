@@ -2,7 +2,7 @@
 
 var test = require('tape');
 var fs = require('fs');
-var path = require('path');
+// var path = require('path');
 
 var site_path = './site/';
 var assets_path = site_path + 'assets/';

@@ -27,7 +27,7 @@
     "lodash.set": "^4.3.1",
     "lodash.sortby": "^4.6.1",
     "marked": "^0.3.6",
-    "metalsmith": "^2.1.0",
+    "metalsmith": "^2.2.0",
     "metalsmith-default-values": "0.0.2",
     "metalsmith-gzip": "^1.1.0",
     "metalsmith-if": "^0.1.1",
