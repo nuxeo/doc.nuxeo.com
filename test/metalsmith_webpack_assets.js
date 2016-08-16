@@ -2,7 +2,7 @@
 
 var test = require('tape');
 
-var webpack_assets = require('../../modules/metalsmith_webpack_assets');
+var webpack_assets = require('../modules/metalsmith_webpack_assets');
 
 test('webpack_assets is a function', function (assert) {
     // Get typeof string

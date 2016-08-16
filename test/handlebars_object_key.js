@@ -2,7 +2,7 @@
 
 var test = require('tape');
 
-var object_key = require('../../modules/handlebars_object_key');
+var object_key = require('../modules/handlebars_object_key');
 
 test('handlebars_object_key is a function', function (assert) {
     // Get typeof string
