@@ -98,6 +98,7 @@
     "empty_temp": "rm -rf ./temp/*",
     "copy_assets": "rsync -a ./assets/ ./site/assets/",
     "browser_sync": "browser-sync start --server site --browser=$npm_package_config_browser",
+    "browser_sync_reload": "browser-sync reload",
     "dev": "NODE_ENV=development nodemon --exec 'npm run compile'",
     "dev_build": "npm run browser_sync & NODE_ENV=development nodemon --exec 'npm start && browser-sync reload'",
     "dev_platform": "npm run browser_sync & NODE_ENV=development nodemon --exec 'npm run compile && npm run dev_build_platform && browser-sync reload'",

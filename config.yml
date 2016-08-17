@@ -23,9 +23,11 @@ default:
     markdown_options:
         langPrefix : ''
         gfm        : true
+        breaks     : false
         tables     : true
         pedantic   : false
         smartypants: false
+        sanitize   : false
     repositories:
         static:
             url: git@github.com:nuxeo/doc.nuxeo.com-static-spaces.git
