@@ -2,6 +2,16 @@
 
 /* eslint-env es6 */
 
+// Assume production if not set
+if (!process.env.NODE_ENV) {
+    process.env.NODE_ENV = 'production';
+}
+
+// Set Debugging up
+if (!process.env.DEBUG) {
+    process.env.DEBUG = '*:info,*:error';
+}
+
 // Debugging
 var debug_lib = require('debug');
 var debug = debug_lib('nuxeo-build-all');
@@ -17,8 +27,9 @@ var path = require('path');
 var extend = require('lodash.defaultsdeep');
 
 // local packages
-var pre_builder = require('./lib/pre_builder');
-var builder     = require('./lib/builder');
+var builder_lib = require('./lib/builder_module');
+var pre_builder = builder_lib.pre_builder;
+var builder = builder_lib.builder;
 
 var metadata = {};
 

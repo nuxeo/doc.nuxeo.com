@@ -1,14 +1,13 @@
 'use strict';
 
 var debug_lib = require('debug');
-var debug = debug_lib('metalsmith-replace-multiexcerpts');
-var error = debug_lib('metalsmith-replace-multiexcerpts:error');
+var debug = debug_lib('metalsmith-replace-excerpts');
+var error = debug_lib('metalsmith-replace-excerpts:error');
 
 var escape_regex = require('escape-string-regexp');
-var slug = require('slug');
-slug.defaults.modes.pretty.lower = true;
 
-var get_placeholder_key = require('./get_placeholder_key');
+var get_placeholder_key = require('../get_placeholder_key');
+
 
 /**
  * A Metalsmith plugin to extract an excerpt from Markdown files.
@@ -21,7 +20,7 @@ var replace_placeholder = function (options) {
     return function (files, metalsmith, done) {
 
         var metadata = metalsmith.metadata();
-        var placeholder_re = /\{\{\{?multiexcerpt +['"](.+?)['"]( page=['"](.+?)['"])? ?\}\}\}?/i;
+        var placeholder_re = /\{\{\{?excerpt +['"](.+?)['"] ?\}\}\}?/i;
 
         Object.keys(files).forEach(function (filepath) {
             var file = files[filepath];
@@ -34,23 +33,24 @@ var replace_placeholder = function (options) {
             while ((match = placeholder_re.exec(contents)) !== null && safeguard) {
                 safeguard--;
                 changed = true;
-                key = get_placeholder_key(match[3], file.url.key) + '/' + slug(match[1]);
+                key = get_placeholder_key(match[1], file.url.key);
                 replacement_re = new RegExp(escape_regex(match[0]), 'g');
+                // if (file.title === 'Collaborative Features') { error('match: %s, key: %s', match[0], key); }
                 debug('Looking for: %s in %s', key, file.title);
-                if (metadata.multiexcerpt[key]) {
+                if (metadata.excerpts[key]) {
                     debug('Replacing: %s', match[0]);
-                    contents = contents.replace(replacement_re, metadata.multiexcerpt[key]);
+                    contents = contents.replace(replacement_re, metadata.excerpts[key]);
                 }
                 else {
                     error('No replacement found for: %s in %s', key, file.title);
-                    contents = contents.replace(replacement_re, '{{! Multiexcerpt replacement failed for: ' + match[1] + ' }}');
+                    contents = contents.replace(replacement_re, '{{! Excerpt replacement failed for: ' + match[1] + ' }}');
                 }
             }
             if (!safeguard) {
                 error('Did not finish replacements before safeguard');
             }
             if (changed) {
-                // if (file.title === 'Collaborative Features') { error('Saving changes in: %s', file.title, contents); }
+                // if (file.title === 'Collaborative Features') { error('Content-excerpt: %s', file.title, contents); }
                 debug('Saving changes in: %s', file.title);
                 file.contents = new Buffer(contents);
             }

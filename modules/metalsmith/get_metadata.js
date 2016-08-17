@@ -10,7 +10,7 @@ var is_empty = require('lodash.isempty');
 
 // var schema = Joi.object();
 
-var get_metadata = function (options, resolve, reject) {
+var get_metadata = function (options, resolve) {
     /* eslint guard-for-in:0 */
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
@@ -20,12 +20,12 @@ var get_metadata = function (options, resolve, reject) {
             metadata_to_return[key] = metadata[key];
         });
         if (is_empty(metadata_to_return)) {
-            reject(new Error('Metadata was empty'));
+            return done(new Error('Metadata was empty'));
         }
         else {
             resolve(metadata_to_return);
         }
-        done();
+        return done();
     };
 };
 

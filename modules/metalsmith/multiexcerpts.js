@@ -7,7 +7,7 @@ var Joi = require('joi');
 var slug = require('slug');
 slug.defaults.modes.pretty.lower = true;
 
-var open_close_positions = require('./open_close_positions');
+var open_close_positions = require('../open_close_positions');
 
 var schema = Joi.object().keys({
     placeholder: Joi.string().optional().default('multiexcerpt')
