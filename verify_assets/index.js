@@ -4,9 +4,9 @@ var test = require('tape');
 var fs = require('fs');
 var path = require('path');
 
-var assets_path = './assets/';
-var css_stats = './lib/css.md5';
-var js_stats = './lib/webpack.stats.json';
+var assets_path = path.join(__dirname, '../assets/');
+var css_stats = path.join(__dirname, '../lib/css.md5');
+var js_stats = path.join(__dirname, '../lib/webpack.stats.json');
 
 // console.log(fs.accessSync('./sites', fs.F_OK));
 
@@ -38,7 +38,7 @@ test('site should have key files', function (assert) {
 
 test('key files should have content', function (assert) {
     var css_hash = fs.readFileSync(css_stats).toString().split('\n')[0];
-    var js_obj = require(path.join('../', js_stats));
+    var js_obj = require(js_stats);
 
     assert.ok(/^[a-z0-9]{32}$/.test(css_hash), css_stats + ' is hash of 32 characters');
     assert.deepEqual(js_obj.errors, [], js_stats + ' has no errors');

@@ -2,10 +2,10 @@
 
 var test = require('tape');
 var fs = require('fs');
-// var path = require('path');
+var path = require('path');
 
-var site_path = './site/';
-var assets_path = site_path + 'assets/';
+var site_path = path.join(__dirname, '../site');
+var assets_path = path.join(site_path, 'assets');
 var spaces = [
     'admindoc',
     'connect',
@@ -19,17 +19,17 @@ var spaces = [
 
 test('site should have key files', function (assert) {
     var site_paths = [
-        assets_path + 'fonts/fontawesome-webfont.ttf',
-        assets_path + 'fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.ttf',
-        assets_path + 'icons/favicon.ico',
-        assets_path + 'imgs/logo340x60.png',
-        site_path + 'index.html',
-        site_path + 'index.html.gz'
+        path.join(assets_path, 'fonts/fontawesome-webfont.ttf'),
+        path.join(assets_path, 'fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.ttf'),
+        path.join(assets_path, 'icons/favicon.ico'),
+        path.join(assets_path, 'imgs/logo340x60.png'),
+        path.join(site_path, 'index.html'),
+        path.join(site_path, 'index.html.gz')
     ];
     // Index of each of the spaces
     spaces.forEach(function (space) {
-        site_paths.push(site_path + space + '.json');
-        site_paths.push(site_path + space + '/index.html');
+        site_paths.push(path.join(site_path, space + '.json'));
+        site_paths.push(path.join(site_path, space, 'index.html'));
     });
 
     site_paths.forEach(function (filepath) {
