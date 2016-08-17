@@ -3,7 +3,7 @@
   "description": "doc.nuxeo.com built using Metalsmith",
   "license": "UNLICENSED",
   "private": true,
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": {
     "name": "Andrew Goodricke",
     "email": "github@andrewgoodricke.com",
