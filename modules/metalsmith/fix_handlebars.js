@@ -4,7 +4,6 @@
 
 var debug_lib = require('debug');
 var debug = debug_lib('metalsmith-fix-handlebars');
-var info = debug_lib('metalsmith-fix-handlebars:info');
 var error = debug_lib('metalsmith-fix-handlebars:error');
 
 var co = require('co');
@@ -44,7 +43,6 @@ var fix_content = function (files, filepath) {
  * @return {Function}
 **/
 var fix_handlebars = function (options) {
-    info('Processing');
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
 

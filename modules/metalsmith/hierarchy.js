@@ -2,7 +2,6 @@
 
 var debug_lib = require('debug');
 var debug = debug_lib('metalsmith-hierarchy');
-var info = debug_lib('metalsmith-hierarchy:info');
 var error = debug_lib('metalsmith-hierarchy:error');
 var Joi = require('joi');
 // var path = require('path');
@@ -27,8 +26,6 @@ var hierarchy = function (options) {
     /* eslint guard-for-in:0 */
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
-        info('Processing');
-
         // Check options fits schema
         var schema_err;
         schema.validate(options, {allowUnknown: true}, function (err, value) {

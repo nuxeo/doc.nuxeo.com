@@ -3,7 +3,6 @@
 var debug_lib = require('debug');
 var debug = debug_lib('metalsmith-excerpts');
 var error = debug_lib('metalsmith-excerpts:error');
-var info = debug_lib('metalsmith-excerpts:info');
 var multimatch = require('multimatch');
 var cheerio = require('cheerio');
 var get = require('lodash.get');
@@ -43,7 +42,6 @@ var special_methods = {
  * @return {Function}
 **/
 var excerpts = function (options) {
-    info('Processing');
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
         // Check options fits schema

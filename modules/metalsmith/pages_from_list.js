@@ -2,7 +2,6 @@
 
 var debug_lib = require('debug');
 var debug = debug_lib('metalsmith-pages-from_list');
-var info = debug_lib('metalsmith-pages-from_list:info');
 var error = debug_lib('metalsmith-pages-from_list:error');
 var Joi = require('joi');
 var slug = require('slug');
@@ -18,7 +17,6 @@ var schema = Joi.array().items(Joi.object().keys({
 var pages_from_list = function (options) {
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
-        info('Processing');
         var metadata = metalsmith.metadata();
 
         // Check options fits schema

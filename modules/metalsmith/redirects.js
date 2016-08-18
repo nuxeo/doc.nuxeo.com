@@ -2,7 +2,6 @@
 
 var debug_lib = require('debug');
 var debug = debug_lib('metalsmith-redirects');
-var info = debug_lib('metalsmith-redirects:info');
 var error = debug_lib('metalsmith-redirects:error');
 var each = require('async').each;
 var yaml = require('js-yaml');
@@ -17,7 +16,6 @@ var util = require('util');
 **/
 var file_contents_preprocess = function () {
     return function (files, metalsmith, done) {
-        info('Processing');
         var redirects;
         var redirects_file = path.join(metalsmith.path(), 'redirects.yml');
         var finished = function (err) {

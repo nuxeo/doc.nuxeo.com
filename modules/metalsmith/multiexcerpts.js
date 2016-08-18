@@ -2,7 +2,6 @@
 
 var debug_lib = require('debug');
 var debug = debug_lib('metalsmith-multiexcerpts');
-var info = debug_lib('metalsmith-multiexcerpts:info');
 var error = debug_lib('metalsmith-multiexcerpts:error');
 var Joi = require('joi');
 var slug = require('slug');
@@ -25,7 +24,6 @@ var schema = Joi.object().keys({
 var multiexcerpts = function (options) {
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
-        info('Processing');
         // Check options fits schema
         schema.validate(options, function (err, value) {
             /* eslint consistent-return: 0 */

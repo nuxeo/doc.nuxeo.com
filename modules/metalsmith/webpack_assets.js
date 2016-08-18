@@ -1,13 +1,10 @@
 'use strict';
 
-var debug_lib = require('debug');
-var debug = debug_lib('metalsmith-webpack-assets');
-var info = debug_lib('metalsmith-webpack-assets:info');
+var debug = require('debug')('metalsmith-webpack-assets');
 
 var webpack_assets = function (options) {
 
     return function (files, metalsmith, done) {
-        info('Processing');
         var metadata = metalsmith.metadata();
         var stats_filepath = metalsmith.path(options.stats_file);
 

@@ -2,7 +2,6 @@
 
 var debug_lib = require('debug');
 var debug = debug_lib('metalsmith-replace-multiexcerpts');
-var info = debug_lib('metalsmith-replace-multiexcerpts:info');
 var error = debug_lib('metalsmith-replace-multiexcerpts:error');
 
 var escape_regex = require('escape-string-regexp');
@@ -20,7 +19,7 @@ var get_placeholder_key = require('../get_placeholder_key');
 var replace_placeholder = function (options) {
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
-        info('Processing');
+
         var metadata = metalsmith.metadata();
         var placeholder_re = /\{\{\{?multiexcerpt +['"](.+?)['"]( page=['"](.+?)['"])? ?\}\}\}?/i;
 

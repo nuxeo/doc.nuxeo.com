@@ -2,13 +2,11 @@
 
 var debug_lib = require('debug');
 var debug = debug_lib('metalsmith-css-md5');
-var info = debug_lib('metalsmith-css-md5:info');
 var fs = require('fs');
 
 var css_md5 = function (options) {
 
     return function (files, metalsmith, done) {
-        info('Processing');
         var metadata = metalsmith.metadata();
         var stats_filepath = metalsmith.path(options.stats_file);
 
