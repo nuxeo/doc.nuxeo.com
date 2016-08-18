@@ -2,6 +2,7 @@
 
 var debug_lib = require('debug');
 var debug = debug_lib('metalsmith-replace-excerpts');
+var info = debug_lib('metalsmith-replace-excerpts:info');
 var error = debug_lib('metalsmith-replace-excerpts:error');
 
 var escape_regex = require('escape-string-regexp');
@@ -18,7 +19,7 @@ var get_placeholder_key = require('../get_placeholder_key');
 var replace_placeholder = function (options) {
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
-
+        info('Processing');
         var metadata = metalsmith.metadata();
         var placeholder_re = /\{\{\{?excerpt +['"](.+?)['"] ?\}\}\}?/i;
 

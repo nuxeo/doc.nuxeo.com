@@ -2,6 +2,7 @@
 
 var debug_lib = require('debug');
 var debug = debug_lib('metalsmith-file-contents-preprocess');
+var info = debug_lib('metalsmith-file-contents-preprocess:info');
 var error = debug_lib('metalsmith-file-contents-preprocess:error');
 var each = require('async').each;
 var request = require('request');
@@ -17,6 +18,7 @@ var re_definition = /({{|\()file_content url=['"]([^'"]+)['"](}}|\))/g;
 **/
 var file_contents_preprocess = function () {
     return function (files, metalsmith, done) {
+        info('Processing');
         var matches = {};
         Object.keys(files).forEach(function (filepath) {
             var file = files[filepath];

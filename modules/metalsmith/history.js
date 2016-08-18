@@ -2,6 +2,7 @@
 
 var debug_lib = require('debug');
 var debug = debug_lib('metalsmith-history');
+var info = debug_lib('metalsmith-history:info');
 var error = debug_lib('metalsmith-history:error');
 var Joi = require('joi');
 // var path = require('path');
@@ -54,6 +55,7 @@ var get_history = function (source_path, filepath, file, options) {
 var list_from_field = function (options) {
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
+        info('Processing');
         var files_source = metalsmith.source();
         // Check options fits schema
         schema.validate(options, function (err, value) {

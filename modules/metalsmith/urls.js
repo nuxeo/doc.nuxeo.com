@@ -2,6 +2,7 @@
 
 var debug_lib = require('debug');
 var debug = debug_lib('metalsmith-urls');
+var info = debug_lib('metalsmith-urls:info');
 var error = debug_lib('metalsmith-urls:error');
 var Joi = require('joi');
 var path = require('path');
@@ -21,7 +22,7 @@ var schema = Joi.object().keys({
 var urls = function (options) {
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
-
+        info('Processing');
         // Check options fits schema
         var schema_err;
         schema.validate(options, {allowUnknown: true}, function (err, value) {

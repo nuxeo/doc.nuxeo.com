@@ -2,6 +2,7 @@
 
 var debug_lib = require('debug');
 var debug = debug_lib('metalsmith-hierarchies');
+var info = debug_lib('metalsmith-hierarchies:info');
 var error = debug_lib('metalsmith-hierarchies:error');
 var Joi = require('joi');
 var path = require('path');
@@ -20,6 +21,7 @@ var schema = Joi.object().keys({
 });
 
 var meta_hierarchies = function (options) {
+    info('Processing');
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
 

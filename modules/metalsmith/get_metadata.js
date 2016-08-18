@@ -2,6 +2,7 @@
 
 var debug_lib = require('debug');
 var debug = debug_lib('metalsmith-get-metadata');
+var info = debug_lib('metalsmith-get-metadata:info');
 // var error = debug_lib('metalsmith-get-metadata:error');
 var is_empty = require('lodash.isempty');
 // // var Joi = require('joi');
@@ -14,6 +15,7 @@ var get_metadata = function (options, resolve) {
     /* eslint guard-for-in:0 */
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
+        info('Processing');
         var metadata = metalsmith.metadata();
         var metadata_to_return = {};
         options.keys.forEach(function (key) {

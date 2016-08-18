@@ -2,6 +2,7 @@
 
 var debug_lib = require('debug');
 var debug = debug_lib('metalsmith-list-from-field');
+var info = debug_lib('metalsmith-list-from-field:info');
 var error = debug_lib('metalsmith-list-from-field:error');
 var multimatch = require('multimatch');
 var get = require('lodash.get');
@@ -19,6 +20,7 @@ var schema = Joi.array().items(Joi.object().keys({
 var list_from_field = function (options) {
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
+        info('Processing');
         var metadata = metalsmith.metadata();
 
         // Check options fits schema
