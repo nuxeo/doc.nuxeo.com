@@ -14,14 +14,12 @@ fi
 cd $REPO_BASE;
 
 if [ -d $REPO_DIR -a ! -L $REPO_DIR ]; then
-    pushd $REPO_DIR;
-    git fetch --all
+    cd $REPO_DIR && \
+    git fetch --all && \
     git lfs pull;
-    popd;
 else
-    git lfs clone $REPO_URL $REPO_ID;
-    pushd $REPO_DIR;
-    git lfs install;
+    git lfs clone $REPO_URL $REPO_ID && \
+    cd $REPO_DIR && \
+    git lfs install && \
     git reset --hard;
-    popd;
 fi

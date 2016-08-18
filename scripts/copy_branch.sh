@@ -8,7 +8,7 @@ TARGET_DIR="./temp/${REPO_ID}/$BRANCH/";
 
 if [ -d $REPO_DIR -a ! -L $REPO_DIR ]; then
     pushd $REPO_DIR;
-    git checkout origin/$BRANCH;
+    git checkout -f origin/$BRANCH;
     popd;
     mkdir -p $TARGET_DIR;
     rsync -av --exclude=".*" $REPO_DIR $TARGET_DIR;
