@@ -26,7 +26,12 @@ npm install
 
 ## Run Locally
 ```bash
-npm run dev
+npm start
+```
+
+## Run and host locally
+```bash
+npm run dev_build
 ```
 
 ### Change browser

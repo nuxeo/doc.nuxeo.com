@@ -71,6 +71,7 @@ co(function *() {
     // initalise repositories
     var commands = [];
     Object.keys(config.repositories).forEach(function (repo_id) {
+        info('Getting latest content - repo: %s', repo_id);
         var repo = config.repositories[repo_id];
         commands.push(run_command('./scripts/initialise_repo.sh ' + repo_id + ' "' + repo.url + '"'));
     });

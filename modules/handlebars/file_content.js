@@ -10,7 +10,7 @@ var file_content = function (options) {
     var content = options.data.root.file_content && options.data.root.file_content[slug(url)];
 
     if (!content) {
-        error('Content not located for: %s', url);
+        error('Content not located for: "%s" in: "%s"', url, options.data.root.title);
     }
     return (content) ? content : '';
 };

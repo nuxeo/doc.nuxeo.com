@@ -42,7 +42,7 @@ var replace_placeholder = function (options) {
                     contents = contents.replace(replacement_re, metadata.multiexcerpt[key]);
                 }
                 else {
-                    error('No replacement found for: %s in %s', key, file.title);
+                    error('No replacement found for: %s in "%s"', key, file.title);
                     contents = contents.replace(replacement_re, '{{! Multiexcerpt replacement failed for: ' + match[1] + ' }}');
                 }
             }
