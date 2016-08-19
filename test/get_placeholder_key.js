@@ -67,15 +67,37 @@ test('get_placeholder_key returns values as expected', function (assert) {
             test    : 'FAIL:KEY:Admin Config',
             expected: '',
             message : 'returns empty string when badly formed'
+        },
+        {
+            test    : 'index',
+            expected: 'nxdoc/index',
+            message : 'returns space index'
+        },
+        {
+            test    : 'userdoc/index',
+            expected: 'userdoc/index',
+            message : 'returns space index'
+        },
+        {
+            test    : 'index',
+            expected: 'index',
+            message : 'returns root index',
+            fallback: {
+                version   : '',
+                space     : '',
+                space_path: '',
+                slug      : 'index',
+                parts     : [ 'index'],
+                full      : 'index'
+            }
         }
     ];
 
+
     string_tests.map(function (string_test) {
-        var actual = get_placeholder_key(string_test.test, fallback_values);
+        var actual = get_placeholder_key(string_test.test, string_test.fallback || fallback_values);
         assert.isEqual(actual, string_test.expected, string_test.message);
     });
-
-    // TODO: test fail states. e.g. bad form!
 
     assert.end();
 });

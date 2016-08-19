@@ -9,6 +9,16 @@ var path = require('path');
 var fs = require('fs');
 var util = require('util');
 
+var get_placeholder_key = require('../get_placeholder_key');
+
+var get_redirect_url = function (file) {
+    var page = file.redirect_source || file.redirect || '';
+
+    var url = (page) ? get_placeholder_key(page, file.url.key) : '';
+
+    return (url) ? '/' + url + '/' : '';
+};
+
 /**
  * A Metalsmith plugin to add redirects to yaml file.
  *
@@ -48,7 +58,7 @@ var file_contents_preprocess = function () {
         Object.keys(files).forEach(function (filepath) {
             var file = files[filepath];
 
-            if (file.redirect) {
+            if (file.confluence && file.confluence.shortlink || file.redirect || file.redirect_source) {
                 matches.push(filepath);
                 debug('Pushed: %s with: %s', filepath, file.redirect);
             }
@@ -56,12 +66,24 @@ var file_contents_preprocess = function () {
 
         var add_redirect = function (filepath, callback) {
             var file = files[filepath];
-            var redirect_source = filepath.split('.');
-            redirect_source.pop();
-            redirect_source = '^/' + redirect_source.join('.');
 
-            redirects[redirect_source] = file.redirect;
-            file.layout = 'redirect.hbs';
+            var redirect_url = get_redirect_url(file);
+
+            if (redirect_url) {
+                var this_url = get_placeholder_key('', file.url.key);
+                this_url = '^/' + this_url;
+
+                redirects[this_url] = redirect_url;
+                file.layout = 'redirect.hbs';
+            }
+            if (file.confluence && file.confluence.shortlink) {
+                if (redirect_url) {
+                    redirects['^/x/' + file.confluence.shortlink] = redirect_url;
+                }
+                else {
+                    redirects['^/x/' + file.confluence.shortlink] = file.url.full;
+                }
+            }
 
             callback();
         };

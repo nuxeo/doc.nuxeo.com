@@ -50,7 +50,7 @@ var get_placeholder_key = function (page_name_raw, defaults) {
         else {
             page_name_split = page_name_raw.split('/');
             // Doesn't have version space so add default
-            if (page_name_split.length === 1) {
+            if (page_name_split.length === 1 && defaults.space_path) {
                 key_parts.push(defaults.space_path);
             }
             page_name_split.map(function (item) {

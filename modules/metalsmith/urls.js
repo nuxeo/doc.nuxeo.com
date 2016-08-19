@@ -91,7 +91,8 @@ var urls = function (options, add_to_metadata) {
                 else {
                     full_url_parts.push(file.slug);
                 }
-                file.url.full = path.sep + full_url_parts.join(path.sep) + path.sep;
+                // root only has `/`
+                file.url.full = (full_url_parts.join(path.sep)) ? path.sep + full_url_parts.join(path.sep) + path.sep : '/';
 
                 // Add to url.key
                 if (file.slug) {

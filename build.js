@@ -52,8 +52,8 @@ var get_repo_branches = function (config) {
         repo.branches.forEach(function (branch) {
             info('Adding - repo: %s, branch: %s', repo_id, branch);
             repo_branches.push({
-                target_source_path: target_base + '/' + repo_id + '/' + branch + '/src/',
-                target_build_path : target_base + '/' + repo_id + '/' + branch + '/site/',
+                target_source_path: target_base + repo_id + '/' + branch + '/src/',
+                target_build_path : target_base + repo_id + '/' + branch + '/site/',
                 repo_id           : repo_id,
                 branch            : branch
             });
