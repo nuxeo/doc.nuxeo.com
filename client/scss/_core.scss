@@ -272,6 +272,10 @@ pre {
 .nuxeo-space-bottom {
     margin-bottom: 2rem;
 }
+.nuxeo-space-right-tiny,
+.button-group .button:not(:last-child).nuxeo-space-right-tiny {
+    margin-right: 3px;
+}
 .nuxeo-pad-right {
     padding-right: 1rem;
 }

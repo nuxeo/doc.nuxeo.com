@@ -117,8 +117,9 @@ var urls = function (options, add_to_metadata) {
                     }
                     else {
                         metadata.pages[file.url.key.full] = {
-                            title: file.title,
-                            url  : file.url.full
+                            title      : file.title,
+                            url        : file.url.full,
+                            is_redirect: !!(file.redirect || file.redirect_source)
                         };
                     }
                 }

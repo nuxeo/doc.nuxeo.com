@@ -20,7 +20,7 @@ var get_redirect_url = function (file, metadata) {
         var url = key_to_url(key, metadata.pages);
     }
     catch (e) {
-        error('%s in: "%s"', e.message, file.title);
+        error('%s; Title: "%s"', e.message, file.title);
     }
     return url;
 };
