@@ -108,7 +108,7 @@ var urls = function (options) {
                 debug('Filepath: %s, url: %o', filepath, file.url.full);
             }
             else {
-                debug('Ignorning: %s', filepath);
+                error('Ignorning: %s', filepath);
             }
         });
         return done();

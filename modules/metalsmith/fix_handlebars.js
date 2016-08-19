@@ -20,6 +20,10 @@ var replacements = [
     {
         search : /&#39;/g,
         replace: "'"
+    },
+    {
+        search : /url=(['"])<a href="(.+?)(['"])(.+?)">.*?<\/a>/g,
+        replace: 'url=$1$2$3$4'
     }
 ];
 
