@@ -18,9 +18,11 @@ var schema = Joi.object().keys({
     file_pattern: Joi.array().items(Joi.string()).optional().default(['**/*.md', '**/*.html'])
 });
 
-var urls = function (options) {
+var urls = function (options, add_to_metadata) {
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
+        var metadata = metalsmith.metadata();
+        metadata.pages = metadata.pages || {};
 
         // Check options fits schema
         var schema_err;
@@ -106,6 +108,19 @@ var urls = function (options) {
                     error('Full url could not be assigned to: %s', filepath);
                 }
                 debug('Filepath: %s, url: %o', filepath, file.url.full);
+
+                // Add to metadata.pages array
+                if (add_to_metadata) {
+                    if (metadata.pages[file.url.key.full]) {
+                        error('Duplicate key found: "%s" in "%s"', file.url.key.full, file.title);
+                    }
+                    else {
+                        metadata.pages[file.url.key.full] = {
+                            title: file.title,
+                            url  : file.url.full
+                        };
+                    }
+                }
             }
             else {
                 error('Ignorning: %s', filepath);
