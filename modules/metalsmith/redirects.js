@@ -10,13 +10,19 @@ var fs = require('fs');
 var util = require('util');
 
 var get_placeholder_key = require('../get_placeholder_key');
+var key_to_url = require('../key_to_url');
 
-var get_redirect_url = function (file) {
+var get_redirect_url = function (file, metadata) {
     var page = file.redirect_source || file.redirect || '';
 
-    var url = (page) ? get_placeholder_key(page, file.url.key) : '';
-
-    return (url) ? '/' + url + '/' : '';
+    var key = (page) ? get_placeholder_key(page, file.url.key) : '';
+    try {
+        var url = key_to_url(key, metadata.pages);
+    }
+    catch (e) {
+        error('Key: "%s" in: "%s", Error: %o', key, file.title, e);
+    }
+    return url;
 };
 
 /**
@@ -67,7 +73,7 @@ var file_contents_preprocess = function () {
         var add_redirect = function (filepath, callback) {
             var file = files[filepath];
 
-            var redirect_url = get_redirect_url(file);
+            var redirect_url = get_redirect_url(file, metadata);
 
             if (redirect_url) {
                 var this_url = get_placeholder_key('', file.url.key);

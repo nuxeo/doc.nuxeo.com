@@ -6,8 +6,11 @@ var slug = require('slug');
 slug.defaults.modes.pretty.lower = true;
 
 var get_placeholder_key = require('../get_placeholder_key');
+var key_to_url = require('../key_to_url');
+
 var page_url = function (options) {
-    var defaults = options.data.root && options.data.root.url && options.data.root.url.key;
+    var file = options.data.root;
+    var defaults = file && file.url && file.url.key;
     var version = options.hash && options.hash.version;
     var space = options.hash && options.hash.space;
     var page = options.hash && options.hash.page || '';
@@ -35,18 +38,21 @@ var page_url = function (options) {
     }
 
     // Strip # from page
-    var key = '';
+    var url = '';
     if (defaults) {
-        key = get_placeholder_key(raw_page_name, defaults);
-        if (!key) {
-            error('URL could not be processed: %s', options.hash.page, defaults);
+        var key = get_placeholder_key(raw_page_name, defaults);
+
+        try {
+            url = key_to_url(key, file.pages);
+        }
+        catch (e) {
+            error('%o for key: "%s" in: "%s"', e, key, file.title);
         }
     }
     else {
         error('file.url.key not present. page: "%s", defaults: %o', options.hash.page, defaults);
     }
-    // TODO: Check page exists
-    return (key) ? '/' + key + '/' + hash : '' + hash;
+    return url + hash;
 };
 
 module.exports = page_url;

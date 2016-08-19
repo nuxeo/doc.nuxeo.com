@@ -47,7 +47,7 @@ var page_url = function (options) {
             error('file.url.key not present. page: "%s", defaults: %o', options.hash.page, defaults);
         }
     }
-    // TODO: Check file exists
+    // TODO: Check file exists - add all assets to metadata in pre-build and check
     return (key) ? '/assets/' + key + '/' + name : '';
 };
 
