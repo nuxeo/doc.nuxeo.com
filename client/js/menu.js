@@ -70,7 +70,7 @@ module.exports = function ($) {
                 // console.log('props', props.node);
                 var is_active = (props.node.active) ? 'active' : '';
                 return (
-                    <a className={is_active} href={'/' + props.node.path + props.node.slug + '/'}>{props.node.name}</a>
+                    <a className={is_active} href={props.node.url.full}>{props.node.name}</a>
                 );
             };
 
