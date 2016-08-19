@@ -1,37 +1,54 @@
 'use strict';
-var debug_lib     = require('debug');
-// var debug         = debug_lib('handlebars-file');
-var error         = debug_lib('handlebars-file:error');
+var debug_lib = require('debug');
+// var debug = debug_lib('handlebars-page');
+var error = debug_lib('handlebars-page:error');
 var slug = require('slug');
 slug.defaults.modes.pretty.lower = true;
 
-var file = function (options) {
-    var url_arr = [];
-    if (options.hash.version && options.hash.space) {
-        url_arr.push(options.hash.version);
-        url_arr.push(options.hash.space);
-    }
-    else if (options.hash.space) {
-        url_arr.push(options.hash.space);
+var get_placeholder_key = require('../get_placeholder_key');
+var page_url = function (options) {
+    var defaults = options.data.root && options.data.root.url && options.data.root.url.key;
+    var version = options.hash && options.hash.version;
+    var space = options.hash && options.hash.space;
+    var page = options.hash && options.hash.page || '';
+    var name = options.hash && options.hash.name || '';
+    var raw_page_name = '';
+
+    // version and space
+    if (version && space && page) {
+        raw_page_name = [version, space, page].join('/');
     }
     else {
-        url_arr.push(options.data.root.url.key.space_path);
+        // space without page - index
+        if (!page && space) {
+            raw_page_name = [space, 'index'].join(':');
+        }
+        else if (page && space) {
+            raw_page_name = [space, page].join(':');
+        }
+        else {
+            raw_page_name = page;
+        }
     }
 
-    var pagename = options.hash.page || options.data.root.slug;
-    var filename = options.hash.name;
-
-    if (url_arr.length && pagename && filename) {
-        url_arr.push(slug(pagename));
-        url_arr.push(filename);
+    // Strip # from page
+    var key = '';
+    if (defaults && name) {
+        key = get_placeholder_key(raw_page_name, defaults);
+        if (!key) {
+            error('URL could not be processed: %s', options.hash.page, defaults);
+        }
     }
     else {
-        error('Missing space, page or name parameter');
-        throw new Error('Missing space or page parameter');
+        if (!name) {
+            error('filename not present. page: "%s"', options.hash.page);
+        }
+        if (!defaults) {
+            error('file.url.key not present. page: "%s", defaults: %o', options.hash.page, defaults);
+        }
     }
-    url_arr.unshift('assets');
     // TODO: Check file exists
-    return '/' + url_arr.join('/');
+    return (key) ? '/assets/' + key + '/' + name : '';
 };
 
-module.exports = file;
+module.exports = page_url;
