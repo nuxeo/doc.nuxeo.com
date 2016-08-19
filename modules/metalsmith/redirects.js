@@ -20,7 +20,7 @@ var get_redirect_url = function (file, metadata) {
         var url = key_to_url(key, metadata.pages);
     }
     catch (e) {
-        error('Key: "%s" in: "%s", Error: %o', key, file.title, e);
+        error('%s in: "%s"', e.message, file.title);
     }
     return url;
 };
@@ -32,6 +32,7 @@ var get_redirect_url = function (file, metadata) {
 **/
 var file_contents_preprocess = function () {
     return function (files, metalsmith, done) {
+        var metadata = metalsmith.metadata();
         var redirects;
         var redirects_file = path.join(metalsmith.path(), 'redirects.yml');
         var finished = function (err) {
@@ -73,7 +74,10 @@ var file_contents_preprocess = function () {
         var add_redirect = function (filepath, callback) {
             var file = files[filepath];
 
-            var redirect_url = get_redirect_url(file, metadata);
+            var redirect_url = '';
+            if (file.redirect || file.redirect_source) {
+                redirect_url = get_redirect_url(file, metadata);
+            }
 
             if (redirect_url) {
                 var this_url = get_placeholder_key('', file.url.key);

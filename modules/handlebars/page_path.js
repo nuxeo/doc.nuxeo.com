@@ -46,7 +46,7 @@ var page_url = function (options) {
             url = key_to_url(key, file.pages);
         }
         catch (e) {
-            error('%o for key: "%s" in: "%s"', e, key, file.title);
+            error('%s in: "%s"', e.message, file.title);
         }
     }
     else {
