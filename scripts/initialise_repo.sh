@@ -15,10 +15,11 @@ cd $REPO_BASE;
 
 if [ -d $REPO_DIR -a ! -L $REPO_DIR ]; then
     cd $REPO_DIR && \
+    git reset --hard && \
     git fetch --all && \
     git lfs pull;
 else
-    git lfs clone $REPO_URL $REPO_ID && \
+    git lfs clone --depth=1 --no-single-branch $REPO_URL $REPO_ID && \
     cd $REPO_DIR && \
     git lfs install && \
     git reset --hard;
