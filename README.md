@@ -58,34 +58,36 @@ git push && git push --tags
 ```
 
 ## Project Structure
-### `assets`
-Any files in this directory will be copied to `site/assets`.
+### `./assets/...`
+Any files in this directory will be copied to `./site/assets`. See [`./site/...`](#site)
 
-### `client`
+### `./client/...`
 Client side styles (SCSS) and JavaScript.
 
-### `layout`
-Templates and partials. See [working with templates](./docs/layouts.md).
+### `./docs/...`
 
-### `modules`
+### `./layout/...`
+Templates and partials. See [working with templates](./docs/writing-documentation.md).
+
+### `./modules/...`
 Nuxeo specific modules.
 
-### `site`
+### `./site/...`
 Generated output of the site. This is what will be served in production.
 
-### `test`
+### `./test/...`
 Unit tests for modules.
 
-### `verify`
-Verification tests for post building.
+### `./verify/...`
+Verification tests for post asset and site building.
 
-### `build.js`
+### `./build.js`
 The main build script for generating the output for `site`.
 
-### `config.yml`
+### `./config.yml`
 Site configurations, ability to have production or development specific values.
 
-### `package.json`
+### `./package.json`
 Build processes are defined here. Should be relatively self explanatory but anything special will be explained here.
 
 # Trouble shooting
