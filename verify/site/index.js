@@ -7,6 +7,9 @@ var path = require('path');
 var site_path = path.join(__dirname, '../../site');
 var assets_path = path.join(site_path, 'assets');
 var spaces = [
+    '710/admindoc',
+    '710/nxdoc',
+    '710/userdoc',
     'admindoc',
     'connect',
     'corg',
@@ -16,6 +19,7 @@ var spaces = [
     'studio',
     'userdoc'
 ];
+
 
 test('site should have key files', function (assert) {
     var site_paths = [
@@ -30,6 +34,7 @@ test('site should have key files', function (assert) {
     spaces.forEach(function (space) {
         site_paths.push(path.join(site_path, space + '.json'));
         site_paths.push(path.join(site_path, space, 'index.html'));
+        site_paths.push(path.join(site_path, space, '/label/index.html'));
     });
 
     site_paths.forEach(function (filepath) {

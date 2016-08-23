@@ -27,13 +27,13 @@ build/Release
 node_modules
 
 # pre-build files
-temp/
+/temp
 
 # Build output
-site/
-pre-src/
-client/css/
-repositories/
+/site
+/pre-src
+/client/css
+/repositories
 
 /css.md5
 /webpack.stats.json
