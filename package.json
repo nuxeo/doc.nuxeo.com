@@ -86,7 +86,7 @@
     "prebuild_js": "rm -rf ./assets/js/*",
     "build_js": "webpack --json > webpack.stats.json",
     "postbuild_js": "./bin/trim-webpack-stats webpack.stats.json > ./lib/webpack.stats.json && cp css.md5 ./lib",
-    "prebuild_css": "ls ./assets/fonts > /dev/null || mkdir -p ./assets/fonts && npm run copy_fontawesome && rm -rf ./client/css/*",
+    "prebuild_css": "ls ./assets/fonts > /dev/null || mkdir -p ./assets/fonts && rm -rf ./client/css/* ./assets/css/* && npm run copy_fontawesome && cp -r ./assets/fonts ./assets/css/",
     "build_css": "node-sass --source-map true --source-map-contents --include-path ./client/scss/ --include-path ./node_modules/foundation-sites/scss/ --include-path ./node_modules/motion-ui/src --include-path ./node_modules/font-awesome/scss --output-style compressed --output ./client/css/ ./client/scss/",
     "postbuild_css": "openssl md5 client/css/* | awk '{print $2}' | sort | openssl md5 | grep -oE '[a-zA-Z0-9]+$' > css.md5",
     "copy_fontawesome": "find ./node_modules/font-awesome/fonts/* -maxdepth 0 -type f -exec cp \"{}\" ./assets/fonts/ \\;",
