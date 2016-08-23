@@ -37,7 +37,7 @@ default:
             url: git@github.com:nuxeo/doc.nuxeo.com-platform-spaces.git
             branches:
                 - master
-                # - version-test
+                - '710'
 
 development:
     isDev: true
