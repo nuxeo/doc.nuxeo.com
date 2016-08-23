@@ -35,16 +35,26 @@
             margin-bottom: 0;
         }
         pre {
-            padding: 0.6em;
+            padding: .6em;
         }
     }
     .title {
         background-color: $light-gray;
         border-bottom: 1px solid $callout-border;
-        border-top-left-radius: 0.43rem;
-        border-top-right-radius: 0.43rem;
-        font-weight: bold;
+        border-top-left-radius: .43rem;
+        border-top-right-radius: .43rem;
+        font-family: Ademi;
         margin: -1rem -1rem 2rem;
         padding: .3rem .5rem 0;
+    }
+}
+
+.accordion {
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    .accordion-title {
+        font-family: Ademi;
+        border-top-left-radius: .43rem;
+        border-top-right-radius: .43rem;
     }
 }

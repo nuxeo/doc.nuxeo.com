@@ -1,1 +1,8 @@
-<div class="accordian">{{> @partial-block }}</div>
+<ul class="accordion" data-accordion data-accordion-item data-allow-all-closed="true">
+    <li class="accordion-item {{#unless closed}}is-active{{/unless}}">
+        <a href="#" class="accordion-title">{{heading}}</a>
+        <div class="accordion-content" data-tab-content>
+            {{> @partial-block }}
+        </div>
+    </li>
+</ul>
