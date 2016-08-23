@@ -4,9 +4,9 @@ var test = require('tape');
 var fs = require('fs');
 var path = require('path');
 
-var assets_path = path.join(__dirname, '../assets/');
-var css_stats = path.join(__dirname, '../lib/css.md5');
-var js_stats = path.join(__dirname, '../lib/webpack.stats.json');
+var assets_path = path.join(__dirname, '../../assets/');
+var css_stats = path.join(__dirname, '../../lib/css.md5');
+var js_stats = path.join(__dirname, '../../lib/webpack.stats.json');
 
 // console.log(fs.accessSync('./sites', fs.F_OK));
 

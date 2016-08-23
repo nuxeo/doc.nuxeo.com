@@ -4,7 +4,7 @@ var test = require('tape');
 var fs = require('fs');
 var path = require('path');
 
-var site_path = path.join(__dirname, '../site');
+var site_path = path.join(__dirname, '../../site');
 var assets_path = path.join(site_path, 'assets');
 var spaces = [
     'admindoc',
