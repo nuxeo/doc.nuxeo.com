@@ -1,9 +1,10 @@
 'use strict';
 
 var head_title = function (options) {
-    var title = options.hash.title || options.data.root.title;
+    var file = options.data.root;
+    var title = options.hash.title || file.title;
 
-    return (title) ? title + ' | ' + options.data.root.site.name : options.data.root.site.name;
+    return (title) ? title + ' | ' + file.site.name : file.site.name;
 };
 
 module.exports = head_title;
