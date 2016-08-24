@@ -56,18 +56,19 @@ var list_from_field = function (options) {
     return function (files, metalsmith, done) {
         var files_source = metalsmith.source();
         // Check options fits schema
-        schema.validate(options, function (err, value) {
-            /* eslint consistent-return: 0 */
+        var schema_err;
+        schema.validate(options, {allowUnknown: true}, function (err, value) {
             if (err) {
                 error('Validation failed, %o', err.details[0].message);
-                return done(err);
+                schema_err = err;
             }
             // Convert to array if it's a string
             value.pattern = (typeof value.pattern === 'string') ? [value.pattern] : value.pattern;
             options = value;
         });
-        // error('Options: %o', options);
-
+        if (schema_err) {
+            return done(schema_err);
+        }
 
         Object.keys(files).forEach(function (filepath) {
             debug('Filepath: %s', filepath);
@@ -78,7 +79,7 @@ var list_from_field = function (options) {
             }
         });
 
-        done();
+        return done();
     };
 };
 
