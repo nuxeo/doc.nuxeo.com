@@ -38,6 +38,7 @@
     "metalsmith-permalinks": "^0.5.0",
     "moment": "^2.14.1",
     "multimatch": "^2.1.0",
+    "multisort": "^0.5.3",
     "node-yaml-config": "0.0.4",
     "request": "^2.74.0",
     "slug": "^0.9.1",

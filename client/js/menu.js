@@ -12,6 +12,7 @@ module.exports = function ($) {
 
     var $side_menu = $('#side-menu');
     var space = $side_menu.attr('data-space');
+    var display_children_only = (space.substr(-5) === 'nxdoc');
     var breadcrumbs = $('.breadcrumb a').map(function (index, element) {
         // Ignore first item (Home)
         return (index) ? $(element).text() : void 0;
@@ -49,7 +50,7 @@ module.exports = function ($) {
             set_toggled(data, breadcrumbs.shift());
 
             // Get first child of root
-            if (data && data.children) {
+            if (data && data.children && display_children_only) {
                 data.children.forEach(function (node) {
                     if (node.toggled) {
                         data = node;
