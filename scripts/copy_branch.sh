@@ -11,7 +11,7 @@ if [ -d $REPO_DIR -a ! -L $REPO_DIR ]; then
     git checkout -f origin/$BRANCH;
     popd;
     mkdir -p $TARGET_DIR;
-    rsync -av --exclude=".*" $REPO_DIR $TARGET_DIR;
+    rsync -a --exclude=".*" $REPO_DIR $TARGET_DIR;
 else
     exit 1;
 fi

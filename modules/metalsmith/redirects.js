@@ -49,7 +49,7 @@ var file_contents_preprocess = function () {
                 error('Problem encoding to YAML or writing file: %s', e);
                 return done(new Error('YAML Conversion Failed with: ' + e + '\n\nredirects: ' + util.inspect(redirects, { showHidden: true, depth: null })));
             }
-            return done(void 0);
+            return done();
         };
 
         // Get exisiting redirects
@@ -92,6 +92,26 @@ var file_contents_preprocess = function () {
                 }
                 else {
                     redirects['^/x/' + file.confluence.shortlink] = file.url.full;
+                }
+            }
+
+            // /pages/viewpage.action?pageId=28475451
+            if (file.confluence && file.confluence.page_id) {
+                if (redirect_url) {
+                    redirects['^/pages/viewpage.action?pageId=' + file.confluence.page_id] = redirect_url;
+                }
+                else {
+                    redirects['^/pages/viewpage.action?pageId=' + file.confluence.page_id] = file.url.full;
+                }
+            }
+
+            // /pages/viewpage.action?pageId=28475451
+            if (file.confluence && file.confluence.source_link) {
+                if (redirect_url) {
+                    redirects['^' + file.confluence.source_link] = redirect_url;
+                }
+                else {
+                    redirects['^' + file.confluence.source_link] = file.url.full;
                 }
             }
 

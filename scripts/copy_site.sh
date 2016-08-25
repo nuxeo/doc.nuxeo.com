@@ -17,9 +17,9 @@ fi
 
 if [ -d $SOURCE_SITE -a ! -L $SOURCE_SITE ]; then
     mkdir -p $TARGET_BASE;
-    rsync -av $SOURCE_SITE $TARGET_BASE;
+    rsync -a $SOURCE_SITE $TARGET_BASE;
     mkdir -p $TARGET_BASE_ASSETS;
-    rsync -av $SOURCE_ASSETS $TARGET_BASE_ASSETS;
+    rsync -a $SOURCE_ASSETS $TARGET_BASE_ASSETS;
 else
     exit 1;
 fi

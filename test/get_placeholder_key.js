@@ -94,7 +94,7 @@ test('get_placeholder_key returns values as expected', function (assert) {
     ];
 
 
-    string_tests.map(function (string_test) {
+    string_tests.forEach(function (string_test) {
         var actual = get_placeholder_key(string_test.test, string_test.fallback || fallback_values);
         assert.isEqual(actual, string_test.expected, string_test.message);
     });
