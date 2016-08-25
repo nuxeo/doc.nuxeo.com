@@ -5,8 +5,9 @@ var error = debug_lib('handlebars-page:error');
 var slug = require('slug');
 slug.defaults.modes.pretty.lower = true;
 
+
 var get_placeholder_key = require('../get_placeholder_key');
-var page_url = function (options) {
+var file_url = function (options) {
     var defaults = options.data.root && options.data.root.url && options.data.root.url.key;
     var version = options.hash && options.hash.version;
     var space = options.hash && options.hash.space;
@@ -51,4 +52,4 @@ var page_url = function (options) {
     return (key) ? '/assets/' + key + '/' + name : '';
 };
 
-module.exports = page_url;
+module.exports = file_url;
