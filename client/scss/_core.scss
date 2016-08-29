@@ -422,19 +422,26 @@ hr.expanded {
 }
 
 #toc_list {
+    overflow-y: auto;
+    height: calc(100vh - 32px);
+
     .active {
         background-color: darken($primary-color, 15%);
     }
+
     .text-left {
         text-align: left;
     }
+
     .h2 a {
         font-weight: bold;
         font-size: .9em;
     }
+
     .h3 {
         // Normal styling
     }
+
     .h4 a {
         font-style: italic;
         font-size: .8em;

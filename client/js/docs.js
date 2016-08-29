@@ -6,24 +6,7 @@ $(document).ready(function () {
     var menu = require('./menu');
 
     // In page TOC
-    (function () {
-        var $content = $('#content');
-        var $toc = $('#toc');
-        var $toc_list = $toc.find('#toc_list');
-        var $toc_list_clone = $toc_list.clone();
-        var $h_tags = $content.filter('.toc').find('h2, h3, h4');
-        if ($toc.length && $h_tags.length) {
-            $h_tags.each(function () {
-                var $this = $(this);
-                var id = $this.attr('id');
-                var title = $this.text();
-
-                $this.attr('data-magellan-target', id);
-                $toc_list_clone.append('<li class="' + $this.prop('tagName').toLowerCase() + '"><a class="button text-left" href="#' + id + '">' + title + '</a></li>');
-            });
-            $toc_list.html($toc_list_clone.html());
-        }
-    }());
+    require('./toc');
 
     $(document).foundation();
 
