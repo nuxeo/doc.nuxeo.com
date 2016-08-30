@@ -1,4 +1,5 @@
 'use strict';
+/* eslint-env es6 */
 
 var debug_lib = require('debug');
 var debug = debug_lib('metalsmith-urls');
@@ -41,9 +42,16 @@ var urls = function (options, add_to_metadata) {
             return done(schema_err);
         }
 
-        var current_version = options.versions.filter(function (version) { return version.is_current_version; })[0];
-        var version_path = current_version.url_path;
-        var version_label = current_version.label;
+        var version_path = '';
+        var version_label = '';
+        if (options.versions) {
+            let current_version = options.versions.filter(version => version.is_current_version);
+            if (current_version && current_version[0]) {
+                current_version = current_version[0];
+                version_path = current_version.url_path;
+                version_label = current_version.label;
+            }
+        }
 
         Object.keys(files).forEach(function (filepath) {
             debug('Filepath: %s', filepath);
@@ -79,12 +87,17 @@ var urls = function (options, add_to_metadata) {
                     file.url.key.space_path = file.url.key.parts.join(path.sep);
 
                     // Get the space_name
-                    var config_space = options.spaces.filter(function (this_space) { return this_space.space_path; });
-                    if (config_space && config_space[0] && config_space[0].space_name) {
-                        file.url.key.space_path = config_space[0].space_name;
+                    if (options.spaces) {
+                        let config_space = options.spaces.filter(this_space => space === this_space.space_path);
+                        if (config_space && config_space[0] && config_space[0].space_name) {
+                            file.url.key.space_path = config_space[0].space_name;
+                        }
+                        else {
+                            error('Missing config for space: "%s"', space);
+                        }
                     }
                     else {
-                        error('Missing config for space: "%s"', space);
+                        error('Missing spaces config: "%s"', space);
                     }
                 }
 
