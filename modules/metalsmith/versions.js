@@ -74,6 +74,7 @@ var urls = function (options) {
                             }
                             catch (e) {
                                 // error('%s; Title: "%s"', e.message, file.title);
+                                version_item.no_page = true;
                                 version_item.url = '/' + version_key;
                             }
                             file.url.versions.push(version_item);

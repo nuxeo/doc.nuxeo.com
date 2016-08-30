@@ -1,7 +1,9 @@
 {{#if url.versions}}
     <div class="float-right small button-group">
     {{#each url.versions}}
-        <a href="{{this.url}}" class="button nuxeo-space-right-tiny {{#unless this.is_current_version}}hollow{{/unless}}">{{this.label}}</a>
+        {{#unless this.no_page}}
+            <a href="{{this.url}}" class="button nuxeo-space-right-tiny {{#unless this.is_current_version}}hollow{{/unless}}">{{this.label}}</a>
+        {{/unless}}
     {{/each}}
     </div>
 {{/if}}
