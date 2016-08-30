@@ -15,6 +15,10 @@ var schema = Joi.object().keys({
         is_current_version: Joi.bool().optional().default(false),
         url_path          : Joi.string().optional().default('')
     })),
+    spaces: Joi.array().optional().items(Joi.object().keys({
+        space_path: Joi.string().required(),
+        space_name: Joi.string().required()
+    })),
     file_pattern: Joi.array().items(Joi.string()).optional().default(['**/*.md', '**/*.html'])
 });
 
@@ -37,12 +41,9 @@ var urls = function (options, add_to_metadata) {
             return done(schema_err);
         }
 
-        var version_path = '';
-        if (options.versions && options.versions.length) {
-            options.versions.forEach(function (version) {
-                version_path = (version.is_current_version) ? version.url_path : version_path;
-            });
-        }
+        var current_version = options.versions.filter(function (version) { return version.is_current_version; })[0];
+        var version_path = current_version.url_path;
+        var version_label = current_version.label;
 
         Object.keys(files).forEach(function (filepath) {
             debug('Filepath: %s', filepath);
@@ -66,6 +67,7 @@ var urls = function (options, add_to_metadata) {
                 // Set the base version path
                 if (version_path) {
                     file.url.key.version = version_path;
+                    file.url.key.version_label = version_label;
                     file.url.key.parts.push(version_path);
                 }
 
@@ -75,7 +77,17 @@ var urls = function (options, add_to_metadata) {
                     file.url.key.space = space;
                     file.url.key.parts.push(space);
                     file.url.key.space_path = file.url.key.parts.join(path.sep);
+
+                    // Get the space_name
+                    var config_space = options.spaces.filter(function (this_space) { return this_space.space_path; });
+                    if (config_space && config_space[0] && config_space[0].space_name) {
+                        file.url.key.space_path = config_space[0].space_name;
+                    }
+                    else {
+                        error('Missing config for space: "%s"', space);
+                    }
                 }
+
 
                 // Set slug path
                 file.slug = file.slug || (file_path_info.name === 'index' ? 'index' : void 0) || (file.title ? slug(file.title) : void 0) || slug(file_path_info.name);
