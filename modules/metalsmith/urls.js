@@ -90,7 +90,7 @@ var urls = function (options, add_to_metadata) {
                     if (options.spaces) {
                         let config_space = options.spaces.filter(this_space => space === this_space.space_path);
                         if (config_space && config_space[0] && config_space[0].space_name) {
-                            file.url.key.space_path = config_space[0].space_name;
+                            file.url.key.space_name = config_space[0].space_name;
                         }
                         else {
                             error('Missing config for space: "%s"', space);
