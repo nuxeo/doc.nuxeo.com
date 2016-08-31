@@ -45,3 +45,5 @@ npm-debug.log.*
 redirects.txt
 redirects.yml
 
+# Generated editor.json
+editor.json

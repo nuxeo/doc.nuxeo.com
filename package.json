@@ -42,6 +42,7 @@
     "multimatch": "^2.1.0",
     "multisort": "^0.5.3",
     "node-yaml-config": "0.0.4",
+    "recursive-readdir": "^2.0.0",
     "request": "^2.74.0",
     "sitemap": "^1.8.1",
     "slug": "^0.9.1",

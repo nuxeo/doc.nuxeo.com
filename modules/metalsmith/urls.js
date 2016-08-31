@@ -144,6 +144,9 @@ var urls = function (options, add_to_metadata) {
                         metadata.pages[file.url.key.full] = {
                             title      : file.title,
                             url        : file.url.full,
+                            id         : file.slug,
+                            space      : file.url.key.space,
+                            version    : file.url.key.version,
                             is_redirect: !!(file.redirect || file.redirect_source)
                         };
                     }

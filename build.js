@@ -98,7 +98,18 @@ co(function *() {
     pre_build_result.forEach(function (data) {
         extend(metadata, data);
     });
-    debug(metadata);
+    debug('metadata keys: %o', Object.keys(metadata));
+
+    // Create Flat JSON list of files and assets
+    var flat_json = Object.keys(metadata.pages).filter(page_path => !metadata.pages[page_path].is_redirect).map(page_path => metadata.pages[page_path]);
+    flat_json = flat_json.concat(Object.keys(metadata.assets).map(asset_path => metadata.assets[asset_path]));
+
+    writeFile(path.join(__dirname, 'editor.json'), JSON.stringify(flat_json))
+    .then(() => info('Created `editor.json`'))
+    .catch(err => {
+        error('There was an issue creating `editor.json`');
+        throw err;
+    });
 
     const build = [];
     for (let i = 0; i < branches.length; i++) {
@@ -119,7 +130,7 @@ co(function *() {
             const sitemap_files = multimatch(files, 'sitemap*.xml');
             sitemap_files.reverse();
             debug('sitemap files: %o', sitemap_files);
-            return writeFile('./site/sitemap.xml', sitemap.buildSitemapIndex({
+            return writeFile(path.join(__dirname, 'site/sitemap.xml'), sitemap.buildSitemapIndex({
                 urls: sitemap_files
             }));
         }
