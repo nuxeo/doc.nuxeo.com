@@ -1,5 +1,4 @@
 'use strict';
-
 /* eslint-env es6 */
 
 // Assume production if not set
@@ -13,42 +12,50 @@ if (!process.env.DEBUG) {
 }
 
 // Debugging
-var debug_lib = require('debug');
-var debug = debug_lib('nuxeo-build-all');
-var info = debug_lib('nuxeo-build-all:info');
-var error = debug_lib('nuxeo-build-all:error');
+const debug_lib = require('debug');
+const debug = debug_lib('nuxeo-build-all');
+const info = debug_lib('nuxeo-build-all:info');
+const error = debug_lib('nuxeo-build-all:error');
 
 // npm packages
-var Promise = require('bluebird');
-var co = require('co');
-var exec = Promise.promisify(require('child_process').exec);
-var yaml_config = require('node-yaml-config');
-var path = require('path');
-var extend = require('lodash.defaultsdeep');
+const Promise = require('bluebird');
+const co = require('co');
+const extend = require('lodash.defaultsdeep');
+const fs = require('fs');
+const multimatch = require('multimatch');
+const path = require('path');
+const sitemap = require('sitemap');
+const yaml_config = require('node-yaml-config');
+
+// Promisified
+const exec = Promise.promisify(require('child_process').exec);
+const readdir = Promise.promisify(fs.readdir);
+const writeFile = Promise.promisify(fs.writeFile);
+
 
 // local packages
-var builder_lib = require('./lib/builder_module');
-var pre_builder = builder_lib.pre_builder;
-var builder = builder_lib.builder;
+const builder_lib = require('./lib/builder_module');
+const pre_builder = builder_lib.pre_builder;
+const builder = builder_lib.builder;
 
-var metadata = {};
+const metadata = {};
 
 // helper functions
-var run_command = function (command) {
+const run_command = function (command) {
     debug(command);
     return exec(command);
 };
-var debug_results = function (results) {
+const debug_results = function (results) {
     results.forEach(function (result) {
         debug(result);
     });
 };
 
-var get_repo_branches = function (config) {
-    var repo_branches = [];
+const get_repo_branches = function (config) {
+    const repo_branches = [];
     Object.keys(config.repositories).forEach(function (repo_id) {
-        var repo = config.repositories[repo_id];
-        var target_base = './temp/';
+        const repo = config.repositories[repo_id];
+        const target_base = './temp/';
         repo.branches.forEach(function (branch) {
             info('Adding - repo: %s, branch: %s', repo_id, branch);
             repo_branches.push({
@@ -63,48 +70,64 @@ var get_repo_branches = function (config) {
 };
 
 
-var config = yaml_config.load(path.join(__dirname, './config.yml'));
-var branches = get_repo_branches(config);
+const config = yaml_config.load(path.join(__dirname, './config.yml'));
+const branches = get_repo_branches(config);
 debug('branches: %o', branches);
 
 co(function *() {
     // initalise repositories
-    var commands = [];
+    const commands = [];
     Object.keys(config.repositories).forEach(function (repo_id) {
         info('Getting latest content - repo: %s', repo_id);
-        var repo = config.repositories[repo_id];
+        const repo = config.repositories[repo_id];
         commands.push(run_command('./scripts/initialise_repo.sh ' + repo_id + ' "' + repo.url + '"'));
     });
-    var results = yield commands;
+    const results = yield commands;
     debug_results(results);
 
     // Copy Branches
-    var pre_build = [];
-    for (var i = 0; i < branches.length; i++) {
+    const pre_build = [];
+    for (let i = 0; i < branches.length; i++) {
         info('Copying - repo: %s, branch: %s', branches[i].repo_id, branches[i].branch);
         yield run_command('./scripts/copy_branch.sh ' + branches[i].repo_id + ' ' + branches[i].branch);
         info('Preparing Pre-Build - repo: %s, branch: %s', branches[i].repo_id, branches[i].branch);
         pre_build.push(pre_builder(branches[i].target_source_path));
     }
     // Pre-build
-    var pre_build_result = yield pre_build;
+    const pre_build_result = yield pre_build;
     pre_build_result.forEach(function (data) {
         extend(metadata, data);
     });
     debug(metadata);
 
-    var build = [];
-    for (i = 0; i < branches.length; i++) {
+    const build = [];
+    for (let i = 0; i < branches.length; i++) {
         info('Preparing Build - repo: %s, branch: %s', branches[i].repo_id, branches[i].branch);
-        build.push(builder(branches[i].target_source_path, metadata, branches[i].target_build_path));
+        build.push(builder(branches[i].target_source_path, metadata, branches[i].target_build_path, branches[i].repo_id));
         // yield builder(branches[i].target_source_path, metadata, branches[i].target_build_path);
     }
     yield build;
 
-    for (i = 0; i < branches.length; i++) {
+    for (let i = 0; i < branches.length; i++) {
         info('Copying Site - repo: %s, branch: %s', branches[i].repo_id, branches[i].branch);
         yield run_command('./scripts/copy_site.sh ' + branches[i].repo_id + ' ' + branches[i].branch);
     }
+
+    // Add sitemap index
+    readdir('./site/').then(
+        files => {
+            const sitemap_files = multimatch(files, 'sitemap*.xml');
+            sitemap_files.reverse();
+            debug('sitemap files: %o', sitemap_files);
+            return writeFile('./site/sitemap.xml', sitemap.buildSitemapIndex({
+                urls: sitemap_files
+            }));
+        }
+    ).then(() => info('Saved `sitemap.xml` index'))
+    .catch(err => {
+        error('There was an issue creating `sitemap.xml`');
+        throw err;
+    });
 
 }).catch(function (err) {
     error(err);
