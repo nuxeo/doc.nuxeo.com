@@ -19,12 +19,13 @@ const schema = Joi.object().keys({
     path_prefix: Joi.string().optional().allow('').default('')
 });
 
-const get_metadata = function (options) {
+const get_assets = function (options) {
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
         var metadata = metalsmith.metadata();
         metadata.assets = metadata.assets || {};
 
+        error('path_prefix: %s', options.path_prefix);
         // Check options fits schema
         var schema_err;
         schema.validate(options, {allowUnknown: true}, function (err, value) {
@@ -59,8 +60,9 @@ const get_metadata = function (options) {
                     error('Duplicate key found: "%s"', asset_filename);
                 }
                 else {
-                    metadata.assets[asset_filename] = {
-                        url    : path.sep + path.join(options.path_prefix, asset_filename),
+                    let filename = path.join(options.path_prefix, asset_filename);
+                    metadata.assets[filename] = {
+                        url    : path.sep + filename,
                         id     : asset_info.base,
                         version: options.path_prefix,
                         space,
@@ -75,4 +77,4 @@ const get_metadata = function (options) {
     };
 };
 
-module.exports = get_metadata;
+module.exports = get_assets;

@@ -8,11 +8,14 @@ slug.defaults.modes.pretty.lower = true;
 
 var get_placeholder_key = require('../get_placeholder_key');
 var file_url = function (options) {
-    var defaults = options.data.root && options.data.root.url && options.data.root.url.key;
-    var version = options.hash && options.hash.version;
-    var space = options.hash && options.hash.space;
-    var page = options.hash && options.hash.page || '';
-    var name = options.hash && options.hash.name || '';
+    var file = options.data.root;
+    var hash = options.hash || {};
+    var defaults = file && file.url && file.url.key;
+    var version = hash.version;
+    var space = hash.space;
+    var page = hash.page || '';
+    var name = hash.name || '';
+    var assets = file.assets;
     var raw_page_name = '';
 
     // version and space
@@ -32,7 +35,6 @@ var file_url = function (options) {
         }
     }
 
-    // Strip # from page
     var key = '';
     if (defaults && name) {
         key = get_placeholder_key(raw_page_name, defaults);
@@ -48,7 +50,17 @@ var file_url = function (options) {
             error('file.url.key not present. page: "%s", defaults: %o', options.hash.page, defaults);
         }
     }
-    // TODO: Check file exists - add all assets to metadata in pre-build and check
+
+    if (assets) {
+        // Check file exists in assets object
+        if (!assets[[key, name].join('/')]) {
+            error('Asset not located: "%s/%s"', key, name);
+        }
+    }
+    else {
+        error('Assets object is empty');
+    }
+
     return (key) ? '/assets/' + key + '/' + name : '';
 };
 

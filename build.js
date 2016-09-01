@@ -1,5 +1,6 @@
 'use strict';
 /* eslint-env es6 */
+/* eslint no-console: 0 */
 
 // Assume production if not set
 if (!process.env.NODE_ENV) {
@@ -40,6 +41,12 @@ const builder = builder_lib.builder;
 
 const metadata = {};
 
+const scripts = {
+    initialise_repo: path.join(__dirname, 'scripts/initialise_repo.sh'),
+    copy_branch    : path.join(__dirname, 'scripts/copy_branch.sh'),
+    copy_site      : path.join(__dirname, 'scripts/copy_site.sh')
+};
+
 // helper functions
 const run_command = function (command) {
     debug(command);
@@ -55,12 +62,12 @@ const get_repo_branches = function (config) {
     const repo_branches = [];
     Object.keys(config.repositories).forEach(function (repo_id) {
         const repo = config.repositories[repo_id];
-        const target_base = './temp/';
+        const target_base = path.join(__dirname, 'temp');
         repo.branches.forEach(function (branch) {
             info('Adding - repo: %s, branch: %s', repo_id, branch);
             repo_branches.push({
-                target_source_path: target_base + repo_id + '/' + branch + '/src/',
-                target_build_path : target_base + repo_id + '/' + branch + '/site/',
+                target_source_path: path.join(target_base, repo_id, branch, 'src'),
+                target_build_path : path.join(target_base, repo_id, branch, 'site'),
                 repo_id           : repo_id,
                 branch            : branch
             });
@@ -70,17 +77,19 @@ const get_repo_branches = function (config) {
 };
 
 
-const config = yaml_config.load(path.join(__dirname, './config.yml'));
+const config = yaml_config.load(path.join(__dirname, 'config.yml'));
 const branches = get_repo_branches(config);
 debug('branches: %o', branches);
 
 co(function *() {
+    console.time('full-build');
     // initalise repositories
     const commands = [];
     Object.keys(config.repositories).forEach(function (repo_id) {
         info('Getting latest content - repo: %s', repo_id);
         const repo = config.repositories[repo_id];
-        commands.push(run_command('./scripts/initialise_repo.sh ' + repo_id + ' "' + repo.url + '"'));
+
+        commands.push(run_command(`${scripts.initialise_repo} ${repo_id} "${repo.url}"`));
     });
     const results = yield commands;
     debug_results(results);
@@ -89,12 +98,14 @@ co(function *() {
     const pre_build = [];
     for (let i = 0; i < branches.length; i++) {
         info('Copying - repo: %s, branch: %s', branches[i].repo_id, branches[i].branch);
-        yield run_command('./scripts/copy_branch.sh ' + branches[i].repo_id + ' ' + branches[i].branch);
+        yield run_command(`${scripts.copy_branch} ${branches[i].repo_id} ${branches[i].branch}`);
         info('Preparing Pre-Build - repo: %s, branch: %s', branches[i].repo_id, branches[i].branch);
         pre_build.push(pre_builder(branches[i].target_source_path));
     }
     // Pre-build
+    console.time('prebuild');
     const pre_build_result = yield pre_build;
+    console.timeEnd('prebuild');
     pre_build_result.forEach(function (data) {
         extend(metadata, data);
     });
@@ -117,15 +128,17 @@ co(function *() {
         build.push(builder(branches[i].target_source_path, metadata, branches[i].target_build_path, branches[i].repo_id));
         // yield builder(branches[i].target_source_path, metadata, branches[i].target_build_path);
     }
+    console.time('build');
     yield build;
+    console.timeEnd('build');
 
     for (let i = 0; i < branches.length; i++) {
         info('Copying Site - repo: %s, branch: %s', branches[i].repo_id, branches[i].branch);
-        yield run_command('./scripts/copy_site.sh ' + branches[i].repo_id + ' ' + branches[i].branch);
+        yield run_command(`${scripts.copy_site} ${branches[i].repo_id} ${branches[i].branch}`);
     }
 
     // Add sitemap index
-    readdir('./site/').then(
+    readdir(path.join(__dirname, 'site')).then(
         files => {
             const sitemap_files = multimatch(files, 'sitemap*.xml');
             sitemap_files.reverse();
@@ -139,6 +152,7 @@ co(function *() {
         error('There was an issue creating `sitemap.xml`');
         throw err;
     });
+    console.timeEnd('full-build');
 
 }).catch(function (err) {
     error(err);

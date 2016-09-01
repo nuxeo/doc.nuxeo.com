@@ -14,5 +14,8 @@ module.exports = function (key, pages) {
     else if (!pages[key].url || !pages[key].url) {
         throw new Error(`Key: "${key}" doesn't have url set`);
     }
+    else if (pages[key].is_redirect) {
+        throw new Error(`Key: "${key}" is a redirect`);
+    }
     return pages[key].url;
 };
