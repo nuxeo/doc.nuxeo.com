@@ -4,7 +4,7 @@
 // Debugging
 const module_name = 'metalsmith-emojione';
 const debug_lib = require('debug');
-// const debug = debug_lib(module_name);
+const debug = debug_lib(module_name);
 // const info = debug_lib(`${module_name}:info`);
 const error = debug_lib(`${module_name}:error`);
 
@@ -36,7 +36,7 @@ const process_emojione = function (options) {
         if (schema_err) {
             return done(schema_err);
         }
-        error('Options: %o', options);
+        debug('Options: %o', options);
 
         multimatch(Object.keys(files), options.pattern)
         .forEach(filename => {
@@ -55,7 +55,7 @@ const process_emojione = function (options) {
             }
 
             if (contents !== contents_emoji && contents_emoji) {
-                error('Updating: %s', filename);
+                debug('Updating with emojione: %s', filename);
                 file.contents = new Buffer(contents_emoji);
             }
         });
