@@ -6,6 +6,9 @@ $(document).ready(function () {
     var menu = require('./menu');
 
     // In page TOC
+    require('./tabbed');
+
+    // In page TOC
     require('./toc');
 
     $(document).foundation();

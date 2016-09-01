@@ -20,6 +20,7 @@ var list_item_number = 0;
 var viewport_height;
 var toc_active_position;
 
+// Initialise toc
 if ($toc.length && $h_tags.length) {
     $h_tags.each(function () {
         /* eslint no-invalid-this: 0 */
