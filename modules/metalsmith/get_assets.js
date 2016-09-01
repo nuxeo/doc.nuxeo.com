@@ -22,13 +22,13 @@ const schema = Joi.object().keys({
 const get_assets = function (options) {
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
-        var metadata = metalsmith.metadata();
+        const metadata = metalsmith.metadata();
         metadata.assets = metadata.assets || {};
 
         error('path_prefix: %s', options.path_prefix);
         // Check options fits schema
-        var schema_err;
-        schema.validate(options, {allowUnknown: true}, function (err, value) {
+        let schema_err;
+        schema.validate(options, function (err, value) {
             if (err) {
                 error('Validation failed, %o', err.details[0].message);
                 schema_err = err;
