@@ -4,38 +4,25 @@
 // var throttle = require('lodash.throttle');
 var throttle = require('lodash.throttle');
 
+var initialise_toc = require('./modules/initialise_toc');
+
 var $window = $(window);
 var $document = $(document);
 var $content = $('#content');
 var $toc = $('#toc');
 var $toc_list = $('#toc_list');
 
-var $toc_list_clone = $toc_list.clone();
 var $h_tags = $content.filter('.toc').find('h2, h3, h4');
 var $toc_nav = $toc.find('nav');
 
 var margin = 16;
-var list_item_number = 0;
 
 var viewport_height;
 var toc_active_position;
 
 // Initialise toc
 if ($toc.length && $h_tags.length) {
-    $h_tags.each(function () {
-        /* eslint no-invalid-this: 0 */
-        list_item_number++;
-        var list_item_id = 'toc_li_' + list_item_number;
-        var $this = $(this);
-        var id = $this.attr('id');
-        var title = $this.text();
-        var classes = $this.prop('tagName').toLowerCase();
-        var style = (classes !== 'h2') ? 'style="display: none;"' : '';
-
-        $this.attr('data-magellan-target', id);
-        $toc_list_clone.append('<li id="' + list_item_id + '" class="' + classes + '" ' + style + '><a class="button text-left" href="#' + id + '">' + title + '</a></li>');
-    });
-    $toc_list.html($toc_list_clone.html());
+    initialise_toc();
 
     $window.on('resize', function () {
         viewport_height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
@@ -76,65 +63,70 @@ if ($toc.length && $h_tags.length) {
     // On magellan (scroll-spy) change ensure current item is visible.
     $toc_list.on('update.zf.magellan', throttle(function () {
         var $active_li = $toc_list.find('.active').closest('li');
-        var active_position = $active_li.position().top;
+        if ($active_li.length) {
+            var active_position = $active_li.position().top;
 
-        if (toc_active_position !== active_position) {
-            var active_id = $active_li.attr('id');
-            var $lis = $toc_list.find('li');
-            var current_lis = [];
-            var found_active = false;
-            var all_found = false;
-            // Find closest h2 and children of active
-            $lis.each(function () {
-                var $this = $(this);
-                var is_h2 = $this.hasClass('h2');
-                if (!all_found) {
-                    if (!found_active) {
-                        if (is_h2) {
-                            current_lis = [];
+            if (toc_active_position !== active_position) {
+                var keep_expanded = $toc_list.hasClass('keep-expanded');
+                var active_id = $active_li.attr('id');
+                if (!keep_expanded) {
+                    var $lis = $toc_list.find('li');
+                    var current_lis = [];
+                    var found_active = false;
+                    var all_found = false;
+                    // Find closest h2 and children of active
+                    $lis.each(function () {
+                        /* eslint no-invalid-this: 0 */
+                        var $this = $(this);
+                        var is_h2 = $this.hasClass('h2');
+                        if (!all_found) {
+                            if (!found_active) {
+                                if (is_h2) {
+                                    current_lis = [];
+                                }
+                                if (active_id === $this.attr('id')) {
+                                    found_active = true;
+                                }
+                            }
+                            else {
+                                if (is_h2) {
+                                    all_found = true;
+                                }
+                            }
+                            if (!all_found && !is_h2) {
+                                current_lis.push($this.attr('id'));
+                            }
                         }
-                        if (active_id === $this.attr('id')) {
-                            found_active = true;
-                        }
+                    });
+
+                    if (current_lis.length) {
+                        var expand_selector = '#' + current_lis.join(', #');
+                        $toc_list.find('.h3, .h4').not(expand_selector).slideUp();
+                        $toc_list.find(expand_selector).slideDown();
                     }
                     else {
-                        if (is_h2) {
-                            all_found = true;
-                        }
-                    }
-                    if (!all_found && !is_h2) {
-                        current_lis.push($this.attr('id'));
+                        $toc_list.find('.h3, .h4').slideUp();
                     }
                 }
-            });
 
-            if (current_lis.length) {
-                var expand_selector = '#' + current_lis.join(', #');
-                $toc_list.find('.h3, .h4').not(expand_selector).slideUp();
-                $toc_list.find(expand_selector).slideDown();
+                // Total height of list within scroll area
+                // var list_height = $toc_list[0].scrollHeight;
+                var scroll_position = $toc_list.scrollTop();
+                toc_active_position = active_position;
+                // 20% of visible height
+                var one_fifth_height = $toc_list.height() / 5;
+                // console.log('list_height:', list_height);
+                // console.log('active_position:', active_position);
+                // console.log('scroll_position:', $toc_list.scrollTop());
+
+                // Scroll to display the current item (20% from top if possible)
+                var position = (scroll_position + active_position - one_fifth_height);
+                position = (position < 0) ? 0 : position;
+                // console.log('list_position:', position);
+                $toc_list.animate({
+                    scrollTop: position
+                }, 500);
             }
-            else {
-                $toc_list.find('.h3, .h4').slideUp();
-            }
-
-
-            // Total height of list within scroll area
-            // var list_height = $toc_list[0].scrollHeight;
-            var scroll_position = $toc_list.scrollTop();
-            toc_active_position = active_position;
-            // 20% of visible height
-            var one_fifth_height = $toc_list.height() / 5;
-            // console.log('list_height:', list_height);
-            // console.log('active_position:', active_position);
-            // console.log('scroll_position:', $toc_list.scrollTop());
-
-            // Scroll to display the current item (20% from top if possible)
-            var position = (scroll_position + active_position - one_fifth_height);
-            position = (position < 0) ? 0 : position;
-            // console.log('list_position:', position);
-            $toc_list.animate({
-                scrollTop: position
-            }, 500);
         }
     }, 200));
 }

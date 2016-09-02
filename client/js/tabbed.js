@@ -1,9 +1,10 @@
 'use strict';
 /* eslint-env browser, jquery */
 
+var initialise_toc = require('./modules/initialise_toc');
 var $content = $('#content');
 
-if ($content.has('tabbed')) {
+if ($content.hasClass('tabbed')) {
     var $content_clone = $content.clone();
     var $sections = $content_clone.find('> *');
     var $tabs;
@@ -52,4 +53,8 @@ if ($content.has('tabbed')) {
 
     // Replace the $content with the cloned version.
     $content.replaceWith($content_clone);
+
+    $tabs.on('change.zf.tabs', function () {
+        initialise_toc();
+    });
 }
