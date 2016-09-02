@@ -9,6 +9,10 @@ default:
         # For RSS feeds
         title: 'Nuxeo Documentation'
         author: 'Nuxeo'
+        review_messages:
+            overdue: This article needs reviewing
+            invalid_date: Invalid Review Date
+            not_set: Review Date Not Set
     page_defaults:
         -
             pattern: "**/*.{md,html}"

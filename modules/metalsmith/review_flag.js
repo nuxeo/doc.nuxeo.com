@@ -1,18 +1,44 @@
 'use strict';
 /* eslint-env es6 */
 
+// Debugging
+const module_name = 'metalsmith-review-flag';
 const debug_lib = require('debug');
-const debug = debug_lib('metalsmith-lts-review-flag');
-const error = debug_lib('metalsmith-lts-review-flag:error');
+const debug = debug_lib(module_name);
+const info = debug_lib(`${module_name}:info`);
+const error = debug_lib(`${module_name}:error`);
 
+// npm packages
 const moment = require('moment');
 
+// functions
+const needs_review = function (file, comment, status = 'not-ok') {
+    debug('needs_review - comment: "%s", file: "%s"', comment, file.title);
+    file.review = file.review || {};
+    file.review.status = status;
+    file.review.comment = (file.review.comment) ? file.review.comment + '\n\n' + comment : comment;
+};
 
-const lts_review = function () {
+// plugin
+const review_flag = function () {
     return function (files, metalsmith, done) {
         const metadata = metalsmith.metadata();
+        const review_messages = metadata.site.review_messages;
+
+        if (!review_messages) {
+            error('Review messages not set in `config.yml`');
+            return done(new Error('Review messages not set in `config.yml`'));
+        }
 
         if (metadata.site.review_period) {
+            let review_point = moment().startOf('day');
+            if (metadata.site.review_release_date) {
+                review_point = moment(metadata.site.review_release_date, 'YYYY-MM-DD');
+                if (!review_point.isValid()) {
+                    error('Review release date is not a valid date (YYYY-MM-DD). %s', metadata.site.review_release_date);
+                    return done(new Error('Review release date is not a valid date'));
+                }
+            }
             let review_period_split = metadata.site.review_period.split(' ');
             if (review_period_split.length === 2) {
                 let review_period = moment.duration(+review_period_split[0], review_period_split[1]);
@@ -21,23 +47,25 @@ const lts_review = function () {
                     Object.keys(files).forEach(function (filepath) {
                         debug('Filepath: %s', filepath);
                         let file = files[filepath];
-                        let needs_review = true;
 
-                        if (file.history && file.history[0] && file.history[0].date) {
-                            let most_recent_commit = moment('file.history[0].date', 'YYYY-MM-DD HH:mm');
-                            if (most_recent_commit.isValid()) {
-
-                                // Expired if (latest commit + review period) is after today
-                                needs_review = moment().isAfter(most_recent_commit.add(review_period));
+                        if (file.review && file.review.date) {
+                            let review_date = moment(file.review.date, 'YYYY-MM-DD');
+                            if (review_date.isValid()) {
+                                let within_review_period = review_date.add(review_period).isAfter(review_point);
+                                if (!within_review_period) {
+                                    // Invalid Review Date
+                                    needs_review(file, review_messages.overdue);
+                                }
                             }
                             else {
-                                error('Most recent commit date could not be parsed: %s, file: %s', file.history[0].date, filepath);
+                                // Invalid Review Date
+                                needs_review(file, review_messages.invalid_date);
                             }
                         }
                         else {
-                            error('History could not be found: %s', filepath);
+                            // Review date not set.
+                            needs_review(file, review_messages.not_set);
                         }
-                        file.needs_review = needs_review;
                     });
                 }
                 else {
@@ -50,10 +78,13 @@ const lts_review = function () {
                 return done(new Error('Review period in incorrect form'));
             }
         }
+        else {
+            info('No review period set');
+        }
 
         return done();
     };
 };
 
-// No initialisation required
-module.exports = lts_review();
+
+module.exports = review_flag;

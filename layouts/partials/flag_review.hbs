@@ -1,5 +1,5 @@
-{{#if needs_review}}
-    <div class="callout warning nuxeo">
-        <i class="fa fa-exclamation-triangle"></i> This article needs reviewing
+{{#if (condition review.status '&&' (condition review.status '!==' 'ok'))}}
+    <div class="callout {{#if (condition review.status '===' 'requiresUpdates')}}info{{else}}warning{{/if}} nuxeo">
+        <i class="fa fa-{{#if (condition review.status '===' 'requiresUpdates')}}info-circle{{else}}exclamation-triangle{{/if}}"></i> {{{md review.comment}}}
     </div>
 {{/if}}

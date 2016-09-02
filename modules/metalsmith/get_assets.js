@@ -25,7 +25,7 @@ const get_assets = function (options) {
         const metadata = metalsmith.metadata();
         metadata.assets = metadata.assets || {};
 
-        error('path_prefix: %s', options.path_prefix);
+        debug('path_prefix: %s', options.path_prefix);
         // Check options fits schema
         let schema_err;
         schema.validate(options, function (err, value) {
