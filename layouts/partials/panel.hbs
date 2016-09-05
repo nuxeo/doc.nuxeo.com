@@ -1,2 +1,2 @@
-<div class="callout {{type}}" {{#if match_height}}data-equalizer-watch{{/if}}>{{#if heading}}<div class="title">{{heading}}</div>{{/if}}{{#md}}{{> @partial-block }}{{/md}}
+<div class="callout {{type}}" {{#if match_height}}data-equalizer-watch{{/if}}>{{#if heading}}<div class="title">{{heading}}</div>{{/if}}{{#if no_markdown}}{{> @partial-block }}{{else}}{{#md}}{{> @partial-block }}{{/md}}{{/if}}
 </div>
