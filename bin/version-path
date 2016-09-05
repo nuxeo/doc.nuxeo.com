@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+'use strict';
+/* eslint-env es6 */
+/* eslint no-console: 0 */
+
+const current_version = require('../modules/current_version');
+const version_path = current_version(process.cwd());
+console.log(version_path ? version_path + '/' : '');
