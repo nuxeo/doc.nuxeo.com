@@ -42,6 +42,9 @@ default:
             branches:
                 - master
                 - '710'
+                - '60'
+                - '58'
+                - '56'
 
 development:
     isDev: true
