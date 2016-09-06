@@ -29,6 +29,8 @@ Frontmatter | Behaviour
 `tree_item_index: 1` | For ordering the left hirarchical menu. Items are ordered by `tree_item_index` and then alphabetically. For ease of maintaining ordering, using
 
 ## Markdown and Handlebars
+The documentation uses standard [GitHub Flavoured Markdown](https://guides.github.com/features/mastering-markdown/), this documentation explains the added features of using Markdown with Handlebars and some of the helpers and partials we have available.
+
 ### Page links
 For `WebEngine (JAX-RS)`, You can would access it by:
 `{{page page='webengine-jax-rs'}}`
@@ -45,9 +47,20 @@ Single attribute form is also allowed to facilitate the Confluence legacy form.
 `{{page page='70/nxdoc/webengine-jax-rs'}}`
 
 To allow for link definitions from Confluence, the following also work.
-`{{page page='WebEngine (JAX-RS)'}}`
-`{{page page='NXDOC:WebEngine (JAX-RS)'}}`
-`{{page page='NXDOC70:WebEngine (JAX-RS)'}}`
+```
+{{page page='WebEngine (JAX-RS)'}}
+{{page page='NXDOC:WebEngine (JAX-RS)'}}
+{{page page='NXDOC70:WebEngine (JAX-RS)'}}
+```
+_Tip_: See [links with parenthesis](#links-with-parenthesis-mdash-).
+
+#### Links with parenthesis &mdash; ()
+These require us to use the reference style of links:
+```md
+[Link text][link-reference]
+[link-reference]: http://example.com/link(with)parenthesis "Optional title for link"
+```
+
 
 ### File asset linking
 Very similar to the rules of [Page Links](#page-links). To access a file attached to the current page:
