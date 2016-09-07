@@ -2,11 +2,7 @@
 /* eslint-env es6 */
 
 // Debugging
-const module_name = 'metalsmith-review-flag';
-const debug_lib = require('debug');
-const debug = debug_lib(module_name);
-const info = debug_lib(`${module_name}:info`);
-const error = debug_lib(`${module_name}:error`);
+const {debug, info, warn, error} = require('../debugger')('metalsmith-review-flag');
 
 // npm packages
 const moment = require('moment');
@@ -55,15 +51,18 @@ const review_flag = function () {
                                 if (!within_review_period) {
                                     // Invalid Review Date
                                     needs_review(file, review_messages.overdue);
+                                    warn('Review date overdue: %s - %s', file.title, file.review.date);
                                 }
                             }
                             else {
                                 // Invalid Review Date
+                                warn('Review date invalid: %s - %s', file.title, file.review.date);
                                 needs_review(file, review_messages.invalid_date);
                             }
                         }
                         else {
                             // Review date not set.
+                            warn('Review date not set: %s', file.title);
                             needs_review(file, review_messages.not_set);
                         }
                     });

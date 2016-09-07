@@ -1,23 +1,25 @@
 'use strict';
+/* eslint-env es6 */
 
-var debug_lib = require('debug');
-var debug = debug_lib('metalsmith-pages-from_list');
-var error = debug_lib('metalsmith-pages-from_list:error');
-var Joi = require('joi');
-var slug = require('slug');
+// Debugging
+const {debug, warn, error} = require('../debugger')('metalsmith-pages-from-list');
+
+// npm packages
+const Joi = require('joi');
+const slug = require('slug');
 slug.defaults.modes.pretty.lower = true;
 
-var schema = Joi.array().items(Joi.object().keys({
+const schema = Joi.array().items(Joi.object().keys({
     path               : Joi.string().required(),
     list_key           : Joi.string().required(),
     list_index_defaults: Joi.object().optional(),
     defaults           : Joi.object().optional()
 }));
 
-var pages_from_list = function (options) {
+const pages_from_list = function (options) {
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
-        var metadata = metalsmith.metadata();
+        const metadata = metalsmith.metadata();
 
         // Check options fits schema
         schema.validate(options, function (err, value) {
@@ -32,12 +34,12 @@ var pages_from_list = function (options) {
 
         options.forEach(function (option) {
             // Expects an array or object.
-            var keys = metadata.lists && Array.isArray(metadata.lists[option.list_key]) && metadata.lists[option.list_key] || metadata.lists && Object.keys(metadata.lists[option.list_key]) || [];
+            const keys = metadata.lists && Array.isArray(metadata.lists[option.list_key]) && metadata.lists[option.list_key] || metadata.lists && Object.keys(metadata.lists[option.list_key]) || [];
             if (keys) {
                 keys.forEach(function (item) {
-                    var filename = option.path + '/' + slug(item) + '.md';
+                    const filename = option.path + '/' + slug(item) + '.md';
 
-                    var data = Object.assign({}, option.defaults);
+                    const data = Object.assign({}, option.defaults);
                     data.title = data.title || item;
                     data.list_key = option.list_key;
                     data.list_item = item;
@@ -48,10 +50,10 @@ var pages_from_list = function (options) {
                 });
 
                 // Add index file
-                var filename = option.path + '.md';
+                const filename = option.path + '.md';
                 // Clone - necessary to perform pop.
-                var defaults = JSON.parse(JSON.stringify(option.defaults));
-                var data = Object.assign({}, defaults, option.list_index_defaults);
+                const defaults = JSON.parse(JSON.stringify(option.defaults));
+                const data = Object.assign({}, defaults, option.list_index_defaults);
                 // Remove last item - this is the index
                 data.hierarchy.parents.pop();
                 data.title = data.title || option.list_key;
@@ -64,7 +66,7 @@ var pages_from_list = function (options) {
                 debug('Created Index: %s', filename);
             }
             else {
-                error('List key is missing: %s', option.list_key);
+                warn('List key is missing: %s', option.list_key);
             }
         });
 

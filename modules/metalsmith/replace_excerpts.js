@@ -1,12 +1,14 @@
 'use strict';
+/* eslint-env es6 */
 
-var debug_lib = require('debug');
-var debug = debug_lib('metalsmith-replace-excerpts');
-var error = debug_lib('metalsmith-replace-excerpts:error');
+// Debugging
+const {debug, warn, error} = require('../debugger')('metalsmith-replace-excerpts');
 
-var escape_regex = require('escape-string-regexp');
+// npm packages
+const escape_regex = require('escape-string-regexp');
 
-var get_placeholder_key = require('../get_placeholder_key');
+// local packages
+const get_placeholder_key = require('../get_placeholder_key');
 
 
 /**
@@ -15,21 +17,23 @@ var get_placeholder_key = require('../get_placeholder_key');
  * @param {Object} options
  * @return {Function}
 **/
-var replace_placeholder = function (options) {
+const replace_placeholder = function (options) {
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
 
-        var metadata = metalsmith.metadata();
-        var placeholder_re = /\{\{\{?excerpt +['"](.+?)['"] ?\}\}\}?/i;
+        const metadata = metalsmith.metadata();
+        const placeholder_re = /\{\{\{?excerpt +['"](.+?)['"] ?\}\}\}?/i;
 
         Object.keys(files).forEach(function (filepath) {
-            var file = files[filepath];
-            var changed = false;
-            var contents = file.contents.toString();
-            var match;
-            var key;
-            var replacement_re;
-            var safeguard = 999; // Safeguard
+            const file = files[filepath];
+
+            let contents = file.contents.toString();
+            let changed = false;
+            let match;
+            let key;
+            let replacement_re;
+            let safeguard = 999; // Safeguard
+
             while ((match = placeholder_re.exec(contents)) !== null && safeguard) {
                 safeguard--;
                 changed = true;
@@ -42,7 +46,7 @@ var replace_placeholder = function (options) {
                     contents = contents.replace(replacement_re, metadata.excerpts[key]);
                 }
                 else {
-                    error('No replacement found for: %s in "%s"', key, file.title);
+                    warn('No replacement found for: %s in "%s"', key, file.title);
                     contents = contents.replace(replacement_re, '{{! Excerpt replacement failed for: ' + match[1] + ' }}');
                 }
             }

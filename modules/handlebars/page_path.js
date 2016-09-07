@@ -1,24 +1,27 @@
 'use strict';
-var debug_lib = require('debug');
-// var debug = debug_lib('handlebars-page');
-var error = debug_lib('handlebars-page:error');
-var slug = require('slug');
+/* eslint-env es6 */
+
+// Debugging
+const {warn, error} = require('../debugger')('handlebars-page');
+
+// npm packages
+const slug = require('slug');
 slug.defaults.modes.pretty.lower = true;
 
-var get_placeholder_key = require('../get_placeholder_key');
-var key_to_url = require('../key_to_url');
+const get_placeholder_key = require('../get_placeholder_key');
+const key_to_url = require('../key_to_url');
 
-var page_url = function (options) {
-    var file = options.data.root;
-    var defaults = file && file.url && file.url.key;
-    var version = options.hash && options.hash.version;
-    var space = options.hash && options.hash.space;
-    var page = options.hash && options.hash.page || '';
-    var page_hash_split = page.split('#');
+const page_url = function (options) {
+    const file = options.data.root;
+    const defaults = file && file.url && file.url.key;
+    const version = options.hash && options.hash.version;
+    const space = options.hash && options.hash.space;
+    let page = options.hash && options.hash.page || '';
+    const page_hash_split = page.split('#');
     page = page_hash_split.shift();
-    var hash = (page_hash_split.length) ? page_hash_split.join('#') : '';
+    let hash = (page_hash_split.length) ? page_hash_split.join('#') : '';
     hash = (hash) ? '#' + hash : hash;
-    var raw_page_name = '';
+    let raw_page_name = '';
 
     // version and space
     if (version && space && page) {
@@ -38,15 +41,15 @@ var page_url = function (options) {
     }
 
     // Strip # from page
-    var url = '';
+    let url = '';
     if (defaults) {
-        var key = get_placeholder_key(raw_page_name, defaults);
+        const key = get_placeholder_key(raw_page_name, defaults);
 
         try {
             url = key_to_url(key, file.pages);
         }
         catch (e) {
-            error('%s; Title: "%s"', e.message, file.title);
+            warn('Page link not found: %s; Title: "%s"', e.message, file.title);
         }
     }
     else {

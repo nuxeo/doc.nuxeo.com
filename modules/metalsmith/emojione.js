@@ -25,7 +25,7 @@ const process_emojione = function (options) {
     return function (files, metalsmith, done) {
 
         // Check options fits schema
-        var schema_err;
+        let schema_err;
         schema.validate(options, function (err, value) {
             if (err) {
                 error('Validation failed, %o', err.details[0].message);
@@ -40,11 +40,11 @@ const process_emojione = function (options) {
 
         multimatch(Object.keys(files), options.pattern)
         .forEach(filename => {
-            // error('Processing: %s', filename);
+            debug('Processing: %s', filename);
 
             const file = files[filename];
             const contents = file.contents.toString();
-            var contents_emoji;
+            let contents_emoji;
             if (~contents.indexOf(':mm:')) {
                 let contents_mm = contents.replace(/:mm:/g, '^%$£mm^%$£');
                 contents_emoji = emojione.toImage(contents_mm);

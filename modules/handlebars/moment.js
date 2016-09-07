@@ -1,9 +1,12 @@
 'use strict';
-var debug_lib     = require('debug');
-var debug         = debug_lib('handlebars-moment');
-var error         = debug_lib('handlebars-moment:error');
-var moment        = require('moment');
-var clone_deep    = require('lodash.clonedeep');
+/* eslint-env es6 */
+
+// Debugging
+const {debug, error} = require('../debugger')('handlebars-moment');
+
+// npm packages
+const moment        = require('moment');
+const clone_deep    = require('lodash.clonedeep');
 
 
 /**
@@ -15,29 +18,30 @@ var clone_deep    = require('lodash.clonedeep');
  *
  * @returns {Mixed}
  */
-var hb_moment = function (context, block) {
+const hb_moment = function (context, block) {
     // debug('Date passed to moment:', context);
     if (context && context.hash) {
         block = clone_deep(context);
         context = void 0;
     }
-    var output_function_name = void 0;
-    var output_function_paramater = void 0;
-    var input_format = block.hash.input_format || ['YYYY-MM-DD HH:mm', 'YYYY-MM-DD'];
+    const input_format = block.hash.input_format || ['YYYY-MM-DD HH:mm', 'YYYY-MM-DD'];
     debug('Date passed to moment: %s, input_format: %o', context, input_format);
-    var date = (context) ? moment(context, input_format) : moment();
     delete block.hash.input_format;
-    var is_output_function = [
+    const is_output_function = [
         'format',
         'fromNow',
         'calendar',
         'diff'
     ];
 
+    let date = (context) ? moment(context, input_format) : moment();
+    let output_function_name = void 0;
+    let output_function_paramater = void 0;
+
     // Reset the language back to default before doing anything else
     date.locale('en');
 
-    for (var i in block.hash) {
+    for (let i in block.hash) {
         if (block.hash.hasOwnProperty(i)) {
             if (is_output_function.indexOf(i) !== -1) {
                 output_function_name = i;

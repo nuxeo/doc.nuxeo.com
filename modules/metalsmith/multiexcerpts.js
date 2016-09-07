@@ -1,15 +1,17 @@
 'use strict';
+/* eslint-env es6 */
 
-var debug_lib = require('debug');
-var debug = debug_lib('metalsmith-multiexcerpts');
-var error = debug_lib('metalsmith-multiexcerpts:error');
-var Joi = require('joi');
-var slug = require('slug');
+// Debugging
+const {debug, warn, error} = require('../debugger')('metalsmith-multiexcerpts');
+
+// npm packages
+const Joi = require('joi');
+const slug = require('slug');
 slug.defaults.modes.pretty.lower = true;
 
-var open_close_positions = require('../open_close_positions');
+const open_close_positions = require('../open_close_positions');
 
-var schema = Joi.object().keys({
+const schema = Joi.object().keys({
     placeholder: Joi.string().optional().default('multiexcerpt')
 }).default({placeholder: 'multiexcerpt'});
 
@@ -21,7 +23,7 @@ var schema = Joi.object().keys({
  * @return {Function}
 **/
 
-var multiexcerpts = function (options) {
+const multiexcerpts = function (options) {
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
         // Check options fits schema
@@ -34,17 +36,18 @@ var multiexcerpts = function (options) {
             options = value;
         });
 
-        var metadata = metalsmith.metadata();
-        var re_definition = new RegExp('{{! ' + options.placeholder + '( +name=["\'](.+?)["\'])}}', 'gm');
-        var closing_placeholder = '{{! /multiexcerpt}}';
+        const metadata = metalsmith.metadata();
+        const re_definition = new RegExp('{{! ' + options.placeholder + '( +name=["\'](.+?)["\'])}}', 'gm');
+        const closing_placeholder = '{{! /multiexcerpt}}';
 
         Object.keys(files).forEach(function (filepath) {
-            var file = files[filepath];
-            var contents = file.contents.toString();
-            var match;
-            var key = file.url.key.full;
-            var placeholder_positions = [];
+            const file = files[filepath];
+            const contents = file.contents.toString();
+            const key = file.url.key.full;
             debug('filepath: %s, key: %s', filepath, key);
+
+            let placeholder_positions = [];
+            let match;
 
             // Get opening placeholder positions
             while ((match = re_definition.exec(contents)) !== null) {
@@ -65,9 +68,9 @@ var multiexcerpts = function (options) {
             }
 
             // Get closing placeholder positions
-            var closing_position = contents.indexOf(closing_placeholder);
+            let closing_position = contents.indexOf(closing_placeholder);
             while (closing_position !== -1) {
-                var last_index = closing_position + closing_placeholder.length;
+                const last_index = closing_position + closing_placeholder.length;
                 placeholder_positions.push({
                     type    : 'close',
                     position: closing_position,
@@ -93,10 +96,10 @@ var multiexcerpts = function (options) {
             if (placeholder_positions.length) {
                 metadata[options.placeholder] = metadata[options.placeholder] || {};
                 placeholder_positions.forEach(function (placeholder) {
-                    var placeholder_key = key + '/' + slug(placeholder.key);
+                    const placeholder_key = key + '/' + slug(placeholder.key);
                     debug('placeholder key: %s', placeholder.key);
                     if (metadata[options.placeholder][placeholder_key]) {
-                        error('%s - Duplicate placeholder: %s', options.placeholder, placeholder_key);
+                        warn('Duplicate placeholder: %s - %s', options.placeholder, placeholder_key);
                     }
                     else {
                         metadata[options.placeholder][placeholder_key] = contents.substring(placeholder.start, placeholder.end);

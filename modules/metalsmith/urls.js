@@ -1,16 +1,17 @@
 'use strict';
 /* eslint-env es6 */
 
-var debug_lib = require('debug');
-var debug = debug_lib('metalsmith-urls');
-var error = debug_lib('metalsmith-urls:error');
-var Joi = require('joi');
-var path = require('path');
-var multimatch = require('multimatch');
-var slug = require('slug');
+// Debugging
+const {debug, warn, error} = require('../debugger')('metalsmith-urls');
+
+// npm packages
+const Joi = require('joi');
+const path = require('path');
+const multimatch = require('multimatch');
+const slug = require('slug');
 slug.defaults.modes.pretty.lower = true;
 
-var schema = Joi.object().keys({
+const schema = Joi.object().keys({
     versions: Joi.array().optional().items(Joi.object().keys({
         label             : Joi.string().required(),
         is_current_version: Joi.bool().optional().default(false),
@@ -23,14 +24,14 @@ var schema = Joi.object().keys({
     file_pattern: Joi.array().items(Joi.string()).optional().default(['**/*.md', '**/*.html'])
 });
 
-var urls = function (options, add_to_metadata) {
+const urls = function (options, add_to_metadata) {
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
-        var metadata = metalsmith.metadata();
+        const metadata = metalsmith.metadata();
         metadata.pages = metadata.pages || {};
 
         // Check options fits schema
-        var schema_err;
+        let schema_err;
         schema.validate(options, {allowUnknown: true}, function (err, value) {
             if (err) {
                 error('Validation failed, %o', err.details[0].message);
@@ -42,8 +43,8 @@ var urls = function (options, add_to_metadata) {
             return done(schema_err);
         }
 
-        var version_path = '';
-        var version_label = '';
+        let version_path = '';
+        let version_label = '';
         if (options.versions) {
             let current_version = options.versions.filter(version => version.is_current_version);
             if (current_version && current_version[0]) {
@@ -55,11 +56,11 @@ var urls = function (options, add_to_metadata) {
 
         Object.keys(files).forEach(function (filepath) {
             debug('Filepath: %s', filepath);
-            var file = files[filepath];
+            const file = files[filepath];
             if (multimatch(filepath, options.file_pattern).length) {
 
-                var file_path_info = path.parse(filepath);
-                var filepath_parts = file_path_info.dir.split(path.sep);
+                const file_path_info = path.parse(filepath);
+                const filepath_parts = file_path_info.dir.split(path.sep);
 
                 file.url = {
                     key: {
@@ -80,7 +81,7 @@ var urls = function (options, add_to_metadata) {
                 }
 
                 // Set the space path
-                var space = (filepath_parts.length) ? filepath_parts.shift() : '';
+                const space = (filepath_parts.length) ? filepath_parts.shift() : '';
                 if (space) {
                     file.url.key.space = space;
                     file.url.key.parts.push(space);
@@ -106,7 +107,7 @@ var urls = function (options, add_to_metadata) {
                 file.slug = file.slug || (file_path_info.name === 'index' ? 'index' : void 0) || (file.title ? slug(file.title) : void 0) || slug(file_path_info.name);
 
                 // Set full url path
-                var full_url_parts = file.url.key.parts.map(function (item) { return item; });
+                const full_url_parts = file.url.key.parts.map(function (item) { return item; });
 
                 if (file.slug === 'index') {
                     if (space && !filepath_parts.length) {
@@ -138,7 +139,7 @@ var urls = function (options, add_to_metadata) {
                 // Add to metadata.pages array
                 if (add_to_metadata) {
                     if (metadata.pages[file.url.key.full]) {
-                        error('Duplicate key found: "%s" in "%s"', file.url.key.full, file.title);
+                        warn('Duplicate key found: "%s" in "%s"', file.url.key.full, file.title);
                     }
                     else {
                         metadata.pages[file.url.key.full] = {
@@ -153,7 +154,7 @@ var urls = function (options, add_to_metadata) {
                 }
             }
             else {
-                error('Ignorning: %s', filepath);
+                debug('Ignorning: %s', filepath);
             }
         });
         return done();

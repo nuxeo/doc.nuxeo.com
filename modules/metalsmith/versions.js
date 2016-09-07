@@ -1,16 +1,18 @@
 'use strict';
+/* eslint-env es6 */
 
-var debug_lib = require('debug');
-var debug = debug_lib('metalsmith-versions');
-var error = debug_lib('metalsmith-versions:error');
+// Debugging
+const {debug, error} = require('../debugger')('metalsmith-versions');
 
-var Joi = require('joi');
-var multimatch = require('multimatch');
+// npm packages
+const Joi = require('joi');
+const multimatch = require('multimatch');
 
-var get_placeholder_key = require('../get_placeholder_key');
-var key_to_url = require('../key_to_url');
+// local packages
+const get_placeholder_key = require('../get_placeholder_key');
+const key_to_url = require('../key_to_url');
 
-var schema = Joi.object().keys({
+const schema = Joi.object().keys({
     versions: Joi.array().optional().items(Joi.object().keys({
         label             : Joi.string().required(),
         is_current_version: Joi.bool().optional().default(false),
@@ -20,14 +22,14 @@ var schema = Joi.object().keys({
 });
 
 
-var urls = function (options) {
+const urls = function (options) {
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
-        var metadata = metalsmith.metadata();
+        const metadata = metalsmith.metadata();
         metadata.pages = metadata.pages || {};
 
         // Check options fits schema
-        var schema_err;
+        let schema_err;
         schema.validate(options, {allowUnknown: true}, function (err, value) {
             if (err) {
                 error('Validation failed, %o', err.details[0].message);
@@ -42,14 +44,14 @@ var urls = function (options) {
         if (options.versions && options.versions.length) {
             Object.keys(files).forEach(function (filepath) {
                 debug('Filepath: %s', filepath);
-                var file = files[filepath];
+                const file = files[filepath];
                 if (multimatch(filepath, options.file_pattern).length && file.url) {
                     options.versions.forEach(function (version) {
                         file.url.versions = file.url.versions || [];
-                        var add_item = true;
-                        var version_key;
+                        let add_item = true;
+                        let version_key;
 
-                        var version_item = {
+                        const version_item = {
                             label             : version.label,
                             is_current_version: !!version.is_current_version
                         };
@@ -60,7 +62,7 @@ var urls = function (options) {
                             version_key = get_placeholder_key(file.version_override[version.label], file.url.key);
                         }
                         else {
-                            var version_key_parts = [];
+                            const version_key_parts = [];
                             if (version.url_path) {
                                 version_key_parts.push(version.url_path);
                             }
@@ -73,7 +75,7 @@ var urls = function (options) {
                                 version_item.url = key_to_url(version_key, metadata.pages);
                             }
                             catch (e) {
-                                // error('%s; Title: "%s"', e.message, file.title);
+                                warn('Missing version %s; Title: "%s"', e.message, file.title);
                                 version_item.no_page = true;
                                 version_item.url = '/' + version_key;
                             }

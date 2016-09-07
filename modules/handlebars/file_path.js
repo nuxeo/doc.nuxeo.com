@@ -1,22 +1,25 @@
 'use strict';
-var debug_lib = require('debug');
-// var debug = debug_lib('handlebars-page');
-var error = debug_lib('handlebars-page:error');
-var slug = require('slug');
+/* eslint-env es6 */
+
+// Debugging
+const {warn, error} = require('../debugger')('handlebars-file');
+
+// npm packages
+const slug = require('slug');
 slug.defaults.modes.pretty.lower = true;
 
 
-var get_placeholder_key = require('../get_placeholder_key');
-var file_url = function (options) {
-    var file = options.data.root;
-    var hash = options.hash || {};
-    var defaults = file && file.url && file.url.key;
-    var version = hash.version;
-    var space = hash.space;
-    var page = hash.page || '';
-    var name = hash.name || '';
-    var assets = file.assets;
-    var raw_page_name = '';
+const get_placeholder_key = require('../get_placeholder_key');
+const file_url = function (options) {
+    const file = options.data.root;
+    const hash = options.hash || {};
+    const defaults = file && file.url && file.url.key;
+    const version = hash.version;
+    const space = hash.space;
+    const page = hash.page || '';
+    const name = hash.name || '';
+    const assets = file.assets;
+    let raw_page_name = '';
 
     // version and space
     if (version && space && page) {
@@ -35,26 +38,26 @@ var file_url = function (options) {
         }
     }
 
-    var key = '';
+    let key = '';
     if (defaults && name) {
         key = get_placeholder_key(raw_page_name, defaults);
         if (!key) {
-            error('URL could not be processed: %s', options.hash.page, defaults);
+            warn('URL could not be processed: %s', options.hash.page, defaults);
         }
     }
     else {
         if (!name) {
-            error('filename not present. page: "%s"', options.hash.page);
+            warn('filename not present. page: "%s"', options.hash.page);
         }
         if (!defaults) {
-            error('file.url.key not present. page: "%s", defaults: %o', options.hash.page, defaults);
+            warn('file.url.key not present. page: "%s", defaults: %o', options.hash.page, defaults);
         }
     }
 
     if (assets) {
         // Check file exists in assets object
         if (!assets[[key, name].join('/')]) {
-            error('Asset not located: "%s/%s"', key, name);
+            warn('Asset not located: "%s/%s"', key, name);
         }
     }
     else {

@@ -127,35 +127,6 @@ var hierarchy = function (options) {
             files[space + '.json'] = {contents: new Buffer(JSON.stringify(hierarchies[space]))};
         });
 
-        // TODO: test clashing!
-
-        /*
-        hierarchy:
-            space: NXDOC
-            space_name: Nuxeo Platform Developer Documentation
-            version: FT
-            versions:
-                - LTS 2015
-                - 6.0
-                - 5.8
-            parents:
-                tutorials: Tutorials
-            siblings:
-                how-to-index: How To Index
-                nuxeo-blog-tutorials: Nuxeo Blog Tutorials
-                quick-overview: Quick Overview
-                quick-start-series: Quick Start Series
-                transversal-how-tos: Transversal How Tos
-            children:
-                design-tips: DESIGN-TIPS
-                how-to-customize-email-templates: HOW-TO-CUSTOMIZE-EMAIL-TEMPLATES
-                how-to-publish-a-news-feature-in-workspaces: HOW-TO-PUBLISH-A-NEWS-FEATURE-IN-WORKSPACES
-                learning-rest-api: LEARNING-REST-API
-                platform-as-a-service: PLATFORM-AS-A-SERVICE
-                understand-expression-and-scripting-languages-used-in-nuxeo: UNDERSTAND-EXPRESSION-AND-SCRIPTING-LANGUAGES-USED-IN-NUXEO
-                workflow-use-cases: WORKFLOW-USE-CASES
-        */
-
         return done();
     };
 };

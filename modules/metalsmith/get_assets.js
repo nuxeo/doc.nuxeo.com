@@ -2,11 +2,7 @@
 /* eslint-env es6 */
 
 // Debugging
-const module_name = 'metalsmith-get-assets';
-const debug_lib = require('debug');
-const debug = debug_lib(module_name);
-// const info = debug_lib(`${module_name}:info`);
-const error = debug_lib(`${module_name}:error`);
+const {debug, warn, error} = require('../debugger')('metalsmith-get-assets');
 
 // npm packages
 const Joi = require('joi');
@@ -57,7 +53,7 @@ const get_assets = function (options) {
                 const page = asset_path.join(path.sep);
 
                 if (metadata.assets[asset_filename]) {
-                    error('Duplicate key found: "%s"', asset_filename);
+                    warn('Duplicate key found: "%s"', asset_filename);
                 }
                 else {
                     let filename = path.join(options.path_prefix, asset_filename);
