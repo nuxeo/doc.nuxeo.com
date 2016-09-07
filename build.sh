@@ -25,12 +25,16 @@ echo "Run Pre-build For All Branches";
 node pre_build.js;
 
 echo;
-echo "Copying To Site After Builds";
+echo "Building Sites";
 cat $BUILD_PATHS | while read line ; do $BUILD_SITE $line; done;
 
 echo;
 echo "Copying To Site After Builds";
 cat $BUILD_PATHS | while read line ; do $COPY_SITE $line; done;
+
+echo;
+echo "Creating sitemap index";
+./bin/create-sitemap-index;
 
 echo;
 echo "Complete";
