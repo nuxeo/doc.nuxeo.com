@@ -49,7 +49,7 @@ const page_url = function (options) {
             url = key_to_url(key, file.pages);
         }
         catch (e) {
-            warn('Page link not found: %s; Title: "%s"', e.message, file.title);
+            warn('%s; Title: "%s"', e.message, file.title);
         }
     }
     else {

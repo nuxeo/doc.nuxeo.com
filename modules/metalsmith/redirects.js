@@ -1,8 +1,10 @@
 'use strict';
+/* eslint-env es6 */
 
-var debug_lib = require('debug');
-var debug = debug_lib('metalsmith-redirects');
-var error = debug_lib('metalsmith-redirects:error');
+// Debugging
+const {debug, warn, error} = require('../debugger')('metalsmith-redirects');
+
+// npm packages
 var each = require('async').each;
 var yaml = require('js-yaml');
 var path = require('path');
@@ -20,7 +22,7 @@ var get_redirect_url = function (file, metadata) {
         var url = key_to_url(key, metadata.pages);
     }
     catch (e) {
-        error('%s; Title: "%s"', e.message, file.title);
+        warn('%s; Title: "%s"', e.message, file.title);
     }
     return url;
 };

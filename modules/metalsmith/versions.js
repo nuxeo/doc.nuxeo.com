@@ -2,7 +2,7 @@
 /* eslint-env es6 */
 
 // Debugging
-const {debug, error} = require('../debugger')('metalsmith-versions');
+const {debug, warn, error} = require('../debugger')('metalsmith-versions');
 
 // npm packages
 const Joi = require('joi');
@@ -88,7 +88,7 @@ const urls = function (options) {
                     // };
                 }
                 else {
-                    error('Ignorning: %s', filepath);
+                    debug('Ignorning: %s', filepath);
                 }
             });
         }
