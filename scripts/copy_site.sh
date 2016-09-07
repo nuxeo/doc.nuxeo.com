@@ -19,7 +19,7 @@ if [ -d $SOURCE_SITE -a ! -L $SOURCE_SITE ]; then
     mkdir -p $TARGET_BASE;
     rsync -a $SOURCE_SITE $TARGET_BASE;
     mkdir -p $TARGET_BASE_ASSETS;
-    rsync -a $SOURCE_ASSETS $TARGET_BASE_ASSETS;
+    rsync -a --ignore-existing $SOURCE_ASSETS $TARGET_BASE_ASSETS;
 else
     exit 1;
 fi
