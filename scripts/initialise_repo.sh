@@ -14,6 +14,7 @@ fi
 cd $REPO_BASE;
 
 if [ -d $REPO_DIR -a ! -L $REPO_DIR ]; then
+    echo "${REPO_DIR} exists.";
     cd $REPO_DIR && \
     git reset --hard && \
     git fetch --all && \

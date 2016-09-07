@@ -15,7 +15,7 @@ var get_metadata = function (options, resolve) {
     /* eslint guard-for-in:0 */
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
-        info('Processing');
+        info('Getting Metadata');
         var metadata = metalsmith.metadata();
         var metadata_to_return = {};
         options.keys.forEach(function (key) {

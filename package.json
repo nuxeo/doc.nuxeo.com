@@ -12,6 +12,7 @@
   "dependencies": {
     "async": "^2.0.1",
     "bluebird": "^3.4.1",
+    "bunyan": "^1.8.1",
     "cheerio": "^0.20.0",
     "co": "^4.6.0",
     "debug": "^2.2.0",
@@ -79,7 +80,7 @@
   },
   "scripts": {
     "prestart": "npm run compile && npm run empty_site && npm run default_redirects",
-    "start": "node build",
+    "start": "./build.sh",
     "poststart": "npm run copy_assets && npm run verify && npm run empty_temp",
     "pretest": "npm run yaml_lint config.yml",
     "test": "taper test",
