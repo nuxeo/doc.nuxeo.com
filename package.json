@@ -79,9 +79,9 @@
     "browser": "chromium-browser"
   },
   "scripts": {
-    "prestart": "npm run compile && npm run empty_site && npm run default_redirects",
+    "prestart": "npm run compile && npm run empty_temp && npm run empty_site && npm run default_redirects",
     "start": "./build.sh",
-    "poststart": "npm run copy_assets && npm run verify && npm run empty_temp",
+    "poststart": "npm run copy_assets && npm run verify",
     "pretest": "npm run yaml_lint config.yml",
     "test": "taper test",
     "posttest": "npm run lint",
