@@ -68,7 +68,7 @@ const review_flag = function () {
                             else {
                                 // Review date not set.
                                 warn('Review date not set: %s', file.title);
-                                if (metadata.site.review_allow_no_date_set) {
+                                if (!metadata.site.review_allow_no_date_set) {
                                     needs_review(file, review_messages.not_set);
                                 }
                             }
