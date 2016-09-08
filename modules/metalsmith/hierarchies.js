@@ -69,9 +69,10 @@ const meta_hierarchies = function (options) {
                         id             : space_path,
                         name           : '',
                         url            : {},
-                        slug           : '',
+                        slug           : 'index',
                         path           : space_path,
-                        tree_item_index: 0
+                        tree_item_index: 0,
+                        children       : []
                     };
 
                     if (is_space_index) {
@@ -96,7 +97,7 @@ const meta_hierarchies = function (options) {
                     });
 
                     // Don't include hidden pages
-                    if (!file.hidden) {
+                    if (!file.hidden && !is_space_index) {
                         current_item.children = current_item.children || [];
                         current_item.children.push({
                             id             : file_path_info.name,
