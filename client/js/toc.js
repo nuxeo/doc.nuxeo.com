@@ -11,8 +11,9 @@ var $document = $(document);
 var $content = $('#content');
 var $toc = $('#toc');
 var $toc_list = $('#toc_list');
+var no_h4 = $content.hasClass('toc-no-h4');
 
-var $h_tags = $content.filter('.toc').find('h2, h3, h4');
+var $h_tags = (no_h4) ? $content.filter('.toc').find('h2, h3') : $content.filter('.toc').find('h2, h3, h4');
 var $toc_nav = $toc.find('nav');
 
 var margin = 16;
