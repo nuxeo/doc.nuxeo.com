@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-env browser, jquery */
 
-// var throttle = require('lodash.throttle');
+// var debounce = require('lodash.debounce');
 var throttle = require('lodash.throttle');
 
 var initialise_toc = require('./modules/initialise_toc');
@@ -17,12 +17,15 @@ var $h_tags = (no_h4) ? $content.filter('.toc').find('h2, h3') : $content.filter
 var $toc_nav = $toc.find('nav');
 
 var margin = 16;
+var can_scroll_list = true;
 
 var viewport_height;
 var toc_active_position;
 
+
 // Initialise toc
 if ($toc.length && $h_tags.length) {
+
     initialise_toc();
 
     $window.on('resize', function () {
@@ -110,24 +113,35 @@ if ($toc.length && $h_tags.length) {
                     }
                 }
 
-                // Total height of list within scroll area
-                // var list_height = $toc_list[0].scrollHeight;
-                var scroll_position = $toc_list.scrollTop();
-                toc_active_position = active_position;
-                // 20% of visible height
-                var one_fifth_height = $toc_list.height() / 5;
-                // console.log('list_height:', list_height);
-                // console.log('active_position:', active_position);
-                // console.log('scroll_position:', $toc_list.scrollTop());
+                if (can_scroll_list) {
+                    // Total height of list within scroll area
+                    // var list_height = $toc_list[0].scrollHeight;
+                    var scroll_position = $toc_list.scrollTop();
+                    toc_active_position = active_position;
+                    // 20% of visible height
+                    var one_fifth_height = $toc_list.height() / 5;
+                    // console.log('list_height:', list_height);
+                    // console.log('active_position:', active_position);
+                    // console.log('scroll_position:', $toc_list.scrollTop());
 
-                // Scroll to display the current item (20% from top if possible)
-                var position = (scroll_position + active_position - one_fifth_height);
-                position = (position < 0) ? 0 : position;
-                // console.log('list_position:', position);
-                $toc_list.animate({
-                    scrollTop: position
-                }, 500);
+                    // Scroll to display the current item (20% from top if possible)
+                    var position = (scroll_position + active_position - one_fifth_height);
+                    position = (position < 0) ? 0 : position;
+                    // console.log('list_position:', position);
+                    $toc_list.animate({
+                        scrollTop: position
+                    }, 500);
+                }
             }
         }
     }, 200));
+
+    // Cancel scrolling upon hover
+    $toc_list.on('mouseenter', function () {
+        $toc_list.stop(true);
+        can_scroll_list = false;
+    });
+    $toc_list.on('mouseleave', function () {
+        can_scroll_list = true;
+    });
 }
