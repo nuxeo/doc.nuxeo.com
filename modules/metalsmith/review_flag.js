@@ -44,26 +44,34 @@ const review_flag = function () {
                         debug('Filepath: %s', filepath);
                         let file = files[filepath];
 
-                        if (file.review && file.review.date) {
-                            let review_date = moment(file.review.date, 'YYYY-MM-DD');
-                            if (review_date.isValid()) {
-                                let within_review_period = review_date.add(review_period).isAfter(review_point);
-                                if (!within_review_period) {
+                        // Ignore pages with label: home and review_skip
+                        if ((file.labels && ~file.labels.indexOf('home')) || file.review_skip) {
+                            debug('File ignored: %s', filepath);
+                        }
+                        else {
+                            if (file.review && file.review.date) {
+                                let review_date = moment(file.review.date, 'YYYY-MM-DD');
+                                if (review_date.isValid()) {
+                                    let within_review_period = review_date.add(review_period).isAfter(review_point);
+                                    if (!within_review_period) {
+                                        // Invalid Review Date
+                                        needs_review(file, review_messages.overdue);
+                                        warn('Review date overdue: %s - %s', file.title, file.review.date);
+                                    }
+                                }
+                                else {
                                     // Invalid Review Date
-                                    needs_review(file, review_messages.overdue);
-                                    warn('Review date overdue: %s - %s', file.title, file.review.date);
+                                    warn('Review date invalid: %s - %s', file.title, file.review.date);
+                                    needs_review(file, review_messages.invalid_date);
                                 }
                             }
                             else {
-                                // Invalid Review Date
-                                warn('Review date invalid: %s - %s', file.title, file.review.date);
-                                needs_review(file, review_messages.invalid_date);
+                                // Review date not set.
+                                warn('Review date not set: %s', file.title);
+                                if (metadata.site.review_allow_no_date_set) {
+                                    needs_review(file, review_messages.not_set);
+                                }
                             }
-                        }
-                        else {
-                            // Review date not set.
-                            warn('Review date not set: %s', file.title);
-                            needs_review(file, review_messages.not_set);
                         }
                     });
                 }
