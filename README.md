@@ -5,7 +5,7 @@
 ## Requirements
 - [git](https://git-scm.com/) - make sure your Privacy & Security settings allow to download applications from anywhere
 - [SSH key associated with GitHub](https://help.github.com/articles/generating-an-ssh-key/)
-- [node.js](https://nodejs.org)
+- [node.js](https://nodejs.org) Stable - See [Release schedule](https://github.com/nodejs/LTS#lts_schedule)
 - libsass
 - Text editor (https://www.sublimetext.com/ or https://atom.io/ for example)
 
