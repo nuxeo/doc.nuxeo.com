@@ -1,4 +1,5 @@
 #!/bin/bash
+mkdir -p ./site ./temp;
 
 BUILD_REPOS=./temp/build_repos.txt;
 ./bin/build-repos > $BUILD_REPOS;
