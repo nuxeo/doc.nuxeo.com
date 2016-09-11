@@ -105,6 +105,37 @@ All options with file from another space and page:
 ![Alt text - Required]({{file space='nxdoc' page='client-sdks' name='AdapterService.png'}} ?w=180,h=360,border=true,thumbnail=true,align=right "Title text - Optional")
 ```
 
+### Table from details (filter-table)
+`details` can be put into a table for display
+
+#### Basic Example (without filtering)
+
+The following definition will display `howto` details from `nxdoc` and `studio` spaces and include these fields: `Excerpt`, `Topics` and `Level`.
+
+By default the table will include `Title` with a link to that page.
+```
+{{{table_from_details label='howto' spaces='nxdoc, studio' heading='Excerpt, Topics, Level'}}}
+```
+
+#### Filtering Tables
+
+Expanding from the previous example, this will limit to only `Advanced` pages with `translate` in the excerpt field. Sorted by `topics`
+```
+{{{table_from_details label='howto' spaces='nxdoc, studio' heading='Excerpt, Topics, Level' filter='level=advanced, excerpt=translate' sort_by='topics'}}}
+```
+
+#### Options
+
+Option | Behaviour
+--- | ---
+`headings='Fields, Separated By Comma'` | The fields aren't case sensitive but need to match the field within `details` frontmatter.
+`label='name_of_label'` | The label of the data from within `details`.
+`spaces='nxdoc, admindoc'` | These are which spaces to get the information from. Can be space separated if desired.
+`sort_by='field'` | Field to sort the table results by.
+`filter='field_name=search_text, another_field=search_text'` | Filter the table by fields with text values. Case-insensitive.
+`filter_type='and'` | If mulitiple fields are being filtered upon, `and` will mean all fields have to have a match for the row to be present in the table. Defaults to `or` if omitted.
+
+
 ## Global optional frontmatter
 ### `style`
 Define a page specific style sheet. Defined in `doc.nuxeo.com/client/scss/`. e.g. To use `doc.nuxeo.com/client/scss/home.scss`, the front-matter would be:
