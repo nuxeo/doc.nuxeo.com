@@ -3,15 +3,17 @@
   "description": "doc.nuxeo.com built using Metalsmith",
   "license": "UNLICENSED",
   "private": true,
-  "version": "3.1.0",
+  "version": "3.1.1",
   "author": {
     "name": "Andrew Goodricke",
     "email": "github@andrewgoodricke.com",
     "url": "http://andrewgoodricke.com"
   },
-  "os": [ "!win32" ],
+  "os": [
+    "!win32"
+  ],
   "engines": {
-      "node": ">=6.5"
+    "node": ">=6.5"
   },
   "dependencies": {
     "async": "^2.0.1",
