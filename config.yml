@@ -10,7 +10,7 @@ default:
         title: 'Nuxeo Documentation'
         author: 'Nuxeo'
         review_messages:
-            overdue: This article needs reviewing
+            overdue: This page needs to be reviewed
             invalid_date: Invalid Review Date
             not_set: Review Date Not Set
     page_defaults:
