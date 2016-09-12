@@ -22,6 +22,8 @@ test('get_collection_filter returns a function', function (assert) {
 });
 
 test('get_collection_filter returns values as expected', function (assert) {
+    const get_title = row => row.title;
+
     const collection = [
         {
             title  : 'All',
@@ -44,6 +46,11 @@ test('get_collection_filter returns values as expected', function (assert) {
             topics : 'Alpha, Beta'
         },
         {
+            title  : 'Special-Topic',
+            excerpt: 'Nothing',
+            topics : 'Gamma Beta'
+        },
+        {
             title  : 'Has-Nothing',
             excerpt: '',
             topics : ''
@@ -54,7 +61,7 @@ test('get_collection_filter returns values as expected', function (assert) {
         {
             text    : void 0,
             type    : void 0,
-            expected: ['All', 'Has-Excerpt', 'Has-Unique-Excerpt', 'Has-Topics', 'Has-Nothing'],
+            expected: collection.map(get_title),
             message : 'returns all with no params'
         },
         {
@@ -74,6 +81,12 @@ test('get_collection_filter returns values as expected', function (assert) {
             type    : void 0,
             expected: ['All', 'Has-Unique-Excerpt', 'Has-Topics'],
             message : 'Ignores empty params'
+        },
+        {
+            text    : 'topics=Gamma Beta',
+            type    : void 0,
+            expected: ['Special-Topic'],
+            message : 'Allows spaces within field search'
         }
     ];
 
@@ -81,7 +94,7 @@ test('get_collection_filter returns values as expected', function (assert) {
         const filter = get_collection_filter(filter_test.text, filter_test.type);
 
         // Use filter but but only test returned titles
-        var actual = collection.filter(filter).map(row => row.title);
+        var actual = collection.filter(filter).map(get_title);
         assert.isEquivalent(actual, filter_test.expected, filter_test.message);
     });
 
