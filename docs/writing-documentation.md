@@ -75,20 +75,20 @@ Again legacy interperatation is also allowed for.
 Excerpts are to reuse content within the same page. In contrast Multi-excerpts can be reused in any page.
 
 ```handlebars
-{{! excerpt name="foo"}}
-Reuse the text **foo** in this page only.
+{{! excerpt}}
+Reuse the text **foo** in other pages.
 {{! /excerpt}}
 ```
 or
 ```handlebars
 {{! multiexcerpt name="bar"}}
-Reuse the text **bar** in any page.
+Reuse the text **bar** in any page by the `name` reference.
 {{! /multiexcerpt}}
 ```
 
 ### Excerpts Use
 ```handlebars
-{{excerpt 'foo'}}
+{{excerpt 'page-name'}}
 ```
 or
 ```handlebars
