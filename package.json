@@ -9,6 +9,10 @@
     "email": "github@andrewgoodricke.com",
     "url": "http://andrewgoodricke.com"
   },
+  "os": [ "!win32" ],
+  "engines": {
+      "node": ">=6.5"
+  },
   "dependencies": {
     "async": "^2.0.1",
     "bluebird": "^3.4.1",
