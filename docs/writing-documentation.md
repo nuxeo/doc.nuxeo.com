@@ -42,7 +42,7 @@ version_override:
     'LTS 2015': 710/nxdoc/installation
     '6.0': 60/nxdoc/installation
 ```
-This accepts the [single attribute form](#single-attribute-form-legacy).
+This accepts the [single attribute form](#single-attribute-form--legacy).
 
 _Note_: the label (e.g. `LTS 2015`) needs to be quoted, this is part of the YAML specification.
 
