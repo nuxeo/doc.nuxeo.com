@@ -2,6 +2,8 @@
 
 The documentation uses YAML at the top between two sets of `---`, this section is known as _frontmatter_.
 
+Have a look at the [new-page-template.md](new-page-template.md) with your editor or [view the raw source](https://raw.githubusercontent.com/nuxeo/doc.nuxeo.com/master/docs/new-page-template.md).
+
 ## Editor Configuration
 
 YAML doesn't enjoy having tabs so ensure your editor is configured with _soft_ tabs (spaces).
