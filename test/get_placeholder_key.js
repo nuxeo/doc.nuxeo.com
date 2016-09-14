@@ -1,19 +1,20 @@
 'use strict';
+/* eslint-env es6 */
 
-var test = require('tape');
+const test = require('tape');
 
-var get_placeholder_key = require('../modules/get_placeholder_key');
+const get_placeholder_key = require('../modules/get_placeholder_key');
 
 test('get_placeholder_key is a function', function (assert) {
     // Get typeof string
-    var expected = get_placeholder_key && {}.toString.call(get_placeholder_key);
+    const expected = get_placeholder_key && {}.toString.call(get_placeholder_key);
 
     assert.isEqual(expected, '[object Function]', 'get_placeholder_key is a function');
     assert.end();
 });
 
 test('get_placeholder_key returns values as expected', function (assert) {
-    var fallback_values = {
+    const fallback_values = {
         version   : '',
         space     : 'nxdoc',
         space_path: 'nxdoc',
@@ -22,7 +23,7 @@ test('get_placeholder_key returns values as expected', function (assert) {
         full      : 'nxdoc/authentication-and-user-management'
     };
 
-    var string_tests = [
+    const string_tests = [
         {
             test    : void 0,
             expected: 'nxdoc/authentication-and-user-management',
@@ -95,7 +96,7 @@ test('get_placeholder_key returns values as expected', function (assert) {
 
 
     string_tests.forEach(function (string_test) {
-        var actual = get_placeholder_key(string_test.test, string_test.fallback || fallback_values);
+        const actual = get_placeholder_key(string_test.test, string_test.fallback || fallback_values);
         assert.isEqual(actual, string_test.expected, string_test.message);
     });
 

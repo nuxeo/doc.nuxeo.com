@@ -1,31 +1,38 @@
 'use strict';
+/* eslint-env es6 */
 
-var debug_lib = require('debug');
-var debug = debug_lib('metalsmith-excerpts');
-var error = debug_lib('metalsmith-excerpts:error');
-var multimatch = require('multimatch');
-var cheerio = require('cheerio');
-var get = require('lodash.get');
-var set = require('lodash.set');
-var Joi = require('joi');
+// debugging
+const debug_lib = require('debug');
+const debug = debug_lib('metalsmith-excerpts');
+const error = debug_lib('metalsmith-excerpts:error');
 
-var schema = Joi.array().min(1).items(Joi.object().keys({
+// npm packages
+const multimatch = require('multimatch');
+const cheerio = require('cheerio');
+const get = require('lodash.get');
+const set = require('lodash.set');
+const Joi = require('joi');
+
+// local packages
+const add_link_context = require('../add_link_context');
+
+const schema = Joi.array().min(1).items(Joi.object().keys({
     pattern     : [Joi.array().min(1).required(), Joi.string().required()],
     fields      : Joi.array().optional().default(['excerpt']),
     default     : Joi.string().optional().default(''),
     metadata_key: Joi.string().optional()
 }));
 
-var special_methods = {
+const special_methods = {
     first_paragraph: function (file) {
-        var $ = cheerio.load(file.contents.toString());
-        var p = $('p').first();
+        const $ = cheerio.load(file.contents.toString());
+        const p = $('p').first();
         return $.html(p).trim();
     },
     excerpt_placeholder: function (file) {
         // {{! excerpt}}Excerpt content{{! /excerpt}}
-        var re_definition = new RegExp('{{! excerpt ?}}([\\s\\S]+?){{! +\/excerpt ?}}', 'gm');
-        var match = re_definition.exec(file.contents.toString());
+        const re_definition = new RegExp('{{! excerpt ?}}([\\s\\S]+?){{! +\/excerpt ?}}', 'gm');
+        const match = re_definition.exec(file.contents.toString());
 
         return (match) ? match[1] : void 0;
     },
@@ -41,7 +48,7 @@ var special_methods = {
  * @param {Object} options
  * @return {Function}
 **/
-var excerpts = function (options) {
+const excerpts = function (options) {
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
         // Check options fits schema
@@ -53,20 +60,20 @@ var excerpts = function (options) {
             }
             // Convert to array if it's a string
             value.forEach(function (option, option_index) {
-                var value_option = value[option_index];
+                const value_option = value[option_index];
                 value_option.pattern = (typeof value_option.pattern === 'string') ? [value_option.pattern] : value_option.pattern;
             });
             options = value;
         });
 
-        var metadata = metalsmith.metadata();
+        const metadata = metalsmith.metadata();
 
         Object.keys(files).forEach(function (filepath) {
-            var file = files[filepath];
+            const file = files[filepath];
             options.forEach(function (option) {
-                var key = get(file, option.metadata_key);
+                const key = get(file, option.metadata_key);
                 if (multimatch(filepath, option.pattern).length) {
-                    var excerpt;
+                    let excerpt;
                     option.fields.forEach(function (field) {
                         if (!excerpt) {
                             if (typeof field === 'function') {
@@ -86,6 +93,7 @@ var excerpts = function (options) {
                     set(file, option.fields[0], excerpt);
 
                     if (excerpt && key) {
+                        excerpt = add_link_context(excerpt, file.url.key);
                         debug('Setting metadata %s to %s', key, excerpt);
                         metadata.excerpts = metadata.excerpts || {};
                         metadata.excerpts[key] = excerpt;

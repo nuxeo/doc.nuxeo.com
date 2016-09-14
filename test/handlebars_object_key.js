@@ -1,12 +1,13 @@
 'use strict';
+/* eslint-env es6 */
 
-var test = require('tape');
+const test = require('tape');
 
-var object_key = require('../modules/handlebars/object_key');
+const object_key = require('../modules/handlebars/object_key');
 
 test('handlebars_object_key is a function', function (assert) {
     // Get typeof string
-    var expected = object_key && {}.toString.call(object_key);
+    const expected = object_key && {}.toString.call(object_key);
 
     assert.isEqual(expected, '[object Function]', 'object_key is a function');
     assert.end();

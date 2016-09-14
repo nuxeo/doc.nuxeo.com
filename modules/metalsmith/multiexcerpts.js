@@ -9,7 +9,10 @@ const Joi = require('joi');
 const slug = require('slug');
 slug.defaults.modes.pretty.lower = true;
 
+// local packages
+const add_link_context = require('../add_link_context');
 const open_close_positions = require('../open_close_positions');
+
 
 const schema = Joi.object().keys({
     placeholder: Joi.string().optional().default('multiexcerpt')
@@ -102,7 +105,9 @@ const multiexcerpts = function (options) {
                         warn('Duplicate placeholder: %s - %s', options.placeholder, placeholder_key);
                     }
                     else {
-                        metadata[options.placeholder][placeholder_key] = contents.substring(placeholder.start, placeholder.end);
+                        let multiexcerpt = contents.substring(placeholder.start, placeholder.end);
+                        multiexcerpt = add_link_context(multiexcerpt, file.url.key);
+                        metadata[options.placeholder][placeholder_key] = multiexcerpt;
                         debug('%s - Set: %s', options.placeholder, placeholder_key);
                         // debug('content: %s', metadata[options.placeholder][placeholder.key].content);
                     }
