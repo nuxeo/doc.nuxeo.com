@@ -65,6 +65,11 @@ test('get_placeholder_key returns values as expected', function (assert) {
             message : 'returns version key'
         },
         {
+            test    : 'Implementing Documentation+Items',
+            expected: 'nxdoc/implementing-documentation-items',
+            message : 'Correctly converts spaces and + to -'
+        },
+        {
             test    : 'FAIL:KEY:Admin Config',
             expected: '',
             message : 'returns empty string when badly formed'

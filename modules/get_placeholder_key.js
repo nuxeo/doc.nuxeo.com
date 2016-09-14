@@ -16,7 +16,7 @@ var get_placeholder_key = function (page_name_raw, defaults) {
     debug('page_name_raw: %s', page_name_raw);
     // Legacy method
     if (is_string && ~page_name_raw.indexOf(':')) {
-        page_name_split = page_name_raw.split(':');
+        page_name_split = page_name_raw.replace(/\+/g, '-').split(':');
         page_name = page_name_split.pop();
 
         if (page_name_split.length === 1) {
@@ -48,7 +48,7 @@ var get_placeholder_key = function (page_name_raw, defaults) {
             key_parts.push(defaults.slug);
         }
         else {
-            page_name_split = page_name_raw.split('/');
+            page_name_split = page_name_raw.replace(/\+/g, '-').split('/');
             // Doesn't have version space so add default
             if (page_name_split.length === 1 && defaults.space_path) {
                 key_parts.push(defaults.space_path);
