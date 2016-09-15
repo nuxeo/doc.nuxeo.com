@@ -257,4 +257,4 @@ For new JS, add an entry to `doc.nuxeo.com/webpack.config.js`. See `main.js` as 
 
 
 # Trouble shooting
-[Trouble shooting guide](./docs/trouble-shooting.md#trouble-shooting)
+[Trouble shooting guide](./trouble-shooting.md#trouble-shooting)
