@@ -30,23 +30,30 @@ const multiexcerpts = function (options) {
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
         // Check options fits schema
-        schema.validate(options, function (err, value) {
-            /* eslint consistent-return: 0 */
-            if (err) {
-                error('Validation failed, %o', err.details[0].message);
-                return done(err);
-            }
-            options = value;
-        });
+        const validation = schema.validate(options);
+        if (validation.error) {
+            return done(validation.error);
+        }
+        options = validation.value;
 
         const metadata = metalsmith.metadata();
         const re_definition = new RegExp('{{! ' + options.placeholder + '( +name=["\'](.+?)["\'])}}', 'gm');
         const closing_placeholder = '{{! /multiexcerpt}}';
 
-        Object.keys(files).forEach(function (filepath) {
+        const loop_completed = Object.keys(files).every(function (filepath) {
+            let successful = true;
             const file = files[filepath];
+
+            if (!file.url || !file.url.key) {
+                error('File does not have a url: %s', filepath);
+                error('file: %o', file);
+                done(new Error('File does not have a url: ' + filepath));
+                successful = false;
+                return successful;
+            }
             const contents = file.contents.toString();
             const key = file.url.key.full;
+
             debug('filepath: %s, key: %s', filepath, key);
 
             let placeholder_positions = [];
@@ -113,9 +120,15 @@ const multiexcerpts = function (options) {
                     }
                 });
             }
+            return successful;
         });
 
-        done();
+        if (loop_completed) {
+            return done();
+        }
+        else {
+            return void 0;
+        }
     };
 };
 
