@@ -40,6 +40,8 @@ The broswer defaults to `chromium-browser` but can be changed with the following
 ```bash
 npm config set Nuxeo-website:browser firefox
 ```
+## Writing Documentation
+[Writing Documentation Guide](./docs/writing-documentation.md#writing-documentation).
 
 ## Releasing changes
 As this module is used via [npm](https://www.npmjs.com/), it's a good practice to bump the version when we make changes.
@@ -67,7 +69,7 @@ Client side styles (SCSS) and JavaScript.
 ### `./docs/...`
 
 ### `./layout/...`
-Templates and partials. See [working with templates](./docs/writing-documentation.md).
+Templates and partials. See [working with templates](./docs/writing-documentation.md#writing-documentation).
 
 ### `./modules/...`
 Nuxeo specific modules.
@@ -91,10 +93,4 @@ Site configurations, ability to have production or development specific values.
 Build processes are defined here. Should be relatively self explanatory but anything special will be explained here.
 
 # Trouble shooting
-## Invalid front-matter
-Error: `Error: Invalid frontmatter in file: {filepath}`
-
-### Solution
-Run YAML linter to locate the issue with:
-
-`npm run yaml_lint {filepath}`
+[Trouble shooting guide](./docs/trouble-shooting.md#trouble-shooting)

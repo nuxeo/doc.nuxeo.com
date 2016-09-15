@@ -1,4 +1,4 @@
-# Documentation writing
+# Writing Documentation
 
 The documentation uses YAML at the top between two sets of `---`, this section is known as _frontmatter_.
 
@@ -8,7 +8,8 @@ Have a look at the [new-page-template.md](new-page-template.md) with your editor
 
 YAML doesn't enjoy having tabs so ensure your editor is configured with _soft_ tabs (spaces).
 
-The recommended editor is [Atom](https://atom.io/) as it handles markdown nicely and can provide a live preview (cmd + shift + m), fast file finding (cmd + p) plus many more features.
+The recommended editor is [Atom](https://atom.io/).
+It handles markdown nicely and can provide a live preview (cmd + shift + m), fast file finding (cmd + p) and image previewing.
 
 ## Mandatory frontmatter
 All `.md` (Markdown) content files should have a YAML frontmatter defined at the top of the file. e.g.
@@ -253,13 +254,6 @@ Page content here.
 
 For new JS, add an entry to `doc.nuxeo.com/webpack.config.js`. See `main.js` as an example.
 
-## Errors/Troubleshooting
 
-### Handlebars - Incorrect closing tag
-```
-nuxeo-build:error Error: File: nxdoc/example-filename.html - Error: Parse error on line 84:
-...</li></ul><p>{{#> /callout}}</p><h1 i
----------------------^
-```
-
-Closing tag should be `{{/callout}}`
+# Trouble shooting
+[Trouble shooting guide](./docs/trouble-shooting.md#trouble-shooting)
