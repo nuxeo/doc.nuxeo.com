@@ -97,7 +97,8 @@ This accepts the [single attribute form](#single-attribute-form--legacy).
 _Note_: the label (e.g. `LTS 2015`) needs to be quoted, this is part of the YAML specification.
 
 ## Markdown and Handlebars
-The documentation uses standard [GitHub Flavoured Markdown](https://guides.github.com/features/mastering-markdown/), this documentation explains the added features of using Markdown with Handlebars and some of the helpers and partials we have available.
+The documentation uses standard [GitHub Flavoured Markdown](https://guides.github.com/features/mastering-markdown/), this documentation explains the added feature set using Markdown with [Handlebars](http://handlebarsjs.com/#html-escaping) and some of the helpers and partials we have available.
+
 
 ### Handlebars helpers
 
