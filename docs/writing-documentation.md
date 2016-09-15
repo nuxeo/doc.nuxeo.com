@@ -40,7 +40,8 @@ Review data helps flag pages that have not been review within the desired period
 
 `status` must be **'ok'**, **'not-ok'** or **'requiresUpdates'**
 
-`comment` is optional but should be used to describe what is incorrect with the page if the status is set to **'not-ok'** or **'requiresUpdates'**. Markdown will be converted and multiline text can be added. _Note_: This is displayed on the page.
+`comment` is optional but should be used to describe what is incorrect with the page if the status is set to **'not-ok'** or **'requiresUpdates'**. Markdown will be converted and multiline text can be added.
+_Note_: The comment is displayed on the page.
 
 #### Multiline comment example
 ```
