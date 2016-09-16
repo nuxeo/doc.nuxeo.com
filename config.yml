@@ -13,6 +13,9 @@ default:
             overdue: This page needs to be reviewed
             invalid_date: Invalid Review Date
             not_set: Review Date Not Set
+        remove_files_pattern:
+            - '.DS_Store'
+            - '**.DS_Store'
     page_defaults:
         -
             pattern: "**/*.{md,html}"
