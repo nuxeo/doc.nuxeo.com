@@ -76,11 +76,11 @@ test('hierarchy(min_options) returns mutated "metalsmith" object with populated 
     const files = {
         'nxdoc/index.md': {
             title          : 'Index Page',
-            slug           : 'index',
             tree_item_index: void 0,
             url            : {
                 key: {
                     space_path    : 'nxdoc',
+                    slug          : 'index',
                     is_space_index: true,
                     full          : 'nxdoc/index'
                 }
@@ -106,6 +106,7 @@ test('hierarchy(min_options) returns mutated "metalsmith" object with populated 
                 url            : {
                     key: {
                         full          : 'nxdoc/index',
+                        slug          : 'index',
                         is_space_index: true,
                         space_path    : 'nxdoc'
                     }
