@@ -1,0 +1,43 @@
+#!/usr/bin/env node
+'use strict';
+/* eslint-env es6 */
+
+const path = require('path');
+const exec = require('child_process').execSync
+
+const get_path = path_name => (path.isAbsolute(path_name)) ? path_name : path.join(process.cwd(), path_name);
+
+if (!(process.argv[2]) || !(process.argv[3])) {
+    throw new Error('Missing Filename parameter');
+}
+
+const [,, source_stats_path, target_stats_path] = process.argv;
+
+const source_stats_filepath = get_path(source_stats_path);
+const target_stats_filepath = get_path(target_stats_path);
+
+// Work out absolute from ..
+const source_stats = require(source_stats_filepath);
+const target_stats = require(target_stats_filepath);
+
+const copy_commands = Object.keys(source_stats.assetsByChunkName).reduce((files, file) => {
+    const source = source_stats.assetsByChunkName[file];
+    const target = target_stats.assetsByChunkName[file];
+    if (!target || !target.length) {
+        throw new Error('JS, Missing target file, re-run npm start');
+    }
+    source.forEach((source_filename, id) => {
+        files.push({
+            source: get_path(`${source_stats.publicPath}${source_filename}`),
+            target: get_path(`site/${target_stats.publicPath}${target[id]}`)
+        });
+    });
+    return files;
+}, [])
+.map(files => `cp -v ${files.source} ${files.target}`)
+.join(' && ');
+
+// console.log('copy_commands');
+// console.log(copy_commands);
+
+console.log(exec(copy_commands).toString());

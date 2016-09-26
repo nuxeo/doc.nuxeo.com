@@ -25,14 +25,30 @@ cd doc.nuxeo.com
 npm install
 ```
 
-## Run Locally
+## Build locally
 ```bash
 npm start
 ```
 
-## Run and host locally
+## Host locally after build
 ```bash
-npm run dev_build
+npm run browser_sync
+```
+
+## Run and host locally (watches changes)
+```bash
+npm run dev_serve
+```
+
+## Run re-compile for assets and host (watches changes)
+Run a complete build so all pages are built.
+```bash
+npm start
+```
+
+Then run the following to host and watch for client asset changes
+```bash
+npm run dev_assets
 ```
 
 ### Change browser
