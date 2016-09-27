@@ -1,0 +1,122 @@
+.callout {
+  padding-bottom: 1rem;
+
+  &.code {
+    background-color: $nuxeo-color-code-background;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    .title {
+      margin-bottom: 0;
+    }
+
+    pre {
+      padding: .6em;
+    }
+  }
+
+  .title {
+    background-color: $light-gray;
+    border-bottom: 1px solid $callout-border;
+    border-top-left-radius: .43rem;
+    border-top-right-radius: .43rem;
+    font-family: Ademi;
+    margin: -1rem -1rem 2rem;
+    padding: .3rem .5rem 0;
+  }
+
+  &.nuxeo {
+    border: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    padding-left: 1.5rem;
+    position: relative;
+
+    .fa { //-stack
+      font-size: 1.4rem;
+      left: 1rem;
+      position: absolute;
+    }
+
+    &.success,
+    &.tip {
+      border-left: 6px solid $success-color;
+    }
+
+    &.hint,
+    &.info {
+      border-left: 6px solid $primary-color;
+    }
+
+    &.note {
+      border-left: 6px solid $warning-color;
+
+      div {
+        &:first-of-type {
+          &::before {
+            color: $warning-color;
+            content: 'Note';
+          }
+        }
+      }
+    }
+
+    &.warning {
+      background-color: transparent;
+      border-left: 6px solid $alert-color;
+
+      div {
+        &:first-of-type {
+          &::before {
+            color: $alert-color;
+            content: 'Warning';
+          }
+        }
+      }
+    }
+
+    div {
+      &:first-of-type {
+        &::before {
+          font-size: $nuxeo-body-small;
+          margin-right: 1.5rem;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    &.tip {
+      div {
+        &:first-of-type {
+          &::before {
+            color: $success-color;
+            content: 'Tip';
+          }
+        }
+      }
+    }
+
+    &.info {
+      div {
+        &:first-of-type {
+          &::before {
+            color: $primary-color;
+            content: 'Info';
+          }
+        }
+      }
+    }
+
+    .heading {
+      font-size: $nuxeo-body-small;
+      text-transform: uppercase;
+    }
+
+    p {
+      &:last-child,
+      &:nth-last-child(2) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

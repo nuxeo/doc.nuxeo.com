@@ -50,9 +50,9 @@ $global-width: rem-calc(960);
 $foundation-palette: (
   primary: #2199e8,
   secondary: #777,
-  success: #3adb76,
-  warning: #ffae00,
-  alert: #ec5840,
+  success: #5eb726,
+  warning: #ffc200,
+  alert: #ff462a,
 );
 // $light-gray: #e6e6e6;
 // $medium-gray: #cacaca;
@@ -261,12 +261,12 @@ $body-font-family: Aregular, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-se
 
 // $callout-background: $white;
 // $callout-background-fade: 85%;
-// $callout-border: 1px solid rgba($black, 0.25);
+$callout-border: 0;
 // $callout-margin: 0 0 1rem 0;
-// $callout-padding: 1rem;
+$callout-padding: .5rem;
 // $callout-font-color: $body-font-color;
 // $callout-font-color-alt: $body-background;
-// $callout-radius: $global-radius;
+$callout-radius: .5rem;
 // $callout-link-tint: 30%;
 
 // 14. Close Button
@@ -590,4 +590,3 @@ $nuxeo-tools-color: #ffad27;
 $nuxeo-body-larger: 1.6rem;
 $nuxeo-body-large: 1.25rem;
 $nuxeo-body-small: .85rem;
-
