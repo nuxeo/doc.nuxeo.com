@@ -1,7 +1,3 @@
 <div class="callout {{type}} nuxeo">
-{{#unless no_icon}}<i class="fa fa-{{#if (condition type '===' 'tip')}}check-circle{{/if}}{{!
-              }}{{#if (condition type '===' 'success')}}check-circle{{/if}}{{!
-              }}{{#if (condition type '===' 'hint')}}info-circle{{/if}}{{!
-              }}{{#if (condition type '===' 'info')}}info-circle{{/if}}{{!
-              }}{{#if (condition type '===' 'warning')}}exclamation-triangle{{/if}}{{!
-              }}{{#if (condition type '===' 'note')}}exclamation-triangle{{/if}}"></i>{{#if heading}}<div><strong>{{heading}}</strong></div>{{/if}}{{/unless}}{{> @partial-block }}</div>
+{{#unless no_icon}}<i class="fa fa-{{#if (condition type '===' 'success')}}check-circle{{/if}}{{!
+              }}{{#if (condition type '===' 'hint')}}info-circle{{/if}}"></i>{{#if heading}}<div class="heading">{{heading}}</div>{{/if}}{{/unless}}<div>{{> @partial-block }}</div></div>
