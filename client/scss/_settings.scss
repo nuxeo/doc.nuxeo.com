@@ -47,11 +47,14 @@
 // $global-font-size: 100%;
 $global-width: rem-calc(960);
 // $global-lineheight: 1.5;
-// $primary-color: #2199e8;
-// $secondary-color: #777;
-// $success-color: #3adb76;
-// $warning-color: #ffae00;
-// $alert-color: #ec5840;
+$foundation-palette: (
+  // primary: #2199e8,
+  primary: #0f0,
+  secondary: #777,
+  success: #3adb76,
+  warning: #ffae00,
+  alert: #ec5840,
+);
 // $light-gray: #e6e6e6;
 // $medium-gray: #cacaca;
 // $dark-gray: #8a8a8a;
@@ -67,6 +70,10 @@ $body-font-family: Aregular, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-se
 // $global-weight-bold: bold;
 // $global-radius: 0;
 // $global-text-direction: ltr;
+// $global-flexbox: false;
+// $print-transparent-backgrounds: true;
+
+@include add-foundation-colors;
 
 // 2. Breakpoints
 // --------------
@@ -85,7 +92,7 @@ $body-font-family: Aregular, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-se
 
 // $grid-row-width: $global-width;
 // $grid-column-count: 12;
-// $grid-column-responsive-gutter: (
+// $grid-column-gutter: (
 //   small: 20px,
 //   medium: 30px,
 // );
@@ -177,9 +184,9 @@ $body-font-family: Aregular, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-se
 
 // $abide-inputs: true;
 // $abide-labels: true;
-// $input-background-invalid: $alert-color;
-// $form-label-color-invalid: $alert-color;
-// $input-error-color: $alert-color;
+// $input-background-invalid: map-get($foundation-palette, alert);
+// $form-label-color-invalid: map-get($foundation-palette, alert);
+// $input-error-color: map-get($foundation-palette, alert);
 // $input-error-font-size: rem-calc(12);
 // $input-error-font-weight: $global-weight-bold;
 
@@ -193,7 +200,7 @@ $body-font-family: Aregular, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-se
 // $accordion-item-padding: 1.25rem 1rem;
 // $accordion-content-background: $white;
 // $accordion-content-border: 1px solid $light-gray;
-// $accordion-content-color: foreground($accordion-background, $primary-color);
+// $accordion-content-color: foreground($accordion-content-background, $body-font-color);
 // $accordion-content-padding: 1rem;
 
 // 8. Accordion Menu
@@ -231,8 +238,8 @@ $body-font-family: Aregular, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-se
 // $button-fill: solid;
 // $button-background: $primary-color;
 // $button-background-hover: scale-color($button-background, $lightness: -15%);
-// $button-color: #fff;
-// $button-color-alt: #000;
+// $button-color: $white;
+// $button-color-alt: $black;
 // $button-radius: $global-radius;
 // $button-sizes: (
 //   tiny: 0.6rem,
@@ -320,7 +327,7 @@ $body-font-family: Aregular, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-se
 // $fieldset-margin: rem-calc(18 0);
 // $legend-padding: rem-calc(0 3);
 // $form-spacing: rem-calc(16);
-// $helptext-color: #333;
+// $helptext-color: $black;
 // $helptext-font-size: rem-calc(13);
 // $helptext-font-style: italic;
 // $input-prefix-color: $black;
@@ -332,9 +339,10 @@ $body-font-family: Aregular, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-se
 // $form-label-font-weight: $global-weight-normal;
 // $form-label-line-height: 1.8;
 // $select-background: $white;
-// $select-triangle-color: #333;
+// $select-triangle-color: $dark-gray;
 // $select-radius: $global-radius;
 // $input-color: $black;
+// $input-placeholder-color: $medium-gray;
 // $input-font-family: inherit;
 // $input-font-size: rem-calc(16);
 // $input-background: $white;
@@ -344,7 +352,7 @@ $body-font-family: Aregular, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-se
 // $input-border-focus: 1px solid $dark-gray;
 // $input-shadow: inset 0 1px 2px rgba($black, 0.1);
 // $input-shadow-focus: 0 0 5px $medium-gray;
-// $input-cursor-disabled: default;
+// $input-cursor-disabled: not-allowed;
 // $input-transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
 // $input-number-spinners: true;
 // $input-radius: $global-radius;
@@ -371,10 +379,21 @@ $body-font-family: Aregular, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-se
 // $menu-margin: 0;
 // $menu-margin-nested: 1rem;
 // $menu-item-padding: 0.7rem 1rem;
+// $menu-item-color-active: $white;
+// $menu-item-background-active: map-get($foundation-palette, primary);
 // $menu-icon-spacing: 0.25rem;
-// $menu-expand-max: 6;
 
-// 23. Off-canvas
+// 23. Meter
+// ---------
+
+// $meter-height: 1rem;
+// $meter-radius: $global-radius;
+// $meter-background: $medium-gray;
+// $meter-fill-good: $success-color;
+// $meter-fill-medium: $warning-color;
+// $meter-fill-bad: $alert-color;
+
+// 24. Off-canvas
 // --------------
 
 // $offcanvas-size: 250px;
@@ -387,7 +406,7 @@ $body-font-family: Aregular, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-se
 // $maincontent-class: 'off-canvas-content';
 // $maincontent-shadow: 0 0 10px rgba($black, 0.5);
 
-// 24. Orbit
+// 25. Orbit
 // ---------
 
 // $orbit-bullet-background: $medium-gray;
@@ -402,7 +421,7 @@ $body-font-family: Aregular, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-se
 // $orbit-control-padding: 1rem;
 // $orbit-control-zindex: 10;
 
-// 25. Pagination
+// 26. Pagination
 // --------------
 
 // $pagination-font-size: rem-calc(14);
@@ -419,7 +438,7 @@ $body-font-family: Aregular, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-se
 // $pagination-mobile-items: false;
 // $pagination-arrows: true;
 
-// 26. Progress Bar
+// 27. Progress Bar
 // ----------------
 
 // $progress-height: 1rem;
@@ -428,24 +447,24 @@ $body-font-family: Aregular, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-se
 // $progress-meter-background: $primary-color;
 // $progress-radius: $global-radius;
 
-// 27. Reveal
+// 28. Reveal
 // ----------
 
 // $reveal-background: $white;
 // $reveal-width: 600px;
 // $reveal-max-width: $global-width;
-// $reveal-offset: rem-calc(100);
 // $reveal-padding: $global-padding;
 // $reveal-border: 1px solid $medium-gray;
 // $reveal-radius: $global-radius;
 // $reveal-zindex: 1005;
 // $reveal-overlay-background: rgba($black, 0.45);
 
-// 28. Slider
+// 29. Slider
 // ----------
 
+// $slider-width-vertical: 0.5rem;
+// $slider-transition: all 0.2s ease-in-out;
 // $slider-height: 0.5rem;
-// $slider-width-vertical: $slider-height;
 // $slider-background: $light-gray;
 // $slider-fill-background: $medium-gray;
 // $slider-handle-height: 1.4rem;
@@ -453,9 +472,8 @@ $body-font-family: Aregular, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-se
 // $slider-handle-background: $primary-color;
 // $slider-opacity-disabled: 0.25;
 // $slider-radius: $global-radius;
-// $slider-transition: all 0.2s ease-in-out;
 
-// 29. Switch
+// 30. Switch
 // ----------
 
 // $switch-background: $medium-gray;
@@ -471,7 +489,7 @@ $body-font-family: Aregular, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-se
 // $switch-paddle-radius: $global-radius;
 // $switch-paddle-transition: all 0.25s ease-out;
 
-// 30. Table
+// 31. Table
 // ---------
 
 // $table-background: $white;
@@ -488,14 +506,13 @@ $body-font-family: Aregular, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-se
 // $table-head-font-color: $body-font-color;
 // $show-header-for-stacked: false;
 
-// 31. Tabs
+// 32. Tabs
 // --------
 
 // $tab-margin: 0;
 // $tab-background: $white;
 // $tab-background-active: $light-gray;
-// $tab-border: $light-gray;
-// $tab-item-color: foreground($tab-background, $primary-color);
+// $tab-item-font-size: rem-calc(12);
 // $tab-item-background-hover: $white;
 // $tab-item-padding: 1.25rem 1.5rem;
 // $tab-expand-max: 6;
@@ -504,7 +521,7 @@ $body-font-family: Aregular, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-se
 // $tab-content-color: foreground($tab-background, $primary-color);
 // $tab-content-padding: 1rem;
 
-// 32. Thumbnail
+// 33. Thumbnail
 // -------------
 
 // $thumbnail-border: solid 4px $white;
@@ -514,7 +531,7 @@ $body-font-family: Aregular, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-se
 // $thumbnail-transition: box-shadow 200ms ease-out;
 // $thumbnail-radius: $global-radius;
 
-// 33. Title Bar
+// 34. Title Bar
 // -------------
 
 // $titlebar-background: $black;
@@ -525,7 +542,7 @@ $body-font-family: Aregular, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-se
 // $titlebar-icon-color-hover: $medium-gray;
 // $titlebar-icon-spacing: 0.25rem;
 
-// 34. Tooltip
+// 35. Tooltip
 // -----------
 
 // $has-tip-font-weight: $global-weight-bold;
@@ -539,27 +556,34 @@ $body-font-family: Aregular, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-se
 // $tooltip-pip-offset: 1.25rem;
 // $tooltip-radius: $global-radius;
 
-// 35. Top Bar
+// 36. Top Bar
 // -----------
 
 $topbar-padding: 0;
 // $topbar-background: $light-gray;
+// $topbar-submenu-background: $topbar-background;
 // $topbar-title-spacing: 1rem;
 // $topbar-input-width: 200px;
 
+// Custom Variables
+// -----------
+
 $nuxeo-color-accent: #ff452a;
-$nuxeo-color-light-blue: #9EC2D5;
+$nuxeo-color-light-blue: #9ec2d5;
 $nuxeo-color-light-gray: #ccc;
 $nuxeo-color-footer: #404040;
 $nuxeo-color-code-background: #eee;
 
-$nuxeo-tutorials-color: #50e3c2;
+// Section colours
+$nuxeo-tutorial-color: #50e3c2;
 $nuxeo-server-color: #6eccf5;
 $nuxeo-web-ui-color: #4a90e2;
 $nuxeo-desktop-mob-color: #8c0ca7;
 $nuxeo-packages-color: #ff462a;
-$nuxeo-online-color: #ff8426;
+$nuxeo-sdks-color: #bcc2c8;
+$nuxeo-services-color: #ff8426;
+$nuxeo-tools-color: #ffad27;
 
 $nuxeo-body-larger: 1.6rem;
 $nuxeo-body-large: 1.25rem;
-$nuxeo-body-small: 0.85rem;
+$nuxeo-body-small: .85rem;

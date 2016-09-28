@@ -1,19 +1,19 @@
 @charset 'utf-8';
 
-/* Nuxeo Fonts */
+// Nuxeo Fonts
 @font-face {
-    font-family: 'Aregular';
-    src:url(/assets/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.eot);
-    src:url(/assets/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.eot?#iefix) format('embedded-opentype'),url(/assets/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.woff) format('woff'),url(/assets/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.ttf);
-    font-weight: 400;
-    font-style: normal;
+  font-family: 'Aregular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.eot');
+  src: url('/assets/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.woff') format('woff'), url('/assets/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.ttf');
 }
 @font-face {
-    font-family: 'Ademi';
-    src:url(/assets/fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.eot);
-    src:url(/assets/fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.eot?#iefix) format('embedded-opentype'),url(/assets/fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.woff) format('woff'),url(/assets/fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.ttf);
-    font-weight: 400;
-    font-style :normal;
+  font-family: 'Ademi';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.eot');
+  src: url('/assets/fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.woff') format('woff'), url('/assets/fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.ttf');
 }
 
 @import 'settings';
@@ -56,12 +56,11 @@
 @include foundation-tooltip;
 @include foundation-top-bar;
 
-@import 'node_modules/highlight.js/styles/foundation';
-
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
 @import 'font-awesome';
 
-@import 'core';
+// @import 'core';
+@import 'components/nuxeo-dark-highlightjs';
 @import 'components/documentation';

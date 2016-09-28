@@ -40,68 +40,7 @@
                         </div>
                     </div>
                 </div>
-                <nav id="main-menu">
-                    <ul class="vertical medium-horizontal dropdown menu expanded" data-dropdown-menu>
-                        <li class="menu-link is-dropdown-submenu-parent">
-                            <a href="{{page space='nxdoc' page='Tutorials'}}">Tutorial</a>
-                            <ul class="menu">
-                                <li><a href="#">Discover</a></li>
-                                <li><a href="#">Customize</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-link is-dropdown-submenu-parent">
-                            <a href="{{page space='nxdoc' page='Nuxeo Server'}}">Nuxeo Server</a>
-                            <ul class="menu">
-                                <li><a href="{{page space='nxdoc' page='Installation'}}">Installation</a></li>
-                                <li><a href="{{page space='nxdoc' page='Rest API'}}">Rest API</a></li>
-                                <li><a href="{{page space='nxdoc' page='Upgrading the Nuxeo Platform'}}">Upgrading the Nuxeo Platform</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-link is-dropdown-submenu-parent">
-                            <a href="{{page space='nxdoc' page='Web UI'}}">Web UI</a>
-                            <ul class="menu">
-                                <li><a href="#">Introduction to Polymer and Web Components</a></li>
-                                <li><a href="{{page space='nxdoc' page='Nuxeo Elements'}}">Nuxeo Elements</a></li>
-                                <li><a href="#">Web UI Configuration and Extension</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-link is-dropdown-submenu-parent">
-                            <a href="{{page space='nxdoc' page='Desktop and Mobile'}}">Desktop/Mobile</a>
-                            <ul class="menu">
-                                <li><a href="{{page space='nxdoc' page='Nuxeo Drive'}}">Drive</a></li>
-                                <li><a href="{{page space='nxdoc' page='Nuxeo Mobile'}}">Mobile</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-link is-dropdown-submenu-parent">
-                            <a href="#">Nuxeo Packages</a>
-                            <ul class="menu">
-                                <li><a href="{{page space='nxdoc' page='Installing a new package on your instance'}}">Nuxeo Package Installation</a></li>
-                                <li><a href="{{page space='nxdoc' page='Creating Nuxeo Packages'}}">Creating your Own Nuxeo Package</a></li>
-                                <li><a href="{{page space='nxdoc' page='Marketplace Add Ons'}}">Available Add-ons</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-link is-dropdown-submenu-parent">
-                            <a href="{{page space='nxdoc' page='Client SDKs'}}">Client SDK</a>
-                            <ul class="menu">
-                                <li><a href="{{page space='nxdoc' page='Java Automation Client'}}">Java</a></li>
-                                <li><a href="{{page space='nxdoc' page='JavaScript Client'}}">JavaScript</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-link is-dropdown-submenu-parent">
-                            <a href="{{page space='studio' page='index'}}">Nuxeo Online Services</a>
-                            <ul class="menu">
-                                <li><a href="{{page space='studio' page='Nuxeo Studio'}}">Nuxeo Studio</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-link is-dropdown-submenu-parent">
-                            <a href="#">Tools</a>
-                            <ul class="menu open-left">
-                                <li><a href="{{page space='corg' page='index'}}">Nuxeo CORG</a></li>
-                                <li><a href="{{page space='idedoc' page='Nuxeo IDE'}}">Nuxeo IDE</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
+                {{> horizontal_menu}}
             </header>
             <div id="side-menu-button" class="{{#unless no_side_menu}}hide-for-large{{/unless}}">
                 <button type="button" class="button" data-toggle="off-canvas"><i class="fa fa-bars"></i> Side Menu</button>
