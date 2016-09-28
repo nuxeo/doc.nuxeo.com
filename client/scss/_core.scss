@@ -1,58 +1,6 @@
 body {
     background-color: $nuxeo-color-footer;
 }
-#off-canvas {
-    background-color: $nuxeo-color-footer;
-    padding-top: 2rem;
-
-    ul {
-        margin-left: 0.6rem;
-        ul {
-            margin-left: 1.2rem;
-        }
-    }
-
-    li {
-        list-style: none;
-
-        > div {
-            position: relative;
-            padding: 0.1rem 0 0.1rem 0.4rem;
-
-            > i {
-                position: absolute;
-                top: 5px;
-                left: -4px;
-                color: white;
-                font-size: .85rem;
-                transition: color .2s ease;
-                cursor: pointer;
-
-                &:hover {
-                    color: $primary-color;
-                }
-            }
-        }
-    }
-    a {
-        padding-left: .7rem;
-        color: white;
-        display: block;
-        font-size: .85rem;
-        transition: color .2s ease;
-
-        &.active {
-            font-weight: bold;
-            color: $primary-color;
-        }
-        &:hover {
-            color: $primary-color;
-        }
-    }
-}
-.js-off-canvas-exit {
-    background: none;
-}
 
 h2.small {
     font-size: 1.1rem;
@@ -583,15 +531,6 @@ svg {
     }
 }
 
-#side-menu-button {
-    position: absolute;
-    top: 2.8rem;
-    right: 3.3rem;
-    z-index: 5;
-    &.hide-for-large {
-        right: 0.5rem;
-    }
-}
 #page-information-button {
     position: absolute;
     top: 2.8rem;
@@ -626,9 +565,6 @@ svg {
             font-size: 1.2rem;
         }
     }
-    #side-menu-button {
-        right: 0.5rem;
-    }
 }
 
 // Small
@@ -637,10 +573,6 @@ svg {
         p {
             font-size: 1rem;
         }
-    }
-    #side-menu-button {
-        top: 3.5rem;
-        right: 0;
     }
 }
 

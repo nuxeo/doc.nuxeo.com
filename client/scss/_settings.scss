@@ -330,8 +330,8 @@ $callout-radius: .5rem;
 // $helptext-font-size: rem-calc(13);
 // $helptext-font-style: italic;
 // $input-prefix-color: $black;
-// $input-prefix-background: $light-gray;
-// $input-prefix-border: 1px solid $medium-gray;
+$input-prefix-background: none;
+$input-prefix-border: 0;
 // $input-prefix-padding: 1rem;
 // $form-label-color: $black;
 // $form-label-font-size: rem-calc(14);
@@ -347,9 +347,9 @@ $callout-radius: .5rem;
 // $input-background: $white;
 // $input-background-focus: $white;
 // $input-background-disabled: $light-gray;
-// $input-border: 1px solid $medium-gray;
+$input-border: 0;
 // $input-border-focus: 1px solid $dark-gray;
-// $input-shadow: inset 0 1px 2px rgba($black, 0.1);
+$input-shadow: none;
 // $input-shadow-focus: 0 0 5px $medium-gray;
 // $input-cursor-disabled: not-allowed;
 // $input-transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
@@ -395,13 +395,13 @@ $callout-radius: .5rem;
 // 24. Off-canvas
 // --------------
 
-// $offcanvas-size: 250px;
-// $offcanvas-background: $light-gray;
+$offcanvas-size: 275px;
+$offcanvas-background: #fff;
 // $offcanvas-zindex: -1;
 // $offcanvas-transition-length: 0.5s;
 // $offcanvas-transition-timing: ease;
 // $offcanvas-fixed-reveal: true;
-// $offcanvas-exit-background: rgba($white, 0.25);
+$offcanvas-exit-background: none;
 // $maincontent-class: 'off-canvas-content';
 // $maincontent-shadow: 0 0 10px rgba($black, 0.5);
 
@@ -571,6 +571,11 @@ $nuxeo-color-accent: #ff452a;
 $nuxeo-color-light-blue: #9ec2d5;
 $nuxeo-color-light-gray: #ccc;
 $nuxeo-color-footer: #404040;
+
+// Left menu
+$nuxeo-color-menu-background: #fbfdfd;
+$nuxeo-color-menu-border: #eff3f6;
+$nuxeo-color-menu-hover: #ebeff5;
 
 // Code Block
 $nuxeo-color-code-background: #384248;

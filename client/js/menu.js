@@ -101,7 +101,7 @@ module.exports = function ($) {
                     return (
                         <div>
                             <div className="input-group">
-                                <span className="input-group-label"><i className="fa fa-filter"></i></span>
+                                <span className="input-group-label">Filter</span>
                                 <input type="text"
                                     className="input-group-field"
                                     placeholder="Filter Menu items&hellip;"

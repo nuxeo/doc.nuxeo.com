@@ -1,0 +1,101 @@
+.off-canvas {
+  &.position-left {
+
+    .input-group {
+      padding-top: 1rem;
+    }
+
+    .input-group-label {
+      border-right: 2px solid $primary-color;
+      color: $primary-color;
+      font-size: .9rem;
+      letter-spacing: .1rem;
+      text-transform: uppercase;
+    }
+
+    .input-group-field {
+      height: 2rem;
+    }
+  }
+}
+
+#off-canvas,
+#side-menu {
+  height: 100%;
+}
+
+#side-menu {
+  display: flex;
+  flex-direction: column;
+
+  > div {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    .input-group + ul {
+      background-color: $nuxeo-color-menu-background;
+      border-top: 1px solid $nuxeo-color-menu-border;
+      flex: 1;
+      margin: 0;
+      padding-top: 1rem;
+
+      > li {
+        > div {
+          font-weight: bold;
+        }
+
+        > span > ul {
+          margin: 0;
+
+          > li > div {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      font-size: .85rem;
+
+      > div {
+        padding: .5rem 1.5rem;
+
+        &:hover {
+          background-color: $nuxeo-color-menu-hover;
+
+          a {
+            color: $black;
+          }
+        }
+      }
+
+      i {
+        color: $medium-gray;
+        cursor: pointer;
+        float: right;
+        font-size: .85rem;
+        line-height: 1.6;
+        transition: color .2s ease;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+
+    a {
+      color: $secondary-color;
+      display: block;
+      transition: color .2s ease;
+
+      &.active {
+        color: $black;
+      }
+    }
+  }
+}
