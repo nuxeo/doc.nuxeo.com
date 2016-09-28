@@ -510,7 +510,7 @@ $offcanvas-exit-background: none;
 
 // $tab-margin: 0;
 // $tab-background: $white;
-// $tab-background-active: $light-gray;
+$tab-background-active: #fff;
 // $tab-item-font-size: rem-calc(12);
 // $tab-item-background-hover: $white;
 // $tab-item-padding: 1.25rem 1.5rem;
@@ -518,7 +518,7 @@ $offcanvas-exit-background: none;
 // $tab-content-background: $white;
 // $tab-content-border: $light-gray;
 // $tab-content-color: foreground($tab-background, $primary-color);
-// $tab-content-padding: 1rem;
+$tab-content-padding: 0;
 
 // 33. Thumbnail
 // -------------

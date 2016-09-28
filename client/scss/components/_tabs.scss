@@ -1,0 +1,29 @@
+.tabs {
+  border: 0;
+  font-weight: bold;
+  letter-spacing: .05rem;
+  text-transform: uppercase;
+
+  li {
+    border-bottom: 2px solid $secondary-color;
+    border-top: 1px solid transparent; // To counterbalance when tab is active
+  }
+
+  a {
+    color: $medium-gray;
+  }
+
+  .is-active {
+    border: 2px solid $secondary-color;
+    border-bottom: 0;
+    border-top: 3px solid $primary-color;
+
+    a {
+      color: $secondary-color;
+    }
+  }
+}
+
+.tabs-content {
+  border: 0;
+}
