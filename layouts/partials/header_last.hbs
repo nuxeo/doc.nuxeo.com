@@ -1,47 +1,8 @@
-
+</head>
 <body>
-<div class="off-canvas-wrapper">
-    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-        <div class="off-canvas position-left {{#unless no_side_menu}}reveal-for-large{{/unless}}" id="off-canvas" data-off-canvas>
-            <!-- Close button -->
-            <button class="close-button" aria-label="Close menu" type="button" data-close>
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <div id="side-menu" data-space="{{url.key.space_path}}"></div>
-        </div>
-        <div class="off-canvas-content" data-off-canvas-content>
-            <header>
-                <div class="top-bar">
-                    <div class="top-bar-right">
-                        <ul class="show-for-medium horizontal menu">
-                            <li class="small"><a href="http://www.nuxeo.com/careers/">Careers</a></li>
-                            <li class="small"><a href="http://connect.nuxeo.com" target="_blank">Login</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row">
-                    <a href="/" class="hide-for-medium strong nuxeo-logo-container">
-                        <img src="/assets/imgs/logo340x60.png" alt="Nuxeo" class="nuxeo-logo small nuxeo-space-top-small"> | Documentation center
-                    </a>
-                </div>
-                <div id="menu-container" class="row expanded" data-sticky-container>
-
-                    <div class="sticky nuxeo-menu" id="nuxeo-menu" data-sticky data-margin-top="0" style="" data-margin-bottom="0" data-top-anchor="nuxeo-menu" data-btm-anchor="nuxeo-submenu:top">
-                        <div class="row">
-                            <div class="title-bar" style="display:none;" data-responsive-toggle="main-header">
-                                <button class="menu-icon" type="button" data-toggle></button>
-                                <div class="title-bar-title">Menu</div>
-                            </div>
-                            <div id="main-header" class="top-bar">
-                                <a href="/" class="show-for-medium strong">
-                                    <img src="/assets/imgs/logo340x60.png" alt="Nuxeo" class="nuxeo-logo"> | Documentation Center
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {{> horizontal_menu}}
-            </header>
-            <div id="side-menu-button" class="{{#unless no_side_menu}}hide-for-large{{/unless}}">
-                <button type="button" class="button" data-toggle="off-canvas"><i class="fa fa-bars"></i> Side Menu</button>
-            </div>
+    <div class="row expanded">
+    {{#unless no_side_menu}}
+        <div class="column medium-8 large-9 medium-push-4 large-push-3">
+    {{else}}
+        <div class="column">
+    {{/unless}}
