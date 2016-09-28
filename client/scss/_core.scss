@@ -235,22 +235,6 @@ a.button.large-padding {
     border-radius: 2000px;
 }
 
-pre {
-    background: $nuxeo-color-code-background;
-    white-space: pre-wrap;
-    font-family: "Courier 10 Pitch",Courier,monospace;
-    font-size: 15px !important;
-    line-height: 1.6;
-    margin-bottom: 1.6em;
-    max-width: 100%;
-    overflow: auto;
-    padding: 1.6em;
-    > code {
-        border: none;
-        background: transparent;
-    }
-}
-
 // Spacing and padding
 .nuxeo-section {
     margin-top: 3rem;

@@ -1,0 +1,18 @@
+pre {
+  background: $nuxeo-color-code-background;
+  border-radius: $code-border-radius;
+  color: $nuxeo-color-code-foreground;
+  font-family: 'Courier 10 Pitch', Courier, monospace;
+  font-size: 15px !important;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em;
+  white-space: pre-wrap;
+
+  > code {
+    background: transparent;
+    border: 0;
+  }
+}

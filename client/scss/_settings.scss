@@ -571,7 +571,11 @@ $nuxeo-color-accent: #ff452a;
 $nuxeo-color-light-blue: #9ec2d5;
 $nuxeo-color-light-gray: #ccc;
 $nuxeo-color-footer: #404040;
-$nuxeo-color-code-background: #eee;
+
+// Code Block
+$nuxeo-color-code-background: #384248;
+$nuxeo-color-code-foreground: #f8f8f8;
+$code-border-radius: 5px;
 
 // Section colours
 $nuxeo-tutorial-color: #50e3c2;
@@ -586,3 +590,4 @@ $nuxeo-tools-color: #ffad27;
 $nuxeo-body-larger: 1.6rem;
 $nuxeo-body-large: 1.25rem;
 $nuxeo-body-small: .85rem;
+
