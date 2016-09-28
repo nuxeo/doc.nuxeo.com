@@ -1,0 +1,34 @@
+#toc {
+  li {
+    border-left: 3px solid $primary-color;
+
+    &:first-child {
+      &::before {
+        content: 'Contents';
+        font-size: $nuxeo-button-default;
+        font-weight: bold;
+        padding-left: 1rem;
+      }
+    }
+  }
+
+  .button {
+    background: none;
+    color: $black;
+    text-align: left;
+    transition: color .2s ease, font-weight .2s ease;
+
+    &:hover,
+    &.active {
+      color: $primary-color;
+    }
+
+    &.active {
+      font-weight: bold;
+    }
+  }
+
+  .h3 {
+    padding-left: 1rem;
+  }
+}
