@@ -18,9 +18,9 @@
         </nav>
     </div>
     {{/if}}
-    <div class="column medium-6 medium-offset-6 text-right">
+    <div id="tags" class="column">
         {{#each labels as |label|}}
-            <a class="button hollow small" href="/{{../url.key.space_path}}/label/{{sluggy label}}">{{label}}</a>
+            <a href="/{{../url.key.space_path}}/label/{{sluggy label}}">{{label}}</a>{{#unless @last}}, {{/unless}}
         {{/each}}
     </div>
 </div>

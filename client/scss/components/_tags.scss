@@ -1,0 +1,17 @@
+#tags {
+  color: $secondary-color;
+  font-size: $nuxeo-body-small;
+  font-weight: bold;
+
+  > :first-child {
+    &::before {
+      color: $medium-gray;
+      content: 'Tags ';
+      font-style: italic;
+    }
+  }
+
+  a {
+    color: $secondary-color;
+  }
+}
