@@ -7,10 +7,32 @@
   li {
     border-bottom: 2px solid $secondary-color;
     border-top: 1px solid transparent; // To counterbalance when tab is active
-  }
+    white-space: nowrap;
 
-  a {
-    color: $medium-gray;
+    // To prevent tabs from stacking
+    &:first-child {
+      &:nth-last-child(2),
+      ~ li {
+        max-width: calc(100% / 2);
+      }
+
+      &:nth-last-child(3),
+      ~ li {
+        max-width: calc(100% / 3);
+      }
+
+      // Assuming up to 4 tabs
+      &:nth-last-child(4),
+      ~ li {
+        max-width: calc(100% / 4);
+      }
+    }
+
+    a {
+      color: $medium-gray;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   .is-active {
