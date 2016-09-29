@@ -1,3 +1,8 @@
+{{#if (condition type '===' 'code')}}
+{{#if heading}}<div class="code-heading">{{heading}}</div>{{/if}}
+{{> @partial-block }}
+{{else}}
 <div class="callout {{type}} nuxeo">
 {{#unless no_icon}}<i class="fa fa-{{#if (condition type '===' 'success')}}check-circle{{/if}}{{!
               }}{{#if (condition type '===' 'hint')}}info-circle{{/if}}"></i>{{#if heading}}<div class="heading">{{heading}}</div>{{/if}}{{/unless}}<div>{{> @partial-block }}</div></div>
+{{/if}}
