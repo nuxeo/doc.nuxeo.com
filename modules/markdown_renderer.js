@@ -73,4 +73,16 @@ renderer.image = function (href_str, title, alt) {
     </div>`;
 };
 
+renderer.table = (header, body) => `
+    <div class="table-scroll"
+        <table>
+            <thead>
+                ${header}
+            </thead>
+            <tbody>
+                ${body}
+            </tbody>
+        </table>
+    </div>`;
+
 module.exports = renderer;
