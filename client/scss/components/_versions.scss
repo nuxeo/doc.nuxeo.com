@@ -1,0 +1,17 @@
+#page-versions {
+  font-size: $nuxeo-button-default;
+  text-transform: uppercase;
+
+  a {
+    color: $black;
+  }
+
+  .menu-title {
+    letter-spacing: .05rem;
+
+    span {
+      border-right: 1px solid $black;
+      padding-right: 1rem;
+    }
+  }
+}

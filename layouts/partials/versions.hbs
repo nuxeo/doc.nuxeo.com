@@ -1,9 +1,21 @@
 {{#if url.versions}}
-    <div class="float-right small button-group">
-    {{#each url.versions}}
+<div id="page-versions">
+  <ul class="dropdown menu" data-dropdown-menu>
+    <li class="menu-title"><span>Version</span></li>
+    <li>
+      {{#each url.versions}}
+      {{#if this.is_current_version}}
+      <a href="#">{{this.label}}</a>
+      {{/if}}
+      {{/each}}
+      <ul class="menu">
+        {{#each url.versions}}
         {{#unless this.no_page}}
-            <a href="{{this.url}}" class="button nuxeo-space-right-tiny {{#unless this.is_current_version}}hollow{{/unless}}">{{this.label}}</a>
+        <li><a href="{{this.url}}">{{this.label}}</a></li>
         {{/unless}}
-    {{/each}}
-    </div>
+        {{/each}}
+      </ul>
+    </li>
+  </ul>
+</div>
 {{/if}}
