@@ -1,25 +1,9 @@
-
-// code-header - Same as h4
-@each $size, $headers in $header-sizes {
-  @include breakpoint($size) {
-    .code-heading {
-      color: $header-color;
-      font-family: $header-font-family;
-      font-size: rem-calc(map-get($headers, 'h4'));
-      font-style: $header-font-style;
-      font-weight: $header-font-weight;
-      line-height: $header-lineheight;
-      margin-bottom: $header-margin-bottom;
-      margin-top: 0;
-      text-rendering: $header-text-rendering;
-    }
-  }
-}
-
+// Inline code
 code {
   border-radius: 3px;
 }
 
+// Code block
 pre {
   background: $nuxeo-color-code-background;
   border-radius: $code-border-radius;
@@ -36,5 +20,36 @@ pre {
     background: transparent;
     border: 0;
     color: $nuxeo-color-code-foreground;
+  }
+}
+
+// Code panel
+.code-heading {
+  color: $header-color;
+  font-family: $header-font-family;
+  font-style: $header-font-style;
+  font-weight: $header-font-weight;
+  line-height: $header-lineheight;
+  margin-bottom: -1rem;
+  text-rendering: $header-text-rendering;
+
+  p & {
+    margin: 0;
+  }
+}
+
+// Remove empty paragraphs added by Markdown
+p {
+  :empty {
+    display: none;
+  }
+}
+
+// code-header - Same as h4
+@each $size, $headers in $header-sizes {
+  @include breakpoint($size) {
+    .code-heading {
+      font-size: rem-calc(map-get($headers, 'h4'));
+    }
   }
 }
