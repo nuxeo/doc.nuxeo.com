@@ -47,6 +47,9 @@ renderer.image = function (href_str, title, alt) {
     if (params.align) {
         div_classes.push('text-' + params.align);
     }
+    else {
+        div_classes.push('text-center');
+    }
 
     if (img_classes.length) {
         let classes_join = img_classes.join(' ');
