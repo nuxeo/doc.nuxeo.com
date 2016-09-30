@@ -51,7 +51,7 @@
     &.note {
       border-left: 6px solid $warning-color;
 
-      div {
+      > div {
         &:first-of-type {
           &::before {
             color: $warning-color;
@@ -65,7 +65,7 @@
       background-color: transparent;
       border-left: 6px solid $alert-color;
 
-      div {
+      > div {
         &:first-of-type {
           &::before {
             color: $alert-color;
@@ -75,7 +75,7 @@
       }
     }
 
-    div {
+    > div {
       &:first-of-type {
         &::before {
           font-size: $nuxeo-body-small;
@@ -86,7 +86,7 @@
     }
 
     &.tip {
-      div {
+      > div {
         &:first-of-type {
           &::before {
             color: $success-color;
@@ -97,7 +97,7 @@
     }
 
     &.info {
-      div {
+      > div {
         &:first-of-type {
           &::before {
             color: $primary-color;
