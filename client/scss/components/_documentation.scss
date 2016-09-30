@@ -9,6 +9,18 @@
   }
 }
 
+.heading-group {
+  margin-bottom: 1.5rem;
+
+  h1 {
+    margin-bottom: .5rem;
+  }
+
+  h1 ~ div {
+    color: $secondary-color;
+  }
+}
+
 img {
   &.nuxeo {
     &.border {

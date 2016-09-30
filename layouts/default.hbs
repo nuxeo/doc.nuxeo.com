@@ -4,7 +4,10 @@
         {{> information}}
         {{> versions}}
         {{> breadcrumb}}
-        <h1 id="page-title">{{title}}</h1>
+        <div class="heading-group">
+          <h1 id="page-title">{{title}}</h1>
+          <div>Updated: {{moment review.date format='LL'}}</div>
+        </div>
         {{> flag_review}}
     </div>
     <div id="content" class="column {{#if toc}}toc large-8 {{#if toc_no_h4}}toc-no-h4{{/if}}{{/if}}{{#if tabbed_page}} tabbed{{/if}}">
