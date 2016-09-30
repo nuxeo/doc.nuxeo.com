@@ -1,45 +1,24 @@
 #side-menu {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-
-  > div {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
+  ul {
+    font-size: $nuxeo-body-smaller;
+    font-weight: bold;
+    list-style: none;
+    margin: 0;
+    text-transform: uppercase;
   }
 
   .input-group + ul {
-    background-color: $nuxeo-color-menu-background;
-    border-top: 1px solid $nuxeo-color-menu-border;
-    flex: 1;
-    margin: 0;
-    padding-top: 1rem;
-
-    > li {
-      > div {
-        font-weight: bold;
-      }
-
-      > span > ul {
-        margin: 0;
-
-        > li > div {
-          font-weight: bold;
-        }
+    > li > span > ul > li {
+      ul {
+        background-color: $nuxeo-color-menu-background-selected;
       }
     }
   }
 
-  ul {
-    list-style: none;
-  }
-
   li {
-    font-size: .85rem;
 
     > div {
-      padding: .5rem 1.5rem;
+      padding: .5rem 2rem;
 
       &:hover {
         background-color: $nuxeo-color-menu-hover;
@@ -54,8 +33,8 @@
       color: $medium-gray;
       cursor: pointer;
       float: right;
-      font-size: .85rem;
-      line-height: 1.6;
+      font-size: $nuxeo-body-smaller;
+      line-height: $lead-lineheight;
       transition: color .2s ease;
 
       &:hover {
@@ -75,15 +54,25 @@
   }
 
   .input-group {
-    padding-top: 1rem;
+    border: 2px solid $medium-gray;
+    margin: 2rem;
+    padding: .5rem;
+    width: auto;
   }
 
   .input-group-label {
-    border-right: 2px solid $primary-color;
-    color: $primary-color;
-    font-size: $nuxeo-button-default;
+    color: $medium-gray;
+    font-size: $nuxeo-body-small;
     letter-spacing: .1rem;
+    padding-right: 0;
     text-transform: uppercase;
+
+    span {
+      border-right: 2px solid $primary-color;
+      padding-bottom: .25rem;
+      padding-right: 16px;
+      padding-top: .25rem;
+    }
   }
 
   .input-group-field {

@@ -58,7 +58,7 @@ $foundation-palette: (
 // $medium-gray: #cacaca;
 // $dark-gray: #8a8a8a;
 // $black: #0a0a0a;
-// $white: #fefefe;
+$white: #fff;
 // $body-background: $white;
 // $body-font-color: $black;
 $body-font-family: Aregular, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
@@ -345,13 +345,13 @@ $input-prefix-border: 0;
 // $input-placeholder-color: $medium-gray;
 // $input-font-family: inherit;
 // $input-font-size: rem-calc(16);
-// $input-background: $white;
-// $input-background-focus: $white;
+$input-background: transparent;
+$input-background-focus: transparent;
 // $input-background-disabled: $light-gray;
 $input-border: 0;
-// $input-border-focus: 1px solid $dark-gray;
+$input-border-focus: 0;
 $input-shadow: none;
-// $input-shadow-focus: 0 0 5px $medium-gray;
+$input-shadow-focus: none;
 // $input-cursor-disabled: not-allowed;
 // $input-transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
 // $input-number-spinners: true;
@@ -574,9 +574,9 @@ $nuxeo-color-light-gray: #ccc;
 $nuxeo-color-footer: #404040;
 
 // Left menu
-$nuxeo-color-menu-background: #fbfdfd;
-$nuxeo-color-menu-border: #eff3f6;
-$nuxeo-color-menu-hover: #ebeff5;
+$nuxeo-color-menu-background: #fafcfd;
+$nuxeo-color-menu-background-selected: #edf3f8;
+$nuxeo-color-menu-hover: #a9e0f9;
 
 // Code Block
 $nuxeo-color-code-background: #384248;
@@ -596,4 +596,5 @@ $nuxeo-tools-color: #ffad27;
 $nuxeo-body-larger: 1.6rem;
 $nuxeo-body-large: 1.25rem;
 $nuxeo-body-small: .85rem;
+$nuxeo-body-smaller: .7rem;
 $nuxeo-button-default: .9rem;

@@ -101,10 +101,9 @@ module.exports = function ($) {
                     return (
                         <div>
                             <div className="input-group">
-                                <span className="input-group-label">Filter</span>
+                                <span className="input-group-label"><span>Filter</span></span>
                                 <input type="text"
                                     className="input-group-field"
-                                    placeholder="Filter Menu items&hellip;"
                                     onKeyUp={this.onFilterKeyUp}
                                 />
                             </div>
