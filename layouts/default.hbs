@@ -18,7 +18,7 @@
         </nav>
     </div>
     {{/if}}
-    <div id="tags" class="column">
+    <div id="tags" class="column {{#if toc}}large-8 end{{/if}}">
         {{#each labels as |label|}}
             <a href="/{{../url.key.space_path}}/label/{{sluggy label}}">{{label}}</a>{{#unless @last}}, {{/unless}}
         {{/each}}
