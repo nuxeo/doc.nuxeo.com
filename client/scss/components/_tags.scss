@@ -2,6 +2,8 @@
   color: $secondary-color;
   font-size: $nuxeo-body-small;
   font-weight: bold;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
 
   > :first-child {
     &::before {
