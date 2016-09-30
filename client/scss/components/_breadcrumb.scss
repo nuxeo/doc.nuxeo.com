@@ -1,5 +1,10 @@
 .breadcrumb {
-  color: $secondary-color;
+  color: $medium-gray;
   font-size: $nuxeo-body-small;
+  font-weight: bold;
   margin-top: 1rem;
+
+  a {
+    font-weight: normal;
+  }
 }
