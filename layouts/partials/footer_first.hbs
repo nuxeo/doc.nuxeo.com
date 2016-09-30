@@ -1,3 +1,38 @@
+            <footer class="column row">
+                <div class="row small-up-2">
+                    <div class="column copyright">
+                        Copyright &copy; {{moment format='YYYY'}} Nuxeo
+                        <br>
+                        <a href="http://www.nuxeo.com/privacy-policy">Privacy Policy</a>
+                    </div>
+                    <div class="column text-right social">
+                        <a href="https://www.facebook.com/Nuxeo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                        <a href="http://www.linkedin.com/groups/Nuxeo-Community-43314?home=&gid=43314&trk=anet_ug_hm">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                        <a href="https://twitter.com/nuxeo">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                        <a href="https://plus.google.com/u/0/+nuxeo/posts">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </footer>
         </div>
         {{#unless no_side_menu}}
         <div class="column medium-4 large-3 medium-pull-8 large-pull-9">
@@ -5,55 +40,6 @@
         </div>
         {{/unless}}
     </div>
-    <footer>
-        {{!-- Has id to ensure main menu works on pages without a submenu --}}
-        <div id="nuxeo-submenu" class="row small-up-1 medium-up-3">
-            <div class="column">
-                <a class="button expanded strong" href="http://www.nuxeo.com/">Nuxeo</a>
-            </div>
-            <div class="column">
-                <a class="button expanded strong" href="http://connect.nuxeo.com/">Online Services</a>
-            </div>
-            <div class="column">
-                <a class="button expanded strong" href="http://answers.nuxeo.com/">Answers</a>
-            </div>
-        </div>
-
-        <div class="row small-up-2">
-            <div class="column copyright">
-                Copyright &copy; {{moment format='YYYY'}} Nuxeo
-                <br>
-                <a href="http://www.nuxeo.com/privacy-policy">Privacy Policy</a>
-            </div>
-            <div class="column text-right social">
-                <a href="https://www.facebook.com/Nuxeo">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-                <a href="http://www.linkedin.com/groups/Nuxeo-Community-43314?home=&gid=43314&trk=anet_ug_hm">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-                <a href="https://twitter.com/nuxeo">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-                <a href="https://plus.google.com/u/0/+nuxeo/posts">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
-                    </span>
-                </a>
-            </div>
-        </div>
-    </footer>
-</div>
 
 <script type="text/javascript" src="/{{js.vendor}}"></script>
 <script type="text/javascript" src="/{{js.docs}}"></script>
