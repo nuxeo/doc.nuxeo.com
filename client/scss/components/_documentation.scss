@@ -20,6 +20,20 @@
     color: $medium-gray;
     font-weight: bold;
   }
+
+  a {
+    color: $medium-gray;
+    margin-left: .5rem;
+    transition: color .2s ease;
+
+    i {
+      border: 2px solid $medium-gray;
+      border-radius: 50%;
+      padding: .4rem;
+      padding-bottom: .1rem;
+      padding-top: .1rem;
+    }
+  }
 }
 
 body {
@@ -34,6 +48,7 @@ body {
 
       &:first-child {
         min-height: 100%;
+        padding-top: 3rem;
       }
 
       &:nth-child(2) {
