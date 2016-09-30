@@ -32,12 +32,12 @@ npm start
 
 ## Host locally after build
 ```bash
-npm run browser_sync
+npm run server
 ```
 
 ## Run and host locally (watches changes)
 ```bash
-npm run dev_serve
+npm run dev_server
 ```
 
 ## Run re-compile for assets and host (watches changes)
