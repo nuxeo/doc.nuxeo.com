@@ -12,7 +12,6 @@ module.exports = function ($) {
 
     var $side_menu = $('#side-menu');
     var space = $side_menu.attr('data-space');
-    var display_children_only = (space.substr(-5) === 'nxdoc');
     var breadcrumbs = $('.breadcrumb a').map(function (index, element) {
         // Ignore first item (Home)
         return (index) ? $(element).text() : void 0;
@@ -21,6 +20,7 @@ module.exports = function ($) {
     // console.log('breadcrmbs', breadcrumbs);
 
     if (space) {
+        var display_children_only = (space.substr(-5) === 'nxdoc');
         $.ajax({
             url: '/' + space + '.json'
         }).done(function (data) {
