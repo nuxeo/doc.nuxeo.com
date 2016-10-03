@@ -1,0 +1,139 @@
+@charset 'utf-8';
+
+@import 'settings';
+@import 'components/layout_helpers';
+
+$fast-track-icon-radius: 36px;
+
+%center-image {
+  display: block;
+  margin: auto;
+}
+
+html > body {
+  background: #f7f7f7;
+}
+
+#search {
+  background-color: #fff;
+  border: 1px solid $primary-color;
+
+  .input-group {
+    padding-top: 1rem;
+  }
+
+  .input-group-label {
+    border-right: 2px solid $primary-color;
+    color: $primary-color;
+    font-size: $nuxeo-button-default;
+    letter-spacing: .1rem;
+    padding-left: 1rem;
+    text-transform: uppercase;
+  }
+
+  .input-group-field {
+    color: $primary-color;
+    font-size: 1rem;
+    height: 2rem;
+
+    &:focus {
+      border: 0;
+      box-shadow: 0 0;
+    }
+  }
+
+  .input-group-icon {
+    background: none;
+    border: 0;
+    box-sizing: inherit;
+    color: $medium-gray;
+    display: table-cell;
+    height: 100%;
+    margin: 0;
+    padding: 0 1rem;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 1%;
+  }
+}
+
+#quick-access {
+  a {
+    border-bottom: 8px solid darken($primary-color, 15%);
+    font-size: 1.2rem;
+    padding-bottom: .8em;
+    padding-top: 1.2em;
+    text-transform: uppercase;
+  }
+}
+
+#client-libs {
+  background-color: #fff;
+  border: 1px solid $dark-gray;
+
+  a {
+    text-decoration: underline;
+  }
+
+  img {
+    @extend %center-image;
+  }
+}
+
+@mixin section-color ($section, $section-color) {
+  &.#{$section} {
+    > div {
+      border-color: $section-color;
+      color: $section-color;
+
+      > div {
+        border-color: lighten($section-color, 20%);
+      }
+    }
+  }
+}
+
+.fast-track {
+  border: 1px solid $medium-gray;
+  display: inline-block;
+  margin-bottom: 1rem;
+  margin-top: calc(#{$fast-track-icon-radius} + 1rem);
+  width: 100%;
+
+  > div {
+    background-color: #fff;
+    border-width: 0;
+    border-bottom-width: 2rem;
+    border-style: solid;
+    // color: $nuxeo-tutorial-color;
+    position: relative;
+
+    img {
+      @extend %center-image;
+      display: block;
+      left: calc(50% - #{$fast-track-icon-radius});
+      margin: auto;
+      position: absolute;
+      top: -#{$fast-track-icon-radius};
+    }
+
+    > div {
+      border-width: 0;
+      border-bottom-width: .7em;
+      border-style: solid;
+      padding-bottom: 2rem;
+      padding-top: 5rem;
+      text-transform: uppercase;
+    }
+  }
+
+  @include section-color('tutorial', $nuxeo-tutorial-color);
+  @include section-color('server', $nuxeo-server-color);
+  @include section-color('web-ui', $nuxeo-web-ui-color);
+  @include section-color('desktop-mob', $nuxeo-desktop-mob-color);
+  @include section-color('packages', $nuxeo-packages-color);
+  @include section-color('sdks', $nuxeo-sdks-color);
+  @include section-color('services', $nuxeo-services-color);
+  @include section-color('tools', $nuxeo-tools-color);
+}

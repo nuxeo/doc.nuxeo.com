@@ -1,0 +1,34 @@
+.space-top-1,
+%space-top-1 {
+  margin-top: 1rem;
+}
+
+.space-top-2,
+%space-top-2 {
+  margin-top: 2rem;
+}
+
+.space-top-3,
+%space-top-3 {
+  margin-top: 3rem;
+}
+
+.space-bottom-1,
+%space-bottom-1 {
+  margin-bottom: 1rem;
+}
+
+.space-bottom-2,
+%space-bottom-2 {
+  margin-bottom: 2rem;
+}
+
+.space-1 {
+  @extend %space-top-1;
+  @extend %space-bottom-1;
+}
+
+.space-2 {
+  @extend %space-top-2;
+  @extend %space-bottom-2;
+}

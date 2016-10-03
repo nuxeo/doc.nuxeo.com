@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="60px" viewBox="0 0 80 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <title>Desktop Mobile</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Doc-Center-V1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="V1-/1-Home" transform="translate(-1129.000000, -891.000000)" stroke="#BDC2C8" stroke-width="2">
+            <g id="Desktop/Mobile" transform="translate(1047.000000, 891.000000)">
+                <g id="Desktop-Mobile" transform="translate(83.000000, 1.000000)">
+                    <path d="M47.3333333,47.3333333 L4,47.3333333 C2.16666667,47.3333333 0.666666667,45.8333333 0.666666667,44 L0.666666667,4 C0.666666667,2.16666667 2.16666667,0.666666667 4,0.666666667 L64,0.666666667 C65.8333333,0.666666667 67.3333333,2.16666667 67.3333333,4 L67.3333333,7.33" id="Stroke-7618"></path>
+                    <polyline id="Stroke-7619" points="47.3333333 40.6666667 7.33333333 40.6666667 7.33333333 7.33333333 60.6666667 7.33"></polyline>
+                    <path d="M27,47.3333333 L27,57.3333333" id="Stroke-7620"></path>
+                    <path d="M40,47.3333333 L40,57.3333333" id="Stroke-7621"></path>
+                    <path d="M22.3333333,57 L45.6666667,57" id="Stroke-7622"></path>
+                    <polygon id="Stroke-7623" points="54 57.3333333 77.3333333 57.3333333 77.3333333 14 54 14"></polygon>
+                    <path d="M55.6666667,23 L77.3333333,23" id="Stroke-7624"></path>
+                    <path d="M55.6666667,50 L77.3333333,50" id="Stroke-7626"></path>
+                    <path d="M62.3333333,19 L70.6666667,19" id="Stroke-7628"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
