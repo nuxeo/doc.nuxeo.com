@@ -27,3 +27,8 @@
     padding-left: 2rem;
   }
 }
+
+#toc_list {
+  height: calc(100vh - 32px);
+  overflow-y: auto;
+}

@@ -114,8 +114,6 @@ module.exports = function ($) {
             });
 
             ReactDOM.render(<SideMenu/>, document.getElementById('side-menu'));
-            // Scroll to display the current item (20% from top if possible)
-            $('#off-canvas').scrollTop(($('#side-menu .active').closest('div').offset().top) - ($('#off-canvas').height() / 5));
         });
     }
 };
