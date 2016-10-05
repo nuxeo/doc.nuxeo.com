@@ -1,15 +1,6 @@
 #toc {
   li {
     border-left: 3px solid $primary-color;
-
-    &:first-child {
-      &::before {
-        content: 'Contents';
-        font-size: $nuxeo-button-default;
-        font-weight: bold;
-        padding-left: 1rem;
-      }
-    }
   }
 
   .button {
