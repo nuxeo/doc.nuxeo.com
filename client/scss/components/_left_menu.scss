@@ -16,16 +16,40 @@ $menu-background: lighten($primary-color, 47%);
     text-transform: uppercase;
   }
 
-  .input-group + ul {
-    > li > span > ul > li {
+  ul ul {
+    background-color: $nuxeo-color-menu-background-selected;
+
+    // This is pretty disgusting
+    a {
+      padding-left: 1rem;
+    }
+
+    ul {
+      a {
+        padding-left: 2rem;
+      }
+
       ul {
-        background-color: $nuxeo-color-menu-background-selected;
+        a {
+          padding-left: 3rem;
+        }
+
+        ul {
+          a {
+            padding-left: 4rem;
+          }
+
+          ul {
+            a {
+              padding-left: 5rem;
+            }
+          }
+        }
       }
     }
   }
 
   li {
-
     div {
       border-right: solid 3px $light-gray;
     }

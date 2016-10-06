@@ -18,15 +18,19 @@ module.exports = function ($) {
     }).get();
     breadcrumbs.push($('#page-title').text());
     // console.log('breadcrmbs', breadcrumbs);
-    var update_equalize = function () {
+    var update_equalize = function (delay) {
+        delay = delay || 0;
         var $page_container = $('#page-container');
         try {
-            $page_container.foundation('getHeights', function (heights) {
-                $page_container.foundation('applyHeight', heights);
-            });
+            // Wait until next tick
+            setTimeout(function () {
+                $page_container.foundation('getHeights', function (heights) {
+                    $page_container.foundation('applyHeight', heights);
+                });
+            }, delay);
         }
         catch (e) {
-            console.log('Failed equalize update', e);
+            console.error('Failed equalize update', e);
         }
     };
 
@@ -74,8 +78,6 @@ module.exports = function ($) {
                 /* eslint react/display-name: 0, react/prop-types: 0 */
                 // console.log('props', props.node);
 
-                // Update equalize on next tick
-                setTimeout(update_equalize, 1);
                 return (
                     <i className="fa fa-fw fa-chevron-right" aria-hidden="true"></i>
                 );
@@ -111,6 +113,14 @@ module.exports = function ($) {
                         this.setState({data: data});
                     }
                 },
+                componentDidMount: function () {
+                    // Update equalize
+                    update_equalize();
+                },
+                componentDidUpdate: function () {
+                    // Update equalize
+                    update_equalize(500);
+                },
                 render: function () {
                     return (
                         <div>
@@ -128,8 +138,6 @@ module.exports = function ($) {
             });
 
             ReactDOM.render(<SideMenu/>, document.getElementById('side-menu'));
-            // Update equalize on next tick
-            setTimeout(update_equalize, 1);
         });
     }
 };
