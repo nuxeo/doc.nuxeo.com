@@ -30,5 +30,7 @@
 
 #toc_list {
   height: calc(100vh - 32px);
+  margin-left: auto;
+  max-width: 16rem;
   overflow-y: auto;
 }

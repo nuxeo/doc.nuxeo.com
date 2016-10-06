@@ -1,4 +1,12 @@
+$menu-background: lighten($primary-color, 47%);
+
+#side-menu-container {
+  background: linear-gradient(90deg, $menu-background 22rem, $white 22rem);
+}
+
 #side-menu {
+  max-width: 20rem;
+
   ul {
     font-size: $nuxeo-body-smaller;
     font-weight: bold;
@@ -16,6 +24,10 @@
   }
 
   li {
+
+    div {
+      border-right: solid 3px $light-gray;
+    }
 
     > div {
       padding: .5rem 2rem;
@@ -77,5 +89,16 @@
 
   .input-group-field {
     height: 2rem;
+  }
+}
+
+// Small
+@media screen and #{breakpoint(small down)} {
+  #side-menu-container {
+    background: $menu-background;
+  }
+
+  #side-menu {
+    max-width: none;
   }
 }

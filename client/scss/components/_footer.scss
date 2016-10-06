@@ -1,0 +1,50 @@
+#footer {
+  background-color: $nuxeo-color-footer;
+  color: $white;
+  font-size: $nuxeo-body-small;
+  padding-bottom: 6rem;
+  padding-top: 2rem;
+
+  ul {
+    list-style-position: outside;
+    list-style-type: none;
+  }
+
+  li {
+    a {
+      display: block;
+    }
+
+    &:first-of-type {
+      font-weight: 700;
+    }
+  }
+
+  a {
+    color: $white;
+    transition: color .2s ease;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  .copyright {
+    padding-left: 1.25rem;
+  }
+
+  .social a {
+    .fa-inverse {
+      color: $nuxeo-color-footer;
+      transition: color .2s ease;
+    }
+
+    &:hover {
+      color: $primary-color;
+
+      .fa-inverse {
+        color: $white;
+      }
+    }
+  }
+}

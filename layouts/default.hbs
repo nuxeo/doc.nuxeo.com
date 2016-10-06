@@ -1,33 +1,35 @@
 {{> header_standard}}
-<div class="row">
-    <div class="column">
-        {{> information}}
-        {{> versions}}
-        {{> breadcrumb}}
-        <div class="heading-group">
-          <h1 id="page-title">{{title}}</h1>
-          <div>
-            Updated: {{moment history.[1].date format='LL'}}
-            <a data-open="page-information" title="Page Information" aria-controls="page-information" aria-haspopup="true" tabindex="0"><i class="fa fa-info"></i></a>
-          </div>
+<div data-equalizer-watch>
+    <div class="row">
+        <div class="column">
+            {{> information}}
+            {{> versions}}
+            {{> breadcrumb}}
+            <div class="heading-group">
+              <h1 id="page-title">{{title}}</h1>
+              <div>
+                Updated: {{moment history.[1].date format='LL'}}
+                <a data-open="page-information" title="Page Information" aria-controls="page-information" aria-haspopup="true" tabindex="0"><i class="fa fa-info"></i></a>
+              </div>
+            </div>
+            {{> flag_review}}
         </div>
-        {{> flag_review}}
-    </div>
-    <div id="content" class="column {{#if toc}}toc large-8 {{#if toc_no_h4}}toc-no-h4{{/if}}{{/if}}{{#if tabbed_page}} tabbed{{/if}}">
-        {{{contents}}}
-    </div>
-    {{#if toc}}
-    <div id="toc" class="column large-4 show-for-large" data-sticky-container>
-        <nav class="columns sticky" data-sticky data-top-anchor="content" data-sticky-on="large">
-            <ul id="toc_list" class="vertical menu" data-magellan data-bar-offset="50">
-            </ul>
-        </nav>
-    </div>
-    {{/if}}
-    <div id="tags" class="column {{#if toc}}large-8 end{{/if}}">
-        {{#each labels as |label|}}
-            <a href="/{{../url.key.space_path}}/label/{{sluggy label}}">{{label}}</a>{{#unless @last}}, {{/unless}}
-        {{/each}}
+        <div id="content" class="column {{#if toc}}toc large-8 {{#if toc_no_h4}}toc-no-h4{{/if}}{{/if}}{{#if tabbed_page}} tabbed{{/if}}">
+            {{{contents}}}
+        </div>
+        {{#if toc}}
+        <div id="toc" class="column large-4 show-for-large" data-sticky-container>
+            <nav class="columns sticky" data-sticky data-top-anchor="content" data-sticky-on="large">
+                <ul id="toc_list" class="vertical menu" data-magellan data-bar-offset="50">
+                </ul>
+            </nav>
+        </div>
+        {{/if}}
+        <div id="tags" class="column {{#if toc}}large-8 end{{/if}}">
+            {{#each labels as |label|}}
+                <a href="/{{../url.key.space_path}}/label/{{sluggy label}}">{{label}}</a>{{#unless @last}}, {{/unless}}
+            {{/each}}
+        </div>
     </div>
 </div>
 

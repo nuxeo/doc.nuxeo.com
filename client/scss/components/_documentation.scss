@@ -36,27 +36,27 @@
   }
 }
 
-body {
-  & > .row {
-    background-color: $nuxeo-color-menu-background;
-    height: 100%;
-
-    & > .column {
-      &:not(:nth-child(2)) {
-        background-color: $white;
-      }
-
-      &:first-child {
-        min-height: 100%;
-        padding-top: 3rem;
-      }
-
-      &:nth-child(2) {
-        padding: 0;
-      }
-    }
-  }
-}
+// body {
+//   & > .row {
+//     background-color: $nuxeo-color-menu-background;
+//     height: 100%;
+//
+//     & > .column {
+//       &:not(:nth-child(2)) {
+//         background-color: $white;
+//       }
+//
+//       &:first-child {
+//         min-height: 100%;
+//         padding-top: 3rem;
+//       }
+//
+//       &:nth-child(2) {
+//         padding: 0;
+//       }
+//     }
+//   }
+// }
 
 footer {
   padding-bottom: 6rem;
