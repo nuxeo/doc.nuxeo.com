@@ -1,2 +1,7 @@
-^/pages/viewpage\.action\?pageId=xxx: /
+^/pages/viewpage\.xxx: /
+^/pages/viewpage?yyy: /
+^/pages/viewpage?pageId=www: /
+^/pages/viewpage\?pageId=xxx: /
+^/pages/viewpage?pageId\=yyy: /
+^/pages/viewpage\?pageId\=zzz: /
 ^/display/MAIN/Nuxeo\+Documentation\+Center\+xxx: /
