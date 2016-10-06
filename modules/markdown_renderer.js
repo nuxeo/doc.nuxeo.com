@@ -44,11 +44,10 @@ renderer.image = function (href_str, title, alt) {
     if (params.thumbnail) {
         img_classes.push('thumbnail');
     }
+
+    // Defaults to left aligned
     if (params.align) {
         div_classes.push('text-' + params.align);
-    }
-    else {
-        div_classes.push('text-center');
     }
 
     if (img_classes.length) {
@@ -57,23 +56,28 @@ renderer.image = function (href_str, title, alt) {
     }
 
     const attributes = attrs.join(' ');
-    const md5sum = crypto.createHash('md5');
-    md5sum.update('some data to hash');
-    const id = 'image_' + md5sum.digest('hex');
+    if (params.thumbnail) {
+        const md5sum = crypto.createHash('md5');
+        md5sum.update('some data to hash');
+        const id = 'image_' + md5sum.digest('hex');
 
-    const reveal_div = `
+        const reveal_div = `
         <div class="large reveal" id="${id}" data-reveal data-animation-in="fade-in" data-animation-out="fade-out">
-            ${reveal_image}
-            <button class="close-button" data-close aria-label="Close modal" type="button">
-                <span aria-hidden="true">&times;</span>
-            </button>
+        ${reveal_image}
+        <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+        </button>
         </div>
-    `;
-    // ${reveal_div}
+        `;
+        // ${reveal_div}
 
-    return `${reveal_div}<div class="${div_classes.join(' ')}">
+        return `${reveal_div}<div class="${div_classes.join(' ')}">
         <img ${attributes} data-open="${id}"${closing}
-    </div>`;
+        </div>`;
+    }
+    else {
+        return `<img ${attributes}${closing}`;
+    }
 };
 
 renderer.table = (header, body) => `
