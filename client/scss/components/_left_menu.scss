@@ -1,7 +1,8 @@
 $menu-background: lighten($primary-color, 47%);
 
 #side-menu-container {
-  background: linear-gradient(90deg, $menu-background 22rem, $white 22rem);
+  background: linear-gradient(90deg, $menu-background 21rem, $white 21rem);
+  padding-left: 0;
 }
 
 #side-menu {
@@ -30,7 +31,7 @@ $menu-background: lighten($primary-color, 47%);
     }
 
     > div {
-      padding: .5rem 2rem;
+      padding: .5rem .5rem .5rem 2rem;
 
       &:hover {
         background-color: $nuxeo-color-menu-hover;
@@ -42,7 +43,7 @@ $menu-background: lighten($primary-color, 47%);
     }
 
     i {
-      color: $medium-gray;
+      color: $dark-gray;
       cursor: pointer;
       float: right;
       font-size: $nuxeo-body-smaller;
