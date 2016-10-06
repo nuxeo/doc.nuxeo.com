@@ -1,5 +1,6 @@
 ^/pages/viewpage\.xxx: /
-^/display/MAIN/Nuxeo\+Documentation\+Center\+xxx: /^/pages/viewpage\?pageId\=zzz: /
+^/display/MAIN/Nuxeo\+Documentation\+Center\+xxx: /
+^/pages/viewpage\?pageId\=zzz: /
 ^/pages/viewpage?x1: /
 ^/pages/viewpage\?x2: /
 ^/pages/viewpage?x3$: /
@@ -12,3 +13,6 @@
 ^/pages/viewpage\?pageId=z2$: /
 ^/pages/viewpage?pageId\=z3$: /
 ^/pages/viewpage\?pageId\=z4$: /
+^/pages/viewpage[?]a: /
+^/pages/viewpage[?]pageId\=a1: /
+^/pages/viewpage[?]pageId\=a2$: /
