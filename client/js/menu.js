@@ -18,6 +18,17 @@ module.exports = function ($) {
     }).get();
     breadcrumbs.push($('#page-title').text());
     // console.log('breadcrmbs', breadcrumbs);
+    var update_equalize = function () {
+        var $page_container = $('#page-container');
+        try {
+            $page_container.foundation('getHeights', function (heights) {
+                $page_container.foundation('applyHeight', heights);
+            });
+        }
+        catch (e) {
+            console.log('Failed equalize update', e);
+        }
+    };
 
     if (space) {
         var display_children_only = (space.substr(-5) === 'nxdoc');
@@ -62,6 +73,9 @@ module.exports = function ($) {
             decorators.Toggle = function () {
                 /* eslint react/display-name: 0, react/prop-types: 0 */
                 // console.log('props', props.node);
+
+                // Update equalize on next tick
+                setTimeout(update_equalize, 1);
                 return (
                     <i className="fa fa-fw fa-chevron-right" aria-hidden="true"></i>
                 );
@@ -114,6 +128,8 @@ module.exports = function ($) {
             });
 
             ReactDOM.render(<SideMenu/>, document.getElementById('side-menu'));
+            // Update equalize on next tick
+            setTimeout(update_equalize, 1);
         });
     }
 };
