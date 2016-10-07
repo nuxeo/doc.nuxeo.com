@@ -46,5 +46,10 @@ img {
     &.border {
       border: 1px solid $medium-gray;
     }
+
+    &.thumbnail {
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+    }
   }
 }
