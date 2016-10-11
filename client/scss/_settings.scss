@@ -46,7 +46,7 @@
 
 // $global-font-size: 100%;
 $global-width: rem-calc(960);
-// $global-lineheight: 1.5;
+$global-lineheight: 1.6;
 $foundation-palette: (
   primary: #2199e8,
   secondary: #777,
@@ -103,7 +103,7 @@ $body-font-family: Aregular, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-se
 
 // $header-font-family: Ademi, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $header-font-family: $body-font-family;
-// $header-font-weight: $global-weight-bold;
+$header-font-weight: 'bold';
 // $header-font-style: normal;
 // $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-sizes: (
@@ -126,7 +126,7 @@ $header-sizes: (
 );
 // $header-color: inherit;
 // $header-lineheight: 1.4;
-// $header-margin-bottom: 0.5rem;
+$header-margin-bottom: .3rem;
 // $header-text-rendering: optimizeLegibility;
 // $small-font-size: 80%;
 // $header-small-font-color: $medium-gray;
@@ -147,14 +147,14 @@ $code-border: 0;
 // $hr-border: 1px solid $medium-gray;
 // $hr-margin: rem-calc(20) auto;
 // $list-lineheight: $paragraph-lineheight;
-// $list-margin-bottom: $paragraph-margin-bottom;
+$list-margin-bottom: 3rem;
 // $list-style-type: disc;
 // $list-style-position: outside;
-// $list-side-margin: 1.25rem;
+$list-side-margin: 3rem;
 // $list-nested-side-margin: 1.25rem;
-// $defnlist-margin-bottom: 1rem;
+$defnlist-margin-bottom: 3rem;
 // $defnlist-term-weight: $global-weight-bold;
-// $defnlist-term-margin-bottom: 0.3rem;
+$defnlist-term-margin-bottom: 3rem;
 // $blockquote-color: $dark-gray;
 // $blockquote-padding: rem-calc(9 20 0 19);
 // $blockquote-border: 1px solid $medium-gray;
@@ -175,7 +175,7 @@ $code-border: 0;
 // $subheader-lineheight: 1.4;
 // $subheader-color: $dark-gray;
 // $subheader-font-weight: $global-weight-normal;
-// $subheader-margin-top: 0.2rem;
+$subheader-margin-top: 2rem;
 // $subheader-margin-bottom: 0.5rem;
 // $stat-font-size: 2.5rem;
 

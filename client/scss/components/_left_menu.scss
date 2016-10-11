@@ -1,4 +1,5 @@
 $menu-background: lighten($primary-color, 47%);
+$active-border-width: 8px;
 
 #side-menu-container {
   background: linear-gradient(90deg, $menu-background 21rem, $white 21rem);
@@ -22,26 +23,46 @@ $menu-background: lighten($primary-color, 47%);
     // This is pretty disgusting
     a {
       padding-left: 1rem;
+
+      &.active {
+        padding-left: calc(1rem - $active-border-width);
+      }
     }
 
     ul {
       a {
         padding-left: 2rem;
+
+        &.active {
+          padding-left: calc(2rem - $active-border-width);
+        }
       }
 
       ul {
         a {
           padding-left: 3rem;
+
+          &.active {
+            padding-left: calc(3rem - $active-border-width);
+          }
         }
 
         ul {
           a {
             padding-left: 4rem;
+
+            &.active {
+              padding-left: calc(4rem - $active-border-width);
+            }
           }
 
           ul {
             a {
               padding-left: 5rem;
+
+              &.active {
+                padding-left: calc(5rem - $active-border-width);
+              }
             }
           }
         }

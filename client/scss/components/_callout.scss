@@ -1,6 +1,13 @@
 .callout {
   padding-bottom: 1rem;
 
+  ul,
+  ol,
+  dl {
+    margin-bottom: .3rem;
+    margin-left: 1.25rem;
+  }
+
   &.code {
     background-color: $nuxeo-color-code-background;
     border-bottom-left-radius: 0;
