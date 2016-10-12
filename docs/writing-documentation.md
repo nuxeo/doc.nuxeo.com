@@ -64,14 +64,14 @@ review:
 
 Frontmatter | Behaviour
 --- | ---
-`draft: true` | _Not implemented_ &mdash; control of draft pages will be achieved by using branches
+`draft: true` | [**Not implemented**] Control of draft pages will be achieved by using branches.
 `excerpt: About the page` | Similar to the `description` and an alternative to putting [Excerpts within the page content](#excerpts-definition). If both are present the frontmatter will be taken in preference.
 `hidden: true` | Hidden from the hierarchy menu
 `toc: true` | Adds a table of contents derrived from h2..h4  (`## h2` .. `#### h4`) headings
 `tabbed_page: true` | Convert the page to display a tabbed interface. h1 (`# h1`) headings are used as titles of each tab. `{{! end_of_tabs }}` can placed after the last section to allow content to be placed beneath the tabbed section.
 `redirect: /redirect/location` | Adds a redirect to the location specified. Accepts a url or `version/space/page name` (`710/nxdoc/installation` / `nxdoc/installation` / `installation`)
-`redirect_source: /redirect/location` | Adds a redirect to the location specified using the confluence style `NXDOC710:Page Title`
-`no_side_menu: true` | Hides the hierarchy menu for that page
+`redirect_source: /redirect/location` | [**Legacy**] Adds a redirect to the location specified using the confluence style `NXDOC710:Page Title`. _Note:_ `redirect` will be ignored if `redirect_source` is present. `redirect` is the preferred method.
+`no_side_menu: true` | Hides the hierarchy menu for that page.
 `version_override:` | For overriding / turning off version links for a specific version. See [version override section](#overriding-version-links).
 `tree_item_index: 1` | For ordering the left hirarchical menu. Items are ordered by `tree_item_index` and then alphabetically. For ease of maintaining ordering, using
 
