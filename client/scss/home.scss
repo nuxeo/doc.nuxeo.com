@@ -4,6 +4,8 @@
 @import 'components/layout_helpers';
 
 $fast-track-icon-radius: 36px;
+$header-color: #384248;
+$body-background-color: #fafcfd;
 
 %center-image {
   display: block;
@@ -11,11 +13,21 @@ $fast-track-icon-radius: 36px;
 }
 
 html > body {
-  background: #f7f7f7;
+  background: $body-background-color;
+}
+
+// Homepage typeography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $header-color;
 }
 
 #search {
-  background-color: #fff;
+  background-color: $white;
   border: 1px solid $primary-color;
 
   .input-group {
@@ -69,15 +81,31 @@ html > body {
 }
 
 #client-libs {
-  background-color: #fff;
+  background-color: $white;
   border: 1px solid $dark-gray;
-
-  a {
-    text-decoration: underline;
-  }
 
   img {
     @extend %center-image;
+  }
+
+  > div ~ div {
+    max-width: 23rem;
+
+    > .column {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+@media screen and #{breakpoint(medium up)} {
+  #client-libs > div ~ div {
+    max-width: 32rem;
+  }
+}
+
+@media screen and #{breakpoint(large up)} {
+  #client-libs > div ~ div {
+    max-width: 55rem;
   }
 }
 
@@ -95,14 +123,13 @@ html > body {
 }
 
 .fast-track {
-  border: 1px solid $medium-gray;
   display: inline-block;
   margin-bottom: 1rem;
   margin-top: calc(#{$fast-track-icon-radius} + 1rem);
   width: 100%;
 
   > div {
-    background-color: #fff;
+    background-color: $white;
     border-width: 0;
     border-bottom-width: 2rem;
     border-style: solid;
