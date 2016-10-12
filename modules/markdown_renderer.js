@@ -22,17 +22,25 @@ renderer.image = function (href_str, title, alt) {
         `alt="${alt}"`,
         `src="${href}"`
     ];
+    const max_dimension_for_inline = 32;
+    const check_dimension = dimension => {
+        if (dimension > max_dimension_for_inline) {
+            params.thumbnail = true;
+        }
+    };
+
     if (title) {
         attrs.push(`title="${title}"`);
     }
 
     const reveal_image = `<img ${attrs.join(' ')} ${closing}`;
 
-
     if (params.w) {
+        check_dimension(params.w);
         attrs.push(`width="${params.w}"`);
     }
     if (params.h) {
+        check_dimension(params.h);
         attrs.push(`height="${params.h}"`);
     }
 
