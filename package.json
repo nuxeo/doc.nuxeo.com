@@ -117,6 +117,8 @@
     "copy_assets": "rsync -a ./assets/ ./site/assets/ && npm run duplicate_asset_stats",
     "server": "browser-sync start --server site --browser=$npm_package_config_browser",
     "server_reload": "browser-sync reload",
+    "browser_sync": "echo 'This has been replaced by server. npm run server';",
+    "browser_sync_reload": "echo 'This has been replaced by server_reload. npm run server_reload';",
     "dev": "NODE_ENV=development nodemon --exec 'npm run compile'",
     "dev_server": "npm run browser_sync & NODE_ENV=development nodemon --exec 'npm start && browser-sync reload'",
     "dev_assets": "npm run browser_sync & nodemon --exec 'npm run update_assets && browser-sync reload'",
