@@ -45,6 +45,22 @@ Run a complete build so all pages are built.
 ```bash
 npm start
 ```
+To speed up the build you can comment out versions in `config.yml` with `#`. e.g.
+```
+    repositories:
+        static:
+            url: git@github.com:nuxeo/doc.nuxeo.com-static-spaces.git
+            branches:
+                - master
+        platform:
+            url: git@github.com:nuxeo/doc.nuxeo.com-platform-spaces.git
+            branches:
+                - master
+                # - '710'
+                # - '60'
+                # - '58'
+```
+`710`, `,60` and `58` have been commented out so only the static content and FT platform spaces are built.
 
 Then run the following to host and watch for client asset changes
 ```bash
