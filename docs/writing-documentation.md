@@ -225,7 +225,7 @@ Option | Behaviour
 --- | ---
 `headings='Fields, Separated By Comma'` | The fields aren't case sensitive but need to match the field within `details` frontmatter.
 `label='name_of_label'` | The label of the data from within `details`.
-`spaces='nxdoc, admindoc'` | These are which spaces to get the information from. Can be space separated if desired.
+`spaces='nxdoc, admindoc'` | These are which spaces to get the information from. Can be space separated if desired. For versions these should be in the form `{version}/{space}` e.g. `710/nxdoc, 60/nxdoc`
 `sort_by='field'` | Field to sort the table results by.
 `filter='field_name=search_text, another_field=search_text'` | Filter the table by fields with text values. Case-insensitive.
 `filter_type='and'` | If mulitiple fields are being filtered upon, `and` will mean all fields have to have a match for the row to be present in the table. Defaults to `or` if omitted.

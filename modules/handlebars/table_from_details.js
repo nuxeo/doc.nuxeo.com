@@ -35,7 +35,6 @@ const table_from_details = function (options) {
         .filter(remove_empty_field)
         .map(space => `${label}_${space}`);
 
-
     // create filter function
     const filter = get_collection_filter(filter_text, filter_type);
 
