@@ -1,4 +1,5 @@
 .callout {
+  background-color: $light-gray;
   padding-bottom: 1rem;
 
   ul,
@@ -8,31 +9,15 @@
     margin-left: 1.25rem;
   }
 
-  &.code {
-    background-color: $nuxeo-color-code-background;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-
-    .title {
-      margin-bottom: 0;
-    }
-
-    pre {
-      padding: .6em;
-    }
-  }
-
   .title {
-    background-color: $light-gray;
     border-bottom: 1px solid $callout-border;
-    border-top-left-radius: .43rem;
-    border-top-right-radius: .43rem;
+    color: $dark-gray;
     font-family: Ademi;
-    margin: -1rem -1rem 2rem;
-    padding: .3rem .5rem 0;
+    margin: 1rem 0;
   }
 
   &.nuxeo {
+    background-color: $white;
     border: 0;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;

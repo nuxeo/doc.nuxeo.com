@@ -39,13 +39,12 @@ pre {
     margin: 0;
   }
 
+  // Ignore empty paragraphs added by Markdown
   ~ p:blank,
   ~ p:empty {
     display: none;
   }
 }
-
-// Remove empty paragraphs added by Markdown
 
 // code-header - Same as h4
 @each $size, $headers in $header-sizes {

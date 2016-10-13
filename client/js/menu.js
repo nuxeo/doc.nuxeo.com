@@ -30,6 +30,7 @@ module.exports = function ($) {
             }, delay);
         }
         catch (e) {
+            /* eslint no-console: 0 */
             console.error('Failed equalize update', e);
         }
     };
