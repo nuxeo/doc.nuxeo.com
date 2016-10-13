@@ -27,7 +27,13 @@ const table_from_details = function (options) {
     headings = headings.replace(/, /g, ',').trim().split(',').filter(remove_empty_field);
 
     // Get lables with prefixes
-    const labels = spaces.replace(/, | /g, ',').trim().toLowerCase().split(',').filter(remove_empty_field).map(space => `${label}_${space}`);
+    const labels = spaces
+        .replace(/, | /g, ',')
+        .trim()
+        .toLowerCase()
+        .split(',')
+        .filter(remove_empty_field)
+        .map(space => `${label}_${space}`);
 
 
     // create filter function

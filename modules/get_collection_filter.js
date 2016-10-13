@@ -17,7 +17,6 @@ const get_filter = function (filter_text = '', filter_type = 'or') {
 
         const remove_empty_search_text = definition => definition.text !== '';
 
-
         const filters = filter_text
             .trim()
             .replace(/, /g, ',')

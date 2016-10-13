@@ -20,10 +20,12 @@ const list_from_details = function (options) {
         multimatch(Object.keys(files), ['*.md', '**/*.md']).forEach(filepath => {
             debug('Processing: %s', filepath);
             const file = files[filepath];
+            const {version, space} = file.url.key;
+            const version_space = version ? `${version}/${space}` : space;
 
             if (file.details && file.details) {
                 Object.keys(file.details).forEach(label => {
-                    const key = `${label}_${file.url.key.space}`;
+                    const key = `${label}_${version_space}`;
                     debug('key: %s', key);
                     details[key] = details[key] || [];
 
