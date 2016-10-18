@@ -160,6 +160,7 @@ h6 {
   @include section-color('web-ui', $nuxeo-web-ui-color);
   @include section-color('desktop-mob', $nuxeo-desktop-mob-color);
   @include section-color('packages', $nuxeo-packages-color);
+  @include section-color('user-documentation', $nuxeo-user-documentation-color);
   @include section-color('sdks', $nuxeo-sdks-color);
   @include section-color('services', $nuxeo-services-color);
   @include section-color('tools', $nuxeo-tools-color);
