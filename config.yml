@@ -16,6 +16,7 @@ default:
         remove_files_pattern:
             - '.DS_Store'
             - '**.DS_Store'
+        cse_id: "005265989979509602708:lu0shqf8mj8"
     page_defaults:
         -
             pattern: "**/*.{md,html}"
@@ -40,13 +41,13 @@ default:
             url: git@github.com:nuxeo/doc.nuxeo.com-static-spaces.git
             branches:
                 - master
-        platform:
-            url: git@github.com:nuxeo/doc.nuxeo.com-platform-spaces.git
-            branches:
-                - master
-                - '710'
-                - '60'
-                - '58'
+        # platform:
+        #     url: git@github.com:nuxeo/doc.nuxeo.com-platform-spaces.git
+        #     branches:
+        #         - master
+        #         - '710'
+        #         - '60'
+        #         - '58'
 
 development:
     isDev: true
