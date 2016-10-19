@@ -16,7 +16,7 @@ default:
         remove_files_pattern:
             - '.DS_Store'
             - '**.DS_Store'
-        cse_id: "005265989979509602708:lu0shqf8mj8"
+        cse_id: "005135669674242188188:xu8ybnpu3r8"
     page_defaults:
         -
             pattern: "**/*.{md,html}"
