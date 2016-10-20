@@ -35,7 +35,7 @@
     "lodash.set": "^4.3.1",
     "lodash.sortby": "^4.6.1",
     "lodash.throttle": "^4.1.1",
-    "marked": "^0.3.6",
+    "marked": "woodyrew/marked#list-starting-number",
     "metalsmith": "^2.2.0",
     "metalsmith-default-values": "0.0.2",
     "metalsmith-gzip": "^1.1.0",

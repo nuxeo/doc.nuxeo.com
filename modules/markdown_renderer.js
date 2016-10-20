@@ -100,4 +100,13 @@ renderer.table = (header, body) => `
         </table>
     </div>`;
 
+renderer.list = function (body, ordered) {
+    const type = ordered ? 'ol' : 'ul';
+    const start_attr = (ordered > 1) ? ` start="${ordered}"` : '';
+    return `<${type}${start_attr}>
+    ${body}
+    </${type}>
+    `;
+};
+
 module.exports = renderer;

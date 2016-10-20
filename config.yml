@@ -30,12 +30,13 @@ default:
                 layout: 'default.hbs'
     markdown_options:
         langPrefix : ''
-        gfm        : true
         breaks     : false
-        tables     : true
+        gfm        : true
         pedantic   : false
-        smartypants: false
         sanitize   : false
+        smartLists : true
+        smartypants: false
+        tables     : true
     repositories:
         static:
             url: git@github.com:nuxeo/doc.nuxeo.com-static-spaces.git
