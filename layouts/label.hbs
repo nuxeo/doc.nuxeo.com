@@ -5,11 +5,11 @@
         {{> breadcrumb}}
         <h1 id="page-title">{{title}}</h1>
 
-        <hr>
-        {{#each (obj_key (obj_key lists list_key) list_item)}}
-            {{>label_item this}}
-        {{/each}}
-
+        <div class="row small-up-1 medium-up-2">
+            {{#each (obj_key (obj_key lists list_key) list_item)}}
+                {{>label_item this}}
+            {{/each}}
+        </div>
     </div>
 </div>
 {{> footer_standard}}
