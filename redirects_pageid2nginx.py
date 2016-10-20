@@ -21,6 +21,6 @@ if os.path.isfile('redirects_pageid.yml'):
 
     for k in redirs:
         print 'if ($arg_pageid = "%s") {' % (k,)
-        print '    rewrite\t^.*$\t%s\tpermanent;' % (redirs[k],)
+        print '    rewrite\t^.*$\t%s?\tpermanent;' % (redirs[k],)
         print '}'
 
