@@ -5,21 +5,22 @@
 const {debug, warn, error} = require('../debugger')('metalsmith-redirects');
 
 // npm packages
-var each = require('async').each;
-var yaml = require('js-yaml');
-var path = require('path');
-var fs = require('fs');
-var util = require('util');
+const each = require('async').each;
+const yaml = require('js-yaml');
+const path = require('path');
+const fs = require('fs');
+const util = require('util');
 
-var get_placeholder_key = require('../get_placeholder_key');
-var key_to_url = require('../key_to_url');
+const get_placeholder_key = require('../get_placeholder_key');
+const key_to_url = require('../key_to_url');
 
-var get_redirect_url = function (file, metadata) {
-    var page = file.redirect_source || file.redirect || '';
+const get_redirect_url = function (file, metadata) {
+    const page = file.redirect_source || file.redirect || '';
+    let url;
 
-    var key = (page) ? get_placeholder_key(page, file.url.key) : '';
+    const key = (page) ? get_placeholder_key(page, file.url.key) : '';
     try {
-        var url = key_to_url(key, metadata.pages);
+        url = key_to_url(key, metadata.pages);
     }
     catch (e) {
         warn('%s; Title: "%s"', e.message, file.title);
@@ -27,18 +28,20 @@ var get_redirect_url = function (file, metadata) {
     return url;
 };
 
+const escape_regex_url = str => str.replace(/([\.\+])/g, '\\$1');
+
 /**
  * A Metalsmith plugin to add redirects to yaml file.
  *
  * @return {Function}
 **/
-var file_contents_preprocess = function () {
+const file_contents_preprocess = function () {
     return function (files, metalsmith, done) {
-        var metadata = metalsmith.metadata();
-        var redirects;
-        var redirects_file = path.join(metalsmith.path(), 'redirects.yml');
-        var finished = function (err) {
-            var yaml_string = '';
+        const metadata = metalsmith.metadata();
+        let redirects;
+        const redirects_file = path.join(metalsmith.path(), 'redirects.yml');
+        const finished = function (err) {
+            let yaml_string = '';
             if (err) {
                 return done(err);
             }
@@ -63,9 +66,9 @@ var file_contents_preprocess = function () {
             error('Failed to load: %s: %j', redirects_file);
         }
 
-        var matches = [];
+        const matches = [];
         Object.keys(files).forEach(function (filepath) {
-            var file = files[filepath];
+            const file = files[filepath];
 
             if (file.confluence && file.confluence.shortlink || file.redirect || file.redirect_source) {
                 matches.push(filepath);
@@ -73,16 +76,16 @@ var file_contents_preprocess = function () {
             }
         });
 
-        var add_redirect = function (filepath, callback) {
-            var file = files[filepath];
+        const add_redirect = function (filepath, callback) {
+            const file = files[filepath];
 
-            var redirect_url = '';
+            let redirect_url = '';
             if (file.redirect || file.redirect_source) {
                 redirect_url = get_redirect_url(file, metadata);
             }
 
             if (redirect_url) {
-                var this_url = get_placeholder_key('', file.url.key);
+                let this_url = get_placeholder_key('', file.url.key);
                 this_url = '^/' + this_url;
 
                 redirects[this_url] = redirect_url;
@@ -97,23 +100,15 @@ var file_contents_preprocess = function () {
                 }
             }
 
-            // /pages/viewpage.action?pageId=28475451
-            if (file.confluence && file.confluence.page_id) {
-                if (redirect_url) {
-                    redirects['^/pages/viewpage.action?pageId=' + file.confluence.page_id] = redirect_url;
-                }
-                else {
-                    redirects['^/pages/viewpage.action?pageId=' + file.confluence.page_id] = file.url.full;
-                }
-            }
+            // Not /pages/viewpage.action?pageId=28475451
+            if (file.confluence && file.confluence.source_link && !~file.confluence.source_link.indexOf('pages/viewpage.action?')) {
+                const source_url = '^' + escape_regex_url(file.confluence.source_link);
 
-            // /pages/viewpage.action?pageId=28475451
-            if (file.confluence && file.confluence.source_link) {
                 if (redirect_url) {
-                    redirects['^' + file.confluence.source_link] = redirect_url;
+                    redirects[source_url] = redirect_url;
                 }
                 else {
-                    redirects['^' + file.confluence.source_link] = file.url.full;
+                    redirects[source_url] = file.url.full;
                 }
             }
 
