@@ -1,6 +1,6 @@
 {{#if (condition type '===' 'code')}}
-{{#if heading}}<div class="code-heading">{{heading}}</div>{{/if}}{{> @partial-block }}
+{{#if heading}}<div class="code-heading">{{{heading}}}</div>{{/if}}{{> @partial-block }}
 {{else}}
-<div class="callout {{type}}" {{#if match_height}}data-equalizer-watch{{/if}}>{{#if heading}}<div class="title">{{heading}}</div>{{/if}}{{#if no_markdown}}{{> @partial-block }}{{else}}{{#md}}{{> @partial-block }}{{/md}}{{/if}}
+<div class="callout {{type}}" {{#if match_height}}data-equalizer-watch{{/if}}>{{#if heading}}<div class="title">{{{heading}}}</div>{{/if}}{{#if no_markdown}}{{> @partial-block }}{{else}}{{#md}}{{> @partial-block }}{{/md}}{{/if}}
 </div>
 {{/if}}
