@@ -28,8 +28,6 @@ const get_redirect_url = function (file, metadata) {
     return url;
 };
 
-const escape_regex_url = str => str.replace(/([\.\+])/g, '\\$1');
-
 /**
  * A Metalsmith plugin to add redirects to yaml file.
  *
@@ -102,7 +100,7 @@ const file_contents_preprocess = function () {
 
             // Not /pages/viewpage.action?pageId=28475451
             if (file.confluence && file.confluence.source_link && !~file.confluence.source_link.indexOf('pages/viewpage.action?')) {
-                const source_url = '^' + escape_regex_url(file.confluence.source_link);
+                const source_url = '^' + file.confluence.source_link;
 
                 if (redirect_url) {
                     redirects[source_url] = redirect_url;
