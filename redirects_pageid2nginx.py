@@ -3,8 +3,8 @@
 import os
 import yaml
 
-if os.path.isfile('redirects.yml'):
-    f = open('redirects.yml', 'r')
+if os.path.isfile('redirects_pageid.yml'):
+    f = open('redirects_pageid.yml', 'r')
     data = f.read()
     f.close()
 
@@ -20,4 +20,7 @@ if os.path.isfile('redirects.yml'):
             redirs[k] = '/' + redirs[k]
 
     for k in redirs:
-        print 'rewrite %s\t%s\tpermanent;' % (k, redirs[k])
+        print 'if $arg_pageid = "%s" {' % (k,)
+        print '    rewrite\t^.*$\t%s\tpermanent;' % (redirs[k],)
+        print '}'
+
