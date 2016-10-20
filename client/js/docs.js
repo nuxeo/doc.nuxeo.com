@@ -16,22 +16,36 @@ $(document).ready(function () {
     var hljs = require('highlight.js');
     hljs.initHighlightingOnLoad();
 
-    var $search_button = $('.search-button');
-    var $search_box = $('#search-box');
-
-    $search_button.on('click', function () {
-        $search_button.addClass('active');
-        $search_box.removeClass('hide').find('input').focus();
-    });
-    $search_box.find('input').on('blur', function () {
-        $search_box.addClass('hide');
-        $search_button.removeClass('active');
-    })
-    .on('focus', function () {
-        /* eslint no-invalid-this: 0 */
-        this.setSelectionRange(0, this.value.length);
-    });
+    // Use code when using Algolia
+    // var $search_button = $('.search-button');
+    // var $search_box = $('#search-box');
+    //
+    // $search_button.on('click', function () {
+    //     $search_button.addClass('active');
+    //     $search_box.removeClass('hide').find('input').focus();
+    // });
+    // $search_box.find('input').on('blur', function () {
+    //     $search_box.addClass('hide');
+    //     $search_button.removeClass('active');
+    // })
+    // .on('focus', function () {
+    //     /* eslint no-invalid-this: 0 */
+    //     this.setSelectionRange(0, this.value.length);
+    // });
 
     // Menu
     menu($);
+});
+
+$(window).load(function () {
+    // Element supports attribute
+    var testAttribute = function (element, attribute) {
+        var test = document.createElement(element);
+        return !!(attribute in test);
+    };
+
+    // If browser doesn't support autofocus
+    if (!testAttribute('input', 'autofocus')) {
+        $('input[autofocus]').focus();
+    }
 });
