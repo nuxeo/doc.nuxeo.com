@@ -1,8 +1,8 @@
 ^/pages/viewpage\.xxx: /
+^\/pages\/viewpage\.yyy: /
 ^/display/MAIN/Nuxeo\+xxx: /
-^/display/MAIN/Nuxeo\+xxx: /
-^/test1/?: /
-^/test1-longera/?: /
-^/test1-longerb/?$: /
-^/test2/?$: /
-^/test2-longera/?$: /
+^\/display\/MAIN\/Nuxeo\+yyy: /
+^/test1\/?: /
+^/test1-longerb\/?: /
+^/test2\/?$: /
+^/test2-longera\/?$: /
