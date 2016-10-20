@@ -5,6 +5,7 @@
 const {warn, error} = require('../debugger')('handlebars-file');
 
 // npm packages
+const handlebars = require('handlebars');
 const slug = require('slug');
 slug.defaults.modes.pretty.lower = true;
 
@@ -63,8 +64,7 @@ const file_url = function (options) {
     else {
         error('Assets object is empty');
     }
-
-    return (key) ? '/assets/' + key + '/' + name : '';
+    return new handlebars.SafeString((key) ? '/assets/' + key + '/' + name : '');
 };
 
 module.exports = file_url;
