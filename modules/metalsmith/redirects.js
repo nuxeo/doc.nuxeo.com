@@ -28,7 +28,7 @@ const get_redirect_url = function (file, metadata) {
     return url;
 };
 
-const escape_regex_url = str => str.replace(/([\/\.\+])/g, '\\$1');
+const escape_regex_url = str => str.replace(/([\.\+])/g, '\\$1');
 
 /**
  * A Metalsmith plugin to add redirects to yaml file.
