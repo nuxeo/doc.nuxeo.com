@@ -1,7 +1,6 @@
 {{> header_standard}}
 <div class="row">
     <div class="column">
-        {{> information}}
         {{> versions}}
         {{> breadcrumb}}
         <div class="heading-group">
@@ -29,6 +28,7 @@
             <a href="/{{../url.key.space_path}}/label/{{sluggy label}}">{{label}}</a>{{#unless @last}}, {{/unless}}
         {{/each}}
     </div>
+    {{> information}}
 </div>
 
 {{> footer_standard}}
