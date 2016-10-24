@@ -16,22 +16,29 @@ $(document).ready(function () {
     var hljs = require('highlight.js');
     hljs.initHighlightingOnLoad();
 
-    // Use code when using Algolia
-    // var $search_button = $('.search-button');
-    // var $search_box = $('#search-box');
-    //
-    // $search_button.on('click', function () {
-    //     $search_button.addClass('active');
-    //     $search_box.removeClass('hide').find('input').focus();
-    // });
-    // $search_box.find('input').on('blur', function () {
-    //     $search_box.addClass('hide');
-    //     $search_button.removeClass('active');
-    // })
-    // .on('focus', function () {
-    //     /* eslint no-invalid-this: 0 */
-    //     this.setSelectionRange(0, this.value.length);
-    // });
+    // Search box (top right)
+    var $search_button = $('#search-button');
+    var $search_box = $('#search-box');
+    var $search_box_input = $search_box.find('input');
+
+    $search_button.on('click', function () {
+        if ($search_button.hasClass('active')) {
+            $search_box_input.blur();
+        }
+        else {
+            $search_button.addClass('active');
+            $search_box.removeClass('closed');
+            $search_box_input.focus();
+        }
+    });
+    $search_box_input.on('blur', function () {
+        $search_box.addClass('closed');
+        $search_button.removeClass('active');
+    })
+    .on('focus', function () {
+        /* eslint no-invalid-this: 0 */
+        this.setSelectionRange(0, this.value.length);
+    });
 
     // Menu
     menu($);

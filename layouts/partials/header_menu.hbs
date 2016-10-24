@@ -36,7 +36,14 @@
         </div>
         <div class="nuxeo-satellite-right-menu">
             <ul>
-                <li><a href="/"><i class="fa fa-search"></i></a></li>
+                <li>
+                    <button id="search-button"><i class="fa fa-search"></i></button>
+                </li>
+                <li>
+                    <form id="search-box" action="/" method="get" class="closed">
+                        <input type="text" name="q" value="" placeholder="Search Docs&hellip;">
+                    </form>
+                </li>
             </ul>
         </div>
     </div>

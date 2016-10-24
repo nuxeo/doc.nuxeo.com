@@ -31,3 +31,57 @@
     color: $nuxeo-tools-color;
   }
 }
+
+#search-box {
+  margin-left: -1rem;
+  margin-right: .5rem;
+  transition: width .4s ease;
+  width: 168px;
+
+  &.closed {
+    width: 0;
+  }
+
+  input {
+    color: $white;
+  }
+
+  %placeholder {
+    color: $dark-gray;
+    font-size: .8rem;
+    text-transform: uppercase;
+  }
+
+  :placeholder {
+    @extend %placeholder;
+  }
+
+  ::-webkit-input-placeholder {
+    @extend %placeholder;
+  }
+
+  // Firefox 18-
+  :-moz-placeholder {
+    @extend %placeholder;
+  }
+
+  // Firefox 19+
+  ::-moz-placeholder {
+    @extend %placeholder;
+  }
+
+  :-ms-input-placeholder {
+    @extend %placeholder;
+  }
+}
+
+#search-button {
+  color: $white;
+  padding: 1rem;
+  transition: color .2s ease;
+
+  &:hover,
+  &.active {
+    color: $primary-color;
+  }
+}
