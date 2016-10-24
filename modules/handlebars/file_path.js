@@ -29,10 +29,10 @@ const file_url = function (options) {
     else {
         // space without page - index
         if (!page && space) {
-            raw_page_name = [space, 'index'].join(':');
+            raw_page_name = [space, 'index'].join('/');
         }
         else if (page && space) {
-            raw_page_name = [space, page].join(':');
+            raw_page_name = [space, page].join('/');
         }
         else {
             raw_page_name = page;
