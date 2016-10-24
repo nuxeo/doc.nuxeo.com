@@ -10,6 +10,7 @@ slug.defaults.modes.pretty.lower = true;
 
 const get_placeholder_key = require('../get_placeholder_key');
 const key_to_url = require('../key_to_url');
+const has_upper_case = require('../has_upper_case');
 
 const page_url = function (options) {
     const file = options.data.root;
@@ -29,11 +30,12 @@ const page_url = function (options) {
     }
     else {
         // space without page - index
+        const join_char = (has_upper_case(space)) ? ':' : '/';
         if (!page && space) {
-            raw_page_name = [space, 'index'].join('/');
+            raw_page_name = [space, 'index'].join(join_char);
         }
         else if (page && space) {
-            raw_page_name = [space, page].join('/');
+            raw_page_name = [space, page].join(join_char);
         }
         else {
             raw_page_name = page;
