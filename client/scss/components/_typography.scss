@@ -13,3 +13,34 @@ h5,
 h6 {
   font-weight: bold;
 }
+
+a {
+  transition: color .2s ease;
+
+  &:hover {
+    color: darken($primary-color, 15%);
+  }
+}
+
+table {
+  border: 2px solid $medium-gray;
+
+  th {
+    text-align: left;
+  }
+
+  td {
+    font-size: .875rem; // 14
+    vertical-align: top;
+  }
+}
+
+ul,
+ol {
+  -webkit-margin-after: 0;
+  -webkit-margin-before: 0;
+  -webkit-padding-start: 0;
+  margin-after: 0;
+  margin-before: 0;
+  padding-start: 0;
+}

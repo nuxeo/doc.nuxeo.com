@@ -26,24 +26,6 @@ h6 {
   color: $header-color;
 }
 
-#search-area {
-  background-color: $white;
-  border: 1px solid $primary-color;
-
-  .input-group {
-    padding-top: 1rem;
-  }
-
-  .input-group-label {
-    border-right: 2px solid $primary-color;
-    color: $primary-color;
-    font-size: $nuxeo-button-default;
-    letter-spacing: .1rem;
-    padding-left: 1rem;
-    text-transform: uppercase;
-  }
-}
-
 #quick-access {
   a {
     border-bottom: 8px solid darken($primary-color, 15%);
@@ -179,6 +161,23 @@ h6 {
 }
 
 
+#search-area {
+  background-color: $white;
+  border: 1px solid $primary-color;
+
+  .input-group {
+    padding-top: 1rem;
+  }
+
+  .input-group-label {
+    color: $dark-gray;
+    font-size: $nuxeo-button-default;
+    letter-spacing: .1rem;
+    padding-left: 1rem;
+    text-transform: uppercase;
+  }
+}
+
 #search {
   * {
     border: 0;
@@ -198,16 +197,23 @@ h6 {
     border-collapse: collapse;
     border-spacing: 0;
   }
-  #gs_st50 {
-    font-size: 10px;
-  }
 
   .gsc-input {
     font-family: Aregular;
 
     input {
-      padding-left: .5rem;
-      color: #555;
+      color: $black;
+      font-size: 1.3rem;
+      // For having the caret a different colour
+      // - hacky and not consistent across brosers.
+      // text-shadow: 0 0 0 $black;
+      // text-fill-color: transparent;
+      //
+      // &::input-placeholder {
+      //   color: $dark-gray;
+      //   text-fill-color: initial;
+      //   text-shadow: none;
+      // }
     }
   }
 
@@ -267,7 +273,6 @@ h6 {
 
 .gsc-control-cse {
   padding: 0 !important;
-
 
   * {
     box-sizing: content-box !important;

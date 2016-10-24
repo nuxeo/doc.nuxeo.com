@@ -16,6 +16,16 @@
     margin: 1rem 0;
   }
 
+  &.secondary {
+    background-color: lighten($medium-gray, 19%);
+    border: 3px solid $medium-gray;
+    font-size: 1.2rem;
+
+    h3 {
+      text-align: center;
+    }
+  }
+
   &.nuxeo {
     background-color: $white;
     border: 0;
