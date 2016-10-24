@@ -175,6 +175,10 @@ h6 {
     letter-spacing: .1rem;
     padding-left: 1rem;
     text-transform: uppercase;
+
+    &.closed {
+      display: none;
+    }
   }
 }
 
