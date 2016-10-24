@@ -118,23 +118,14 @@ $active-border-width: 8px;
     width: auto;
   }
 
-  .input-group-label {
-    color: $medium-gray;
-    font-size: $nuxeo-body-small;
-    letter-spacing: .1rem;
-    padding-right: 0;
-    text-transform: uppercase;
-
-    span {
-      border-right: 2px solid $primary-color;
-      padding-bottom: .25rem;
-      padding-right: 16px;
-      padding-top: .25rem;
-    }
-  }
-
   .input-group-field {
     height: 2rem;
+
+    &:placeholder {
+      color: $dark-gray;
+      font-size: .8rem;
+      text-transform: uppercase;
+    }
   }
 }
 

@@ -35,11 +35,13 @@ module.exports = function ($) {
         }
     };
 
+    // console.log('space', space);
     if (space) {
         var display_children_only = (space.substr(-5) === 'nxdoc');
         $.ajax({
             url: '/' + space + '.json'
         }).done(function (data) {
+            // console.log('got data', data);
             var menu_style = require('./menu_style');
 
             var set_toggled = function (item, toggle_item) {
@@ -126,8 +128,8 @@ module.exports = function ($) {
                     return (
                         <div>
                             <div className="input-group">
-                                <span className="input-group-label"><span>Filter</span></span>
                                 <input type="text"
+                                    placeholder="FILTER"
                                     className="input-group-field"
                                     onKeyUp={this.onFilterKeyUp}
                                 />
@@ -139,6 +141,9 @@ module.exports = function ($) {
             });
 
             ReactDOM.render(<SideMenu/>, document.getElementById('side-menu'));
+        })
+        .fail(function (jqXHR, textStatus) {
+            console.error('Request failed: ' + textStatus );
         });
     }
 };

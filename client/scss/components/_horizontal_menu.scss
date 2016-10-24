@@ -46,32 +46,10 @@
     color: $white;
   }
 
-  %placeholder {
+  :placeholder {
     color: $dark-gray;
     font-size: .8rem;
     text-transform: uppercase;
-  }
-
-  :placeholder {
-    @extend %placeholder;
-  }
-
-  ::-webkit-input-placeholder {
-    @extend %placeholder;
-  }
-
-  // Firefox 18-
-  :-moz-placeholder {
-    @extend %placeholder;
-  }
-
-  // Firefox 19+
-  ::-moz-placeholder {
-    @extend %placeholder;
-  }
-
-  :-ms-input-placeholder {
-    @extend %placeholder;
   }
 }
 
