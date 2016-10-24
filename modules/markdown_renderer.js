@@ -66,7 +66,7 @@ renderer.image = function (href_str, title, alt) {
     const attributes = attrs.join(' ');
     if (params.thumbnail) {
         const md5sum = crypto.createHash('md5');
-        md5sum.update('some data to hash');
+        md5sum.update(attributes);
         const id = 'image_' + md5sum.digest('hex');
 
         const reveal_div = `
