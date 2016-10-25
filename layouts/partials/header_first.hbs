@@ -20,10 +20,16 @@
     nsh('menu_items', 'Tools', '#');
     </script>
     --}}
-    <link rel="stylesheet" href="//nuxeo-satelite-f3e353d5cd8ae50ead.surge.sh/assets/css/satellite.css"/>
+    <link rel="stylesheet" href="/assets/satellite.css"/>
+
+    {{! Styling }}
+    <link rel="stylesheet" href="/assets/css/{{css.md5}}/docs.css" />
+    {{#if style}}
+    <link rel="stylesheet" href="/assets/css/{{css.md5}}/{{style}}.css">
+    {{/if}}
 
     {{#if ga_exp_id}}
-    <!-- Google Analytics Content Experiment code -->
+    {{!-- Google Analytics Content Experiment code --}}
     <script>function utmx_section(){}function utmx(){}(function(){var
     k={{ga_exp_id}},d=document,l=d.location,c=d.cookie;
     if(l.search.indexOf('utm_expid='+k)>0)return;
@@ -36,9 +42,9 @@
     valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
     '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
     </script><script>utmx('url','A/B');</script>
-    <!-- End of Google Analytics Content Experiment code -->
+    {{!-- End of Google Analytics Content Experiment code --}}
     {{else}}
-    <!-- No Experiment ID -->
+    <!-- No GA Experiment ID -->
     {{/if}}
 
     <meta charset="utf-8" />
@@ -48,11 +54,6 @@
     <meta name="description" content="{{description}}" />
 
     {{> meta_tags}}
-
-    <link rel="stylesheet" href="/assets/css/{{css.md5}}/docs.css" />
-    {{#if style}}
-    <link rel="stylesheet" href="/assets/css/{{css.md5}}/{{style}}.css">
-    {{/if}}
 
     {{!-- Meta templates: https://moz.com/blog/meta-data-templates-123 --}}
     {{!-- Twitter Card data --}}
