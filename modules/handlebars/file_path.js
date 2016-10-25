@@ -9,7 +9,7 @@ const handlebars = require('handlebars');
 const slug = require('slug');
 slug.defaults.modes.pretty.lower = true;
 
-const has_upper_case = require('../has_upper_case');
+const is_legacy = require('../is_legacy_space');
 
 const get_placeholder_key = require('../get_placeholder_key');
 const file_url = function (options) {
@@ -29,7 +29,7 @@ const file_url = function (options) {
     }
     else {
         // space without page - index
-        const join_char = (has_upper_case(space)) ? ':' : '/';
+        const join_char = (is_legacy(space)) ? ':' : '/';
         if (!page && space) {
             raw_page_name = [space, 'index'].join(join_char);
         }
