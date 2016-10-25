@@ -1,1 +1,23 @@
 ^/nxdoc/marketplace-add-ons/?$: /nxdoc/nuxeo-add-ons/
+
+^/display/USERDOC/?$: /userdoc/
+^/display/NXDOC/?$: /nxdoc/
+^/display/ADMINDOC/?$: /admindoc/
+
+^/display/USERDOC710/?$: /710/userdoc/
+^/display/USERDOC60/?$: /60/userdoc/
+^/display/USERDOC58/?$: /58/userdoc/
+
+^/display/NXDOC710/?$: /710/nxdoc/
+^/display/NXDOC60/?$: /60/nxdoc/
+^/display/NXDOC58/?$: /58/nxdoc/
+
+^/display/ADMINDOC710/?$: /710/admindoc/
+^/display/ADMINDOC60/?$: /60/admindoc/
+^/display/ADMINDOC58/?$: /58/admindoc/
+
+^/display/Studio/?$: /studio/
+^/display/IDEDOC/?$:/idedoc/
+^/display/CORG/?$: /corg/
+^/display/CONNECT/?$: /studio/
+^/display/GLOS/?$: /glos/
