@@ -1,15 +1,1 @@
-^/pages/viewpage\.xxx: /missing1
-^/display/MAIN/Nuxeo\+Documentation\+Center\+xxx: /missing2
-^/test: /missing3
-^/a-test: /missinga
-^/b-test/?: /missingb
-^/c-test/?$: /missingc
-^/d/test: /missingd
-^/e/test-hyphen: /missinge
-^/f/test\+plus: /missingf
-^/g/test\\+plus: /missingg
-^/h/test\.period: /missingh
-^/i/test\\.period: /missingi
-^/j-Test: /missingj
-^/k/Test: /missingk
 ^/nxdoc/marketplace-add-ons/?$: /nxdoc/nuxeo-add-ons/
