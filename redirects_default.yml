@@ -12,3 +12,4 @@
 ^/i/test\\.period: /missingi
 ^/j-Test: /missingj
 ^/k/Test: /missingk
+^/nxdoc/marketplace-add-ons/?$: /nxdoc/nuxeo-add-ons/
