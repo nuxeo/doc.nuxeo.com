@@ -17,7 +17,7 @@
 ^/display/ADMINDOC58/?$: /58/admindoc/
 
 ^/display/Studio/?$: /studio/
-^/display/IDEDOC/?$:/idedoc/
+^/display/IDEDOC/?$: /idedoc/
 ^/display/CORG/?$: /corg/
 ^/display/CONNECT/?$: /studio/
 ^/display/GLOS/?$: /glos/
