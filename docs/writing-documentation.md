@@ -185,6 +185,16 @@ These require us to use the reference style of links:
 Link to images should be written like this:
 `![name-of-the-image]({{file space='space' page='page-name' name='image-name.png'}})`
 
+An image called `your_img.png` could be referenced by the following:
+```md
+Basic example:
+![Alt text - Required]({{file name='AdapterService.png'}})
+```
+All options with file from another space and page:
+```
+![Alt text - Required]({{file space='nxdoc' page='client-sdks' name='AdapterService.png'}} ?w=180,h=360,border=true,thumbnail=true,align=right "Title text - Optional")
+```
+
 ### To Videos
 You can link to video from Wistia with the `id` provided:
 `{{> wistia_video id='id-of-the-video'}}`
@@ -193,9 +203,9 @@ You can link to video from Wistia with the `id` provided:
 Anchors to titles will enable you to create links to specific section of a page. By default, every titles have an anchor, for example `## Functional Overview` will create an anchor `functional-overview`. The link in your page should be written like this:
 `{{> anchor 'functional-overview'}}`
 
+
 ## Markdown and Handlebars
 The documentation uses standard [GitHub Flavoured Markdown](https://guides.github.com/features/mastering-markdown/), this documentation explains the added feature set using Markdown with [Handlebars](http://handlebarsjs.com/#html-escaping) and some of the helpers and partials we have available.
-
 
 ### Handlebars helpers
 
@@ -222,27 +232,6 @@ Partial | Behaviour
 `{{> panel type='info' heading='Title' match_height=true no_markdown=true}}Content{{/panel}}` | Similar to the callout partial, creates a bordered section. `type` is optional and can be 'primary', 'secondary', 'success', 'warning', 'alert'. `match_height` and `no_markdown` are optional
 `{{> wistia_video id='9pfro1cpv1'}}` | Inserts a Wistia Video using the `id` provided
 
-
-### Page links
-
-### File asset linking
-Very similar to the rules of [Page Links](#page-links). To access a file attached to the current page:
-`{{file name='name-of-file.png'}}`
-
-From a different page, you can use `page`, `space` and `version` as with [Page Links](#page-links).
-`{{file version='710' space='nxdoc' page='webengine-jax-rs' name='name-of-file.png'}}`
-
-Again legacy interperatation is also allowed for.
-
-### Images
-An image called `your_img.png` could be referenced by the following:
-```md
-Basic example:
-![Alt text - Required]({{file name='AdapterService.png'}})
-
-All options with file from another space and page:
-![Alt text - Required]({{file space='nxdoc' page='client-sdks' name='AdapterService.png'}} ?w=180,h=360,border=true,thumbnail=true,align=right "Title text - Optional")
-```
 
 ### Table from details (filter-table)
 `details` can be put into a table for display
@@ -274,6 +263,29 @@ Option | Behaviour
 `filter='field_name=search_text, another_field=search_text'` | Filter the table by fields with text values. Case-insensitive.
 `filter_type='and'` | If mulitiple fields are being filtered upon, `and` will mean all fields have to have a match for the row to be present in the table. Defaults to `or` if omitted.
 
+# Edit a Page
+## Modify Review Date
+
+Once you have reviewed entirely a page, and that you consider that it's OK or not, you will have to update the review flag. If the page is ok, update the date only, if it's not-ok you will have to change the status and add a comment. 
+`comment` is mandatory to describe what is incorrect with the page if the status is set to `not-ok` or `requiresUpdates`. Markdown will be converted and multiline text can be added.
+{{#> callout type='note'}} Make sure that the comment is well written as it is displayed on the page to inform the viewer what is the problem on the page.{{/callout}}
+
+A multiline comment is possible, it should look like this:
+
+```
+---
+review:
+  date: 'yyyy-mm-dd'
+  status: ok|not-ok|requiresUpdates
+  comment: |-
+      I'm a multiline comment
+      with **markdown** included
+
+      - list items
+      - if necessary
+---
+```
+
 
 ## Global optional frontmatter
 ### `style`
@@ -299,26 +311,6 @@ Page content here.
 
 For new JS, add an entry to `doc.nuxeo.com/webpack.config.js`. See `main.js` as an example.
 
-# Edit a Page
-## Review Date
 
-Once you have reviewed entirely a page, and that you consider that it's OK or not, you will have to update the review flag. If the page is `ok`, update the `date` only, if it's `not-ok` you will have to change the status and add a comment. `comment` is mandatory to describe what is incorrect with the page if the status is set to `not-ok` or `requiresUpdates`. Markdown will be converted and multiline text can be added.
-{{#> callout type='note'}} Make sure that the comment is well written as it is displayed on the page to inform the viewer what is the problem on the page.{{/callout}}
-
-A multiline comment is possible, it should look like this:
-
-```
----
-review:
-  date: 'yyyy-mm-dd'
-  status: ok|not-ok|requiresUpdates
-  comment: |-
-      I'm a multiline comment
-      with **markdown** included
-
-      - list items
-      - if necessary
----
-```
 # Trouble shooting
 [Trouble shooting guide](./trouble-shooting.md#trouble-shooting)
