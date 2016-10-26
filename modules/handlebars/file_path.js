@@ -9,37 +9,17 @@ const handlebars = require('handlebars');
 const slug = require('slug');
 slug.defaults.modes.pretty.lower = true;
 
-const is_legacy = require('../is_legacy_space');
+const get_placeholder_string = require('../get_placeholder_string');
 
 const get_placeholder_key = require('../get_placeholder_key');
 const file_url = function (options) {
     const file = options.data.root;
     const hash = options.hash || {};
     const defaults = file && file.url && file.url.key;
-    const version = hash.version;
-    const space = hash.space;
-    const page = hash.page || '';
-    const name = hash.name || '';
+    const {name = ''} = hash;
     const assets = file.assets;
-    let raw_page_name = '';
 
-    // version and space
-    if (version && space && page) {
-        raw_page_name = [version, space, page].join('/');
-    }
-    else {
-        // space without page - index
-        const join_char = (is_legacy(space)) ? ':' : '/';
-        if (!page && space) {
-            raw_page_name = [space, 'index'].join(join_char);
-        }
-        else if (page && space) {
-            raw_page_name = [space, page].join(join_char);
-        }
-        else {
-            raw_page_name = page;
-        }
-    }
+    const raw_page_name = get_placeholder_string(hash);
 
     let key = '';
     if (defaults && name) {
