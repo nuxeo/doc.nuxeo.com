@@ -1,6 +1,10 @@
-# Writing Documentation
 
-The documentation uses YAML at the top between two sets of `---`, this section is known as _frontmatter_.
+# Create a Page
+The recommended editor is Atom. It handles markdown nicely and can provide a live preview, fast file finding and image previewing.
+
+There are 2 repositories available for the documentation:
+    - [Platform-spaces](https://github.com/nuxeo/doc.nuxeo.com-platform-spaces): For all the versioned documentation (nxdoc/userdoc/admindoc). The versions work with branches, one version = one branch. 
+    - [Static-spaces](https://github.com/nuxeo/doc.nuxeo.com-static-spaces): For non-versioned documentation (studio/idedoc/corg)
 
 Have a look at the [new-page-template.md](new-page-template.md) with your editor or [view the raw source](https://raw.githubusercontent.com/nuxeo/doc.nuxeo.com/master/docs/new-page-template.md).
 
@@ -8,11 +12,10 @@ Have a look at the [new-page-template.md](new-page-template.md) with your editor
 
 YAML doesn't enjoy having tabs so ensure your editor is configured with _soft_ tabs (spaces).
 
-The recommended editor is [Atom](https://atom.io/).
-It handles markdown nicely and can provide a live preview (cmd + shift + m), fast file finding (cmd + p) and image previewing.
-
 ## Mandatory frontmatter
-All `.md` (Markdown) content files should have a YAML frontmatter defined at the top of the file. e.g.
+
+The documentation uses YAML at the top between two sets of `---`, this section is known as _frontmatter_.
+This frontmatter will gather all the information about the page: title, description, review date, historic, tags (formerly known as tags in Confluence), etc. In order to be correctly displayed in the documentation, all `.md` (Markdown) content files should have a YAML frontmatter defined at the top of the file which is:
 
 ```md
 ---
@@ -35,7 +38,7 @@ Frontmatter | Behaviour
 
 ### Review
 
-Review data helps flag pages that have not been review within the desired period and to mark pages as having issues.
+Review data helps to flag pages that have not been review within the desired period and to mark pages as having issues.
 
 `date` must be in [iso date format `YYYY-MM-DD`](https://en.wikipedia.org/wiki/ISO_8601).
 
@@ -64,15 +67,11 @@ review:
 
 Frontmatter | Behaviour
 --- | ---
-`draft: true` | [**Not implemented**] Control of draft pages will be achieved by using branches.
-`excerpt: About the page` | Similar to the `description` and an alternative to putting [Excerpts within the page content](#excerpts-definition). If both are present the frontmatter will be taken in preference.
 `hidden: true` | Hidden from the hierarchy menu
 `toc: true` | Adds a table of contents derrived from h2..h4  (`## h2` .. `#### h4`) headings
 `tabbed_page: true` | Convert the page to display a tabbed interface. h1 (`# h1`) headings are used as titles of each tab. `{{! end_of_tabs }}` can placed after the last section to allow content to be placed beneath the tabbed section.
 `redirect: /redirect/location` | Adds a redirect to the location specified. Accepts a url or `version/space/page name` (`710/nxdoc/installation` / `nxdoc/installation` / `installation`)
-`redirect_source: /redirect/location` | [**Legacy**] Adds a redirect to the location specified using the confluence style `NXDOC710:Page Title`. _Note:_ `redirect` will be ignored if `redirect_source` is present. `redirect` is the preferred method.
 `no_side_menu: true` | Hides the hierarchy menu for that page.
-`version_override:` | For overriding / turning off version links for a specific version. See [version override section](#overriding-version-links).
 `tree_item_index: 1` | For ordering the left hirarchical menu. Items are ordered by `tree_item_index` and then alphabetically. For ease of maintaining ordering, using
 
 ### Overriding Version Links
@@ -81,10 +80,12 @@ This feature allows the version links to point to a differnt page.
 To remove the link for **LTS 2015**:
 ```yaml
 version_override:
-    'LTS 2015': none
+    'FT': '.../...'
+    'LTS 2015': 710/.../...
+    '6.0': 60/.../...
 ```
 
-To point **LTS 2015** and **6.0** each to a new page:
+Example, to point **LTS 2015** and **6.0** each to a new page:
 ```yaml
 version_override:
     'LTS 2015': 710/nxdoc/installation
@@ -93,6 +94,41 @@ version_override:
 This accepts the [single attribute form](#single-attribute-form--legacy).
 
 _Note_: the label (e.g. `LTS 2015`) needs to be quoted, this is part of the YAML specification.
+
+## Macros
+#### Excerpt
+```handlebars
+{{! excerpt}}
+.
+.
+.
+{{! /excerpt}}
+```
+#### Multi-Excerpt
+```handlebars
+{{! multiexcerpt name=’name-of-your-multiexcerpt'}}
+.
+.
+.
+{{! /multiexcerpt}}
+```
+#### Panels
+Panels should be written like this:
+```handlebars
+{{#> callout type='info' heading='Info'}}
+Content.
+{{/callout}}
+```
+The type can be an info, a warning, a tip or a note.
+If you want to create just a basic panel, it should be written like this:  
+```handlebars
+{{#> panel type='basic' heading='Basic Panel' match_height=true no_markdown=true}} -->
+Content.
+{{/panel}}
+```
+### Tabs
+If you want to add tabs to your page, you will need to add `tabbed_page: true` in your frontmatter. This will convert all the h1 of your page as title of each tab. </br>
+`\{{! end_of_tabs }}` can be placed after the last section to allow content to be placed beneath the tabbed section.
 
 ## Markdown and Handlebars
 The documentation uses standard [GitHub Flavoured Markdown](https://guides.github.com/features/mastering-markdown/), this documentation explains the added feature set using Markdown with [Handlebars](http://handlebarsjs.com/#html-escaping) and some of the helpers and partials we have available.
