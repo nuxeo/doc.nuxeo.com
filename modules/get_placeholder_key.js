@@ -53,6 +53,10 @@ var get_placeholder_key = function (page_name_raw, defaults) {
             if (page_name_split.length === 1 && defaults.space_path) {
                 key_parts.push(defaults.space_path);
             }
+            // Doesn't have version so add default
+            else if (page_name_split.length === 2 && defaults.version) {
+                key_parts.unshift(defaults.version);
+            }
             page_name_split.map(function (item) {
                 key_parts.push(slug(item));
             });
