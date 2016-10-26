@@ -3,8 +3,8 @@
 The recommended editor is Atom. It handles markdown nicely and can provide a live preview, fast file finding and image previewing.
 
 There are 2 repositories available for the documentation:
-    - [Platform-spaces](https://github.com/nuxeo/doc.nuxeo.com-platform-spaces): For all the versioned documentation (nxdoc/userdoc/admindoc). The versions work with branches, one version = one branch. 
-    - [Static-spaces](https://github.com/nuxeo/doc.nuxeo.com-static-spaces): For non-versioned documentation (studio/idedoc/corg)
+- [Platform-spaces](https://github.com/nuxeo/doc.nuxeo.com-platform-spaces): For all the versioned documentation (nxdoc/userdoc/admindoc). The versions work with branches, one version = one branch. 
+- [Static-spaces](https://github.com/nuxeo/doc.nuxeo.com-static-spaces): For non-versioned documentation (studio/idedoc/corg)
 
 Have a look at the [new-page-template.md](new-page-template.md) with your editor or [view the raw source](https://raw.githubusercontent.com/nuxeo/doc.nuxeo.com/master/docs/new-page-template.md).
 
