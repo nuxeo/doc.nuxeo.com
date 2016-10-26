@@ -4,7 +4,6 @@ default:
         url: http://doc.nuxeo.com
         name: Nuxeo Documentation
         twitter: nuxeo
-        segment_write_key: "4qquvje3fv"
 
         # For RSS feeds
         title: 'Nuxeo Documentation'
@@ -16,7 +15,12 @@ default:
         remove_files_pattern:
             - '.DS_Store'
             - '**.DS_Store'
+
+        # Keys
         cse_id: "005135669674242188188:xu8ybnpu3r8"
+        ga_exp_id: ''
+        ga_id: 'UA-81135-3'
+        segment_write_key: "4qquvje3fv"
     page_defaults:
         -
             pattern: "**/*.{md,html}"
@@ -53,4 +57,6 @@ default:
 development:
     isDev: true
     site:
-        segment_write_key: ""
+        ga_exp_id: ''
+        ga_id: ''
+        segment_write_key: ''

@@ -121,7 +121,7 @@
     "browser_sync_reload": "echo 'This has been replaced by server_reload. npm run server_reload';",
     "dev": "NODE_ENV=development nodemon --exec 'npm run compile'",
     "dev_server": "npm run browser_sync & NODE_ENV=development nodemon --exec 'npm start && browser-sync reload'",
-    "dev_assets": "npm run browser_sync & nodemon --exec 'npm run update_assets && browser-sync reload'",
+    "dev_assets": "npm run browser_sync & NODE_ENV=development nodemon --exec 'npm run update_assets && browser-sync reload'",
     "duplicate_asset_stats": "test -e temp/metadata.json && npm run duplicate_css_stats && npm run duplicate_js_stats",
     "duplicate_css_stats": "test -e temp/css.md5 || cp lib/css.md5 temp",
     "duplicate_js_stats": "test -e temp/webpack.stats.json || cp lib/webpack.stats.json temp",
