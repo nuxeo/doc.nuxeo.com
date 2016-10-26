@@ -16,6 +16,7 @@ h6 {
 
 a {
   transition: color .2s ease;
+  word-break: break-word;
 
   &:hover {
     color: darken($primary-color, 15%);
