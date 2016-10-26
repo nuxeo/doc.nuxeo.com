@@ -62,6 +62,14 @@ test('get_placeholder_object returns values as expected', function (assert) {
                 page   : 'install'
             },
             message: 'returns correct name, version, space and page'
+        },
+        {
+            test    : " 'MP-packages-list' page='USERDOC710:Adding Features'",
+            expected: {
+                name: 'MP-packages-list',
+                page: 'USERDOC710:Adding Features'
+            },
+            message: 'returns correct name, version, space and page with legacy form'
         }
     ];
 
