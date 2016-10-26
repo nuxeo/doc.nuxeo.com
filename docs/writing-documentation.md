@@ -96,7 +96,7 @@ This accepts the [single attribute form](#single-attribute-form--legacy).
 _Note_: the label (e.g. `LTS 2015`) needs to be quoted, this is part of the YAML specification.
 
 ## Macros
-#### Excerpt
+### Excerpt
 ```handlebars
 {{! excerpt}}
 .
@@ -104,7 +104,7 @@ _Note_: the label (e.g. `LTS 2015`) needs to be quoted, this is part of the YAML
 .
 {{! /excerpt}}
 ```
-#### Multi-Excerpt
+### Multi-Excerpt
 ```handlebars
 {{! multiexcerpt name=’name-of-your-multiexcerpt'}}
 .
@@ -112,7 +112,7 @@ _Note_: the label (e.g. `LTS 2015`) needs to be quoted, this is part of the YAML
 .
 {{! /multiexcerpt}}
 ```
-#### Panels
+### Panels
 Panels should be written like this:
 ```handlebars
 {{#> callout type='info' heading='Info'}}
@@ -129,6 +129,69 @@ Content.
 ### Tabs
 If you want to add tabs to your page, you will need to add `tabbed_page: true` in your frontmatter. This will convert all the h1 of your page as title of each tab. </br>
 `\{{! end_of_tabs }}` can be placed after the last section to allow content to be placed beneath the tabbed section.
+
+## Links
+
+### To a Page
+Example: for `WebEngine (JAX-RS)`, You can access it by:
+`{{page page='webengine-jax-rs'}}`
+
+The page identifier is taken from the name of the file. e.g. `webengine-jax-rs.md` would be accessed by `webengine-jax-rs`.
+
+If the page is in another space you can add a `space` attribute.
+If you were in `userdoc` and wanted to access `WebEngine (JAX-RS)` in `nxdoc`.
+`{{page space='nxdoc' page='webengine-jax-rs'}}`
+
+Similar if you wish to access a different version add a `version` attribute.
+`{{page version='710' space='nxdoc' page='webengine-jax-rs'}}`
+
+#### Single attribute form / Legacy
+Single attribute form is also allowed to facilitate the Confluence legacy form.
+`{{page page='710/nxdoc/webengine-jax-rs'}}`
+
+To allow for link definitions from Confluence, the following also work.
+```
+{{page page='WebEngine (JAX-RS)'}}
+{{page page='NXDOC:WebEngine (JAX-RS)'}}
+{{page page='NXDOC710:WebEngine (JAX-RS)'}}
+```
+_Tip_: See [links with parenthesis](#links-with-parenthesis-mdash-).
+
+#### Links with parenthesis &mdash; ()
+These require us to use the reference style of links:
+```md
+[Link text][link-reference]
+[link-reference]: http://example.com/link(with)parenthesis "Optional title for link"
+```
+
+### To an Excerpt
+* In the same version:
+{{{excerpt space='space' page='page-name'}}}
+    - Example: {{{excerpt space='studio' page='studio-overview-and-concepts'}}}
+* In another version: 
+{{{excerpt space='space' version='version' page='page-name'}}}    
+
+### To a Multi-Excerpt
+* In the same version:
+  ```
+  {{{multiexcerpt 'name' page='page-name'}}}
+  ```
+* In another version:
+  ```
+  {{{multiexcerpt 'name' version='version' space='space' page='page-name'}}}
+  ```
+
+### To Images
+Link to images should be written like this:
+`![name-of-the-image]({{file space='space' page='page-name' name='image-name.png'}})`
+
+### To Videos
+You can link to video from Wistia with the `id` provided:
+`{{> wistia_video id='id-of-the-video'}}`
+
+### To Anchors
+Anchors to titles will enable you to create links to specific section of a page. By default, every titles have an anchor, for example `## Functional Overview` will create an anchor `functional-overview`. The link in your page should be written like this:
+`{{> anchor 'functional-overview'}}`
 
 ## Markdown and Handlebars
 The documentation uses standard [GitHub Flavoured Markdown](https://guides.github.com/features/mastering-markdown/), this documentation explains the added feature set using Markdown with [Handlebars](http://handlebarsjs.com/#html-escaping) and some of the helpers and partials we have available.
@@ -161,37 +224,6 @@ Partial | Behaviour
 
 
 ### Page links
-For `WebEngine (JAX-RS)`, You can would access it by:
-`{{page page='webengine-jax-rs'}}`
-
-The page identifier is taken from the name of the file. e.g. `webengine-jax-rs.md` would be accessed by `webengine-jax-rs`.
-
-If the page is in another space you can add a `space` attribute.
-If you were in `userdoc` and wanted to access `WebEngine (JAX-RS)` in `nxdoc`.
-`{{page space='nxdoc' page='webengine-jax-rs'}}`
-
-Simplar if you wish to access a different version add a `version` attribute.
-`{{page version='710' space='nxdoc' page='webengine-jax-rs'}}`
-
-#### Single attribute form / Legacy
-Single attribute form is also allowed to facilitate the Confluence legacy form.
-`{{page page='710/nxdoc/webengine-jax-rs'}}`
-
-To allow for link definitions from Confluence, the following also work.
-```
-{{page page='WebEngine (JAX-RS)'}}
-{{page page='NXDOC:WebEngine (JAX-RS)'}}
-{{page page='NXDOC710:WebEngine (JAX-RS)'}}
-```
-_Tip_: See [links with parenthesis](#links-with-parenthesis-mdash-).
-
-#### Links with parenthesis &mdash; ()
-These require us to use the reference style of links:
-```md
-[Link text][link-reference]
-[link-reference]: http://example.com/link(with)parenthesis "Optional title for link"
-```
-
 
 ### File asset linking
 Very similar to the rules of [Page Links](#page-links). To access a file attached to the current page:
@@ -201,30 +233,6 @@ From a different page, you can use `page`, `space` and `version` as with [Page L
 `{{file version='710' space='nxdoc' page='webengine-jax-rs' name='name-of-file.png'}}`
 
 Again legacy interperatation is also allowed for.
-
-### Excerpts Definition
-Excerpts are to reuse content within the same page. In contrast Multi-excerpts can be reused in any page.
-
-```handlebars
-{{! excerpt}}
-Reuse the text **foo** in other pages.
-{{! /excerpt}}
-```
-or
-```handlebars
-{{! multiexcerpt name="bar"}}
-Reuse the text **bar** in any page by the `name` reference.
-{{! /multiexcerpt}}
-```
-
-### Excerpts Use
-```handlebars
-{{excerpt 'page-name'}}
-```
-or
-```handlebars
-{{multiexcerpt 'bar'}}
-```
 
 ### Images
 An image called `your_img.png` could be referenced by the following:
@@ -291,6 +299,26 @@ Page content here.
 
 For new JS, add an entry to `doc.nuxeo.com/webpack.config.js`. See `main.js` as an example.
 
+# Edit a Page
+## Review Date
 
+Once you have reviewed entirely a page, and that you consider that it's OK or not, you will have to update the review flag. If the page is `ok`, update the `date` only, if it's `not-ok` you will have to change the status and add a comment. `comment` is mandatory to describe what is incorrect with the page if the status is set to `not-ok` or `requiresUpdates`. Markdown will be converted and multiline text can be added.
+{{#> callout type='note'}} Make sure that the comment is well written as it is displayed on the page to inform the viewer what is the problem on the page.{{/callout}}
+
+A multiline comment is possible, it should look like this:
+
+```
+---
+review:
+  date: 'yyyy-mm-dd'
+  status: ok|not-ok|requiresUpdates
+  comment: |-
+      I'm a multiline comment
+      with **markdown** included
+
+      - list items
+      - if necessary
+---
+```
 # Trouble shooting
 [Trouble shooting guide](./trouble-shooting.md#trouble-shooting)
