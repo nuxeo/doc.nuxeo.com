@@ -266,7 +266,7 @@ Option | Behaviour
 # Edit a Page
 ## Modify Review Date
 
-Once you have reviewed entirely a page, and that you consider that it's OK or not, you will have to update the review flag. If the page is ok, update the date only, if it's not-ok you will have to change the status and add a comment. 
+Once you have entirely reviewed a page, and that you consider that it's OK or not, you will have to update the review flag. If the page is ok, update the date only, if it's not-ok you will have to change the status and add a comment. 
 `comment` is mandatory to describe what is incorrect with the page if the status is set to `not-ok` or `requiresUpdates`. Markdown will be converted and multiline text can be added.
 {{#> callout type='note'}} Make sure that the comment is well written as it is displayed on the page to inform the viewer what is the problem on the page.{{/callout}}
 
