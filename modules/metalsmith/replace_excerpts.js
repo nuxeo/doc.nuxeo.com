@@ -9,6 +9,8 @@ const escape_regex = require('escape-string-regexp');
 
 // local packages
 const get_placeholder_key = require('../get_placeholder_key');
+const get_placeholder_object = require('../get_placeholder_object');
+const get_placeholder_string = require('../get_placeholder_string');
 
 
 /**
@@ -22,13 +24,13 @@ const replace_placeholder = function (options) {
     return function (files, metalsmith, done) {
 
         const metadata = metalsmith.metadata();
-        const placeholder_re = /\{\{\{?excerpt +['"](.+?)['"] ?\}\}\}?/i;
+        const placeholder_re = /\{\{\{?excerpt +([^\}]+)\}\}\}?/i;
 
         Object.keys(files).forEach(function (filepath) {
             const file = files[filepath];
 
-            let contents = file.contents.toString();
             let changed = false;
+            let contents = file.contents.toString();
             let match;
             let key;
             let replacement_re;
@@ -37,7 +39,10 @@ const replace_placeholder = function (options) {
             while ((match = placeholder_re.exec(contents)) !== null && safeguard) {
                 safeguard--;
                 changed = true;
-                key = get_placeholder_key(match[1], file.url.key);
+                const placeholder_parts = get_placeholder_object(match[1]);
+                // If name exists version, space and page are ignored.
+                const raw_page_name = (placeholder_parts.name) ? placeholder_parts.name : get_placeholder_string(placeholder_parts);
+                key = get_placeholder_key(raw_page_name, file.url.key);
                 replacement_re = new RegExp(escape_regex(match[0]), 'g');
                 // if (file.title === 'Collaborative Features') { error('match: %s, key: %s', match[0], key); }
                 debug('Looking for: %s in %s', key, file.title);
