@@ -1,12 +1,46 @@
+# Development
+## Requirements
+See [the main project requirements](https://github.com/nuxeo/doc.nuxeo.com/blob/master/README.md#requirements).
+
+## Installation 
+There are 2 repositories available for the documentation:
+- [Platform-spaces](https://github.com/nuxeo/doc.nuxeo.com-platform-spaces): For all the versioned documentation (nxdoc/userdoc/admindoc). The versions work with branches, one version = one branch. 
+
+Clone the repository to your local machine, using your favorite git client or the command line:
+```bash
+git lfs clone https://github.com/nuxeo/doc.nuxeo.com-platform-spaces
+cd doc.nuxeo.com-platform-spaces
+git lfs install
+git reset --hard
+```
+**Run Locally**
+```bash
+npm run dev
+```
+Once started go to your http://localhost:3000 and add `/nxdoc` or `/userdoc` at the end to the address to access, as it's the versioned space. 
+
+- [Static-spaces](https://github.com/nuxeo/doc.nuxeo.com-static-spaces): For non-versioned documentation (studio/idedoc/corg)
+
+Clone the repository to your local machine, using your favorite git client or the command line:
+```bash
+git lfs clone https://github.com/nuxeo/doc.nuxeo.com-static-spaces
+cd doc.nuxeo.com-static-spaces
+git lfs install
+git reset --hard
+```
+**Run Locally**
+```bash
+npm run dev
+```
+
+Have a look at the [new-page-template.md](new-page-template.md) with your editor or [view the raw source](https://raw.githubusercontent.com/nuxeo/doc.nuxeo.com/master/docs/new-page-template.md).
+
+For more information, have a look at the READMEs of the two repositories. 
 
 # Create a Page
 The recommended editor is Atom. It handles markdown nicely and can provide a live preview, fast file finding and image previewing.
 
-There are 2 repositories available for the documentation:
-- [Platform-spaces](https://github.com/nuxeo/doc.nuxeo.com-platform-spaces): For all the versioned documentation (nxdoc/userdoc/admindoc). The versions work with branches, one version = one branch. 
-- [Static-spaces](https://github.com/nuxeo/doc.nuxeo.com-static-spaces): For non-versioned documentation (studio/idedoc/corg)
 
-Have a look at the [new-page-template.md](new-page-template.md) with your editor or [view the raw source](https://raw.githubusercontent.com/nuxeo/doc.nuxeo.com/master/docs/new-page-template.md).
 
 ## Editor Configuration
 
