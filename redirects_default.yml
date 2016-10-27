@@ -21,3 +21,7 @@
 ^/display/CORG/?$: /corg/
 ^/display/CONNECT/?$: /studio/
 ^/display/GLOS/?$: /glos/
+
+^/display/SPRINT/?$: https://doc.nuxeo.com/
+
+^/display/KB/?$: https://doc.nuxeo.com/
