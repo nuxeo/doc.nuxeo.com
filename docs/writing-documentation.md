@@ -4,7 +4,7 @@ See [the main project requirements](https://github.com/nuxeo/doc.nuxeo.com/blob/
 
 ## Installation 
 There are 2 repositories available for the documentation:
-- [Platform-spaces](https://github.com/nuxeo/doc.nuxeo.com-platform-spaces): For all the versioned documentation (nxdoc/userdoc/admindoc). The versions work with branches, one version = one branch. 
+- **[Platform-spaces](https://github.com/nuxeo/doc.nuxeo.com-platform-spaces)**: For all the versioned documentation (nxdoc/userdoc/admindoc). The versions work with branches, one version = one branch. 
 
 Clone the repository to your local machine, using your favorite git client or the command line:
 ```bash
@@ -17,9 +17,9 @@ git reset --hard
 ```bash
 npm run dev
 ```
-Once started go to your http://localhost:3000 and add `/nxdoc` or `/userdoc` at the end to the address to access, as it's the versioned space. 
+Once started go to your http://localhost:3000 and add `/nxdoc` or `/userdoc` at the end to the address to access it, as it's the versioned space. 
 
-- [Static-spaces](https://github.com/nuxeo/doc.nuxeo.com-static-spaces): For non-versioned documentation (studio/idedoc/corg)
+- **[Static-spaces](https://github.com/nuxeo/doc.nuxeo.com-static-spaces)**: For non-versioned documentation (studio/idedoc/corg)
 
 Clone the repository to your local machine, using your favorite git client or the command line:
 ```bash
