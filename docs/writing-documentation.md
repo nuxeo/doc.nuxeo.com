@@ -75,7 +75,7 @@ Frontmatter | Behaviour
 `tree_item_index: 1` | For ordering the left hirarchical menu. Items are ordered by `tree_item_index` and then alphabetically. For ease of maintaining ordering, using
 
 ### Overriding Version Links
-This feature allows the version links to point to a differnt page.
+This feature allows the version links to point to a different page.
 
 To remove the link for **LTS 2015**:
 ```yaml
