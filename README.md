@@ -18,7 +18,7 @@ brew install git nodejs libsass
 ```
 
 ## Installation
-Clone the repository to your local machine (and remember where it's saved :)), using your favorite git client or the command line:
+Clone the repository to your local machine (and remember where it's saved :)), using your favorite Git client or the command line:
 ```bash
 git clone https://github.com/nuxeo/doc.nuxeo.com
 cd doc.nuxeo.com
