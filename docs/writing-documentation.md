@@ -2,8 +2,7 @@
 ## Requirements
 - [Git](https://git-scm.com/) - make sure your Privacy & Security settings allow to download applications from anywhere
 - [SSH key associated with GitHub](https://help.github.com/articles/generating-an-ssh-key/)
-- [node.js](https://nodejs.org) &mdash Stable: See [Release schedule](https://github.com/nodejs/LTS#lts_schedule)
-- [libsass](http://sass-lang.com/libsass)
+- [node.js](https://nodejs.org) &mdash; Stable: See [Release schedule](https://github.com/nodejs/LTS#lts_schedule)(version >= v6.9)
 - [Git LFS](https://github.com/github/git-lfs/wiki/Installation)
 - A Markdown text editor (https://atom.io/ or https://www.sublimetext.com/ for example) set with _soft_ tabs (spaces).
 
