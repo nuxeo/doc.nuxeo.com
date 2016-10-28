@@ -1,6 +1,19 @@
 # Development
 ## Requirements
-See [the main project requirements](https://github.com/nuxeo/doc.nuxeo.com/blob/master/README.md#requirements).
+- [Git](https://git-scm.com/) - make sure your Privacy & Security settings allow to download applications from anywhere
+- [SSH key associated with GitHub](https://help.github.com/articles/generating-an-ssh-key/)
+- [node.js](https://nodejs.org) &mdash Stable: See [Release schedule](https://github.com/nodejs/LTS#lts_schedule)
+- [libsass](http://sass-lang.com/libsass)
+- [Git LFS](https://github.com/github/git-lfs/wiki/Installation)
+- A Markdown text editor (https://atom.io/ or https://www.sublimetext.com/ for example) set with _soft_ tabs (spaces).
+
+To install on mac:
+- install homebrew (http://brew.sh/) and run ```brew update```
+
+- use brew to install:
+```bash
+brew install git nodejs libsass
+```
 
 ## Installation 
 There are 2 repositories available for the documentation:
