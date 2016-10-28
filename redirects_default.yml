@@ -22,6 +22,7 @@
 ^/display/CONNECT/?$: /studio/
 ^/display/GLOS/?$: /glos/
 
-^/display/SPRINT/?$: https://doc.nuxeo.com/
+^/display/SPRINT/?$: /
 
-^/display/KB/?$: https://doc.nuxeo.com/
+^/display/KB/?$: /
+
