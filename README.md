@@ -4,18 +4,23 @@
 
 ## Requirements
 - [Git](https://git-scm.com/) - make sure your Privacy & Security settings allow to download applications from anywhere
+- [Git LFS](https://github.com/github/git-lfs/wiki/Installation)
 - [SSH key associated with GitHub](https://help.github.com/articles/generating-an-ssh-key/)
-- [node.js](https://nodejs.org) &mdash Stable: See [Release schedule](https://github.com/nodejs/LTS#lts_schedule)
+- [Node.js](https://github.com/creationix/nvm#install-script) &mdash; Stable: See [Release schedule](https://github.com/nodejs/LTS#lts_schedule)(version >= v6.9)
+    - `nvm install v6` will get the latest v6 version
+    - Test with `node --version`
+    - _Remember:_ `nvm use v6` at the start of your session
 - [libsass](http://sass-lang.com/libsass)
-- A Markdown text editor (https://atom.io/ or https://www.sublimetext.com/ for example).
-- Install [EditorConfig plugin](http://editorconfig.org/#download).
+- A Markdown text editor (https://atom.io/ or https://www.sublimetext.com/ for example)
+- [EditorConfig plugin](http://editorconfig.org/#download).
 
-To install on mac:
-- install homebrew (http://brew.sh/) and run ```brew update```
-
-- use brew to install:
-```bash
-brew install git nodejs libsass
+### Mac:
+- Install homebrew (http://brew.sh/) and run
+    ```bash
+# Update
+brew update
+# Install git and libsass
+brew install git libsass
 ```
 
 ## Installation

@@ -1,23 +1,30 @@
 # Development
 ## Requirements
 - [Git](https://git-scm.com/) - Make sure your Privacy & Security settings allow to download applications from anywhere
-- [SSH key associated with GitHub](https://help.github.com/articles/generating-an-ssh-key/)
-    * Test access with `ssh -T git@github.com` - see [here](https://help.github.com/articles/testing-your-ssh-connection/) for help.
-- [node.js](https://github.com/creationix/nvm#install-script) &mdash; Stable: See [Release schedule](https://github.com/nodejs/LTS#lts_schedule)(version >= v6.9)
-    * `nvm install v6` will get the latest v6 version. Test with `node --version`
 - [Git LFS](https://github.com/github/git-lfs/wiki/Installation)
-- A Markdown text editor (https://atom.io/ or https://www.sublimetext.com/ for example) set with _soft_ tabs (spaces).
+- [SSH key associated with GitHub](https://help.github.com/articles/generating-an-ssh-key/)
+    - Test access with `ssh -T git@github.com` - see [here](https://help.github.com/articles/testing-your-ssh-connection/) for help.
+- [node.js](https://github.com/creationix/nvm#install-script) &mdash; Stable: See [Release schedule](https://github.com/nodejs/LTS#lts_schedule)(version >= v6.9)
+    - `nvm install v6` will get the latest v6 version
+    - Test with `node --version`
+    - _Remember:_ `nvm use v6` at the start of your session
+- A Markdown text editor (https://atom.io/ or https://www.sublimetext.com/ for example)
+- [EditorConfig plugin](http://editorconfig.org/#download)
 
-To install on mac:
-- install homebrew (http://brew.sh/) and run ```brew update```
-- use brew to install:
-```bash
-brew install git nodejs libsass
+### Mac:
+- Install homebrew (http://brew.sh/) and run
+    ```bash
+# Update
+brew update
+# Install git
+brew install git
 ```
 
 ## Installation 
 There are 2 repositories available for the documentation:
-- **[Platform-spaces](https://github.com/nuxeo/doc.nuxeo.com-platform-spaces)**: For all the versioned documentation (nxdoc/userdoc/admindoc). The versions work with branches, one version = one branch. 
+
+### Platform
+**[Platform-spaces](https://github.com/nuxeo/doc.nuxeo.com-platform-spaces)**: For all the versioned documentation (nxdoc/userdoc/admindoc). The versions work with branches, one version = one branch. 
 
 Clone the repository to your local machine, using your favorite Git client or the command line:
 ```bash
@@ -26,13 +33,14 @@ cd doc.nuxeo.com-platform-spaces
 git lfs install
 git reset --hard
 ```
-**Run Locally**
+#### Run Locally
 ```bash
 npm run dev
 ```
 Once started go to your http://localhost:3000 and add `/nxdoc` or `/userdoc` at the end to the address to access it, as it's the versioned space. 
 
-- **[Static-spaces](https://github.com/nuxeo/doc.nuxeo.com-static-spaces)**: For non-versioned documentation (studio/idedoc/corg)
+### Static
+**[Static-spaces](https://github.com/nuxeo/doc.nuxeo.com-static-spaces)**: For non-versioned documentation (studio/idedoc/corg)
 
 Clone the repository to your local machine, using your favorite Git client or the command line:
 ```bash
@@ -41,7 +49,7 @@ cd doc.nuxeo.com-static-spaces
 git lfs install
 git reset --hard
 ```
-**Run Locally**
+#### Run Locally
 ```bash
 npm run dev
 ```
