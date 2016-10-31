@@ -10,37 +10,21 @@ slug.defaults.modes.pretty.lower = true;
 
 const get_placeholder_key = require('../get_placeholder_key');
 const key_to_url = require('../key_to_url');
-const is_legacy = require('../is_legacy_space');
+
+const get_placeholder_string = require('../get_placeholder_string');
 
 const page_url = function (options) {
     const file = options.data.root;
     const defaults = file && file.url && file.url.key;
-    const version = options.hash && options.hash.version;
-    const space = options.hash && options.hash.space;
-    let page = options.hash && options.hash.page || '';
+    options.hash = options.hash || {};
+
+    let {page = ''} = options.hash;
     const page_hash_split = page.split('#');
     page = page_hash_split.shift();
     let hash = (page_hash_split.length) ? page_hash_split.join('#') : '';
     hash = (hash) ? '#' + hash : hash;
-    let raw_page_name = '';
 
-    // version and space
-    if (version && space && page) {
-        raw_page_name = [version, space, page].join('/');
-    }
-    else {
-        // space without page - index
-        const join_char = (is_legacy(space)) ? ':' : '/';
-        if (!page && space) {
-            raw_page_name = [space, 'index'].join(join_char);
-        }
-        else if (page && space) {
-            raw_page_name = [space, page].join(join_char);
-        }
-        else {
-            raw_page_name = page;
-        }
-    }
+    const raw_page_name = get_placeholder_string(options.hash);
 
     // Strip # from page
     let url = '';

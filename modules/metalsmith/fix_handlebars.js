@@ -1,14 +1,13 @@
 'use strict';
-
 /* eslint-env es6 */
 
-var debug_lib = require('debug');
-var debug = debug_lib('metalsmith-fix-handlebars');
-var error = debug_lib('metalsmith-fix-handlebars:error');
+const debug_lib = require('debug');
+const debug = debug_lib('metalsmith-fix-handlebars');
+const error = debug_lib('metalsmith-fix-handlebars:error');
 
-var co = require('co');
+const co = require('co');
 
-var replacements = [
+const replacements = [
     {
         search : /\{\{#&gt; /g,
         replace: '{{#> '
@@ -27,11 +26,11 @@ var replacements = [
     }
 ];
 
-var fix_content = function (files, filepath) {
+const fix_content = (files, filepath) => {
     return new Promise(function (resolve) {
         debug('Processing: %s', filepath);
-        var file = files[filepath];
-        var contents = file.contents.toString();
+        const file = files[filepath];
+        let contents = file.contents.toString();
         replacements.forEach(function (replacement) {
             contents = contents.replace(replacement.search, replacement.replace);
         });
@@ -46,12 +45,12 @@ var fix_content = function (files, filepath) {
  * @param {Object} options
  * @return {Function}
 **/
-var fix_handlebars = function (options) {
+const fix_handlebars = (options) => {
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
 
         co(function *() {
-            var file_fixes = [];
+            const file_fixes = [];
             Object.keys(files).forEach(function (filepath) {
                 file_fixes.push(fix_content(files, filepath));
             });

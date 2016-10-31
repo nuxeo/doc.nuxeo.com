@@ -96,6 +96,32 @@ test('get_placeholder_key returns values as expected', function (assert) {
                 parts     : [ 'index'],
                 full      : 'index'
             }
+        },
+        {
+            test    : 'install',
+            expected: '710/nxdoc/install',
+            message : 'returns fallback version',
+            fallback: {
+                version   : '710',
+                space     : 'nxdoc',
+                space_path: '710/nxdoc',
+                slug      : 'index',
+                parts     : ['710', 'nxdoc', 'index'],
+                full      : '710/nxdoc/index'
+            }
+        },
+        {
+            test    : 'admindoc/install',
+            expected: '710/admindoc/install',
+            message : 'returns fallback version',
+            fallback: {
+                version   : '710',
+                space     : 'nxdoc',
+                space_path: '710/nxdoc',
+                slug      : 'index',
+                parts     : ['710', 'nxdoc', 'index'],
+                full      : '710/nxdoc/index'
+            }
         }
     ];
 
