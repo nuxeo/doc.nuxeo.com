@@ -1,20 +1,7 @@
 @charset 'utf-8';
 
 // Nuxeo Fonts
-@font-face {
-  font-family: 'Aregular';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/assets/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.eot');
-  src: url('/assets/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.woff') format('woff'), url('/assets/fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.ttf');
-}
-@font-face {
-  font-family: 'Ademi';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/assets/fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.eot');
-  src: url('/assets/fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.woff') format('woff'), url('/assets/fonts/AvenirNextLTPro/AvenirNextLTPro-Demi.ttf');
-}
+@import 'components/nuxeo_fonts';
 
 @import 'settings';
 @import 'foundation';
@@ -61,6 +48,7 @@
 
 @import 'font-awesome';
 
+@import 'satellite';
 // @import 'core';
 @import 'components/documentation';
 @import 'components/typography';

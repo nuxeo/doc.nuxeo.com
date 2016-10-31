@@ -1,6 +1,5 @@
 'use strict';
-
-/* global document */
+/* eslint-env browser */
 
 module.exports = function ($) {
     var React = require('react');
