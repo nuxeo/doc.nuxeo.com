@@ -13,6 +13,7 @@
 
 ### Mac:
 - Install homebrew (http://brew.sh/) and run
+    
     ```bash
 # Update
 brew update
