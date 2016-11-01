@@ -1,3 +1,5 @@
+$tab-highlight: lighten($primary-color, 5%);
+
 .tabs {
   border: 0;
   font-weight: bold;
@@ -6,10 +8,11 @@
   text-transform: uppercase;
 
   li {
-    border-bottom: 2px solid $secondary-color;
+    border-bottom: 2px solid $dark-gray;
     border-top: 1px solid transparent; // To counterbalance when tab is active
-    height: 4.4rem;
+    height: 4.5rem;
     text-align: center;
+    transition: color .2s ease;
 
     // To prevent tabs from stacking
     &:first-child {
@@ -32,18 +35,25 @@
 
     a {
       color: $medium-gray;
+      padding-bottom: 0;
       padding-left: .5rem;
       padding-right: .5rem;
     }
-  }
 
-  .is-active {
-    border: 2px solid $secondary-color;
-    border-bottom: 0;
-    border-top: 3px solid $primary-color;
+    &.is-active {
+      border: 2px solid $dark-gray;
+      border-bottom: 0;
+      border-top: 4px solid $tab-highlight;
 
-    a {
-      color: $secondary-color;
+      a {
+        color: $dark-gray;
+      }
+    }
+
+    &:not(.is-active):hover {
+      a {
+        color: $dark-gray;
+      }
     }
   }
 }
