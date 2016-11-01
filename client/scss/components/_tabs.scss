@@ -8,7 +8,8 @@
   li {
     border-bottom: 2px solid $secondary-color;
     border-top: 1px solid transparent; // To counterbalance when tab is active
-    white-space: nowrap;
+    height: 4.4rem;
+    text-align: center;
 
     // To prevent tabs from stacking
     &:first-child {
@@ -31,8 +32,8 @@
 
     a {
       color: $medium-gray;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      padding-left: .5rem;
+      padding-right: .5rem;
     }
   }
 
