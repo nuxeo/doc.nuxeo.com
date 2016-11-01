@@ -109,7 +109,7 @@
     "build_css_postcss": "postcss --use autoprefixer -c postcss.json -d assets/css/`cat css.md5` client/css/*.css",
     "lint": "eslint --cache --ignore-pattern node_modules --ignore-pattern site/ --ignore-pattern assets/ --ignore-pattern temp/ --ignore-pattern repositories/ --ext .js '**/*.js'",
     "yaml_lint": "js-yaml -t > /dev/null",
-    "clean_assets": "rm -r assets/{js,css} && git checkout assets lib",
+    "clean_assets": "rm -r assets/{js,css}; git checkout assets lib",
     "publish_assets": "npm run compile && git add assets lib && git commit -m 'Client Assets: Recompiled' && npm version",
     "default_redirects": "cp ./redirects_default.yml ./redirects.yml",
     "empty_directories": "npm run empty_site && npm run empty_temp && npm run empty_logs",
