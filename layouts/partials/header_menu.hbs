@@ -3,7 +3,7 @@
     <div class="nuxeo-satellite-header expanded">
         <div class="nuxeo-satellite-left-menu">
             <ul>
-                <li class="menu-link" role="menuitem"><a href="https://www.nuxeo.com/"><img src="/assets/imgs/logo340x60.png" width="80" height="14" alt="Nuxeo" class="nuxeo-satellite-logo"></a></li>
+                <li class="menu-home" role="menuitem"><a href="https://www.nuxeo.com/"><img src="/assets/imgs/logo340x60.png" width="80" height="14" alt="Nuxeo" class="nuxeo-satellite-logo"></a></li>
                 <li class="menu-link" role="menuitem"><a href="https://www.nuxeo.com/why-nuxeo/">Why Nuxeo</a></li>
                 <li class="menu-link" role="menuitem"><a href="https://www.nuxeo.com/products/content-management-platform/">Products</a></li>
                 <li class="menu-link" role="menuitem"><a href="https://www.nuxeo.com/solutions/digital-asset-management/">Use Cases</a></li>
@@ -23,7 +23,11 @@
     <div class="nuxeo-satellite-menu expanded">
         <div class="nuxeo-satellite-left-menu">
             <ul>
-                <li class="menu-link" role="menuitem"><a href="/"><img class="nuxeo-satellite-icon" src="/assets/icons/favicon-16x16.png" width="16" height="16" alt="Nuxeo Documentation"> Documentation</a></li>
+                <li class="menu-burger">
+                    <button class="menu-icon" type="button" data-toggle></button>
+                    <span class="menu-item-text">Menu</span>
+                </li>
+                <li class="menu-home" role="menuitem"><a href="/"><img class="nuxeo-satellite-icon" src="/assets/icons/favicon-16x16.png" width="16" height="16" alt="Nuxeo Documentation"> Documentation</a></li>
                 <li class="menu-link hover-tutorial" role="menuitem"><a href="/nxdoc/tutorials/">Tutorials</a></li>
                 <li class="menu-link hover-server" role="menuitem"><a href="/nxdoc/nuxeo-server/">Nuxeo Server</a></li>
                 <li class="menu-link hover-web-ui" role="menuitem"><a href="/nxdoc/web-ui/">Web UI</a></li>
@@ -32,6 +36,12 @@
                 <li class="menu-link hover-sdks" role="menuitem"><a href="/nxdoc/client-sdks/">Client SDK</a></li>
                 <li class="menu-link hover-services" role="menuitem"><a href="/studio/">Online Services</a></li>
                 <li class="menu-link hover-tools" role="menuitem"><a href="/nxdoc/nuxeo-tools">Tools</a></li>
+                <li class="narrow-only">
+                    <form id="burger-menu-search" action="/" method="get">
+                        <i class="fa fa-search"></i>
+                        <input type="text" name="q" value="" placeholder="SEARCH DOCS&hellip;">
+                    </form>
+                </li>
             </ul>
         </div>
         <div class="nuxeo-satellite-right-menu">

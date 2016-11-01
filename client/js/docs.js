@@ -4,6 +4,7 @@
 
 $(document).ready(function () {
     var menu = require('./menu');
+    var satellite_header = require('./satellite_header');
 
     // In page TOC
     require('./tabbed');
@@ -15,30 +16,6 @@ $(document).ready(function () {
 
     var hljs = require('highlight.js');
     hljs.initHighlightingOnLoad();
-
-    // Search box (top right)
-    var $search_button = $('#search-button');
-    var $search_box = $('#search-box');
-    var $search_box_input = $search_box.find('input');
-
-    $search_button.on('click', function () {
-        if ($search_button.hasClass('active')) {
-            $search_box_input.blur();
-        }
-        else {
-            $search_button.addClass('active');
-            $search_box.removeClass('closed');
-            $search_box_input.focus();
-        }
-    });
-    $search_box_input.on('blur', function () {
-        $search_box.addClass('closed');
-        $search_button.removeClass('active');
-    })
-    .on('focus', function () {
-        /* eslint no-invalid-this: 0 */
-        this.setSelectionRange(0, this.value.length);
-    });
 
     // Homepage search - Hiding Label when it has results
     var $search_area = $('#search-area');
@@ -70,6 +47,9 @@ $(document).ready(function () {
 
     // Menu
     menu($);
+
+    // satellite_header
+    satellite_header($);
 });
 
 $(window).load(function () {
