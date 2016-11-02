@@ -11,6 +11,7 @@
           </div>
         </div>
         {{> flag_review}}
+        {{#if tabbed_page}}<ul id="nuxeo-tabs" class="tabs" data-tabs></ul>{{/if}}
     </div>
     <div id="content" class="column {{#if toc}}toc large-8 {{#if toc_no_h4}}toc-no-h4{{/if}}{{/if}}{{#if tabbed_page}} tabbed{{/if}}">
         {{{contents}}}
