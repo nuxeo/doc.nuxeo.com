@@ -42,13 +42,10 @@ default:
         smartypants: false
         tables     : true
     repositories:
-        static:
-            url: git@github.com:nuxeo/doc.nuxeo.com-static-spaces.git
-            branches:
-                - master
         platform:
             url: git@github.com:nuxeo/doc.nuxeo.com-platform-spaces.git
             branches:
+                - static
                 - master
                 - '710'
                 - '60'
