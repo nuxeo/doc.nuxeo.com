@@ -57,6 +57,10 @@ var get_placeholder_key = function (page_name_raw, defaults) {
             else if (page_name_split.length === 2 && defaults.version) {
                 key_parts.unshift(defaults.version);
             }
+            // Test for blank version for full path
+            else if (page_name_split.length === 3 && !page_name_split[0]) {
+                page_name_split.shift();
+            }
             page_name_split.map(function (item) {
                 key_parts.push(slug(item));
             });

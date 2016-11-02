@@ -122,6 +122,19 @@ test('get_placeholder_key returns values as expected', function (assert) {
                 parts     : ['710', 'nxdoc', 'index'],
                 full      : '710/nxdoc/index'
             }
+        },
+        {
+            test    : '/admindoc/install',
+            expected: 'admindoc/install',
+            message : 'Allows FT version to be applied',
+            fallback: {
+                version   : '710',
+                space     : 'nxdoc',
+                space_path: '710/nxdoc',
+                slug      : 'index',
+                parts     : ['710', 'nxdoc', 'index'],
+                full      : '710/nxdoc/index'
+            }
         }
     ];
 
