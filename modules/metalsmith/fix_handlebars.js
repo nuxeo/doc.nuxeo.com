@@ -17,8 +17,12 @@ const replacements = [
         replace: '{{> '
     },
     {
-        search : /(&#39;|&quot;)/g,
+        search : /&#39;/g,
         replace: "'"
+    },
+    {
+        search : /&quot;/g,
+        replace: '"'
     },
     {
         search : /url=(['"])<a href="(.+?)(['"])(.+?)">.*?<\/a>/g,
