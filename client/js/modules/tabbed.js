@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-env browser, jquery */
 
-var initialise_toc = require('./modules/initialise_toc');
+var initialise_toc = require('./initialise_toc');
 var $content = $('#content');
 
 if ($content.hasClass('tabbed')) {

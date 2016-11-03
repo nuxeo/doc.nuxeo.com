@@ -4,7 +4,7 @@
 // var debounce = require('lodash.debounce');
 var throttle = require('lodash.throttle');
 
-var initialise_toc = require('./modules/initialise_toc');
+var initialise_toc = require('./initialise_toc');
 
 var $window = $(window);
 var $document = $(document);
