@@ -33,3 +33,5 @@
 ^/nxdoc/how-to-brand-your-application: /studio/branding
 
 ^/nxdoc/quick-start-dev-guide: /nxdoc/start-customizing-the-nuxeo-platform
+
+^/display/ADMINDOC/Configuration\+Templates/?$: /nxdoc/configuration-templates/
