@@ -1,5 +1,5 @@
 {{> header_standard}}
-<div class="row">
+<div id="content-body" class="row pjax-content" data-space="{{url.key.space_path}}">
     <div class="column">
         {{#if edit_url}}<a class="float-right edit-page" alt="Edit on GitHub" title="Edit on GitHub" href="{{edit_url}}"><i class="fa fa-pencil-square-o"></i></a>{{/if}}
         {{> versions}}

@@ -50,6 +50,7 @@
     "multimatch": "^2.1.0",
     "multisort": "^0.5.3",
     "node-yaml-config": "0.0.4",
+    "pjax": "^0.2.4",
     "quotation": "^1.0.1",
     "recursive-readdir": "^2.1.0",
     "request": "^2.74.0",

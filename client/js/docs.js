@@ -2,57 +2,36 @@
 /* eslint-env browser */
 /* global $ */
 
+var menu = require('./modules/menu');
+
 $(document).ready(function () {
-    var menu = require('./menu');
     var satellite_header = require('./satellite_header');
 
-    // In page TOC
-    require('./tabbed');
+    // Create tabs if needed
+    require('./modules/tabbed');
 
     // In page TOC
-    require('./toc');
+    require('./modules/toc');
 
+    // Initialise Foundation
     $(document).foundation();
 
+    // Initialise HighlightJS
     var hljs = require('highlight.js');
     hljs.initHighlightingOnLoad();
 
     // Homepage search - Hiding Label when it has results
-    var $search_area = $('#search-area');
-    if ($search_area.length) {
-        var $input_group_label = $search_area.find('.input-group-label');
-        $search_area.on('click', function () {
-            var $this = $(this);
-            var $input = $this.find('input.gsc-input');
-            $input.focus();
-        })
-        .on('focus', 'input.gsc-input', function () {
-            /* eslint no-invalid-this: 0 */
-            $(this).keyup();
-            this.setSelectionRange(0, this.value.length);
-        })
-        .on('keyup', 'input.gsc-input', function () {
-            setTimeout(function () {
-                if ($search_area.find('.gsc-results').length && !$search_area.find('.gs-result.gs-no-result').length) {
-                    $input_group_label.addClass('closed');
-                }
-                else {
-                    $input_group_label.removeClass('closed');
-                }
-            }, 1e3);
-        });
-
-        $search_area.click();
-    }
-
-    // Menu
-    menu($);
+    require('./modules/home_search');
 
     // satellite_header
     satellite_header($);
+
+    // Menu
+    menu.initialise();
 });
 
 $(window).load(function () {
+    var initialise_toc = require('./modules/initialise_toc');
     // Element supports attribute
     var testAttribute = function (element, attribute) {
         var test = document.createElement(element);
@@ -65,4 +44,12 @@ $(window).load(function () {
     }
 
     $('#search-area').click();
+
+    require('./modules/pjax');
+
+    document.addEventListener('pjax:success', function () {
+        initialise_toc(true);
+        $('.pjax-content').foundation();
+        menu.refresh();
+    });
 });
