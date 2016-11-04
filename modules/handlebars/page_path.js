@@ -20,7 +20,7 @@ const page_url = function (options) {
 
     let {page = ''} = options.hash;
     const page_hash_split = page.split('#');
-    page = page_hash_split.shift();
+    options.hash.page = page_hash_split.shift();
     let hash = (page_hash_split.length) ? page_hash_split.join('#') : '';
     hash = (hash) ? '#' + hash : hash;
 
