@@ -3,35 +3,43 @@
 /* global $ */
 
 var menu = require('./modules/menu');
+var toc = require('./modules/toc');
+var tabbed = require('./modules/tabbed');
 
-$(document).ready(function () {
-    var satellite_header = require('./satellite_header');
-
+var domReady = function () {
     // Create tabs if needed
-    require('./modules/tabbed');
+    tabbed.initialise();
 
     // In page TOC
-    require('./modules/toc');
-
-    // Initialise Foundation
-    $(document).foundation();
+    toc.initialise();
 
     // Initialise HighlightJS
     var hljs = require('highlight.js');
     hljs.initHighlightingOnLoad();
 
-    // Homepage search - Hiding Label when it has results
-    require('./modules/home_search');
+};
+
+$(document).ready(function () {
+    var satellite_header = require('./satellite_header');
+
+    // Initialise DOM
+    domReady();
+
+    // Initialise Foundation
+    $(document).foundation();
 
     // satellite_header
     satellite_header($);
 
     // Menu
     menu.initialise();
-});
 
+    // Homepage search - Hiding Label when it has results
+    require('./modules/home_search');
+
+
+});
 $(window).load(function () {
-    var initialise_toc = require('./modules/initialise_toc');
     // Element supports attribute
     var testAttribute = function (element, attribute) {
         var test = document.createElement(element);
@@ -43,13 +51,23 @@ $(window).load(function () {
         $('input[autofocus]').focus();
     }
 
+    // Induce focus to search input on homepage
     $('#search-area').click();
 
+
+    // Initialise pjax
     require('./modules/pjax');
 
-    document.addEventListener('pjax:success', function () {
-        initialise_toc(true);
-        $('.pjax-content').foundation();
+    document.addEventListener('pjax:complete', function () {
+        // Initialise DOM
+        domReady();
+
+        // Initialise foundation on new element
+        $('#content-body').foundation();
+
+        // $(document).foundation('reInit');
+
+        // Refresh menu
         menu.refresh();
     });
 });
