@@ -79,10 +79,13 @@ var initialise_react = function (data) {
             update_equalize();
         },
         componentDidUpdate: function () {
+            // console.log('menu: update');
+
+            // re-process DOM links
+            window.pjax.parseDOM(document);
+
             // Update equalize
             update_equalize(500);
-            console.log('menu: update');
-            window.pjax.parseDOM(document);
         },
         componentWillMount: function () {
             var that = this;

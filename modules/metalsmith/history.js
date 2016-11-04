@@ -23,7 +23,7 @@ var get_history = function (source_path, filepath, file, options) {
     // Synchonous method otherwise the template doesn't have the information in time.
     git_history = execSync('cd ' + source_path + " && git log --pretty=format:'%cn%x09%cd%x09%s' " + filepath, {encoding: 'utf8'}).split('\n');
 
-    // debug('git_history: %o', git_history);
+    // error('git_history: %o', git_history);
     git_history.forEach(function (history_item_raw) {
         var history_item_split = history_item_raw.split('\t');
         var history_item = {

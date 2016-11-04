@@ -5,6 +5,7 @@ var first_time = true;
 
 var initialise_toc = function (override_first) {
     first_time = override_first || first_time;
+    // console.log('init-toc', first_time);
     var $content = $('#content');
     var $toc_list = $('#toc_list');
     var no_h4 = $content.hasClass('toc-no-h4');
