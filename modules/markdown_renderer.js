@@ -89,7 +89,7 @@ renderer.image = function (href_str, title, alt) {
 };
 
 renderer.table = (header, body) => `
-    <div class="table-scroll"
+    <div class="table-scroll">
         <table>
             <thead>
                 ${header}
