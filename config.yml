@@ -23,12 +23,6 @@ default:
         segment_write_key: "4qquvje3fv"
     page_defaults:
         -
-            pattern: "**/*.{md,html}"
-            defaults:
-                meta:
-                    page-tag:
-                        - CMIS
-        -
             pattern: "**/*.md"
             defaults:
                 layout: 'default.hbs'
