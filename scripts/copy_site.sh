@@ -3,11 +3,12 @@
 REPO_ID="${1}";
 BRANCH="${2}";
 
-SOURCE_ASSETS="./temp/${REPO_ID}/$BRANCH/assets"; # No triling slash to copy the dir name over
+SOURCE_ASSETS="./temp/${REPO_ID}/$BRANCH/assets"; # No trailing slash to copy the dir name over
 SOURCE_SITE="./temp/${REPO_ID}/$BRANCH/site/";
 TARGET_BASE=./site/;
 
-if [ $BRANCH = 'master' ]; then
+# master and static use root
+if [ $BRANCH = 'master' ] || [ $BRANCH = 'static' ] ; then
     TARGET_BASE_ASSETS="${TARGET_BASE}";
 else
     # main version branch, include version for assets
