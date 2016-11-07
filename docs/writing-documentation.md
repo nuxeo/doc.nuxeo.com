@@ -22,10 +22,10 @@ brew install git
 ```
 
 ## Installation 
-There are 2 repositories available for the documentation:
 
-### Platform
-**[Platform-spaces](https://github.com/nuxeo/doc.nuxeo.com-platform-spaces)**: For all the versioned documentation (nxdoc/userdoc/admindoc). The versions work with branches, one version = one branch. 
+**[master, 710 and 60 branches](https://github.com/nuxeo/doc.nuxeo.com-platform-spaces)**: For all the versioned documentation (nxdoc/userdoc/admindoc). The versions work with branches, one version = one branch. 
+
+**[Static Branch](https://github.com/nuxeo/doc.nuxeo.com-platform-spaces/tree/static)**: For non-versioned documentation (studio/idedoc/corg)
 
 Clone the repository to your local machine, using your favorite Git client or the command line:
 ```bash
@@ -40,20 +40,6 @@ npm run dev
 ```
 Once started go to your http://localhost:3000 and add `/nxdoc` or `/userdoc` at the end to the address to access it, as it's the versioned space. 
 
-### Static
-**[Static-spaces](https://github.com/nuxeo/doc.nuxeo.com-static-spaces)**: For non-versioned documentation (studio/idedoc/corg)
-
-Clone the repository to your local machine, using your favorite Git client or the command line:
-```bash
-git lfs clone git@github.com:nuxeo/doc.nuxeo.com-static-spaces.git
-cd doc.nuxeo.com-static-spaces
-git lfs install
-git reset --hard
-```
-#### Run Locally
-```bash
-npm run dev
-```
 
 Have a look at the [new-page-template.md](new-page-template.md) with your editor or [view the raw source](https://raw.githubusercontent.com/nuxeo/doc.nuxeo.com/master/docs/new-page-template.md).
 
