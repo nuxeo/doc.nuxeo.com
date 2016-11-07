@@ -43,7 +43,7 @@ co(function *() {
 
     debug(Object.keys(metadata));
 
-    yield builder(source_path, metadata, target_path, repo_id);
+    yield builder(source_path, metadata, target_path, {repo_id, branch});
 
     console.timeEnd('Build');
 
