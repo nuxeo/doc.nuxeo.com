@@ -27,11 +27,13 @@
 ^/display/KB/?$: /
 
 ^/display/NXDOC/Learning+with+Videos: https://university.nuxeo.io
-
 ^/display/NXDOC/How+to+Brand+Your+Application: /studio/branding
-
 ^/nxdoc/how-to-brand-your-application: /studio/branding
-
 ^/nxdoc/quick-start-dev-guide: /nxdoc/start-customizing-the-nuxeo-platform
+^/display/NXDOC/Web+UI+Framework: /nxdoc/jsf-ui-framework
+^/display/NXDOC/How+to+Hide+a+Tab,+a+Link+or+a+Button+for+a+Group+or+a+User: /nxdoc/how-to-hide-a-tab-a-link-or-a-button-for-a-group-or-a-user/
+^/display/NXDOC/Authentication,+Users+and+Groups: /nxdoc/authentication-and-user-management
 
-^/display/ADMINDOC/Configuration\+Templates/?$: /nxdoc/configuration-templates/
+^/display/ADMINDOC/Configuration+Templates/?$: /nxdoc/configuration-templates
+
+^/display/Studio/Nuxeo+Studio+Documentation+Center: /studio/nuxeo-studio
