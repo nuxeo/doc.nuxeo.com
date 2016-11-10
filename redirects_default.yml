@@ -32,16 +32,16 @@
 ^/nxdoc/quick-start-dev-guide/?$: /nxdoc/start-customizing-the-nuxeo-platform
 ^/display/NXDOC/Web\+UI\+Framework/?$: /nxdoc/jsf-ui-framework
 ^/display/NXDOC/Web\+UI\+Framework\+Overview/?$: /nxdoc/nuxeo-jsf-ui
-^/display/NXDOC/How+to+Hide+a+Tab,+a+Link+or+a+Button+for+a+Group+or+a+User/?$: /nxdoc/how-to-hide-a-tab-a-link-or-a-button-for-a-group-or-a-user
-^/display/NXDOC/Authentication,+Users+and+Groups/?$: /nxdoc/authentication-and-user-management
-^/display/NXDOC/From+the+Web+UI+to+Nuxeo+Studio/?$: /nxdoc/from-the-jsf-ui-to-nuxeo-studio
-^/display/NXDOC/How+to+Add+a+Button+in+the+Web+UI/?$: /nxdoc/how-to-add-a-button-in-the-jsf-ui
-^/display/NXDOC/First+Steps+With+Studio:+Technical+Documentation+Tutorial/?$: /nxdoc/first-steps-with-studio-technical-documentation-tutorial
-^/display/NXDOC/Setting+up+a+HA+Configuration+Using+the+Nuxeo+Platform+and+PostgreSQL/?$: /nxdoc/setting-up-a-ha-configuration-using-the-nuxeo-platform-and-postgresql/
-^/display/NXDOC/Set+Up+Best+Practices/?$: /nxdoc/setup-best-practices/
+^/display/NXDOC/How\+to\+Hide\+a\+Tab,\+a\+Link\+or\+a\+Button\+for\+a\+Group\+or\+a\+User/?$: /nxdoc/how-to-hide-a-tab-a-link-or-a-button-for-a-group-or-a-user
+^/display/NXDOC/Authentication,\+Users\+and\+Groups/?$: /nxdoc/authentication-and-user-management
+^/display/NXDOC/From\+the\+Web\+UI\+to\+Nuxeo\+Studio/?$: /nxdoc/from-the-jsf-ui-to-nuxeo-studio
+^/display/NXDOC/How\+to\+Add\+a\+Button\+in\+the\+Web\+UI/?$: /nxdoc/how-to-add-a-button-in-the-jsf-ui
+^/display/NXDOC/First\+Steps\+With\+Studio:\+Technical\+Documentation\+Tutorial/?$: /nxdoc/first-steps-with-studio-technical-documentation-tutorial
+^/display/NXDOC/Setting\+up\+a\+HA\+Configuration\+Using\+the\+Nuxeo\+Platform\+and\+PostgreSQL/?$: /nxdoc/setting-up-a-ha-configuration-using-the-nuxeo-platform-and-postgresql/
+^/display/NXDOC/Set\+Up\+Best\+Practices/?$: /nxdoc/setup-best-practices/
 ^/display/NXDOC/Choosing\+How\+to\+Customize\+the\+UI/?$: /nxdoc/web-ui/
 
-^/display/ADMINDOC/Configuration+Templates/?$: /nxdoc/configuration-templates
-^/display/ADMINDOC710/How+to+Estimate+Disk,+Database+and+Elasticsearch+Usage/?$: /710/admindoc/how-to-estimate-disk-database-and-elasticsearch-usage
+^/display/ADMINDOC/Configuration\+Templates/?$: /nxdoc/configuration-templates
+^/display/ADMINDOC710/How\+to\+Estimate\+Disk,\+Database\+and\+Elasticsearch\+Usage/?$: /710/admindoc/how-to-estimate-disk-database-and-elasticsearch-usage
 
-^/display/Studio/Nuxeo+Studio+Documentation+Center/?$: /studio/nuxeo-studio
+^/display/Studio/Nuxeo\+Studio\+Documentation\+Center/?$: /studio/nuxeo-studio
