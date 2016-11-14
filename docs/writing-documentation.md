@@ -355,3 +355,9 @@ For new JS, add an entry to `doc.nuxeo.com/webpack.config.js`. See `main.js` as 
 
 # Trouble shooting
 [Trouble shooting guide](./trouble-shooting.md#trouble-shooting)
+
+# Licenses
+
+Code is licensed under a [GNU GPLv3](LICENSE.txt) and content </a><br />is under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" />
