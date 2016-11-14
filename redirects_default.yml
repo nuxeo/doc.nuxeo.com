@@ -45,3 +45,6 @@
 ^/display/ADMINDOC710/How\+to\+Estimate\+Disk,\+Database\+and\+Elasticsearch\+Usage/?$: /710/admindoc/how-to-estimate-disk-database-and-elasticsearch-usage
 
 ^/display/Studio/Nuxeo\+Studio\+Documentation\+Center/?$: /studio/nuxeo-studio
+
+
+^/x/aAfF/?$: /nxdoc/nuxeo-add-ons/
