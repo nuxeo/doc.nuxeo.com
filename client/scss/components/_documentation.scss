@@ -45,6 +45,10 @@
     margin-left: .5rem;
     transition: color .2s ease;
 
+    &.edit-page > i {
+      border: 0;
+    }
+
     i {
       border: 2px solid $medium-gray;
       border-radius: 50%;

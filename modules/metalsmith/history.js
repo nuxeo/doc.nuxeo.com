@@ -1,9 +1,12 @@
 'use strict';
 /* eslint-env es6 */
 
+// Debugging
 const debug_lib = require('debug');
 const debug = debug_lib('metalsmith-history');
 const error = debug_lib('metalsmith-history:error');
+
+// npm packages
 const Joi = require('joi');
 const path = require('path');
 const multimatch = require('multimatch');
@@ -11,7 +14,10 @@ const moment = require('moment');
 const thenify = require('thenify');
 const exec = thenify(require('child_process').exec);
 const sort_by = require('lodash.sortby');
-// https://github.com/nuxeo/doc.nuxeo.com-platform-spaces/blob/master/src/admindoc/bulk-document-importer.md
+
+// local packages
+const resolve_edit_path = require('../resolve_edit_path');
+
 const get_history = function (source_path, filepath, file, options) {
     file.history = file.history || [];
 
@@ -83,10 +89,21 @@ const list_from_field = function (options) {
 
         return exec(`git checkout -f origin/${options.branch}`, {encoding: 'utf8', cwd: repo_path})
         .then(() => {
+            return exec('git remote get-url --push origin', {encoding: 'utf8', cwd: options.repo_path});
+        })
+        .then((data) => {
+            let repository_url;
+            if (data && data[0] && typeof data[0] === 'string') {
+                repository_url = resolve_edit_path(data[0].trim());
+            }
+
             const matched_files = multimatch(Object.keys(files), options.pattern).map((filepath) => {
                 debug('Filepath: %s', filepath);
                 const file = files[filepath];
 
+                if (repository_url) {
+                    file.edit_url = repository_url.file(options.branch, `src/${filepath}`);
+                }
                 return get_history(files_source, filepath, file, options);
             });
 
