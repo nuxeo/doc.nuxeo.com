@@ -28,6 +28,10 @@
   }
 }
 
+.edit-page {
+  font-size: 1.4rem;
+}
+
 .heading-group {
   margin-bottom: 1.5rem;
 
@@ -44,10 +48,6 @@
     color: $medium-gray;
     margin-left: .5rem;
     transition: color .2s ease;
-
-    &.edit-page > i {
-      border: 0;
-    }
 
     i {
       border: 2px solid $medium-gray;
