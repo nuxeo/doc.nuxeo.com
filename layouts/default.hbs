@@ -5,7 +5,7 @@
         {{> breadcrumb}}
         <div class="heading-group">
           <h1 id="page-title">{{title}}</h1>
-          {{#if edit_url}}<a class="float-right edit-page" href="{{edit_url}}"><i class="fa fa-pencil-square-o"></i> Edit page</a>{{/if}}
+          {{#if edit_url}}<a class="float-right edit-page" alt="Edit on GitHub" title="Edit on GitHub" href="{{edit_url}}"><i class="fa fa-pencil-square-o"></i></a>{{/if}}
           <div>
             Updated: {{moment history.[1].date format='LL'}}
             <a data-open="page-information" title="Page Information" aria-controls="page-information" aria-haspopup="true" tabindex="0"><i class="fa fa-info"></i></a>
