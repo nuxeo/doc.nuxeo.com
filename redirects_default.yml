@@ -44,7 +44,7 @@
 
 ^/display/ADMINDOC/Configuration\+Templates/?$: /nxdoc/configuration-templates
 ^/display/ADMINDOC710/How\+to\+Estimate\+Disk,\+Database\+and\+Elasticsearch\+Usage/?$: /710/admindoc/how-to-estimate-disk-database-and-elasticsearch-usage
-^/display/ADMINDOC/Monitoring+slow+NXQL+queries/?$: /nxdoc/monitoring-slow-nxql-queries
+^/display/ADMINDOC/Monitoring\+slow\+NXQL\+queries/?$: /nxdoc/monitoring-slow-nxql-queries
 
 ^/display/Studio/Nuxeo\+Studio\+Documentation\+Center/?$: /studio/nuxeo-studio
 
