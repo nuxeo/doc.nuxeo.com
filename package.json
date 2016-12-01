@@ -115,7 +115,7 @@
     "empty_site": "rm -rf ./site/*",
     "empty_temp": "rm -rf ./temp/*",
     "empty_logs": "rm -rf ./logs/*",
-    "copy_assets": "rsync -a ./assets/ ./site/assets/ && npm run duplicate_asset_stats",
+    "copy_assets": "rsync -a ./assets/ ./site/assets/ && npm run duplicate_asset_stats && cp editor.json ./site",
     "server": "browser-sync start --server site --browser=$npm_package_config_browser",
     "server_reload": "browser-sync reload",
     "browser_sync": "echo 'This has been replaced by server. npm run server';",
