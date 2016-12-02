@@ -22,6 +22,10 @@ pre {
     background: transparent;
     border: 0;
     color: $nuxeo-color-code-foreground;
+
+    > code {
+      background: transparent;
+    }
   }
 }
 
