@@ -50,6 +50,7 @@ For more information, have a look at the READMEs of the two repositories.
 # Create a Page
 The recommended editor is Atom. It handles markdown nicely and can provide a live preview, fast file finding and image previewing.
 
+**As a lot of people are contributing on the documentation, every creation or edition should go through a Pull Request to be reviewed by the doc team.**
 
 ## Editor Configuration
 
