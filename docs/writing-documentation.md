@@ -10,6 +10,7 @@
     - Test with `node --version`
     - _Remember:_ `nvm use v6` at the start of your session
 - A Markdown text editor (https://atom.io/ or https://www.sublimetext.com/ for example)
+    - [The Atom Documentation plugin](https://github.com/nuxeo/atom-documentation-links#installation)-This plugin provides suggestions for {{file ...}} and {{page ...}} links.
 - [EditorConfig plugin](http://editorconfig.org/#download) (Not mandatory)
 
 ### Mac:
