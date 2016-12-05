@@ -1,6 +1,5 @@
 'use strict';
-/* eslint-env browser */
-/* global $ */
+/* eslint-env browser, jquery */
 
 var menu = require('./modules/menu');
 var toc = require('./modules/toc');
@@ -64,8 +63,6 @@ $(window).load(function () {
 
         // Initialise foundation on new element
         $('#content-body').foundation();
-
-        // $(document).foundation('reInit');
 
         // Refresh menu
         menu.refresh();
