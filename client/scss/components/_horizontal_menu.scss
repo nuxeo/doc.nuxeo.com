@@ -46,6 +46,7 @@
     color: $white;
     // Fixes FF issue
     display: inline-block;
+    vertical-align: initial !important;
   }
 
   :placeholder {
