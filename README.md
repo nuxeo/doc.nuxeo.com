@@ -86,12 +86,20 @@ As this module is used via [npm](https://www.npmjs.com/), it's a good practice t
 
 Node packages follow Semantic Versioning ([SemVer](http://semver.org/)), versions a described by a `MAJOR.MINOR.PATCH` version.
 
+Recompile the client assets
+```bash
+npm run compile
+git add assets lib
+git commit -m 'Client Assets: Recompiled'
+```
+
 After you've committed your code, run **one** of the following:
 ```bash
 npm version major # incompatible API changes
 npm version minor # add functionality in a backwards-compatible manner
 npm version patch # backwards-compatible bug fixes
 ```
+
 Then push the version commit and the tags:
 ```bash
 git push && git push --tags
