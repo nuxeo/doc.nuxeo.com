@@ -76,7 +76,7 @@ npm run dev_assets
 ### Change browser
 The browser defaults to `chromium-browser` but can be changed with the following command and then locally as usual.
 ```bash
-npm config set Nuxeo-website:browser firefox
+npm config set Nuxeo-documentation-platform-spaces:browser firefox
 ```
 ## Writing Documentation
 [Writing Documentation Guide](./docs/writing-documentation.md#writing-documentation).
