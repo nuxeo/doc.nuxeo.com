@@ -111,3 +111,13 @@
 {{#if script}}
 <script type="text/javascript" src="/{{obj_key js script}}"></script>
 {{/if}}
+
+{{! Algolia DocSearch }}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '482c0a65c92c01569f0d04bac01b5979',
+indexName: 'nuxeo',
+inputSelector: '#search-input',
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
