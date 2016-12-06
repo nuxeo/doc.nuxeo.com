@@ -82,7 +82,7 @@ Frontmatter | Behaviour
 
 ### Review
 
-Review data helps to flag pages that have not been review within the desired period and to mark pages as having issues.
+Review data helps to flag pages that have not been reviewed within the desired period and to mark pages as having issues.
 
 `date` must be in [iso date format `YYYY-MM-DD`](https://en.wikipedia.org/wiki/ISO_8601).
 
