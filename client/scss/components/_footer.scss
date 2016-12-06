@@ -29,14 +29,19 @@
     }
   }
 
-  .copyright {
-    padding-left: 1.25rem;
+  .copyright > a {
+    margin-left: 3rem;
   }
 
   .social a {
+
     .fa-inverse {
       color: $nuxeo-color-footer;
       transition: color .2s ease;
+    }
+
+    &:first-child {
+      margin-left: 3rem;
     }
 
     &:hover {
