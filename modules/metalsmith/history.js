@@ -8,7 +8,6 @@ const error = debug_lib('metalsmith-history:error');
 
 // npm packages
 const Joi = require('joi');
-const path = require('path');
 const multimatch = require('multimatch');
 const moment = require('moment');
 const thenify = require('thenify');
@@ -18,7 +17,7 @@ const sort_by = require('lodash.sortby');
 // local packages
 const resolve_edit_path = require('../resolve_edit_path');
 
-const get_history = function (source_path, filepath, file, options) {
+const get_history = function (filepath, file, options) {
     file.history = file.history || [];
 
     return exec(`git log --pretty=format:'%cn%x09%cd%x09%s' src/${filepath}`, {encoding: 'utf8', cwd: options.repo_path})
@@ -61,17 +60,18 @@ const get_history = function (source_path, filepath, file, options) {
 };
 
 const schema = Joi.object().keys({
-    pattern: [Joi.array().min(1).required(), Joi.string().required()],
-    sort_by: Joi.func().optional(),
-    reverse: Joi.bool().optional().default(false),
-    repo_id: Joi.string(),
-    branch : Joi.string()
+    pattern  : [Joi.array().min(1).required(), Joi.string().required()],
+    sort_by  : Joi.func().optional(),
+    reverse  : Joi.bool().optional().default(false),
+    repo_id  : Joi.string().optional().allow(''),
+    repo_path: Joi.string(),
+    branch   : Joi.string()
 });
 
 const list_from_field = function (options) {
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
-        const files_source = metalsmith.source();
+        // const files_source = metalsmith.source();
         // Check options fits schema
         const validation = schema.validate(options);
         if (validation.error) {
@@ -83,11 +83,11 @@ const list_from_field = function (options) {
         // Convert to array if it's a string
         options.pattern = (typeof options.pattern === 'string') ? [options.pattern] : options.pattern;
 
-        const repo_path = options.repo_path = path.join(__dirname, '../../repositories', options.repo_id);
+        const checkout_command = (options.repo_id) ? `git checkout -f origin/${options.branch}` : 'echo ""';
 
-        debug('Repository: %s, Branch: %s', repo_path, options.branch);
+        debug('Repository: %s, Branch: %s', options.repo_path, options.branch);
 
-        return exec(`git checkout -f origin/${options.branch}`, {encoding: 'utf8', cwd: repo_path})
+        return exec(checkout_command, {encoding: 'utf8', cwd: options.repo_path})
         .then(() => {
             return exec('git remote get-url --push origin', {encoding: 'utf8', cwd: options.repo_path});
         })
@@ -104,7 +104,7 @@ const list_from_field = function (options) {
                 if (repository_url) {
                     file.edit_url = repository_url.file(options.branch, `src/${filepath}`);
                 }
-                return get_history(files_source, filepath, file, options);
+                return get_history(filepath, file, options);
             });
 
             return Promise.all(matched_files)

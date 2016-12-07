@@ -28,6 +28,7 @@ const readFile = Promise.promisify(fs.readFile);
 const builder = require('./lib/builder');
 
 const repo_id = process.argv[2];
+const repo_path = path.join(__dirname, 'repositories', repo_id);
 const branch = process.argv[3];
 const source_path = process.argv[4].replace(/(^"|"$)/g, '');
 const target_path = process.argv[5].replace(/(^"|"$)/g, '');
@@ -43,7 +44,7 @@ co(function *() {
 
     debug(Object.keys(metadata));
 
-    yield builder(source_path, metadata, target_path, {repo_id, branch});
+    yield builder(source_path, metadata, target_path, {repo_id, repo_path, branch});
 
     console.timeEnd('Build');
 
