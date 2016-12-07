@@ -51,3 +51,6 @@
 
 
 ^/x/aAfF/?$: /nxdoc/nuxeo-add-ons/
+
+# For LTS 2016
+^/nxdoc/javaandroid-client$: /nxdoc/java-client
