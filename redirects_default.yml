@@ -54,3 +54,5 @@
 
 # For LTS 2016
 ^/nxdoc/javaandroid-client$: /nxdoc/java-client
+
+^/nxdoc/getting-started-with-nuxeo-ide: /nxdoc/getting-started-with-nuxeo-generator
