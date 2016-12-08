@@ -37,7 +37,7 @@ default:
         tables     : true
     repositories:
         platform:
-            url: git@github.com:nuxeo/doc.nuxeo.com-platform-spaces.git
+            url: git@github.com:nuxeo/doc.nuxeo.com-content.git
             branches:
                 - static
                 - master

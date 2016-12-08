@@ -54,13 +54,10 @@ npm start
 To speed up the build you can comment out versions in `config.yml` with `#`. e.g.
 ```
     repositories:
-        static:
-            url: git@github.com:nuxeo/doc.nuxeo.com-static-spaces.git
-            branches:
-                - master
         platform:
-            url: git@github.com:nuxeo/doc.nuxeo.com-platform-spaces.git
+            url: git@github.com:nuxeo/doc.nuxeo.com-content.git
             branches:
+                - static
                 - master
                 # - '710'
                 # - '60'
@@ -76,7 +73,7 @@ npm run dev_assets
 ### Change browser
 The browser defaults to `chromium-browser` but can be changed with the following command and then locally as usual.
 ```bash
-npm config set Nuxeo-documentation-platform-spaces:browser firefox
+npm config set Nuxeo-documentation-content:browser firefox
 ```
 ## Writing Documentation
 [Writing Documentation Guide](./docs/writing-documentation.md#writing-documentation).

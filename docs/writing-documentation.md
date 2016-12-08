@@ -25,14 +25,14 @@ brew install git
 
 ## Installation 
 
-**[master, 710 and 60 branches](https://github.com/nuxeo/doc.nuxeo.com-platform-spaces)**: For all the versioned documentation (nxdoc/userdoc/admindoc). The versions work with branches, one version = one branch. 
+**[master, 710 and 60 branches](https://github.com/nuxeo/doc.nuxeo.com-content)**: For all the versioned documentation (nxdoc/userdoc/admindoc). The versions work with branches, one version = one branch. 
 
-**[Static Branch](https://github.com/nuxeo/doc.nuxeo.com-platform-spaces/tree/static)**: For non-versioned documentation (studio/idedoc/corg)
+**[Static Branch](https://github.com/nuxeo/doc.nuxeo.com-content/tree/static)**: For non-versioned documentation (studio/idedoc/corg)
 
 Clone the repository to your local machine, using your favorite Git client or the command line:
 ```bash
-git lfs clone git@github.com:nuxeo/doc.nuxeo.com-platform-spaces.git
-cd doc.nuxeo.com-platform-spaces
+git lfs clone git@github.com:nuxeo/doc.nuxeo.com-content.git
+cd doc.nuxeo.com-content
 git lfs install
 git reset --hard
 ```
