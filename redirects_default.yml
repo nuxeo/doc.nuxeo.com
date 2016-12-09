@@ -53,7 +53,6 @@
 ^/x/aAfF/?$: /nxdoc/nuxeo-add-ons/
 
 # For LTS 2016
-^/nxdoc/javaandroid-client$: /nxdoc/java-client
-
-^/nxdoc/getting-started-with-nuxeo-ide: /nxdoc/getting-started-with-nuxeo-generator
-^/nxdoc/developing-with-angularjs: /nxdoc/developing-with-angular2
+^/nxdoc/javaandroid-client/$: /nxdoc/java-client
+^/nxdoc/getting-started-with-nuxeo-ide/$: /nxdoc/getting-started-with-nuxeo-generator
+^/nxdoc/developing-with-angularjs/$: /nxdoc/developing-with-angular2
