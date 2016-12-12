@@ -117,8 +117,9 @@ renderer.list = function (body, ordered) {
         const start_letter = ordered.toString().toUpperCase().charCodeAt(0) - 64;
         attrs.start = (start_letter > 1 && start_letter < 9) ? `start="${start_letter}"` : '';
     }
+    const attr = [attrs.type, attrs.start].filter(x => x).join(' ');
 
-    return `<${type} ${attrs.filter(x => x).join(' ')}>
+    return `<${type} ${attr}>
     ${body}
     </${type}>
     `;
