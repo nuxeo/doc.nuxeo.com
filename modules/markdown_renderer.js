@@ -113,7 +113,8 @@ renderer.list = function (body, ordered) {
         }
     }
     else {
-        attrs.type = (ordered === ordered.toUpperCase()) ? 'A' : 'a';
+        const type_case = (ordered === ordered.toUpperCase()) ? 'A' : 'a';
+        attrs.type = `type="${type_case}"`;
         const start_letter = ordered.toString().toUpperCase().charCodeAt(0) - 64;
         attrs.start = (start_letter > 1 && start_letter < 9) ? `start="${start_letter}"` : '';
     }
