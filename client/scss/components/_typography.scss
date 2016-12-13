@@ -44,4 +44,12 @@ ol {
   margin-after: 0;
   margin-before: 0;
   padding-start: 0;
+
+  ol {
+    list-style-type: lower-alpha;
+
+    ol {
+      list-style-type: decimal;
+    }
+  }
 }
