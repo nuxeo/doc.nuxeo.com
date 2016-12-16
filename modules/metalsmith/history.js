@@ -4,10 +4,12 @@
 // Debugging
 const debug_lib = require('debug');
 const debug = debug_lib('metalsmith-history');
+// const info = debug_lib('metalsmith-history:info');
 const error = debug_lib('metalsmith-history:error');
 
 // npm packages
 const Joi = require('joi');
+const Promise = require('bluebird');
 const multimatch = require('multimatch');
 const moment = require('moment');
 const thenify = require('thenify');
@@ -17,14 +19,14 @@ const sort_by = require('lodash.sortby');
 // local packages
 const resolve_edit_path = require('../resolve_edit_path');
 
-const get_history = function (filepath, file, options) {
-    file.history = file.history || [];
+const process_history = function (data, filepath, file, options) {
+    if (file) {
+        file.history = file.history || [];
 
-    return exec(`git log --pretty=format:'%cn%x09%cd%x09%s' src/${filepath}`, {encoding: 'utf8', cwd: options.repo_path})
-    .then((data) => {
+        data = data && typeof data[0] === 'string' && data[0] || data.toString();
         debug(`data: src/${filepath}`, data);
-        if (data && data[0] && typeof data[0] === 'string') {
-            data[0].split('\n')
+        if (data) {
+            data.split('\n')
             .forEach(function (history_item_raw) {
                 const history_item_split = history_item_raw.split('\t');
                 const history_item = {
@@ -54,9 +56,10 @@ const get_history = function (filepath, file, options) {
         else {
             error('No git history for: %s, %s, %s', options.repo_path, options.branch, filepath);
         }
-    });
-
-    // debug('git_history: %o', git_history);
+    }
+    else {
+        error('file is empty. filepath: %s, data: %s', filepath, data.length);
+    }
 };
 
 const schema = Joi.object().keys({
@@ -97,17 +100,32 @@ const list_from_field = function (options) {
                 repository_url = resolve_edit_path(data[0].trim());
             }
 
-            const matched_files = multimatch(Object.keys(files), options.pattern).map((filepath) => {
-                debug('Filepath: %s', filepath);
-                const file = files[filepath];
+            const matched_files = multimatch(Object.keys(files), options.pattern);
 
-                if (repository_url) {
-                    file.edit_url = repository_url.file(options.branch, `src/${filepath}`);
-                }
-                return get_history(filepath, file, options);
-            });
+            Promise.map(matched_files, (filepath) => {
+                return new Promise((resolve, reject) => {
+                    if (!filepath) {
+                        error('Filepath not populated');
+                        reject('Filepath not populated');
+                    }
+                    debug('Filepath: %s', filepath);
+                    const file = files[filepath];
 
-            return Promise.all(matched_files)
+                    // Get GitHub file url
+                    if (repository_url) {
+                        file.edit_url = repository_url.file(options.branch, `src/${filepath}`);
+                    }
+
+                    exec(`git log --pretty=format:'%cn%x09%cd%x09%s' src/${filepath}`, {encoding: 'utf8', cwd: options.repo_path})
+                    .then(function (history) {
+                        process_history(history, filepath, file, options);
+                        resolve();
+                    })
+                    .catch((err) => {
+                        reject(err);
+                    });
+                });
+            }, {concurrency: 20})
             .then(() => done())
             .catch(err => done(err));
         })
