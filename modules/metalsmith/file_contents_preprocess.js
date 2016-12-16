@@ -40,7 +40,10 @@ var file_contents_preprocess = function () {
                 request(url, function (err, res, body) {
                     if (err) {
                         error(err);
-                        throw new Error(err);
+                        // Only throw if running production - allows offline dev
+                        if (process.env.NODE_ENV === 'production') {
+                            throw new Error(err);
+                        }
                     }
                     file.file_content = file.file_content || {};
                     file.file_content[slug(url)] = body;
