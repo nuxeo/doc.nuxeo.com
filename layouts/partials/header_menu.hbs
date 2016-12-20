@@ -23,25 +23,8 @@
     <div class="nuxeo-satellite-menu expanded">
         <div class="nuxeo-satellite-left-menu">
             <ul>
-                <li class="menu-burger">
-                    <button class="menu-icon" type="button" data-toggle></button>
-                    <span class="menu-item-text">Menu</span>
-                </li>
                 <li class="menu-home" role="menuitem"><a href="/"><img class="nuxeo-satellite-icon" src="/assets/icons/favicon-16x16.png" width="16" height="16" alt="Nuxeo Documentation"> Documentation</a></li>
-                <li class="menu-link hover-tutorial" role="menuitem"><a href="/nxdoc/tutorials/">Tutorials</a></li>
-                <li class="menu-link hover-server" role="menuitem"><a href="/nxdoc/nuxeo-server/">Nuxeo Server</a></li>
-                <li class="menu-link hover-web-ui" role="menuitem"><a href="/nxdoc/web-ui/">Web UI</a></li>
-                <li class="menu-link hover-desktop-mob" role="menuitem"><a href="/nxdoc/desktop-and-mobile/">Desktop/Mobile</a></li>
-                <li class="menu-link hover-packages" role="menuitem"><a href="/nxdoc/nuxeo-add-ons/">Nuxeo Addons</a></li>
-                <li class="menu-link hover-sdks" role="menuitem"><a href="/nxdoc/client-sdks/">Client SDK</a></li>
-                <li class="menu-link hover-services" role="menuitem"><a href="/studio/">Online Services</a></li>
-                <li class="menu-link hover-tools" role="menuitem"><a href="/nxdoc/nuxeo-tools">Tools</a></li>
-                <li class="narrow-only">
-                    <form id="burger-menu-search" action="/" method="get">
-                        <i class="fa fa-search"></i>
-                        <input type="text" name="q" value="" placeholder="SEARCH DOCS&hellip;">
-                    </form>
-                </li>
+                {{! dropdown arrow here }}
             </ul>
         </div>
         <div class="nuxeo-satellite-right-menu">
@@ -56,5 +39,12 @@
                 </li>
             </ul>
         </div>
+    </div>
+    <div id="doc-main-menu">
+        <ul>
+        {{#each site.main_menu}}
+            <li class="section-{{section_color}}" role="menuitem"><a href="{{parent}}">{{page_title parent}}</a></li>
+        {{/each}}
+        </ul>
     </div>
 </div>

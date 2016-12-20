@@ -21,6 +21,123 @@ default:
         ga_exp_id: ''
         ga_id: 'UA-81135-3'
         segment_write_key: "4qquvje3fv"
+        main_menu:
+            -
+                parent: /nxdoc/tutorials
+                section_color: tutorial
+                children:
+                    - /nxdoc/getting-started-with-the-nuxeo-platform
+                    - /nxdoc/start-customizing-the-nuxeo-platform
+                    - /nxdoc/quick-overview
+                    - /nxdoc/quick-start-series
+                    - /nxdoc/educational
+                    - /nxdoc/transversal-how-tos
+                    - /nxdoc/how-to-index
+            -
+                parent: /nxdoc/nuxeo-server
+                section_color: server
+                children:
+                    - /nxdoc/installation
+                    - /nxdoc/administration
+                    - /nxdoc/monitoring-and-maintenance
+                    - /nxdoc/upgrading-the-nuxeo-platform
+                    - /nxdoc/runtime-and-component-model
+                    - /nxdoc/content-repository
+                    - /nxdoc/indexing-and-query
+                    - /nxdoc/authentication-and-user-management
+                    - /nxdoc/automation
+                    - /nxdoc/rest-api
+                    - /nxdoc/workflow
+                    - /nxdoc/security
+                    - /nxdoc/audit
+                    - /nxdoc/data-lists-and-directories
+                    - /nxdoc/events-and-listeners
+                    - /nxdoc/advanced-topics
+                    - /nxdoc/jsf-ui-framework
+                    - /nxdoc/webengine-jax-rs
+                    - /nxdoc/additional-services
+            -
+                parent: /nxdoc/web-ui
+                section_color: web-ui
+                children:
+                    - /nxdoc/web-ui-overview
+                    - /nxdoc/nuxeo-elements-quickstart
+                    - /nxdoc/nuxeo-elements
+                    - /nxdoc/data-visualization
+            -
+                parent: /nxdoc/desktop-and-mobile
+                section_color: desktop-mob
+                children:
+                    - /nxdoc/nuxeo-drive
+                    - /nxdoc/nuxeo-mobile
+            -
+                parent: /nxdoc/nuxeo-add-ons
+                section_color: packages
+                children:
+                    - /nxdoc/installing-a-new-package-on-your-instance
+                    - /nxdoc/creating-nuxeo-packages
+                    - /nxdoc/amazon-s3-online-storage
+                    - /nxdoc/digital-asset-management-(dam)
+                    - /nxdoc/digital-signature
+                    - /nxdoc/easyshare
+                    - /nxdoc/kerberos-authentication
+                    - /nxdoc/microsoft-azure-online-storage
+                    - /nxdoc/nuxeo-adobe-cc-connector
+                    - /nxdoc/nuxeo-agenda
+                    - /nxdoc/nuxeo-bulk-document-importer
+                    - /nxdoc/nuxeo-csv
+                    - /nxdoc/nuxeo-datadog-reporter
+                    - /nxdoc/nuxeo-diff
+                    - /nxdoc/nuxeo-diff-pictures
+                    - /nxdoc/nuxeo-duoweb-two-factor-authentication
+                    - /nxdoc/nuxeo-file-system-exporter
+                    - /nxdoc/nuxeo-for-salesforce
+                    - /nxdoc/nuxeo-groups-and-rights-audit
+                    - /nxdoc/nuxeo-jenkins-report
+                    - /nxdoc/nuxeo-live-connect
+                    - /nxdoc/nuxeo-media-publishing
+                    - /nxdoc/nuxeo-multi-tenant
+                    - /nxdoc/nuxeo-platform-user-registration
+                    - /nxdoc/nuxeo-quota
+                    - /nxdoc/nuxeo-shibboleth-invitation
+                    - /nxdoc/nuxeo-spreadsheet
+                    - /nxdoc/nuxeo-virtual-navigation
+                    - /nxdoc/nuxeo-vision
+                    - /nxdoc/resources-compatibility
+                    - /nxdoc/saml-20-authentication
+                    - /nxdoc/scan-documents-importer
+                    - /nxdoc/shibboleth-authentication
+                    - /nxdoc/smart-search
+                    - /nxdoc/template-rendering-addon
+                    - /nxdoc/nuxeo-connect-report-tools
+                    - /nxdoc/nuxeo-3d
+            -
+                parent: /nxdoc/client-sdks
+                section_color: sdks
+                children:
+                    - /nxdoc/javascript-client
+                    - /nxdoc/java-client
+                    - /nxdoc/python-client
+                    - /nxdoc/net-client
+                    - /nxdoc/ios-client
+                    - /nxdoc/android-client
+                    - /nxdoc/php-automation-client
+                    - /nxdoc/client-api-test-suite-tck
+                    - /nxdoc/using-curl
+                    - /nxdoc/deprecated
+            -
+                parent: /studio
+                section_color: services
+                children:
+                    - /studio/nuxeo-online-services-portal
+                    - /studio/nuxeo-studio
+                    - /studio/support-jira
+                    - /studio/nuxeo-marketplace
+            -
+                parent: /nxdoc/nuxeo-tools
+                section_color: tools
+                children:
+                    - /nxdoc/nuxeo-dev-tools-extension/
     page_defaults:
         -
             pattern: "**/*.md"
