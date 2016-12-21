@@ -22,10 +22,11 @@
     {{/if}}
     <div class="nuxeo-satellite-menu expanded">
         <div class="nuxeo-satellite-left-menu">
-            <ul>
-                <li class="menu-home" role="menuitem"><a href="/"><img class="nuxeo-satellite-icon" src="/assets/icons/favicon-16x16.png" width="16" height="16" alt="Nuxeo Documentation"> Documentation</a></li>
-                {{! dropdown arrow here }}
-            </ul>
+            <div class="rainbow-menu" role="menuitem">
+                <a href="/"><img class="nuxeo-satellite-icon" src="/assets/icons/favicon-16x16.png" width="16" height="16" alt="Nuxeo Documentation"> Documentation
+                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                </a>
+            </div>
         </div>
         <div class="nuxeo-satellite-right-menu">
             <ul>
@@ -43,7 +44,16 @@
     <div id="doc-main-menu">
         <ul>
         {{#each site.main_menu}}
-            <li class="section-{{section_color}}" role="menuitem"><a href="{{parent}}">{{page_title parent}}</a></li>
+            <li class="section-{{section_color}}" role="menuitem">
+                <a href="{{parent}}" role="menuitem">{{page_title parent}}</a>
+                <ul class="child">
+                {{#each children as |child|}}
+                    <li>
+                        <a href="{{child}}" role="menuitem" title="{{page_title child}}">{{page_title child}}</a>
+                    </li>
+                {{/each}}
+                </ul>
+            </li>
         {{/each}}
         </ul>
     </div>

@@ -77,7 +77,7 @@ default:
                     - /nxdoc/installing-a-new-package-on-your-instance
                     - /nxdoc/creating-nuxeo-packages
                     - /nxdoc/amazon-s3-online-storage
-                    - /nxdoc/digital-asset-management-(dam)
+                    - /nxdoc/digital-asset-management-dam
                     - /nxdoc/digital-signature
                     - /nxdoc/easyshare
                     - /nxdoc/kerberos-authentication
@@ -137,7 +137,7 @@ default:
                 parent: /nxdoc/nuxeo-tools
                 section_color: tools
                 children:
-                    - /nxdoc/nuxeo-dev-tools-extension/
+                    - /nxdoc/nuxeo-dev-tools-extension
     page_defaults:
         -
             pattern: "**/*.md"

@@ -1,4 +1,6 @@
 $menu-shadow: rgba(0, 0, 0, .1);
+$menu-width: 370px;
+$menu-item-height: 60px;
 
 @mixin hover-slide ($color) {
   background-image: linear-gradient(to right, $white 50%, $color 50%);
@@ -6,10 +8,29 @@ $menu-shadow: rgba(0, 0, 0, .1);
 
   a {
     color: $color;
+  }
 
-    &:hover,
-    &.active {
-      color: darken($color, 40%);
+  &:hover > a {
+    color: darken($color, 40%);
+  }
+}
+
+#nuxeo-satellite-header {
+  .rainbow-menu > a {
+    display: block;
+    font-size: 14px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 600;
+    left: 0;
+    letter-spacing: 2px;
+    line-height: 50px;
+    text-transform: uppercase;
+    width: $menu-width;
+
+    i.fa {
+      float: right;
+      line-height: 50px;
     }
   }
 }
@@ -17,7 +38,13 @@ $menu-shadow: rgba(0, 0, 0, .1);
 #doc-main-menu {
   background-color: $white;
   box-shadow: 4px 4px 4px 0 $menu-shadow;
+  display: none;
   position: absolute;
+
+  &.active,
+  &:hover {
+    display: block;
+  }
 
   ul {
     list-style: none;
@@ -31,27 +58,35 @@ $menu-shadow: rgba(0, 0, 0, .1);
       font-stretch: normal;
       font-style: normal;
       font-weight: 500;
-      height: 60px;
+      height: $menu-item-height;
       letter-spacing: 1.8px;
-      line-height: 60px;
+      line-height: $menu-item-height;
       padding-left: 10px;
       text-transform: uppercase;
 
       & {
         // background-image: linear-gradient(to right, $white 50%, $nuxeo-tutorial-color 50%);
         background-size: 200% 100%;
-        height: 60px;
+        height: $menu-item-height;
         transition: background-position .4s ease-in;
-        width: 370px;
+        width: $menu-width;
 
         a {
+          height: $menu-item-height;
+          overflow: hidden;
+          text-overflow: ellipsis;
           transition: color .4s ease;
+          white-space: nowrap;
         }
 
         &:hover,
         &.active {
           background-position: -100% 0;
           // color: darken($nuxeo-tutorial-color, 40%);
+
+          ul.child {
+            display: block;
+          }
         }
       }
 
@@ -93,6 +128,25 @@ $menu-shadow: rgba(0, 0, 0, .1);
 
       &.section-tools {
         @include hover-slide($nuxeo-tools-color);
+      }
+
+      ul.child {
+        background: $white;
+        border-left: 0;
+        box-shadow: 4px 4px 4px 0 $menu-shadow;
+        display: none;
+        left: $menu-width;
+        min-height: 480px;
+        padding: 0;
+        position: absolute;
+        top: 0;
+
+        li {
+          @include hover-slide($primary-color);
+          border-left: 0;
+          height: 40px;
+          line-height: 40px;
+        }
       }
     }
   }

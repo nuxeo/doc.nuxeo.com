@@ -17,6 +17,13 @@ $(document).ready(function () {
     var hljs = require('highlight.js');
     hljs.initHighlightingOnLoad();
 
+    var $rainbow_menu = $('#doc-main-menu');
+    $('#nuxeo-satellite-header').find('.rainbow-menu').hover(function () {
+        $rainbow_menu.addClass('active');
+    }, function () {
+        $rainbow_menu.removeClass('active');
+    });
+
     // Homepage search - Hiding Label when it has results
     var $search_area = $('#search-area');
     if ($search_area.length) {
