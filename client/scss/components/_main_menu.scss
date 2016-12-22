@@ -17,6 +17,7 @@ $menu-item-height: 60px;
 
 #nuxeo-satellite-header {
   .rainbow-menu > a {
+    color: $white;
     display: block;
     font-size: 14px;
     font-stretch: normal;
@@ -27,6 +28,10 @@ $menu-item-height: 60px;
     line-height: 50px;
     text-transform: uppercase;
     width: $menu-width;
+
+    &:hover {
+      color: $primary-color;
+    }
 
     i.fa {
       float: right;
@@ -40,6 +45,7 @@ $menu-item-height: 60px;
   box-shadow: 4px 4px 4px 0 $menu-shadow;
   display: none;
   position: absolute;
+  z-index: 10;
 
   &.active,
   &:hover {
@@ -65,7 +71,6 @@ $menu-item-height: 60px;
       text-transform: uppercase;
 
       & {
-        // background-image: linear-gradient(to right, $white 50%, $nuxeo-tutorial-color 50%);
         background-size: 200% 100%;
         height: $menu-item-height;
         transition: background-position .4s ease-in;
@@ -82,7 +87,6 @@ $menu-item-height: 60px;
         &:hover,
         &.active {
           background-position: -100% 0;
-          // color: darken($nuxeo-tutorial-color, 40%);
 
           ul.child {
             display: block;

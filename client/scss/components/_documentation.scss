@@ -5,7 +5,7 @@ $content-background: #f5f9fb;
     margin-top: 3rem;
   }
 
-  > div {
+  > div:first-of-type {
     background-color: $content-background;
     background-image: url('/assets/imgs/nuxeo-grid.svg');
     background-position-x: 4rem;
