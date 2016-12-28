@@ -29,6 +29,9 @@ node_modules
 # pre-build files
 /temp
 
+# jsx output
+/modules/metalsmith/left_menu.js
+
 # Build output
 /site
 /pre-src
