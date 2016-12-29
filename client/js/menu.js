@@ -17,22 +17,6 @@ module.exports = function ($) {
     }).get();
     breadcrumbs.push($('#page-title').text());
     // console.log('breadcrmbs', breadcrumbs);
-    var update_equalize = function (delay) {
-        delay = delay || 0;
-        var $page_container = $('#page-container');
-        try {
-            // Wait until next tick
-            setTimeout(function () {
-                $page_container.foundation('getHeights', function (heights) {
-                    $page_container.foundation('applyHeight', heights);
-                });
-            }, delay);
-        }
-        catch (e) {
-            /* eslint no-console: 0 */
-            console.error('Failed equalize update', e);
-        }
-    };
 
     // console.log('space', space);
     if (space) {
@@ -116,12 +100,8 @@ module.exports = function ($) {
                     }
                 },
                 componentDidMount: function () {
-                    // Update equalize
-                    update_equalize();
                 },
                 componentDidUpdate: function () {
-                    // Update equalize
-                    update_equalize(500);
                 },
                 render: function () {
                     return (
@@ -145,4 +125,17 @@ module.exports = function ($) {
             console.error('Request failed: ' + textStatus );
         });
     }
+
+    var $window = $(window);
+    var $side_menu_container = $('#side-menu-container');
+    var menu_height = 50;
+    $window.on('scroll', function () {
+        var pos = $window.scrollTop();
+        var margin_top = (pos >= menu_height) ? 0 : menu_height - pos;
+        // console.log('pos', pos, margin_top, $side_menu_container.css('margin-top'));
+        if (margin_top + 'px' !== $side_menu_container.css('margin-top')) {
+            // console.log('changed');
+            $side_menu_container.css('margin-top', margin_top + 'px');
+        }
+    });
 };
