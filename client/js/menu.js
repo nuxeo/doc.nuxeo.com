@@ -125,17 +125,4 @@ module.exports = function ($) {
             console.error('Request failed: ' + textStatus );
         });
     }
-
-    var $window = $(window);
-    var $side_menu_container = $('#side-menu-container');
-    var menu_height = 50;
-    $window.on('scroll', function () {
-        var pos = $window.scrollTop();
-        var margin_top = (pos >= menu_height) ? 0 : menu_height - pos;
-        // console.log('pos', pos, margin_top, $side_menu_container.css('margin-top'));
-        if (margin_top + 'px' !== $side_menu_container.css('margin-top')) {
-            // console.log('changed');
-            $side_menu_container.css('margin-top', margin_top + 'px');
-        }
-    });
 };

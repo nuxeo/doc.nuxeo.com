@@ -4,6 +4,7 @@
 
 $(document).ready(function () {
     var menu = require('./menu');
+    var menu_height = require('./left_menu_height');
     var satellite_header = require('./satellite_header');
 
     // In page TOC
@@ -53,6 +54,7 @@ $(document).ready(function () {
     }
 
     // Menu
+    menu_height($);
     menu($);
 
     // satellite_header
