@@ -7,6 +7,10 @@ $(document).ready(function () {
     var menu_height = require('./left_menu_height');
     var satellite_header = require('./satellite_header');
 
+    // Menu
+    menu_height($);
+    menu();
+
     // In page TOC
     require('./tabbed');
 
@@ -53,9 +57,6 @@ $(document).ready(function () {
         $search_area.click();
     }
 
-    // Menu
-    menu_height($);
-    menu($);
 
     // satellite_header
     satellite_header($);

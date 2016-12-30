@@ -30,7 +30,7 @@ node_modules
 /temp
 
 # jsx output
-/modules/metalsmith/left_menu.js
+/modules/react/left_menu.js
 
 # Build output
 /site
