@@ -59,15 +59,16 @@
 ^/nxdoc/how-to-enable-dragn-drop-and-new-button-on-a-custom-content-view: /nxdoc/how-to-enable-drag-and-drop-and-new-button-on-a-custom-content-view
 ^/nxdoc/how-to-inherit-a-metadata-from-a-parent-document: /nxdoc/how-to-inherit-metadata-from-a-parent-document
 ^/nxdoc/using-saml2: /nxdoc/saml-20-authentication
+^/nxdoc/nuxeo-and-kibana: /nxdoc/data-visualization
+^/nxdoc/pdf-conversion-troubleshooting: /nxdoc/how-to-automatically-convert-a-document-to-pdf
+^/nxdoc/nuxeo-android-connector: /nxdoc/nxdoc/java-client
+^/nxdoc/nuxeo-android-connector: /nxdoc/java-client
+^/nxdoc/nuxeo-automation-client: /nxdoc/java-client
+^/nxdoc/android-connector-and-caching: /nxdoc/java-client
+^/nxdoc/android-connector-additional-service: /nxdoc/java-client
+^/nxdoc/documentproviders-in-android-connector: /nxdoc/java-client
+^/nxdoc/android-sdk-integration: /nxdoc/java-client
+^/nxdoc/nuxeo-layout-in-android: /nxdoc/java-client
+^/nxdoc/sdk-provided-base-classes: /nxdoc/java-client
+
 ^/studio/configuration-management: /studio/templates-reference
-^/nxdoc/nuxeo-android-connector: /nxdoc/android-client
-^/nxdoc/nuxeo-automation-client: /nxdoc/android-client
-^/nxdoc/android-connector-and-caching: /nxdoc/android-client
-^/nxdoc/android-connector-additional-service: /nxdoc/android-client
-^/nxdoc/documentproviders-in-android-connector: /nxdoc/android-client
-^/nxdoc/android-sdk-integration: /nxdoc/android-client
-^/nxdoc/nuxeo-layout-in-android: /nxdoc/android-client
-^/nxdoc/sdk-provided-base-classes: /nxdoc/android-client
-
-
-
