@@ -60,3 +60,14 @@
 ^/nxdoc/how-to-inherit-a-metadata-from-a-parent-document: /nxdoc/how-to-inherit-metadata-from-a-parent-document
 ^/nxdoc/using-saml2: /nxdoc/saml-20-authentication
 ^/studio/configuration-management: /studio/templates-reference
+^/nxdoc/nuxeo-android-connector: /nxdoc/android-client
+^/nxdoc/nuxeo-automation-client: /nxdoc/android-client
+^/nxdoc/android-connector-and-caching: /nxdoc/android-client
+^/nxdoc/android-connector-additional-service: /nxdoc/android-client
+^/nxdoc/documentproviders-in-android-connector: /nxdoc/android-client
+^/nxdoc/android-sdk-integration: /nxdoc/android-client
+^/nxdoc/nuxeo-layout-in-android: /nxdoc/android-client
+^/nxdoc/sdk-provided-base-classes: /nxdoc/android-client
+
+
+
