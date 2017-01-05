@@ -8,6 +8,15 @@ var initialise_toc = function () {
     var $toc_list = $('#toc_list');
     var no_h4 = $content.hasClass('toc-no-h4');
 
+    if (!$toc_list.length) {
+        var $side_menu = $('#side-menu');
+        var $active = $side_menu.find('a.active');
+
+        $active.parent().after('<div id="toc"></div>');
+        $('#toc').append('<ul id="toc_list" class="vertical menu" data-magellan></ul>');
+        $toc_list = $('#toc_list');
+    }
+
     $toc_list.find('li').remove();
     var has_tabs = !!$('#nuxeo-tabs').length;
     // var $toc_list_clone = $toc_list.clone();
@@ -70,6 +79,8 @@ var initialise_toc = function () {
         }
     }
     first_time = false;
+
+    return $toc_list;
 };
 
 module.exports = initialise_toc;

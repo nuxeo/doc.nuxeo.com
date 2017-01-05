@@ -15,7 +15,7 @@ decorators.Toggle = function () {
     // console.log('props', props.node);
 
     return (
-        <i className="fa fa-fw fa-chevron-right" aria-hidden="true"></i>
+        <i className="fa fa-fw fa-caret-right" aria-hidden="true"></i>
     );
 };
 decorators.Header = function (props) {
@@ -25,8 +25,8 @@ decorators.Header = function (props) {
     if (props.node.active) {
         classes.push('active');
     }
-    if (props.node.is_toc) {
-        classes.push('toc-item');
+    if (props.node.toc) {
+        classes.push('toc');
     }
     const class_names = classes.join(' ');
     return (
@@ -64,14 +64,16 @@ const init_menu = function (data) {
         render: function () {
             return (
                 <div>
-                <div className="input-group">
-                <input type="text"
-                placeholder="FILTER"
-                className="input-group-field"
-                onKeyUp={this.onFilterKeyUp}
-                />
-                </div>
-                <Treebeard data={this.state.data} onToggle={this.onToggle} decorators={decorators} style={menu_style}/>
+                    <div className="input-container">
+                        <div className="input-group">
+                        <input type="text"
+                        placeholder="FILTER"
+                        className="input-group-field"
+                        onKeyUp={this.onFilterKeyUp}
+                        />
+                        </div>
+                    </div>
+                    <Treebeard data={this.state.data} onToggle={this.onToggle} decorators={decorators} style={menu_style}/>
                 </div>
             );
         }

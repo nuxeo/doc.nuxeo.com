@@ -19,8 +19,18 @@ $content-background: #f5f9fb;
   #content {
     max-width: 1024px;
 
-    &.toc {
-      max-width: 60%;
+    > * {
+      max-width: 40rem;
+    }
+
+    > ol,
+    > ul {
+      max-width: 37em;
+    }
+
+    > pre,
+    > table {
+      max-width: 100%;
     }
   }
 }

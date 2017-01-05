@@ -2,14 +2,13 @@
 /* eslint-env es6 */
 
 // Debugging
-const debug_lib = require('debug');
-const debug = debug_lib('toc-items-to-hierarchy');
-// const info = debug_lib('toc-items-to-hierarchy:info');
-const error = debug_lib('toc-items-to-hierarchy:error');
+const {debug, error} = require('./debugger')('toc-items-to-hierarchy');
 
-const toc_items_to_hierarchy = function (items) {
+
+const toc_items_to_hierarchy = function (items, filename = '') {
     const children = [];
     let parents = [];
+    debug(`filename: ${filename}, items`, items);
     items.forEach(item => {
         const {id, title} = item;
         const level = item.level - 1;
@@ -21,10 +20,10 @@ const toc_items_to_hierarchy = function (items) {
             url : {
                 full: `#${id}`
             },
-            is_toc: true
+            toc: true
         };
 
-        debug('id: %s, level: %s, parents: %o', id, level, parents);
+        debug(`id: ${id}, level: ${level}, parents`, parents);
         if (!parents.length || level <= parents[0].level) {
             debug('...new');
             children.push(this_item);
@@ -47,7 +46,7 @@ const toc_items_to_hierarchy = function (items) {
             let previous;
             do {
                 previous = parents.pop();
-                debug('level: %s, base: %s, previous: %s', level, parents[parents.length - 1].level, previous.level);
+                debug(`level: ${level}, base: ${parents[parents.length - 1].level}, previous: ${previous.level}`);
             } while (level >= parents[parents.length - 1].level && level < previous.level);
             parents[parents.length - 1].children.push(this_item);
             parents.push(this_item);

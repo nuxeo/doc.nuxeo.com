@@ -1,7 +1,13 @@
-#toc {
-  li {
-    border-left: 3px solid $primary-color;
+#side-menu #toc {
+  &:hover {
+    background-color: inherit;
   }
+}
+
+#toc {
+  // li {
+  //   border-left: 3px solid $primary-color;
+  // }
 
   .button {
     background: none;
@@ -12,10 +18,6 @@
     &:hover,
     &.active {
       color: $primary-color;
-    }
-
-    &.active {
-      font-weight: bold;
     }
   }
 
@@ -29,8 +31,10 @@
 }
 
 #toc_list {
-  height: calc(100vh - 32px);
   margin-left: auto;
-  max-width: 16rem;
   overflow-y: auto;
+
+  .active {
+    font-weight: bold;
+  }
 }

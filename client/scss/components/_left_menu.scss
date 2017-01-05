@@ -1,6 +1,16 @@
 $menu-background: lighten($primary-color, 47%);
 $active-border-width: 8px;
 $scrollbar-color: rgba(0, 0, 0, .3);
+$level-0-color: #6eccf5;
+$level-1-color: #b6e5fa;
+$level-2-color: #f5f9fb;
+$menu-foreground-color: #000623;
+
+#page-container #side-menu .input-container {
+  background: $level-0-color;
+  margin: 0;
+  padding: 1rem 2rem;
+}
 
 #side-menu-container {
   background: linear-gradient(90deg, $menu-background 21rem, $white 21rem);
@@ -8,7 +18,7 @@ $scrollbar-color: rgba(0, 0, 0, .3);
   left: 0;
   margin-top: 50px;
   overflow-y: auto;
-  padding-left: 0;
+  padding: 0;
   position: fixed;
   top: 0;
 
@@ -26,9 +36,9 @@ $scrollbar-color: rgba(0, 0, 0, .3);
 }
 
 #side-menu {
-  max-width: 20rem;
-
   ul {
+    background-color: $level-0-color;
+    color: $menu-foreground-color;
     font-size: $nuxeo-body-smaller;
     font-weight: bold;
     list-style: none;
@@ -37,71 +47,36 @@ $scrollbar-color: rgba(0, 0, 0, .3);
   }
 
   ul ul {
-    background-color: $nuxeo-color-menu-background-selected;
+    background-color: $level-1-color;
 
-    // This is pretty disgusting
-    a {
-      padding-left: 1rem;
+    & ul {
+      background-color: $level-2-color;
+      text-transform: none;
 
-      &.active {
-        padding-left: calc(1rem - #{$active-border-width});
-      }
-    }
-
-    ul {
-      a {
-        padding-left: 2rem;
-
-        &.active {
-          padding-left: calc(2rem - #{$active-border-width});
-        }
-      }
-
-      ul {
-        a {
-          padding-left: 3rem;
-
-          &.active {
-            padding-left: calc(3rem - #{$active-border-width});
-          }
-        }
-
-        ul {
-          a {
-            padding-left: 4rem;
-
-            &.active {
-              padding-left: calc(4rem - #{$active-border-width});
-            }
-          }
-
-          ul {
-            a {
-              padding-left: 5rem;
-
-              &.active {
-                padding-left: calc(5rem - #{$active-border-width});
-              }
-            }
-          }
-        }
+      & ul > li {
+        padding-left: 1rem;
       }
     }
   }
 
   li {
-    div {
-      border-right: solid 3px $light-gray;
-    }
-
     > div {
       padding: .5rem .5rem .5rem 1rem;
+
+      > i {
+        margin-left: -.5rem;
+        position: absolute;
+      }
+
+      a {
+        margin-left: 1em;
+      }
 
       &:hover {
         background-color: $nuxeo-color-menu-hover;
 
         a {
-          color: $black;
+          color: $menu-foreground-color;
         }
       }
     }
@@ -109,7 +84,6 @@ $scrollbar-color: rgba(0, 0, 0, .3);
     i {
       color: $dark-gray;
       cursor: pointer;
-      float: right;
       font-size: $nuxeo-body-smaller;
       line-height: $lead-lineheight;
       transition: color .2s ease;
@@ -131,17 +105,18 @@ $scrollbar-color: rgba(0, 0, 0, .3);
   }
 
   .input-group {
-    border: 2px solid $medium-gray;
-    margin: 2rem;
+    background-color: rgba(255, 255, 255, .2);
+    margin: 0;
     padding: .5rem;
-    width: auto;
+    width: 100%;
   }
 
   .input-group-field {
+    color: $primary-color;
     height: 2rem;
 
-    &:placeholder {
-      color: $dark-gray;
+    &::placeholder {
+      color: $menu-foreground-color;
       font-size: .8rem;
       text-transform: uppercase;
     }

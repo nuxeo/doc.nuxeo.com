@@ -11,7 +11,7 @@ $(document).ready(function () {
     menu_height($);
     menu();
 
-    // In page TOC
+    // Tabbed page
     require('./tabbed');
 
     // In page TOC

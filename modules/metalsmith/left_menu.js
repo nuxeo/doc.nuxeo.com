@@ -2,10 +2,7 @@
 /* eslint-env es6 */
 
 // Debugging
-const debug_lib = require('debug');
-const debug = debug_lib('metalsmith-menu');
-// const info = debug_lib('metalsmith-menu:info');
-// const error = debug_lib('metalsmith-menu:error');
+const {debug} = require('../debugger')('metalsmith-menu');
 
 // npm packages
 const multimatch = require('multimatch');
@@ -13,7 +10,7 @@ const clone = require('lodash.clonedeep');
 
 // local packages
 const {init_menu, render} = require('../react/left_menu');
-const toc_items_to_hierarchy = require('../toc_items_to_hierarchy');
+// const toc_items_to_hierarchy = require('../toc_items_to_hierarchy');
 
 const menu = function (options) {
     debug('Options: %o', options);
@@ -48,15 +45,15 @@ const menu = function (options) {
                             }
                             else {
                                 item.active = true;
-                                item.toggled = true;
-                                item.children = item.children || [];
 
                                 // Add TOC items
-                                if (file.toc_items) {
-                                    debug('%s - toc: %o, toc_items: %o', file.title, file.toc, file.toc_items);
-                                    const toc_hierarchy = toc_items_to_hierarchy(file.toc_items);
-                                    item.children = toc_hierarchy.concat(item.children);
-                                }
+                                // if (file.toc_items) {
+                                //     item.toggled = true;
+                                //     item.children = item.children || [];
+                                //     debug('%s - toc: %o, toc_items: %o', file.title, file.toc, file.toc_items);
+                                //     const toc_hierarchy = toc_items_to_hierarchy(file.toc_items, filename);
+                                //     item.children = toc_hierarchy.concat(item.children);
+                                // }
                             }
                         }
                     }
