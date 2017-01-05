@@ -49,7 +49,6 @@
 ^/display/Studio/Nuxeo\+Studio\+Documentation\+Center/?$: /studio/nuxeo-studio
 
 
-
 ^/x/aAfF/?$: /nxdoc/nuxeo-add-ons/
 
 # For LTS 2016
@@ -69,5 +68,8 @@
 ^/nxdoc/android-sdk-integration/?$: /nxdoc/java-client
 ^/nxdoc/nuxeo-layout-in-android/?$: /nxdoc/java-client
 ^/nxdoc/sdk-provided-base-classes/?$: /nxdoc/java-client
+^/nxdoc/jsf-ui-limitations/?$: /nxdoc/jsf-ui-framework-overview
+^/nxdoc/jsf-page-layout-system-overview/?$: /nxdoc/jsf-ui-framework-overview
 
 ^/studio/configuration-management/?$: /studio/templates-reference
+
