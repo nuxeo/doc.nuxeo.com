@@ -1,12 +1,13 @@
 // Inline code
 code {
-  border-radius: 3px;
+  border-radius: $code-border-radius - 2;
   overflow-wrap: break-word;
 }
 
 // Code block
 pre {
   background: $nuxeo-color-code-background;
+  border: solid 2px $nuxeo-color-code-border;
   border-radius: $code-border-radius;
   color: $nuxeo-color-code-foreground;
   font-family: 'Courier 10 Pitch', Courier, monospace;
