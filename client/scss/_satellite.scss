@@ -197,6 +197,7 @@ body {
 
   .nuxeo-satellite-menu {
     background-color: $black;
+    color: $white;
     height: 50px;
 
     li.menu-burger {
@@ -323,7 +324,7 @@ body {
       margin-left: -1rem;
       margin-right: .5rem;
       transition: width .4s ease;
-      width: 168px;
+      width: 300px;
 
       &.closed {
         width: 0;
