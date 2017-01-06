@@ -71,5 +71,7 @@
 ^/nxdoc/jsf-ui-limitations/?$: /nxdoc/jsf-ui-framework-overview
 ^/nxdoc/jsf-page-layout-system-overview/?$: /nxdoc/jsf-ui-framework-overview
 
+^/userdoc/nuxeo-drive/?$: /nxdoc/nuxeo-drive
+^/userdoc/nuxeo-drive-faq/?$: /nxdoc/nuxeo-drive-faq
 ^/studio/configuration-management/?$: /studio/templates-reference
 
