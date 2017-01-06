@@ -1,10 +1,6 @@
 $content-background: #f5f9fb;
 
 #page-container {
-  > div > div > div > div {
-    margin-top: 3rem;
-  }
-
   > div:first-of-type {
     background-color: $content-background;
     background-image: url('/assets/imgs/nuxeo-grid.svg');
@@ -70,15 +66,18 @@ $content-background: #f5f9fb;
   a {
     color: $medium-gray;
     margin-left: .5rem;
-    transition: color .2s ease;
 
-    i {
-      border: 2px solid $medium-gray;
-      border-radius: 50%;
-      padding: .4rem;
-      padding-bottom: .1rem;
-      padding-top: .1rem;
+    img {
+      margin-top: -5px;
     }
+  }
+
+  .style-bar {
+    background: $black;
+    height: 4px;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    width: 100px;
   }
 }
 

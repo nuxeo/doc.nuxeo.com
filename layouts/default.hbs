@@ -1,13 +1,18 @@
 {{> header_standard}}
 <div class="row">
     <div class="column">
-        {{#if edit_url}}<a class="float-right edit-page" alt="Edit on GitHub" title="Edit on GitHub" href="{{edit_url}}"><i class="fa fa-pencil-square-o"></i></a>{{/if}}
-        {{> breadcrumb}}
+        {{!> breadcrumb}}
         <div class="heading-group">
+          <div class="style-bar"></div>
           <h1 id="page-title">{{title}}</h1>
           <div>
             Updated: {{moment history.[1].date format='LL'}}
-            <a data-open="page-information" title="Page Information" aria-controls="page-information" aria-haspopup="true" tabindex="0"><i class="fa fa-info"></i></a>
+            <a data-open="page-information" title="Page Information" aria-controls="page-information" aria-haspopup="true" tabindex="0">
+                <img src="/assets/imgs/icons/info-icon.svg" alt="Page Information" width="15px" height="15px">
+            </a>
+            {{#if edit_url}}<a class="edit-page" title="Edit on GitHub" href="{{edit_url}}">
+                <img src="/assets/imgs/icons/edit-in-github-icon.svg" alt="Edit on GitHub" width="15px" height="15px">
+            </a>{{/if}}
           </div>
         </div>
         {{> flag_review}}
