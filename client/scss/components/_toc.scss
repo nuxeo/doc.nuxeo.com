@@ -1,5 +1,7 @@
 #side-menu {
   #toc {
+    padding-top: 0;
+
     &:hover {
       background-color: inherit;
     }
@@ -19,6 +21,7 @@
     }
 
     li {
+      font-size: $nuxeo-body-smaller;
       padding-left: 0;
     }
 
@@ -35,15 +38,27 @@
     }
   }
 
+  ul ul ul #toc_list {
+    padding-left: 1rem;
+  }
+
+  ul ul ul ul #toc_list {
+    padding-left: 2rem;
+  }
+
+  ul ul ul ul ul #toc_list {
+    padding-left: 3rem;
+  }
+
   #toc_list {
     background-color: $white;
-    font-size: $nuxeo-body-small;
     margin-left: auto;
     overflow-y: auto;
-    padding: .5rem 0;
+    padding: .5rem 0 .5rem 1rem;
 
     .active {
       font-weight: bold;
     }
+
   }
 }
