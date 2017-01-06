@@ -29,7 +29,8 @@ $content-background: #f5f9fb;
     }
 
     > pre,
-    > table {
+    > table,
+    > .table-scroll {
       max-width: 100%;
     }
   }

@@ -1,10 +1,7 @@
 $menu-background: lighten($primary-color, 47%);
 $active-border-width: 8px;
 $scrollbar-color: rgba(0, 0, 0, .3);
-$level-0-color: #6eccf5;
-$level-1-color: #b6e5fa;
-$level-2-color: #f5f9fb;
-$menu-foreground-color: #000623;
+
 
 #page-container #side-menu .input-container {
   background: $level-0-color;
@@ -39,7 +36,7 @@ $menu-foreground-color: #000623;
   ul {
     background-color: $level-0-color;
     color: $menu-foreground-color;
-    font-size: $nuxeo-body-smaller;
+    font-size: $nuxeo-body-small;
     font-weight: bold;
     list-style: none;
     margin: 0;

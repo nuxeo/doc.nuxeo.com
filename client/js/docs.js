@@ -1,6 +1,6 @@
 'use strict';
 /* eslint-env browser */
-/* global $ */
+/* global $, side_menu_data */
 
 $(document).ready(function () {
     var menu = require('./menu');
@@ -8,8 +8,10 @@ $(document).ready(function () {
     var satellite_header = require('./satellite_header');
 
     // Menu
-    menu_height($);
-    menu();
+    if (typeof side_menu_data !== 'undefined') {
+        menu_height($);
+        menu();
+    }
 
     // Tabbed page
     require('./tabbed');

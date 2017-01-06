@@ -1,40 +1,48 @@
-#side-menu #toc {
-  &:hover {
-    background-color: inherit;
-  }
-}
+#side-menu {
+  #toc {
+    &:hover {
+      background-color: inherit;
+    }
 
-#toc {
-  // li {
-  //   border-left: 3px solid $primary-color;
-  // }
+    .button {
+      background: none;
+      color: $menu-foreground-color;
+      font-weight: normal;
+      padding: .4rem 0;
+      text-align: left;
+      transition: color .2s ease, font-weight .2s ease;
 
-  .button {
-    background: none;
-    color: $black;
-    text-align: left;
-    transition: color .2s ease, font-weight .2s ease;
+      &:hover,
+      &.active {
+        color: $primary-color;
+      }
+    }
 
-    &:hover,
-    &.active {
-      color: $primary-color;
+    li {
+      padding-left: 0;
+    }
+
+    .h2 {
+      text-transform: uppercase;
+    }
+
+    .h3 {
+      // padding-left: 1rem;
+    }
+
+    .h4 {
+      padding-left: 1rem;
     }
   }
 
-  .h3 {
-    padding-left: 1rem;
-  }
+  #toc_list {
+    background-color: $white;
+    font-size: $nuxeo-body-small;
+    margin: .5rem auto;
+    overflow-y: auto;
 
-  .h4 {
-    padding-left: 2rem;
-  }
-}
-
-#toc_list {
-  margin-left: auto;
-  overflow-y: auto;
-
-  .active {
-    font-weight: bold;
+    .active {
+      font-weight: bold;
+    }
   }
 }
