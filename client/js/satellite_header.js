@@ -6,7 +6,7 @@ module.exports = function ($) {
     var $satellite_header = $('#nuxeo-satellite-header');
     var $satellite_menu = $satellite_header.find('.nuxeo-satellite-menu');
     var $menu_burger = $satellite_header.find('.menu-burger');
-    var burger_breakpoint = 1250;
+    var burger_breakpoint = 800;
 
     // Search box (top right)
     var $search_button = $('#search-button');

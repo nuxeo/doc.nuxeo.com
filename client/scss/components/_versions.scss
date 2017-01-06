@@ -2,15 +2,16 @@
   font-size: $nuxeo-button-default;
   text-transform: uppercase;
 
-  a {
+  .menu .submenu a {
     color: $black;
   }
 
   .menu-title {
+    color: $white;
     letter-spacing: .05rem;
 
     span {
-      border-right: 1px solid $black;
+      border-right: 1px solid $white;
       padding-right: 1rem;
     }
   }
