@@ -5,6 +5,7 @@ module.exports = function ($) {
     var $window = $(window);
     var $side_menu_container = $('#side-menu-container');
     var $footer = $('#footer');
+    var $goto_top = $('#goto-top');
     var footer_pos;
     // var footer_height = $footer.outerHeight(true);
     var menu_height = 50;
@@ -24,11 +25,29 @@ module.exports = function ($) {
             $side_menu_container.css('margin-top', margin_top);
         }
 
-        var reduced_height = 'calc(100vh - ' + Math.max((margin_top_value + pos + window_height) - footer_pos, menu_height) + 'px)';
+        var reduced_height_footer_value = (margin_top_value + pos + window_height) - footer_pos;
+        var reduced_height = 'calc(100vh - ' + Math.max(reduced_height_footer_value, menu_height) + 'px)';
         if (reduced_height !== $side_menu_container.css('height')) {
             $side_menu_container.css('height', reduced_height);
         }
         // console.log('pos', pos, margin_top, $side_menu_container.css('margin-top'), reduced_height);
+
+        // console.log('reduced_height_footer_value', reduced_height_footer_value);
+        // console.log('margin_top_value', margin_top_value);
+        if (reduced_height_footer_value > 0) {
+            $goto_top.addClass('visible bottom').removeClass('fixed');
+        }
+        else if (!margin_top_value) {
+            $goto_top.addClass('visible fixed').removeClass('bottom');
+        }
+        else {
+            $goto_top.removeClass('visible bottom fixed');
+        }
+    });
+
+    $goto_top.on('click', function () {
+        // console.log('clicked to top');
+        $('body, html').animate({ scrollTop: 0 }, 500);
     });
 
     // Initialise
