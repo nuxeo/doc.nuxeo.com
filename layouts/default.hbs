@@ -27,6 +27,22 @@
         </nav>
     </div>
     {{/if --}}
+
+    {{#if (condition previous_link '||' next_link)}}
+    <div class="column">
+        {{#if previous_link}}
+        <a href="{{previous_link}}" class="sequence-link previous-link float-left">
+            <i class="fa fa-long-arrow-left" aria-hidden="true"></i> Previous
+        </a>
+        {{/if}}
+        {{#if next_link}}
+        <a href="{{next_link}}" class="sequence-link next-link float-right">
+            Next <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        </a>
+        {{/if}}
+    </div>
+    {{/if}}
+
     <div id="tags" class="column {{!-- #if toc}}large-8 end{{/if --}}">
         {{#each labels as |label|}}
             <a href="/{{../url.key.space_path}}/label/{{sluggy label}}">{{label}}</a>{{#unless @last}}, {{/unless}}
