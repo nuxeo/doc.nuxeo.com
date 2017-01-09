@@ -1,9 +1,28 @@
+$versions-inline-fg: rgba(0, 5, 34, .6);
+
 #page-versions {
   font-size: $nuxeo-button-default;
   text-transform: uppercase;
 
-  .menu .submenu a {
-    color: $black;
+  .menu .submenu {
+    border: 0;
+
+    li {
+      background: $white;
+      box-shadow: 0 4px 4px 0 $nuxeo-overview-shaddow;
+    }
+
+    a {
+      color: $versions-inline-fg;
+
+      &.active {
+        color: $black;
+      }
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
   }
 
   .menu-title {
@@ -13,6 +32,49 @@
     span {
       border-right: 1px solid $white;
       padding-right: 1rem;
+    }
+  }
+}
+
+
+#footer {
+  #versions-inline {
+    background-color: #d9e6f0;
+
+    li {
+      color: $versions-inline-fg;
+      font-size: 14px;
+      font-stretch: normal;
+      font-style: normal;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    .label {
+      background: transparent;
+      height: 50px;
+      // line-height: 50px;
+      padding-left: 2rem;
+      text-transform: uppercase;
+
+      .vertical-bar {
+        border-right: 2px solid $versions-inline-fg;
+        height: 1em;
+        margin-left: 1em;
+      }
+    }
+
+    a {
+      color: $versions-inline-fg;
+      padding: 0 .2em 0 3em;
+
+      &.active {
+        color: $black;
+      }
+
+      &:hover {
+        color: $primary-color;
+      }
     }
   }
 }

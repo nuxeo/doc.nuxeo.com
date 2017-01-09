@@ -17,16 +17,20 @@ module.exports = function ($) {
         var pos = $window.scrollTop();
         var window_height = $window.height();
 
-        var reduced_height = 'calc(100vh - ' + Math.max((pos + window_height) - footer_pos, menu_height) + 'px)';
-        if (reduced_height !== $side_menu_container.css('height')) {
-            $side_menu_container.css('height', reduced_height);
-        }
-
-        var margin_top = (pos >= menu_height ? 0 : menu_height - pos) + 'px';
+        var margin_top_value = (pos >= menu_height ? 0 : menu_height - pos);
+        var margin_top = margin_top_value + 'px';
         if (margin_top !== $side_menu_container.css('margin-top')) {
             // console.log('changed');
             $side_menu_container.css('margin-top', margin_top);
         }
+
+        var reduced_height = 'calc(100vh - ' + Math.max((margin_top_value + pos + window_height) - footer_pos, menu_height) + 'px)';
+        if (reduced_height !== $side_menu_container.css('height')) {
+            $side_menu_container.css('height', reduced_height);
+        }
         // console.log('pos', pos, margin_top, $side_menu_container.css('margin-top'), reduced_height);
     });
+
+    // Initialise
+    $window.scroll();
 };

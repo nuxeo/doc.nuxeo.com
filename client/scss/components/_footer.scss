@@ -3,7 +3,6 @@
   color: $white;
   font-size: $nuxeo-body-small;
   padding-bottom: 1rem;
-  padding-top: 2rem;
 
   ul {
     list-style-position: outside;
@@ -31,25 +30,5 @@
 
   .copyright > a {
     margin-left: 3rem;
-  }
-
-  .social a {
-
-    .fa-inverse {
-      color: $nuxeo-color-footer;
-      transition: color .2s ease;
-    }
-
-    &:first-child {
-      margin-left: 3rem;
-    }
-
-    &:hover {
-      color: $primary-color;
-
-      .fa-inverse {
-        color: $white;
-      }
-    }
   }
 }
