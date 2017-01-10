@@ -76,41 +76,7 @@ default:
                 children:
                     - /nxdoc/installing-a-new-package-on-your-instance
                     - /nxdoc/creating-nuxeo-packages
-                    - /nxdoc/amazon-s3-online-storage
-                    - /nxdoc/digital-asset-management-dam
-                    - /nxdoc/digital-signature
-                    - /nxdoc/easyshare
-                    - /nxdoc/kerberos-authentication
-                    - /nxdoc/microsoft-azure-online-storage
-                    - /nxdoc/nuxeo-adobe-cc-connector
-                    - /nxdoc/nuxeo-agenda
-                    - /nxdoc/nuxeo-bulk-document-importer
-                    - /nxdoc/nuxeo-csv
-                    - /nxdoc/nuxeo-datadog-reporter
-                    - /nxdoc/nuxeo-diff
-                    - /nxdoc/nuxeo-diff-pictures
-                    - /nxdoc/nuxeo-duoweb-two-factor-authentication
-                    - /nxdoc/nuxeo-file-system-exporter
-                    - /nxdoc/nuxeo-for-salesforce
-                    - /nxdoc/nuxeo-groups-and-rights-audit
-                    - /nxdoc/nuxeo-jenkins-report
-                    - /nxdoc/nuxeo-live-connect
-                    - /nxdoc/nuxeo-media-publishing
-                    - /nxdoc/nuxeo-multi-tenant
-                    - /nxdoc/nuxeo-platform-user-registration
-                    - /nxdoc/nuxeo-quota
-                    - /nxdoc/nuxeo-shibboleth-invitation
-                    - /nxdoc/nuxeo-spreadsheet
-                    - /nxdoc/nuxeo-virtual-navigation
-                    - /nxdoc/nuxeo-vision
-                    - /nxdoc/resources-compatibility
-                    - /nxdoc/saml-20-authentication
-                    - /nxdoc/scan-documents-importer
-                    - /nxdoc/shibboleth-authentication
-                    - /nxdoc/smart-search
-                    - /nxdoc/template-rendering-addon
-                    - /nxdoc/nuxeo-connect-report-tools
-                    - /nxdoc/nuxeo-3d
+                    - /nxdoc/nuxeo-add-ons 
             -
                 parent: /nxdoc/client-sdks
                 section_color: sdks
