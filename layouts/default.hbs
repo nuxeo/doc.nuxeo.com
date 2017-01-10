@@ -17,7 +17,7 @@
         </div>
         {{> flag_review}}
     </div>
-    <div id="content" class="column {{#if toc}}toc {{#if toc_no_h4}}toc-no-h4{{/if}}{{/if}}{{#if tabbed_page}} tabbed{{/if}}">
+    <div id="content" class="column {{#if toc}}toc {{#if toc_no_h4}}toc-no-h4{{/if}}{{/if}}{{#if tabbed_page}} tabbed{{/if}} end">
         {{{contents}}}
     </div>
     {{!-- #if toc} }
@@ -43,11 +43,6 @@
     </div>
     {{/if}}
 
-    <div id="tags" class="column {{!-- #if toc}}large-8 end{{/if --}}">
-        {{#each labels as |label|}}
-            <a href="/{{../url.key.space_path}}/label/{{sluggy label}}">{{label}}</a>{{#unless @last}}, {{/unless}}
-        {{/each}}
-    </div>
     {{> information}}
 </div>
 

@@ -6,6 +6,7 @@ h5,
 h6 {
   margin-bottom: .5rem;
   margin-top: 1.5rem;
+  font-weight: 200;
 }
 
 h4,
@@ -25,6 +26,7 @@ a {
 
 table {
   border: 2px solid $medium-gray;
+  margin-bottom: 1.5em;
 
   th {
     text-align: left;
@@ -43,6 +45,7 @@ ol {
   -webkit-padding-start: 0;
   margin-after: 0;
   margin-before: 0;
+  margin-bottom: 1.5em;
   padding-start: 0;
 }
 
