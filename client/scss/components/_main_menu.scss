@@ -1,6 +1,7 @@
 $menu-shadow: rgba(0, 0, 0, .1);
 $menu-width: 370px;
 $menu-item-height: 60px;
+$second-level-color: rgba(0, 5, 34, .7);
 
 @mixin section-colours ($color) {
   border-left-color: $color;
@@ -15,6 +16,10 @@ $menu-item-height: 60px;
     > a {
       color: darken($color, 40%);
     }
+  }
+
+  ul.child li:hover {
+    background-color: lighten($color, 12.2%);
   }
 }
 
@@ -74,7 +79,6 @@ $menu-item-height: 60px;
       text-transform: uppercase;
 
       & {
-        background-size: 200% 100%;
         height: $menu-item-height;
         transition: background-color .4s ease-in;
         width: $menu-width;
@@ -146,8 +150,11 @@ $menu-item-height: 60px;
         position: absolute;
         top: 0;
 
+        a {
+          color: $second-level-color;
+        }
+
         li {
-          @include section-colours($primary-color);
           border-left: 0;
           height: 40px;
           line-height: 40px;
