@@ -79,6 +79,7 @@ h6 {
 }
 
 .fast-track {
+  box-shadow: 0 4px 4px 0 $nuxeo-overview-shaddow;
   display: inline-block;
   margin-bottom: 1rem;
   margin-top: calc(#{$fast-track-icon-radius} + 1rem);
@@ -86,9 +87,9 @@ h6 {
 
   > div {
     background-color: $white;
-    border-width: 0;
     border-bottom-width: 2rem;
     border-style: solid;
+    border-width: 0;
     // color: $nuxeo-tutorial-color;
     position: relative;
 
@@ -102,9 +103,9 @@ h6 {
     }
 
     > div {
-      border-width: 0;
       border-bottom-width: .7em;
       border-style: solid;
+      border-width: 0;
       padding-bottom: 2rem;
       padding-top: 5rem;
       text-transform: uppercase;
