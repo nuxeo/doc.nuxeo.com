@@ -2,16 +2,19 @@ $menu-shadow: rgba(0, 0, 0, .1);
 $menu-width: 370px;
 $menu-item-height: 60px;
 
-@mixin hover-slide ($color) {
-  background-image: linear-gradient(to right, $white 50%, $color 50%);
+@mixin section-colours ($color) {
   border-left-color: $color;
 
   a {
     color: $color;
   }
 
-  &:hover > a {
-    color: darken($color, 40%);
+  &:hover {
+    background-color: $color;
+
+    > a {
+      color: darken($color, 40%);
+    }
   }
 }
 
@@ -73,7 +76,7 @@ $menu-item-height: 60px;
       & {
         background-size: 200% 100%;
         height: $menu-item-height;
-        transition: background-position .4s ease-in;
+        transition: background-color .4s ease-in;
         width: $menu-width;
 
         a {
@@ -86,8 +89,6 @@ $menu-item-height: 60px;
 
         &:hover,
         &.active {
-          background-position: -100% 0;
-
           ul.child {
             display: block;
           }
@@ -99,39 +100,39 @@ $menu-item-height: 60px;
       }
 
       &.section-tutorial {
-        @include hover-slide($nuxeo-tutorial-color);
+        @include section-colours($nuxeo-tutorial-color);
       }
 
       &.section-server {
-        @include hover-slide($nuxeo-server-color);
+        @include section-colours($nuxeo-server-color);
       }
 
       &.section-web-ui {
-        @include hover-slide($nuxeo-web-ui-color);
+        @include section-colours($nuxeo-web-ui-color);
       }
 
       &.section-desktop-mob {
-        @include hover-slide($nuxeo-desktop-mob-color);
+        @include section-colours($nuxeo-desktop-mob-color);
       }
 
       &.section-packages {
-        @include hover-slide($nuxeo-packages-color);
+        @include section-colours($nuxeo-packages-color);
       }
 
       &.section-user-documentation {
-        @include hover-slide($nuxeo-user-documentation-color);
+        @include section-colours($nuxeo-user-documentation-color);
       }
 
       &.section-sdks {
-        @include hover-slide($nuxeo-sdks-color);
+        @include section-colours($nuxeo-sdks-color);
       }
 
       &.section-services {
-        @include hover-slide($nuxeo-services-color);
+        @include section-colours($nuxeo-services-color);
       }
 
       &.section-tools {
-        @include hover-slide($nuxeo-tools-color);
+        @include section-colours($nuxeo-tools-color);
       }
 
       ul.child {
@@ -146,7 +147,7 @@ $menu-item-height: 60px;
         top: 0;
 
         li {
-          @include hover-slide($primary-color);
+          @include section-colours($primary-color);
           border-left: 0;
           height: 40px;
           line-height: 40px;
