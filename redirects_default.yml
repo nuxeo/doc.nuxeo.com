@@ -58,7 +58,7 @@
 ^/nxdoc/how-to-enable-dragn-drop-and-new-button-on-a-custom-content-view/?$: /nxdoc/how-to-enable-drag-and-drop-and-new-button-on-a-custom-content-view
 ^/nxdoc/how-to-inherit-a-metadata-from-a-parent-document/?$: /nxdoc/how-to-inherit-metadata-from-a-parent-document
 ^/nxdoc/using-saml2/?$: /nxdoc/saml-20-authentication
-^/nxdoc/nuxeo-and-kibana/?$: /nxdoc/data-visualization
+^/nxdoc/nuxeo-and-kibana/?$: /nxdoc/nuxeo-elements
 ^/nxdoc/pdf-conversion-troubleshooting/?$: /nxdoc/how-to-automatically-convert-a-document-to-pdf
 ^/nxdoc/nuxeo-android-connector/?$: /nxdoc/java-client
 ^/nxdoc/nuxeo-automation-client/?$: /nxdoc/java-client
@@ -72,6 +72,7 @@
 ^/nxdoc/jsf-page-layout-system-overview/?$: /nxdoc/jsf-ui-framework-overview
 ^/nxdoc/nuxeo-elements-quickstart/?$: /nxdoc/nuxeo-elements-tutorial/
 ^/nxdoc/web-ui-overview/?$: /nxdoc/web-ui/
+^/nxdoc/data-visualization/?$: /nxdoc/nuxeo-elements
 
 
 ^/userdoc/nuxeo-drive/?$: /nxdoc/nuxeo-drive
