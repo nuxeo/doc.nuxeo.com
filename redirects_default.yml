@@ -87,3 +87,5 @@
 ^/userdoc/nuxeo-drive/?$: /nxdoc/nuxeo-drive
 ^/userdoc/nuxeo-drive-faq/?$: /nxdoc/nuxeo-drive-faq
 ^/studio/configuration-management/?$: /studio/templates-reference
+^/studio/availability-tab/?$: /studio/activation-tab
+
