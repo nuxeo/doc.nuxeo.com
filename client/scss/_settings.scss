@@ -573,15 +573,6 @@ $nuxeo-color-light-blue: #9ec2d5;
 $nuxeo-color-light-gray: #ccc;
 $nuxeo-color-footer: #000522;
 
-// Left menu
-$nuxeo-color-menu-background: #fafcfd;
-$nuxeo-color-menu-background-selected: #edf3f8;
-$nuxeo-color-menu-hover: #a9e0f9;
-$level-0-color: #6eccf5;
-$level-1-color: #b6e5fa;
-$level-2-color: #f5f9fb;
-$menu-foreground-color: #000623;
-
 // Code Block
 $nuxeo-color-code-background: #fff;
 $nuxeo-color-code-foreground: #000;
@@ -593,7 +584,7 @@ $nuxeo-tutorial-color: #50e3c2;
 $nuxeo-server-color: #6eccf5;
 $nuxeo-web-ui-color: #4a90e2;
 $nuxeo-desktop-mob-color: #8c0ca7;
-$nuxeo-packages-color: #ff462a;
+$nuxeo-addons-color: #ff462a;
 $nuxeo-user-documentation-color: #ff2a73;
 $nuxeo-sdks-color: #bcc2c8;
 $nuxeo-services-color: #ff8426;
@@ -614,6 +605,15 @@ $nuxeo-tools-color: #ffad27;
 // #800cce
 // #94095c
 
+
+// Left menu
+$nuxeo-color-menu-background: #fafcfd;
+$nuxeo-color-menu-background-selected: #edf3f8;
+$nuxeo-color-menu-hover: lighten(#6eccf5, 12.2%);
+$level-0-color: #6eccf5;
+$level-1-color: #b6e5fa;
+$level-2-color: #f5f9fb;
+$menu-foreground-color: #000623;
 
 $nuxeo-overview-shaddow: rgba(0, 0, 0, .05);
 

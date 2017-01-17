@@ -116,7 +116,7 @@ h6 {
   @include section-color('server', $nuxeo-server-color);
   @include section-color('web-ui', $nuxeo-web-ui-color);
   @include section-color('desktop-mob', $nuxeo-desktop-mob-color);
-  @include section-color('packages', $nuxeo-packages-color);
+  @include section-color('addons', $nuxeo-addons-color);
   @include section-color('user-documentation', $nuxeo-user-documentation-color);
   @include section-color('sdks', $nuxeo-sdks-color);
   @include section-color('services', $nuxeo-services-color);
@@ -143,8 +143,8 @@ h6 {
       color: $nuxeo-desktop-mob-color;
     }
 
-    .hover-packages:hover {
-      color: $nuxeo-packages-color;
+    .hover-addons:hover {
+      color: $nuxeo-addons-color;
     }
 
     .hover-sdks:hover {

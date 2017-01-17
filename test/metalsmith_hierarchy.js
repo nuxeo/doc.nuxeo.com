@@ -75,16 +75,17 @@ test('hierarchy(min_options) returns mutated "metalsmith" object with populated 
     const hierarchy_instance = hierarchy(min_options);
     const files = {
         'nxdoc/index.md': {
-            title          : 'Index Page',
-            tree_item_index: void 0,
-            url            : {
+            title: 'Index Page',
+            url  : {
                 key: {
                     space_path    : 'nxdoc',
                     slug          : 'index',
                     is_space_index: true,
                     full          : 'nxdoc/index'
                 }
-            }
+            },
+            tree_item_index: void 0,
+            section_parent : ''
         }
     };
     const actual = {
@@ -97,20 +98,21 @@ test('hierarchy(min_options) returns mutated "metalsmith" object with populated 
     const expected = {
         hierarchies: {
             nxdoc: {
-                id             : 'nxdoc',
-                name           : 'Index Page',
-                path           : 'nxdoc',
-                slug           : 'index',
-                tree_item_index: 0,
-                children       : [],
-                url            : {
+                id      : 'nxdoc',
+                name    : 'Index Page',
+                path    : 'nxdoc',
+                slug    : 'index',
+                children: [],
+                url     : {
                     key: {
                         full          : 'nxdoc/index',
                         slug          : 'index',
                         is_space_index: true,
                         space_path    : 'nxdoc'
                     }
-                }
+                },
+                tree_item_index: 0,
+                section_parent : ''
             }
         }
     };

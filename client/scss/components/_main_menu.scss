@@ -119,8 +119,8 @@ $second-level-color: rgba(0, 5, 34, .7);
         @include section-colours($nuxeo-desktop-mob-color);
       }
 
-      &.section-packages {
-        @include section-colours($nuxeo-packages-color);
+      &.section-addons {
+        @include section-colours($nuxeo-addons-color);
       }
 
       &.section-user-documentation {

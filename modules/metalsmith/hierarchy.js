@@ -28,17 +28,12 @@ const hierarchy = function (options) {
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
         // Check options fits schema
-        let schema_err;
-        schema.validate(options, {allowUnknown: true}, function (err, value) {
-            if (err) {
-                error('Validation failed, %o', err.details[0].message);
-                schema_err = err;
-            }
-            options = value;
-        });
-        if (schema_err) {
-            return done(schema_err);
+        const validation = schema.validate(options, {allowUnknown: true});
+        if (validation.error) {
+            error('Validation failed, %o', validation.error.details[0].message);
+            return done(validation.error);
         }
+        options = validation.value;
 
         const metadata = metalsmith.metadata();
 

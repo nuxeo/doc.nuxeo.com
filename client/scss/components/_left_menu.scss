@@ -1,16 +1,138 @@
-$menu-background: lighten($primary-color, 47%);
 $active-border-width: 8px;
 $scrollbar-color: rgba(0, 0, 0, .3);
+$nuxeo-color-menu-background: #fafcfd;
+$nuxeo-color-menu-background-selected: #edf3f8;
 
+// Left menu
+@mixin menu-section-colours ($color) {
+  $menu-background: lighten($color, 47%);
+  $nuxeo-color-menu-hover: lighten($color, 12.2%);
+  $level-0-color: $color;
+  $level-1-color: lighten($color, 15%);
+  $level-2-color: lighten($color, 28.4%);
+  $menu-foreground-color: darken($color, 68%);
+
+
+  #side-menu-container #side-menu .input-container {
+    background: $level-0-color;
+  }
+
+  #side-menu-container {
+    // background: linear-gradient(90deg, $menu-background 21rem, $white 21rem);
+    background-color: $menu-background;
+  }
+
+  #side-menu {
+    ul {
+      background-color: $level-0-color;
+      color: $menu-foreground-color;
+    }
+
+    ul ul {
+      background-color: $level-1-color;
+
+      & ul {
+        background-color: $level-2-color;
+
+        & ul > li {
+          padding-left: 1rem;
+        }
+      }
+    }
+
+    li {
+      > div:hover {
+        background-color: $nuxeo-color-menu-hover;
+
+        a {
+          color: $menu-foreground-color;
+        }
+      }
+
+      i:hover {
+        color: $color;
+      }
+    }
+
+    a {
+      color: $secondary-color;
+    }
+
+    .input-group {
+      background-color: rgba(255, 255, 255, .2);
+      margin: 0;
+      padding: .5rem;
+      width: 100%;
+    }
+
+    .input-group-field {
+      color: $color;
+
+      &::placeholder {
+        color: $menu-foreground-color;
+      }
+    }
+  }
+
+  // Small
+  @media screen and #{breakpoint(small down)} {
+    #side-menu-container {
+      background: $menu-background;
+    }
+  }
+}
+
+
+.doc-section {
+  &.doc-section- {
+    @include menu-section-colours($primary-color);
+  }
+
+  &.doc-section-tutorial {
+    @include menu-section-colours($nuxeo-tutorial-color);
+  }
+
+  &.doc-section-server {
+    @include menu-section-colours($nuxeo-server-color);
+  }
+
+  &.doc-section-web-ui {
+    @include menu-section-colours($nuxeo-web-ui-color);
+  }
+
+  &.doc-section-desktop-mob {
+    @include menu-section-colours($nuxeo-desktop-mob-color);
+  }
+
+  &.doc-section-addons {
+    @include menu-section-colours($nuxeo-addons-color);
+  }
+
+  &.doc-section-user-documentation {
+    @include menu-section-colours($nuxeo-user-documentation-color);
+  }
+
+  &.doc-section-sdks {
+    @include menu-section-colours($nuxeo-sdks-color);
+  }
+
+  &.doc-section-services {
+    @include menu-section-colours($nuxeo-services-color);
+  }
+
+  &.doc-section-tools {
+    @include menu-section-colours($nuxeo-tools-color);
+  }
+}
 
 #page-container #side-menu .input-container {
-  background: $level-0-color;
+  // background: $level-0-color;
   margin: 0;
   padding: 1rem 2rem;
 }
 
 #side-menu-container {
-  background: linear-gradient(90deg, $menu-background 21rem, $white 21rem);
+  // background: linear-gradient(90deg, $menu-background 21rem, $white 21rem);
   height: calc(100vh - 50px);
   left: 0;
   margin-top: 50px;
@@ -34,8 +156,8 @@ $scrollbar-color: rgba(0, 0, 0, .3);
 
 #side-menu {
   ul {
-    background-color: $level-0-color;
-    color: $menu-foreground-color;
+    // background-color: $level-0-color;
+    // color: $menu-foreground-color;
     font-size: $nuxeo-body-small;
     font-weight: bold;
     list-style: none;
@@ -44,10 +166,10 @@ $scrollbar-color: rgba(0, 0, 0, .3);
   }
 
   ul ul {
-    background-color: $level-1-color;
+    // background-color: $level-1-color;
 
     & ul {
-      background-color: $level-2-color;
+      // background-color: $level-2-color;
       text-transform: none;
 
       & ul > li {
@@ -70,10 +192,10 @@ $scrollbar-color: rgba(0, 0, 0, .3);
       }
 
       &:hover {
-        background-color: $nuxeo-color-menu-hover;
+        // background-color: $nuxeo-color-menu-hover;
 
         a {
-          color: $menu-foreground-color;
+          // color: $menu-foreground-color;
         }
       }
     }
@@ -86,13 +208,13 @@ $scrollbar-color: rgba(0, 0, 0, .3);
       transition: color .2s ease;
 
       &:hover {
-        color: $primary-color;
+        // color: $primary-color;
       }
     }
   }
 
   a {
-    color: $secondary-color;
+    // color: $secondary-color;
     display: block;
     transition: color .2s ease;
 
@@ -109,11 +231,11 @@ $scrollbar-color: rgba(0, 0, 0, .3);
   }
 
   .input-group-field {
-    color: $primary-color;
+    // color: $primary-color;
     height: 2rem;
 
     &::placeholder {
-      color: $menu-foreground-color;
+      // color: $menu-foreground-color;
       font-size: .8rem;
       text-transform: uppercase;
     }
@@ -123,7 +245,7 @@ $scrollbar-color: rgba(0, 0, 0, .3);
 // Small
 @media screen and #{breakpoint(small down)} {
   #side-menu-container {
-    background: $menu-background;
+    // background: $menu-background;
   }
 
   #side-menu {

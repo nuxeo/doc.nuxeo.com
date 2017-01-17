@@ -72,6 +72,7 @@ const meta_hierarchies = function (options) {
                         slug           : 'index',
                         path           : space_path,
                         tree_item_index: 0,
+                        section_parent : '',
                         children       : []
                     };
 
@@ -105,7 +106,8 @@ const meta_hierarchies = function (options) {
                             url            : file.url,
                             slug           : file.slug,
                             path           : space_path,
-                            tree_item_index: file.tree_item_index
+                            tree_item_index: file.tree_item_index,
+                            section_parent : file.section_parent
                         });
                     }
                 }

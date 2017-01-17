@@ -13,7 +13,7 @@ module.exports = {
             activeLink: {
                 background : 'white',
                 marginLeft : '1rem',
-                marginRight: '.5rem'
+                marginRight: '1rem'
             },
             toggle: {
                 base: {
