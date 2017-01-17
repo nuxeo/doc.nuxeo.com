@@ -51,6 +51,15 @@
 
 ^/x/aAfF/?$: /nxdoc/nuxeo-add-ons/
 
+# For 7.10 - Web UI renamed into JSF UI
+^/710/nxdoc/from-the-web-ui-to-nuxeo-studio/$: /710/nxdoc/from-the-jsf-ui-to-nuxeo-studio
+^/710/nxdoc/web-ui-limitations/$: /710/nxdoc/jsf-ui-limitations
+^/710/nxdoc/web-ui-framework/$: /710/nxdoc/jsf-ui-framework
+^/710/nxdoc/web-ui-framework-overview/$: /710/nxdoc/jsf-ui-framework-overview
+^/710/nxdoc/web-ui-how-to-index/$: /710/nxdoc/jsf-ui-how-to-index
+^/710/nxdoc/how-to-add-a-button-in-the-web-ui/$: /710/nxdoc/how-to-add-a-button-in-the-jsf-ui
+^/710/nxdoc/how-to-bubble-errors-from-the-core-layer-in-the-web-ui/$: /710/nxdoc/how-to-bubble-errors-from-the-core-layer-in-the-jsf-ui
+
 # For LTS 2016
 ^/nxdoc/javaandroid-client/$: /nxdoc/java-client
 ^/nxdoc/getting-started-with-nuxeo-ide/$: /nxdoc/getting-started-with-nuxeo-generator
@@ -58,7 +67,7 @@
 ^/nxdoc/how-to-enable-dragn-drop-and-new-button-on-a-custom-content-view/?$: /nxdoc/how-to-enable-drag-and-drop-and-new-button-on-a-custom-content-view
 ^/nxdoc/how-to-inherit-a-metadata-from-a-parent-document/?$: /nxdoc/how-to-inherit-metadata-from-a-parent-document
 ^/nxdoc/using-saml2/?$: /nxdoc/saml-20-authentication
-^/nxdoc/nuxeo-and-kibana/?$: /nxdoc/data-visualization
+^/nxdoc/nuxeo-and-kibana/?$: /nxdoc/nuxeo-elements
 ^/nxdoc/pdf-conversion-troubleshooting/?$: /nxdoc/how-to-automatically-convert-a-document-to-pdf
 ^/nxdoc/nuxeo-android-connector/?$: /nxdoc/java-client
 ^/nxdoc/nuxeo-automation-client/?$: /nxdoc/java-client
@@ -72,10 +81,11 @@
 ^/nxdoc/jsf-page-layout-system-overview/?$: /nxdoc/jsf-ui-framework-overview
 ^/nxdoc/nuxeo-elements-quickstart/?$: /nxdoc/nuxeo-elements-tutorial/
 ^/nxdoc/web-ui-overview/?$: /nxdoc/web-ui/
+^/nxdoc/data-visualization/?$: /nxdoc/nuxeo-elements
 
 
 ^/userdoc/nuxeo-drive/?$: /nxdoc/nuxeo-drive
 ^/userdoc/nuxeo-drive-faq/?$: /nxdoc/nuxeo-drive-faq
 ^/studio/configuration-management/?$: /studio/templates-reference
-
 ^/studio/availability-tab/?$: /studio/activation-tab
+

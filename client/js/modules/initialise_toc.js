@@ -46,7 +46,8 @@ var initialise_toc = function () {
         }
 
         $this.attr('data-magellan-target', id);
-        $toc_list.append('<li id="' + list_item_id + '" class="' + classes + '" ' + style + '><a class="button text-left" href="#' + id + '">' + title + '</a></li>');
+        var $list_item = $('<li id="' + list_item_id + '" class="' + classes + '" ' + style + '><a class="button text-left" href="#' + id + '"></a></li>').find('a').text(title).end();
+        $toc_list.append($list_item);
     });
 
     // $toc_list.html($toc_list_clone.html());
