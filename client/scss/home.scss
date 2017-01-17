@@ -87,9 +87,9 @@ h6 {
 
   > div {
     background-color: $white;
-    border-bottom-width: 2rem;
     border-style: solid;
     border-width: 0;
+    border-bottom-width: 2rem; // Ignore sass-lint error
     // color: $nuxeo-tutorial-color;
     position: relative;
 
@@ -103,9 +103,9 @@ h6 {
     }
 
     > div {
-      border-bottom-width: .7em;
       border-style: solid;
       border-width: 0;
+      border-bottom-width: .7em; // Ignore sass-lint error
       padding-bottom: 2rem;
       padding-top: 5rem;
       text-transform: uppercase;

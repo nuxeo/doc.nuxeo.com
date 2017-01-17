@@ -31,13 +31,13 @@
     {{#if (condition previous_link '||' next_link)}}
     <div class="column">
         {{#if previous_link}}
-        <a href="{{previous_link}}" class="sequence-link previous-link float-left">
-            <i class="fa fa-long-arrow-left" aria-hidden="true"></i> Previous
+        <a href="{{page previous_link}}" class="sequence-link previous-link float-left">
+            <i class="fa fa-long-arrow-left" aria-hidden="true"></i> {{page_title previous_link}}
         </a>
         {{/if}}
         {{#if next_link}}
-        <a href="{{next_link}}" class="sequence-link next-link float-right">
-            Next <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        <a href="{{page next_link}}" class="sequence-link next-link float-right">
+            {{page_title next_link}} <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
         </a>
         {{/if}}
     </div>
