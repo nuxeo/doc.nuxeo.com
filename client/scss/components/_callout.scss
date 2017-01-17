@@ -21,13 +21,25 @@
     box-shadow: 0 4px 4px 0 $nuxeo-overview-shaddow;
   }
 
+  // Overview page boxes
   &.secondary {
     background-color: $white;
 
-    font-size: 1.2rem;
-
     h3 {
-      text-align: center;
+      color: $black;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    ul {
+      list-style: none;
+      margin-left: 0;
+
+      li {
+        margin-top: .7rem;
+      }
     }
   }
 
