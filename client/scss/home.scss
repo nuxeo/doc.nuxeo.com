@@ -106,9 +106,12 @@ h6 {
       border-style: solid;
       border-width: 0;
       border-bottom-width: .7em; // Ignore sass-lint error
+      overflow: hidden;
       padding-bottom: 2rem;
       padding-top: 5rem;
+      text-overflow: ellipsis;
       text-transform: uppercase;
+      white-space: nowrap;
     }
   }
 
@@ -165,6 +168,7 @@ h6 {
 #search-area {
   background-color: $white;
   border: 1px solid $primary-color;
+  margin-top: 2em;
 
   .input-group {
     padding-top: 1rem;

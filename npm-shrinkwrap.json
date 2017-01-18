@@ -2981,6 +2981,11 @@
       "from": "lodash.clonedeep@>=4.5.0 <5.0.0",
       "resolved": "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz"
     },
+    "lodash.debounce": {
+      "version": "4.0.8",
+      "from": "lodash.debounce@latest",
+      "resolved": "https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-4.0.8.tgz"
+    },
     "lodash.defaults": {
       "version": "3.1.2",
       "from": "lodash.defaults@>=3.1.1 <4.0.0",

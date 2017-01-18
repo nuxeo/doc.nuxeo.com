@@ -72,6 +72,15 @@ $nuxeo-color-menu-background-selected: #edf3f8;
         color: $menu-foreground-color;
       }
     }
+
+    #toc .button {
+      color: $menu-foreground-color;
+
+      &:hover,
+      &.active {
+        color: $color;
+      }
+    }
   }
 
   // Small

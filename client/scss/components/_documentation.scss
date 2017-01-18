@@ -15,12 +15,19 @@ $content-background: #f5f9fb;
   #content {
     max-width: 1024px;
 
-    > * {
+    > p,
+    > h1,
+    > h2,
+    > h3,
+    > h4,
+    > h5,
+    > h6,
+    > div.nuxeo.callout {
       max-width: 40rem;
     }
 
-    > ol,
-    > ul {
+    > ol > li,
+    > ul > li {
       max-width: 37em;
     }
 

@@ -8,16 +8,10 @@
 
     .button {
       background: none;
-      color: $menu-foreground-color;
       font-weight: normal;
       padding: .4rem 0;
       text-align: left;
       transition: color .2s ease, font-weight .2s ease;
-
-      &:hover,
-      &.active {
-        color: $primary-color;
-      }
     }
 
     li {
@@ -53,8 +47,9 @@
   #toc_list {
     background-color: $white;
     margin-left: auto;
+    margin-right: .5rem;
     overflow-y: auto;
-    padding: .5rem 0 .5rem 1rem;
+    padding: .5rem .5rem .5rem 1rem;
 
     .active {
       font-weight: bold;
