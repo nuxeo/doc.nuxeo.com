@@ -72,11 +72,11 @@ default:
                     - /nxdoc/nuxeo-mobile
             -
                 parent: /nxdoc/nuxeo-add-ons
-                section_color: packages
+                section_color: addons
                 children:
                     - /nxdoc/installing-a-new-package-on-your-instance
                     - /nxdoc/creating-nuxeo-packages
-                    - /nxdoc/nuxeo-add-ons 
+                    - /nxdoc/nuxeo-add-ons
             -
                 parent: /nxdoc/client-sdks
                 section_color: sdks
@@ -123,7 +123,7 @@ default:
             url: git@github.com:nuxeo/doc.nuxeo.com-content.git
             branches:
                 - static
-                - master
+                - section-definitions
                 - '710'
                 - '60'
                 - '58'
