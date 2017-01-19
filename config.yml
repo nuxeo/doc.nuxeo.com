@@ -20,7 +20,7 @@ default:
         cse_id: "005135669674242188188:xu8ybnpu3r8"
         ga_exp_id: ''
         ga_id: 'UA-81135-3'
-        segment_write_key: "4qquvje3fv"
+        segment_write_key: ''
         main_menu:
             -
                 parent: /nxdoc/tutorials
@@ -124,9 +124,9 @@ default:
             branches:
                 - static
                 - section-definitions
-                - '710'
-                - '60'
-                - '58'
+                # - '710'
+                # - '60'
+                # - '58'
 
 development:
     isDev: true
