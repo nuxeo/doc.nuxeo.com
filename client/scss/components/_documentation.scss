@@ -1,17 +1,30 @@
 $content-background: #f5f9fb;
 
-#page-container {
-  > div:first-of-type {
-    background-color: $content-background;
-    background-image: url('/assets/imgs/nuxeo-grid.svg');
-    background-position-x: 4rem;
-    background-position-y: 350px;
-    background-repeat: no-repeat;
+
+
+#page-container > div:first-of-type {
+  background-attachment: fixed;
+  background-color: $content-background;
+  background-image: url('/assets/imgs/nuxeo-grid.svg');
+  background-position-x: 4rem;
+  background-position-y: 350px;
+  background-repeat: no-repeat;
+}
+
+// medium+
+@media screen and #{breakpoint(medium up)} {
+  #page-container > div:first-of-type {
+    background-position-x: calc(33vw + 4rem);
   }
 }
 
-// large
+
+// large+
 @media screen and #{breakpoint(large up)} {
+  #page-container > div:first-of-type {
+    background-position-x: calc(25vw + 4rem);
+  }
+
   #content {
     max-width: 1024px;
 
