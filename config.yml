@@ -124,9 +124,9 @@ default:
             branches:
                 - static
                 - section-definitions
-                # - '710'
-                # - '60'
-                # - '58'
+                - '710'
+                - '60'
+                - '58'
 
 development:
     isDev: true
