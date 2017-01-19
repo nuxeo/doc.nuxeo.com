@@ -232,11 +232,21 @@ Link to images should be written like this:
 An image called `your_img.png` could be referenced by the following:
 ```md
 Basic example:
-![Alt text - Required]({{file name='AdapterService.png'}})
+![Alt text - Required]({{file name='your_img.png'}})
 ```
 All options with file from another space and page:
 ```
-![Alt text - Required]({{file space='nxdoc' page='client-sdks' name='AdapterService.png'}} ?w=180,h=360,border=true,thumbnail=true,align=right "Title text - Optional")
+![Alt text - Required]({{file space='nxdoc' page='client-sdks' name='your_img.png'}} ?w=180,h=360,border=true,thumbnail=true,align=right "Title text - Optional")
+```
+
+### To Download Files
+Link to download files should be written like this:
+`[Text for download link]({{file space='space' page='page-name' name='file-name.zip'}})`
+
+A file called `your_file.zip` could be referenced by the following:
+```md
+Basic example:
+[Download my file]({{file name='your_file.zip'}})
 ```
 
 ### To Videos
@@ -256,8 +266,8 @@ The documentation uses standard [GitHub Flavoured Markdown](https://guides.githu
 Helper | Behaviour
 --- | ---
 `{{condition foo '===' bar}}` | Allows variable comparisons. Usual usage: `{{#if (condition foo '===' bar)}}...{{/if}}`
-`{{page ...}}` | See [Page Links](#page-links)
-`{{file ...}}` | See [File asset linking](#file-asset-linking)
+`{{page ...}}` | See [Page Links](#to-a-page)
+`{{file ...}}` | See [Links to Images](#to-images) and/or [Links to Downloading Files](#to-download-files)
 `{{file_content url='url'}}` | Retrieves content from an external url. Usual usage `{{{md (file_content url='https://example.com/url-to-raw-markdown-file.md')}}}`
 `{{md foo}}` | Converts a variable from Markdown.
 `{{moment foo format='D MMM YYYY'}}` | [Formats a date](http://momentjs.com/docs/#/displaying/format/) variable using moment. Alternative usage: `{{moment foo fromNow=''}}` displays a period from now. e.g. '3 days ago'
