@@ -2,7 +2,7 @@
 /* eslint-env es6 */
 
 // Debugging
-const {debug, error} = require('../debugger')('metalsmith-set-section');
+const {debug, warn, error} = require('../debugger')('metalsmith-set-section');
 
 // npm packages
 
@@ -81,7 +81,7 @@ const set_section = function (options) {
                         file.section = node.model.section_parent;
                     }
                     else {
-                        error('No section for %s', filepath);
+                        warn('No section for %s', filepath);
                     }
                 }
                 else {
