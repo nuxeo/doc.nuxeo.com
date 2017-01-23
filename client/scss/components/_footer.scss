@@ -1,6 +1,8 @@
 $footer-fg: #d9e6f0;
 
 #footer {
+  position: relative;
+
   a {
     color: $footer-fg;
     transition: color .2s ease;
@@ -19,7 +21,6 @@ $footer-fg: #d9e6f0;
     font-style: normal;
     letter-spacing: 1.5px;
     padding-bottom: 1rem;
-    position: relative;
 
     ul {
       list-style-position: outside;
