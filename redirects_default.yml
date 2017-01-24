@@ -81,7 +81,6 @@
 ^/nxdoc/jsf-page-layout-system-overview/?$: /nxdoc/jsf-ui-framework-overview
 ^/nxdoc/nuxeo-elements-quickstart/?$: /nxdoc/nuxeo-elements-tutorial/
 ^/nxdoc/web-ui-overview/?$: /nxdoc/web-ui/
-^/nxdoc/data-visualization/?$: /nxdoc/nuxeo-elements
 
 
 ^/userdoc/nuxeo-drive/?$: /nxdoc/nuxeo-drive
