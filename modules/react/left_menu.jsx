@@ -9,6 +9,7 @@ const decorators = treebeard_lib.decorators;
 
 const filter = require('./menu_filter');
 const menu_style = require('./menu_style');
+const initialise_toc = require('../../client/js/modules/initialise_toc');
 
 decorators.Toggle = function () {
     /* eslint react/display-name: 0, react/prop-types: 0 */
@@ -37,9 +38,13 @@ decorators.Header = function (props) {
 const init_menu = function (data) {
     const SideMenu = React.createClass({
         getInitialState: function () {
-            return {data: data};
+            const filtered = filter(data, 'direct_only');
+
+            // console.log('direct_only', filtered);
+            return {data: filtered};
         },
         onToggle: function (node, toggled) {
+            this.setState({data: data});
             if (node.children) {
                 node.toggled = toggled;
             }
@@ -48,7 +53,7 @@ const init_menu = function (data) {
         onFilterKeyUp: function (e) {
             const filter_text = e.target.value.trim();
             if (filter_text) {
-                const filtered = filter(data, filter_text);
+                const filtered = filter(data, 'filter', filter_text);
 
                 // console.log('filtered', filtered);
                 this.setState({data: filtered});
@@ -60,6 +65,7 @@ const init_menu = function (data) {
         componentDidMount: function () {
         },
         componentDidUpdate: function () {
+            initialise_toc();
         },
         render: function () {
             return (
@@ -67,7 +73,7 @@ const init_menu = function (data) {
                     <div className="input-container">
                         <div className="input-group">
                         <input type="text"
-                        placeholder="FILTER"
+                        placeholder="FILTER MENU&hellip;"
                         className="input-group-field"
                         onKeyUp={this.onFilterKeyUp}
                         />

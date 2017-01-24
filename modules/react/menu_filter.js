@@ -8,8 +8,13 @@
  *
  * @returns {boolean}
  */
-var matcher = function (node, filter) {
-    return node.name.toLowerCase().indexOf(filter) !== -1;
+var matchers = {
+    filter: function (node, filter) {
+        return node.name.toLowerCase().indexOf(filter) !== -1;
+    },
+    direct_only: function (node) {
+        return node.toggled || node.active;
+    }
 };
 
 
@@ -21,11 +26,11 @@ var matcher = function (node, filter) {
  *
  * @returns {Object}        Tree with matches or undefined
  */
-var filter_items = function (node, filter) {
+var filter_items = function (node, filter_type, filter) {
     var children = void 0;
     if (node.children) {
         node.children.forEach(function (child) {
-            var keep_child = filter_items(child, filter);
+            var keep_child = filter_items(child, filter_type, filter);
             if (keep_child) {
                 children = children || [];
                 children.push(keep_child);
@@ -33,7 +38,7 @@ var filter_items = function (node, filter) {
         });
     }
 
-    return (children || matcher(node, filter)) ? Object.assign({}, node, { children: children }, { toggled: true }) : void 0;
+    return (children || matchers[filter_type](node, filter)) ? Object.assign({}, node, { children: children }, { toggled: true }) : void 0;
 };
 
 
@@ -45,13 +50,16 @@ var filter_items = function (node, filter) {
  *
  * @returns {Object}
  */
-var get_filtered_tree = function (data, filter) {
-    filter = filter.toLowerCase();
+var get_filtered_tree = function (data, filter_type, filter) {
     var filtered;
 
+    if (filter_type === 'direct_only') {
+        filtered = filter_items(data, filter_type);
+    }
     // Only process if filter is 2 or more chars
-    if (filter.length >= 2) {
-        filtered = filter_items(data, filter);
+    else if (filter_type === 'filter' && filter && filter.length >= 2) {
+        filter = filter.toLowerCase();
+        filtered = filter_items(data, filter_type, filter);
     }
     if (!filtered) {
         // Default to root element only

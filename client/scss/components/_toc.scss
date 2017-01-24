@@ -17,10 +17,11 @@
     li {
       font-size: $nuxeo-body-smaller;
       padding-left: 0;
+      text-transform: capitalize;
     }
 
     .h2 {
-      text-transform: uppercase;
+      // text-transform: uppercase;
     }
 
     .h3 {
