@@ -21,6 +21,8 @@ $(document).ready(function () {
 
     $(document).foundation();
 
+    require('./list_span');
+
     var hljs = require('highlight.js');
     hljs.initHighlightingOnLoad();
 

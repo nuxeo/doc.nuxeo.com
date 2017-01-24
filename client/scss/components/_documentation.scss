@@ -43,7 +43,10 @@ $content-background: #f5f9fb;
 
     > ol > li,
     > ul > li {
-      max-width: 37em;
+      & div,
+      & p {
+        max-width: 37em;
+      }
     }
 
     > pre,
