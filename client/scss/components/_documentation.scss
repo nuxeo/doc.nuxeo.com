@@ -1,19 +1,21 @@
 $content-background: #f5f9fb;
 
-
-
-#page-container > div:first-of-type {
+#content-container {
   background-attachment: fixed;
   background-color: $content-background;
   background-image: url('/assets/imgs/nuxeo-grid.svg');
   background-position-x: 4rem;
   background-position-y: 350px;
   background-repeat: no-repeat;
+
+  #content {
+    margin-top: 0;
+  }
 }
 
 // medium+
 @media screen and #{breakpoint(medium up)} {
-  #page-container > div:first-of-type {
+  #content-container {
     background-position-x: calc(33vw + 4rem);
   }
 }
@@ -21,7 +23,7 @@ $content-background: #f5f9fb;
 
 // large+
 @media screen and #{breakpoint(large up)} {
-  #page-container > div:first-of-type {
+  #content-container {
     background-position-x: calc(25vw + 4rem);
   }
 
@@ -52,8 +54,23 @@ $content-background: #f5f9fb;
   }
 }
 
-#page-container #content {
-  margin-top: 0;
+// Large screen support
+@media screen and (min-width: 1800px) {
+  $wide-max-menu-width: 446px;
+  #side-menu-container {
+    max-width: $wide-max-menu-width;
+  }
+
+  #content-container {
+    background-position-x: calc(#{$wide-max-menu-width} + 7rem); // padding of 3rem + 4rem
+
+    &.large-9.large-push-3 {
+      left: $wide-max-menu-width;
+      padding-left: 3rem;
+      padding-right: 3rem;
+      width: calc(100% - #{$wide-max-menu-width});
+    }
+  }
 }
 
 .accordion {
