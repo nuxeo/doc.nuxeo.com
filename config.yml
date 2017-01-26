@@ -9,7 +9,7 @@ default:
         title: 'Nuxeo Documentation'
         author: 'Nuxeo'
         review_messages:
-            overdue: This page needs to be reviewed
+            overdue: This page may be a bit outdated, but we regularly update our documentation. Be sure to check back soon!
             invalid_date: Invalid Review Date
             not_set: Review Date Not Set
         remove_files_pattern:
