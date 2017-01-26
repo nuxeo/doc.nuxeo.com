@@ -114,11 +114,13 @@ Frontmatter | Behaviour
 `hidden: true` | Hidden from the hierarchy menu
 `toc: true` | Adds a table of contents derived from h2..h4  (`## h2` .. `#### h4`) headings
 `tabbed_page: true` | Convert the page to display a tabbed interface. h1 (`# h1`) headings are used as titles of each tab. `{{! end_of_tabs }}` can placed after the last section to allow content to be placed beneath the tabbed section.
-`redirect: /redirect/location` | Adds a redirect to the location specified. Accepts a url or `version/space/page name` (`710/nxdoc/installation` / `nxdoc/installation` / `installation`)
+`redirect: /redirect/location` | Adds a redirect to the location specified. Accepts a url or `version/space/page name` (`710/nxdoc/installation` / `/nxdoc/installation` / `installation`)
 `no_side_menu: true` | Hides the hierarchy menu for that page.
 `tree_item_index: 1` | For ordering the left hierarchical menu. Items are ordered by `tree_item_index` and then alphabetically. To ease the maintenance of ordering pages in the left.
 `section_parent: section-name` | Sets the section for this page and its children.
 `section_override: section-name` | Overrides the hierarchical section.
+`previous_link: version/space/page-name` | Adds previous link to the bottom of the page.
+`next_link: version/space/page-name` | Adds next link to the bottom of the page.
 
 ### Overriding Version Links
 This feature allows the version links to point to a different page.
