@@ -1,11 +1,35 @@
 $versions-inline-fg: rgba(0, 5, 34, .6);
+$versions-bg: rgba(255, 255, 255, .2);
 
-#page-versions {
+#nuxeo-satellite-header #page-versions {
+  background-color: $versions-bg;
+  border-radius: 5rem;
   font-size: $nuxeo-button-default;
+  letter-spacing: .05rem;
+  padding: .5em 1em .3em;
   text-transform: uppercase;
+
+  > ul {
+    height: inherit;
+
+    > li {
+      line-height: normal;
+
+      > a {
+        padding-bottom: 3px;
+        padding-top: 3px;
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
 
   .menu .submenu {
     border: 0;
+    margin-top: .3em;
+
 
     li {
       background: $white;
@@ -22,16 +46,6 @@ $versions-inline-fg: rgba(0, 5, 34, .6);
       &:hover {
         color: $primary-color;
       }
-    }
-  }
-
-  .menu-title {
-    color: $white;
-    letter-spacing: .05rem;
-
-    span {
-      border-right: 1px solid $white;
-      padding-right: 1rem;
     }
   }
 }

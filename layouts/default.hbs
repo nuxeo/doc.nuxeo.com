@@ -1,10 +1,10 @@
 {{> header_standard}}
 <div class="row">
     <div class="column">
-        {{!> breadcrumb}}
+        {{> breadcrumb}}
         <div class="heading-group">
+            <h1 id="page-title">{{title}}</h1>
           <div class="style-bar"></div>
-          <h1 id="page-title">{{title}}</h1>
           <div>
             Updated: {{moment history.[1].date format='LL'}}
             <a data-open="page-information" title="Page Information" aria-controls="page-information" aria-haspopup="true" tabindex="0">
