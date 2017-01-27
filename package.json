@@ -112,7 +112,7 @@
     "yaml_lint": "js-yaml -t > /dev/null",
     "default_redirects": "cp ./redirects_default.yml ./redirects.yml",
     "empty_directories": "npm run empty_site && npm run empty_temp && npm run empty_logs",
-    "empty_site": "rm -rf ./site/*",
+    "empty_site": "rm -rf ./site/* && rm -r modules/react/left_menu.js",
     "empty_temp": "rm -rf ./temp/*",
     "empty_logs": "rm -rf ./logs/*",
     "copy_assets": "rsync -a ./assets/ ./site/assets/ && npm run duplicate_asset_stats && cp editor.json ./site",
