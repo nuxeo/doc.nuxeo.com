@@ -1,7 +1,11 @@
 // Inline code
 code {
-  border-radius: $code-border-radius - 2;
+  border-radius: $code-border-radius;
   overflow-wrap: break-word;
+
+  a > & {
+    border: 1px solid;
+  }
 }
 
 $tooltip-background-color: rgba(0, 0, 0, .8);
