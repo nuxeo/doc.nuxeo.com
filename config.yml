@@ -39,7 +39,7 @@ default:
         platform:
             url: git@github.com:nuxeo/doc.nuxeo.com-content.git
             branches:
-                - static
+                - static-algolia
                 - master
                 - '710'
                 - '60'

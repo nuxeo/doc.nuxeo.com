@@ -181,7 +181,20 @@ h6 {
     }
   }
 }
+// Algolia
+#search-area {
+  .input-group .algolia-autocomplete {
+    margin-left: 1em;
+    width: 100%;
+  }
 
+  #search-input-full {
+    width: 100%;
+  }
+}
+
+/*
+// Google search
 #search {
   * {
     border: 0;
@@ -304,3 +317,4 @@ h6 {
     margin: 0 !important;
   }
 }
+*/
