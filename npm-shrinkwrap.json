@@ -1023,6 +1023,11 @@
       "resolved": "https://registry.npmjs.org/cli-width/-/cli-width-2.1.0.tgz",
       "dev": true
     },
+    "clipboard": {
+      "version": "1.5.16",
+      "from": "clipboard@latest",
+      "resolved": "https://registry.npmjs.org/clipboard/-/clipboard-1.5.16.tgz"
+    },
     "cliui": {
       "version": "2.1.0",
       "from": "cliui@>=2.1.0 <3.0.0",
@@ -1328,6 +1333,11 @@
       "version": "1.0.0",
       "from": "delayed-stream@>=1.0.0 <1.1.0",
       "resolved": "https://registry.npmjs.org/delayed-stream/-/delayed-stream-1.0.0.tgz"
+    },
+    "delegate": {
+      "version": "3.1.1",
+      "from": "delegate@>=3.1.1 <4.0.0",
+      "resolved": "https://registry.npmjs.org/delegate/-/delegate-3.1.1.tgz"
     },
     "delegates": {
       "version": "1.0.0",
@@ -2173,6 +2183,11 @@
           "dev": true
         }
       }
+    },
+    "good-listener": {
+      "version": "1.2.1",
+      "from": "good-listener@>=1.2.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/good-listener/-/good-listener-1.2.1.tgz"
     },
     "got": {
       "version": "3.3.1",
@@ -4377,6 +4392,11 @@
       "resolved": "https://registry.npmjs.org/script-loader/-/script-loader-0.7.0.tgz",
       "dev": true
     },
+    "select": {
+      "version": "1.1.0",
+      "from": "select@>=1.0.6 <2.0.0",
+      "resolved": "https://registry.npmjs.org/select/-/select-1.1.0.tgz"
+    },
     "semver": {
       "version": "5.3.0",
       "from": "semver@>=2.0.0 <3.0.0||>=3.0.0 <4.0.0||>=4.0.0 <5.0.0||>=5.0.0 <6.0.0",
@@ -4973,6 +4993,11 @@
       "from": "timers-browserify@>=2.0.2 <3.0.0",
       "resolved": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-2.0.2.tgz",
       "dev": true
+    },
+    "tiny-emitter": {
+      "version": "1.1.0",
+      "from": "tiny-emitter@>=1.0.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/tiny-emitter/-/tiny-emitter-1.1.0.tgz"
     },
     "to-array": {
       "version": "0.1.4",

@@ -21,10 +21,7 @@ $(document).ready(function () {
 
     $(document).foundation();
 
-    require('./list_span');
-
-    var hljs = require('highlight.js');
-    hljs.initHighlightingOnLoad();
+    require('./modules/list_span');
 
     var $rainbow_menu = $('#doc-main-menu');
     $('#nuxeo-satellite-header').find('.rainbow-menu').hover(function () {
@@ -32,6 +29,11 @@ $(document).ready(function () {
     }, function () {
         $rainbow_menu.removeClass('active');
     });
+
+    var hljs = require('highlight.js');
+    hljs.initHighlightingOnLoad();
+
+    require('./modules/copy_code');
 
     // Homepage search - Hiding Label when it has results
     var $search_area = $('#search-area');
