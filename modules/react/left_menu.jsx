@@ -44,7 +44,9 @@ const init_menu = function (data) {
             return {data: filtered};
         },
         onToggle: function (node, toggled) {
-            this.setState({data: data});
+            // const filtered = filter(data, 'direct_only');
+            // this.setState({data: filtered});
+            // this.setState({data: data});
             if (node.children) {
                 node.toggled = toggled;
             }
@@ -59,7 +61,8 @@ const init_menu = function (data) {
                 this.setState({data: filtered});
             }
             else {
-                this.setState({data: data});
+                const filtered = filter(data, 'direct_only');
+                this.setState({data: filtered});
             }
         },
         componentDidMount: function () {

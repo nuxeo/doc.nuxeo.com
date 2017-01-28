@@ -13,7 +13,13 @@ var matchers = {
         return node.name.toLowerCase().indexOf(filter) !== -1;
     },
     direct_only: function (node) {
-        return node.toggled || node.active;
+        if ((node.active || node.active_child) && node.children) {
+            node.children = node.children.map(function (child) {
+                child.active_child = true;
+                return child;
+            });
+        }
+        return node.active || node.active_child;
     }
 };
 
@@ -54,6 +60,7 @@ var get_filtered_tree = function (data, filter_type, filter) {
     var filtered;
 
     if (filter_type === 'direct_only') {
+        console.log('menu', data);
         filtered = filter_items(data, filter_type);
     }
     // Only process if filter is 2 or more chars

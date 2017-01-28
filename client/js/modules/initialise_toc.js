@@ -12,9 +12,15 @@ var initialise_toc = function () {
         var $side_menu = $('#side-menu');
         var $active = $side_menu.find('a.active');
 
-        $active.parent().after('<div id="toc"></div>');
+        $active.parent().next('span').find('ul').prepend('<li><div id="toc"></div></li>');
+
         $('#toc').append('<ul id="toc_list" class="vertical menu" data-magellan></ul>');
         $toc_list = $('#toc_list');
+    }
+    else {
+        // Ensure it's the first child
+        var $toc_parent = $('#toc').parent();
+        $toc_parent.parent().prepend($toc_parent);
     }
 
     $toc_list.find('li').remove();

@@ -1,0 +1,33 @@
+#search-box {
+  margin-left: -1rem;
+  margin-right: .5rem;
+  transition: width .4s ease;
+  width: 168px;
+
+  &.closed {
+    width: 0;
+  }
+
+  input {
+    color: $white;
+    // Fixes FF issue
+    display: inline-block;
+  }
+
+  :placeholder {
+    color: $dark-gray;
+    font-size: .8rem;
+    text-transform: uppercase;
+  }
+}
+
+#search-button {
+  color: $white;
+  padding: 1rem;
+  transition: color .2s ease;
+
+  &:hover,
+  &.active {
+    color: $primary-color;
+  }
+}

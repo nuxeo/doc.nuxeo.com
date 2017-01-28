@@ -1,6 +1,6 @@
 #side-menu {
   #toc {
-    padding-top: 0;
+    padding-top: 1rem;
 
     &:hover {
       background-color: inherit;
@@ -25,11 +25,11 @@
     }
 
     .h3 {
-      // padding-left: 1rem;
+      padding-left: 1rem;
     }
 
     .h4 {
-      padding-left: 1rem;
+      padding-left: 2rem;
     }
   }
 

@@ -1,16 +1,14 @@
 $active-border-width: 8px;
 $scrollbar-color: rgba(0, 0, 0, .3);
-$nuxeo-color-menu-background: #fafcfd;
-$nuxeo-color-menu-background-selected: #edf3f8;
+$menu-background: lighten($nuxeo-tutorial-color, 56.5%);
+$menu-fg: opacify($nuxeo-color-dark, .8);
+$menu-fg-active: $nuxeo-color-dark;
 
 // Left menu
 @mixin menu-section-colours ($color) {
-  $menu-background: lighten($color, 47%);
   $nuxeo-color-menu-hover: lighten($color, 12.2%);
   $level-0-color: $color;
-  $level-1-color: lighten($color, 15%);
-  $level-2-color: lighten($color, 28.4%);
-  $menu-foreground-color: darken($color, 68%);
+  $level-1-color: lighten($color, $nuxeo-section-lighten);
 
 
   #side-menu-container #side-menu .input-container {
@@ -18,21 +16,20 @@ $nuxeo-color-menu-background-selected: #edf3f8;
   }
 
   #side-menu-container {
-    // background: linear-gradient(90deg, $menu-background 21rem, $white 21rem);
     background-color: $menu-background;
   }
 
   #side-menu {
     ul {
       background-color: $level-0-color;
-      color: $menu-foreground-color;
+      color: $menu-fg;
     }
 
     ul ul {
       background-color: $level-1-color;
 
       & ul {
-        background-color: $level-2-color;
+        background-color: $menu-background;
 
         & ul > li {
           padding-left: 1rem;
@@ -45,7 +42,7 @@ $nuxeo-color-menu-background-selected: #edf3f8;
         background-color: $nuxeo-color-menu-hover;
 
         a {
-          color: $menu-foreground-color;
+          color: $menu-fg;
         }
       }
 
@@ -55,26 +52,26 @@ $nuxeo-color-menu-background-selected: #edf3f8;
     }
 
     a {
-      color: $secondary-color;
+      color: $menu-fg;
     }
 
-    .input-group {
-      background-color: rgba(255, 255, 255, .2);
-      margin: 0;
-      padding: .5rem;
-      width: 100%;
-    }
+    // .input-group {
+    //   background-color: rgba(255, 255, 255, .4);
+    //   margin: 0;
+    //   padding: .5rem;
+    //   width: 100%;
+    // }
 
     .input-group-field {
-      color: $color;
+      color: $menu-fg-active;
 
       &::placeholder {
-        color: $menu-foreground-color;
+        color: $menu-fg;
       }
     }
 
     #toc .button {
-      color: $menu-foreground-color;
+      color: $menu-fg;
 
       &:hover,
       &.active {
@@ -141,7 +138,6 @@ $nuxeo-color-menu-background-selected: #edf3f8;
 }
 
 #side-menu-container {
-  // background: linear-gradient(90deg, $menu-background 21rem, $white 21rem);
   height: calc(100vh - 50px);
   left: 0;
   margin-top: 50px;
@@ -166,8 +162,6 @@ $nuxeo-color-menu-background-selected: #edf3f8;
 
 #side-menu {
   ul {
-    // background-color: $level-0-color;
-    // color: $menu-foreground-color;
     font-size: $nuxeo-body-small;
     font-weight: bold;
     list-style: none;
@@ -176,11 +170,7 @@ $nuxeo-color-menu-background-selected: #edf3f8;
   }
 
   ul ul {
-    // background-color: $level-1-color;
-
     & ul {
-      // background-color: $level-2-color;
-
       & ul > li {
         padding-left: 1rem;
       }
@@ -191,60 +181,54 @@ $nuxeo-color-menu-background-selected: #edf3f8;
     > div {
       padding: .5rem .5rem .5rem 1rem;
 
-      > i {
-        margin-left: -.5rem;
-        position: absolute;
-      }
+      // > i {
+      //   margin-left: -.5rem;
+      //   position: absolute;
+      // }
 
       a {
         margin-left: 1em;
       }
-
-      &:hover {
-        // background-color: $nuxeo-color-menu-hover;
-
-        a {
-          // color: $menu-foreground-color;
-        }
-      }
     }
 
     i {
-      color: $dark-gray;
+      color: $menu-fg;
       cursor: pointer;
+      float: right;
       font-size: $nuxeo-body-smaller;
       line-height: $lead-lineheight;
       transition: color .2s ease;
-
-      &:hover {
-        // color: $primary-color;
-      }
     }
   }
 
   a {
-    // color: $secondary-color;
     display: block;
     transition: color .2s ease;
 
     &.active {
-      color: $black;
+      color: $menu-fg-active;
     }
   }
 
+  ul ul ul a.active::before {
+    content: '• ';
+  }
+
+  #toc a.active::before {
+    content: '';
+  }
+
   .input-group {
-    background-color: rgba(255, 255, 255, .2);
+    background-color: rgba(255, 255, 255, .4);
     margin: 0;
     padding: .5rem;
     width: 100%;
   }
 
   .input-group-field {
-    // color: $primary-color;
     height: 2rem;
 
     &::placeholder {
-      // color: $menu-foreground-color;
       font-size: .8rem;
       text-transform: uppercase;
     }
@@ -254,7 +238,6 @@ $nuxeo-color-menu-background-selected: #edf3f8;
 // Small
 @media screen and #{breakpoint(small down)} {
   #side-menu-container {
-    // background: $menu-background;
   }
 
   #side-menu {

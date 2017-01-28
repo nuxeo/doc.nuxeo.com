@@ -1,7 +1,6 @@
 $menu-shadow: rgba(0, 0, 0, .1);
 $menu-width: 370px;
-$menu-item-height: 60px;
-$second-level-color: rgba(0, 5, 34, .7);
+$second-level-fg: opacify($nuxeo-color-dark, .8);
 
 @mixin section-colours ($color) {
   border-left-color: $color;
@@ -19,7 +18,7 @@ $second-level-color: rgba(0, 5, 34, .7);
   }
 
   ul.child li:hover {
-    background-color: lighten($color, 12.2%);
+    background-color: lighten($color, $nuxeo-section-lighten);
   }
 }
 
@@ -72,23 +71,16 @@ $second-level-color: rgba(0, 5, 34, .7);
       font-stretch: normal;
       font-style: normal;
       font-weight: 500;
-      height: $menu-item-height;
       letter-spacing: 1.8px;
-      line-height: $menu-item-height;
-      padding-left: 10px;
+      padding: 19px 5px 19px 10px;
       text-transform: uppercase;
 
       & {
-        height: $menu-item-height;
         transition: background-color .4s ease-in;
         width: $menu-width;
 
         a {
-          height: $menu-item-height;
-          overflow: hidden;
-          text-overflow: ellipsis;
           transition: color .4s ease;
-          white-space: nowrap;
         }
 
         &:hover,
@@ -151,13 +143,12 @@ $second-level-color: rgba(0, 5, 34, .7);
         top: 0;
 
         a {
-          color: $second-level-color;
+          color: $second-level-fg;
         }
 
         li {
           border-left: 0;
-          height: 40px;
-          line-height: 40px;
+          padding: 14px 20px;
         }
       }
     }
