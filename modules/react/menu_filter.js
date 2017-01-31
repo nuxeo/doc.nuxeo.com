@@ -60,7 +60,7 @@ var get_filtered_tree = function (data, filter_type, filter) {
     var filtered;
 
     if (filter_type === 'direct_only') {
-        console.log('menu', data);
+        // console.log('menu', data);
         filtered = filter_items(data, filter_type);
     }
     // Only process if filter is 2 or more chars

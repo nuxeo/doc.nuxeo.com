@@ -1,93 +1,47 @@
 $active-border-width: 8px;
-$scrollbar-color: rgba(0, 0, 0, .3);
+$scrollbar-color: rgba($black, .3);
 $menu-background: lighten($nuxeo-tutorial-color, 56.5%);
-$menu-fg: opacify($nuxeo-color-dark, .8);
+$menu-fg: rgba($nuxeo-color-dark, .8);
 $menu-fg-active: $nuxeo-color-dark;
 
 // Left menu
 @mixin menu-section-colours ($color) {
-  $nuxeo-color-menu-hover: lighten($color, 12.2%);
+  $menu-hover: lighten($color, 12.2%);
   $level-0-color: $color;
   $level-1-color: lighten($color, $nuxeo-section-lighten);
 
-
+  //
   #side-menu-container #side-menu .input-container {
     background: $level-0-color;
   }
 
-  #side-menu-container {
-    background-color: $menu-background;
-  }
+  #side-menu ul {
+    .toc-item {
+      &:hover a,
+      & a.active {
+        color: $color;
+      }
+    }
 
-  #side-menu {
-    ul {
+    li:not(.toc-item) {
+      &:hover{
+        background-color: $menu-hover;
+      }
+    }
+
+    .l1 {
       background-color: $level-0-color;
-      color: $menu-fg;
     }
 
-    ul ul {
+    .l2 {
       background-color: $level-1-color;
-
-      & ul {
-        background-color: $menu-background;
-
-        & ul > li {
-          padding-left: 1rem;
-        }
-      }
-    }
-
-    li {
-      > div:hover {
-        background-color: $nuxeo-color-menu-hover;
-
-        a {
-          color: $menu-fg;
-        }
-      }
-
-      i:hover {
-        color: $color;
-      }
-    }
-
-    a {
-      color: $menu-fg;
-    }
-
-    // .input-group {
-    //   background-color: rgba(255, 255, 255, .4);
-    //   margin: 0;
-    //   padding: .5rem;
-    //   width: 100%;
-    // }
-
-    .input-group-field {
-      color: $menu-fg-active;
-
-      &::placeholder {
-        color: $menu-fg;
-      }
-    }
-
-    #toc .button {
-      color: $menu-fg;
-
-      &:hover,
-      &.active {
-        color: $color;
-      }
-    }
-  }
-
-  // Small
-  @media screen and #{breakpoint(small down)} {
-    #side-menu-container {
-      background: $menu-background;
     }
   }
 }
 
+#side-menu-container {
+  background: $menu-background;
+}
 
 .doc-section {
   &.doc-section- {
@@ -131,12 +85,6 @@ $menu-fg-active: $nuxeo-color-dark;
   }
 }
 
-#page-container #side-menu .input-container {
-  // background: $level-0-color;
-  margin: 0;
-  padding: 1rem 2rem;
-}
-
 #side-menu-container {
   height: calc(100vh - 50px);
   left: 0;
@@ -160,75 +108,27 @@ $menu-fg-active: $nuxeo-color-dark;
   }
 }
 
+// Filtering input
 #side-menu {
-  ul {
-    font-size: $nuxeo-body-small;
-    font-weight: bold;
-    list-style: none;
+  .input-container {
     margin: 0;
-    text-transform: uppercase;
-  }
-
-  ul ul {
-    & ul {
-      & ul > li {
-        padding-left: 1rem;
-      }
-    }
-  }
-
-  li {
-    > div {
-      padding: .5rem .5rem .5rem 1rem;
-
-      // > i {
-      //   margin-left: -.5rem;
-      //   position: absolute;
-      // }
-
-      a {
-        margin-left: 1em;
-      }
-    }
-
-    i {
-      color: $menu-fg;
-      cursor: pointer;
-      float: right;
-      font-size: $nuxeo-body-smaller;
-      line-height: $lead-lineheight;
-      transition: color .2s ease;
-    }
-  }
-
-  a {
-    display: block;
-    transition: color .2s ease;
-
-    &.active {
-      color: $menu-fg-active;
-    }
-  }
-
-  ul ul ul a.active::before {
-    content: '• ';
-  }
-
-  #toc a.active::before {
-    content: '';
+    padding: 1rem 2rem;
   }
 
   .input-group {
-    background-color: rgba(255, 255, 255, .4);
+    background-color: rgba($white, .4);
     margin: 0;
     padding: .5rem;
     width: 100%;
   }
 
   .input-group-field {
+    color: $menu-fg-active;
+    font-size: .9rem;
     height: 2rem;
 
     &::placeholder {
+      color: $menu-fg;
       font-size: .8rem;
       text-transform: uppercase;
     }
@@ -237,10 +137,163 @@ $menu-fg-active: $nuxeo-color-dark;
 
 // Small
 @media screen and #{breakpoint(small down)} {
-  #side-menu-container {
-  }
-
   #side-menu {
     max-width: none;
   }
+}
+
+
+// Menu
+#side-menu {
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+
+  li {
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 19px;
+    text-transform: uppercase;
+    transition: background-color .2s ease;
+
+    i.fa {
+      cursor: pointer;
+      float: right;
+      margin-right: .4em;
+      margin-top: .8em;
+      transition: transform .2s ease;
+    }
+
+    &.open i.fa {
+      transform: rotate(90deg);
+    }
+
+    a {
+      color: $menu-fg;
+      display: block;
+      padding: .5rem 1rem;
+      transition: color .2s ease;
+    }
+
+    &.active a {
+      color: $menu-fg-active;
+    }
+  }
+
+  .l1,
+  .l2,
+  .l3 {
+    padding-left: 1rem;
+  }
+
+  .l3,
+  .l4,
+  .l5,
+  .l6,
+  .l7 {
+    &.active {
+      position: relative;
+
+      &::before {
+        content: '•';
+        left: 1rem;
+        position: absolute;
+        top: .5em;
+      }
+    }
+  }
+
+  .l4 {
+    padding-left: 2rem;
+
+    &.active::before {
+      left: 2rem;
+    }
+  }
+
+  .l5 {
+    padding-left: 3rem;
+
+    &.active::before {
+      left: 3rem;
+    }
+  }
+
+  .l6 {
+    padding-left: 4rem;
+
+    &.active::before {
+      left: 4rem;
+    }
+  }
+
+  .l7 {
+    padding-left: 5rem;
+
+    &.active::before {
+      left: 5rem;
+    }
+  }
+
+  // TOC
+  .toc-item {
+    // padding-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    text-transform: capitalize;
+
+    #side-menu-container & {
+      background-color: $white;
+    }
+
+    &.first {
+      margin-top: 1rem;
+    }
+
+    &.last {
+      margin-bottom: 1rem;
+    }
+    // li {
+    //   font-size: $nuxeo-body-smaller;
+    //   padding-left: 0;
+    // }
+    //
+    // .h2 {
+    //   // text-transform: uppercase;
+    // }
+    //
+    // .h3 {
+    //   padding-left: 1rem;
+    // }
+    //
+    // .h4 {
+    //   padding-left: 2rem;
+    // }
+  }
+
+  // ul ul ul #toc_list {
+  //   padding-left: 1rem;
+  // }
+  //
+  // ul ul ul ul #toc_list {
+  //   padding-left: 2rem;
+  // }
+  //
+  // ul ul ul ul ul #toc_list {
+  //   padding-left: 3rem;
+  // }
+  //
+  // #toc_list {
+  //   background-color: $white;
+  //   margin-left: auto;
+  //   margin-right: .5rem;
+  //   overflow-y: auto;
+  //   padding: .5rem .5rem .5rem 1rem;
+  //
+  //   .active {
+  //     font-weight: bold;
+  //   }
+  //
+  // }
 }

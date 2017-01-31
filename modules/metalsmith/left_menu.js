@@ -7,9 +7,17 @@ const {debug} = require('../debugger')('metalsmith-menu');
 // npm packages
 const multimatch = require('multimatch');
 const clone = require('lodash.clonedeep');
+const {readFileSync} = require('fs');
+const path = require('path');
+const menu_flatten = require('../menu_flatten');
+const Handlebars = require('handlebars');
+
+const template = readFileSync(path.join(__dirname, '../../layouts/left_menu.hbs'));
+debug('template', template.toString());
+const build_menu = Handlebars.compile(template.toString());
 
 // local packages
-const {init_menu, render} = require('../react/left_menu');
+// const {init_menu, render} = require('../react/left_menu');
 // const toc_items_to_hierarchy = require('../toc_items_to_hierarchy');
 
 const menu = function (options) {
@@ -17,7 +25,9 @@ const menu = function (options) {
     return function (files, metalsmith, done) {
         const metadata = metalsmith.metadata();
 
-        multimatch(Object.keys(files), '**/*.html').forEach((filename) => {
+        const matched_files = multimatch(Object.keys(files), '**/*.html');
+
+        matched_files.forEach((filename) => {
             const file = files[filename];
             debug('filename: %s, space_path: %s', filename, file.url && file.url.key.space_path);
             let data = clone(metadata.hierarchies[file.url.key.space_path]);
@@ -45,15 +55,6 @@ const menu = function (options) {
                             }
                             else {
                                 item.active = true;
-
-                                // Add TOC items
-                                // if (file.toc_items) {
-                                //     item.toggled = true;
-                                //     item.children = item.children || [];
-                                //     debug('%s - toc: %o, toc_items: %o', file.title, file.toc, file.toc_items);
-                                //     const toc_hierarchy = toc_items_to_hierarchy(file.toc_items, filename);
-                                //     item.children = toc_hierarchy.concat(item.children);
-                                // }
                             }
                         }
                     }
@@ -69,12 +70,20 @@ const menu = function (options) {
                     });
                 }
 
-                const sideMenu = init_menu(data);
+                // Flatten data structure
+                debug(`Processing: ${filename}`, data, file.toc_items);
+                const menu_data = menu_flatten(data, file.toc_items);
 
-                const menu_html = render(sideMenu);
+                // Build html
+                const menu_html = build_menu({menu: menu_data});
+
+
+                // const sideMenu = init_menu(data);
+                //
+                // const menu_html = render(sideMenu);
                 const menu_json = `
                 <script id="side-menu-data" type="text/javascript">
-                    var side_menu_data = ${JSON.stringify(data)};
+                    var side_menu_data = ${JSON.stringify(menu_data)};
                 </script>
                 `;
                 const contents = file.contents.toString();
@@ -82,7 +91,7 @@ const menu = function (options) {
             }
         });
 
-        return done();
+        done();
     };
 };
 

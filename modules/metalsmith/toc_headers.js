@@ -2,12 +2,9 @@
 /* eslint-env es6 */
 
 // Debugging
-// const debug_lib = require('debug');
-// const debug = debug_lib('metalsmith-toc-headers');
-// const error = debug_lib('metalsmith-toc-headers:error');
+const {debug} = require('../debugger')('metalsmith-toc-headers');
 
 // npm packages
-const each = require('async').each;
 const cheerio = require('cheerio');
 
 
@@ -23,7 +20,7 @@ const toc_headers = function () {
             return file.toc;
         });
 
-        const get_files = function (filepath, callback) {
+        const get_files = function (filepath) {
             const file = files[filepath];
 
             file.toc_items = [];
@@ -43,10 +40,11 @@ const toc_headers = function () {
                 const level = +/\d+/.exec($this.prop('tagName').toLowerCase())[0];
                 file.toc_items.push({id, title, level});
             });
-            callback();
+            debug(`Processing: ${filepath}`, file.toc_items);
         };
 
-        each(filepaths, get_files, done);
+        filepaths.forEach(get_files);
+        done();
     };
 };
 

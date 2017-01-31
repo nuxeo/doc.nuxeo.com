@@ -3,14 +3,14 @@
 /* global $, side_menu_data */
 
 $(document).ready(function () {
-    var menu = require('./menu');
+    // var menu = require('./menu');
     var menu_height = require('./left_menu_height');
     var satellite_header = require('./satellite_header');
 
     // Menu
     if (typeof side_menu_data !== 'undefined') {
         menu_height($);
-        menu();
+        // menu();
     }
 
     // Tabbed page
@@ -23,6 +23,7 @@ $(document).ready(function () {
 
     require('./modules/list_span');
 
+    // Rainbow menu - enable open and close
     var $rainbow_menu = $('#doc-main-menu');
     $('#nuxeo-satellite-header').find('.rainbow-menu').hover(function () {
         $rainbow_menu.addClass('active');
@@ -30,39 +31,19 @@ $(document).ready(function () {
         $rainbow_menu.removeClass('active');
     });
 
+    // Style codeblocks
     var hljs = require('highlight.js');
     hljs.initHighlightingOnLoad();
 
+    // Add copy icon to codeblocks
     require('./modules/copy_code');
 
-    // Homepage search - Hiding Label when it has results
+    // Homepage search - focus on click
     var $search_area = $('#search-area');
-    if ($search_area.length) {
-        var $input_group_label = $search_area.find('.input-group-label');
-        $search_area.on('click', function () {
-            var $this = $(this);
-            var $input = $this.find('input.gsc-input');
-            $input.focus();
-        })
-        .on('focus', 'input.gsc-input', function () {
-            /* eslint no-invalid-this: 0 */
-            $(this).keyup();
-            this.setSelectionRange(0, this.value.length);
-        })
-        .on('keyup', 'input.gsc-input', function () {
-            setTimeout(function () {
-                if ($search_area.find('.gsc-results').length && !$search_area.find('.gs-result.gs-no-result').length) {
-                    $input_group_label.addClass('closed');
-                }
-                else {
-                    $input_group_label.removeClass('closed');
-                }
-            }, 1e3);
-        });
-
-        $search_area.click();
-    }
-
+    var $search_input_full = $('#search-input-full');
+    $search_area.on('click', function () {
+        $search_input_full.focus();
+    });
 
     // satellite_header
     satellite_header($);
@@ -79,6 +60,4 @@ $(window).load(function () {
     if (!testAttribute('input', 'autofocus')) {
         $('input[autofocus]').focus();
     }
-
-    $('#search-area').click();
 });

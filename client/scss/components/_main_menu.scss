@@ -1,6 +1,6 @@
-$menu-shadow: rgba(0, 0, 0, .1);
+$menu-shadow: rgba($black, .2);
 $menu-width: 370px;
-$second-level-fg: opacify($nuxeo-color-dark, .8);
+$second-level-fg: rgba($nuxeo-color-dark, .8);
 
 @mixin section-colours ($color) {
   border-left-color: $color;

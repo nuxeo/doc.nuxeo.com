@@ -2,7 +2,7 @@
 /* eslint-env es6 */
 
 // Debugging
-const {error} = require('../debugger')('handlebars-title');
+const {warn, error} = require('../debugger')('handlebars-title');
 
 const page_title = function (url, options) {
     if (!options) {
@@ -18,7 +18,7 @@ const page_title = function (url, options) {
         return title;
     }
     else {
-        error('no page located for %s', url);
+        warn('no page located for %s', url);
         return '';
     }
 };
