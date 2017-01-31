@@ -8,20 +8,27 @@
             />
         </div>
     </div>
-    <ul data-magellan data-deep-linking="true">
+    <ul>
     {{#each menu}}
-    {{#if is_toc}}
-        <li class="{{classes}}" {{#unless show}}style="display: none;"{{/unless}}>
-            {{#if (condition id '||' title)}}
-            <a href="#{{id}}">{{title}}</a>
-            {{/if}}
-        </li>
-    {{else}}
+    {{#if id}}
         <li class="id-{{id}} {{classes}}" {{#unless show}}style="display: none;"{{/unless}}>
             {{#if has_control}}
             <i class="fa fa-fw fa-caret-right" aria-hidden="true"></i>
             {{/if}}
             <a href="{{url_full}}">{{name}}</a>
+        </li>
+    {{/if}}
+    {{#if toc_items}}
+        <li class="contains-toc">
+            <ul id="toc_list" data-magellan data-deep-linking="true">
+                {{#each toc_items}}
+                <li id="toc_item_{{@index}}" class="{{classes}}" {{#unless show}}style="display: none;"{{/unless}}>
+                    {{#if (condition id '||' title)}}
+                    <a href="#{{id}}">{{title}}</a>
+                    {{/if}}
+                </li>
+                {{/each}}
+            </ul>
         </li>
     {{/if}}
     {{/each}}

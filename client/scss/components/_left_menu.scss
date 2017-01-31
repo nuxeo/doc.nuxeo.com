@@ -16,14 +16,7 @@ $menu-fg-active: $nuxeo-color-dark;
   }
 
   #side-menu ul {
-    .toc-item {
-      &:hover a,
-      & a.active {
-        color: $color;
-      }
-    }
-
-    li:not(.toc-item) {
+    li:not(.contains-toc, .toc-item) {
       &:hover{
         background-color: $menu-hover;
       }
@@ -237,63 +230,52 @@ $menu-fg-active: $nuxeo-color-dark;
   }
 
   // TOC
-  .toc-item {
-    // padding-top: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    text-transform: capitalize;
+  #toc_list {
+    background-color: $white;
+    margin: 1rem;
 
-    #side-menu-container & {
-      background-color: $white;
-    }
+    .toc-item {
+      background-color: transparent;
+      font-size: 12px;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      padding-left: 0;
+      text-transform: capitalize;
 
-    &.first {
-      margin-top: 1rem;
-    }
+      a {
+        color: $menu-fg-active;
+      }
 
-    &.last {
-      margin-bottom: 1rem;
+      &:hover a,
+      & a.active {
+        color: $primary-color;
+      }
+
+      // Default indentation
+      &.l4 {
+        margin-left: 1rem;
+      }
+
+      &.l5 {
+        margin-left: 2rem;
+      }
+
+      &.l6 {
+        margin-left: 3rem;
+      }
+
+      &.l7 {
+        margin-left: 4rem;
+      }
+
+      // TOC level indentation
+      &.h3 {
+        padding-left: 1rem;
+      }
+
+      &.h4 {
+        padding-left: 2rem;
+      }
     }
-    // li {
-    //   font-size: $nuxeo-body-smaller;
-    //   padding-left: 0;
-    // }
-    //
-    // .h2 {
-    //   // text-transform: uppercase;
-    // }
-    //
-    // .h3 {
-    //   padding-left: 1rem;
-    // }
-    //
-    // .h4 {
-    //   padding-left: 2rem;
-    // }
   }
-
-  // ul ul ul #toc_list {
-  //   padding-left: 1rem;
-  // }
-  //
-  // ul ul ul ul #toc_list {
-  //   padding-left: 2rem;
-  // }
-  //
-  // ul ul ul ul ul #toc_list {
-  //   padding-left: 3rem;
-  // }
-  //
-  // #toc_list {
-  //   background-color: $white;
-  //   margin-left: auto;
-  //   margin-right: .5rem;
-  //   overflow-y: auto;
-  //   padding: .5rem .5rem .5rem 1rem;
-  //
-  //   .active {
-  //     font-weight: bold;
-  //   }
-  //
-  // }
 }

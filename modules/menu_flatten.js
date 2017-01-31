@@ -39,7 +39,7 @@ const get_pages = (page, toc, level = 1, parents = []) => {
 
     page_classes.push(`l${level}`);
 
-    menu_items.push({
+    const page_item = {
         id,
         name,
         url_full,
@@ -49,30 +49,15 @@ const get_pages = (page, toc, level = 1, parents = []) => {
         parents,
         has_control,
         classes: page_classes.join(' ')
-    });
-    debug('current_page:', menu_items);
+    };
 
     if (active && toc) {
-        menu_items.push({
-            is_toc : true,
-            show   : true,
-            classes: [
-                'toc-item',
-                `l${level}`,
-                'first'
-            ].join(' ')
-        });
-        menu_items = menu_items.concat(toc.map(process_toc_items(level)));
-        menu_items.push({
-            is_toc : true,
-            show   : true,
-            classes: [
-                'toc-item',
-                `l${level}`,
-                'last'
-            ].join(' ')
-        });
+        page_item.toc_items = toc.map(process_toc_items());
     }
+
+    menu_items.push(page_item);
+    debug('current_page:', menu_items);
+
 
     if (children) {
         const new_level = level + 1;
@@ -111,7 +96,11 @@ const menu_flatten = (pages, toc) => {
         }
     }
     else if (toc) {
-        all_pages = toc.map(process_toc_items());
+        all_pages = [
+            {
+                toc_items: toc.map(process_toc_items())
+            }
+        ];
     }
 
     return all_pages;
