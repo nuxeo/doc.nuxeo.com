@@ -81,7 +81,11 @@
 ^/nxdoc/jsf-page-layout-system-overview/?$: /nxdoc/jsf-ui-framework-overview
 ^/nxdoc/nuxeo-elements-quickstart/?$: /nxdoc/nuxeo-elements-tutorial/
 ^/nxdoc/web-ui-overview/?$: /nxdoc/web-ui/
-
+^/nxdoc/one-step-validation-flow-based-on-lifecycle-only/?$: /nxdoc/workflow-use-cases/
+^/nxdoc/create-a-button-that-triggers-the-task-assignment/?$: /nxdoc/workflow-use-cases/
+^/nxdoc/create-a-task-assignment-alert/?$: /nxdoc/workflow-use-cases/
+^/nxdoc/functional-tour/?$: /nxdoc/workflow-use-cases/
+^/nxdoc/implement-the-validation-logic/?$: /nxdoc/workflow-use-cases/
 
 ^/userdoc/nuxeo-drive/?$: /nxdoc/nuxeo-drive
 ^/userdoc/nuxeo-drive-faq/?$: /nxdoc/nuxeo-drive-faq
