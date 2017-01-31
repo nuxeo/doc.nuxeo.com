@@ -77,17 +77,8 @@ const menu = function (options) {
                 // Build html
                 const menu_html = build_menu({menu: menu_data});
 
-
-                // const sideMenu = init_menu(data);
-                //
-                // const menu_html = render(sideMenu);
-                const menu_json = `
-                <script id="side-menu-data" type="text/javascript">
-                    var side_menu_data = ${JSON.stringify(menu_data)};
-                </script>
-                `;
                 const contents = file.contents.toString();
-                file.contents = Buffer.from(contents.replace('<menu>', `${menu_json}${menu_html}`));
+                file.contents = Buffer.from(contents.replace('<menu>', menu_html));
             }
         });
 

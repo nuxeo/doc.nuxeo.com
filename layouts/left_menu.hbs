@@ -11,7 +11,7 @@
     <ul>
     {{#each menu}}
     {{#if id}}
-        <li class="id-{{id}} {{classes}}" {{#unless show}}style="display: none;"{{/unless}}>
+        <li data-menu-id="{{id}}" data-menu-level="{{level}}" class="{{classes}}" {{#unless show}}style="display: none;"{{/unless}}>
             {{#if has_control}}
             <i class="fa fa-fw fa-caret-right" aria-hidden="true"></i>
             {{/if}}
@@ -20,7 +20,7 @@
     {{/if}}
     {{#if toc_items}}
         <li class="contains-toc">
-            <ul id="toc_list" data-magellan data-deep-linking="true">
+            <ul id="toc_list" data-magellan>
                 {{#each toc_items}}
                 <li id="toc_item_{{@index}}" class="{{classes}}" {{#unless show}}style="display: none;"{{/unless}}>
                     {{#if (condition id '||' title)}}

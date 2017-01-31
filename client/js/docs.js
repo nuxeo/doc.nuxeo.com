@@ -1,23 +1,23 @@
 'use strict';
 /* eslint-env browser */
-/* global $, side_menu_data */
+/* global $ */
 
 $(document).ready(function () {
-    // var menu = require('./menu');
-    var menu_height = require('./left_menu_height');
+    var menu = require('./modules/left_menu');
+    var menu_height = require('./modules/left_menu_height');
     var satellite_header = require('./satellite_header');
-
-    // Menu
-    if (typeof side_menu_data !== 'undefined') {
-        menu_height($);
-        // menu();
-    }
 
     // Tabbed page
     require('./tabbed');
 
-    // In page TOC
-    require('./toc');
+    // Menu
+    if ($('#side-menu').find('div').length) {
+        menu_height($);
+        menu($);
+
+        // In page TOC
+        require('./modules/toc');
+    }
 
     $(document).foundation();
 
