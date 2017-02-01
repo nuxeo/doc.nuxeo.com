@@ -23,8 +23,8 @@
 ^/display/GLOS/?$: /glos/
 
 ^/display/SPRINT/?$: /
-
 ^/display/KB/?$: /
+^/dsplay/KB/java.net.SocketException\+Too\+many\+open\+files/?$: /nxdoc/java.net.SocketException-too-many-open-files/
 
 ^/display/NXDOC/Learning+with+Videos/?$: https://university.nuxeo.io
 ^/display/NXDOC/How+to+Brand+Your+Application/?$: /studio/branding
@@ -86,6 +86,7 @@
 ^/nxdoc/create-a-task-assignment-alert/?$: /nxdoc/workflow-use-cases/
 ^/nxdoc/functional-tour/?$: /nxdoc/workflow-use-cases/
 ^/nxdoc/implement-the-validation-logic/?$: /nxdoc/workflow-use-cases/
+
 
 ^/userdoc/nuxeo-drive/?$: /nxdoc/nuxeo-drive
 ^/userdoc/nuxeo-drive-faq/?$: /nxdoc/nuxeo-drive-faq
