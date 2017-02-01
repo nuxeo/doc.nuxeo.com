@@ -16,10 +16,6 @@ const template = readFileSync(path.join(__dirname, '../../layouts/left_menu.hbs'
 debug('template', template.toString());
 const build_menu = Handlebars.compile(template.toString());
 
-// local packages
-// const {init_menu, render} = require('../react/left_menu');
-// const toc_items_to_hierarchy = require('../toc_items_to_hierarchy');
-
 const menu = function (options) {
     debug('Options: %o', options);
     return function (files, metalsmith, done) {

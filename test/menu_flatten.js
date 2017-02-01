@@ -225,7 +225,7 @@ test('menu_flatten returns values as expected', function (assert) {
                             level  : 2,
                             show   : true,
                             is_toc : true,
-                            classes: 'toc-item l1 h2'
+                            classes: 'toc-item l2 h2'
                         }
                     ],
                     open: true

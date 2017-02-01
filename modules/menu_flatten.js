@@ -55,7 +55,7 @@ const get_pages = (page, toc, level = 1, parents = []) => {
         page_item.toc_classes = parents.map(parent_id => `p${parent_id}`);
         page_item.toc_classes.push(`l${level}`);
         page_item.toc_classes = page_item.toc_classes.join(' ');
-        page_item.toc_items = toc.map(process_toc_items());
+        page_item.toc_items = toc.map(process_toc_items(level));
     }
 
     menu_items.push(page_item);
