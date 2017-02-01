@@ -17,17 +17,17 @@ $menu-fg-active: $nuxeo-color-dark;
 
   #side-menu ul {
     li:not(.contains-toc, .toc-item) {
-      &:hover{
+      &.l1 {
+        background-color: $level-0-color;
+      }
+
+      &.l2 {
+        background-color: $level-1-color;
+      }
+
+      &:hover {
         background-color: $menu-hover;
       }
-    }
-
-    .l1 {
-      background-color: $level-0-color;
-    }
-
-    .l2 {
-      background-color: $level-1-color;
     }
   }
 }
@@ -174,57 +174,59 @@ $menu-fg-active: $nuxeo-color-dark;
     }
   }
 
-  .l1,
-  .l2,
-  .l3 {
-    padding-left: 1rem;
-  }
+  :not(.contains-toc, .toc-item) {
+    &.l1,
+    &.l2,
+    &.l3 {
+      padding-left: 1rem;
+    }
 
-  .l4,
-  .l5,
-  .l6,
-  .l7 {
-    &.active {
-      position: relative;
+    &.l4,
+    &.l5,
+    &.l6,
+    &.l7 {
+      &.active {
+        position: relative;
 
-      &::before {
-        content: '•';
-        left: 1rem;
-        position: absolute;
-        top: .5em;
+        &::before {
+          content: '•';
+          left: 1rem;
+          position: absolute;
+          top: .5em;
+        }
       }
     }
-  }
 
-  .l4 {
-    padding-left: 2rem;
+    &.l4 {
+      padding-left: 2rem;
 
-    &.active::before {
-      left: 2rem;
+      &.active::before {
+        left: 2rem;
+      }
     }
-  }
 
-  .l5 {
-    padding-left: 3rem;
+    &.l5 {
+      padding-left: 3rem;
 
-    &.active::before {
-      left: 3rem;
+      &.active::before {
+        left: 3rem;
+      }
     }
-  }
 
-  .l6 {
-    padding-left: 4rem;
+    &.l6 {
+      padding-left: 4rem;
 
-    &.active::before {
-      left: 4rem;
+      &.active::before {
+        left: 4rem;
+      }
     }
-  }
 
-  .l7 {
-    padding-left: 5rem;
+    &.l7 {
+      padding-left: 5rem;
 
-    &.active::before {
-      left: 5rem;
+      &.active::before {
+        left: 5rem;
+      }
     }
   }
 
@@ -251,6 +253,12 @@ $menu-fg-active: $nuxeo-color-dark;
       }
 
       // Default indentation
+      &.l1,
+      &.l2,
+      &.l3 {
+        margin-left: 0;
+      }
+
       &.l4 {
         margin-left: 1rem;
       }

@@ -4,9 +4,11 @@ $versions-bg: rgba(255, 255, 255, .2);
 #nuxeo-satellite-header #page-versions {
   background-color: $versions-bg;
   border-radius: 5rem;
-  font-size: $nuxeo-button-default;
-  letter-spacing: .05rem;
-  padding: .5em 1em .3em;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 19px;
+  padding: .5em 1em .4em;
   text-transform: uppercase;
 
   > ul {
