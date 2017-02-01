@@ -19,7 +19,7 @@
         </li>
     {{/if}}
     {{#if toc_items}}
-        <li class="contains-toc">
+        <li class="{{toc_classes}} contains-toc">
             <ul id="toc_list" data-magellan>
                 {{#each toc_items}}
                 <li id="toc_item_{{@index}}" class="{{classes}}" {{#unless show}}style="display: none;"{{/unless}}>
