@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-env es6 */
 
-const test = require('tape');
+const test = require('tap').test;
 
 const menu_flatten = require('../modules/menu_flatten');
 
@@ -43,25 +43,32 @@ test('menu_flatten returns values as expected', function (assert) {
             ],
             expected: [
                 {
-                    id    : 'a',
-                    title : 'A',
-                    level : 2,
-                    is_toc: true,
-                    show  : true
-                },
-                {
-                    id    : 'b',
-                    title : 'B',
-                    level : 3,
-                    is_toc: true,
-                    show  : false
-                },
-                {
-                    id    : 'c',
-                    title : 'C',
-                    level : 4,
-                    is_toc: true,
-                    show  : false
+                    toc_items: [
+                        {
+                            id     : 'a',
+                            title  : 'A',
+                            level  : 2,
+                            show   : true,
+                            is_toc : true,
+                            classes: 'toc-item l1 h2'
+                        },
+                        {
+                            id     : 'b',
+                            title  : 'B',
+                            level  : 3,
+                            show   : false,
+                            is_toc : true,
+                            classes: 'toc-item l1 h3'
+                        },
+                        {
+                            id     : 'c',
+                            title  : 'C',
+                            level  : 4,
+                            show   : false,
+                            is_toc : true,
+                            classes: 'toc-item l1 h4'
+                        }
+                    ]
                 }
             ]
         },
@@ -78,12 +85,16 @@ test('menu_flatten returns values as expected', function (assert) {
             toc     : void 0,
             expected: [
                 {
-                    id      : 'studio',
-                    name    : 'Nuxeo Online Services',
-                    url_full: '/studio/',
-                    level   : 1,
-                    parents : void 0,
-                    active  : true
+                    id         : 'studio',
+                    name       : 'Nuxeo Online Services',
+                    url_full   : '/studio/',
+                    active     : true,
+                    level      : 1,
+                    parents    : [],
+                    has_control: false,
+                    classes    : 'active l1',
+                    open       : true,
+                    show       : void 0
                 }
             ]
         },
@@ -116,28 +127,38 @@ test('menu_flatten returns values as expected', function (assert) {
             toc     : void 0,
             expected: [
                 {
-                    active  : true,
-                    id      : 'studio',
-                    name    : 'Nuxeo Online Services',
-                    url_full: '/studio/',
-                    level   : 1,
-                    parents : void 0
+                    id         : 'studio',
+                    name       : 'Nuxeo Online Services',
+                    url_full   : '/studio/',
+                    active     : true,
+                    level      : 1,
+                    show       : void 0,
+                    parents    : [],
+                    has_control: true,
+                    classes    : 'active has-control open l1',
+                    open       : true
                 },
                 {
-                    active  : void 0,
-                    id      : 'child1',
-                    name    : 'Child One',
-                    url_full: '/child1/',
-                    level   : 2,
-                    parents : ['studio']
+                    id         : 'child1',
+                    name       : 'Child One',
+                    url_full   : '/child1/',
+                    active     : void 0,
+                    level      : 2,
+                    show       : true,
+                    parents    : [ 'studio' ],
+                    has_control: false,
+                    classes    : 'pstudio l2'
                 },
                 {
-                    active  : void 0,
-                    id      : 'child2',
-                    name    : 'Child Two',
-                    url_full: '/child2/',
-                    level   : 2,
-                    parents : ['studio']
+                    id         : 'child2',
+                    name       : 'Child Two',
+                    url_full   : '/child2/',
+                    active     : void 0,
+                    level      : 2,
+                    show       : true,
+                    parents    : [ 'studio' ],
+                    has_control: false,
+                    classes    : 'pstudio l2'
                 }
             ]
         },
@@ -176,35 +197,49 @@ test('menu_flatten returns values as expected', function (assert) {
             ],
             expected: [
                 {
-                    active  : void 0,
-                    id      : 'studio',
-                    name    : 'Nuxeo Online Services',
-                    url_full: '/studio/',
-                    level   : 1,
-                    parents : void 0
+                    id         : 'studio',
+                    name       : 'Nuxeo Online Services',
+                    url_full   : '/studio/',
+                    active     : void 0,
+                    level      : 1,
+                    show       : void 0,
+                    parents    : [],
+                    has_control: true,
+                    classes    : 'has-control l1'
                 },
                 {
-                    active  : true,
-                    id      : 'child1',
-                    name    : 'Child One',
-                    url_full: '/child1/',
-                    level   : 2,
-                    parents : ['studio']
+                    id         : 'child1',
+                    name       : 'Child One',
+                    url_full   : '/child1/',
+                    active     : true,
+                    level      : 2,
+                    show       : void 0,
+                    parents    : ['studio'],
+                    has_control: false,
+                    classes    : 'pstudio active l2',
+                    toc_classes: 'pstudio l2',
+                    toc_items  : [
+                        {
+                            id     : 'a',
+                            title  : 'A',
+                            level  : 2,
+                            show   : true,
+                            is_toc : true,
+                            classes: 'toc-item l1 h2'
+                        }
+                    ],
+                    open: true
                 },
                 {
-                    id    : 'a',
-                    title : 'A',
-                    level : 2,
-                    is_toc: true,
-                    show  : true
-                },
-                {
-                    active  : void 0,
-                    id      : 'child2',
-                    name    : 'Child Two',
-                    url_full: '/child2/',
-                    level   : 2,
-                    parents : ['studio']
+                    id         : 'child2',
+                    name       : 'Child Two',
+                    url_full   : '/child2/',
+                    active     : void 0,
+                    level      : 2,
+                    show       : void 0,
+                    parents    : ['studio'],
+                    has_control: false,
+                    classes    : 'pstudio l2'
                 }
             ]
         }

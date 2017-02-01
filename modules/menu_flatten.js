@@ -28,7 +28,7 @@ const get_pages = (page, toc, level = 1, parents = []) => {
     }
     const show = toggled;
 
-    const has_control = (children && children.length);
+    const has_control = !!(children && children.length);
     if (has_control) {
         page_classes.push('has-control');
 
@@ -54,6 +54,7 @@ const get_pages = (page, toc, level = 1, parents = []) => {
     if (active && toc) {
         page_item.toc_classes = parents.map(parent_id => `p${parent_id}`);
         page_item.toc_classes.push(`l${level}`);
+        page_item.toc_classes = page_item.toc_classes.join(' ');
         page_item.toc_items = toc.map(process_toc_items());
     }
 
@@ -63,14 +64,15 @@ const get_pages = (page, toc, level = 1, parents = []) => {
 
     if (children) {
         const new_level = level + 1;
-        const new_parents = [];
-        debug('parents', parents);
-        if (parents && parents.length) {
-            parents.forEach(parent => new_parents.push(parent));
-        }
-        new_parents.push(id);
-        debug('new_parents', new_parents);
         children.map((child) => {
+            const new_parents = [];
+            debug('parents', parents);
+            if (parents && parents.length) {
+                parents.forEach(parent => new_parents.push(parent));
+            }
+            new_parents.push(id);
+            debug('new_parents', new_parents);
+
             return get_pages(child, toc, new_level, new_parents);
         }).forEach((child) => {
             // debug('child', child);
