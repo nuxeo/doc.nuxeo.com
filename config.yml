@@ -41,6 +41,7 @@ default:
             branches:
                 - static
                 - master
+                - '8.10'
                 - '710'
                 - '60'
                 - '58'
