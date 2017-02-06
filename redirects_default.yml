@@ -2,7 +2,7 @@
 
 ^/display/USERDOC/?$: /userdoc/
 ^/display/NXDOC/?$: /nxdoc/
-^/display/ADMINDOC/?$: /admindoc/
+^/display/ADMINDOC/?$: /nxdoc/nuxeo-server
 
 ^/display/USERDOC710/?$: /710/userdoc/
 ^/display/USERDOC60/?$: /60/userdoc/
@@ -15,6 +15,13 @@
 ^/display/ADMINDOC710/?$: /710/admindoc/
 ^/display/ADMINDOC60/?$: /60/admindoc/
 ^/display/ADMINDOC58/?$: /58/admindoc/
+^/display/ADMINDOC/Bulk\+Document\+Importer/?$: /nxdoc/nuxeo-bulk-document-importer
+^/display/ADMINDOC/Hotfixes\+Management\+for\+Nuxeo\+Platform\+LTS\+2015/?$: /710/admindoc/hotfixes-management-for-nuxeo-platform-lts-2015/
+^/display/ADMINDOC/LTS\+2015\+Packaging\+Changes\+and\+Deprecations/?$: /710/admindoc/lts-2015-packaging-changes-and-deprecations/
+^/display/ADMINDOC/Supervision/?$: /nxdoc/metrics-and-monitoring/ 
+^/display/ADMINDOC/Upgrade\+from\+6.0\+to\+7.10/?$: /710/admindoc/upgrade-from-60-to-lts-2015/
+^/display/ADMINDOC/Upgrade\+from\+7.10\+to\+8.1/?$: /nxdoc/upgrade-from-lts-2015-following-fast-tracks/
+^/display/ADMINDOC/Upgrading\+your\+Nuxeo\+Version/?$: /nxdoc/upgrading-the-nuxeo-platform/
 
 ^/display/Studio/?$: /studio/
 ^/display/IDEDOC/?$: /idedoc/
