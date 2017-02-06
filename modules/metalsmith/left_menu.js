@@ -7,21 +7,14 @@ const {debug} = require('../debugger')('metalsmith-menu');
 // npm packages
 const multimatch = require('multimatch');
 const clone = require('lodash.clonedeep');
-const {readFileSync} = require('fs');
-const path = require('path');
 const menu_flatten = require('../menu_flatten');
-const Handlebars = require('handlebars');
-
-const template = readFileSync(path.join(__dirname, '../../layouts/left_menu.hbs'));
-debug('template', template.toString());
-const build_menu = Handlebars.compile(template.toString());
 
 const menu = function (options) {
     debug('Options: %o', options);
     return function (files, metalsmith, done) {
         const metadata = metalsmith.metadata();
 
-        const matched_files = multimatch(Object.keys(files), '**/*.html');
+        const matched_files = multimatch(Object.keys(files), '**/*.md');
 
         matched_files.forEach((filename) => {
             const file = files[filename];
@@ -68,13 +61,7 @@ const menu = function (options) {
 
                 // Flatten data structure
                 debug(`Processing: ${filename}`, data, file.toc_items);
-                const menu_data = menu_flatten(data, file.toc_items);
-
-                // Build html
-                const menu_html = build_menu({menu: menu_data});
-
-                const contents = file.contents.toString();
-                file.contents = Buffer.from(contents.replace('<menu>', menu_html));
+                file.menu_data = menu_flatten(data, file.toc_items);
             }
         });
 

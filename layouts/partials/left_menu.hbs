@@ -1,4 +1,4 @@
-{{#if menu}}
+{{#if menu_data}}
 <div>
     <div class="input-container">
         <div class="input-group">
@@ -9,9 +9,9 @@
         </div>
     </div>
     <ul>
-    {{#each menu}}
+    {{#each menu_data}}
     {{#if id}}
-        <li data-menu-id="{{id}}" data-menu-level="{{level}}" class="{{classes}}" {{#unless show}}style="display: none;"{{/unless}}>
+        <li id="menu_item_{{@index}}" data-menu-id="{{id}}" data-menu-level="{{level}}" class="{{classes}}" {{#unless show}}style="display: none;"{{/unless}}>
             {{#if has_control}}
             <i class="fa fa-fw fa-caret-right" aria-hidden="true"></i>
             {{/if}}

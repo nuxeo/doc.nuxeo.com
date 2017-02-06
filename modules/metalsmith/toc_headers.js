@@ -5,7 +5,8 @@
 const {debug} = require('../debugger')('metalsmith-toc-headers');
 
 // npm packages
-const cheerio = require('cheerio');
+const slug = require('slug');
+slug.defaults.modes.pretty.lower = true;
 
 
 /**
@@ -21,26 +22,32 @@ const toc_headers = function () {
         });
 
         const get_files = function (filepath) {
+            debug(`Processing: ${filepath}`);
             const file = files[filepath];
 
             file.toc_items = [];
 
-            const $ = cheerio.load(file.contents.toString());
-            const titles = ['h2', 'h3'];
-            if (!file.toc_no_h4) {
-                titles.push('h4');
-            }
-            const $titles = $('#content').find(titles.join(', '));
-            $titles.each(function () {
-                /* eslint no-invalid-this: 0 */
-                const $this = $(this);
+            const contents = file.contents.toString();
 
-                const id = $this.attr('id');
-                const title = $this.text();
-                const level = +/\d+/.exec($this.prop('tagName').toLowerCase())[0];
+            const titles_search_criteria = ['^('];
+            if (!file.toc_no_h4) {
+                // Put deepest levels first
+                titles_search_criteria.push('####|');
+            }
+            // Negative lookahead for #
+            titles_search_criteria.push('###|##)(?!#)\s*(.+)$');
+            const titles_find = new RegExp(titles_search_criteria.join(''), 'gm');
+
+            let title_match;
+            while ((title_match = titles_find.exec(contents)) !== null) {
+                const title = title_match[2].replace(/\{\{.+?\}\}/g, '');
+                const id = slug(title);
+                const level = title_match[1].length;
+                // debug(`id: ${id}, title: ${title}, level: ${level}`);
                 file.toc_items.push({id, title, level});
-            });
-            debug(`Processing: ${filepath}`, file.toc_items);
+            }
+
+            debug('TOC items', file.toc_items);
         };
 
         filepaths.forEach(get_files);
