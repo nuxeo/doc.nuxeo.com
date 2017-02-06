@@ -57,6 +57,15 @@ $content-background: #f5f9fb;
   }
 }
 
+
+// Medium screen support
+@media screen and (min-width: 1050px) {
+  #content-container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
 // Large screen support
 @media screen and (min-width: 1800px) {
   $wide-max-menu-width: 446px;
@@ -69,7 +78,7 @@ $content-background: #f5f9fb;
 
     &.large-9.large-push-3 {
       left: $wide-max-menu-width;
-      padding-left: 3rem;
+      padding-left: 5rem;
       padding-right: 3rem;
       width: calc(100% - #{$wide-max-menu-width});
     }
