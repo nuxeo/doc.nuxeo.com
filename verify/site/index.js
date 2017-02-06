@@ -7,10 +7,8 @@ var path = require('path');
 var site_path = path.join(__dirname, '../../site');
 var assets_path = path.join(site_path, 'assets');
 var spaces = [
-    '710/admindoc',
     '710/nxdoc',
     '710/userdoc',
-    'admindoc',
     'connect',
     'corg',
     'glos',
