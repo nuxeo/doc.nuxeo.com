@@ -26,9 +26,9 @@ const get_pages = (page, toc, level = 1, parents = []) => {
     if (active) {
         page_classes.push('active');
     }
-    const show = toggled;
+    const show = !!toggled;
 
-    const has_control = !!(children && children.length);
+    const has_control = !!(children && children.length && level > 1);
     if (has_control) {
         page_classes.push('has-control');
 
@@ -48,7 +48,7 @@ const get_pages = (page, toc, level = 1, parents = []) => {
         show,
         parents,
         has_control,
-        classes: page_classes.join(' ')
+        page_classes
     };
 
     if (active && toc) {
@@ -88,16 +88,42 @@ const menu_flatten = (pages, toc) => {
     if (pages) {
         all_pages = get_pages(pages, toc);
 
-        // open children of active page
+        // open children and siblings of active page
         const active_page = all_pages.find(page => page.active);
         if (active_page) {
-            active_page.open = true;
-            const {id: active_id, level: active_level} = active_page;
+            const {id: active_id, level: active_level, parents: active_parents} = active_page;
+            const last_parent = [].concat(active_parents).pop();
+            if (active_level > 1) {
+                active_page.open = true;
+            }
 
+            // open children
             all_pages
             .filter(page => page.parents && page.parents.includes(active_id) && page.level === active_level + 1)
             .forEach((page) => { page.show = true; });
+
+            // open siblings
+            all_pages
+            .filter(page => page.parents && page.parents.includes(last_parent) && page.level === active_level)
+            .forEach((page) => { page.show = true; });
+
+            // set parent open
+            if (last_parent) {
+                const active_parent = all_pages.find(page => page.id === last_parent);
+                if (active_parent && active_parent.page_classes && active_parent.level > 1) {
+                    active_parent.page_classes.push('open');
+                }
+            }
         }
+
+        // Add classes
+        all_pages = all_pages.map((page) => {
+            if (page.page_classes) {
+                page.classes = page.page_classes.join(' ');
+                delete page.page_classes;
+            }
+            return page;
+        });
     }
     else if (toc) {
         all_pages = [

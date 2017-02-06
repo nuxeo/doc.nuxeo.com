@@ -90,11 +90,10 @@ test('menu_flatten returns values as expected', function (assert) {
                     url_full   : '/studio/',
                     active     : true,
                     level      : 1,
+                    show       : false,
                     parents    : [],
                     has_control: false,
-                    classes    : 'active l1',
-                    open       : true,
-                    show       : void 0
+                    classes    : 'active l1'
                 }
             ]
         },
@@ -107,6 +106,7 @@ test('menu_flatten returns values as expected', function (assert) {
                     full: '/studio/'
                 },
                 active  : true,
+                toggled : true,
                 children: [
                     {
                         id  : 'child1',
@@ -132,11 +132,10 @@ test('menu_flatten returns values as expected', function (assert) {
                     url_full   : '/studio/',
                     active     : true,
                     level      : 1,
-                    show       : void 0,
+                    show       : true,
                     parents    : [],
-                    has_control: true,
-                    classes    : 'active has-control open l1',
-                    open       : true
+                    has_control: false,
+                    classes    : 'active l1'
                 },
                 {
                     id         : 'child1',
@@ -170,6 +169,7 @@ test('menu_flatten returns values as expected', function (assert) {
                 url : {
                     full: '/studio/'
                 },
+                toggled : true,
                 children: [
                     {
                         active: true,
@@ -202,10 +202,10 @@ test('menu_flatten returns values as expected', function (assert) {
                     url_full   : '/studio/',
                     active     : void 0,
                     level      : 1,
-                    show       : void 0,
+                    show       : true,
                     parents    : [],
-                    has_control: true,
-                    classes    : 'has-control l1'
+                    has_control: false,
+                    classes    : 'l1'
                 },
                 {
                     id         : 'child1',
@@ -213,10 +213,9 @@ test('menu_flatten returns values as expected', function (assert) {
                     url_full   : '/child1/',
                     active     : true,
                     level      : 2,
-                    show       : void 0,
+                    show       : true,
                     parents    : ['studio'],
                     has_control: false,
-                    classes    : 'pstudio active l2',
                     toc_classes: 'pstudio l2',
                     toc_items  : [
                         {
@@ -228,7 +227,8 @@ test('menu_flatten returns values as expected', function (assert) {
                             classes: 'toc-item l2 h2'
                         }
                     ],
-                    open: true
+                    open   : true,
+                    classes: 'pstudio active l2'
                 },
                 {
                     id         : 'child2',
@@ -236,7 +236,7 @@ test('menu_flatten returns values as expected', function (assert) {
                     url_full   : '/child2/',
                     active     : void 0,
                     level      : 2,
-                    show       : void 0,
+                    show       : true,
                     parents    : ['studio'],
                     has_control: false,
                     classes    : 'pstudio l2'
