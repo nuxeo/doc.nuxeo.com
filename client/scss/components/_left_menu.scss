@@ -1,14 +1,14 @@
 $active-border-width: 8px;
 $scrollbar-color: rgba($black, .3);
-$menu-background: lighten($nuxeo-tutorial-color, 56.5%);
+$menu-background: #eee;
 $menu-fg: rgba($nuxeo-color-dark, .8);
 $menu-fg-active: $nuxeo-color-dark;
 
 // Left menu
 @mixin menu-section-colours ($color) {
-  $menu-hover: lighten($color, 12.2%);
-  $level-0-color: $color;
-  $level-1-color: lighten($color, $nuxeo-section-lighten);
+  $menu-hover: lighten($color, 20%);
+  $level-0-color: lighten($color, $nuxeo-section-lighten);
+  // $level-1-color: lighten($color, $nuxeo-section-lighten);
 
   //
   #side-menu-container #side-menu .input-container {
@@ -21,9 +21,9 @@ $menu-fg-active: $nuxeo-color-dark;
         background-color: $level-0-color;
       }
 
-      &.l2 {
-        background-color: $level-1-color;
-      }
+      // &.l2 {
+      //   background-color: $level-1-color;
+      // }
 
       &:hover {
         background-color: $menu-hover;
@@ -175,10 +175,16 @@ $menu-fg-active: $nuxeo-color-dark;
   }
 
   :not(.contains-toc, .toc-item) {
-    &.l1,
-    &.l2,
-    &.l3 {
+    &.l1{
       padding-left: 1rem;
+    }
+
+    &.l2 {
+      padding-left: 1.5rem;
+    }
+
+    &.l3 {
+      padding-left: 2rem;
     }
 
     &.l4,
@@ -198,14 +204,6 @@ $menu-fg-active: $nuxeo-color-dark;
     }
 
     &.l4 {
-      padding-left: 2rem;
-
-      &.active::before {
-        left: 2rem;
-      }
-    }
-
-    &.l5 {
       padding-left: 3rem;
 
       &.active::before {
@@ -213,7 +211,7 @@ $menu-fg-active: $nuxeo-color-dark;
       }
     }
 
-    &.l6 {
+    &.l5 {
       padding-left: 4rem;
 
       &.active::before {
@@ -221,11 +219,19 @@ $menu-fg-active: $nuxeo-color-dark;
       }
     }
 
-    &.l7 {
+    &.l6 {
       padding-left: 5rem;
 
       &.active::before {
         left: 5rem;
+      }
+    }
+
+    &.l7 {
+      padding-left: 6rem;
+
+      &.active::before {
+        left: 6rem;
       }
     }
   }
@@ -253,26 +259,32 @@ $menu-fg-active: $nuxeo-color-dark;
       }
 
       // Default indentation
-      &.l1,
-      &.l2,
-      &.l3 {
+      &.l1 {
         margin-left: 0;
       }
 
-      &.l4 {
+      &.l2 {
+        margin-left: .5rem;
+      }
+
+      &.l3 {
         margin-left: 1rem;
       }
 
-      &.l5 {
+      &.l4 {
         margin-left: 2rem;
       }
 
-      &.l6 {
+      &.l5 {
         margin-left: 3rem;
       }
 
-      &.l7 {
+      &.l6 {
         margin-left: 4rem;
+      }
+
+      &.l7 {
+        margin-left: 5rem;
       }
 
       // TOC level indentation

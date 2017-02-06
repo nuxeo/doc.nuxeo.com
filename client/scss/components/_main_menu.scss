@@ -3,22 +3,23 @@ $menu-width: 370px;
 $second-level-fg: rgba($nuxeo-color-dark, .8);
 
 @mixin section-colours ($color) {
+  $menu-hover: lighten($color, $nuxeo-section-lighten);
   border-left-color: $color;
 
-  a {
-    color: $color;
-  }
+  // a {
+  //   color: $color;
+  // }
 
   &:hover {
-    background-color: $color;
+    background-color: $menu-hover;
 
-    > a {
-      color: darken($color, 40%);
-    }
+    // > a {
+    //   color: darken($color, 40%);
+    // }
   }
 
   ul.child li:hover {
-    background-color: lighten($color, $nuxeo-section-lighten);
+    background-color: $menu-hover;
   }
 }
 
@@ -79,10 +80,6 @@ $second-level-fg: rgba($nuxeo-color-dark, .8);
         transition: background-color .4s ease-in;
         width: $menu-width;
 
-        a {
-          transition: color .4s ease;
-        }
-
         &:hover,
         &.active {
           ul.child {
@@ -92,7 +89,9 @@ $second-level-fg: rgba($nuxeo-color-dark, .8);
       }
 
       a {
+        color: $nuxeo-color-dark;
         display: block;
+        transition: color .2s ease;
       }
 
       &.section-tutorial {
