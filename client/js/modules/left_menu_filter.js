@@ -69,9 +69,10 @@ module.exports = function ($) {
             else {
                 // console.log('Reset menu');
                 $side_menu
-                .find('li:not(.contains-toc, .toc-item)')
+                .find('li:not(.contains-toc, .toc-item, [data-init-show=show])')
                 .slideUp()
-                .filter('[data-init-show=show]')
+                .end()
+                .find('li[data-init-show=show]')
                 .slideDown().each(function () {
                     var $this = $(this);
                     // set open state

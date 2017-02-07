@@ -7,6 +7,7 @@ $content-background: #f5f9fb;
   background-position-x: 4rem;
   background-position-y: 350px;
   background-repeat: no-repeat;
+  min-height: calc(100vh - 100px);
 
   #content {
     margin-top: 0;

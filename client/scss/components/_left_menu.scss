@@ -38,7 +38,7 @@ $menu-fg-active: $nuxeo-color-dark;
 
 .doc-section {
   &.doc-section- {
-    @include menu-section-colours($primary-color);
+    @include menu-section-colours($nuxeo-user-documentation-color);
   }
 
   &.doc-section-tutorial {
@@ -246,7 +246,7 @@ $menu-fg-active: $nuxeo-color-dark;
 
     .toc-item {
       background-color: transparent;
-      font-size: 12px;
+      // font-size: 12px;
       margin-left: 1rem;
       margin-right: 1rem;
       padding-left: 0;

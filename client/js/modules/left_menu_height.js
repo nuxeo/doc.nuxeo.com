@@ -51,5 +51,7 @@ module.exports = function ($) {
     });
 
     // Initialise
-    $window.scroll();
+    setTimeout(function () {
+        $window.scroll();
+    }, 1);
 };
