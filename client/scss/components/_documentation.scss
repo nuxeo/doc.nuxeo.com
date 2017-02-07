@@ -1,12 +1,7 @@
 $content-background: #f5f9fb;
 
 #content-container {
-  background-attachment: fixed;
-  background-color: $content-background;
-  background-image: url('/assets/imgs/nuxeo-grid.svg');
-  background-position-x: 4rem;
-  background-position-y: 350px;
-  background-repeat: no-repeat;
+  background-color: $white;
   min-height: calc(100vh - 100px);
 
   #content {
@@ -14,9 +9,18 @@ $content-background: #f5f9fb;
   }
 }
 
+#content-container.overview {
+  background-attachment: fixed;
+  background-color: $content-background;
+  background-image: url('/assets/imgs/nuxeo-grid.svg');
+  background-position-x: 4rem;
+  background-position-y: 350px;
+  background-repeat: no-repeat;
+}
+
 // medium+
 @media screen and #{breakpoint(medium up)} {
-  #content-container {
+  #content-container.overview {
     background-position-x: calc(33vw + 4rem);
   }
 }
@@ -24,7 +28,7 @@ $content-background: #f5f9fb;
 
 // large+
 @media screen and #{breakpoint(large up)} {
-  #content-container {
+  #content-container.overview {
     background-position-x: calc(25vw + 4rem);
   }
 
@@ -85,6 +89,7 @@ $content-background: #f5f9fb;
     }
   }
 }
+
 
 .accordion {
   border-top-left-radius: .5rem;

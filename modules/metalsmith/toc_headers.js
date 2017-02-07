@@ -40,9 +40,11 @@ const toc_headers = function () {
 
             let title_match;
             while ((title_match = titles_find.exec(contents)) !== null) {
-                const title = title_match[2].replace(/\{\{.+?\}\}/g, '');
-                const id = slug(title);
+                // Remove anchors
+                let title = title_match[2].replace(/\{\{.+?\}\}/g, '');
+                const id = slug(title.replace(/[&;*]/g, ' '));
                 const level = title_match[1].length;
+                title = title.replace(/(&nbsp;|[&;])/g, ' ');
                 // debug(`id: ${id}, title: ${title}, level: ${level}`);
                 file.toc_items.push({id, title, level});
             }
