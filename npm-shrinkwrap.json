@@ -4596,6 +4596,11 @@
       "resolved": "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-1.0.4.tgz",
       "dev": true
     },
+    "striptags": {
+      "version": "3.0.1",
+      "from": "striptags@latest",
+      "resolved": "https://registry.npmjs.org/striptags/-/striptags-3.0.1.tgz"
+    },
     "substitute": {
       "version": "0.0.1",
       "from": "https://github.com/segmentio/substitute/archive/0.0.1.tar.gz",

@@ -19,6 +19,25 @@
     </div>
     <div id="content" class="column{{#if is_overview}} overview{{/if}}{{#if toc}} toc{{#if toc_no_h4}} toc-no-h4{{/if}}{{/if}}{{#if tabbed_page}} tabbed{{/if}} end">
         {{{contents}}}
+
+        {{#if (condition previous_link '||' next_link)}}
+        <div class="row expanded collapse">
+            <div class="column medium-6">
+                {{#if previous_link}}
+                <a href="#{{page previous_link}}" class="sequence-link previous-link">
+                    <i class="fa fa-long-arrow-left" aria-hidden="true"></i> {{page_title previous_link}}
+                </a>
+                {{/if}}
+            </div>
+            <div class="column medium-6 text-right">
+                {{#if next_link}}
+                <a href="#{{page next_link}}" class="sequence-link next-link">
+                    {{page_title next_link}} <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                </a>
+                {{/if}}
+            </div>
+        </div>
+        {{/if}}
     </div>
     {{!-- #if toc} }
     <div id="toc" class="column large-4 show-for-large" data-sticky-container>
@@ -27,21 +46,6 @@
         </nav>
     </div>
     {{/if --}}
-
-    {{#if (condition previous_link '||' next_link)}}
-    <div class="column">
-        {{#if previous_link}}
-        <a href="{{page previous_link}}" class="sequence-link previous-link float-left">
-            <i class="fa fa-long-arrow-left" aria-hidden="true"></i> {{page_title previous_link}}
-        </a>
-        {{/if}}
-        {{#if next_link}}
-        <a href="{{page next_link}}" class="sequence-link next-link float-right">
-            {{page_title next_link}} <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-        </a>
-        {{/if}}
-    </div>
-    {{/if}}
 
     {{> information}}
 </div>

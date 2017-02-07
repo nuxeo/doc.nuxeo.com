@@ -58,6 +58,7 @@
     "request": "^2.74.0",
     "sitemap": "^1.8.1",
     "slug": "^0.9.1",
+    "striptags": "^3.0.1",
     "thenify": "^3.2.1",
     "tree-model": "^1.0.4"
   },
@@ -125,6 +126,7 @@
     "dev": "NODE_ENV=development nodemon --exec 'npm run compile'",
     "dev_server": "npm run browser_sync & NODE_ENV=development nodemon --exec 'npm start && browser-sync reload'",
     "dev_assets": "npm run browser_sync & NODE_ENV=development nodemon --exec 'npm run update_assets && browser-sync reload'",
+    "dev_test": "nodemon --exec 'npm run test'",
     "duplicate_asset_stats": "test -e temp/metadata.json && npm run duplicate_css_stats && npm run duplicate_js_stats",
     "duplicate_css_stats": "test -e temp/css.md5 || cp lib/css.md5 temp",
     "duplicate_js_stats": "test -e temp/webpack.stats.json || cp lib/webpack.stats.json temp",

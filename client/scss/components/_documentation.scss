@@ -5,7 +5,13 @@ $content-background: #f5f9fb;
   min-height: calc(100vh - 100px);
 
   #content {
+    margin-bottom: 5rem;
     margin-top: 0;
+
+    > .row {
+      margin-left: -1rem;
+      margin-right: -1rem;
+    }
   }
 }
 

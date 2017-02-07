@@ -182,14 +182,8 @@ $menu-fg-active: $nuxeo-color-dark;
       padding-left: 1rem;
     }
 
-    &.l2 {
-      padding-left: 1.5rem;
-    }
-
-    &.l3 {
-      padding-left: 2rem;
-    }
-
+    &.l2,
+    &.l3,
     &.l4,
     &.l5,
     &.l6,
@@ -206,35 +200,51 @@ $menu-fg-active: $nuxeo-color-dark;
       }
     }
 
-    &.l4 {
-      padding-left: 3rem;
+    &.l2 {
+      padding-left: 1.5rem;
 
       &.active::before {
-        left: 3rem;
+        left: 1.5rem;
+      }
+    }
+
+    &.l3 {
+      padding-left: 2.5rem;
+
+      &.active::before {
+        left: 2.5rem;
+      }
+    }
+
+    &.l4 {
+      padding-left: 3.5rem;
+
+      &.active::before {
+        left: 3.5rem;
       }
     }
 
     &.l5 {
-      padding-left: 4rem;
+      padding-left: 4.5rem;
 
       &.active::before {
-        left: 4rem;
+        left: 4.5rem;
       }
     }
 
     &.l6 {
-      padding-left: 5rem;
+      padding-left: 5.5rem;
 
       &.active::before {
-        left: 5rem;
+        left: 5.5rem;
       }
     }
 
     &.l7 {
-      padding-left: 6rem;
+      padding-left: 6.5rem;
 
       &.active::before {
-        left: 6rem;
+        left: 6.5rem;
       }
     }
   }
@@ -271,23 +281,23 @@ $menu-fg-active: $nuxeo-color-dark;
       }
 
       &.l3 {
-        margin-left: 1rem;
+        margin-left: 1.5rem;
       }
 
       &.l4 {
-        margin-left: 2rem;
+        margin-left: 2.5rem;
       }
 
       &.l5 {
-        margin-left: 3rem;
+        margin-left: 3.5rem;
       }
 
       &.l6 {
-        margin-left: 4rem;
+        margin-left: 4.5rem;
       }
 
       &.l7 {
-        margin-left: 5rem;
+        margin-left: 5.5rem;
       }
 
       // TOC level indentation

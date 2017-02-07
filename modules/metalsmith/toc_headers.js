@@ -5,6 +5,7 @@
 const {debug} = require('../debugger')('metalsmith-toc-headers');
 
 // npm packages
+const striptags = require('striptags');
 const slug = require('slug');
 slug.defaults.modes.pretty.lower = true;
 
@@ -42,9 +43,9 @@ const toc_headers = function () {
             while ((title_match = titles_find.exec(contents)) !== null) {
                 // Remove anchors
                 let title = title_match[2].replace(/\{\{.+?\}\}/g, '');
-                const id = slug(title.replace(/[&;*]/g, ' '));
+                const id = slug(title.replace(/[\(\)&;\*]/g, ' '));
                 const level = title_match[1].length;
-                title = title.replace(/(&nbsp;|[&;])/g, ' ');
+                title = striptags(title.replace(/(&nbsp;)/g, ' '));
                 // debug(`id: ${id}, title: ${title}, level: ${level}`);
                 file.toc_items.push({id, title, level});
             }

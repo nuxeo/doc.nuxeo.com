@@ -4,7 +4,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 200;
   margin-bottom: .5rem;
   margin-top: 1.5rem;
 
@@ -19,10 +18,16 @@ h6 {
   }
 }
 
+h1 {
+  font-weight: 200;
+}
+
+h2,
+h3,
 h4,
 h5,
 h6 {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 a {
@@ -60,10 +65,7 @@ ol {
 }
 
 .sequence-link {
-  font-size: .9rem;
-  font-stretch: normal;
-  font-style: normal;
   font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  padding-bottom: 1rem;
+  margin-top: 2rem;
 }

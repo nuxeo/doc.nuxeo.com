@@ -1,5 +1,5 @@
 .callout {
-  background-color: $light-gray;
+  background-color: $white;
   padding-bottom: 1rem;
 
   ul,
@@ -18,7 +18,6 @@
   }
 
   &:not(.nuxeo) {
-    background-color: $white;
     box-shadow: 0 4px 4px 0 $nuxeo-overview-shaddow;
 
     ul,
@@ -41,8 +40,13 @@
     }
   }
 
-  &.primary{
-    background-color: lighten($primary-color, 41%);;
+  &.primary {
+    background-color: lighten($primary-color, 41%);
+  }
+
+  &.secondary {
+    background-color: $white;
+    padding: 2rem 1rem;
   }
 
   &.nuxeo {
