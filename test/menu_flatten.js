@@ -228,7 +228,7 @@ test('menu_flatten returns values as expected', function (assert) {
                         }
                     ],
                     open   : true,
-                    classes: 'pstudio active l2'
+                    classes: 'pstudio active l2 open'
                 },
                 {
                     id         : 'child2',

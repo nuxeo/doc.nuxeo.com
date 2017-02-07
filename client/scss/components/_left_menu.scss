@@ -171,6 +171,10 @@ $menu-fg-active: $nuxeo-color-dark;
     &.active a {
       color: $menu-fg-active;
     }
+
+    .highlight {
+      color: $primary-color;
+    }
   }
 
   :not(.contains-toc, .toc-item) {

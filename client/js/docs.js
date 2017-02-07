@@ -3,8 +3,10 @@
 /* global $ */
 
 $(document).ready(function () {
+    require('./modules/polyfills');
     var menu = require('./modules/left_menu');
     var menu_height = require('./modules/left_menu_height');
+    var menu_filter = require('./modules/left_menu_filter');
     var satellite_header = require('./satellite_header');
 
     // Tabbed page
@@ -14,6 +16,9 @@ $(document).ready(function () {
     if ($('#side-menu').find('div').length) {
         menu_height($);
         menu($);
+
+        // Menu filtering
+        menu_filter($);
 
         // In page TOC
         require('./modules/toc');

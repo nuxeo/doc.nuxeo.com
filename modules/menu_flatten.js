@@ -31,10 +31,6 @@ const get_pages = (page, toc, level = 1, parents = []) => {
     const has_control = !!(children && children.length && level > 1);
     if (has_control) {
         page_classes.push('has-control');
-
-        if (active) {
-            page_classes.push('open');
-        }
     }
 
     page_classes.push(`l${level}`);
@@ -95,6 +91,7 @@ const menu_flatten = (pages, toc) => {
             const last_parent = [].concat(active_parents).pop();
             if (active_level > 1) {
                 active_page.open = true;
+                active_page.page_classes.push('open');
             }
 
             // open children
@@ -111,6 +108,7 @@ const menu_flatten = (pages, toc) => {
             if (last_parent) {
                 const active_parent = all_pages.find(page => page.id === last_parent);
                 if (active_parent && active_parent.page_classes && active_parent.level > 1) {
+                    active_parent.open = true;
                     active_parent.page_classes.push('open');
                 }
             }
