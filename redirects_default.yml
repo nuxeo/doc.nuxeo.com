@@ -2,7 +2,7 @@
 
 ^/display/USERDOC/?$: /userdoc/
 ^/display/NXDOC/?$: /nxdoc/
-^/display/ADMINDOC/?$: /admindoc/
+^/display/ADMINDOC/?$: /nxdoc/nuxeo-server
 
 ^/display/USERDOC710/?$: /710/userdoc/
 ^/display/USERDOC60/?$: /60/userdoc/
@@ -15,6 +15,13 @@
 ^/display/ADMINDOC710/?$: /710/admindoc/
 ^/display/ADMINDOC60/?$: /60/admindoc/
 ^/display/ADMINDOC58/?$: /58/admindoc/
+^/display/ADMINDOC/Bulk\+Document\+Importer/?$: /nxdoc/nuxeo-bulk-document-importer
+^/display/ADMINDOC/Hotfixes\+Management\+for\+Nuxeo\+Platform\+LTS\+2015/?$: /710/admindoc/hotfixes-management-for-nuxeo-platform-lts-2015/
+^/display/ADMINDOC/LTS\+2015\+Packaging\+Changes\+and\+Deprecations/?$: /710/admindoc/lts-2015-packaging-changes-and-deprecations/
+^/display/ADMINDOC/Supervision/?$: /nxdoc/metrics-and-monitoring/ 
+^/display/ADMINDOC/Upgrade\+from\+6.0\+to\+7.10/?$: /710/admindoc/upgrade-from-60-to-lts-2015/
+^/display/ADMINDOC/Upgrade\+from\+7.10\+to\+8.1/?$: /nxdoc/upgrade-from-lts-2015-following-fast-tracks/
+^/display/ADMINDOC/Upgrading\+your\+Nuxeo\+Version/?$: /nxdoc/upgrading-the-nuxeo-platform/
 
 ^/display/Studio/?$: /studio/
 ^/display/IDEDOC/?$: /idedoc/
@@ -23,8 +30,28 @@
 ^/display/GLOS/?$: /glos/
 
 ^/display/SPRINT/?$: /
-
 ^/display/KB/?$: /
+^/display/KB/java.net.SocketException\+Too\+many\+open\+files/?$: /nxdoc/java.net.SocketException-too-many-open-files/
+
+# NXDOC-1038: Archived versions of the documentation
+^/display/NXDOC58/?$: /archived-documentation
+^/display/ADMINDOC58/?$: /archived-documentation
+^/display/USERDOC58/?$: /archived-documentation
+^/display/NXDOC56/?$: /archived-documentation
+^/display/ADMINDOC56/?$: /archived-documentation
+^/display/USERDOC56/?$: /archived-documentation
+^/display/NXDOC55/?$: /archived-documentation
+^/display/ADMINDOC55/?$: /archived-documentation
+^/display/DMDOC55/?$: /archived-documentation
+^/display/DAMDOC55/?$: /archived-documentation
+^/display/CMDOC55/?$: /archived-documentation
+^/display/NXDOC54/?$: /archived-documentation
+^/display/DMDOC54/?$: /archived-documentation
+^/display/NXDOC53/?$: /archived-documentation
+^/display/DMDOC53/?$: /archived-documentation
+^/display/CMDOC1x/?$: /archived-documentation
+^/display/DAMDOC1x/?$: /archived-documentation
+
 
 ^/display/NXDOC/Learning+with+Videos/?$: https://university.nuxeo.io
 ^/display/NXDOC/How+to+Brand+Your+Application/?$: /studio/branding
@@ -48,14 +75,61 @@
 
 ^/display/Studio/Nuxeo\+Studio\+Documentation\+Center/?$: /studio/nuxeo-studio
 
+
 ^/x/aAfF/?$: /nxdoc/nuxeo-add-ons/
 
+# For 7.10 - Web UI renamed into JSF UI
+^/710/nxdoc/from-the-web-ui-to-nuxeo-studio/$: /710/nxdoc/from-the-jsf-ui-to-nuxeo-studio
+^/710/nxdoc/web-ui-limitations/$: /710/nxdoc/jsf-ui-limitations
+^/710/nxdoc/web-ui-framework/$: /710/nxdoc/jsf-ui-framework
+^/710/nxdoc/web-ui-framework-overview/$: /710/nxdoc/jsf-ui-framework-overview
+^/710/nxdoc/web-ui-how-to-index/$: /710/nxdoc/jsf-ui-how-to-index
+^/710/nxdoc/how-to-add-a-button-in-the-web-ui/$: /710/nxdoc/how-to-add-a-button-in-the-jsf-ui
+^/710/nxdoc/how-to-bubble-errors-from-the-core-layer-in-the-web-ui/$: /710/nxdoc/how-to-bubble-errors-from-the-core-layer-in-the-jsf-ui
 
 # For LTS 2016
-^/nxdoc/javaandroid-client$: /nxdoc/java-client
+^/nxdoc/javaandroid-client/$: /nxdoc/java-client
+^/nxdoc/getting-started-with-nuxeo-ide/$: /nxdoc/getting-started-with-nuxeo-generator
+^/nxdoc/developing-with-angularjs/?$: /nxdoc/howto-develop-with-angular2
+^/nxdoc/how-to-enable-dragn-drop-and-new-button-on-a-custom-content-view/?$: /nxdoc/how-to-enable-drag-and-drop-and-new-button-on-a-custom-content-view
+^/nxdoc/how-to-inherit-a-metadata-from-a-parent-document/?$: /nxdoc/how-to-inherit-metadata-from-a-parent-document
+^/nxdoc/using-saml2/?$: /nxdoc/saml-20-authentication
+^/nxdoc/nuxeo-and-kibana/?$: /nxdoc/nuxeo-elements
+^/nxdoc/pdf-conversion-troubleshooting/?$: /nxdoc/how-to-automatically-convert-a-document-to-pdf
+^/nxdoc/nuxeo-android-connector/?$: /nxdoc/java-client
+^/nxdoc/nuxeo-automation-client/?$: /nxdoc/java-client
+^/nxdoc/android-connector-and-caching/?$: /nxdoc/java-client
+^/nxdoc/android-connector-additional-service/?$: /nxdoc/java-client
+^/nxdoc/documentproviders-in-android-connector/?$: /nxdoc/java-client
+^/nxdoc/android-sdk-integration/?$: /nxdoc/java-client
+^/nxdoc/nuxeo-layout-in-android/?$: /nxdoc/java-client
+^/nxdoc/sdk-provided-base-classes/?$: /nxdoc/java-client
+^/nxdoc/jsf-ui-limitations/?$: /nxdoc/jsf-ui-framework-overview
+^/nxdoc/jsf-page-layout-system-overview/?$: /nxdoc/jsf-ui-framework-overview
+^/nxdoc/nuxeo-elements-quickstart/?$: /nxdoc/nuxeo-elements-tutorial/
+^/nxdoc/web-ui-overview/?$: /nxdoc/web-ui/
+^/nxdoc/one-step-validation-flow-based-on-lifecycle-only/?$: /nxdoc/workflow-use-cases/
+^/nxdoc/create-a-button-that-triggers-the-task-assignment/?$: /nxdoc/workflow-use-cases/
+^/nxdoc/create-a-task-assignment-alert/?$: /nxdoc/workflow-use-cases/
+^/nxdoc/functional-tour/?$: /nxdoc/workflow-use-cases/
+^/nxdoc/implement-the-validation-logic/?$: /nxdoc/workflow-use-cases/
 
-^/nxdoc/getting-started-with-nuxeo-ide: /nxdoc/getting-started-with-nuxeo-generator
-^/nxdoc/developing-with-angularjs: /nxdoc/developing-with-angular2
+
+^/userdoc/nuxeo-drive/?$: /nxdoc/nuxeo-drive
+^/userdoc/nuxeo-drive-faq/?$: /nxdoc/nuxeo-drive-faq
+^/studio/configuration-management/?$: /studio/templates-reference
+^/studio/availability-tab/?$: /studio/activation-tab
+
+# NXDOC-1033: REST API doc reorg
+^/nxdoc/search-endpoint/?$: /nxdoc/search-endpoints
+^/nxdoc/content-enricher/?$: /nxdoc/content-enrichers
+^/nxdoc/blob-upload-for-batch-processing/?$: /nxdoc/batch-upload-endpoint
+^/nxdoc/web-adapters-for-the-rest-api/?$: /nxdoc/rest-api-web-adapters
+^/nxdoc/authenticating-the-requests/?$: /nxdoc/request-authentication
+^/nxdoc/web-exceptions-errors/?$: /nxdoc/error-handling
+^/nxdoc/how-to-upload-a-file-in-nuxeo-platform-using-rest-api-batch-processing-endpoint/?$ : /nxdoc/howto-upload-file-nuxeo-using-rest-api
+^/nxdoc/use-nuxeo-api-playground-to-discover-the-api/?$: /nxdoc/howto-nuxeo-api-playground
+^/nxdoc/developing-with-angular2/?$: /nxdoc/howto-develop-with-angular2
 
 
 # Old search redirect

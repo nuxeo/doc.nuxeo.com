@@ -62,6 +62,14 @@ ol {
   margin-before: 0;
   margin-bottom: 1.5em;
   padding-start: 0;
+
+  ol {
+    list-style-type: lower-alpha;
+
+    ol {
+      list-style-type: decimal;
+    }
+  }
 }
 
 .sequence-link {

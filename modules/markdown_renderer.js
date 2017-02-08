@@ -102,8 +102,25 @@ renderer.table = (header, body) => `
 
 renderer.list = function (body, ordered) {
     const type = ordered ? 'ol' : 'ul';
-    const start_attr = (ordered > 1) ? ` start="${ordered}"` : '';
-    return `<${type}${start_attr}>
+    const attrs = {
+        type : '',
+        start: ''
+    };
+
+    if (+ordered || +ordered === 0) {
+        if (+ordered !== 1) {
+            attrs.start = `start="${ordered}"`;
+        }
+    }
+    else {
+        const type_case = (ordered === ordered.toUpperCase()) ? 'A' : 'a';
+        attrs.type = `type="${type_case}"`;
+        const start_letter = ordered.toString().toUpperCase().charCodeAt(0) - 64;
+        attrs.start = (start_letter > 1 && start_letter < 9) ? `start="${start_letter}"` : '';
+    }
+    const attr = [attrs.type, attrs.start].filter(x => x).join(' ');
+
+    return `<${type} ${attr}>
     ${body}
     </${type}>
     `;
