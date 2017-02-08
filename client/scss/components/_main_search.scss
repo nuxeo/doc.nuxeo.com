@@ -1,33 +1,17 @@
-#search-box {
-  margin-left: -1rem;
-  margin-right: .5rem;
-  transition: width .4s ease;
-  width: 168px;
-
-  &.closed {
+#nuxeo-satellite-header .nuxeo-satellite-menu #search-box {
+  &.closed input {
     width: 0;
   }
 
+  .algolia-autocomplete {
+    width: 100%;
+  }
+
   input {
-    color: $white;
-    // Fixes FF issue
-    display: inline-block;
-  }
+    vertical-align: inherit !important;
 
-  :placeholder {
-    color: $dark-gray;
-    font-size: .8rem;
-    text-transform: uppercase;
-  }
-}
-
-#search-button {
-  color: $white;
-  padding: 1rem;
-  transition: color .2s ease;
-
-  &:hover,
-  &.active {
-    color: $primary-color;
+    &::placeholder {
+      color: $medium-gray;
+    }
   }
 }
