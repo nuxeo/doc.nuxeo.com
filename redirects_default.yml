@@ -1,20 +1,21 @@
 ^/nxdoc/marketplace-add-ons/?$: /nxdoc/nuxeo-add-ons/
 
-^/display/USERDOC/?$: /userdoc/
-^/display/NXDOC/?$: /nxdoc/
-^/display/ADMINDOC/?$: /nxdoc/nuxeo-server
+^/display/USERDOC(/?|/.*): /userdoc/
+^/display/NXDOC(/?|/.*): /nxdoc/
+^/display/ADMINDOC(/?|/.*): /nxdoc/nuxeo-server
 
-^/display/USERDOC710/?$: /710/userdoc/
-^/display/USERDOC60/?$: /60/userdoc/
-^/display/USERDOC58/?$: /58/userdoc/
+^/display/USERDOC710(/?|/.*): /710/userdoc/
+^/display/USERDOC60(/?|/.*): /60/userdoc/
+^/display/USERDOC58(/?|/.*): /58/userdoc/
 
-^/display/NXDOC710/?$: /710/nxdoc/
-^/display/NXDOC60/?$: /60/nxdoc/
-^/display/NXDOC58/?$: /58/nxdoc/
+^/display/NXDOC710(/?|/.*): /710/nxdoc/
+^/display/NXDOC60(/?|/.*): /60/nxdoc/
+^/display/NXDOC58(/?|/.*): /58/nxdoc/
 
-^/display/ADMINDOC710/?$: /710/admindoc/
-^/display/ADMINDOC60/?$: /60/admindoc/
-^/display/ADMINDOC58/?$: /58/admindoc/
+^/display/ADMINDOC710(/?|/.*): /710/admindoc/
+^/display/ADMINDOC60(/?|/.*): /60/admindoc/
+^/display/ADMINDOC58(/?|/.*): /58/admindoc/
+
 ^/display/ADMINDOC/Bulk\+Document\+Importer/?$: /nxdoc/nuxeo-bulk-document-importer
 ^/display/ADMINDOC/Hotfixes\+Management\+for\+Nuxeo\+Platform\+LTS\+2015/?$: /710/admindoc/hotfixes-management-for-nuxeo-platform-lts-2015/
 ^/display/ADMINDOC/LTS\+2015\+Packaging\+Changes\+and\+Deprecations/?$: /710/admindoc/lts-2015-packaging-changes-and-deprecations/
@@ -23,14 +24,14 @@
 ^/display/ADMINDOC/Upgrade\+from\+7.10\+to\+8.1/?$: /nxdoc/upgrade-from-lts-2015-following-fast-tracks/
 ^/display/ADMINDOC/Upgrading\+your\+Nuxeo\+Version/?$: /nxdoc/upgrading-the-nuxeo-platform/
 
-^/display/Studio/?$: /studio/
-^/display/IDEDOC/?$: /idedoc/
-^/display/CORG/?$: /corg/
-^/display/CONNECT/?$: /studio/
-^/display/GLOS/?$: /glos/
+^/display/Studio(/?|/.*): /studio/
+^/display/IDEDOC(/?|/.*): /idedoc/
+^/display/CORG(/?|/.*): /corg/
+^/display/CONNECT(/?|/.*): /studio/
+^/display/GLOS(/?|/.*): /glos/
 
-^/display/SPRINT/?$: /
-^/display/KB/?$: /
+^/display/SPRINT(/?|/.*): /
+^/display/KB(/?|/.*): /
 ^/display/KB/java.net.SocketException\+Too\+many\+open\+files/?$: /nxdoc/java.net.SocketException-too-many-open-files/
 
 # NXDOC-1038: Archived versions of the documentation
