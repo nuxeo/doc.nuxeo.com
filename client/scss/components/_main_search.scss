@@ -1,6 +1,12 @@
 #nuxeo-satellite-header .nuxeo-satellite-menu #search-box {
-  &.closed input {
-    width: 0;
+  &.closed {
+    input {
+      width: 0;
+    }
+
+    .algolia-autocomplete > pre {
+      right: 0;
+    }
   }
 
   .algolia-autocomplete {
