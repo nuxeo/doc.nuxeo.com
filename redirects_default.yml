@@ -31,7 +31,7 @@
 ^/display/GLOS(/?|/.*): /glos/
 
 ^/display/SPRINT(/?|/.*): /
-^/display/KB(/?|/.*): /
+^/display/KB/?$: /
 ^/display/KB/java.net.SocketException\+Too\+many\+open\+files/?$: /nxdoc/java.net.SocketException-too-many-open-files/
 
 # NXDOC-1038: Archived versions of the documentation
