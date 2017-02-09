@@ -115,7 +115,7 @@ default:
             branches:
                 - static-algolia
                 - master
-                - '8.10'
+                - '810'
                 - '710'
                 - '60'
                 - '58'
