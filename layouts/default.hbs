@@ -17,7 +17,7 @@
         </div>
         {{> flag_review}}
     </div>
-    <div id="content" class="column{{#if is_overview}} overview{{/if}}{{#if toc}} toc{{#if toc_no_h4}} toc-no-h4{{/if}}{{/if}}{{#if tabbed_page}} tabbed{{/if}} end">
+    <div id="content" class="column{{#if toc}} toc{{#if toc_no_h4}} toc-no-h4{{/if}}{{/if}}{{#if tabbed_page}} tabbed{{/if}} end">
         {{{contents}}}
 
         {{#if (condition previous_link '||' next_link)}}
