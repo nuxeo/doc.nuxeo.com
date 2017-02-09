@@ -24,7 +24,7 @@ default:
         main_menu:
             -
                 parent: /nxdoc/tutorials
-                section_color: tutorial
+                section_color: tutorials
                 children:
                     - /nxdoc/getting-started-with-the-nuxeo-platform
                     - /nxdoc/start-customizing-the-nuxeo-platform

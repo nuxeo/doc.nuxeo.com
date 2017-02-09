@@ -41,8 +41,8 @@ $menu-fg-active: $nuxeo-color-dark;
     @include menu-section-colours($nuxeo-user-documentation-color);
   }
 
-  &.doc-section-tutorial {
-    @include menu-section-colours($nuxeo-tutorial-color);
+  &.doc-section-tutorials {
+    @include menu-section-colours($nuxeo-tutorials-color);
   }
 
   &.doc-section-server {

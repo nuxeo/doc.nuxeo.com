@@ -90,7 +90,7 @@ h6 {
     border-style: solid;
     border-width: 0;
     border-bottom-width: 2rem; // Ignore sass-lint error
-    // color: $nuxeo-tutorial-color;
+    // color: $nuxeo-tutorials-color;
     position: relative;
 
     img {
@@ -115,7 +115,7 @@ h6 {
     }
   }
 
-  @include section-color('tutorial', $nuxeo-tutorial-color);
+  @include section-color('tutorials', $nuxeo-tutorials-color);
   @include section-color('server', $nuxeo-server-color);
   @include section-color('web-ui', $nuxeo-web-ui-color);
   @include section-color('desktop-mob', $nuxeo-desktop-mob-color);
@@ -130,8 +130,8 @@ h6 {
       transition: color .4s ease;
     }
 
-    .hover-tutorial:hover {
-      color: $nuxeo-tutorial-color;
+    .hover-tutorials:hover {
+      color: $nuxeo-tutorials-color;
     }
 
     .hover-server:hover {

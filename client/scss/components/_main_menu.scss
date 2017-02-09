@@ -94,8 +94,8 @@ $second-level-fg: rgba($nuxeo-color-dark, .8);
         transition: color .2s ease;
       }
 
-      &.section-tutorial {
-        @include section-colours($nuxeo-tutorial-color);
+      &.section-tutorials {
+        @include section-colours($nuxeo-tutorials-color);
       }
 
       &.section-server {
