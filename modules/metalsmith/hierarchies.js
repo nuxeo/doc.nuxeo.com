@@ -79,6 +79,7 @@ const meta_hierarchies = function (options) {
                     if (is_space_index) {
                         current_item.name = file.title;
                         current_item.url = file.url;
+                        current_item.section_parent = file.section_parent;
                     }
                     debug('Key: %s, path: %o', file.url.key.full, filepath_parts, current_item);
 
