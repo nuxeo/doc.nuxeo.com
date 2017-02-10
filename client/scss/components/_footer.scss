@@ -1,27 +1,10 @@
+$footer-fg: #d9e6f0;
+
 #footer {
-  background-color: $nuxeo-color-footer;
-  color: $white;
-  font-size: $nuxeo-body-small;
-  padding-bottom: 1rem;
-  padding-top: 2rem;
-
-  ul {
-    list-style-position: outside;
-    list-style-type: none;
-  }
-
-  li {
-    a {
-      display: block;
-    }
-
-    &:first-of-type {
-      font-weight: 700;
-    }
-  }
+  position: relative;
 
   a {
-    color: $white;
+    color: $footer-fg;
     transition: color .2s ease;
 
     &:hover {
@@ -29,27 +12,61 @@
     }
   }
 
-  .copyright > a {
-    margin-left: 3rem;
-  }
+  footer {
+    background-color: $nuxeo-color-dark;
+    color: $footer-fg;
+    // font-size: .77rem;
+    font-size: $nuxeo-body-smaller;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: 1.5px;
+    padding-bottom: 1rem;
 
-  .social a {
-
-    .fa-inverse {
-      color: $nuxeo-color-footer;
-      transition: color .2s ease;
-    }
-
-    &:first-child {
+    ul {
+      list-style-position: outside;
+      list-style-type: none;
       margin-left: 3rem;
     }
 
-    &:hover {
-      color: $primary-color;
+    li {
+      margin-bottom: 1em;
 
-      .fa-inverse {
-        color: $white;
+      a {
+        display: block;
+      }
+
+      &:first-of-type {
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      // Add style after
+      &:last-of-type {
+        margin-bottom: .9em;
+        padding-bottom: .9em;
+        position: relative;
+
+        &::before {
+          border-bottom: 1px solid $primary-color;
+          bottom: 0;
+          content: '';
+          height: 1px;
+          left: 0;
+          position: absolute;
+          width: 20px;
+        }
+      }
+    }
+
+    #copyright-social {
+      letter-spacing: normal;
+      margin: 150px 3rem 60px;
+
+      .separator {
+        margin-left: 1em;
+        margin-right: 1em;
       }
     }
   }
+
 }

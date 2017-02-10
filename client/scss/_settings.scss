@@ -55,18 +55,18 @@ $foundation-palette: (
   alert: #ff462a,
 );
 $light-gray: #e6e6e6;
-$medium-gray: #cacaca;
+$medium-gray: rgba(0, 5, 34, .4);
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fff;
 // $body-background: $white;
 // $body-font-color: $black;
-$body-font-family: Aregular, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
-// $body-antialiased: true;
+$body-font-family: 'Open Sans', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$body-antialiased: true;
 // $global-margin: 1rem;
 // $global-padding: 1rem;
-// $global-weight-normal: normal;
-// $global-weight-bold: bold;
+$global-weight-normal: 300;
+$global-weight-bold: 600;
 // $global-radius: 0;
 // $global-text-direction: ltr;
 // $global-flexbox: false;
@@ -103,7 +103,7 @@ $body-font-family: Aregular, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-se
 
 // $header-font-family: Ademi, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $header-font-family: $body-font-family;
-$header-font-weight: 'bold';
+// $header-font-weight: 'bold';
 // $header-font-style: normal;
 // $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-sizes: (
@@ -150,7 +150,7 @@ $code-border: 0;
 $list-margin-bottom: 3rem;
 // $list-style-type: disc;
 // $list-style-position: outside;
-$list-side-margin: 3rem;
+$list-side-margin: 1rem;
 // $list-nested-side-margin: 1.25rem;
 $defnlist-margin-bottom: 3rem;
 // $defnlist-term-weight: $global-weight-bold;
@@ -571,28 +571,29 @@ $topbar-padding: 0;
 $nuxeo-color-accent: #ff452a;
 $nuxeo-color-light-blue: #9ec2d5;
 $nuxeo-color-light-gray: #ccc;
-$nuxeo-color-footer: #404040;
-
-// Left menu
-$nuxeo-color-menu-background: #fafcfd;
-$nuxeo-color-menu-background-selected: #edf3f8;
-$nuxeo-color-menu-hover: #a9e0f9;
+$nuxeo-color-dark: #000522;
 
 // Code Block
-$nuxeo-color-code-background: #384248;
-$nuxeo-color-code-foreground: #f8f8f8;
-$code-border-radius: 5px;
+$nuxeo-color-code-background: #fff;
+$nuxeo-color-code-foreground: #000;
+$nuxeo-color-code-border: #d9e6f0;
+$code-border-radius: 4px;
 
 // Section colours
-$nuxeo-tutorial-color: #50e3c2;
-$nuxeo-server-color: #6eccf5;
-$nuxeo-web-ui-color: #4a90e2;
-$nuxeo-desktop-mob-color: #8c0ca7;
-$nuxeo-packages-color: #ff462a;
-$nuxeo-user-documentation-color: #ff2a73;
-$nuxeo-sdks-color: #bcc2c8;
-$nuxeo-services-color: #ff8426;
-$nuxeo-tools-color: #ffad27;
+$nuxeo-tutorials-color: #00bcd4;
+$nuxeo-server-color: #2196f3;
+$nuxeo-web-ui-color: #3f51b5;
+$nuxeo-desktop-mob-color: #673ab7;
+$nuxeo-addons-color: #9c27b0;
+$nuxeo-user-documentation-color: #8a8a8a;
+$nuxeo-sdks-color: #ff1744;
+$nuxeo-services-color: #ff6d00;
+$nuxeo-tools-color: #f9a825;
+
+$nuxeo-section-lighten: 30%;
+
+
+$nuxeo-overview-shaddow: rgba(0, 0, 0, .05);
 
 $nuxeo-body-larger: 1.6rem;
 $nuxeo-body-large: 1.25rem;

@@ -1,21 +1,101 @@
-#page-container > div > div > div > div {
-  margin-top: 3rem;
-}
+$content-background: #f5f9fb;
 
-// large
-@media screen and #{breakpoint(large up)} {
+#content-container {
+  background-color: $white;
+  min-height: calc(100vh - 100px);
+
   #content {
-    max-width: 1024px;
+    margin-bottom: 5rem;
+    margin-top: 0;
 
-    &.toc {
-      max-width: 60%;
+    > .row {
+      margin-left: -1rem;
+      margin-right: -1rem;
     }
   }
 }
 
-#page-container #content {
-  margin-top: 0;
+#content-container.overview {
+  background-attachment: fixed;
+  background-color: $content-background;
+  background-image: url('/assets/imgs/nuxeo-grid.svg');
+  background-position-x: 4rem;
+  background-position-y: 350px;
+  background-repeat: no-repeat;
 }
+
+// medium+
+@media screen and #{breakpoint(medium up)} {
+  #content-container.overview {
+    background-position-x: calc(33vw + 4rem);
+  }
+}
+
+
+// large+
+@media screen and #{breakpoint(large up)} {
+  #content-container.overview {
+    background-position-x: calc(25vw + 4rem);
+  }
+
+  #content {
+    max-width: 1024px;
+
+    > p,
+    > h1,
+    > h2,
+    > h3,
+    > h4,
+    > h5,
+    > h6,
+    > div.nuxeo.callout {
+      max-width: 40rem;
+    }
+
+    > ol > li,
+    > ul > li {
+      & div,
+      & p {
+        max-width: 37em;
+      }
+    }
+
+    > pre,
+    > table,
+    > .table-scroll {
+      max-width: 100%;
+    }
+  }
+}
+
+
+// Medium screen support
+@media screen and (min-width: 1050px) {
+  #content-container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+// Large screen support
+@media screen and (min-width: 1800px) {
+  $wide-max-menu-width: 446px;
+  #side-menu-container {
+    max-width: $wide-max-menu-width;
+  }
+
+  #content-container {
+    background-position-x: calc(#{$wide-max-menu-width} + 7rem); // padding of 3rem + 4rem
+
+    &.large-9.large-push-3 {
+      left: $wide-max-menu-width;
+      padding-left: 5rem;
+      padding-right: 3rem;
+      width: calc(100% - #{$wide-max-menu-width});
+    }
+  }
+}
+
 
 .accordion {
   border-top-left-radius: .5rem;
@@ -24,7 +104,7 @@
   .accordion-title {
     border-top-left-radius: .43rem;
     border-top-right-radius: .43rem;
-    font-family: Ademi;
+    font-weight: bold;
   }
 }
 
@@ -41,21 +121,24 @@
 
   h1 ~ div {
     color: $medium-gray;
-    font-weight: bold;
+    font-weight: 600;
   }
 
   a {
     color: $medium-gray;
     margin-left: .5rem;
-    transition: color .2s ease;
 
-    i {
-      border: 2px solid $medium-gray;
-      border-radius: 50%;
-      padding: .4rem;
-      padding-bottom: .1rem;
-      padding-top: .1rem;
+    img {
+      margin-top: -5px;
     }
+  }
+
+  .style-bar {
+    background: $black;
+    height: 4px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    width: 100px;
   }
 }
 

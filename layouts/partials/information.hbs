@@ -3,6 +3,11 @@
         <span aria-hidden="true">&times;</span>
     </button>
     <div class="content">
+        <div id="page-information-tags" class="column {{!-- #if toc}}large-8 end{{/if --}}">
+            {{#each labels as |label|}}
+                <a href="/{{../url.key.space_path}}/label/{{sluggy label}}">{{label}}</a>{{#unless @last}}, {{/unless}}
+            {{/each}}
+        </div>
         <table class="hover stack">
             {{#each history}}
                 <tr>

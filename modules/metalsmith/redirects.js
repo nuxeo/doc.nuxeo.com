@@ -35,7 +35,7 @@ const escape_regex_url = str => str.replace(/([\.\+])/g, '\\$1');
  *
  * @return {Function}
 **/
-const file_contents_preprocess = function () {
+const nuxeo_redirects = function () {
     return function (files, metalsmith, done) {
         const metadata = metalsmith.metadata();
         let redirects;
@@ -119,4 +119,4 @@ const file_contents_preprocess = function () {
     };
 };
 
-module.exports = file_contents_preprocess;
+module.exports = nuxeo_redirects;

@@ -14,6 +14,8 @@
 
 $nuxeo-color-blue: #1585cf;
 $nuxeo-color-gray: #333;
+$nuxeo-satellite-dark-bg: #000522;
+
 
 html {
   box-sizing: border-box;
@@ -123,6 +125,7 @@ body {
   }
 
   .nuxeo-satellite-left-menu {
+    clear: both;
     float: left;
 
     li.menu-home a {
@@ -153,7 +156,7 @@ body {
 
       a {
         color: $white;
-        font-family: Ademi;
+        font-family: $nuxeo-font-family;
         font-size: 15px;
         padding: 16px 1.5em;
 
@@ -173,7 +176,7 @@ body {
 
     h1 {
       color: $white;
-      font-family: Ademi;
+      font-family: $nuxeo-font-family;
       font-size: 21px;
       margin: 0;
       padding-top: 80px;
@@ -196,7 +199,8 @@ body {
   }
 
   .nuxeo-satellite-menu {
-    background-color: $black;
+    background-color: $nuxeo-satellite-dark-bg;
+    color: $white;
     height: 50px;
 
     li.menu-burger {
@@ -208,7 +212,7 @@ body {
 
       a {
         color: $white;
-        font-family: Ademi;
+        font-family: $nuxeo-font-family;
         text-transform: uppercase;
 
         &:hover {
@@ -300,7 +304,7 @@ body {
           color: $white;
           cursor: pointer;
           display: inline-block;
-          font-family: Ademi;
+          font-family: $nuxeo-font-family;
           font-size: 12px;
           padding: 0 0 0 1rem;
           text-transform: uppercase;
@@ -323,7 +327,7 @@ body {
       margin-left: -1rem;
       margin-right: .5rem;
       transition: width .4s ease;
-      width: 168px;
+      width: 300px;
 
       &.closed {
         width: 0;

@@ -1,5 +1,5 @@
 .callout {
-  background-color: $light-gray;
+  background-color: $white;
   padding-bottom: 1rem;
 
   ul,
@@ -10,24 +10,43 @@
   }
 
   .title {
-    border-bottom: 1px solid $callout-border;
-    color: $dark-gray;
-    font-family: Ademi;
-    margin: 1rem 0;
+    color: $black;
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
   }
 
-  &.primary,
-  &.secondary {
-    border: 3px solid $medium-gray;
-  }
+  &:not(.nuxeo) {
+    box-shadow: 0 4px 4px 0 $nuxeo-overview-shaddow;
 
-  &.secondary {
-    background-color: lighten($medium-gray, 19%);
-    font-size: 1.2rem;
+    ul,
+    ol,
+    dl {
+      list-style: none;
+      margin-left: 0;
+
+      li {
+        margin-top: .7rem;
+      }
+    }
 
     h3 {
-      text-align: center;
+      color: $black;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
     }
+  }
+
+  &.primary {
+    background-color: lighten($primary-color, 41%);
+  }
+
+  &.secondary {
+    background-color: $white;
+    padding: 2rem 1rem;
   }
 
   &.nuxeo {

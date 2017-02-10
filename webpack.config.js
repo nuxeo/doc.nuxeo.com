@@ -52,11 +52,11 @@ module.exports = {
     module: {
         loaders: [
             {
-                test   : /\.jsx?$/,         // Match both .js and .jsx files
+                test   : /\.js$/,
                 exclude: /node_modules/,
                 loader : 'babel',
                 query  : {
-                    presets: ['react']
+                    presets: ['es2015']
                 }
             }
         ]

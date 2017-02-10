@@ -1,0 +1,37 @@
+{{#if menu_data}}
+<div>
+    <div class="input-container">
+        <div class="input-group">
+            <input type="text"
+                placeholder="FILTER MENU&hellip;"
+                class="input-group-field menu-filter"
+            />
+        </div>
+    </div>
+    <ul>
+    {{#each menu_data}}
+    {{#if id}}
+        <li id="menu_item_{{@index}}" data-menu-id="{{id}}" data-menu-level="{{level}}" data-menu-parent="{{#each parents}}{{#if @last}}{{this}}{{/if}}{{/each}}" data-init-open="{{#if open}}open{{/if}}" data-init-show="{{#if show}}show{{/if}}" class="{{classes}}" {{#unless show}}style="display: none;"{{/unless}}>
+            {{#if has_control}}
+            <i class="fa fa-fw fa-caret-right" aria-hidden="true"></i>
+            {{/if}}
+            <a href="{{url_full}}">{{name}}</a>
+        </li>
+    {{/if}}
+    {{#if toc_items}}
+        <li class="{{toc_classes}} contains-toc">
+            <ul id="toc_list" data-magellan>
+                {{#each toc_items}}
+                <li id="toc_item_{{@index}}" class="{{classes}}" {{#unless show}}style="display: none;"{{/unless}}>
+                    {{#if (condition id '||' title)}}
+                    <a href="#{{id}}">{{title}}</a>
+                    {{/if}}
+                </li>
+                {{/each}}
+            </ul>
+        </li>
+    {{/if}}
+    {{/each}}
+    </ul>
+</div>
+{{/if}}

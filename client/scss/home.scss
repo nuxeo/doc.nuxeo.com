@@ -79,6 +79,7 @@ h6 {
 }
 
 .fast-track {
+  box-shadow: 0 4px 4px 0 $nuxeo-overview-shaddow;
   display: inline-block;
   margin-bottom: 1rem;
   margin-top: calc(#{$fast-track-icon-radius} + 1rem);
@@ -86,10 +87,10 @@ h6 {
 
   > div {
     background-color: $white;
-    border-width: 0;
-    border-bottom-width: 2rem;
     border-style: solid;
-    // color: $nuxeo-tutorial-color;
+    border-width: 0;
+    border-bottom-width: 2rem; // Ignore sass-lint error
+    // color: $nuxeo-tutorials-color;
     position: relative;
 
     img {
@@ -102,20 +103,23 @@ h6 {
     }
 
     > div {
-      border-width: 0;
-      border-bottom-width: .7em;
       border-style: solid;
+      border-width: 0;
+      border-bottom-width: .7em; // Ignore sass-lint error
+      overflow: hidden;
       padding-bottom: 2rem;
       padding-top: 5rem;
+      text-overflow: ellipsis;
       text-transform: uppercase;
+      white-space: nowrap;
     }
   }
 
-  @include section-color('tutorial', $nuxeo-tutorial-color);
+  @include section-color('tutorials', $nuxeo-tutorials-color);
   @include section-color('server', $nuxeo-server-color);
   @include section-color('web-ui', $nuxeo-web-ui-color);
   @include section-color('desktop-mob', $nuxeo-desktop-mob-color);
-  @include section-color('packages', $nuxeo-packages-color);
+  @include section-color('addons', $nuxeo-addons-color);
   @include section-color('user-documentation', $nuxeo-user-documentation-color);
   @include section-color('sdks', $nuxeo-sdks-color);
   @include section-color('services', $nuxeo-services-color);
@@ -126,8 +130,8 @@ h6 {
       transition: color .4s ease;
     }
 
-    .hover-tutorial:hover {
-      color: $nuxeo-tutorial-color;
+    .hover-tutorials:hover {
+      color: $nuxeo-tutorials-color;
     }
 
     .hover-server:hover {
@@ -142,8 +146,8 @@ h6 {
       color: $nuxeo-desktop-mob-color;
     }
 
-    .hover-packages:hover {
-      color: $nuxeo-packages-color;
+    .hover-addons:hover {
+      color: $nuxeo-addons-color;
     }
 
     .hover-sdks:hover {
@@ -164,6 +168,7 @@ h6 {
 #search-area {
   background-color: $white;
   border: 1px solid $primary-color;
+  margin-top: 2em;
 
   .input-group {
     padding-top: 1rem;
@@ -181,7 +186,20 @@ h6 {
     }
   }
 }
+// Algolia
+#search-area {
+  .input-group .algolia-autocomplete {
+    margin-left: 1em;
+    width: 100%;
+  }
 
+  #search-input-full {
+    width: 100%;
+  }
+}
+
+/*
+// Google search
 #search {
   * {
     border: 0;
@@ -304,3 +322,4 @@ h6 {
     margin: 0 !important;
   }
 }
+*/

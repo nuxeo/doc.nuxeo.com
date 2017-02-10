@@ -22,39 +22,42 @@
     {{/if}}
     <div class="nuxeo-satellite-menu expanded">
         <div class="nuxeo-satellite-left-menu">
-            <ul>
-                <li class="menu-burger">
-                    <button class="menu-icon" type="button" data-toggle></button>
-                    <span class="menu-item-text">Menu</span>
-                </li>
-                <li class="menu-home" role="menuitem"><a href="/"><img class="nuxeo-satellite-icon" src="/assets/icons/favicon-16x16.png" width="16" height="16" alt="Nuxeo Documentation"> Documentation</a></li>
-                <li class="menu-link hover-tutorial" role="menuitem"><a href="/nxdoc/tutorials/">Tutorials</a></li>
-                <li class="menu-link hover-server" role="menuitem"><a href="/nxdoc/nuxeo-server/">Nuxeo Server</a></li>
-                <li class="menu-link hover-web-ui" role="menuitem"><a href="/nxdoc/web-ui/">Web UI</a></li>
-                <li class="menu-link hover-desktop-mob" role="menuitem"><a href="/nxdoc/desktop-and-mobile/">Desktop/Mobile</a></li>
-                <li class="menu-link hover-packages" role="menuitem"><a href="/nxdoc/nuxeo-add-ons/">Nuxeo Addons</a></li>
-                <li class="menu-link hover-sdks" role="menuitem"><a href="/nxdoc/client-sdks/">Client SDK</a></li>
-                <li class="menu-link hover-services" role="menuitem"><a href="/studio/">Online Services</a></li>
-                <li class="menu-link hover-tools" role="menuitem"><a href="/nxdoc/nuxeo-tools">Tools</a></li>
-                <li class="narrow-only">
-                    <form id="burger-menu-search" action="/" method="get">
-                        <i class="fa fa-search"></i>
-                        <input type="text" name="q" value="" placeholder="SEARCH DOCS&hellip;">
-                    </form>
-                </li>
-            </ul>
+            <div class="rainbow-menu" role="menuitem">
+                <a href="/"><img class="nuxeo-satellite-icon" src="/assets/icons/favicon-16x16.png" width="16" height="16" alt="Nuxeo Documentation"> Documentation
+                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                </a>
+            </div>
         </div>
         <div class="nuxeo-satellite-right-menu">
             <ul>
                 <li>
+                    {{> versions}}
+                </li>
+                <li>
                     <button id="search-button"><i class="fa fa-search"></i></button>
                 </li>
                 <li>
-                    <form id="search-box" action="/" method="get" class="closed">
-                        <input type="text" name="q" value="" placeholder="SEARCH DOCS&hellip;">
+                    <form id="search-box" class="closed">
+                        <input id="search-input" type="text" value="" placeholder="SEARCH DOCS&hellip;">
                     </form>
                 </li>
             </ul>
         </div>
+    </div>
+    <div id="doc-main-menu">
+        <ul>
+        {{#each site.main_menu}}
+            <li class="section-{{section_color}}" role="menuitem">
+                <a href="{{parent}}" role="menuitem">{{page_title parent}}</a>
+                <ul class="child">
+                {{#each children as |child|}}
+                    <li>
+                        <a href="{{child}}" role="menuitem" title="{{page_title child}}">{{page_title child}}</a>
+                    </li>
+                {{/each}}
+                </ul>
+            </li>
+        {{/each}}
+        </ul>
     </div>
 </div>

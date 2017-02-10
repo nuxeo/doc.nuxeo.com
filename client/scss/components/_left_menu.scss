@@ -1,128 +1,127 @@
-$menu-background: lighten($primary-color, 47%);
 $active-border-width: 8px;
+$scrollbar-color: rgba($black, .3);
+$menu-background: #eee;
+$menu-fg: rgba($nuxeo-color-dark, .8);
+$menu-fg-active: $nuxeo-color-dark;
 
-#side-menu-container {
-  background: linear-gradient(90deg, $menu-background 21rem, $white 21rem);
-  padding-left: 0;
+// Left menu
+@mixin menu-section-colours ($color) {
+  $menu-hover: lighten($color, 20%);
+  $level-0-color: lighten($color, $nuxeo-section-lighten);
+  // $level-1-color: lighten($color, $nuxeo-section-lighten);
+
+  //
+  #side-menu-container #side-menu .input-container {
+    background: $level-0-color;
+  }
+
+  #side-menu ul {
+    li:not(.contains-toc, .toc-item) {
+      &.l1 {
+        background-color: $level-0-color;
+      }
+
+      // &.l2 {
+      //   background-color: $level-1-color;
+      // }
+
+      &:hover {
+        background-color: $menu-hover;
+      }
+    }
+  }
 }
 
+#side-menu-container {
+  background: $menu-background;
+}
+
+.doc-section {
+  &.doc-section- {
+    @include menu-section-colours($nuxeo-user-documentation-color);
+  }
+
+  &.doc-section-tutorials {
+    @include menu-section-colours($nuxeo-tutorials-color);
+  }
+
+  &.doc-section-server {
+    @include menu-section-colours($nuxeo-server-color);
+  }
+
+  &.doc-section-web-ui {
+    @include menu-section-colours($nuxeo-web-ui-color);
+  }
+
+  &.doc-section-desktop-mob {
+    @include menu-section-colours($nuxeo-desktop-mob-color);
+  }
+
+  &.doc-section-addons {
+    @include menu-section-colours($nuxeo-addons-color);
+  }
+
+  &.doc-section-user-documentation {
+    @include menu-section-colours($nuxeo-user-documentation-color);
+  }
+
+  &.doc-section-sdks {
+    @include menu-section-colours($nuxeo-sdks-color);
+  }
+
+  &.doc-section-services {
+    @include menu-section-colours($nuxeo-services-color);
+  }
+
+  &.doc-section-tools {
+    @include menu-section-colours($nuxeo-tools-color);
+  }
+}
+
+#side-menu-container {
+  height: calc(100vh - 50px);
+  left: 0;
+  margin-top: 50px;
+  max-width: 450px;
+  overflow-y: auto;
+  padding: 0;
+  position: fixed;
+  top: 0;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $scrollbar-color;
+  }
+}
+
+// Filtering input
 #side-menu {
-  max-width: 20rem;
-
-  ul {
-    font-size: $nuxeo-body-smaller;
-    font-weight: bold;
-    list-style: none;
+  .input-container {
     margin: 0;
-    text-transform: uppercase;
-  }
-
-  ul ul {
-    background-color: $nuxeo-color-menu-background-selected;
-
-    // This is pretty disgusting
-    a {
-      padding-left: 1rem;
-
-      &.active {
-        padding-left: calc(1rem - #{$active-border-width});
-      }
-    }
-
-    ul {
-      a {
-        padding-left: 2rem;
-
-        &.active {
-          padding-left: calc(2rem - #{$active-border-width});
-        }
-      }
-
-      ul {
-        a {
-          padding-left: 3rem;
-
-          &.active {
-            padding-left: calc(3rem - #{$active-border-width});
-          }
-        }
-
-        ul {
-          a {
-            padding-left: 4rem;
-
-            &.active {
-              padding-left: calc(4rem - #{$active-border-width});
-            }
-          }
-
-          ul {
-            a {
-              padding-left: 5rem;
-
-              &.active {
-                padding-left: calc(5rem - #{$active-border-width});
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  li {
-    div {
-      border-right: solid 3px $light-gray;
-    }
-
-    > div {
-      padding: .5rem .5rem .5rem 1rem;
-
-      &:hover {
-        background-color: $nuxeo-color-menu-hover;
-
-        a {
-          color: $black;
-        }
-      }
-    }
-
-    i {
-      color: $dark-gray;
-      cursor: pointer;
-      float: right;
-      font-size: $nuxeo-body-smaller;
-      line-height: $lead-lineheight;
-      transition: color .2s ease;
-
-      &:hover {
-        color: $primary-color;
-      }
-    }
-  }
-
-  a {
-    color: $secondary-color;
-    display: block;
-    transition: color .2s ease;
-
-    &.active {
-      color: $black;
-    }
+    padding: 1rem 2rem;
   }
 
   .input-group {
-    border: 2px solid $medium-gray;
-    margin: 2rem;
+    background-color: rgba($white, .4);
+    margin: 0;
     padding: .5rem;
-    width: auto;
+    width: 100%;
   }
 
   .input-group-field {
+    color: $menu-fg-active;
+    font-size: .9rem;
     height: 2rem;
 
-    &:placeholder {
-      color: $dark-gray;
+    &::placeholder {
+      color: $menu-fg;
       font-size: .8rem;
       text-transform: uppercase;
     }
@@ -131,11 +130,184 @@ $active-border-width: 8px;
 
 // Small
 @media screen and #{breakpoint(small down)} {
-  #side-menu-container {
-    background: $menu-background;
-  }
-
   #side-menu {
     max-width: none;
+  }
+}
+
+
+// Menu
+#side-menu {
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+
+  li {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: capitalize;
+    transition: background-color .2s ease;
+
+    i.fa {
+      cursor: pointer;
+      float: right;
+      margin-right: .4em;
+      margin-top: .8em;
+      transition: transform .2s ease;
+    }
+
+    &.open i.fa {
+      transform: rotate(90deg);
+    }
+
+    a {
+      color: $menu-fg;
+      display: block;
+      padding: .5rem 1rem;
+      transition: color .2s ease;
+    }
+
+    &.active a {
+      color: $menu-fg-active;
+    }
+
+    .highlight {
+      color: $primary-color;
+    }
+  }
+
+  :not(.contains-toc, .toc-item) {
+    &.l1{
+      padding-left: 1rem;
+    }
+
+    &.l2,
+    &.l3,
+    &.l4,
+    &.l5,
+    &.l6,
+    &.l7 {
+      &.active {
+        position: relative;
+
+        &::before {
+          content: '•';
+          left: 1rem;
+          position: absolute;
+          top: .5em;
+        }
+      }
+    }
+
+    &.l2 {
+      padding-left: 1.5rem;
+
+      &.active::before {
+        left: 1.5rem;
+      }
+    }
+
+    &.l3 {
+      padding-left: 2.5rem;
+
+      &.active::before {
+        left: 2.5rem;
+      }
+    }
+
+    &.l4 {
+      padding-left: 3.5rem;
+
+      &.active::before {
+        left: 3.5rem;
+      }
+    }
+
+    &.l5 {
+      padding-left: 4.5rem;
+
+      &.active::before {
+        left: 4.5rem;
+      }
+    }
+
+    &.l6 {
+      padding-left: 5.5rem;
+
+      &.active::before {
+        left: 5.5rem;
+      }
+    }
+
+    &.l7 {
+      padding-left: 6.5rem;
+
+      &.active::before {
+        left: 6.5rem;
+      }
+    }
+  }
+
+  // TOC
+  #toc_list {
+    background-color: $white;
+    margin: 1rem;
+
+    .toc-item {
+      background-color: transparent;
+      // font-size: 12px;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      padding-left: 0;
+
+      a {
+        color: $menu-fg-active;
+        font-weight: normal;
+      }
+
+      &:hover a,
+      & a.active {
+        color: $primary-color;
+      }
+
+      // Default indentation
+      &.l1 {
+        margin-left: 0;
+      }
+
+      &.l2 {
+        margin-left: .5rem;
+      }
+
+      &.l3 {
+        margin-left: 1.5rem;
+      }
+
+      &.l4 {
+        margin-left: 2.5rem;
+      }
+
+      &.l5 {
+        margin-left: 3.5rem;
+      }
+
+      &.l6 {
+        margin-left: 4.5rem;
+      }
+
+      &.l7 {
+        margin-left: 5.5rem;
+      }
+
+      // TOC level indentation
+      &.h3 {
+        padding-left: 1rem;
+      }
+
+      &.h4 {
+        padding-left: 2rem;
+      }
+    }
   }
 }

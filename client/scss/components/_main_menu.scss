@@ -1,0 +1,155 @@
+$menu-shadow: rgba($black, .2);
+$menu-width: 370px;
+$second-level-fg: rgba($nuxeo-color-dark, .8);
+
+@mixin section-colours ($color) {
+  $menu-hover: lighten($color, $nuxeo-section-lighten);
+  border-left-color: $color;
+
+  // a {
+  //   color: $color;
+  // }
+
+  &:hover {
+    background-color: $menu-hover;
+
+    // > a {
+    //   color: darken($color, 40%);
+    // }
+  }
+
+  ul.child li:hover {
+    background-color: $menu-hover;
+  }
+}
+
+#nuxeo-satellite-header {
+  .rainbow-menu > a {
+    color: $white;
+    display: block;
+    font-size: 14px;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 600;
+    left: 0;
+    letter-spacing: 2px;
+    line-height: 50px;
+    text-transform: uppercase;
+    width: $menu-width;
+
+    &:hover {
+      color: $primary-color;
+    }
+
+    i.fa {
+      float: right;
+      line-height: 50px;
+    }
+  }
+}
+
+#doc-main-menu {
+  background-color: $white;
+  box-shadow: 4px 4px 4px 0 $menu-shadow;
+  display: none;
+  position: absolute;
+  z-index: 10;
+
+  &.active,
+  &:hover {
+    display: block;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+
+    li {
+      border-left-style: solid;
+      border-left-width: 30px;
+      // font-family: AvenirNext;
+      font-size: .88rem;
+      font-stretch: normal;
+      font-style: normal;
+      font-weight: 500;
+      letter-spacing: 1.8px;
+      padding: 19px 5px 19px 10px;
+      text-transform: uppercase;
+
+      & {
+        transition: background-color .4s ease-in;
+        width: $menu-width;
+
+        &:hover,
+        &.active {
+          ul.child {
+            display: block;
+          }
+        }
+      }
+
+      a {
+        color: $nuxeo-color-dark;
+        display: block;
+        transition: color .2s ease;
+      }
+
+      &.section-tutorials {
+        @include section-colours($nuxeo-tutorials-color);
+      }
+
+      &.section-server {
+        @include section-colours($nuxeo-server-color);
+      }
+
+      &.section-web-ui {
+        @include section-colours($nuxeo-web-ui-color);
+      }
+
+      &.section-desktop-mob {
+        @include section-colours($nuxeo-desktop-mob-color);
+      }
+
+      &.section-addons {
+        @include section-colours($nuxeo-addons-color);
+      }
+
+      &.section-user-documentation {
+        @include section-colours($nuxeo-user-documentation-color);
+      }
+
+      &.section-sdks {
+        @include section-colours($nuxeo-sdks-color);
+      }
+
+      &.section-services {
+        @include section-colours($nuxeo-services-color);
+      }
+
+      &.section-tools {
+        @include section-colours($nuxeo-tools-color);
+      }
+
+      ul.child {
+        background: $white;
+        border-left: 0;
+        box-shadow: 4px 4px 4px 0 $menu-shadow;
+        display: none;
+        left: $menu-width;
+        min-height: 480px;
+        padding: 0;
+        position: absolute;
+        top: 0;
+
+        a {
+          color: $second-level-fg;
+        }
+
+        li {
+          border-left: 0;
+          padding: 14px 20px;
+        }
+      }
+    }
+  }
+}

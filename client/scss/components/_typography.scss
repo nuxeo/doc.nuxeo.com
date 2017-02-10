@@ -6,12 +6,28 @@ h5,
 h6 {
   margin-bottom: .5rem;
   margin-top: 1.5rem;
+
+  &.style-bar::after {
+    background: black;
+    content: '';
+    display: block;
+    height: 4px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    width: 100px;
+  }
 }
 
+h1 {
+  font-weight: 200;
+}
+
+h2,
+h3,
 h4,
 h5,
 h6 {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 a {
@@ -25,6 +41,7 @@ a {
 
 table {
   border: 2px solid $medium-gray;
+  margin-bottom: 1.5em;
 
   th {
     text-align: left;
@@ -43,6 +60,7 @@ ol {
   -webkit-padding-start: 0;
   margin-after: 0;
   margin-before: 0;
+  margin-bottom: 1.5em;
   padding-start: 0;
 
   ol {
@@ -52,4 +70,10 @@ ol {
       list-style-type: decimal;
     }
   }
+}
+
+.sequence-link {
+  font-weight: 600;
+  padding-bottom: 1rem;
+  margin-top: 2rem;
 }

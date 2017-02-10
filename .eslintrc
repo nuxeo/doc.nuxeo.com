@@ -3,12 +3,8 @@ root: true
 env:
     node: true
 
-plugins:
-    - react
-
 extends:
     - "eslint:recommended"
-    - "plugin:react/recommended"
     - ".eslintdefaults"
 
 rules:

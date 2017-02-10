@@ -2,21 +2,25 @@
     </div>
     {{#unless no_side_menu}}
     <div id="side-menu-container" class="column show-for-medium medium-4 large-3 medium-pull-8 large-pull-9">
-        <div id="side-menu" data-space="{{url.key.space_path}}" data-equalizer-watch="container"></div>
+        <div id="side-menu" data-space="{{url.key.space_path}}">
+            {{> left_menu}}
+        </div>
     </div>
     {{/unless}}
 </div>
+
 <div id="footer" class="row expanded">
+    <button id="goto-top" type="button">
+        <img src="/assets/imgs/icons/goto-top-icon.svg">
+        <span>To Top</span>
+    </button>
+    {{> versions_inline}}
     <footer>
         {{!-- Has id to ensure main menu works on pages without a submenu --}}
-        <div id="nuxeo-submenu" class="row small-up-1 medium-up-3 large-up-5">
+        <div id="nuxeo-submenu" class="row small-up-1 medium-up-2 large-up-4">
             <div class="column">
                 <ul>
                     <li><a href="https://nuxeo.com/why-nuxeo/">Why Nuxeo?</a></li>
-                    <li><a href="https://nuxeo.com/about/">About</a></li>
-                    <li><a href="https://nuxeo.com/careers/">Careers</a></li>
-                    <li><a href="https://nuxeo.com/about/leadership/#executive-team">Executive Team</a></li>
-                    <li><a href="https://nuxeo.com/media-center/">Press</a></li>
                 </ul>
                 <ul>
                     <li><a href="https://nuxeo.com/about/contact/">Contact</a></li>
@@ -27,9 +31,6 @@
                 <ul>
                     <li><a href="https://nuxeo.com/products/content-management-platform/">Nuxeo Platform</a></li>
                     <li><a href="https://nuxeo.com/products/studio/">Nuxeo Studio</a></li>
-                    <li><a href="https://nuxeo.com/products/nuxeo-cloud/">Cloud Hosting</a></li>
-                    <li><a href="https://nuxeo.com/products/nuxeo-live-connect/">Cloud File Sharing</a></li>
-                    <li><a href="https://nuxeo.com/products/drive-desktop-sync/">Desktop Sync</a></li>
                     <li><a href="https://nuxeo.com/products/integration/">Integrations</a></li>
                     <li><a href="https://nuxeo.com/rest-api/">REST API</a></li>
                     <li><a href="https://nuxeo.com/hybrid-architecture-for-unmatched-performance-scalability/">Performance &amp; Scalability</a></li>
@@ -43,63 +44,45 @@
                     <li><a href="https://nuxeo.com/solutions/digital-asset-management/">Use Cases</a></li>
                     <li><a href="https://nuxeo.com/solutions/document-management/">Document Management</a></li>
                     <li><a href="https://nuxeo.com/solutions/digital-asset-management/">Digital Asset Management</a></li>
-                    <li><a href="https://nuxeo.com/solutions/case-management/">Case Management</a></li>
-                    <li><a href="https://nuxeo.com/solutions/advanced-knowledge-base/">Knowledge Management</a></li>
+                    <li><a href="https://nuxeo.com/solutions/">More Use Cases &hellip;</a></li>
                 </ul>
-            </div>
-            <div class="column">
-                <ul>
-                    <li><a href="https://nuxeo.com/services/">Services</a></li>
-                </ul>
-                <ul>
-                    <li><a href="https://nuxeo.com/resources/">Learning</a></li>
-                    <li><a href="https://nuxeo.com/events/">Events</a></li>
-                    <li><a href="https://nuxeo.com/reports/">Reports</a></li>
-                    <li><a href="https://nuxeo.com/blog/">Blog</a></li>
-                    <li><a href="https://doc.nuxeo.com/">Documentation</a></li>
-                    <li><a href="https://university.nuxeo.io/">University</a></li>
-                </ul>
-            </div>
-            <div class="column">
                 <ul>
                     <li><a href="https://nuxeo.com/customers/">Customers</a></li>
                 </ul>
+            </div>
+            <div class="column">
                 <ul>
-                    <li><a href="https://nuxeo.com/partners/">Partners</a></li>
+                    <li><a href="https://nuxeo.com/resources/">Learning</a></li>
+                    <li><a href="https://nuxeo.com/reports/">Reports</a></li>
+                    <li><a href="https://nuxeo.com/blog/">Blog</a></li>
+                    <li><a href="https://university.nuxeo.io/">University</a></li>
+                </ul>
+                <ul>
+                    <li><a href="https://nuxeo.com/services/">Services</a></li>
                 </ul>
             </div>
         </div>
 
-        <div class="row medium-up-2">
+        <div id="copyright-social" class="row medium-up-2">
             <div class="column copyright">
+                Copyright &copy; {{moment format='YYYY'}} Nuxeo
+                <span class="separator">|</span>
                 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
-                <br>
+                <span class="separator">|</span>
                 <a href="https://nuxeo.com/legal/privacy-policy/">Privacy Policy</a>
             </div>
             <div class="column medium-text-right social">
                 <a href="https://www.facebook.com/Nuxeo">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                    </span>
+                    {{inline_svg 'assets/imgs/icons/facebook.svg'}}
                 </a>
                 <a href="http://www.linkedin.com/groups/Nuxeo-Community-43314?home=&gid=43314&trk=anet_ug_hm">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                    </span>
+                    {{inline_svg 'assets/imgs/icons/linkedin.svg'}}
                 </a>
                 <a href="https://twitter.com/nuxeo">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                    </span>
+                    {{inline_svg 'assets/imgs/icons/twitter.svg'}}
                 </a>
                 <a href="https://plus.google.com/u/0/+nuxeo/posts">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
-                    </span>
+                    {{inline_svg 'assets/imgs/icons/google-plus.svg'}}
                 </a>
             </div>
         </div>
@@ -111,3 +94,16 @@
 {{#if script}}
 <script type="text/javascript" src="/{{obj_key js script}}"></script>
 {{/if}}
+
+{{! Algolia DocSearch }}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '482c0a65c92c01569f0d04bac01b5979',
+indexName: 'nuxeo',
+inputSelector: '#search-input',
+algoliaOptions: {
+    'filters': 'tags:{{#if (condition url.key.version '!=' '')}}{{url.key.version}}{{else}}ft{{/if}} OR tags:static'
+},
+debug: false // Set debug to true if you want to inspect the dropdown "{{url.key.version}}"
+});
+</script>
