@@ -94,7 +94,7 @@ default:
                 children:
                     - /nxdoc/nuxeo-dev-tools-extension
                     - /studio/nuxeo-studio
-                    - /corg/index
+                    - /corg
     page_defaults:
         -
             pattern: "**/*.md"
