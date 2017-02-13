@@ -132,6 +132,10 @@
 ^/nxdoc/use-nuxeo-api-playground-to-discover-the-api/?$: /nxdoc/howto-nuxeo-api-playground
 ^/nxdoc/developing-with-angular2/?$: /nxdoc/howto-develop-with-angular2
 
+# Updates with 8.10 documentation
+^/810/nxdoc/theme-upgrade-to-lts-2015/?$: /710/nxdoc/theme-upgrade-to-lts-2015/
+^/nxdoc/theme-upgrade-to-lts-2015/?$: /710/nxdoc/theme-upgrade-to-lts-2015/
+
 
 # Old search redirect
 ^/dosearchsite.action?queryString=(.*): /?q=$1
