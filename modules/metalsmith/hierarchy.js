@@ -70,6 +70,21 @@ const hierarchy = function (options) {
                         // error('Node Element: %o', node_path[i].model.id);
                     }
 
+                    // Add Section for page indexing
+                    if (file.hierarchy.parents.length) {
+                        let parents = [].concat(file.hierarchy.parents);
+
+                        if (file.url.key.space === 'nxdoc' && parents.length > 1) {
+                            parents = parents.slice(1, 2);
+                        }
+
+                        file.hierarchy.section_name = parents[0] && parents[0].name || file.title;
+                    }
+                    else {
+                        // set section to be current page title
+                        file.hierarchy.section_name = file.title;
+                    }
+
                     // Add children
                     node = node_path.pop();
                     file.hierarchy.children = [];
