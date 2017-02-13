@@ -1,6 +1,6 @@
 {
   "name": "nuxeo-docs-builder",
-  "version": "5.2.4",
+  "version": "7.0.0",
   "dependencies": {
     "abab": {
       "version": "1.0.3",
