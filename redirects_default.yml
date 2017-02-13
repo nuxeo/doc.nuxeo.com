@@ -114,7 +114,7 @@
 ^/nxdoc/create-a-task-assignment-alert/?$: /nxdoc/workflow-use-cases/
 ^/nxdoc/functional-tour/?$: /nxdoc/workflow-use-cases/
 ^/nxdoc/implement-the-validation-logic/?$: /nxdoc/workflow-use-cases/
-
+^/nxdoc/hotfixes-installation-notes-for-nuxeo-platform-lts-2015/?$: /810/nxdoc/hotfixes-installation-notes-for-nuxeo-platform-lts-2016
 
 ^/userdoc/nuxeo-drive/?$: /nxdoc/nuxeo-drive
 ^/userdoc/nuxeo-drive-faq/?$: /nxdoc/nuxeo-drive-faq
