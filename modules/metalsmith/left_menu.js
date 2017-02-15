@@ -14,7 +14,7 @@ const menu = function (options) {
     return function (files, metalsmith, done) {
         const metadata = metalsmith.metadata();
 
-        const matched_files = multimatch(Object.keys(files), '**/*.md');
+        const matched_files = multimatch(Object.keys(files), '**/*.html');
 
         matched_files.forEach((filename) => {
             const file = files[filename];

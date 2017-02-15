@@ -5,9 +5,7 @@
 const {debug} = require('../debugger')('metalsmith-toc-headers');
 
 // npm packages
-const striptags = require('striptags');
-const slug = require('slug');
-slug.defaults.modes.pretty.lower = true;
+const cheerio = require('cheerio');
 
 
 /**
@@ -28,29 +26,22 @@ const toc_headers = function () {
 
             file.toc_items = [];
 
-            const contents = file.contents.toString();
-
-            const titles_search_criteria = ['^('];
+            const $ = cheerio.load(file.contents.toString());
+            const titles = ['h2', 'h3'];
             if (!file.toc_no_h4) {
-                // Put deepest levels first
-                titles_search_criteria.push('####|');
+                titles.push('h4');
             }
-            // Negative lookahead for #
-            titles_search_criteria.push('###|##)(?!#)\s*(.+)$');
-            const titles_find = new RegExp(titles_search_criteria.join(''), 'gm');
+            const $titles = $(titles.join(','));
+            $titles.each(function () {
+                /* eslint no-invalid-this: 0 */
+                const $this = $(this);
 
-            let title_match;
-            while ((title_match = titles_find.exec(contents)) !== null) {
-                // Remove anchors
-                let title = title_match[2].replace(/\{\{.+?\}\}/g, '');
-                const id = slug(title.replace(/[\(\)&;\*]/g, ' '));
-                const level = title_match[1].length;
-                title = striptags(title.replace(/(&nbsp;)/g, ' '));
-                // debug(`id: ${id}, title: ${title}, level: ${level}`);
+                const id = $this.attr('id');
+                const title = $this.text().replace(/\{\{([^\}]*)\}\}/g, '');
+                const level = +/\d+/.exec($this.prop('tagName').toLowerCase())[0];
                 file.toc_items.push({id, title, level});
-            }
-
-            debug('TOC items', file.toc_items);
+            });
+            debug('Items:', file.toc_items);
         };
 
         filepaths.forEach(get_files);
