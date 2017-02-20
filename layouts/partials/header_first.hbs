@@ -28,10 +28,10 @@
     <link rel="stylesheet" href="/assets/css/{{css.md5}}/{{style}}.css">
     {{/if}}
 
-    {{#if ga_exp_id}}
+    {{#if site.ga_exp_id}}
     {{!-- Google Analytics Content Experiment code --}}
     <script>function utmx_section(){}function utmx(){}(function(){var
-    k={{ga_exp_id}},d=document,l=d.location,c=d.cookie;
+    k={{site.ga_exp_id}},d=document,l=d.location,c=d.cookie;
     if(l.search.indexOf('utm_expid='+k)>0)return;
     function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
     indexOf(';',i);return esfcape(c.substring(i+n.length+1,j<0?c.
@@ -46,13 +46,13 @@
     {{else}}
     <!-- No GA Experiment ID -->
     {{/if}}
-    {{#if ga_id}}
+    {{#if site.ga_id}}
     {{!-- Google Analytics Content Experiment code --}}
     <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', '{{ga_id}}', 'auto');
+    ga('create', '{{site.ga_id}}', 'auto');
     ga('send', 'pageview');
     </script>
     {{else}}
