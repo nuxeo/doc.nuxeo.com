@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="66px" height="66px" viewBox="0 0 66 66" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
-    <title>Nuxeo Server</title>
-    <desc>Created with Sketch.</desc>
+    <!-- Generator: sketchtool 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>EC146440-5B25-4DB5-8685-EE079101AF46</title>
+    <desc>Created with sketchtool.</desc>
     <defs></defs>
-    <g id="Doc-Center-V1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-        <g id="V1-/1-Home" transform="translate(-533.000000, -889.000000)" stroke="#BDC2C8" stroke-width="2">
-            <g id="Nuxeo-Server" transform="translate(439.000000, 887.000000)">
+    <g id="Doc-Center-V2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="V2-/-DocCenter---Home" transform="translate(-533.000000, -893.000000)" stroke="#BDC2C8" stroke-width="2">
+            <g id="Nuxeo-Server" transform="translate(439.000000, 891.000000)">
                 <g transform="translate(95.000000, 3.000000)">
-                    <polygon id="Stroke-4871" points="0.375 30.625 63.625 30.625 63.625 14.125 0.375 14.125"></polygon>
-                    <polyline id="Stroke-4872" points="0.375 14.125 16.875 0.375 47.125 0.375 63.625 14.125"></polyline>
+                    <polyline id="Stroke-4872" fill="#FFFFFF" points="0.375 14.125 16.875 0.375 47.125 0.375 63.625 14.125"></polyline>
+                    <polyline id="Stroke-4877" fill="#FFFFFF" points="0.375 30.625 0.375 47.125 63.625 47.125 63.625 30.625"></polyline>
+                    <polygon id="Stroke-4871" fill="#FFFFFF" points="0.375 30.625 63.625 30.625 63.625 14.125 0.375 14.125"></polygon>
                     <path d="M38.875,22.375 C38.875,23.134 38.259,23.75 37.5,23.75 C36.741,23.75 36.125,23.134 36.125,22.375 C36.125,21.616 36.741,21 37.5,21 C38.259,21 38.875,21.616 38.875,22.375 L38.875,22.375 Z" id="Stroke-4873"></path>
                     <path d="M47.125,22.375 C47.125,23.134 46.509,23.75 45.75,23.75 C44.991,23.75 44.375,23.134 44.375,22.375 C44.375,21.616 44.991,21 45.75,21 C46.509,21 47.125,21.616 47.125,22.375 L47.125,22.375 Z" id="Stroke-4874"></path>
                     <path d="M55.375,22.375 C55.375,23.134 54.759,23.75 54,23.75 C53.241,23.75 52.625,23.134 52.625,22.375 C52.625,21.616 53.241,21 54,21 C54.759,21 55.375,21.616 55.375,22.375 L55.375,22.375 Z" id="Stroke-4875"></path>
                     <path d="M11.375,22.375 C11.375,23.89575 10.14575,25.125 8.625,25.125 C7.107,25.125 5.875,23.89575 5.875,22.375 C5.875,20.857 7.107,19.625 8.625,19.625 C10.14575,19.625 11.375,20.857 11.375,22.375 L11.375,22.375 Z" id="Stroke-4876"></path>
-                    <polyline id="Stroke-4877" points="0.375 30.625 0.375 47.125 63.625 47.125 63.625 30.625"></polyline>
                     <path d="M38.875,38.875 C38.875,39.634 38.259,40.25 37.5,40.25 C36.741,40.25 36.125,39.634 36.125,38.875 C36.125,38.116 36.741,37.5 37.5,37.5 C38.259,37.5 38.875,38.116 38.875,38.875 L38.875,38.875 Z" id="Stroke-4878"></path>
                     <path d="M47.125,38.875 C47.125,39.634 46.509,40.25 45.75,40.25 C44.991,40.25 44.375,39.634 44.375,38.875 C44.375,38.116 44.991,37.5 45.75,37.5 C46.509,37.5 47.125,38.116 47.125,38.875 L47.125,38.875 Z" id="Stroke-4879"></path>
                     <path d="M55.375,38.875 C55.375,39.634 54.759,40.25 54,40.25 C53.241,40.25 52.625,39.634 52.625,38.875 C52.625,38.116 53.241,37.5 54,37.5 C54.759,37.5 55.375,38.116 55.375,38.875 L55.375,38.875 Z" id="Stroke-4880"></path>
