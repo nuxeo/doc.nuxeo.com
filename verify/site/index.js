@@ -1,12 +1,15 @@
 'use strict';
+/* eslint-env es6 */
 
-var test = require('tape');
-var fs = require('fs');
-var path = require('path');
+const test = require('tap').test;
+const fs = require('fs');
+const path = require('path');
+const cheerio = require('cheerio');
 
-var site_path = path.join(__dirname, '../../site');
-var assets_path = path.join(site_path, 'assets');
-var spaces = [
+
+const site_path = path.join(__dirname, '../../site');
+const assets_path = path.join(site_path, 'assets');
+const spaces = [
     '710/nxdoc',
     '710/userdoc',
     'connect',
@@ -19,8 +22,8 @@ var spaces = [
 ];
 
 
-test('site should have key files', function (assert) {
-    var site_paths = [
+test('site should have key files', (assert) => {
+    const site_paths = [
         path.join(assets_path, 'fonts/fontawesome-webfont.ttf'),
         path.join(assets_path, 'fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.ttf'),
         path.join(assets_path, 'icons/favicon.ico'),
@@ -30,25 +33,42 @@ test('site should have key files', function (assert) {
         path.join(site_path, 'sitemap.xml')
     ];
     // Index of each of the spaces
-    spaces.forEach(function (space) {
-        site_paths.push(path.join(site_path, space + '.json'));
+    spaces.forEach((space) => {
+        site_paths.push(path.join(site_path, `${space}.json`));
         site_paths.push(path.join(site_path, space, 'index.html'));
         site_paths.push(path.join(site_path, space, '/label/index.html'));
     });
 
-    site_paths.forEach(function (filepath) {
-        assert.doesNotThrow(function () { fs.accessSync(filepath, fs.F_OK); }, void 0, filepath + ' is present');
+    site_paths.forEach((filepath) => {
+        assert.doesNotThrow(() => { fs.accessSync(filepath, fs.F_OK); }, void 0, `${filepath} is present`);
     });
 
     assert.end();
 });
 
-// test('key files should have content', function (assert) {
-//     var css_hash = fs.readFileSync(css_stats).toString().split('\n')[0];
-//     var js_obj = require(path.join('../', js_stats));
-//
-//     assert.ok(/^[a-z0-9]{32}$/.test(css_hash), css_stats + ' is hash of 32 characters');
-//     assert.deepEqual(js_obj.errors, [], js_stats + ' has no errors');
-//
-//     assert.end();
-// });
+test('canonical metadata reference should be correct', (assert) => {
+    const url_prefix = 'http://doc.nuxeo.com';
+    const canonical_links = [
+        {
+            filepath    : '/index.html',
+            expected_url: ''
+        },
+        {
+            filepath    : '710/nxdoc/rest-api/index.html',
+            expected_url: '/nxdoc/rest-api/'
+        },
+        {
+            filepath    : 'nxdoc/rest-api/index.html',
+            expected_url: '/nxdoc/rest-api/'
+        }
+    ];
+
+    canonical_links.forEach(({filepath, expected_url}) => {
+        const content = fs.readFileSync(path.join(site_path, filepath)).toString();
+        const $ = cheerio.load(content);
+
+        assert.isEqual($('link[rel="canonical"]').attr('href'), `${url_prefix}${expected_url}`, 'Canonical link is correct');
+    });
+    assert.end();
+
+});
