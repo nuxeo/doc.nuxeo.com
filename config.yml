@@ -15,6 +15,7 @@ default:
         remove_files_pattern:
             - '.DS_Store'
             - '**.DS_Store'
+        canonical_version_preference: 'ft'
 
         # Keys
         cse_id: "005135669674242188188:xu8ybnpu3r8"

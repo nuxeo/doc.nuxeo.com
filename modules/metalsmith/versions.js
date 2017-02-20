@@ -86,6 +86,18 @@ const urls = function (options) {
                     //     title: file.title,
                     //     url  : file.url.full
                     // };
+                    const latest_version = file.url && file.url.versions && file.url.versions.length && file.url.versions.find(version => version.label.toLowerCase() === metadata.site.canonical_version_preference);
+                    if (latest_version && latest_version.url && !latest_version.no_page) {
+                        debug('latest', filepath, latest_version.url);
+                        file.url.canonical = latest_version.url;
+                    }
+                    else if (file.url && file.url.full) {
+                        debug('this_url', filepath, latest_version.url);
+                        file.url.canonical = file.url.full;
+                    }
+                    else {
+                        error('No canonical url set', filepath);
+                    }
                 }
                 else {
                     debug('Ignorning: %s', filepath);
