@@ -104,7 +104,7 @@ $content-background: #f5f9fb;
   .accordion-title {
     border-top-left-radius: .43rem;
     border-top-right-radius: .43rem;
-    font-weight: bold;
+    font-weight: $global-weight-bold;
   }
 }
 

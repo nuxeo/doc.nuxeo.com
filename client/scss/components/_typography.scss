@@ -27,7 +27,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 600;
+  font-weight: $global-weight-bold;
+}
+
+b, strong {
+  font-weight: $global-weight-bold;
 }
 
 a {
@@ -73,7 +77,7 @@ ol {
 }
 
 .sequence-link {
-  font-weight: 600;
+  font-weight: $global-weight-bold;
   padding-bottom: 1rem;
   margin-top: 2rem;
 }
