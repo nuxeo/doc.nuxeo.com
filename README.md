@@ -138,6 +138,10 @@ Build processes are defined here. Should be relatively self explanatory but anyt
 # Trouble shooting
 [Trouble shooting guide](./docs/trouble-shooting.md#trouble-shooting)
 
+# Algolia DocSearch
+- Crawling configuration: https://github.com/algolia/docsearch-configs (specifically: https://github.com/algolia/docsearch-configs/blob/master/configs/nuxeo.json)
+- Implementation Documentation: https://community.algolia.com/docsearch/documentation/
+
 # Licenses
 
 Code is licensed under a [GNU GPLv3](LICENSE.txt) and content </a><br />is under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
