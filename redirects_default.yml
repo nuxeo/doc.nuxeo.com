@@ -32,6 +32,8 @@
 ^/display/KB/java.net.SocketException\+Too\+many\+open\+files/?$: /nxdoc/java.net.SocketException-too-many-open-files/
 
 # NXDOC-1038: Archived versions of the documentation
+^/58/?$: /archived-documentation
+^/58/.+: /archived-documentation
 ^/display/NXDOC58(/?|/.*): /archived-documentation
 ^/display/ADMINDOC58(/?|/.*): /archived-documentation
 ^/display/USERDOC58(/?|/.*): /archived-documentation
@@ -136,3 +138,4 @@
 
 # Old search redirect
 ^/dosearchsite.action?queryString=(.*): /?q=$1
+
