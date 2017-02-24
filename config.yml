@@ -119,7 +119,6 @@ default:
                 - '810'
                 - '710'
                 - '60'
-                - '58'
 
 development:
     isDev: true
