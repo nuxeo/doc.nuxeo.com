@@ -91,6 +91,7 @@
     "browser": "chromium-browser"
   },
   "scripts": {
+    "postinstall": "npm run compile",
     "prestart": "npm run empty_directories && npm run compile && npm run default_redirects",
     "start": "./build.sh",
     "poststart": "npm run copy_assets && npm run copy_extras && npm run verify",

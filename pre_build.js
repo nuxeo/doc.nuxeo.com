@@ -37,7 +37,7 @@ const get_repo_branches = function (config) {
     Object.keys(config.repositories).forEach(function (repo_id) {
         const repo = config.repositories[repo_id];
         const target_base = path.join(__dirname, 'temp');
-        repo.branches.forEach(function (branch) {
+        Object.keys(repo.branches).forEach(function (branch) {
             info('Adding - repo: %s, branch: %s', repo_id, branch);
             repo_branches.push({
                 target_source_path: path.join(target_base, repo_id, branch, 'src'),

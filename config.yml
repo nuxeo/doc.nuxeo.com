@@ -114,11 +114,26 @@ default:
         platform:
             url: git@github.com:nuxeo/doc.nuxeo.com-content.git
             branches:
-                - static
-                - master
-                - '810'
-                - '710'
-                - '60'
+                static:
+                    no_versioning: true
+                master:
+                    label: 'FT'
+                    order: 0
+                '810':
+                    label: 'LTS 2016'
+                    url_path: '810'
+                    noindex: true
+                    order: 10
+                '710':
+                    label: 'LTS 2015'
+                    url_path: '710'
+                    noindex: true
+                    order: 20
+                '60':
+                    label: '6.0'
+                    url_path: '60'
+                    noindex: true
+                    order: 30
 
 development:
     isDev: true
