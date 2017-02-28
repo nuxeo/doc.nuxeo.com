@@ -51,7 +51,7 @@ test('canonical and robots metadata reference should be correct', (assert) => {
     const canonical_links = [
         {
             filepath    : '/index.html',
-            expected_url: '',
+            expected_url: '/',
             noindex     : false
         },
         {
@@ -62,6 +62,11 @@ test('canonical and robots metadata reference should be correct', (assert) => {
         {
             filepath    : 'nxdoc/rest-api/index.html',
             expected_url: '/nxdoc/rest-api/',
+            noindex     : false
+        },
+        {
+            filepath    : 'corg/index.html',
+            expected_url: '/corg/',
             noindex     : false
         }
     ];

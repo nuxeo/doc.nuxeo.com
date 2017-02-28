@@ -41,11 +41,11 @@ const urls = function (options) {
             return done(schema_err);
         }
 
-        if (options.versions && options.versions.length) {
-            Object.keys(files).forEach(function (filepath) {
-                debug('Filepath: %s', filepath);
-                const file = files[filepath];
-                if (multimatch(filepath, options.file_pattern).length && file.url) {
+        Object.keys(files).forEach(function (filepath) {
+            debug('Filepath: %s', filepath);
+            const file = files[filepath];
+            if (multimatch(filepath, options.file_pattern).length && file.url) {
+                if (options.versions && options.versions.length) {
                     options.versions.forEach(function (version) {
                         file.url.versions = file.url.versions || [];
                         let add_item = true;
@@ -86,24 +86,25 @@ const urls = function (options) {
                     //     title: file.title,
                     //     url  : file.url.full
                     // };
-                    const latest_version = file.url && file.url.versions && file.url.versions.length && file.url.versions.find(version => version.label.toLowerCase() === metadata.site.canonical_version_preference);
-                    if (latest_version && latest_version.url && !latest_version.no_page) {
-                        debug('latest', filepath, latest_version.url);
-                        file.url.canonical = latest_version.url;
-                    }
-                    else if (file.url && file.url.full) {
-                        debug('this_url', filepath, latest_version.url);
-                        file.url.canonical = file.url.full;
-                    }
-                    else {
-                        error('No canonical url set', filepath);
-                    }
                 }
                 else {
                     debug('Ignorning: %s', filepath);
                 }
-            });
-        }
+                const latest_version = file.url && file.url.versions && file.url.versions.length && file.url.versions.find(version => version.label.toLowerCase() === metadata.site.canonical_version_preference);
+
+                if (latest_version && latest_version.url && !latest_version.no_page) {
+                    debug('latest', filepath, latest_version.url);
+                    file.url.canonical = latest_version.url;
+                }
+                else if (file.url && file.url.full) {
+                    debug('this_url', filepath, file.url.full);
+                    file.url.canonical = file.url.full;
+                }
+                else {
+                    error('No canonical url set', filepath);
+                }
+            }
+        });
         return done();
     };
 };
