@@ -46,28 +46,42 @@ test('site should have key files', (assert) => {
     assert.end();
 });
 
-test('canonical metadata reference should be correct', (assert) => {
+test('canonical and robots metadata reference should be correct', (assert) => {
     const url_prefix = 'http://doc.nuxeo.com';
     const canonical_links = [
         {
             filepath    : '/index.html',
-            expected_url: ''
+            expected_url: '/',
+            noindex     : false
         },
         {
             filepath    : '710/nxdoc/rest-api/index.html',
-            expected_url: '/nxdoc/rest-api/'
+            expected_url: '/nxdoc/rest-api/',
+            noindex     : true
         },
         {
             filepath    : 'nxdoc/rest-api/index.html',
-            expected_url: '/nxdoc/rest-api/'
+            expected_url: '/nxdoc/rest-api/',
+            noindex     : false
+        },
+        {
+            filepath    : 'corg/index.html',
+            expected_url: '/corg/',
+            noindex     : false
         }
     ];
 
-    canonical_links.forEach(({filepath, expected_url}) => {
+    canonical_links.forEach(({filepath, expected_url, noindex}) => {
         const content = fs.readFileSync(path.join(site_path, filepath)).toString();
         const $ = cheerio.load(content);
 
-        assert.isEqual($('link[rel="canonical"]').attr('href'), `${url_prefix}${expected_url}`, 'Canonical link is correct');
+        assert.isEqual($('link[rel="canonical"]').attr('href'), `${url_prefix}${expected_url}`, `${filepath}: Canonical link is correct`);
+        if (noindex) {
+            assert.isEqual($('meta[name="robots"]').attr('content'), 'noindex', `${filepath}: Robots meta is correct`);
+        }
+        else {
+            assert.isEqual($('meta[name="robots"]').length, 0, `${filepath}: Robots meta is not present`);
+        }
     });
     assert.end();
 

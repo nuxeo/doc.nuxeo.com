@@ -36,15 +36,15 @@ node_modules
 /repositories
 
 .eslintcache
-/css.md5
-/webpack.stats.json
+css.md5
+webpack.stats.json
 
 #npm debug
 npm-debug.log.*
 
 # Generated nginx redirects file
-redirects.txt
-redirects.yml
+/redirects.txt
+/redirects.yml
 
 # Generated editor.json
-editor.json
+/editor.json
