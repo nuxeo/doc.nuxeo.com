@@ -144,6 +144,7 @@ Build processes are defined here. Should be relatively self explanatory but anyt
 
 # Adding/removing versions
 In the _Builder_ repository (doc.nuxeo.com):
+
 1. Create a new branch from **master**: `git checkout -b add/remove-version-xx` e.g. adding **9.10** would be `git checkout -b add-version-910`
 2. Open [config.yml](./config.yml).
 3. Add/Remove entry in `default > site > repositories > platform > branches`.
