@@ -14,6 +14,15 @@ const util = require('util');
 const get_placeholder_key = require('../get_placeholder_key');
 const key_to_url = require('../key_to_url');
 
+const reverse_object = (obj => {
+    return Object.keys(obj)
+    .reverse()
+    .reduce((existing, current) => {
+        existing[current] = obj[current];
+        return existing;
+    }, {});
+});
+
 const get_redirect_url = function (file, metadata) {
     const page = file.redirect_source || file.redirect || '';
     let url;
@@ -46,7 +55,7 @@ const nuxeo_redirects = function () {
                 return done(err);
             }
             try {
-                yaml_string = yaml.safeDump(redirects, {indent: 4});
+                yaml_string = yaml.safeDump(reverse_object(redirects), {indent: 4});
                 fs.writeFileSync(redirects_file, yaml_string);
             }
             catch (e) {
@@ -65,6 +74,7 @@ const nuxeo_redirects = function () {
             redirects = {};
             error('Failed to load: %s: %j', redirects_file);
         }
+        redirects = reverse_object(redirects);
 
         const matches = [];
         Object.keys(files).forEach(function (filepath) {
