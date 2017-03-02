@@ -10,6 +10,9 @@
 
 ^/display/KB/java.net.SocketException\+Too\+many\+open\+files/?$: /nxdoc/java.net.SocketException-too-many-open-files/
 
+^/x/94Wo/?$: /nxdoc/creating-nuxeo-packages
+
+
 # NXDOC-1038: Archived versions of the documentation
 ^/58/?$: /archived-documentation
 ^/58/.+: /archived-documentation
@@ -118,7 +121,13 @@
 ^/dosearchsite.action?queryString=(.*): /?q=$1
 
 
-# Catch alls
+# NXDOC-11113
+^/nxdoc/building-a-soap-based-webservice-client-in-nuxeo/?$: /nxdoc/rest-api
+^/nxdoc/building-a-soap-based-webservice-in-the-nuxeo-platform/?$: /nxdoc/rest-api
+^/nxdoc/soap-bridge/?$: /nxdoc/rest-api
+
+
+# Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
 ^/display/NXDOC(/?|/.*): /nxdoc/
 ^/display/ADMINDOC(/?|/.*): /nxdoc/nuxeo-server
