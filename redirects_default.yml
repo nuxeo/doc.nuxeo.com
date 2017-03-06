@@ -126,6 +126,9 @@
 ^/nxdoc/building-a-soap-based-webservice-client-in-nuxeo/?$: /nxdoc/rest-api
 ^/nxdoc/building-a-soap-based-webservice-in-the-nuxeo-platform/?$: /nxdoc/rest-api
 ^/nxdoc/soap-bridge/?$: /nxdoc/rest-api
+^/810/nxdoc/building-a-soap-based-webservice-client-in-nuxeo/?$: /810/nxdoc/rest-api
+^/810/nxdoc/building-a-soap-based-webservice-in-the-nuxeo-platform/?$: /810/nxdoc/rest-api
+^/810/nxdoc/soap-bridge/?$: /810/nxdoc/rest-api
 
 
 # Catch alls - keep at the bottom
