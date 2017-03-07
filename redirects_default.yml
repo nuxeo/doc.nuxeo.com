@@ -58,6 +58,7 @@
 ^/display/Studio/Nuxeo\+Studio\+Documentation\+Center/?$: /studio/nuxeo-studio
 
 ^/x/aAfF/?$: /nxdoc/nuxeo-add-ons/
+^/x/04HQ/?$: /nxdoc/nuxeo-drive
 
 # For 7.10 - Web UI renamed into JSF UI
 ^/710/nxdoc/from-the-web-ui-to-nuxeo-studio/$: /710/nxdoc/from-the-jsf-ui-to-nuxeo-studio
