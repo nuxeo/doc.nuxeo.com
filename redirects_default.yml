@@ -130,6 +130,8 @@
 ^/810/nxdoc/building-a-soap-based-webservice-in-the-nuxeo-platform/?$: /810/nxdoc/rest-api
 ^/810/nxdoc/soap-bridge/?$: /810/nxdoc/rest-api
 
+# IDE redirects
+^/idedoc/getting-started-with-nuxeo-ide/?$: /nxdoc/getting-started-with-nuxeo-cli/
 
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
