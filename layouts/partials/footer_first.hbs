@@ -15,78 +15,32 @@
         <span>To Top</span>
     </button>
     {{> versions_inline}}
-    <footer>
-        {{!-- Has id to ensure main menu works on pages without a submenu --}}
-        <div id="nuxeo-submenu" class="row small-up-1 medium-up-2 large-up-4">
-            <div class="column">
-                <ul>
-                    <li><a href="https://nuxeo.com/why-nuxeo/">Why Nuxeo?</a></li>
-                </ul>
-                <ul>
-                    <li><a href="https://nuxeo.com/about/contact/">Contact</a></li>
-                    <li><a href="https://nuxeo.com/about/request-demo/">Request a Demo</a></li>
-                </ul>
-            </div>
-            <div class="column">
-                <ul>
-                    <li><a href="https://nuxeo.com/products/content-management-platform/">Nuxeo Platform</a></li>
-                    <li><a href="https://nuxeo.com/products/studio/">Nuxeo Studio</a></li>
-                    <li><a href="https://nuxeo.com/products/integration/">Integrations</a></li>
-                    <li><a href="https://nuxeo.com/rest-api/">REST API</a></li>
-                    <li><a href="https://nuxeo.com/hybrid-architecture-for-unmatched-performance-scalability/">Performance &amp; Scalability</a></li>
-                </ul>
-                <ul>
-                    <li><a href="https://nuxeo.com/downloads/">Download or Online Trial</a></li>
-                </ul>
-            </div>
-            <div class="column">
-                <ul>
-                    <li><a href="https://nuxeo.com/solutions/digital-asset-management/">Use Cases</a></li>
-                    <li><a href="https://nuxeo.com/solutions/document-management/">Document Management</a></li>
-                    <li><a href="https://nuxeo.com/solutions/digital-asset-management/">Digital Asset Management</a></li>
-                    <li><a href="https://nuxeo.com/solutions/">More Use Cases &hellip;</a></li>
-                </ul>
-                <ul>
-                    <li><a href="https://nuxeo.com/customers/">Customers</a></li>
-                </ul>
-            </div>
-            <div class="column">
-                <ul>
-                    <li><a href="https://nuxeo.com/resources/">Learning</a></li>
-                    <li><a href="https://nuxeo.com/reports/">Reports</a></li>
-                    <li><a href="https://nuxeo.com/blog/">Blog</a></li>
-                    <li><a href="https://university.nuxeo.io/">University</a></li>
-                </ul>
-                <ul>
-                    <li><a href="https://nuxeo.com/services/">Services</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="copyright-social" class="row medium-up-2">
-            <div class="column copyright">
-                Copyright &copy; {{moment format='YYYY'}} Nuxeo
-                <span class="separator">|</span>
-                <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
-                <span class="separator">|</span>
-                <a href="https://nuxeo.com/legal/privacy-policy/">Privacy Policy</a>
-            </div>
-            <div class="column medium-text-right social">
-                <a href="https://www.facebook.com/Nuxeo">
-                    {{inline_svg 'assets/imgs/icons/facebook.svg'}}
-                </a>
-                <a href="http://www.linkedin.com/groups/Nuxeo-Community-43314?home=&gid=43314&trk=anet_ug_hm">
-                    {{inline_svg 'assets/imgs/icons/linkedin.svg'}}
-                </a>
-                <a href="https://twitter.com/nuxeo">
-                    {{inline_svg 'assets/imgs/icons/twitter.svg'}}
-                </a>
-                <a href="https://plus.google.com/u/0/+nuxeo/posts">
-                    {{inline_svg 'assets/imgs/icons/google-plus.svg'}}
-                </a>
-            </div>
-        </div>
-    </footer>
+    {{!-- Has id to ensure main menu works on pages without a submenu --}}
+    <nuxeo-footer id="nuxeo-submenu" year="{{moment format='YYYY'}}" show-license>
+        <nuxeo-footer-column column-items='[[
+        {"title": "Why Nuxeo?", "url": "https://nuxeo.com/why-nuxeo/"}], [
+        {"title": "Contact", "url": "https://nuxeo.com/about/contact/"},
+        {"title": "Request a Demo", "url": "https://nuxeo.com/about/request-demo/"}]]'></nuxeo-footer-column>
+        <nuxeo-footer-column column-items='[[
+        {"title": "Nuxeo Platform", "url": "https://nuxeo.com/products/content-management-platform/"},
+        {"title": "Nuxeo Studio", "url": "https://nuxeo.com/products/studio/"},
+        {"title": "Integrations", "url": "https://nuxeo.com/integration/"},
+        {"title": "REST API", "url": "https://nuxeo.com/rest-api/"},
+        {"title": "Performance & Scalability", "url": "https://nuxeo.com/products/performance/"}], [
+        {"title": "Download or Online Trial", "url": "https://nuxeo.com/downloads/"}]]'></nuxeo-footer-column>
+        <nuxeo-footer-column column-items='[[
+        {"title": "Use Cases", "url": "https://nuxeo.com/solutions/digital-asset-management/"},
+        {"title": "Document Management", "url": "https://nuxeo.com/solutions/document-management/"},
+        {"title": "Digital Asset Management", "url": "https://nuxeo.com/solutions/digital-asset-management/"},
+        {"title": "More Use Cases…", "url": "https://nuxeo.com/solutions/"}], [
+        {"title": "Customers", "url": "https://nuxeo.com/customers/"}]]'></nuxeo-footer-column>
+        <nuxeo-footer-column column-items='[[
+        {"title": "Learning", "url": "https://nuxeo.com/resources/"},
+        {"title": "Reports", "url": "https://nuxeo.com/reports/"},
+        {"title": "Blog", "url": "https://nuxeo.com/blog/"},
+        {"title": "University", "url": "https://university.nuxeo.io/"}], [
+        {"title": "Services", "url": "https://nuxeo.com/services/"}]]'></nuxeo-footer-column>
+    </nuxeo-footer>
 </div>
 <script type="text/javascript" src="/{{js.vendor}}"></script>
 <script type="text/javascript" src="/{{js.docs}}"></script>

@@ -52,7 +52,7 @@
     "multimatch": "^2.1.0",
     "multisort": "^0.5.3",
     "node-yaml-config": "0.0.4",
-    "nuxeo-website-styles": "github:nuxeo/website-styles#v0.1.1",
+    "nuxeo-website-styles": "github:nuxeo/website-styles#v2.0.0",
     "open-sans-fontface": "^1.4.0",
     "quotation": "^1.0.1",
     "recursive-readdir": "^2.1.0",
