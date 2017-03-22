@@ -95,7 +95,7 @@ default:
                 children:
                     - /nxdoc/nuxeo-dev-tools-extension
                     - /studio/nuxeo-studio
-                    - /nxdoc/nuxeo-cli/
+                    - /nxdoc/nuxeo-cli
                     - /corg
     page_defaults:
         -
