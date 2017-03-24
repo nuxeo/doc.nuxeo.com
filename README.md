@@ -16,7 +16,7 @@
 
 ### Mac:
 - Install homebrew (http://brew.sh/) and run
-    ```bash
+```bash
 # Update
 brew update
 # Install git and libsass
