@@ -119,6 +119,9 @@
 ^/810/nxdoc/theme-upgrade-to-lts-2015/?$: /710/nxdoc/theme-upgrade-to-lts-2015/
 ^/nxdoc/theme-upgrade-to-lts-2015/?$: /710/nxdoc/theme-upgrade-to-lts-2015/
 
+# Delete page Deploying Nuxeo on Cloudfoundry
+^/nxdoc/deploying-nuxeo-on-cloudfoundry/?$: /nxdoc/installation
+^/810/nxdoc/deploying-nuxeo-on-cloudfoundry/?$: /810/nxdoc/installation 
 
 # Old search redirect
 ^/dosearchsite.action?queryString=(.*): /?q=$1
