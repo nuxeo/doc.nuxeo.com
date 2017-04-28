@@ -52,6 +52,9 @@ renderer.image = function (href_str, title, alt) {
     if (params.thumbnail) {
         img_classes.push('thumbnail');
     }
+    if (params.inline) {
+        div_classes.push('inline');
+    }
 
     // Defaults to left aligned
     if (params.align) {
@@ -77,7 +80,6 @@ renderer.image = function (href_str, title, alt) {
         </button>
         </div>
         `;
-        // ${reveal_div}
 
         return `${reveal_div}<div class="${div_classes.join(' ')}">
         <img ${attributes} data-open="${id}"${closing}

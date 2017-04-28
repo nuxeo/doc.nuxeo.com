@@ -214,10 +214,10 @@ These require us to use the reference style of links:
 
 ### To an Excerpt
 * In the same version:
-{{{excerpt space='space' page='page-name'}}}
-    - Example: {{{excerpt space='studio' page='studio-overview-and-concepts'}}}
+`{{{excerpt space='space' page='page-name'}}}`
+    - Example: `{{{excerpt space='studio' page='studio-overview-and-concepts'}}}`
 * In another version: 
-{{{excerpt space='space' version='version' page='page-name'}}}    
+`{{{excerpt space='space' version='version' page='page-name'}}}`
 
 ### To a Multi-Excerpt
 * In the same version:
@@ -242,6 +242,17 @@ All options with file from another space and page:
 ```
 ![Alt text - Required]({{file space='nxdoc' page='client-sdks' name='your_img.png'}} ?w=180,h=360,border=true,thumbnail=true,align=right "Title text - Optional")
 ```
+
+#### Image options
+
+Option | Behaviour
+--- | ---
+`w=x` | Sets the image width. Replace `x` with the value in pixels. _Note:_ Images greater than 32 will automatically get the thumbnail attribute.
+`h=y` | Sets the image height. Replace `y` with the value in pixels.
+`border=true` | Gives the image a border.
+`thumbnail=true` | Make the image show a larger version upon clicking.
+`inline=true` | Allows images to be put side by side.
+`align=right` | Positions the image to the right.
 
 ### To Download Files
 Link to download files should be written like this:
