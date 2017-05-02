@@ -5,16 +5,17 @@
         <div class="heading-group">
             <div id="section_name" class="hide">{{hierarchy.section_name}}</div>
             <h1 id="page-title">{{title}}</h1>
-          <div class="style-bar"></div>
-          <div>
-            Updated: {{moment history.[0].date format='LL'}}
-            <a data-open="page-information" title="Page Information" aria-controls="page-information" aria-haspopup="true" tabindex="0">
-                <img src="/assets/imgs/icons/info-icon.svg" alt="Page Information" width="18px" height="18px">
-            </a>
-            {{#if edit_url}}<a class="edit-page" title="Edit on GitHub" href="{{edit_url}}">
-                <img src="/assets/imgs/icons/edit-in-github-icon.svg" alt="Edit on GitHub" width="15px" height="15px">
-            </a>{{/if}}
-          </div>
+            <div class="style-bar"></div>
+            <div>
+                {{> versions}}
+                Updated: {{moment history.[0].date format='LL'}}
+                <a data-open="page-information" title="Page Information" aria-controls="page-information" aria-haspopup="true" tabindex="0">
+                    <img src="/assets/imgs/icons/info-icon.svg" alt="Page Information" width="18px" height="18px">
+                </a>
+                {{#if edit_url}}<a class="edit-page" title="Edit on GitHub" href="{{edit_url}}">
+                    <img src="/assets/imgs/icons/edit-in-github-icon.svg" alt="Edit on GitHub" width="15px" height="15px">
+                </a>{{/if}}
+            </div>
         </div>
         {{> flag_review}}
     </div>

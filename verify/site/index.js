@@ -10,8 +10,8 @@ const cheerio = require('cheerio');
 const site_path = path.join(__dirname, '../../site');
 const assets_path = path.join(site_path, 'assets');
 const spaces = [
-    '710/nxdoc',
-    '710/userdoc',
+    '810/nxdoc',
+    '810/userdoc',
     'connect',
     'corg',
     'glos',
@@ -55,7 +55,7 @@ test('canonical and robots metadata reference should be correct', (assert) => {
             noindex     : false
         },
         {
-            filepath    : '710/nxdoc/rest-api/index.html',
+            filepath    : '810/nxdoc/rest-api/index.html',
             expected_url: '/nxdoc/rest-api/',
             noindex     : true
         },
