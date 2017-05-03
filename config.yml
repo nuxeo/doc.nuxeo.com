@@ -55,7 +55,7 @@ default:
                     - /nxdoc/web-ui
                     - /nxdoc/polymer-guide
                     - /nxdoc/nuxeo-elements
-                    - /nxdoc/web-ui-customization
+                    - /nxdoc/web-ui-tutorials
             -
                 parent: /nxdoc/desktop-and-mobile
                 section_color: desktop-mob
