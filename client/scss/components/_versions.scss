@@ -1,14 +1,14 @@
 $versions-inline-fg: rgba(0, 5, 34, .6);
 $versions-bg: rgba(255, 255, 255, .2);
 
-#nuxeo-satellite-header #page-versions {
+#page-versions {
   background-color: $versions-bg;
   border-radius: 5rem;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 2px;
   line-height: 19px;
-  padding: .5em 1em .4em;
+  padding: .5em 1em .4em 0;
   text-transform: uppercase;
 
   > ul {
@@ -18,7 +18,10 @@ $versions-bg: rgba(255, 255, 255, .2);
       line-height: normal;
 
       > a {
+        color: $black;
+        margin-left: 0;
         padding-bottom: 3px;
+        padding-left: 0;
         padding-top: 3px;
 
         &::after {

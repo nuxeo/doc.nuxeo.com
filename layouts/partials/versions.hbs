@@ -5,7 +5,7 @@
             {{#each url.versions}}
             {{#if this.is_current_version}}
             <a href="#">
-                Version | <span class="version-label">{{this.label}}</span>
+                Version: <span class="version-label">{{this.label}}</span> <i class="fa fa-caret-down"></i>
             </a>
             {{/if}}
             {{/each}}

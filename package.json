@@ -120,7 +120,7 @@
     "empty_temp": "rm -rf ./temp/*",
     "empty_logs": "rm -rf ./logs/*",
     "copy_assets": "rsync -a ./assets/ ./site/assets/ && npm run duplicate_asset_stats && cp editor.json ./site",
-    "postcopy_assets": "cp node_modules/nuxeo-website-styles/bower_components/webcomponentsjs/webcomponents-lite.min.js ./site/assets/js/ && cp node_modules/nuxeo-website-styles/elements/*.min.js ./site/assets/ && cp node_modules/nuxeo-website-styles/elements/*.build.html ./site/assets/",
+    "postcopy_assets": "cp node_modules/nuxeo-website-styles/bower_components/webcomponentsjs/webcomponents-lite.min.js ./site/assets/js/ && cp -r node_modules/nuxeo-website-styles/elements/* ./site/assets/",
     "copy_extras": "cp google197e4c8435c1cca7.html ./site && cp opensearch.xml ./site",
     "server": "browser-sync start --server site --browser=$npm_package_config_browser",
     "server_reload": "browser-sync reload",
