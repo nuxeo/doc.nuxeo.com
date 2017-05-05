@@ -103,6 +103,7 @@
 ^/studio/configuration-management/?$: /studio/templates-reference
 ^/studio/availability-tab/?$: /studio/activation-tab
 ^/nxdoc/getting-started-with-nuxeo-generator/?$: /nxdoc/getting-started-with-nuxeo-cli/
+^/nxdoc/web-ui-customization/?$: /nxdoc/web-ui-tutorials
 
 # NXDOC-1033: REST API doc reorg
 ^/nxdoc/search-endpoint/?$: /nxdoc/search-endpoints
