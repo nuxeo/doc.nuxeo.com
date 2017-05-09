@@ -63,7 +63,7 @@
     "multisort": "^0.5.3",
     "node-sass": "^4.5.2",
     "node-yaml-config": "0.0.4",
-    "nuxeo-website-styles": "github:nuxeo/website-styles#v3.0.1",
+    "nuxeo-website-styles": "github:nuxeo/website-styles#v3.2.8",
     "open-sans-fontface": "^1.4.0",
     "postcss-cli": "^3.2.0",
     "quotation": "^1.0.1",
