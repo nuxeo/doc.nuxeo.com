@@ -1,6 +1,6 @@
 {
   "name": "nuxeo-docs-builder",
-  "version": "8.0.1",
+  "version": "8.0.2",
   "dependencies": {
     "@types/clone": {
       "version": "0.1.30",
