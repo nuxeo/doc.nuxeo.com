@@ -105,6 +105,7 @@
 ^/nxdoc/getting-started-with-nuxeo-generator/?$: /nxdoc/getting-started-with-nuxeo-cli/
 ^/nxdoc/web-ui-customization/?$: /nxdoc/web-ui-tutorials
 ^/corg/docker-usages/?$: /corg/docker-usage
+^/nxdoc/customizing-with-studio-and-view-designer/?$: /nxdoc/getting-started-with-nuxeo-studio
 
 # NXDOC-1033: REST API doc reorg
 ^/nxdoc/search-endpoint/?$: /nxdoc/search-endpoints
