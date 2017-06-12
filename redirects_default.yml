@@ -144,7 +144,6 @@
 
 # NXDOC-900: Studio doc cleanup
 ^/studio/contract-management/?$: /studio/external-templates/
-^/studio/external-templates/?$: /studio/external-templates/
 ^/studio/custom-doc-id-generation/?$: /studio/external-templates/
 
 # Catch alls - keep at the bottom
