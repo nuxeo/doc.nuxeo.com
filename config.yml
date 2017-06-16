@@ -20,8 +20,8 @@ default:
         # Keys
         cse_id: "005135669674242188188:xu8ybnpu3r8"
         ga_exp_id: ''
-        xga_id: 'UA-81135-3'
-        segment_write_key: '4qquvje3fv'
+        ga_id: 'UA-81135-3'
+        xsegment_write_key: '4qquvje3fv'
         main_menu:
             -
                 parent: /nxdoc/tutorials
