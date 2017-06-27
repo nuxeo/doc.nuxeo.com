@@ -146,6 +146,8 @@
 ^/studio/contract-management/?$: /studio/external-templates/
 ^/studio/custom-doc-id-generation/?$: /studio/external-templates/
 
+^/nxdoc/upgrade-from-lts-2016-to-91/?$: /nxdoc/upgrade-from-lts-2016-following-fast-tracks/
+
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
 ^/display/NXDOC(/?|/.*): /nxdoc/
