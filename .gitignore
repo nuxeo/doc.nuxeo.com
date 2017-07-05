@@ -36,8 +36,8 @@ node_modules
 /repositories
 
 .eslintcache
-css.md5
-webpack.stats.json
+/css.md5
+/webpack.stats.json
 
 #npm debug
 npm-debug.log.*

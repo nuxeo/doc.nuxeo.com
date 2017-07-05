@@ -91,7 +91,6 @@
     "browser": "chromium-browser"
   },
   "scripts": {
-    "postinstall": "npm run compile",
     "prestart": "npm run empty_directories && npm run compile && npm run default_redirects",
     "start": "./build.sh",
     "poststart": "npm run copy_assets && npm run copy_extras && npm run verify",
@@ -107,7 +106,7 @@
     "build_js": "webpack --json > webpack.stats.json",
     "copy_asset_stats": "./bin/trim-webpack-stats webpack.stats.json > ./lib/webpack.stats.json && cp css.md5 ./lib",
     "prebuild_css": "ls ./assets/fonts > /dev/null || mkdir -p ./assets/fonts && rm -rf ./client/css/* ./assets/css/*",
-    "build_css": "node-sass --source-map true --source-map-contents --include-path ./client/scss/ --include-path ./node_modules/foundation-sites/scss/ --include-path ./node_modules/motion-ui/src --include-path ./node_modules/font-awesome/scss --include-path ./node_modules/open-sans-fontface/sass --include-path ../node_modules/foundation-sites/scss/ --include-path ../node_modules/motion-ui/src --include-path ../node_modules/font-awesome/scss --include-path ../node_modules/open-sans-fontface/sass --output-style compressed --output ./client/css/ ./client/scss/",
+    "build_css": "node-sass --source-map true --source-map-contents --include-path ./client/scss/ --include-path ./node_modules/foundation-sites/scss/ --include-path ./node_modules/motion-ui/src --include-path ./node_modules/font-awesome/scss --include-path ./node_modules/open-sans-fontface/sass --output-style compressed --output ./client/css/ ./client/scss/",
     "postbuild_css": "openssl md5 client/css/* | awk '{print $2}' | sort | openssl md5 | grep -oE '[a-zA-Z0-9]+$' > css.md5",
     "copy_fontawesome": "find ./node_modules/font-awesome/fonts/* -maxdepth 0 -type f -exec cp -f \"{}\" ./assets/fonts/ \\;",
     "copy_open_sans": "cp -r ./node_modules/open-sans-fontface/fonts/* ./assets/fonts/",
