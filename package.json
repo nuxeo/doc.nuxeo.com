@@ -101,7 +101,7 @@
     "verify_assets": "taper verify/built_assets",
     "precompile": "npm run test",
     "compile": "npm run build_css && npm run build_css_postcss && npm run build_js && npm run copy_asset_stats",
-    "postcompile": "npm run verify_assets",
+    "postcompile": "npm run copy_assets && npm run verify_assets",
     "prebuild_js": "rm -rf ./assets/js/*",
     "build_js": "webpack --json > webpack.stats.json",
     "copy_asset_stats": "./bin/trim-webpack-stats webpack.stats.json > ./lib/webpack.stats.json && cp css.md5 ./lib",
