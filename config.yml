@@ -48,6 +48,7 @@ default:
                     - /nxdoc/content-repository
                     - /nxdoc/workflow
                     - /nxdoc/security
+                    - /nxdoc/nuxeo-server-roadmap
             -
                 parent: /nxdoc/web-ui
                 section_color: web-ui
@@ -56,6 +57,7 @@ default:
                     - /nxdoc/polymer-guide
                     - /nxdoc/nuxeo-elements
                     - /nxdoc/web-ui-tutorials
+                    - /nxdoc/web-ui-roadmap
             -
                 parent: /nxdoc/desktop-and-mobile
                 section_color: desktop-mob
@@ -88,6 +90,7 @@ default:
                 children:
                     - /studio/nuxeo-online-services-portal
                     - /studio/nuxeo-studio
+                    - /studio/nuxeo-studio-roadmap
                     - /studio/support-jira
             -
                 parent: /nxdoc/nuxeo-tools

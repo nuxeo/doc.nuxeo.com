@@ -104,6 +104,9 @@
 ^/studio/availability-tab/?$: /studio/activation-tab
 ^/nxdoc/getting-started-with-nuxeo-generator/?$: /nxdoc/getting-started-with-nuxeo-cli/
 ^/nxdoc/web-ui-customization/?$: /nxdoc/web-ui-tutorials
+^/corg/docker-usages/?$: /corg/docker-usage
+^/nxdoc/customizing-with-studio-and-view-designer/?$: /nxdoc/getting-started-with-nuxeo-studio
+^/nxdoc/deployment-options/?$: /nxdoc/standard-high-availability-nuxeo-cluster-architecture/
 
 # NXDOC-1033: REST API doc reorg
 ^/nxdoc/search-endpoint/?$: /nxdoc/search-endpoints
@@ -141,8 +144,9 @@
 
 # NXDOC-900: Studio doc cleanup
 ^/studio/contract-management/?$: /studio/external-templates/
-^/studio/external-templates/?$: /studio/external-templates/
 ^/studio/custom-doc-id-generation/?$: /studio/external-templates/
+
+^/nxdoc/upgrade-from-lts-2016-to-91/?$: /nxdoc/upgrade-from-lts-2016-following-fast-tracks/
 
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
