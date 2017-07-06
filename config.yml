@@ -90,6 +90,7 @@ default:
                 children:
                     - /studio/nuxeo-online-services-portal
                     - /studio/nuxeo-studio
+                    - /studio/nuxeo-studio-roadmap
                     - /studio/support-jira
             -
                 parent: /nxdoc/nuxeo-tools
