@@ -10,7 +10,7 @@ const exec = require('child_process').execSync;
 
 module.exports = function (config, path_only = true) {
     if (typeof config === 'string') {
-        config = yaml_config.load(path.join(__dirname, 'config.yml'));
+        config = yaml_config.load(path.join(__dirname, '..', 'config.yml'));
     }
 
     // Default return value

@@ -9,7 +9,7 @@ const Joi = require('joi');
 
 // Options schema
 const schema = Joi.object().keys({
-    repo_id     : Joi.string().required(),
+    repo_id     : Joi.string().allow('').required(),
     branch      : Joi.string().required(),
     repositories: Joi.object().required()
 });
