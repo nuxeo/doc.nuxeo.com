@@ -131,7 +131,7 @@
     "dev_server": "npm run browser_sync & NODE_ENV=development nodemon --exec 'npm start && browser-sync reload'",
     "dev_assets": "npm run browser_sync & NODE_ENV=development nodemon --exec 'npm run update_assets && browser-sync reload'",
     "dev_test": "nodemon --exec 'npm run test'",
-    "duplicate_asset_stats": "test -e temp/metadata.json && npm run duplicate_css_stats && npm run duplicate_js_stats",
+    "duplicate_asset_stats": "npm run duplicate_css_stats && npm run duplicate_js_stats",
     "duplicate_css_stats": "test -e temp/css.md5 || cp lib/css.md5 temp",
     "duplicate_js_stats": "test -e temp/webpack.stats.json || cp lib/webpack.stats.json temp",
     "add_css_to_existing_build": "cp -r assets/css/`cat css.md5`/* site/assets/css/`cat temp/css.md5`",
