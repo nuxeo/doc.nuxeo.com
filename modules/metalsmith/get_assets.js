@@ -11,32 +11,37 @@ const readdirs = require('recursive-readdir');
 
 // options schema
 const schema = Joi.object().keys({
-    path       : Joi.string().required(),
-    path_prefix: Joi.string().optional().allow('').default('')
+    assets_path: Joi.string().required()
 });
 
 const get_assets = function (options) {
-    debug('Options: %o', options);
+    debug(`Options: ${options}`);
     return function (files, metalsmith, done) {
         const metadata = metalsmith.metadata();
         metadata.assets = metadata.assets || {};
 
-        debug('path_prefix: %s', options.path_prefix);
         // Check options fits schema
-        let schema_err;
-        schema.validate(options, function (err, value) {
-            if (err) {
-                error('Validation failed, %o', err.details[0].message);
-                schema_err = err;
+        const validation = schema.validate(options);
+        if (validation.error) {
+            error('Validation failed, %o', validation.error.details[0].message);
+            return done(validation.error);
+        }
+        options = validation.value;
+
+
+        let version_path = '';
+        if (metadata.site.versions) {
+            const current_version = metadata.site.versions.filter(version => version.is_current_version);
+            if (current_version && current_version[0] && current_version.url_path) {
+                version_path = current_version[0].url_path;
             }
-            options = value;
-        });
-        if (schema_err) {
-            return done(schema_err);
         }
 
+        debug(`assets_path: ${options.assets_path}`);
+        debug(`version_path: ${version_path}`);
+
         // Get assets list
-        readdirs(options.path, function (err, asset_filenames) {
+        readdirs(options.assets_path, function (err, asset_filenames) {
             if (err) {
                 error('Problem reading assets directory');
                 return done(err);
@@ -45,7 +50,7 @@ const get_assets = function (options) {
             // Files is an array of filename
             asset_filenames.forEach(asset_filename => {
                 // Strip the path and add the path prefix
-                asset_filename = path.relative(options.path, asset_filename);
+                asset_filename = path.relative(options.assets_path, asset_filename);
 
                 const asset_info = path.parse(asset_filename);
                 const asset_path = asset_info.dir.split(path.sep);
@@ -53,14 +58,14 @@ const get_assets = function (options) {
                 const page = asset_path.join(path.sep);
 
                 if (metadata.assets[asset_filename]) {
-                    warn('Duplicate key found: "%s"', asset_filename);
+                    warn(`Duplicate key found: "${asset_filename}"`);
                 }
                 else {
-                    let filename = path.join(options.path_prefix, asset_filename);
+                    let filename = path.join(version_path, asset_filename);
                     metadata.assets[filename] = {
                         url    : path.sep + filename,
                         id     : asset_info.base,
-                        version: options.path_prefix,
+                        version: version_path,
                         space,
                         page
                     };

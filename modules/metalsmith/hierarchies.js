@@ -1,9 +1,7 @@
 'use strict';
 /* eslint-env es6 */
 
-const debug_lib = require('debug');
-const debug = debug_lib('metalsmith-hierarchies');
-const error = debug_lib('metalsmith-hierarchies:error');
+const {debug, error} = require('../debugger')('metalsmith-hierarchies');
 const Joi = require('joi');
 const path = require('path');
 const multimatch = require('multimatch');
@@ -14,13 +12,13 @@ slug.defaults.modes.pretty.lower = true;
 const run_on_tiers = require('../run_on_tiers');
 
 const schema = Joi.object().keys({
-    versions: Joi.array().optional().items(Joi.object().keys({
-        label             : Joi.string().required(),
-        is_current_version: Joi.bool().optional().default(false),
-        url_path          : Joi.string().optional().default('')
-    })),
+    // versions: Joi.array().optional().items(Joi.object().keys({
+    //     label             : Joi.string().required(),
+    //     is_current_version: Joi.bool().optional().default(false),
+    //     url_path          : Joi.string().optional().default('')
+    // })),
     flatten     : Joi.bool().optional().default(true),
-    file_pattern: Joi.array().items(Joi.string()).optional().default(['**/*.md', '**/*.html'])
+    file_pattern: Joi.array().items(Joi.string()).optional().default(['*.md', '*.html', '**/*.md', '**/*.html'])
 });
 
 const meta_hierarchies = function (options) {
@@ -28,32 +26,22 @@ const meta_hierarchies = function (options) {
     return function (files, metalsmith, done) {
 
         // Check options fits schema
-        let schema_err;
-        schema.validate(options, {allowUnknown: true}, function (err, value) {
-            if (err) {
-                error('Validation failed, %o', err.details[0].message);
-                schema_err = err;
-            }
-            options = value;
-        });
-        if (schema_err) {
-            return done(schema_err);
+        const validation = schema.validate(options, {allowUnknown: true});
+        if (validation.error) {
+            error('Validation failed, %o', validation.error.details[0].message);
+            return done(validation.error);
         }
+        options = validation.value;
 
         const metadata = metalsmith.metadata();
         const hierarchies = {};
-        let version_path = '';
-        if (options.versions && options.versions.length) {
-            options.versions.forEach(function (version) {
-                version_path = (version.is_current_version) ? version.url_path : version_path;
-            });
-        }
 
-        Object.keys(files).forEach(function (filepath) {
+
+        Object.keys(files).forEach((filepath) => {
             debug('Filepath: %s', filepath);
             const file = files[filepath];
 
-            if (multimatch(filepath, options.file_pattern).length) {
+            if (multimatch(Object.keys(files), options.file_pattern).length) {
 
                 let file_path_info = path.parse(filepath);
                 let filepath_parts = file_path_info.dir.split(path.sep);
@@ -80,8 +68,8 @@ const meta_hierarchies = function (options) {
                         current_item.name = file.title;
                         current_item.url = file.url;
                         current_item.section_parent = file.section_parent;
+                        error(`Adding parent space_path: ${space_path} key: ${file.url.key.full}, path: ${filepath}`);
                     }
-                    debug('Key: %s, path: %o', file.url.key.full, filepath_parts, current_item);
 
                     filepath_parts.forEach(function (item) {
                         let missing_node = true;
@@ -97,9 +85,12 @@ const meta_hierarchies = function (options) {
                             done(new Error('Missing parents for file: ' + filepath));
                         }
                     });
+                    debug('Key: %s, path: %s', file.url.key.full, filepath_parts, current_item);
 
+                    // error('Adding: %s %s, is_space_index: %s', space_path, filepath, is_space_index, file_path_info.name);
                     // Don't include hidden pages
                     if (!file.hidden && !is_space_index) {
+                        error(`Adding child space_path: ${space_path} key: ${file.url.key.full}, path: ${filepath}`);
                         current_item.children = current_item.children || [];
                         current_item.children.push({
                             id             : file_path_info.name,
@@ -111,10 +102,13 @@ const meta_hierarchies = function (options) {
                             section_parent : file.section_parent
                         });
                     }
+                    else {
+                        error(`Ignoring child space_path: ${space_path} key: ${file.url.key.full}, path: ${filepath}`);
+                    }
                 }
             }
             else {
-                debug('Ignorning: %s', filepath);
+                error('Ignorning: %s', filepath);
             }
         });
         // debug('hierarchies', hierarchies);
@@ -125,6 +119,8 @@ const meta_hierarchies = function (options) {
             run_on_tiers(hierarchy, multisort, [a => !a.tree_item_index, 'tree_item_index', 'slug']);
         });
 
+        const util = require('util');
+        console.log('hierarchies: ', util.inspect(hierarchies, false, null));
         metadata.hierarchies = hierarchies;
 
         return done();

@@ -77,6 +77,7 @@ const urls = function (options, add_to_metadata) {
                             id         : file.slug,
                             space      : file.url.key.space,
                             version    : file.url.key.version,
+                            space_path : file.url.key.space_path,
                             is_redirect: !!(file.redirect || file.redirect_source)
                         };
                     }
