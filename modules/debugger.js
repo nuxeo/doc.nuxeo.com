@@ -4,6 +4,7 @@
 const debug = require('debug');
 const path = require('path');
 const bunyan = require('bunyan');
+const mkdirp = require('mkdirp');
 
 const level = (process.env.DEBUG_FILE_LEVEL || '').trim().toLowerCase();
 const logToFile = !!level;
@@ -15,7 +16,10 @@ const noLogging = {
     error: () => {}
 };
 
-const debugLog = function (name) {
+const debugLog = (name) => {
+    if (logToFile) {
+        mkdirp(path.join(__dirname, '../logs'));
+    }
     const log = (logToFile) ? bunyan.createLogger({
         name,
         streams: [{

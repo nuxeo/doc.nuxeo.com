@@ -5,24 +5,6 @@ const test = require('tape');
 
 const hierarchy = require('../modules/metalsmith/hierarchies');
 
-const bad_options = {
-    versions: [
-        {}
-    ]
-};
-const min_options = {
-    versions: [
-        {
-            label             : 'Fast Track',
-            is_current_version: true
-        },
-        {
-            label   : 'LTS',
-            url_path: 'lts'
-        }
-    ]
-};
-
 test('hierarchy is a function', function (assert) {
     // Get typeof string
     const expected = hierarchy && {}.toString.call(hierarchy);
@@ -39,19 +21,9 @@ test('hierarchy() returns a function', function (assert) {
     assert.end();
 });
 
-test('hierarchy(bad_options) returns callback with error', function (assert) {
-    // Get typeof string
-    const hierarchy_instance = hierarchy(bad_options);
-
-    hierarchy_instance({}, void 0, function (err) {
-        assert.notEqual(err, void 0, 'should return an error');
-        assert.end();
-    });
-});
-
 test('hierarchy(min_options) returns a mutated "metalsmith" object with empty hierarchies', function (assert) {
     // Get typeof string
-    const hierarchy_instance = hierarchy(min_options);
+    const hierarchy_instance = hierarchy({});
     const actual = {
         _metadata: {},
         metadata : function () {
@@ -70,9 +42,9 @@ test('hierarchy(min_options) returns a mutated "metalsmith" object with empty hi
     });
 });
 
-test('hierarchy(min_options) returns mutated "metalsmith" object with populated hierarchies', function (assert) {
+test('hierarchy({}) returns mutated "metalsmith" object with populated hierarchies', function (assert) {
     // Get typeof string
-    const hierarchy_instance = hierarchy(min_options);
+    const hierarchy_instance = hierarchy({});
     const files = {
         'nxdoc/index.md': {
             title: 'Index Page',

@@ -40,7 +40,7 @@ test('site should have key files', (assert) => {
     });
 
     site_paths.forEach((filepath) => {
-        assert.doesNotThrow(() => { fs.accessSync(filepath, fs.F_OK); }, void 0, `${filepath} is present`);
+        assert.doesNotThrow(() => { fs.accessSync(filepath, fs.F_OK); }, `${filepath} is present`);
     });
 
     assert.end();
