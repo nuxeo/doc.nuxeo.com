@@ -68,43 +68,48 @@ const meta_hierarchies = function (options) {
                         current_item.name = file.title;
                         current_item.url = file.url;
                         current_item.section_parent = file.section_parent;
+
                         error(`Adding parent space_path: ${space_path} key: ${file.url.key.full}, path: ${filepath}`);
                     }
+                    else {
+                        filepath_parts.forEach((item) => {
+                            if (current_item.children) {
+                                const missing_child = current_item.children.every((child) => {
+                                    if (child.id === item) {
+                                        current_item = child;
+                                        return false;
+                                    }
+                                    return true;
+                                });
 
-                    filepath_parts.forEach(function (item) {
-                        let missing_node = true;
-                        if (current_item.children) {
-                            current_item.children.forEach(function (child) {
-                                if (child.id === item) {
-                                    current_item = child;
-                                    missing_node = false;
+                                if (missing_child) {
+                                    // No child found.
+                                    done(new Error('Missing parents for file: ' + filepath));
                                 }
+                            }
+                        });
+                        debug('Key: %s, path: %s', file.url.key.full, filepath_parts, current_item);
+
+                        // error('Adding: %s %s, is_space_index: %s', space_path, filepath, is_space_index, file_path_info.name);
+                        // Don't include hidden pages
+                        if (!file.hidden && !is_space_index) {
+                            error(`Adding child space_path: ${space_path} key: ${file.url.key.full}, path: ${filepath}`);
+                            current_item.children = current_item.children || [];
+                            current_item.children.push({
+                                id             : file_path_info.name,
+                                name           : file.title,
+                                url            : file.url,
+                                slug           : file.slug,
+                                path           : space_path,
+                                tree_item_index: file.tree_item_index,
+                                section_parent : file.section_parent
                             });
                         }
-                        if (missing_node) {
-                            done(new Error('Missing parents for file: ' + filepath));
+                        else {
+                            error(`Ignoring child space_path: ${space_path} key: ${file.url.key.full}, path: ${filepath}`);
                         }
-                    });
-                    debug('Key: %s, path: %s', file.url.key.full, filepath_parts, current_item);
+                    }
 
-                    // error('Adding: %s %s, is_space_index: %s', space_path, filepath, is_space_index, file_path_info.name);
-                    // Don't include hidden pages
-                    if (!file.hidden && !is_space_index) {
-                        error(`Adding child space_path: ${space_path} key: ${file.url.key.full}, path: ${filepath}`);
-                        current_item.children = current_item.children || [];
-                        current_item.children.push({
-                            id             : file_path_info.name,
-                            name           : file.title,
-                            url            : file.url,
-                            slug           : file.slug,
-                            path           : space_path,
-                            tree_item_index: file.tree_item_index,
-                            section_parent : file.section_parent
-                        });
-                    }
-                    else {
-                        error(`Ignoring child space_path: ${space_path} key: ${file.url.key.full}, path: ${filepath}`);
-                    }
                 }
             }
             else {
