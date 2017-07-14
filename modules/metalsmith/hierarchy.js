@@ -41,7 +41,7 @@ const hierarchy = options => (files, metalsmith, done) => {
         const file = files[filepath];
         const space_path = file.url.key.space_path;
         file.hierarchy = file.hierarchy || {};
-        error(`space_path: ${space_path}; filepath: ${filepath}`);
+        debug(`space_path: ${space_path}; filepath: ${filepath}`);
 
         if (multimatch(filepath, options.file_pattern).length && space_path) {
             // Don't include hidden pages

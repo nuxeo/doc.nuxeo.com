@@ -69,7 +69,7 @@ const meta_hierarchies = function (options) {
                         current_item.url = file.url;
                         current_item.section_parent = file.section_parent;
 
-                        error(`Adding parent space_path: ${space_path} key: ${file.url.key.full}, path: ${filepath}`);
+                        debug(`Adding parent space_path: ${space_path} key: ${file.url.key.full}, path: ${filepath}`);
                     }
                     else {
                         filepath_parts.forEach((item) => {
@@ -93,7 +93,7 @@ const meta_hierarchies = function (options) {
                         // error('Adding: %s %s, is_space_index: %s', space_path, filepath, is_space_index, file_path_info.name);
                         // Don't include hidden pages
                         if (!file.hidden && !is_space_index) {
-                            error(`Adding child space_path: ${space_path} key: ${file.url.key.full}, path: ${filepath}`);
+                            debug(`Adding child space_path: ${space_path} key: ${file.url.key.full}, path: ${filepath}`);
                             current_item.children = current_item.children || [];
                             current_item.children.push({
                                 id             : file_path_info.name,
@@ -106,7 +106,7 @@ const meta_hierarchies = function (options) {
                             });
                         }
                         else {
-                            error(`Ignoring child space_path: ${space_path} key: ${file.url.key.full}, path: ${filepath}`);
+                            debug(`Ignoring child space_path: ${space_path} key: ${file.url.key.full}, path: ${filepath}`);
                         }
                     }
 
@@ -124,8 +124,6 @@ const meta_hierarchies = function (options) {
             run_on_tiers(hierarchy, multisort, [a => !a.tree_item_index, 'tree_item_index', 'slug']);
         });
 
-        const util = require('util');
-        console.log('hierarchies: ', util.inspect(hierarchies, false, null));
         metadata.hierarchies = hierarchies;
 
         return done();
