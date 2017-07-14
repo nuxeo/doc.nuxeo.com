@@ -1,6 +1,6 @@
 $content-background: #f5f9fb;
 
-#content-container {
+#content_container {
   background-color: $white;
   min-height: calc(100vh - 100px);
 
@@ -15,7 +15,7 @@ $content-background: #f5f9fb;
   }
 }
 
-#content-container.overview {
+#content_container.overview {
   background-attachment: fixed;
   background-color: $content-background;
   background-image: url('/assets/imgs/nuxeo-grid.svg');
@@ -26,7 +26,7 @@ $content-background: #f5f9fb;
 
 // medium+
 @media screen and #{breakpoint(medium up)} {
-  #content-container.overview {
+  #content_container.overview {
     background-position-x: calc(33vw + 4rem);
   }
 }
@@ -34,7 +34,7 @@ $content-background: #f5f9fb;
 
 // large+
 @media screen and #{breakpoint(large up)} {
-  #content-container.overview {
+  #content_container.overview {
     background-position-x: calc(25vw + 4rem);
   }
 
@@ -71,7 +71,7 @@ $content-background: #f5f9fb;
 
 // Medium screen support
 @media screen and (min-width: 1050px) {
-  #content-container {
+  #content_container {
     padding-left: 3rem;
     padding-right: 3rem;
   }
@@ -80,11 +80,11 @@ $content-background: #f5f9fb;
 // Large screen support
 @media screen and (min-width: 1800px) {
   $wide-max-menu-width: 446px;
-  #side-menu-container {
+  #side_menu_container {
     max-width: $wide-max-menu-width;
   }
 
-  #content-container {
+  #content_container {
     background-position-x: calc(#{$wide-max-menu-width} + 7rem); // padding of 3rem + 4rem
 
     &.large-9.large-push-3 {

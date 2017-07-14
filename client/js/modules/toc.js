@@ -7,7 +7,7 @@ var debounce = require('lodash.debounce');
 var initialise_toc = require('./initialise_toc');
 
 var $content = $('#content');
-var $side_menu_container = $('#side-menu-container');
+var $side_menu_container = $('#side_menu_container');
 var $toc = $content.filter('.toc');
 
 var $toc_list = $('#toc_list');
