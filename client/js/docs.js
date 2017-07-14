@@ -13,7 +13,7 @@ $(document).ready(function () {
     require('./tabbed');
 
     // Menu
-    if ($('#side-menu').find('div').length) {
+    if ($('#side_menu').find('div').length) {
         menu_height($);
         menu($);
 

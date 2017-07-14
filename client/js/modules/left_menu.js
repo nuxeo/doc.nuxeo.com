@@ -2,7 +2,7 @@
 /* eslint-env browser */
 
 module.exports = function ($) {
-    var $side_menu = $('#side-menu');
+    var $side_menu = $('#side_menu');
 
     $side_menu.find('.has-control > i').on('click', function () {
         /* eslint no-invalid-this: 0 */

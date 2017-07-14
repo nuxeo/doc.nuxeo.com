@@ -11,11 +11,11 @@ $menu-fg-active: $nuxeo-color-dark;
   // $level-1-color: lighten($color, $nuxeo-section-lighten);
 
   //
-  #side-menu-container #side-menu .input-container {
+  #side_menu_container #side_menu .input-container {
     background: $level-0-color;
   }
 
-  #side-menu ul {
+  #side_menu ul {
     li:not(.contains-toc, .toc-item) {
       &.l1 {
         background-color: $level-0-color;
@@ -32,7 +32,7 @@ $menu-fg-active: $nuxeo-color-dark;
   }
 }
 
-#side-menu-container {
+#side_menu_container {
   background: $menu-background;
 }
 
@@ -78,7 +78,7 @@ $menu-fg-active: $nuxeo-color-dark;
   }
 }
 
-#side-menu-container {
+#side_menu_container {
   height: calc(100vh - 50px);
   left: 0;
   margin-top: 50px;
@@ -102,7 +102,7 @@ $menu-fg-active: $nuxeo-color-dark;
 }
 
 // Filtering input
-#side-menu {
+#side_menu {
   .input-container {
     margin: 0;
     padding: 1rem 2rem;
@@ -130,14 +130,14 @@ $menu-fg-active: $nuxeo-color-dark;
 
 // Small
 @media screen and #{breakpoint(small down)} {
-  #side-menu {
+  #side_menu {
     max-width: none;
   }
 }
 
 
 // Menu
-#side-menu {
+#side_menu {
   ul {
     list-style: none;
     margin: 0;

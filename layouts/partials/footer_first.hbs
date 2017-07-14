@@ -1,22 +1,22 @@
         </div>
     </div>
     {{#unless no_side_menu}}
-    <div id="side-menu-container" class="column show-for-medium medium-4 large-3 medium-pull-8 large-pull-9">
-        <div id="side-menu" data-space="{{url.key.space_path}}">
+    <div id="side_menu_container" class="column show-for-medium medium-4 large-3 medium-pull-8 large-pull-9">
+        <div id="side_menu" data-space="{{url.key.space_path}}">
             {{> left_menu}}
         </div>
     </div>
     {{/unless}}
 </div>
 
-<div id="footer" class="row expanded">
-    <button id="goto-top" type="button">
+<div id="docs_footer" class="row expanded">
+    <button id="goto_top" type="button">
         <img src="/assets/imgs/icons/goto-top-icon.svg">
         <span>To Top</span>
     </button>
     {{> versions_inline}}
-    {{!-- Has id to ensure main menu works on pages without a submenu --}}
-    <nuxeo-footer id="nuxeo-submenu" year="{{moment format='YYYY'}}" show-license>
+
+    <nuxeo-footer year="{{moment format='YYYY'}}" show-license>
         <nuxeo-footer-column column-items='[[
         {"title": "Why Nuxeo?", "url": "https://nuxeo.com/why-nuxeo/"}], [
         {"title": "Contact", "url": "https://nuxeo.com/about/contact/"},

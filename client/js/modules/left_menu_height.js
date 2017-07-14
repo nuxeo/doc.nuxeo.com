@@ -3,9 +3,9 @@
 
 module.exports = function ($) {
     var $window = $(window);
-    var $side_menu_container = $('#side-menu-container');
-    var $footer = $('#footer');
-    var $goto_top = $('#goto-top');
+    var $side_menu_container = $('#side_menu_container');
+    var $footer = $('#docs_footer');
+    var $goto_top = $('#goto_top');
     var footer_pos;
     // var footer_height = $footer.outerHeight(true);
     var menu_height = 50;

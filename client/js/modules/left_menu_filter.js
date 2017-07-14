@@ -11,7 +11,7 @@ var debounce = require('lodash.debounce');
 // var unique = a.filter(onlyUnique);
 
 module.exports = function ($) {
-    var $side_menu = $('#side-menu');
+    var $side_menu = $('#side_menu');
     var last_filter = '';
     var min_search_length = 2;
 
