@@ -1,4 +1,5 @@
-'use strict';/* eslint-env es6 */
+'use strict';
+/* eslint-env es6 */
 
 // Debugging
 const {warn} = require('../debugger')('handlebars-excerpt');
