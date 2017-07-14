@@ -6,7 +6,7 @@ const {warn} = require('../debugger')('handlebars-since');
 
 // npm packages
 const handlebars = require('handlebars');
-const new_tag = new handlebars.SafeString('<span class="new-tag"></span>');
+const new_tag = new handlebars.SafeString('<span class="tag-new"></span>');
 
 /**
  * Shows a new tag if it matches a site version variable
