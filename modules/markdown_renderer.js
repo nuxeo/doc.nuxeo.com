@@ -2,8 +2,12 @@
 /* eslint-env es6 */
 
 const crypto = require('crypto');
+const striptags = require('striptags');
+const slug = require('slug');
+slug.defaults.modes.pretty.lower = true;
 const marked = require('marked');
 const renderer = new marked.Renderer();
+
 renderer.image = function (href_str, title, alt) {
     // ![alt text](image.png ?w=180,h=360,border=true,thumbnail=true,align=right "title")
     const closing = (this.options.xhtml) ? '/>' : '>';
@@ -126,6 +130,12 @@ renderer.list = function (body, ordered) {
     ${body}
     </${type}>
     `;
+};
+
+renderer.heading = (text, level) => {
+    const text_slug = slug(striptags(text.replace(/\{\{[^\}]*?\}\}/g, '')));
+
+    return `<h${level} id="${text_slug}">${text}</h${level}>`;
 };
 
 module.exports = renderer;
