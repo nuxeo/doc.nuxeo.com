@@ -17,3 +17,30 @@
     color: $secondary-color;
   }
 }
+
+$new-tag-bg: #d9e6f0;
+$new-tag-fg: rgba(0, 5, 34, 0.6);
+
+.tag-new {
+  background-color: $new-tag-bg;
+  color: $new-tag-fg;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 200;
+  letter-spacing: .1rem;
+  line-height: 1.8rem;
+  margin-left: .5rem;
+  padding: 0 .4em;
+  text-transform: uppercase;
+  vertical-align: middle;
+
+  &::after {
+    content: 'NEW';
+  }
+
+  .pnuxeo-server & {
+    font-size: .7rem;
+    letter-spacing: .06rem;
+    line-height: 1.2rem;
+  }
+}
