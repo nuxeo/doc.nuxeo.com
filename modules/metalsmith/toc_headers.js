@@ -2,7 +2,7 @@
 /* eslint-env es6 */
 
 // Debugging
-const {debug, warn, error} = require('../debugger')('metalsmith-toc-headers');
+const {debug, warn} = require('../debugger')('metalsmith-toc-headers');
 
 // npm packages
 const cheerio = require('cheerio');
@@ -38,7 +38,7 @@ const toc_headers = () => {
                 debug(`Checking id: ${id}`);
                 if (ids[id] !== void 0) {
                     $this.attr('id', id + '-' + ++ids[id]);
-                    warn(`file: ${filepath} - Heading duplication id: ${id}`);
+                    warn(`file: ${filepath} - Duplicated id: ${id}`);
                     has_duplicate = true;
                 }
                 else {
@@ -46,7 +46,7 @@ const toc_headers = () => {
                 }
             });
             if (has_duplicate) {
-                error(`Duplicated headings in file: ${filepath}`);
+                warn(`Duplicated id in file: ${filepath}`);
                 file.contents = Buffer.from($.html(), 'utf8');
             }
 
