@@ -16,6 +16,7 @@ default:
             - '.DS_Store'
             - '**.DS_Store'
         canonical_version_preference: 'ft'
+        new_version: '9.2'
 
         # Keys
         cse_id: "005135669674242188188:xu8ybnpu3r8"
