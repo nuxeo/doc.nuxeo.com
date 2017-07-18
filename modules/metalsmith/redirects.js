@@ -72,7 +72,12 @@ const nuxeo_redirects = function () {
         }
         catch (e) {
             redirects = {};
-            error('Failed to load: %s: %j', redirects_file);
+            if (process.env.NODE_ENV === 'production') {
+                error('Failed to load: %s: %j', redirects_file);
+            }
+            else {
+                warn('Failed to load: %s: %j', redirects_file);
+            }
         }
         redirects = reverse_object(redirects);
 
