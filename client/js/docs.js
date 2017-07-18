@@ -4,6 +4,7 @@
 
 $(document).ready(function () {
     require('./modules/polyfills');
+    require('./modules/unique_heading_ids');
     var menu = require('./modules/left_menu');
     var menu_height = require('./modules/left_menu_height');
     var menu_filter = require('./modules/left_menu_filter');
