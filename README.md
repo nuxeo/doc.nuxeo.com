@@ -132,6 +132,10 @@ The main build script for generating the output for `site`.
 ### `./config.yml`
 Site configurations, ability to have production or development specific values.
 
+- `site.new_version: '{version number to match}'` for `NEW` tag
+- `site.review_period: '{number} {days, months, years}'`
+- `site.review_release_date: {date - YYYY-MM-DD}`
+
 ### `./package.json`
 Build processes are defined here. Should be relatively self explanatory but anything special will be explained here.
 
