@@ -54,7 +54,7 @@ default:
                 parent: /nxdoc/web-ui
                 section_color: web-ui
                 children:
-                    - /nxdoc/web-ui
+                    - /nxdoc/web-ui-overview
                     - /nxdoc/polymer-guide
                     - /nxdoc/nuxeo-elements
                     - /nxdoc/web-ui-tutorials
