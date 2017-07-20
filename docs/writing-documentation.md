@@ -6,12 +6,12 @@
 - [SSH key associated with GitHub](https://help.github.com/articles/generating-an-ssh-key/)
     - Test access with `ssh -T git@github.com` - see [here](https://help.github.com/articles/testing-your-ssh-connection/) for help.
 - [node.js](https://github.com/creationix/nvm#install-script) &mdash; Stable: See [Release schedule](https://github.com/nodejs/LTS#lts_schedule)(version >= v6.9)
-    - `nvm install v6` will get the latest v6 version
+    - `nvm install 'lts/*'` will get the latest v6 version
     - Test with `node --version`
-    - _Remember:_ `nvm use v6` at the start of your session
+    - _Remember:_ `nvm use 'lts/*'` at the start of your session
 - A Markdown text editor (https://atom.io/ or https://www.sublimetext.com/ for example)
     - [The Atom Documentation plugin](https://github.com/nuxeo/atom-documentation-links#installation)-This plugin provides suggestions for {{file ...}} and {{page ...}} links.
-- [EditorConfig plugin](http://editorconfig.org/#download) (Not mandatory)
+- [EditorConfig plugin](http://editorconfig.org/#download) (Recommended)
 
 ### Mac:
 - Install homebrew (http://brew.sh/) and run
