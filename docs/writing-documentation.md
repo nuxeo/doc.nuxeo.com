@@ -121,6 +121,7 @@ Frontmatter | Behaviour
 `section_override: section-name` | Overrides the hierarchical section.
 `previous_link: version/space/page-name` | Adds previous link to the bottom of the page.
 `next_link: version/space/page-name` | Adds next link to the bottom of the page.
+`notes:>-` | Add a note on the page. 
 
 ### Overriding Version Links
 This feature allows the version links to point to a different page.
@@ -180,6 +181,8 @@ If you want to add tabs to your page, you will need to add `tabbed_page: true` i
 
 ## Links
 
+We recommand you to install the [nuxeo-documentation-links](https://atom.io/packages/nuxeo-documentation-links) addon on Atom to be able to have suggestions while typing links to pages or files. 
+
 ### To a Page
 Example: for `WebEngine (JAX-RS)`, You can access it by:
 `{{page page='webengine-jax-rs'}}`
@@ -231,7 +234,9 @@ These require us to use the reference style of links:
 
 ### To Images
 Link to images should be written like this:
-`![name-of-the-image]({{file space='space' page='page-name' name='image-name.png'}})`
+`![name-of-the-image]({{file version='VERSION' space='SPACE' page='page-name' name='image-name.png'}})`
+
+You can call an image from a different page, space or version. 
 
 An image called `your_img.png` could be referenced by the following:
 ```md
@@ -269,7 +274,12 @@ You can link to video from Wistia with the `id` provided:
 `{{> wistia_video id='id-of-the-video'}}`
 
 ### To Anchors
-Anchors to titles will enable you to create links to specific section of a page. By default, every titles have an anchor, for example `## Functional Overview` will create an anchor `functional-overview`. The link in your page should be written like this:
+Anchors to titles will enable you to create links to specific section of a page. By default, every titles have an anchor, for example `## Functional Overview` will create an anchor `functional-overview`. 
+
+The link to call an anchor should be written like this: 
+`({{page page='my-page-filename'}}#functional-overview)`
+
+If you want to add an anchor on a specific section, you can add the following:
 `{{> anchor 'functional-overview'}}`
 
 
