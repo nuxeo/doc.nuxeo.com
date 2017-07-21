@@ -40,8 +40,13 @@ git reset --hard
 ```bash
 npm run dev
 ```
-Once started go to your http://localhost:3000 and add `/nxdoc` or `/userdoc` at the end to the address to access it, as it's the versioned space. 
+Once started, http://localhost:3000 opens automatically. Browse to the URL you want to see your changes. 
 
+If you want to skip the initial build and use the existing one as the base, you can do: 
+
+```bash
+npm run dev:no-clean
+```
 
 Have a look at the [new-page-template.md](new-page-template.md) with your editor or [view the raw source](https://raw.githubusercontent.com/nuxeo/doc.nuxeo.com/master/docs/new-page-template.md).
 
@@ -341,6 +346,9 @@ Option | Behaviour
 `sort_by='field'` | Field to sort the table results by.
 `filter='field_name=search_text, another_field=search_text'` | Filter the table by fields with text values. Case-insensitive.
 `filter_type='and'` | If mulitiple fields are being filtered upon, `and` will mean all fields have to have a match for the row to be present in the table. Defaults to `or` if omitted.
+## Spelling 
+
+You'll find on [this page](https://doc.nuxeo.com/corg/user-interface-guidelines/) basic spelling guidelines to write documentation. 
 
 # Edit a Page
 ## Modify Review Date
