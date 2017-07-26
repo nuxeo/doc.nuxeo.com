@@ -28,10 +28,10 @@ default:
                 parent: /nxdoc/tutorials
                 section_color: tutorials
                 children:
-                    - /nxdoc/getting-started-with-the-nuxeo-platform
-                    - /nxdoc/start-customizing-the-nuxeo-platform
+                    - /nxdoc/discover-nuxeo-platform-apis/
+                    - /nxdoc/configure-nuxeo-platform/
+                    - /nxdoc/develop-with-nuxeo-platform/
                     - /nxdoc/quick-overview
-                    - /nxdoc/quick-start-series
                     - /nxdoc/educational
                     - /nxdoc/transversal-how-tos
                     - /nxdoc/how-to-index
