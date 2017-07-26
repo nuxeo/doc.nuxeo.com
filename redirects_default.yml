@@ -146,6 +146,12 @@
 
 ^/nxdoc/upgrade-from-lts-2016-to-91/?$: /nxdoc/upgrade-from-lts-2016-following-fast-tracks/
 
+# NXDOC-1276 
+^/nxdoc/getting-started-with-the-nuxeo-platform/?$: /nxdoc/discover-nuxeo-platform-apis/
+^/nxdoc/customizing-with-studio-modeler-and-designer/?$: /nxdoc/configure-nuxeo-platform/
+^/nxdoc/getting-started-with-nuxeo-cli/?$: /nxdoc/develop-with-nuxeo-platform/
+^/nxdoc/start-customizing-the-nuxeo-platform/?$: /nxdoc/configure-nuxeo-platform/
+
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
 ^/display/NXDOC(/?|/.*): /nxdoc/
