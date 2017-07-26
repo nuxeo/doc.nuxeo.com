@@ -28,9 +28,9 @@ default:
                 parent: /nxdoc/tutorials
                 section_color: tutorials
                 children:
-                    - /nxdoc/discover-nuxeo-platform-apis/
-                    - /nxdoc/configure-nuxeo-platform/
-                    - /nxdoc/develop-with-nuxeo-platform/
+                    - /nxdoc/discover-nuxeo-platform-apis
+                    - /nxdoc/configure-nuxeo-platform
+                    - /nxdoc/develop-with-nuxeo-platform
                     - /nxdoc/quick-overview
                     - /nxdoc/educational
                     - /nxdoc/transversal-how-tos
