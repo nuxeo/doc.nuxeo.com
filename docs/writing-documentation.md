@@ -160,7 +160,7 @@ _Note_: the label (e.g. `LTS 2015`) needs to be quoted, this is part of the YAML
 ```
 ### Multi-Excerpt
 ```handlebars
-{{! multiexcerpt name=’name-of-your-multiexcerpt'}}
+{{! multiexcerpt name='name-of-your-multiexcerpt'}}
 .
 .
 .
