@@ -41,7 +41,7 @@ const meta_hierarchies = function (options) {
             debug('Filepath: %s', filepath);
             const file = files[filepath];
 
-            if (multimatch(Object.keys(files), options.file_pattern).length) {
+            if (multimatch(filepath, options.file_pattern).length) {
 
                 let file_path_info = path.parse(filepath);
                 let filepath_parts = file_path_info.dir.split(path.sep);

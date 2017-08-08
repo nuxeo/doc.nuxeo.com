@@ -3,11 +3,9 @@
 
 const time = require('debug')('plugin-timer:time');
 
-const timer = function (title) {
-    return function (files, metalsmith, done) {
-        time('After: %s', title);
-        return done();
-    };
+const timer = (title) => (f, m, done) => {
+    time(`After: ${title}`);
+    return done();
 };
 
 module.exports = timer;
