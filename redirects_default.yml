@@ -145,6 +145,7 @@
 ^/studio/custom-doc-id-generation/?$: /studio/external-templates/
 
 ^/nxdoc/upgrade-from-lts-2016-to-91/?$: /nxdoc/upgrade-from-lts-2016-following-fast-tracks/
+^/studio/application-dependencies/?$: /studio/application-definition
 
 # NXDOC-1276 
 ^/nxdoc/getting-started-with-the-nuxeo-platform/?$: /nxdoc/discover-nuxeo-platform-apis/
