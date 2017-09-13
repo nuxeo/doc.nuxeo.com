@@ -350,6 +350,24 @@ Option | Behaviour
 
 You'll find on [this page](https://doc.nuxeo.com/corg/user-interface-guidelines/) basic spelling guidelines to write documentation. 
 
+## Formatting 
+
+### Titles 
+
+**Levels** 
+
+Start your page with a h2 title as the h1 is the global page title, and then subsections with h3, h4, etc.
+
+**Capitalization** 
+Capitalize headings (page titles and titles in the page). Some rules are listed on the English Grammar and Typography (US) - Common Mistakes note on the intranet, but you can use the website http://titlecapitalization.com/ to check how titles are capitalized (please use "Chicago Manual of Style" option which used to be the only option and so all titles have been capitalized using this rule until they introduced other options). Don't put a final dot at the end.
+
+**HOWTO Titles**
+The titles of "how to" pages must start with "HOWTO:". For example:
+`HOWTO: Customize the Login Page`
+This is better for SEO and it makes it clear what the page is (from search results typically).
+
+
+
 # Edit a Page
 ## Review a Page
 
