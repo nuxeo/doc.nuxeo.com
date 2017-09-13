@@ -353,9 +353,7 @@ You'll find on [this page](https://doc.nuxeo.com/corg/user-interface-guidelines/
 # Edit a Page
 ## Review a Page
 
-{{#> callout type='info' heading='Info'}}
-As a lot of people are contributing on the documentation, every creation or edition should go through a Pull Request to be reviewed by the doc team.
-{{/callout}}
+As a lot of people are contributing on the documentation, **every creation or edition should go through a Pull Request** to be reviewed by the doc team.
 
 Once you have reviewed a page, you will need to update its status accordingly. This status is displayed in the frontmatter on the page itself. To do so:
 
