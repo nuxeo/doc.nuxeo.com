@@ -351,11 +351,19 @@ Option | Behaviour
 You'll find on [this page](https://doc.nuxeo.com/corg/user-interface-guidelines/) basic spelling guidelines to write documentation. 
 
 # Edit a Page
-## Modify Review Date
+## Review a Page
 
-Once you have entirely reviewed a page, and that you consider that it's OK or not, you will have to update the review flag. If the page is ok, update the date only, if it's not-ok you will have to change the status and add a comment. 
-`comment` is mandatory to describe what is incorrect with the page if the status is set to `not-ok` or `requiresUpdates`. Markdown will be converted and multiline text can be added.
-{{#> callout type='note'}} Make sure that the comment is well written as it is displayed on the page to inform the viewer what is the problem on the page.{{/callout}}
+{{#> callout type='info' heading='Info'}}
+As a lot of people are contributing on the documentation, every creation or edition should go through a Pull Request to be reviewed by the doc team.
+{{/callout}}
+
+Once you have reviewed a page, you will need to update its status accordingly. This status is displayed in the frontmatter on the page itself. To do so:
+
+- **If the content is still relevant**, change review date to current date and make sure status is “ok”. At the same time, in the frontmatter change the label `content-review-lts2016`to => `lts2016-ok` 
+
+- **If you see that the page requires small updates**, please edit and update the page directly as you read it. Change review date to current date and make sure status is “ok”. It will take less time to everyone that to read it again and update it later. At the same time, in the frontmatter change the label `content-review-lts2016`to => `lts2016-ok` 
+
+- **If the topic is still relevant but content needs to be deeply updated**, change review date current date, change status to “not-ok” or “requiresUpdates” and add a comment explaining what’s wrong. Note: The comment will displayed on the page. Then, create a JIRA ticket and start processing it once you are done with all of your assigned pages. Once it's done change the review date to current date and make sure status is “ok” and change the label in the frontmatter `content-review-lts2016`to => `lts2016-ok`. 
 
 A multiline comment is possible, it should look like this:
 
@@ -372,6 +380,13 @@ review:
       - if necessary
 ---
 ```
+
+- **If page is clearly obsolete and should not be available anymore**, create a JIRA ticket with the name of the page(s) to delete and tag it nxDocTeam and nxProduct.
+
+**Tips to Edit a Page**
+- Do not edit the Confluence section in the frontmatter. 
+- Do not edit the History section in the frontmatter.
+- If you need to update an image, you need to do it via the command line but do not do it via the GitHub User Interface. Assets need to go through Git LFS to be added properly to the documentation. 
 
 
 ## Global optional frontmatter
