@@ -264,6 +264,13 @@ Option | Behaviour
 `inline=true` | Allows images to be put side by side.
 `align=right` | Positions the image to the right.
 
+Give screenshots and images a relevant name (`new-button.png` for instance). Don't use the default screenshot name like `Screen Shot 2013-07-01 at 14.01.13.png`: they don't make it easy to manage attachments to the page and reuse of pictures. It takes a little more time, but it is much simpler when we want to clean up the attachments of a page.
+It is also easier to replace screenshots when they have a meaningful name, instead of adding and accumulate attachments to a page.
+
+Don't hesitate to use screenshots from other pages. Huge advantage: when there is a UI change, only one screenshot at one place has to be updated instead of several ones.
+
+For schemas, please attach the Lucidchart version to the page for easy future modifications.
+
 ### To Download Files
 Link to download files should be written like this:
 `[Text for download link]({{file space='space' page='page-name' name='file-name.zip'}})`
