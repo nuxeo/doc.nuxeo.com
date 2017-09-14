@@ -44,9 +44,32 @@ Don't forget to capitalize language and tools names:
 |--------------------------------------------|------------------------------------------------------|
 | api                                        | API                                                  |
 | bower                                      | Bower                                                |
-| 
+| dublincore                                 | Dublin Core                                          |
+| ElasticSearch                              | Elasticsearch                                        |
+| Freemarker                                 | FreeMarker                                           |
+| github                                     | GitHub                                               |
+| Image Magick                               | ImageMagick                                          |
+| jar                                        | JAR                                                  |
+| java                                       | Java                                                 |
+| Javascript                                 | JavaScript                                           |
+| jboss                                      | JBoss                                                |
+| jquery                                     | jQuery                                               |
+| Jira                                       | JIRA                                                 |
+| json                                       | JSON                                                 |
+| Marklogic                                  | MarkLogic                                            |
+| maven                                      | Maven                                                |
+| mongodb, Mongodb                           | MongoDB                                              |
+| OSGI                                       | OSGi                                                 |
+| Postgresql                                 | PostgreSQL                                           |
+| rest, Rest, ReST	                         | REST                                                 |
+| subversion                                 | Subversion                                           |
+| tomcat                                     | Tomcat                                               |
+| url                                        | URL (URLs in plural)                                 |
+| WEBDAV                                     | WebDAV                                               |
+| xml                                        | XML                                                  |
+| web components                             | Web Components                                       |
 
-
+ 
 
 
 
