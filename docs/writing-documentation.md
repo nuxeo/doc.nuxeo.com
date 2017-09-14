@@ -354,18 +354,65 @@ You'll find on [this page](https://doc.nuxeo.com/corg/user-interface-guidelines/
 
 ### Titles 
 
-**Levels** 
+- **Levels** 
 
 Start your page with a h2 title as the h1 is the global page title, and then subsections with h3, h4, etc.
 
-**Capitalization** 
+- **Capitalization** 
 Capitalize headings (page titles and titles in the page). Some rules are listed on the English Grammar and Typography (US) - Common Mistakes note on the intranet, but you can use the website http://titlecapitalization.com/ to check how titles are capitalized (please use "Chicago Manual of Style" option which used to be the only option and so all titles have been capitalized using this rule until they introduced other options). Don't put a final dot at the end.
 
-**HOWTO Titles**
+- **HOWTO Titles**
 The titles of "how to" pages must start with "HOWTO:". For example:
 `HOWTO: Customize the Login Page`
 This is better for SEO and it makes it clear what the page is (from search results typically).
 
+### Buttons, Parameters Formatting
+
+Use **bold font** for buttons, menus, icons, tabs names.
+For instance: Click on the **Save** button.
+Use `monospaced text` for file, properties, class, path names, etc.
+For instance:
+- Download the updated JAR, called `nuxeo-launcher-5.4.2-HF09-jar-with-dependencies.jar`.
+- If you open the `MyRoot` class, you will notice that there is a regular JAX-RS root resource with some WebEngine annotations.
+- By default, `data` and `log` directories are stored inside the Nuxeo tree.
+- Linux recommended path: `/var/log/nuxeo/...`
+
+### Procedures / Steps 
+
+Use numbered bullets for procedures, not bulleted points.
+Add an introductory sentence in bold that describes what the steps are about.
+Use imperative (do this, do that) instead of "you can do this".
+Don't forget the period at the end your sentence.
+For instance:
+> **To move the data and log directories:**
+>1. In the Admin Center, type the path to the location where you want the directories to be stored (see the table below).
+>2. Click on **Save**.
+>3. Restart your server.
+
+### Punctuation
+
+- Do not use **double spaces between sentences**. Double spacing after a period is a very old typewriter and fixed-width-fonts habit that has absolutely no relevance now in an era of proportional fonts with fine-tuned kerning.
+
+- **Do not use a single dash (-) or two dashes (--)** for pause or separation in a sentence. For instance do not write "Nuxeo EP - Overview" or "Nuxeo EP -- Overview" but use the proper em-dash character (—) (&#x2014; in wiki mode). Learn how to type it on your keyboard (on English Mac OS X keyboards it's Shift-Alt-Dash).
+
+- **Use a non-breaking space between value and unit** to avoid them being split by word wrapping. For example, write 2&nbsp;GB for 2 GB.
+
+- **Don't put spaces before double punctuation signs** (: ; ! ?) in English. However, note that in French these signs require a non-breaking space before them.
+
+- **Don't put ellipses after "etc."** and put a comma before (see http://en.wikipedia.org/wiki/Etcetera).
+Write "[...] documents, metadata, document query language (NXQL), versioning, audit, etc." and not "[...] documents, metadata, document query language (NXQL), versioning, audit, etc ...".
+
+### Bulleted and Numbered Lists
+
+Use colon to introduce the list.
+If the list is an enumeration of items, examples, capitalize the first word of each list item and don't put a period or comma at the end.
+For instance:
+> A blobProvider is a component that provides an API to read and write binary streams as well as additional services such as:
+> Getting associated thumbnail of a binary stream
+> Getting a download URI
+> Some version management features
+> Getting available conversions
+> Getting registered applications links
 
 
 # Edit a Page
