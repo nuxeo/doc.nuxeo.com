@@ -122,7 +122,7 @@
     "empty_temp": "rm -rf ./temp/*",
     "empty_logs": "rm -rf ./logs/*",
     "precopy_assets": "npm run copy_fontawesome && npm run copy_open_sans && npm run copy_fonts",
-    "copy_assets": "mkdir -p site && rsync -a assets/ site/assets/ && npm run duplicate_asset_stats && cp editor.json ./site",
+    "copy_assets": "rsync -a assets/ site/assets/ && npm run duplicate_asset_stats && cp editor.json ./site || echo 'Check output'",
     "postcopy_assets": "cp node_modules/nuxeo-website-styles/bower_components/webcomponentsjs/webcomponents-lite.min.js ./site/assets/js/ && cp -r node_modules/nuxeo-website-styles/elements/* ./site/assets/",
     "copy_extras": "cp google197e4c8435c1cca7.html ./site && cp opensearch.xml ./site",
     "server": "browser-sync start --server site --browser=$npm_package_config_browser",
