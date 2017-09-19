@@ -12,6 +12,7 @@
 ^/display/KB/java.net.SocketException\+Too\+many\+open\+files/?$: /nxdoc/java.net.SocketException-too-many-open-files/
 
 ^/x/94Wo/?$: /nxdoc/creating-nuxeo-packages
+^/x/VQQz/?$: /nxdoc/quick-overview/
 
 
 # NXDOC-1038: Archived versions of the documentation
