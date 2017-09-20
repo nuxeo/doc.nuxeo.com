@@ -13,7 +13,13 @@
 
 ^/x/94Wo/?$: /nxdoc/creating-nuxeo-packages
 ^/x/VQQz/?$: /nxdoc/quick-overview/
-
+^/x/uAwz/?$: https://nuxeo.com/
+^/x/ygwz/?$: https://nuxeo.com/
+^/display/KB/Adding+your+own+CSS#AddingyourownCSS-Declarethefile/?$: /nxdoc/theme/
+^/display/NXDOC/Component+model+overview/?$: /nxdoc/runtime-and-component-model/ 
+^/display/NXDOC/Migrating+my+customized+theme/?$: /nxdoc/theme/
+^/display/public/ADMINDOC/Configuring+PostgreSQL/?$: /nxdoc/postgresql/ 
+^/display/ADMINDOC/Configuring+PostgreSQL/?$: /nxdoc/postgresql/
 
 # NXDOC-1038: Archived versions of the documentation
 ^/58/?$: /archived-documentation
