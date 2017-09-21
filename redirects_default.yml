@@ -20,6 +20,17 @@
 ^/display/NXDOC/Migrating+my+customized+theme/?$: /nxdoc/theme/
 ^/display/public/ADMINDOC/Configuring+PostgreSQL/?$: /nxdoc/postgresql/ 
 ^/display/ADMINDOC/Configuring+PostgreSQL/?$: /nxdoc/postgresql/
+^/display/NXDOC/Directories+and+Vocabularies/?$: /nxdoc/data-lists-and-directories/
+^/x/cYKE/?$: /nxdoc/nuxeo-cli/
+^/x/LQBu/?$: /nxdoc/embedding-nuxeo/
+^/display/NXDOC/Amazon+S3+Online+Storage/?$: /nxdoc/amazon-s3-online-storage/
+^/x/lAIz/?$: /nxdoc/intallation/
+^/x/HABu/?$: /nxdoc/amazon-s3-online-storage/
+^/KB/Launcher+says+it+couldn%27t+retrieve+process+ID/?$: /710/admindoc/launcher-says-it-couldnt-retrieve-process-id/
+^/x/IYBH/?$: /nxdoc/special-http-headers/
+ ^/display/CORG/Compiling+Nuxeo+from+sources/?$: /corg/compiling-nuxeo-from-sources/
+
+
 
 # NXDOC-1038: Archived versions of the documentation
 ^/58/?$: /archived-documentation
