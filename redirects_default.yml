@@ -36,7 +36,7 @@
 ^/x/rQAt/?$: /nxdoc/workflow-use-cases/
 ^/display/public/NXDOC58/Dev+Cookbook/?$: /nxdoc/
 ^/display/public/IDEDOC/Installing+Nuxeo+IDE/?$: /corg/
-
+^/display/DAMDOC/Nuxeo+DAM+Core/?$: /nxdoc/digital-asset-management-dam/
 
 # NXDOC-1038: Archived versions of the documentation
 ^/58/?$: /archived-documentation
