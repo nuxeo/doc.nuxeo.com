@@ -34,10 +34,8 @@
 ^/x/w4SE/?$: /archived-documentation/
 ^/x/64SE/?$: /archived-documentation/
 ^/x/rQAt/?$: /nxdoc/workflow-use-cases/
-
-
-
-
+^/display/public/NXDOC58/Dev+Cookbook/?$: /nxdoc/
+^/display/public/IDEDOC/Installing+Nuxeo+IDE/?$: /corg/
 
 
 # NXDOC-1038: Archived versions of the documentation
