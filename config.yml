@@ -32,7 +32,7 @@ default:
                     - /nxdoc/configure-nuxeo-platform
                     - /nxdoc/develop-with-nuxeo-platform
                     - /nxdoc/best-practices
-                    - /nxdoc/learn-with-examples
+                    - /nxdoc/learning-with-examples
                     - /nxdoc/how-to-index
             -
                 parent: /nxdoc/nuxeo-server
