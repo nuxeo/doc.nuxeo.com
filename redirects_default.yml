@@ -178,6 +178,38 @@
 ^/nxdoc/getting-started-with-nuxeo-cli/?$: /nxdoc/develop-with-nuxeo-platform/
 ^/nxdoc/start-customizing-the-nuxeo-platform/?$: /nxdoc/configure-nuxeo-platform/
 
+#NXDOC-1326
+^/nxdoc/educational/?$: /nxdoc/best-practices
+^/nxdoc/transversal-how-tos/?$: /nxdoc/getting-started
+^/nxdoc/workflow-use-cases/?$: /nxdoc/workflow-tutorials
+^/nxdoc/tutorials/?$: /nxdoc/getting-started
+^/nxdoc/design-tips/?$: /nxdoc/configuration-tips
+^/nxdoc/quick-start-series/?$: /nxdoc/best-practices
+
+
+^/nxdoc/first-steps-with-studio-technical-documentation-tutorial/?$: /nxdoc/getting-started 
+^/nxdoc/implementing-documentation-items/?$: /nxdoc/getting-started 
+^/nxdoc/custom-content-view-for-documentation-items/?$: /nxdoc/getting-started 
+^/nxdoc/document-locking-right-after-its-creation/?$: /nxdoc/getting-started 
+^/nxdoc/validation-workflow-choosing-the-assignee-based-on-a-metadata/?$: /nxdoc/getting-started 
+
+
+^/nxdoc/learning-rest-api/?$: /nxdoc/discover-nuxeo-platform-apis
+^/nxdoc/learning-rest-api-prerequisites/?$: /nxdoc/discover-nuxeo-platform-apis
+^/nxdoc/rest-api-principles/?$: /nxdoc/discover-nuxeo-platform-apis
+^/nxdoc/define-a-cors-configuration/?$: /nxdoc/discover-nuxeo-platform-apis
+^/nxdoc/log-into-nuxeo-platform/?$: /nxdoc/discover-nuxeo-platform-apis
+^/nxdoc/manipulate-documents/?$: /nxdoc/discover-nuxeo-platform-apis
+^/nxdoc/query-and-search/?$: /nxdoc/discover-nuxeo-platform-apis
+^/nxdoc/execute-business-logic-through-automation/?$: /nxdoc/discover-nuxeo-platform-apis
+^/nxdoc/launch-a-workflow/?$: /nxdoc/discover-nuxeo-platform-apis
+^/nxdoc/bonus-contribute-your-own-enricher/?$: /nxdoc/discover-nuxeo-platform-apis 
+
+
+^/nxdoc/how-to-unit-test-studio-bundle/?$: /studio/tutorials/ 
+^/nxdoc/how-to-setup-a-test-smtp-server/?$: answers.nuxeo.com 
+^/nxdoc/how-to-create-custom-dashboards/?$: /nxdoc/how-to-create-custom-dashboard-entries/
+
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
 ^/display/NXDOC(/?|/.*): /nxdoc/
