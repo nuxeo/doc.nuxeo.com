@@ -25,15 +25,14 @@ default:
         segment_write_key: '4qquvje3fv'
         main_menu:
             -
-                parent: /nxdoc/tutorials
+                parent: /nxdoc/getting-started
                 section_color: tutorials
                 children:
                     - /nxdoc/discover-nuxeo-platform-apis
                     - /nxdoc/configure-nuxeo-platform
                     - /nxdoc/develop-with-nuxeo-platform
-                    - /nxdoc/quick-overview
-                    - /nxdoc/educational
-                    - /nxdoc/transversal-how-tos
+                    - /nxdoc/best-practices
+                    - /nxdoc/learn-with-examples
                     - /nxdoc/how-to-index
             -
                 parent: /nxdoc/nuxeo-server
