@@ -37,6 +37,9 @@
 ^/display/public/NXDOC58/Dev+Cookbook/?$: /nxdoc/
 ^/display/public/IDEDOC/Installing+Nuxeo+IDE/?$: /corg/
 ^/display/DAMDOC/Nuxeo+DAM+Core/?$: /nxdoc/digital-asset-management-dam/
+^/x/monZ/?$: /60/nxdoc/quick-start-dev-guide/
+^/x/x4MlAQ/?$: /60/nxdoc/first-steps-with-studio-technical-documentation-tutorial/
+
 
 # NXDOC-1038: Archived versions of the documentation
 ^/58/?$: /archived-documentation
