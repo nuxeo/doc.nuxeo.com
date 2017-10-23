@@ -39,7 +39,8 @@
 ^/display/DAMDOC/Nuxeo+DAM+Core/?$: /nxdoc/digital-asset-management-dam/
 ^/x/monZ/?$: /60/nxdoc/quick-start-dev-guide/
 ^/x/x4MlAQ/?$: /60/nxdoc/first-steps-with-studio-technical-documentation-tutorial/
-
+^/x/LANc/?$: /710/admindoc/configuration-templates/
+^/x/Ng7F/?$: /710/nxdoc/implementing-documentation-items/
 
 # NXDOC-1038: Archived versions of the documentation
 ^/58/?$: /archived-documentation
