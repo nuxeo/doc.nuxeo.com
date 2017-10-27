@@ -41,6 +41,8 @@
 ^/x/x4MlAQ/?$: /60/nxdoc/first-steps-with-studio-technical-documentation-tutorial/
 ^/x/LANc/?$: /710/admindoc/configuration-templates/
 ^/x/Ng7F/?$: /710/nxdoc/implementing-documentation-items/
+^/x/c4ao/?$: /nxdoc/drag-and-drop-service-for-content-capture-html5-based/
+
 
 # NXDOC-1038: Archived versions of the documentation
 ^/58/?$: /archived-documentation
