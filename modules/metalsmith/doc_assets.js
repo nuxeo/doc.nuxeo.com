@@ -69,7 +69,7 @@ const check_file = (files, filename, selector) => {
                         const folder = 'nx_assets';
                         const ext = /(?:\.([^.]+))?$/.exec(doc.properties['file:content'].name)[1];
                         const asset_type = doc.properties['doc_asset:nature'];
-                        const asset_file = `${folder}/${uid}+${asset_type}.${ext}`
+                        const asset_file = `${folder}/${uid}+${asset_type}.${ext}`;
                         const href = '/' + asset_file;
 
                         $el.attr(attr, href);
