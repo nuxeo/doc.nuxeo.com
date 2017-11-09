@@ -136,7 +136,7 @@ const doc_assets = () => {
             })
             .catch((err) => {
                 error(err);
-                return done();
+                return done(err);
             });
 
     };
