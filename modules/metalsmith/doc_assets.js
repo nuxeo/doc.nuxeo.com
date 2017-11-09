@@ -2,7 +2,7 @@
 /* eslint-env es6 */
 
 
-const {info, error} = require('./../debugger')('nx_assets');
+const {info, error} = require('../debugger')('nx_assets');
 const fs = require('fs');
 const crypto = require('crypto');
 const Nuxeo = require('nuxeo');
@@ -18,45 +18,46 @@ const map = {
     // 'source': 'src'
 };
 
+const nuxeo = new Nuxeo({
+    baseURL: process.env.NX_ASSETS_URL || 'http://localhost:8080/nuxeo',
+    auth   : {
+        method  : 'basic',
+        username: process.env.NX_ASSETS_USER || 'Administrator',
+        password: process.env.NX_ASSETS_PWD || 'Administrator'
+    },
+});
 
-const checksum = function (str, algorithm, encoding) {
-    return crypto
-        .createHash(algorithm || 'md5')
-        .update(str, 'utf8')
-        .digest(encoding || 'hex');
-};
+const checksum = (str, algorithm = 'md5', encoding = 'utf-8', digest = 'hex') => crypto
+    .createHash(algorithm)
+    .update(str, encoding)
+    .digest(digest);
 
-const get_attribute = function getAttribute (el) {
-    return (typeof map[el.name] !== 'undefined')
-        ? map[el.name]
-        : false;
-};
+const get_attribute = el => (typeof map[el.name] !== 'undefined')
+    ? map[el.name]
+    : false;
 
-const is_html = function isHTML (file) {
-    return /\.html?/.test(file);
-};
+const is_html = file => /\.html?/.test(file);
 
 
-const check_file = (files, filename, selector, nuxeo) => {
-    return new Promise(function (resolve) {
+const check_file = (files, filename, selector) => {
+    return new Promise(resolve => {
 
         const file = files[filename];
-
         const contents = file.contents.toString();
         const $ = cheerio.load(contents);
 
         const url_promises = [];
 
-        $(selector).each(function (i, el) {
+        $(selector).each((i, el) => {
 
             const $el = $(el);
             const attr = get_attribute(el);
             const url = $el.attr(attr);
-            if (url && url.search(/^nx_asset?\:\/\//) !== -1) {
+            if (url && url.toLowerCase().search(/^nx_asset?\:\/\//) !== -1) {
                 const uid = url.replace(/(^\w+:|^)\/\//, '');
                 const p = nuxeo.repository()
                     .fetch(uid, {schemas: ['dublincore', 'file', 'document_asset']})
-                    .then(function (doc) {
+                    .then(doc => {
 
                         // if there is no file return
                         if (!doc.properties['file:content']) {
@@ -68,7 +69,7 @@ const check_file = (files, filename, selector, nuxeo) => {
                         const folder = 'nx_assets';
                         const ext = /(?:\.([^.]+))?$/.exec(doc.properties['file:content'].name)[1];
                         const asset_type = doc.properties['doc_asset:nature'];
-                        const asset_file = folder + '/' + uid + '+' + asset_type + '.' + ext;
+                        const asset_file = `${folder}/${uid}+${asset_type}.${ext}`
                         const href = '/' + asset_file;
 
                         $el.attr(attr, href);
@@ -88,7 +89,7 @@ const check_file = (files, filename, selector, nuxeo) => {
                             }
                         }
                         return doc.fetchRendition('docAsset')
-                            .then(function (res) {
+                            .then(res => {
                                 const writable = fs.createWriteStream(asset_file);
                                 res.body.pipe(writable);
                                 writable.on('finish', function () {
@@ -97,7 +98,7 @@ const check_file = (files, filename, selector, nuxeo) => {
                                 });
                             });
                     })
-                    .catch(function (err) {
+                    .catch(err => {
                         throw err;
                     });
 
@@ -110,7 +111,7 @@ const check_file = (files, filename, selector, nuxeo) => {
                 })
                 .catch((err) => {
                     error(err);
-                    return resolve();
+                    return resolve(err);
                 });
         });
 
@@ -118,35 +119,16 @@ const check_file = (files, filename, selector, nuxeo) => {
 };
 
 
-const doc_assets = function () {
+const doc_assets = () => {
+    return (files, metalsmith, done) => {
 
-    return function (files, metalsmith, done) {
+        const selector = Object.keys(map).join();
 
-        const nuxeo = new Nuxeo({
-            baseURL: process.env.NX_ASSETS_URL || 'http://localhost:8080/nuxeo',
-            auth   : {
-                method  : 'basic',
-                username: process.env.NX_ASSETS_USER || 'Administrator',
-                password: process.env.NX_ASSETS_PWD || 'Administrator'
-            },
+        const file_promises = Object.keys(files).map((filename) => {
+            if (files.hasOwnProperty(filename) && is_html(filename)) {
+                check_file(files, filename, selector);
+            }
         });
-
-        const file_promises = [];
-
-        for (const filename in files) {
-
-            if (!files.hasOwnProperty(filename)) {
-                continue;
-            }
-
-            if (!is_html(filename)) {
-                continue;
-            }
-
-            const selector = Object.keys(map).join();
-            file_promises.push(check_file(files, filename, selector, nuxeo));
-
-        }
 
         Promise.all(file_promises)
             .then(() => {
@@ -158,8 +140,6 @@ const doc_assets = function () {
             });
 
     };
-
-
 };
 
 /**
