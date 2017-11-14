@@ -40,22 +40,21 @@ const is_html = file => /\.html?/.test(file);
 
 
 const check_file = (files, filename, selector) => {
-    return new Promise(resolve => {
 
-        const file = files[filename];
-        const contents = file.contents.toString();
-        const $ = cheerio.load(contents);
+    const file = files[filename];
+    const contents = file.contents.toString();
+    const $ = cheerio.load(contents);
 
-        const url_promises = [];
+    const url_promises = new Map();
 
-        $(selector).each((i, el) => {
+    $(selector).each((i, el) => {
 
-            const $el = $(el);
-            const attr = get_attribute(el);
-            const url = $el.attr(attr);
-            if (url && url.toLowerCase().search(/^nx_asset?\:\/\//) !== -1) {
-                const uid = url.replace(/(^\w+:|^)\/\//, '');
-                const p = nuxeo.repository()
+        const $el = $(el);
+        const attr = get_attribute(el);
+        const url = $el.attr(attr);
+        if (url && url.toLowerCase().search(/^nx_asset?\:\/\//) !== -1 && !url_promises.has(url)) {
+            const uid = url.replace(/(^\w+:|^)\/\//, '');
+            const promise = nuxeo.repository()
                     .fetch(uid, {schemas: ['dublincore', 'file', 'document_asset']})
                     .then(doc => {
 
@@ -84,7 +83,7 @@ const check_file = (files, filename, selector) => {
 
                             // if digest matches ignore
                             if (file_digest === doc.properties['file:content'].digest) {
-                                info('asset: %s already exists, ignoring', uid);
+                                info('asset: %s already exists, ignoring', asset_file);
                                 return null;
                             }
                         }
@@ -102,20 +101,12 @@ const check_file = (files, filename, selector) => {
                         throw err;
                     });
 
-                url_promises.push(p);
-            }
+            url_promises.set(url, promise);
 
-            Promise.all(url_promises)
-                .then(() => {
-                    return resolve();
-                })
-                .catch((err) => {
-                    error(err);
-                    return resolve(err);
-                });
-        });
-
+        }
     });
+
+    return url_promises.values();
 };
 
 
@@ -124,13 +115,12 @@ const doc_assets = () => {
 
         const selector = Object.keys(map).join();
 
-        const file_promises = Object.keys(files).map((filename) => {
-            if (files.hasOwnProperty(filename) && is_html(filename)) {
-                check_file(files, filename, selector);
-            }
-        });
-
-        Promise.all(file_promises)
+        Promise.all(
+            Object.keys(files)
+                .filter((filename) => files.hasOwnProperty(filename) && is_html(filename))
+                .map((filename) => {
+                    check_file(files, filename, selector);
+                }))
             .then(() => {
                 return done();
             })
@@ -141,6 +131,7 @@ const doc_assets = () => {
 
     };
 };
+
 
 /**
  * Expose `doc_assets`
