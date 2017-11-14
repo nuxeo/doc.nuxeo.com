@@ -92,7 +92,7 @@ const check_file = (files, filename, selector) => {
                                 const writable = fs.createWriteStream(asset_file);
                                 res.body.pipe(writable);
                                 writable.on('finish', function () {
-                                    info('Downloaded asset: %s', uid);
+                                    info('Downloaded asset: %s', asset_file);
                                     writable.close();
                                 });
                             });
