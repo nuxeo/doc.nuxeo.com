@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-env es6 */
 
-const test = require('tape');
+const test = require('tap').test;
 
 const split_outside_of_quotes = require('../modules/split_outside_of_quotes');
 

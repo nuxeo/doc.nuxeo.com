@@ -1,5 +1,5 @@
 {
-  "ignore": ["temp/*", "repository/*", "site/*", "node_modules/*", "assets/*", "modules/vendor/*", "redirects.yml"],
+  "ignore": ["temp/", "repository/", "site/", "node_modules/", "assets/", "modules/vendor/", "redirects.yml"],
   "ext": "js, jsx, hbs, scss, md, html, yml",
   "no_delay": "200ms"
 }

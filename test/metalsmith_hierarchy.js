@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-env es6 */
 
-const test = require('tape');
+const test = require('tap').test;
 
 const hierarchy = require('../modules/metalsmith/hierarchies');
 

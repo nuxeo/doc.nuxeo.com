@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-env es6 */
 
-const test = require('tape');
+const test = require('tap').test;
 
 const toc_items_to_hierarchy = require('../modules/toc_items_to_hierarchy');
 

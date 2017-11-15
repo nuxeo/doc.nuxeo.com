@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-env es6 */
 
-const test = require('tape');
+const test = require('tap').test;
 
 const webpack_assets = require('../modules/metalsmith/webpack_assets');
 
