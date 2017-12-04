@@ -7,6 +7,7 @@ var each = require('async').each;
 var request = require('request');
 var slug = require('slug');
 slug.defaults.modes.pretty.lower = true;
+var rst2mdown = require('rst2mdown');
 
 var re_definition = /({{|\()file_content url=['"]([^'"]+)['"](}}|\))/g;
 
@@ -45,6 +46,10 @@ var file_contents_preprocess = function () {
                             throw new Error(err);
                         }
                     }
+                    if (url.slice(-4) === '.rst') {
+                        body = rst2mdown(body);
+                    }
+
                     file.file_content = file.file_content || {};
                     file.file_content[slug(url)] = body;
                     debug('Added: %s', slug(url), body);
