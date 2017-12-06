@@ -426,14 +426,13 @@ As a lot of people are contributing on the documentation, **every creation or ed
 
 Once you have reviewed a page, you will need to update its status accordingly. This status is displayed in the frontmatter on the page itself. To do so:
 
-- **If the content is still relevant**, change review date to current date and make sure status is “ok”. At the same time, in the frontmatter change the label `content-review-lts2016`to => `lts2016-ok` 
+- **If the content is still relevant**, change review date to current date and make sure status is “ok”. At the same time, in the frontmatter change the label `content-review-lts2017`to => `lts2017-ok`. Don't change the other labels.
 
-- **If you see that the page requires small updates**, please edit and update the page directly as you read it. Change review date to current date and make sure status is “ok”. It will take less time to everyone that to read it again and update it later. At the same time, in the frontmatter change the label `content-review-lts2016`to => `lts2016-ok` 
+- **If you see that the page requires small updates**, please edit and update the page directly as you read it. Change review date to current date and make sure status is “ok”. It will take less time to everyone that to read it again and update it later. At the same time, in the frontmatter change the label `content-review-lts2017`to => `lts2017-ok` 
 
 - **If the topic is still relevant but content needs to be deeply updated**, change review date current date, change status to “not-ok” or “requiresUpdates” and add a comment explaining what’s wrong. 
 Note: The comment will displayed on the page, so make sure that it is well written as it is displayed at the top of the page to inform the viewer what is the problem on the page. 
 Then, create a JIRA ticket and start processing it once you are done with all of your assigned pages. 
-Once it's done change the review date to current date and make sure status is “ok” and change the label in the frontmatter `content-review-lts2016`to => `lts2016-ok`. 
 
 A multiline comment is possible, it should look like this:
 
