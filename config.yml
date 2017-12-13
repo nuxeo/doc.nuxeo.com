@@ -15,6 +15,8 @@ default:
         remove_files_pattern:
             - '.DS_Store'
             - '**.DS_Store'
+            - '*~'
+            - '*.swp'
         canonical_version_preference: 'ft'
         new_version: '9.3'
 
