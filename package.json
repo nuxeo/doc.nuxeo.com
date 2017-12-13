@@ -137,7 +137,8 @@
     "duplicate_js_stats": "test -e temp/webpack.stats.json || cp lib/webpack.stats.json temp",
     "add_css_to_existing_build": "cp -r assets/css/`cat css.md5`/* site/assets/css/`cat temp/css.md5`",
     "add_js_to_existing_build": "./bin/add_js_to_existing_build lib/webpack.stats.json temp/webpack.stats.json",
-    "update_assets": "npm run compile && npm run add_css_to_existing_build && npm run add_js_to_existing_build && browser-sync reload"
+    "update_assets": "npm run compile && npm run add_css_to_existing_build && npm run add_js_to_existing_build && browser-sync reload",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
