@@ -12,9 +12,9 @@ module.exports = {
   entry: {
     docs: './client/js/docs.js',
     vendor: [
-      '!!script!jquery/dist/jquery.js',
-      '!!script!what-input/what-input.js',
-      '!!script!foundation-sites/dist/foundation.js'
+      '!!script-loader!jquery/dist/jquery.js',
+      '!!script-loader!what-input/dist/what-input.js',
+      '!!script-loader!foundation-sites/dist/js/foundation.js'
     ]
   },
   externals: {
@@ -37,12 +37,10 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery'
     }),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.CommonsChunkPlugin(
-      /* chunkName= */ 'vendor',
-      /* filename= */ 'vendor.bundle.js'
-    ),
-    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'vendor.bundle.js'
+    }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
@@ -57,7 +55,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel',
+        loader: 'babel-loader',
         query: {
           presets: ['es2015']
         }
