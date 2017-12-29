@@ -5,13 +5,17 @@ const test = require('tap').test;
 
 const resolve_edit_path = require('../modules/resolve_edit_path');
 
-test('resolve_edit_path is a function', function (assert) {
-    // Get typeof string
-    const actual = resolve_edit_path && {}.toString.call(resolve_edit_path);
+test('resolve_edit_path is a function', function(assert) {
+  // Get typeof string
+  const actual = resolve_edit_path && {}.toString.call(resolve_edit_path);
 
-    assert.isEqual(actual, '[object Function]', 'resolve_edit_path is a function');
+  assert.isEqual(
+    actual,
+    '[object Function]',
+    'resolve_edit_path is a function'
+  );
 
-    assert.end();
+  assert.end();
 });
 
 // test('resolve_edit_path returns values as expected', function (assert) {
