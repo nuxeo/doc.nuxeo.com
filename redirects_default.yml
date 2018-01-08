@@ -16,9 +16,9 @@
 ^/x/uAwz/?$: https://nuxeo.com/
 ^/x/ygwz/?$: https://nuxeo.com/
 ^/display/KB/Adding+your+own+CSS#AddingyourownCSS-Declarethefile/?$: /nxdoc/theme/
-^/display/NXDOC/Component+model+overview/?$: /nxdoc/runtime-and-component-model/ 
+^/display/NXDOC/Component+model+overview/?$: /nxdoc/runtime-and-component-model/
 ^/display/NXDOC/Migrating+my+customized+theme/?$: /nxdoc/theme/
-^/display/public/ADMINDOC/Configuring+PostgreSQL/?$: /nxdoc/postgresql/ 
+^/display/public/ADMINDOC/Configuring+PostgreSQL/?$: /nxdoc/postgresql/
 ^/display/ADMINDOC/Configuring+PostgreSQL/?$: /nxdoc/postgresql/
 ^/display/NXDOC/Directories+and+Vocabularies/?$: /nxdoc/data-lists-and-directories/
 ^/x/cYKE/?$: /nxdoc/nuxeo-cli/
@@ -157,7 +157,7 @@
 
 # Delete page Deploying Nuxeo on Cloudfoundry
 ^/nxdoc/deploying-nuxeo-on-cloudfoundry/?$: /nxdoc/installation
-^/810/nxdoc/deploying-nuxeo-on-cloudfoundry/?$: /810/nxdoc/installation 
+^/810/nxdoc/deploying-nuxeo-on-cloudfoundry/?$: /810/nxdoc/installation
 
 # Old search redirect
 ^/dosearchsite.action?queryString=(.*): /?q=$1
@@ -178,10 +178,14 @@
 ^/studio/contract-management/?$: /studio/external-templates/
 ^/studio/custom-doc-id-generation/?$: /studio/external-templates/
 
+# LTS 2017 upgrade pages redirects
 ^/nxdoc/upgrade-from-lts-2016-to-91/?$: /nxdoc/upgrade-from-lts-2016-following-fast-tracks/
+^/nxdoc/upgrade-from-lts-2016-to-92/?$: /nxdoc/upgrade-from-lts-2016-following-fast-tracks/
+^/nxdoc/upgrade-from-lts-2016-to-93/?$: /nxdoc/upgrade-from-lts-2016-following-fast-tracks/
+
 ^/studio/application-dependencies/?$: /studio/application-definition
 
-# NXDOC-1276 
+# NXDOC-1276
 ^/nxdoc/getting-started-with-the-nuxeo-platform/?$: /nxdoc/discover-nuxeo-platform-apis/
 ^/nxdoc/customizing-with-studio-modeler-and-designer/?$: /nxdoc/configure-nuxeo-platform/
 ^/nxdoc/getting-started-with-nuxeo-cli/?$: /nxdoc/develop-with-nuxeo-platform/
@@ -196,11 +200,11 @@
 ^/nxdoc/quick-start-series/?$: /nxdoc/best-practices
 
 
-^/nxdoc/first-steps-with-studio-technical-documentation-tutorial/?$: /nxdoc/getting-started 
-^/nxdoc/implementing-documentation-items/?$: /nxdoc/getting-started 
-^/nxdoc/custom-content-view-for-documentation-items/?$: /nxdoc/getting-started 
-^/nxdoc/document-locking-right-after-its-creation/?$: /nxdoc/getting-started 
-^/nxdoc/validation-workflow-choosing-the-assignee-based-on-a-metadata/?$: /nxdoc/getting-started 
+^/nxdoc/first-steps-with-studio-technical-documentation-tutorial/?$: /nxdoc/getting-started
+^/nxdoc/implementing-documentation-items/?$: /nxdoc/getting-started
+^/nxdoc/custom-content-view-for-documentation-items/?$: /nxdoc/getting-started
+^/nxdoc/document-locking-right-after-its-creation/?$: /nxdoc/getting-started
+^/nxdoc/validation-workflow-choosing-the-assignee-based-on-a-metadata/?$: /nxdoc/getting-started
 
 
 ^/nxdoc/learning-rest-api/?$: /nxdoc/discover-nuxeo-platform-apis
@@ -212,10 +216,10 @@
 ^/nxdoc/query-and-search/?$: /nxdoc/discover-nuxeo-platform-apis
 ^/nxdoc/execute-business-logic-through-automation/?$: /nxdoc/discover-nuxeo-platform-apis
 ^/nxdoc/launch-a-workflow/?$: /nxdoc/discover-nuxeo-platform-apis
-^/nxdoc/bonus-contribute-your-own-enricher/?$: /nxdoc/discover-nuxeo-platform-apis 
+^/nxdoc/bonus-contribute-your-own-enricher/?$: /nxdoc/discover-nuxeo-platform-apis
 
 
-^/nxdoc/how-to-unit-test-studio-bundle/?$: /studio/tutorials/ 
+^/nxdoc/how-to-unit-test-studio-bundle/?$: /studio/tutorials/
 ^/nxdoc/how-to-setup-a-test-smtp-server/?$: https://app.quandora.com/object/8ab0a80d-ead7-4dc4-9658-9244b7984548
 ^/nxdoc/how-to-create-custom-dashboards/?$: /nxdoc/how-to-create-custom-dashboard-entries/
 
