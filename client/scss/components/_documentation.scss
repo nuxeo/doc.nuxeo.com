@@ -1,4 +1,4 @@
-$content-background: #f5f9fb;
+$content-background: $white;
 
 #content_container {
   background-color: $white;
@@ -15,29 +15,8 @@ $content-background: #f5f9fb;
   }
 }
 
-#content_container.overview {
-  background-attachment: fixed;
-  background-color: $content-background;
-  background-image: url('/assets/imgs/nuxeo-grid.svg');
-  background-position-x: 4rem;
-  background-position-y: 350px;
-  background-repeat: no-repeat;
-}
-
-// medium+
-@media screen and #{breakpoint(medium up)} {
-  #content_container.overview {
-    background-position-x: calc(33vw + 4rem);
-  }
-}
-
-
 // large+
 @media screen and #{breakpoint(large up)} {
-  #content_container.overview {
-    background-position-x: calc(25vw + 4rem);
-  }
-
   #content {
     max-width: 1024px;
 
@@ -68,7 +47,6 @@ $content-background: #f5f9fb;
   }
 }
 
-
 // Medium screen support
 @media screen and (min-width: 1050px) {
   #content_container {
@@ -85,8 +63,6 @@ $content-background: #f5f9fb;
   }
 
   #content_container {
-    background-position-x: calc(#{$wide-max-menu-width} + 7rem); // padding of 3rem + 4rem
-
     &.large-9.large-push-3 {
       left: $wide-max-menu-width;
       padding-left: 5rem;
@@ -96,14 +72,13 @@ $content-background: #f5f9fb;
   }
 }
 
-
 .accordion {
-  border-top-left-radius: .5rem;
-  border-top-right-radius: .5rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
 
   .accordion-title {
-    border-top-left-radius: .43rem;
-    border-top-right-radius: .43rem;
+    border-top-left-radius: 0.43rem;
+    border-top-right-radius: 0.43rem;
     font-weight: $global-weight-bold;
   }
 }
@@ -116,7 +91,7 @@ $content-background: #f5f9fb;
   margin-bottom: 1.5rem;
 
   h1 {
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 
   h1 ~ div {
@@ -126,7 +101,7 @@ $content-background: #f5f9fb;
 
   a {
     color: $medium-gray;
-    margin-left: .5rem;
+    margin-left: 0.5rem;
 
     img {
       margin-top: -5px;

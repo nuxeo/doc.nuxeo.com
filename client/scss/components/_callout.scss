@@ -1,17 +1,16 @@
 .callout {
-  background-color: $white;
   padding-bottom: 1rem;
 
   ul,
   ol,
   dl {
-    margin-bottom: .3rem;
+    margin-bottom: 0.3rem;
     margin-left: 1.25rem;
   }
 
   .title {
     color: $black;
-    font-size: .8rem;
+    font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -27,13 +26,13 @@
       margin-left: 0;
 
       li {
-        margin-top: .7rem;
+        margin-top: 0.7rem;
       }
     }
 
     h3 {
       color: $black;
-      font-size: .8rem;
+      font-size: 0.8rem;
       font-weight: 600;
       letter-spacing: 1.5px;
       text-transform: uppercase;
@@ -45,7 +44,6 @@
   }
 
   &.secondary {
-    background-color: $white;
     padding: 2rem 1rem;
   }
 
@@ -57,7 +55,8 @@
     padding-left: 1.5rem;
     position: relative;
 
-    .fa { //-stack
+    .fa {
+      //-stack
       font-size: 1.4rem;
       left: 1rem;
       position: absolute;

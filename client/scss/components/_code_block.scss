@@ -8,10 +8,10 @@ code {
   }
 }
 
-$tooltip-background-color: rgba(0, 0, 0, .8);
+$tooltip-background-color: rgba(0, 0, 0, 0.8);
 $tooltip-text-color: $white;
-$tooltip-duration: .4s;
-$tooltip-delay: .2s;
+$tooltip-duration: 0.4s;
+$tooltip-delay: 0.2s;
 
 // Code block
 pre {
@@ -43,7 +43,7 @@ pre {
     margin: 4px;
     opacity: 0;
     padding: 4px 6px;
-    transition: opacity .4s ease;
+    transition: opacity 0.4s ease;
 
     &:hover {
       background-color: $nuxeo-color-code-border;
@@ -59,7 +59,7 @@ pre {
       z-index: 1000000;
       display: none;
       padding: 5px 8px;
-      font-size: .8rem;
+      font-size: 0.8rem;
       -webkit-font-smoothing: subpixel-antialiased;
       color: $tooltip-text-color;
       text-align: center;
@@ -85,7 +85,7 @@ pre {
       height: 0;
       color: $tooltip-background-color;
       pointer-events: none;
-      content: "";
+      content: '';
       border: 5px solid transparent;
       opacity: 0;
     }
@@ -127,7 +127,6 @@ pre {
     //   }
     // }
 
-
     // Tooltipped south
     &.tooltipped-sw {
       &::after {
@@ -149,8 +148,6 @@ pre {
       margin-right: -15px;
     }
   }
-
-
 
   &:hover .copy-button {
     opacity: 1;
@@ -189,10 +186,10 @@ pre {
 }
 
 // code-header - Same as h4
-@each $size, $headers in $header-sizes {
+@each $size, $headers in $header-styles {
   @include breakpoint($size) {
     .code-heading {
-      font-size: rem-calc(map-get($headers, 'h4'));
+      font-size: rem-calc(map-get(map-get($headers, 'h4'), font-size));
     }
   }
 }

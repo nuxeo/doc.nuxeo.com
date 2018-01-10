@@ -30,7 +30,7 @@ h6 {
   a {
     border-bottom: 8px solid darken($primary-color, 15%);
     font-size: 1.2rem;
-    padding-bottom: .8em;
+    padding-bottom: 0.8em;
     padding-top: 1.2em;
     text-transform: uppercase;
   }
@@ -86,7 +86,7 @@ h6 {
   width: 100%;
 
   > div {
-    background-color: $white;
+    background-color: #f8f8f8;
     border-style: solid;
     border-width: 0;
     border-bottom-width: 2rem; // Ignore sass-lint error
@@ -105,7 +105,7 @@ h6 {
     > div {
       border-style: solid;
       border-width: 0;
-      border-bottom-width: .7em; // Ignore sass-lint error
+      border-bottom-width: 0.7em; // Ignore sass-lint error
       overflow: hidden;
       padding-bottom: 2rem;
       padding-top: 5rem;
@@ -127,7 +127,7 @@ h6 {
 
   .nuxeo-satellite-menu > .nuxeo-satellite-left-menu {
     .menu-link {
-      transition: color .4s ease;
+      transition: color 0.4s ease;
     }
 
     .hover-tutorials:hover {
@@ -164,7 +164,6 @@ h6 {
   }
 }
 
-
 #search-area {
   background-color: $white;
   border: 1px solid $primary-color;
@@ -177,7 +176,7 @@ h6 {
   .input-group-label {
     color: $dark-gray;
     font-size: $nuxeo-button-default;
-    letter-spacing: .1rem;
+    letter-spacing: 0.1rem;
     padding-left: 1rem;
     text-transform: uppercase;
 

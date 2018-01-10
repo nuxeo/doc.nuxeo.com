@@ -1,7 +1,7 @@
 $active-border-width: 8px;
-$scrollbar-color: rgba($black, .3);
+$scrollbar-color: rgba($black, 0.3);
 $menu-background: #eee;
-$menu-fg: rgba($nuxeo-color-dark, .8);
+$menu-fg: rgba($nuxeo-color-dark, 0.8);
 $menu-fg-active: $nuxeo-color-dark;
 
 // Left menu
@@ -109,20 +109,20 @@ $menu-fg-active: $nuxeo-color-dark;
   }
 
   .input-group {
-    background-color: rgba($white, .4);
+    background-color: rgba($white, 0.4);
     margin: 0;
-    padding: .5rem;
+    padding: 0.5rem;
     width: 100%;
   }
 
   .input-group-field {
     color: $menu-fg-active;
-    font-size: .9rem;
+    font-size: 0.9rem;
     height: 2rem;
 
     &::placeholder {
       color: $menu-fg;
-      font-size: .8rem;
+      font-size: 0.8rem;
       text-transform: uppercase;
     }
   }
@@ -135,7 +135,6 @@ $menu-fg-active: $nuxeo-color-dark;
   }
 }
 
-
 // Menu
 #side_menu {
   ul {
@@ -147,14 +146,14 @@ $menu-fg-active: $nuxeo-color-dark;
     font-size: 14px;
     font-weight: 600;
     text-transform: capitalize;
-    transition: background-color .2s ease;
+    transition: background-color 0.2s ease;
 
     i.fa {
       cursor: pointer;
       float: right;
-      margin-right: .4em;
-      margin-top: .8em;
-      transition: transform .2s ease;
+      margin-right: 0.4em;
+      margin-top: 0.8em;
+      transition: transform 0.2s ease;
     }
 
     &.open i.fa {
@@ -164,8 +163,8 @@ $menu-fg-active: $nuxeo-color-dark;
     a {
       color: $menu-fg;
       display: block;
-      padding: .5rem 1rem;
-      transition: color .2s ease;
+      padding: 0.5rem 1rem;
+      transition: color 0.2s ease;
     }
 
     &.active a {
@@ -178,7 +177,7 @@ $menu-fg-active: $nuxeo-color-dark;
   }
 
   :not(.contains-toc, .toc-item) {
-    &.l1{
+    &.l1 {
       padding-left: 1rem;
     }
 
@@ -195,7 +194,7 @@ $menu-fg-active: $nuxeo-color-dark;
           content: '•';
           left: 1rem;
           position: absolute;
-          top: .5em;
+          top: 0.5em;
         }
       }
     }
@@ -267,7 +266,7 @@ $menu-fg-active: $nuxeo-color-dark;
       }
 
       &:hover a,
-      & a.active {
+      & a.is-active {
         color: $primary-color;
       }
 
@@ -277,7 +276,7 @@ $menu-fg-active: $nuxeo-color-dark;
       }
 
       &.l2 {
-        margin-left: .5rem;
+        margin-left: 0.5rem;
       }
 
       &.l3 {
