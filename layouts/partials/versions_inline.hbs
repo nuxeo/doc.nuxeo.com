@@ -1,7 +1,7 @@
 {{#if url.versions}}
 <div id="versions_inline" class="row expanded">
     <ul class="menu">
-        <li class="label">Documentation versions <span class="vertical-bar"></span></li>
+        <li class="version-label">Documentation versions <span class="vertical-bar"></span></li>
         {{#each url.versions}}
         {{#unless this.no_page}}
         <li><a href="{{this.url}}" class="{{#if this.is_current_version}}active{{/if}}">{{this.label}}</a></li>

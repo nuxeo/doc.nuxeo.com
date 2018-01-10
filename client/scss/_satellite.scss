@@ -1,9 +1,6 @@
 @import 'settings';
 @import 'foundation';
 
-// Nuxeo Fonts
-@import 'components/nuxeo_fonts';
-
 @include foundation-global-styles;
 @include foundation-forms;
 // @include foundation-menu;
@@ -12,10 +9,9 @@
 // @include foundation-top-bar;
 @import 'font-awesome';
 
-$nuxeo-color-blue: #1585cf;
+$nuxeo-color-blue: $c_blue;
 $nuxeo-color-gray: #333;
 $nuxeo-satellite-dark-bg: #000522;
-
 
 html {
   box-sizing: border-box;
@@ -115,7 +111,7 @@ body {
         font-family: $body-font-family;
         font-size: 12px;
         padding: 18px 1em;
-        transition: color .2s ease;
+        transition: color 0.2s ease;
 
         &:hover {
           color: $nuxeo-color-blue;
@@ -148,7 +144,7 @@ body {
     .nuxeo-satellite-download {
       background: $nuxeo-color-accent;
       text-transform: uppercase;
-      transition: background .4s ease;
+      transition: background 0.4s ease;
 
       &:hover {
         background: darken($nuxeo-color-accent, 15%);
@@ -156,7 +152,7 @@ body {
 
       a {
         color: $white;
-        font-family: $nuxeo-font-family;
+        font-family: $body-font-family;
         font-size: 15px;
         padding: 16px 1.5em;
 
@@ -176,7 +172,7 @@ body {
 
     h1 {
       color: $white;
-      font-family: $nuxeo-font-family;
+      font-family: $body-font-family;
       font-size: 21px;
       margin: 0;
       padding-top: 80px;
@@ -212,7 +208,7 @@ body {
 
       a {
         color: $white;
-        font-family: $nuxeo-font-family;
+        font-family: $body-font-family;
         text-transform: uppercase;
 
         &:hover {
@@ -235,7 +231,7 @@ body {
         }
 
         ul {
-          padding-bottom: .5rem;
+          padding-bottom: 0.5rem;
         }
       }
 
@@ -244,7 +240,7 @@ body {
 
         #burger-menu-search {
           color: $white;
-          margin-top: -.5rem;
+          margin-top: -0.5rem;
           padding-left: 1.5rem;
           padding-top: 0;
 
@@ -266,7 +262,7 @@ body {
 
       ul {
         padding-bottom: 0;
-        transition: padding-bottom .4s ease;
+        transition: padding-bottom 0.4s ease;
       }
 
       li {
@@ -274,13 +270,13 @@ body {
         display: block;
         height: 0;
         line-height: normal;
-        transition: height .4s ease;
+        transition: height 0.4s ease;
 
         a,
         form {
           display: none;
-          padding: .2rem 1.5rem;
-          transition: display .1s ease .4s;
+          padding: 0.2rem 1.5rem;
+          transition: display 0.1s ease 0.4s;
           width: 100%;
         }
 
@@ -304,15 +300,15 @@ body {
           color: $white;
           cursor: pointer;
           display: inline-block;
-          font-family: $nuxeo-font-family;
+          font-family: $body-font-family;
           font-size: 12px;
           padding: 0 0 0 1rem;
           text-transform: uppercase;
-          transition: color .2s ease;
+          transition: color 0.2s ease;
 
           .menu-item-text {
             border-right: 1px solid $nuxeo-color-gray;
-            padding: 0 1rem 0 .7rem;
+            padding: 0 1rem 0 0.7rem;
           }
 
           &:hover {
@@ -322,11 +318,10 @@ body {
       }
     }
 
-
     #search-box {
       margin-left: -1rem;
-      margin-right: .5rem;
-      transition: width .4s ease;
+      margin-right: 0.5rem;
+      transition: width 0.4s ease;
       width: 300px;
 
       &.closed {
@@ -341,7 +336,7 @@ body {
 
       :placeholder {
         color: $dark-gray;
-        font-size: .8rem;
+        font-size: 0.8rem;
         text-transform: uppercase;
       }
     }
@@ -349,7 +344,7 @@ body {
     #search-button {
       color: $white;
       padding: 1rem;
-      transition: color .2s ease;
+      transition: color 0.2s ease;
 
       &:hover,
       &.active {

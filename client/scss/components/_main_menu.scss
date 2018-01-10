@@ -1,6 +1,6 @@
-$menu-shadow: rgba($black, .2);
+$menu-shadow: rgba($black, 0.2);
 $menu-width: 370px;
-$second-level-fg: rgba($nuxeo-color-dark, .8);
+$second-level-fg: rgba($nuxeo-color-dark, 0.8);
 
 @mixin section-colours ($color) {
   $menu-hover: lighten($color, $nuxeo-section-lighten);
@@ -24,8 +24,39 @@ $second-level-fg: rgba($nuxeo-color-dark, .8);
 }
 
 #nuxeo-satellite-header {
-  .rainbow-menu > a {
+  .rainbow-menu a {
     color: $white;
+    position: relative;
+    transition: color 0.2s ease;
+
+    .menu-home-text {
+      padding-left: 48px;
+    }
+
+    svg {
+      display: inline-block;
+      height: 22px;
+      left: 14px;
+      position: absolute;
+      top: 14px;
+      width: 22px;
+    }
+
+    svg .nsvglogo-accent {
+      fill: #0067ff;
+      // transition: fill 0.2s ease;
+    }
+
+    &:hover {
+      color: #73d2cf;
+
+      // svg .nsvglogo-accent {
+      //   fill: #73d2cf;
+      // }
+    }
+  }
+
+  .rainbow-menu > a {
     display: block;
     font-size: 14px;
     font-stretch: normal;
@@ -36,10 +67,6 @@ $second-level-fg: rgba($nuxeo-color-dark, .8);
     line-height: 50px;
     text-transform: uppercase;
     width: $menu-width;
-
-    &:hover {
-      color: $primary-color;
-    }
 
     i.fa {
       float: right;
@@ -68,7 +95,7 @@ $second-level-fg: rgba($nuxeo-color-dark, .8);
       border-left-style: solid;
       border-left-width: 30px;
       // font-family: AvenirNext;
-      font-size: .88rem;
+      font-size: 0.88rem;
       font-stretch: normal;
       font-style: normal;
       font-weight: 500;
@@ -77,7 +104,7 @@ $second-level-fg: rgba($nuxeo-color-dark, .8);
       text-transform: uppercase;
 
       & {
-        transition: background-color .4s ease-in;
+        transition: background-color 0.4s ease-in;
         width: $menu-width;
 
         &:hover,
@@ -91,7 +118,7 @@ $second-level-fg: rgba($nuxeo-color-dark, .8);
       a {
         color: $nuxeo-color-dark;
         display: block;
-        transition: color .2s ease;
+        transition: color 0.2s ease;
       }
 
       &.section-tutorials {

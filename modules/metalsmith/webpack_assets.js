@@ -13,7 +13,7 @@ var webpack_assets = function(options) {
     metadata.js = metadata.js || {};
 
     Object.keys(stats.assetsByChunkName).forEach(function(asset) {
-      metadata.js[asset] = stats.publicPath + stats.assetsByChunkName[asset][0];
+      metadata.js[asset] = stats.publicPath + stats.assetsByChunkName[asset];
       debug('Name: %s; Path: %s', asset, metadata.js[asset]);
     });
 

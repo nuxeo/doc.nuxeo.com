@@ -26,7 +26,7 @@ if ($toc.length) {
   $toc_list.on(
     'update.zf.magellan',
     debounce(function() {
-      var $active_li = $toc_list.find('.active').closest('li');
+      var $active_li = $toc_list.find('.is-active').closest('li');
       if ($active_li.length) {
         var active_position = $active_li.position().top;
 

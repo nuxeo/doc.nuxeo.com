@@ -5,9 +5,15 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    {{! Standard Nuxeo header and footer }}
-    <script src="/assets/js/webcomponents-lite.min.js"></script>
-    <link rel="import" href="/assets/elements.build.html" />
+    <!-- 0. Include Nuxeo Font. -->
+<link rel="stylesheet" href="https://static.nuxeo.com/satellite/nuxeo-font.css" media="screen" title="Nuxeo Font">
+
+<!-- 1. Load webcomponents-lite.min.js for polyfill support. -->
+<script src="https://static.nuxeo.com/satellite/latest/bower_components/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+<script src="https://static.nuxeo.com/satellite/latest/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+<!-- 2. Use an HTML Import Nuxeo Header and Footer. -->
+<link rel="import" href="https://static.nuxeo.com/satellite/latest/elements/elements.html">
 
     {{! Styling }}
     <link rel="stylesheet" href="/assets/css/{{css.md5}}/docs.css" />
@@ -74,12 +80,13 @@
     <meta property="og:site_name" content="{{site.name}}" />
 
     {{!-- Favicons --}}
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=c2d5">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=c2d5">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=c2d5">
-    <link rel="manifest" href="/manifest.json?v=c2d5">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=c2d5" color="#0066ff">
-    <link rel="shortcut icon" href="/favicon.ico?v=c2d5">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png?v=c2d5">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png?v=c2d5">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png?v=c2d5">
+    <link rel="manifest" href="/assets/icons/manifest.json?v=c2d5">
+    <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg?v=c2d5" color="#0066ff">
+    <link rel="shortcut icon" href="/assets/icons/favicon.ico?v=c2d5">
+    <meta name="msapplication-config" content="/assets/icons/browserconfig.xml?v=c2d5">
     <meta name="theme-color" content="#73d2cf">
 
     <link rel="search" type="application/opensearchdescription+xml" title="Nuxeo Documentation" href="/opensearch.xml" />
