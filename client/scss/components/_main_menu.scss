@@ -42,7 +42,7 @@ $second-level-fg: rgba($nuxeo-color-dark, 0.8);
       width: 22px;
     }
 
-    svg .nsvglogo-accent {
+    svg .nsvglogo-x {
       fill: #0067ff;
       // transition: fill 0.2s ease;
     }
@@ -50,7 +50,7 @@ $second-level-fg: rgba($nuxeo-color-dark, 0.8);
     &:hover {
       color: #73d2cf;
 
-      // svg .nsvglogo-accent {
+      // svg .nsvglogo-x {
       //   fill: #73d2cf;
       // }
     }
@@ -58,12 +58,9 @@ $second-level-fg: rgba($nuxeo-color-dark, 0.8);
 
   .rainbow-menu > a {
     display: block;
-    font-size: 14px;
     font-stretch: normal;
     font-style: normal;
-    font-weight: 600;
     left: 0;
-    letter-spacing: 2px;
     line-height: 50px;
     text-transform: uppercase;
     width: $menu-width;
