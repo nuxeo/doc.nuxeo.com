@@ -139,6 +139,7 @@
 ^/nxdoc/web-ui-customization/?$: /nxdoc/web-ui-tutorials
 ^/corg/docker-usages/?$: /corg/docker-usage
 ^/nxdoc/deployment-options/?$: /nxdoc/standard-high-availability-nuxeo-cluster-architecture/
+^/nxdoc/contributing-a-new-endpoint/?$: /nxdoc/howto-contribute-to-the-rest-api/
 
 # NXDOC-1033: REST API doc reorg
 ^/nxdoc/search-endpoint/?$: /nxdoc/search-endpoints
