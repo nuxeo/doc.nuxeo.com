@@ -25,7 +25,7 @@ brew install git
 
 ## Installation 
 
-**[master, 710 and 60 branches](https://github.com/nuxeo/doc.nuxeo.com-content)**: For all the versioned documentation (nxdoc/userdoc/admindoc). The versions work with branches, one version = one branch. 
+**[master, 810, 710 and 60 branches](https://github.com/nuxeo/doc.nuxeo.com-content)**: For all the versioned documentation (nxdoc/userdoc/admindoc). The versions work with branches, one version = one branch. 
 
 **[Static Branch](https://github.com/nuxeo/doc.nuxeo.com-content/tree/static)**: For non-versioned documentation (studio/idedoc/corg)
 
