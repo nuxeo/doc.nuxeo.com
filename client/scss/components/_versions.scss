@@ -56,15 +56,12 @@ $versions-bg: rgba(255, 255, 255, 0.2);
 
 #docs_footer {
   #versions_inline {
-    background-color: #d9e6f0;
+    background-color: $c_blue;
 
     li {
-      color: $versions-inline-fg;
-      font-size: 14px;
+      color: $white;
       font-stretch: normal;
       font-style: normal;
-      font-weight: 600;
-      letter-spacing: 2px;
     }
 
     .version-label {
@@ -75,7 +72,7 @@ $versions-bg: rgba(255, 255, 255, 0.2);
       text-transform: uppercase;
 
       .vertical-bar {
-        border-right: 2px solid $versions-inline-fg;
+        border-right: 2px solid $white;
         display: inline-block;
         height: 1em;
         margin-left: 1em;
@@ -83,16 +80,16 @@ $versions-bg: rgba(255, 255, 255, 0.2);
     }
 
     a {
-      color: $versions-inline-fg;
+      color: $white;
       line-height: 50px;
       padding: 0 0.2em 0 3em;
 
       &.active {
-        color: $black;
+        font-weight: 600;
       }
 
       &:hover {
-        color: $primary-color;
+        color: $c_green;
       }
     }
   }

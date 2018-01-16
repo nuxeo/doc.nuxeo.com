@@ -1,14 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="75px" height="38px" viewBox="0 0 75 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: sketchtool 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
-    <title>EDB95673-C54E-4CEC-90F2-9B294FC9291A</title>
-    <desc>Created with sketchtool.</desc>
-    <defs></defs>
-    <g id="Doc-Center-V2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.8">
-        <g id="V2-/-DocCenter---Page" transform="translate(-1322.000000, -1335.000000)" fill="#01579B">
-            <g id="HOVER-Back-to-top-button-Copy" transform="translate(1322.000000, 1335.000000)">
-                <polygon id="To-Top-HOVER" points="0 37.1766678 75 37.1766678 37.5 0"></polygon>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg viewBox="0 0 75 38" xmlns="http://www.w3.org/2000/svg"><path fill="#0067ff" d="M0,38 75,38 38,0z"/></svg>
