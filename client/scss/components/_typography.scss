@@ -4,7 +4,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   margin-top: 1.5rem;
 
   &.style-bar::after {
@@ -19,7 +19,7 @@ h6 {
 }
 
 h1 {
-  font-weight: 200;
+  font-weight: $global-weight-bold;
 }
 
 h2,
@@ -27,15 +27,16 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: $global-weight-bold;
+  font-weight: 200;
 }
 
-b, strong {
+b,
+strong {
   font-weight: $global-weight-bold;
 }
 
 a {
-  transition: color .2s ease;
+  transition: color 0.2s ease;
   word-break: break-word;
 
   &:hover {
@@ -52,7 +53,7 @@ table {
   }
 
   td {
-    font-size: .875rem; // 14
+    font-size: 0.875rem; // 14
     vertical-align: top;
   }
 }
