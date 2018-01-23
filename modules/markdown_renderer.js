@@ -135,7 +135,8 @@ renderer.list = function(body, ordered) {
 renderer.heading = (text, level) => {
   const text_slug = slug(striptags(text.replace(/\{\{[^}]*?\}\}/g, '')));
 
-  return `<h${level} id="${text_slug}">${text}</h${level}>`;
+  // return `<h${level} id="${text_slug}">${text}</h${level}>`;
+  return `<h${level} id="${text_slug}"><a href="#${text_slug}" class="heading-anchor"><i class="fa fa-link"></i></a>${text}</h${level}>`;
 };
 
 module.exports = renderer;

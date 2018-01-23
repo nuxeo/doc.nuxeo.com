@@ -37,9 +37,6 @@ h6 {
 }
 
 #client-libs {
-  background-color: $white;
-  border: 1px solid $dark-gray;
-
   img {
     @extend %center-image;
   }
