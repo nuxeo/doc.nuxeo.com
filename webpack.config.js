@@ -13,7 +13,7 @@ module.exports = {
     docs: './client/js/docs.js',
     vendor: [
       '!!script-loader!jquery/dist/jquery.js',
-      '!!script-loader!what-input/what-input.js',
+      '!!script-loader!what-input/dist/what-input.js',
       '!!script-loader!foundation-sites/dist/js/foundation.js'
     ]
   },
