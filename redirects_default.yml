@@ -150,6 +150,7 @@
 ^/nxdoc/web-exceptions-errors/?$: /nxdoc/error-handling
 ^/nxdoc/how-to-upload-a-file-in-nuxeo-platform-using-rest-api-batch-processing-endpoint/?$ : /nxdoc/howto-upload-file-nuxeo-using-rest-api
 ^/nxdoc/use-nuxeo-api-playground-to-discover-the-api/?$: /nxdoc/nuxeo-api-playground
+^/nxdoc/howto-nuxeo-api-playground/?$: /nxdoc/nuxeo-api-playground
 ^/nxdoc/developing-with-angular2/?$: /nxdoc/howto-develop-with-angular2
 
 # Updates with 8.10 documentation
