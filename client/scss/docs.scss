@@ -44,12 +44,10 @@
 @include foundation-top-bar;
 @include foundation-visibility-classes;
 @include foundation-float-classes;
-
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
 @import 'font-awesome';
-
 @import 'satellite';
 @import 'components/documentation';
 @import 'components/typography';
