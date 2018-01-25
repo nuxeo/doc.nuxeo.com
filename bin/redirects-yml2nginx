@@ -1,34 +1,44 @@
 #!/usr/bin/env node
 'use strict';
-/* eslint-env es6 */
 /* eslint no-console: 0 */
 
 const yaml = require('js-yaml');
 const fs = require('fs');
 const path = require('path');
 
-const redirects_file = path.join(__dirname, '../redirects.yml');
+const redirects_file = path.join(__dirname, '..', 'redirects.yml');
+
+const escape_spaces = text => text.replace(/ /g, '\\ ');
 let redirects;
 
 try {
-    redirects = yaml.safeLoad(fs.readFileSync(redirects_file, 'utf8')) || {};
-}
-catch (e) {
-    redirects = {};
-    console.error(`Failed to load: ${redirects_file}\n`, e);
+  redirects = yaml.safeLoad(fs.readFileSync(redirects_file, 'utf8')) || {};
+} catch (e) {
+  redirects = {};
+  throw new Error(`Failed to load: ${redirects_file}\n${e}`);
 }
 
 // Output to stdout
 console.log(
-    Object.keys(redirects).map((source) => {
-        // default to `/`
-        let target = redirects[source] || '/';
-        // add leading /
-        if (target[0] !== '/' && !target.startsWith('http://') && !target.startsWith('https://')) {
-            target = `/${target}`;
-        }
+  Object.keys(redirects)
+    .map(source => {
+      // default to `/`
+      let target = redirects[source] || '/';
+      // add leading /
+      if (
+        target[0] !== '/' &&
+        !target.startsWith('http://') &&
+        !target.startsWith('https://')
+      ) {
+        target = `/${target}`;
+      }
 
-        // Build output string
-        return `rewrite ${source}\t${target}\tpermanent;`;
-    }).join('\n')
+      // Escape spaces in source and target
+      source = escape_spaces(source);
+      target = escape_spaces(target);
+
+      // Build output string
+      return `rewrite ${source}\t${target}\tpermanent;`;
+    })
+    .join('\n')
 );
