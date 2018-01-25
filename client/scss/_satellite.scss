@@ -50,8 +50,8 @@ body {
 
   // Set box-sizing globally to handle padding and border widths
   *,
-  *:before,
-  *:after {
+  *::before,
+  *::after {
     box-sizing: inherit;
   }
 
@@ -70,6 +70,7 @@ body {
       display: none;
     }
   }
+
   @media (max-width: 850px) {
     .nuxeo-satellite-header > .nuxeo-satellite-right-menu {
       display: none;

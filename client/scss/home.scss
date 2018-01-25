@@ -36,45 +36,6 @@ h6 {
   }
 }
 
-#client-libs {
-  img {
-    @extend %center-image;
-  }
-
-  > div ~ div {
-    max-width: 23rem;
-
-    > .column {
-      margin-bottom: 1rem;
-    }
-  }
-}
-
-@media screen and #{breakpoint(medium up)} {
-  #client-libs > div ~ div {
-    max-width: 32rem;
-  }
-}
-
-@media screen and #{breakpoint(large up)} {
-  #client-libs > div ~ div {
-    max-width: 55rem;
-  }
-}
-
-@mixin section-color ($section, $section-color) {
-  &.#{$section} {
-    > div {
-      border-color: $section-color;
-      color: $section-color;
-
-      > div {
-        border-color: lighten($section-color, 20%);
-      }
-    }
-  }
-}
-
 .fast-track {
   box-shadow: 0 4px 4px 0 $nuxeo-overview-shaddow;
   display: inline-block;
@@ -92,6 +53,7 @@ h6 {
 
     img {
       @extend %center-image;
+
       display: block;
       left: calc(50% - #{$fast-track-icon-radius});
       margin: auto;
@@ -161,6 +123,45 @@ h6 {
   }
 }
 
+#client-libs {
+  img {
+    @extend %center-image;
+  }
+
+  > div ~ div {
+    max-width: 23rem;
+
+    > .column {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+@media screen and #{breakpoint(medium up)} {
+  #client-libs > div ~ div {
+    max-width: 32rem;
+  }
+}
+
+@media screen and #{breakpoint(large up)} {
+  #client-libs > div ~ div {
+    max-width: 55rem;
+  }
+}
+
+@mixin section-color ($section, $section-color) {
+  &.#{$section} {
+    > div {
+      border-color: $section-color;
+      color: $section-color;
+
+      > div {
+        border-color: lighten($section-color, 20%);
+      }
+    }
+  }
+}
+
 #search-area {
   background-color: $white;
   border: 1px solid $primary-color;
@@ -181,9 +182,8 @@ h6 {
       display: none;
     }
   }
-}
-// Algolia
-#search-area {
+
+  // Algolia
   .input-group .algolia-autocomplete {
     margin-left: 1em;
     width: 100%;
@@ -193,129 +193,3 @@ h6 {
     width: 100%;
   }
 }
-
-/*
-// Google search
-#search {
-  * {
-    border: 0;
-    border-radius: none;
-  }
-
-  td {
-    margin: 0;
-    padding: 0;
-
-    &.gsib_a {
-      padding-left: .3rem;
-    }
-  }
-
-  table {
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-
-  .gsc-input {
-    font-family: Aregular;
-
-    input {
-      color: $black;
-      font-size: 1.3rem;
-      // For having the caret a different colour
-      // - hacky and not consistent across brosers.
-      // text-shadow: 0 0 0 $black;
-      // text-fill-color: transparent;
-      //
-      // &::input-placeholder {
-      //   color: $dark-gray;
-      //   text-fill-color: initial;
-      //   text-shadow: none;
-      // }
-    }
-  }
-
-  td.gsc-search-button,
-  input.gsc-search-button {
-    background-color: $primary-color;
-    transition: background-color .2s ease;
-  }
-
-  td.gsc-search-button:hover,
-  td.gsc-search-button:focus,
-  input.gsc-search-button:hover,
-  input.gsc-search-button:focus {
-    background-color: darken($primary-color, 15%);
-  }
-
-  .cse .gsc-search-button input.gsc-search-button-v2,
-  input.gsc-search-button-v2 {
-    padding: .7rem 1rem;
-  }
-
-  // Results
-  .gsc-control-cse .gs-spelling,
-  .gsc-control-cse .gs-result .gs-title,
-  .gsc-control-cse .gs-result .gs-title * {
-    font-size: 1.3rem;
-    height: 2.3rem;
-    text-decoration: none !important;
-  }
-
-  .gs-webResult.gs-result a.gs-title:link,
-  .gs-webResult.gs-result a.gs-title:link b,
-  .gs-imageResult a.gs-title:link,
-  .gs-imageResult a.gs-title:link b,
-  .gs-webResult.gs-result a.gs-title:visited,
-  .gs-webResult.gs-result a.gs-title:visited b,
-  .gs-imageResult a.gs-title:visited,
-  .gs-imageResult a.gs-title:visited b {
-    color: #00adff !important;
-    font-family: Ademi;
-    font-size: 1.2rem;
-    text-decoration: none !important;
-  }
-
-  .gs-webResult .gs-snippet,
-  .gs-imageResult .gs-snippet,
-  .gs-fileFormatType {
-    color: #333;
-    font-family: Aregular, Arial;
-  }
-
-  .gs-webResult div.gs-visibleUrl,
-  .gs-imageResult div.gs-visibleUrl {
-    color: #808080;
-  }
-}
-
-.gsc-control-cse {
-  padding: 0 !important;
-
-  * {
-    box-sizing: content-box !important;
-  }
-
-  input {
-    box-shadow: none !important;
-  }
-
-  input:focus {
-    outline: none;
-  }
-
-  table {
-    background: transparent;
-    border: 0;
-    margin-bottom: 0 !important;
-  }
-
-  .gsc-input-box,
-  .gsc-search-box .gsc-input>input,
-  .gsc-input-box-hover {
-    box-shadow: none !important;
-    height: inherit;
-    margin: 0 !important;
-  }
-}
-*/

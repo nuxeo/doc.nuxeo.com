@@ -12,13 +12,13 @@ parserOptions:
 
 extends:
   - "eslint:recommended"
-  - "prettier"
+  - prettier
 
 plugins:
-  - "prettier"
+  - prettier
 
 rules:
-  "prettier/prettier": "error"
+  "prettier/prettier": error
   camelcase: 0
   no-console: 1
   quotes: [2, "single", "avoid-escape"]
