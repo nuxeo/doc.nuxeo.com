@@ -6,7 +6,7 @@ const extend = require('lodash.assign');
 
 const get_url_object = require('../modules/get_url_object');
 
-test('get_url_object is a function', function(assert) {
+test('get_url_object is a function', assert => {
   // Get typeof string
   const expected = get_url_object && {}.toString.call(get_url_object);
 
@@ -16,7 +16,7 @@ test('get_url_object is a function', function(assert) {
 
 // TODO: Test void 0 and '' filepath
 
-test('get_url_object returns values as expected', function(assert) {
+test('get_url_object returns values as expected', assert => {
   const options = {
     spaces: [
       {
@@ -143,7 +143,7 @@ test('get_url_object returns values as expected', function(assert) {
     }
   ];
 
-  string_tests.forEach(function(string_test) {
+  string_tests.forEach(string_test => {
     const actual = get_url_object(
       string_test.test,
       string_test.options || options

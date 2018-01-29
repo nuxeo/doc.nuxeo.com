@@ -5,7 +5,7 @@ const test = require('tap').test;
 
 const add_link_context = require('../modules/add_link_context');
 
-test('add_link_context is a function', function(assert) {
+test('add_link_context is a function', assert => {
   // Get typeof string
   const expected = add_link_context && {}.toString.call(add_link_context);
 
@@ -17,7 +17,7 @@ test('add_link_context is a function', function(assert) {
   assert.end();
 });
 
-test('add_link_context returns page links (without version) as expected', function(assert) {
+test('add_link_context returns page links (without version) as expected', assert => {
   const fallback_values = {
     version: '',
     space: 'nxdoc',
@@ -71,7 +71,7 @@ test('add_link_context returns page links (without version) as expected', functi
     }
   ];
 
-  string_tests.forEach(function(string_test) {
+  string_tests.forEach(string_test => {
     const actual = add_link_context(
       string_test.test,
       string_test.fallback || fallback_values
@@ -82,7 +82,7 @@ test('add_link_context returns page links (without version) as expected', functi
   assert.end();
 });
 
-test('add_link_context returns page links (with version) as expected', function(assert) {
+test('add_link_context returns page links (with version) as expected', assert => {
   const fallback_values = {
     version: '710',
     space: 'nxdoc',
@@ -127,7 +127,7 @@ test('add_link_context returns page links (with version) as expected', function(
     }
   ];
 
-  string_tests.forEach(function(string_test) {
+  string_tests.forEach(string_test => {
     const actual = add_link_context(
       string_test.test,
       string_test.fallback || fallback_values

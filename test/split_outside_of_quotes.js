@@ -5,7 +5,7 @@ const test = require('tap').test;
 
 const split_outside_of_quotes = require('../modules/split_outside_of_quotes');
 
-test('split_outside_of_quotes is a function', function(assert) {
+test('split_outside_of_quotes is a function', assert => {
   // Get typeof string
   const expected =
     split_outside_of_quotes && {}.toString.call(split_outside_of_quotes);
@@ -18,7 +18,7 @@ test('split_outside_of_quotes is a function', function(assert) {
   assert.end();
 });
 
-test('split_outside_of_quotes returns values as expected', function(assert) {
+test('split_outside_of_quotes returns values as expected', assert => {
   const string_tests = [
     {
       test: '',
@@ -52,7 +52,7 @@ test('split_outside_of_quotes returns values as expected', function(assert) {
     }
   ];
 
-  string_tests.forEach(function(string_test) {
+  string_tests.forEach(string_test => {
     const actual = split_outside_of_quotes(string_test.test);
     assert.isEquivalent(actual, string_test.expected, string_test.message);
   });

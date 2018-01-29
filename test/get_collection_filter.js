@@ -5,7 +5,7 @@ const test = require('tap').test;
 
 const get_collection_filter = require('../modules/get_collection_filter');
 
-test('get_collection_filter is a function', function(assert) {
+test('get_collection_filter is a function', assert => {
   // Get typeof string
   const expected =
     get_collection_filter && {}.toString.call(get_collection_filter);
@@ -18,7 +18,7 @@ test('get_collection_filter is a function', function(assert) {
   assert.end();
 });
 
-test('get_collection_filter returns a function', function(assert) {
+test('get_collection_filter returns a function', assert => {
   // Get typeof string
   const expected =
     get_collection_filter() && {}.toString.call(get_collection_filter);
@@ -31,7 +31,7 @@ test('get_collection_filter returns a function', function(assert) {
   assert.end();
 });
 
-test('get_collection_filter returns values as expected', function(assert) {
+test('get_collection_filter returns values as expected', assert => {
   const get_title = row => row.title;
 
   const collection = [
@@ -100,7 +100,7 @@ test('get_collection_filter returns values as expected', function(assert) {
     }
   ];
 
-  filter_tests.forEach(function(filter_test) {
+  filter_tests.forEach(filter_test => {
     const filter = get_collection_filter(filter_test.text, filter_test.type);
 
     // Use filter but but only test returned titles

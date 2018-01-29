@@ -5,7 +5,7 @@ const test = require('tap').test;
 
 const toc_items_to_hierarchy = require('../modules/toc_items_to_hierarchy');
 
-test('toc_items_to_hierarchy is a function', function(assert) {
+test('toc_items_to_hierarchy is a function', assert => {
   // Get typeof string
   const expected =
     toc_items_to_hierarchy && {}.toString.call(toc_items_to_hierarchy);
@@ -18,7 +18,7 @@ test('toc_items_to_hierarchy is a function', function(assert) {
   assert.end();
 });
 
-test('toc_items_to_hierarchy returns values as expected', function(assert) {
+test('toc_items_to_hierarchy returns values as expected', assert => {
   const string_tests = [
     {
       test: [],
@@ -138,7 +138,7 @@ test('toc_items_to_hierarchy returns values as expected', function(assert) {
     }
   ];
 
-  string_tests.forEach(function(string_test) {
+  string_tests.forEach(string_test => {
     const actual = toc_items_to_hierarchy(string_test.test);
     assert.isEquivalent(actual, string_test.expected, string_test.message);
   });

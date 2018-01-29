@@ -5,7 +5,7 @@ const test = require('tap').test;
 
 const hierarchy = require('../modules/metalsmith/hierarchies');
 
-test('hierarchy is a function', function(assert) {
+test('hierarchy is a function', assert => {
   // Get typeof string
   const expected = hierarchy && {}.toString.call(hierarchy);
 
@@ -13,7 +13,7 @@ test('hierarchy is a function', function(assert) {
   assert.end();
 });
 
-test('hierarchy() returns a function', function(assert) {
+test('hierarchy() returns a function', assert => {
   // Get typeof string
   const expected = {}.toString.call(hierarchy());
 
@@ -21,7 +21,7 @@ test('hierarchy() returns a function', function(assert) {
   assert.end();
 });
 
-test('hierarchy(min_options) returns a mutated "metalsmith" object with empty hierarchies', function(assert) {
+test('hierarchy(min_options) returns a mutated "metalsmith" object with empty hierarchies', assert => {
   // Get typeof string
   const hierarchy_instance = hierarchy({});
   const actual = {
@@ -35,7 +35,7 @@ test('hierarchy(min_options) returns a mutated "metalsmith" object with empty hi
     hierarchies: {}
   };
 
-  hierarchy_instance({}, actual, function(err) {
+  hierarchy_instance({}, actual, err => {
     assert.error(err, 'Has not errored');
     assert.isEquivalent(
       actual._metadata,
@@ -46,7 +46,7 @@ test('hierarchy(min_options) returns a mutated "metalsmith" object with empty hi
   });
 });
 
-test('hierarchy({}) returns mutated "metalsmith" object with populated hierarchies', function(assert) {
+test('hierarchy({}) returns mutated "metalsmith" object with populated hierarchies', assert => {
   // Get typeof string
   const hierarchy_instance = hierarchy({});
   const files = {
@@ -93,7 +93,7 @@ test('hierarchy({}) returns mutated "metalsmith" object with populated hierarchi
     }
   };
 
-  hierarchy_instance(files, actual, function(err) {
+  hierarchy_instance(files, actual, err => {
     assert.error(err, 'Has not errored');
     assert.isEquivalent(
       actual._metadata,

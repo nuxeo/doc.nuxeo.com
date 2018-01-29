@@ -15,6 +15,9 @@
                 {{#if edit_url}}<a class="edit-page" title="Edit on GitHub" href="{{edit_url}}">
                     <img src="/assets/imgs/icons/edit-in-github-icon.svg" alt="Edit on GitHub" width="15px" height="15px">
                 </a>{{/if}}
+                {{#if url.shortlink}}<a class="get_permalink" title="Permalink" href="/n/{{url.shortlink}}">
+                    <i class="fa fa-link"></i>
+                </a>{{/if}}
             </div>
         </div>
         {{> flag_review}}

@@ -5,7 +5,7 @@ const test = require('tap').test;
 
 const menu_flatten = require('../modules/menu_flatten');
 
-test('menu_flatten is a function', function(assert) {
+test('menu_flatten is a function', assert => {
   // Get typeof string
   const expected = menu_flatten && {}.toString.call(menu_flatten);
 
@@ -13,7 +13,7 @@ test('menu_flatten is a function', function(assert) {
   assert.end();
 });
 
-test('menu_flatten returns values as expected', function(assert) {
+test('menu_flatten returns values as expected', assert => {
   const tests = [
     {
       message: 'Undefined returns undefined',
@@ -245,7 +245,7 @@ test('menu_flatten returns values as expected', function(assert) {
     }
   ];
 
-  tests.forEach(function(single_test) {
+  tests.forEach(single_test => {
     const actual = menu_flatten(single_test.pages, single_test.toc);
     assert.deepEqual(actual, single_test.expected, single_test.message);
   });
