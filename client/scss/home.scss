@@ -7,6 +7,19 @@ $fast-track-icon-radius: 36px;
 $header-color: #384248;
 $body-background-color: #fafcfd;
 
+@mixin section-color ($section, $section-color) {
+  &.#{$section} {
+    > div {
+      border-color: $section-color;
+      color: $section-color;
+
+      > div {
+        border-color: lighten($section-color, 20%);
+      }
+    }
+  }
+}
+
 %center-image {
   display: block;
   margin: auto;
@@ -146,19 +159,6 @@ h6 {
 @media screen and #{breakpoint(large up)} {
   #client-libs > div ~ div {
     max-width: 55rem;
-  }
-}
-
-@mixin section-color ($section, $section-color) {
-  &.#{$section} {
-    > div {
-      border-color: $section-color;
-      color: $section-color;
-
-      > div {
-        border-color: lighten($section-color, 20%);
-      }
-    }
   }
 }
 

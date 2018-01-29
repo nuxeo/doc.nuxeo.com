@@ -5,7 +5,7 @@ const test = require('tap').test;
 
 const get_placeholder_key = require('../modules/get_placeholder_key');
 
-test('get_placeholder_key is a function', function(assert) {
+test('get_placeholder_key is a function', assert => {
   // Get typeof string
   const expected = get_placeholder_key && {}.toString.call(get_placeholder_key);
 
@@ -17,7 +17,7 @@ test('get_placeholder_key is a function', function(assert) {
   assert.end();
 });
 
-test('get_placeholder_key returns values as expected', function(assert) {
+test('get_placeholder_key returns values as expected', assert => {
   const fallback_values = {
     version: '',
     space: 'nxdoc',
@@ -142,7 +142,7 @@ test('get_placeholder_key returns values as expected', function(assert) {
     }
   ];
 
-  string_tests.forEach(function(string_test) {
+  string_tests.forEach(string_test => {
     const actual = get_placeholder_key(
       string_test.test,
       string_test.fallback || fallback_values

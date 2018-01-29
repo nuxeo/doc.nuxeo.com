@@ -5,7 +5,7 @@ const test = require('tap').test;
 
 const replace_between = require('../modules/replace_between');
 
-test('replace_between is a function', function(assert) {
+test('replace_between is a function', assert => {
   // Get typeof string
   const expected = replace_between && {}.toString.call(replace_between);
 
@@ -17,7 +17,7 @@ test('replace_between is a function', function(assert) {
   assert.end();
 });
 
-test('replace_between returns values as expected', function(assert) {
+test('replace_between returns values as expected', assert => {
   const string_tests = [
     {
       test: void 0,
@@ -55,7 +55,7 @@ test('replace_between returns values as expected', function(assert) {
     }
   ];
 
-  string_tests.forEach(function(string_test) {
+  string_tests.forEach(string_test => {
     const actual = replace_between(
       string_test.test,
       string_test.from,

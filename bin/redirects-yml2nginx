@@ -6,8 +6,21 @@ const yaml = require('js-yaml');
 const fs = require('fs');
 const path = require('path');
 
+const shortlinks = require('../shortlinks');
 const redirects_file = path.join(__dirname, '..', 'redirects.yml');
 
+// Shortlinks
+console.log(
+  Object.keys(shortlinks)
+    .map(shortlink_url => {
+      const shortlink = shortlinks[shortlink_url];
+      // Build output string
+      return `rewrite ^/n/${shortlink}/?\t${shortlink_url}\tpermanent;`;
+    })
+    .join('\n')
+);
+
+// Redirects
 const escape_spaces = text => text.replace(/ /g, '\\ ');
 let redirects;
 

@@ -5,7 +5,7 @@ const test = require('tap').test;
 
 const resolve_edit_path = require('../modules/resolve_edit_path');
 
-test('resolve_edit_path is a function', function(assert) {
+test('resolve_edit_path is a function', assert => {
   // Get typeof string
   const actual = resolve_edit_path && {}.toString.call(resolve_edit_path);
 
