@@ -23,12 +23,7 @@ const spaces = [
 test('site should have key files', assert => {
   const site_paths = [
     path.join(assets_path, 'fonts', 'fontawesome-webfont.ttf'),
-    path.join(
-      assets_path,
-      'fonts',
-      'AvenirNextLTPro',
-      'AvenirNextLTPro-Regular.ttf'
-    ),
+    path.join(assets_path, 'fonts', 'AvenirNextLTPro', 'AvenirNextLTPro-Regular.ttf'),
     path.join(assets_path, 'icons', 'favicon.ico'),
     path.join(assets_path, 'imgs', 'logo340x60.png'),
     path.join(site_path, 'index.html'),
@@ -86,17 +81,9 @@ test('canonical and robots metadata reference should be correct', assert => {
       `${filepath}: Canonical link is correct`
     );
     if (noindex) {
-      assert.isEqual(
-        $('meta[name="robots"]').attr('content'),
-        'noindex',
-        `${filepath}: Robots meta is correct`
-      );
+      assert.isEqual($('meta[name="robots"]').attr('content'), 'noindex', `${filepath}: Robots meta is correct`);
     } else {
-      assert.isEqual(
-        $('meta[name="robots"]').length,
-        0,
-        `${filepath}: Robots meta is not present`
-      );
+      assert.isEqual($('meta[name="robots"]').length, 0, `${filepath}: Robots meta is not present`);
     }
   });
   assert.end();

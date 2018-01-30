@@ -37,11 +37,7 @@ test('hierarchy(min_options) returns a mutated "metalsmith" object with empty hi
 
   hierarchy_instance({}, actual, err => {
     assert.error(err, 'Has not errored');
-    assert.isEquivalent(
-      actual._metadata,
-      expected,
-      'Should add a hierarchy object'
-    );
+    assert.isEquivalent(actual._metadata, expected, 'Should add a hierarchy object');
     assert.end();
   });
 });
@@ -95,11 +91,7 @@ test('hierarchy({}) returns mutated "metalsmith" object with populated hierarchi
 
   hierarchy_instance(files, actual, err => {
     assert.error(err, 'Has not errored');
-    assert.isEquivalent(
-      actual._metadata,
-      expected,
-      'Should add a hierarchy object'
-    );
+    assert.isEquivalent(actual._metadata, expected, 'Should add a hierarchy object');
     assert.end();
   });
 });

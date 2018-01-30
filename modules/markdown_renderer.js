@@ -122,8 +122,7 @@ renderer.list = function(body, ordered) {
         .toString()
         .toUpperCase()
         .charCodeAt(0) - 64;
-    attrs.start =
-      start_letter > 1 && start_letter < 9 ? `start="${start_letter}"` : '';
+    attrs.start = start_letter > 1 && start_letter < 9 ? `start="${start_letter}"` : '';
   }
   const attr = [attrs.type, attrs.start].filter(x => x).join(' ');
 

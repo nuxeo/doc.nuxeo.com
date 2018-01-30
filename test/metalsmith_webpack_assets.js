@@ -18,10 +18,6 @@ test('webpack_assets initialisation returns a function', assert => {
   const initialised = webpack_assets();
   const expected = initialised && {}.toString.call(initialised);
 
-  assert.isEqual(
-    expected,
-    '[object Function]',
-    'webpack_assets is a function after initialisation'
-  );
+  assert.isEqual(expected, '[object Function]', 'webpack_assets is a function after initialisation');
   assert.end();
 });

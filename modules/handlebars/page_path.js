@@ -37,11 +37,7 @@ const page_url = function(options) {
       warn('%s; Title: "%s"', e.message, file.title);
     }
   } else {
-    error(
-      'file.url.key not present. page: "%s", defaults: %o',
-      options.hash.page,
-      defaults
-    );
+    error('file.url.key not present. page: "%s", defaults: %o', options.hash.page, defaults);
   }
   return url + hash;
 };

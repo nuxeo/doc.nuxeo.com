@@ -2,9 +2,7 @@
 /* eslint-env es6 */
 
 // Debugging
-const { debug, warn, error } = require('../debugger')(
-  'metalsmith-replace-excerpts'
-);
+const { debug, warn, error } = require('../debugger')('metalsmith-replace-excerpts');
 
 // npm packages
 const escape_regex = require('escape-string-regexp');
@@ -53,10 +51,7 @@ const replace_placeholder = function(options) {
           contents = contents.replace(replacement_re, metadata.excerpts[key]);
         } else {
           warn('No replacement found for: %s in "%s"', key, file.title);
-          contents = contents.replace(
-            replacement_re,
-            '{{! Excerpt replacement failed for: ' + match[1] + ' }}'
-          );
+          contents = contents.replace(replacement_re, '{{! Excerpt replacement failed for: ' + match[1] + ' }}');
         }
       }
       if (!safeguard) {

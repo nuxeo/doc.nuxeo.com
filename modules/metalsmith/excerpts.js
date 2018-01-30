@@ -44,10 +44,7 @@ const special_methods = {
   },
   excerpt_placeholder: function(file) {
     // {{! excerpt}}Excerpt content{{! /excerpt}}
-    const re_definition = new RegExp(
-      '{{! excerpt ?}}([\\s\\S]+?){{! +/excerpt ?}}',
-      'gm'
-    );
+    const re_definition = new RegExp('{{! excerpt ?}}([\\s\\S]+?){{! +/excerpt ?}}', 'gm');
     const match = re_definition.exec(file.contents.toString());
 
     return match ? match[1] : void 0;
@@ -76,10 +73,7 @@ const excerpts = function(options) {
       // Convert to array if it's a string
       value.forEach(function(option, option_index) {
         const value_option = value[option_index];
-        value_option.pattern =
-          typeof value_option.pattern === 'string'
-            ? [value_option.pattern]
-            : value_option.pattern;
+        value_option.pattern = typeof value_option.pattern === 'string' ? [value_option.pattern] : value_option.pattern;
       });
       options = value;
     });

@@ -23,10 +23,7 @@ const hb_moment = function(context, block) {
     block = clone_deep(context);
     context = void 0;
   }
-  const input_format = block.hash.input_format || [
-    'YYYY-MM-DD HH:mm',
-    'YYYY-MM-DD'
-  ];
+  const input_format = block.hash.input_format || ['YYYY-MM-DD HH:mm', 'YYYY-MM-DD'];
   debug('Date passed to moment: %s, input_format: %o', context, input_format);
   delete block.hash.input_format;
   const is_output_function = ['format', 'fromNow', 'calendar', 'diff'];
@@ -53,11 +50,7 @@ const hb_moment = function(context, block) {
   }
 
   if (output_function_name) {
-    debug(
-      'Outputting %s with: %s',
-      output_function_name,
-      output_function_paramater
-    );
+    debug('Outputting %s with: %s', output_function_name, output_function_paramater);
     date = date[output_function_name](output_function_paramater);
   }
   return date;

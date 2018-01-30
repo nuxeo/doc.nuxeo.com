@@ -38,11 +38,7 @@ console.log(
       // default to `/`
       let target = redirects[source] || '/';
       // add leading /
-      if (
-        target[0] !== '/' &&
-        !target.startsWith('http://') &&
-        !target.startsWith('https://')
-      ) {
+      if (target[0] !== '/' && !target.startsWith('http://') && !target.startsWith('https://')) {
         target = `/${target}`;
       }
 

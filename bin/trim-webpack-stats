@@ -1,24 +1,23 @@
 #!/usr/bin/env node
 'use strict';
-/* eslint-env es6 */
 
 const path = require('path');
 
-
-if (!(process.argv[2])) {
-    throw new Error('Missing Filename parameter');
+if (!process.argv[2]) {
+  throw new Error('Missing Filename parameter');
 }
-const [,, stats_path] = process.argv;
+const [, , stats_path] = process.argv;
 
 // Work out absolute path
-const stats_filepath = (path.isAbsolute(stats_path)) ? stats_path : path.join(process.cwd(), stats_path);
+const stats_filepath = path.isAbsolute(stats_path) ? stats_path : path.join(process.cwd(), stats_path);
 
-const {errors, assetsByChunkName, publicPath} = require(stats_filepath);
+const { errors, assetsByChunkName, publicPath } = require(stats_filepath);
 
 const trimmed = {
-    errors,
-    assetsByChunkName,
-    publicPath
+  errors,
+  assetsByChunkName,
+  publicPath
 };
 
+/* eslint no-console: 0 */
 console.log(JSON.stringify(trimmed));

@@ -32,11 +32,7 @@ const file_url = function(options) {
       warn('filename not present. page: "%s"', options.hash.page);
     }
     if (!defaults) {
-      warn(
-        'file.url.key not present. page: "%s", defaults: %o',
-        options.hash.page,
-        defaults
-      );
+      warn('file.url.key not present. page: "%s", defaults: %o', options.hash.page, defaults);
     }
   }
 

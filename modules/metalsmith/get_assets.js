@@ -30,9 +30,7 @@ const get_assets = function(options) {
 
     let version_path = '';
     if (metadata.site.versions) {
-      const current_version = metadata.site.versions.filter(
-        version => version.is_current_version
-      );
+      const current_version = metadata.site.versions.filter(version => version.is_current_version);
       if (current_version && current_version[0] && current_version.url_path) {
         version_path = current_version[0].url_path;
       }

@@ -108,11 +108,7 @@ const nuxeo_redirects = () => (files, metalsmith, done) => {
       file.url.shortlink = shortlinks[url_full];
     }
 
-    if (
-      (file.confluence && file.confluence.shortlink) ||
-      file.redirect ||
-      file.redirect_source
-    ) {
+    if ((file.confluence && file.confluence.shortlink) || file.redirect || file.redirect_source) {
       matches.push(filepath);
       debug('Pushed: %s with: %s', filepath, file.redirect);
     }
@@ -147,8 +143,7 @@ const nuxeo_redirects = () => (files, metalsmith, done) => {
       file.confluence.source_link &&
       !~file.confluence.source_link.indexOf('pages/viewpage.action?')
     ) {
-      const source_url =
-        '^' + escape_regex_url(file.confluence.source_link) + '/?$';
+      const source_url = '^' + escape_regex_url(file.confluence.source_link) + '/?$';
 
       if (redirect_url) {
         redirects[source_url] = redirect_url;

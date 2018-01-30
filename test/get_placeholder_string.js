@@ -7,14 +7,9 @@ const get_placeholder_string = require('../modules/get_placeholder_string');
 
 test('get_placeholder_string is a function', assert => {
   // Get typeof string
-  const expected =
-    get_placeholder_string && {}.toString.call(get_placeholder_string);
+  const expected = get_placeholder_string && {}.toString.call(get_placeholder_string);
 
-  assert.isEqual(
-    expected,
-    '[object Function]',
-    'get_placeholder_string is a function'
-  );
+  assert.isEqual(expected, '[object Function]', 'get_placeholder_string is a function');
   assert.end();
 });
 

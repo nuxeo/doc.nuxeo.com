@@ -23,8 +23,7 @@ const resolve_repository = function(push_url) {
 
   const url = () => file_url_prefix;
 
-  const file = (branch = 'master', path = '') =>
-    file_url_prefix && `${file_url_prefix}tree/${branch}/${path}`;
+  const file = (branch = 'master', path = '') => file_url_prefix && `${file_url_prefix}tree/${branch}/${path}`;
 
   return {
     url,

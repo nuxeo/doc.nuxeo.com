@@ -34,18 +34,16 @@ module.exports = function(config, path_only = true) {
     // console.log('repo_url_part', repo_url_part);
 
     // Get the branch name
-    const branch_name = exec(
-      "git branch | grep ^\\* | grep -oE '[a-zA-Z0-9_-]+$'",
-      { encoding: 'utf8', cwd: cwd }
-    ).trim();
+    const branch_name = exec("git branch | grep ^\\* | grep -oE '[a-zA-Z0-9_-]+$'", {
+      encoding: 'utf8',
+      cwd: cwd
+    }).trim();
 
     // console.log('branch_name', branch_name);
 
     // find the current version from the repositories object.
     const current_version = Object.keys(config.repositories)
-      .filter(repo_id =>
-        config.repositories[repo_id].url.includes(repo_url_part)
-      )
+      .filter(repo_id => config.repositories[repo_id].url.includes(repo_url_part))
       .map(repo_id => {
         const repo = config.repositories[repo_id];
         return Object.keys(repo.branches)

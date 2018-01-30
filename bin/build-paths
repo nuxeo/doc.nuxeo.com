@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 'use strict';
-/* eslint-env es6 */
-/* eslint no-console: 0 */
 
 const path = require('path');
 const yaml_config = require('node-yaml-config');
@@ -15,8 +13,7 @@ Object.keys(config.repositories).forEach(repo_id => {
     const target_source_path = path.join(target_base, repo_id, branch, 'src');
     const target_build_path = path.join(target_base, repo_id, branch, 'site');
 
-    console.log(
-      `${repo_id} ${branch} "${target_source_path}" "${target_build_path}"`
-    );
+    /* eslint no-console: 0 */
+    console.log(`${repo_id} ${branch} "${target_source_path}" "${target_build_path}"`);
   });
 });

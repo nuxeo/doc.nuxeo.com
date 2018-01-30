@@ -34,15 +34,7 @@ const get_template = template_name =>
  *
  * Options supported by metalsmith-layouts
  */
-const settings = [
-  'default',
-  'directory',
-  'engine',
-  'partials',
-  'partialExtension',
-  'pattern',
-  'rename'
-];
+const settings = ['default', 'directory', 'engine', 'partials', 'partialExtension', 'pattern', 'rename'];
 
 /**
  * Metalsmith plugin to run files through any layout in a layout `dir`.
@@ -95,25 +87,15 @@ const handlebars_layouts = options => {
      */
     if (partials) {
       if (typeof partials === 'string') {
-        params.partials = readPartials(
-          partials,
-          partialExtension,
-          dir,
-          metalsmith
-        );
+        params.partials = readPartials(partials, partialExtension, dir, metalsmith);
       } else {
         params.partials = partials;
       }
     }
     Object.keys(params.partials).forEach(partial =>
-      handlebars.registerPartial(
-        partial,
-        fs.readFileSync(metalsmith.path(params.partials[partial]), 'utf8')
-      )
+      handlebars.registerPartial(partial, fs.readFileSync(metalsmith.path(params.partials[partial]), 'utf8'))
     );
-    Object.keys(params.helpers).forEach(helper =>
-      handlebars.registerHelper(helper, params.helpers[helper])
-    );
+    Object.keys(params.helpers).forEach(helper => handlebars.registerHelper(helper, params.helpers[helper]));
 
     let matched_files = Object.keys(files);
     if (pattern) {

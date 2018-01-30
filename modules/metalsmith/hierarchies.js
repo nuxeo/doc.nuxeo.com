@@ -55,9 +55,7 @@ const meta_hierarchies = function(options) {
         // file.hierarchy = file.hierarchy || {};
 
         if (space_path) {
-          let current_item = (hierarchies[space_path] = hierarchies[
-            space_path
-          ] || {
+          let current_item = (hierarchies[space_path] = hierarchies[space_path] || {
             id: space_path,
             name: '',
             url: {},
@@ -73,11 +71,7 @@ const meta_hierarchies = function(options) {
             current_item.url = file.url;
             current_item.section_parent = file.section_parent;
 
-            debug(
-              `Adding parent space_path: ${space_path} key: ${
-                file.url.key.full
-              }, path: ${filepath}`
-            );
+            debug(`Adding parent space_path: ${space_path} key: ${file.url.key.full}, path: ${filepath}`);
           } else {
             filepath_parts.forEach(item => {
               if (current_item.children) {
@@ -95,21 +89,12 @@ const meta_hierarchies = function(options) {
                 }
               }
             });
-            debug(
-              'Key: %s, path: %s',
-              file.url.key.full,
-              filepath_parts,
-              current_item
-            );
+            debug('Key: %s, path: %s', file.url.key.full, filepath_parts, current_item);
 
             // error('Adding: %s %s, is_space_index: %s', space_path, filepath, is_space_index, file_path_info.name);
             // Don't include hidden pages
             if (!file.hidden && !is_space_index) {
-              debug(
-                `Adding child space_path: ${space_path} key: ${
-                  file.url.key.full
-                }, path: ${filepath}`
-              );
+              debug(`Adding child space_path: ${space_path} key: ${file.url.key.full}, path: ${filepath}`);
               current_item.children = current_item.children || [];
               current_item.children.push({
                 id: file_path_info.name,
@@ -121,11 +106,7 @@ const meta_hierarchies = function(options) {
                 section_parent: file.section_parent
               });
             } else {
-              debug(
-                `Ignoring child space_path: ${space_path} key: ${
-                  file.url.key.full
-                }, path: ${filepath}`
-              );
+              debug(`Ignoring child space_path: ${space_path} key: ${file.url.key.full}, path: ${filepath}`);
             }
           }
         }
@@ -138,11 +119,7 @@ const meta_hierarchies = function(options) {
     Object.keys(hierarchies).forEach(space => {
       var hierarchy = hierarchies[space];
       // Sort each tier by tree_item_index, then slug
-      run_on_tiers(hierarchy, multisort, [
-        a => !a.tree_item_index,
-        'tree_item_index',
-        'slug'
-      ]);
+      run_on_tiers(hierarchy, multisort, [a => !a.tree_item_index, 'tree_item_index', 'slug']);
     });
 
     metadata.hierarchies = hierarchies;

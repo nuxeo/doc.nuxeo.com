@@ -27,8 +27,7 @@ const since = (identifier, options) => {
   debug(`identifier: ${identifier}`);
 
   if (identifier) {
-    const new_version =
-      file.site.new_version && file.site.new_version.toString();
+    const new_version = file.site.new_version && file.site.new_version.toString();
     debug(`new_version: ${new_version}`);
     if (new_version && new_version === identifier) {
       // Show new tag if a version's set and matches

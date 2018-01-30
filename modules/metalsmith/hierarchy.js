@@ -59,8 +59,7 @@ const hierarchy = options => (files, metalsmith, done) => {
     if (multimatch(filepath, options.file_pattern).length && space_path) {
       // Don't include hidden pages
       if (!file.hidden) {
-        const root = (trees[space_path] =
-          trees[space_path] || tree.parse(hierarchies[space_path]));
+        const root = (trees[space_path] = trees[space_path] || tree.parse(hierarchies[space_path]));
 
         let node = root.first(item => item.model.slug === file.slug);
         if (!node) {
@@ -68,10 +67,7 @@ const hierarchy = options => (files, metalsmith, done) => {
           error(`file.slug: ${file.slug}`);
 
           const util = require('util');
-          error(
-            'hierarchy:',
-            util.inspect(hierarchies[space_path], false, null)
-          );
+          error('hierarchy:', util.inspect(hierarchies[space_path], false, null));
 
           done(new Error(`Missing hierarchy item for file:  ${filepath}`));
         }
@@ -97,8 +93,7 @@ const hierarchy = options => (files, metalsmith, done) => {
             parents = parents.slice(1, 2);
           }
 
-          file.hierarchy.section_name =
-            (parents[0] && parents[0].name) || file.title;
+          file.hierarchy.section_name = (parents[0] && parents[0].name) || file.title;
         } else {
           // set section to be current page title
           file.hierarchy.section_name = file.title;
@@ -151,14 +146,7 @@ const hierarchy = options => (files, metalsmith, done) => {
       const new_filepath = file.url.new_filepath;
       debug('New filepath: %s', new_filepath);
       if (files[new_filepath] && filepath !== new_filepath) {
-        done(
-          new Error(
-            'Filepath already used: ' +
-              new_filepath +
-              ' Source file: ' +
-              filepath
-          )
-        );
+        done(new Error('Filepath already used: ' + new_filepath + ' Source file: ' + filepath));
       } else if (filepath !== new_filepath) {
         files[new_filepath] = files[filepath];
         delete files[filepath];
