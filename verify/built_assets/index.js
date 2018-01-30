@@ -5,9 +5,9 @@ const test = require('tap').test;
 const fs = require('fs');
 const path = require('path');
 
-const assets_path = path.join(__dirname, '../../assets/');
-const css_stats = path.join(__dirname, '../../lib/css.md5');
-const js_stats = path.join(__dirname, '../../lib/webpack.stats.json');
+const assets_path = path.join(__dirname, '..', '..', 'assets');
+const css_stats = path.join(__dirname, '..', '..', 'lib', 'css.md5');
+const js_stats = path.join(__dirname, '..', '..', 'lib', 'webpack.stats.json');
 
 // console.log(fs.accessSync('./sites', fs.F_OK));
 
@@ -17,11 +17,11 @@ test('lib assets directory should be generated', assert => {
     './lib/assets directory is present'
   );
   assert.doesNotThrow(
-    () => fs.accessSync(assets_path + 'css', fs.F_OK),
+    () => fs.accessSync(path.join(assets_path, 'css'), fs.F_OK),
     './lib/css directory is present'
   );
   assert.doesNotThrow(
-    () => fs.accessSync(assets_path + 'js', fs.F_OK),
+    () => fs.accessSync(path.join(assets_path, 'js'), fs.F_OK),
     './lib/js directory is present'
   );
 
@@ -32,10 +32,15 @@ test('site should have key files', assert => {
   const site_paths = [
     css_stats,
     js_stats,
-    `${assets_path}fonts/fontawesome-webfont.ttf`,
-    `${assets_path}fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.ttf`,
-    `${assets_path}icons/favicon.ico`,
-    `${assets_path}imgs/logo340x60.png`
+    path.join(assets_path, 'fonts', 'fontawesome-webfont.ttf'),
+    path.join(
+      assets_path,
+      'fonts',
+      'AvenirNextLTPro',
+      'AvenirNextLTPro-Regular.ttf'
+    ),
+    path.join(assets_path, 'icons', 'favicon.ico'),
+    path.join(assets_path, 'imgs', 'logo340x60.png')
   ];
 
   site_paths.forEach(filepath => {
@@ -54,9 +59,10 @@ test('key files should have content', assert => {
     .toString()
     .split('\n')[0];
   const js_obj = require(js_stats);
+  const is_32_chars = /^[a-z0-9]{32}$/;
 
   assert.ok(
-    /^[a-z0-9]{32}$/.test(css_hash),
+    is_32_chars.test(css_hash),
     `${css_stats} is hash of 32 characters`
   );
   assert.deepEqual(js_obj.errors, [], `${js_stats} has no errors`);

@@ -4,12 +4,12 @@
 
 // Assume production if not set
 if (!process.env.NODE_ENV) {
-    process.env.NODE_ENV = 'production';
+  process.env.NODE_ENV = 'production';
 }
 
 // Set Debugging up
 if (!process.env.DEBUG) {
-    process.env.DEBUG = '*:info,*:error';
+  process.env.DEBUG = '*:info,*:error';
 }
 
 // npm packages
@@ -24,20 +24,25 @@ const readdir = Promise.promisify(fs.readdir);
 const writeFile = Promise.promisify(fs.writeFile);
 
 // local packages
-const {debug, info, error} = require('../modules/debugger')('create-sitemap-index');
+const { debug, info, error } = require('../modules/debugger')(
+  'create-sitemap-index'
+);
 
 // Add sitemap index
-readdir(path.join(__dirname, '../site')).then(
-    files => {
-        const sitemap_files = multimatch(files, 'sitemap*.xml');
-        sitemap_files.reverse();
-        debug('sitemap files: %o', sitemap_files);
-        return writeFile(path.join(__dirname, '../site/sitemap.xml'), sitemap.buildSitemapIndex({
-            urls: sitemap_files
-        }));
-    }
-).then(() => info('Saved `sitemap.xml` index'))
-.catch(err => {
+readdir(path.join(__dirname, '..', 'site'))
+  .then(files => {
+    const sitemap_files = multimatch(files, 'sitemap*.xml');
+    sitemap_files.reverse();
+    debug('sitemap files: %o', sitemap_files);
+    return writeFile(
+      path.join(__dirname, '..', 'site', 'sitemap.xml'),
+      sitemap.buildSitemapIndex({
+        urls: sitemap_files
+      })
+    );
+  })
+  .then(() => info('Saved `sitemap.xml` index'))
+  .catch(err => {
     error('There was an issue creating `sitemap.xml`');
     throw err;
-});
+  });

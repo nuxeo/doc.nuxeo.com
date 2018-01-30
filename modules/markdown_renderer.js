@@ -7,11 +7,12 @@ const slug = require('slug');
 slug.defaults.modes.pretty.lower = true;
 const marked = require('marked');
 const renderer = new marked.Renderer();
+const href_matches = /(^.+?)( \?(.*))?$/;
 
 renderer.image = function(href_str, title, alt) {
   // ![alt text](image.png ?w=180,h=360,border=true,thumbnail=true,align=right "title")
   const closing = this.options.xhtml ? '/>' : '>';
-  const match = /(^.+?)( \?(.*))?$/.exec(href_str);
+  const match = href_matches.exec(href_str);
   const href = match[1];
   const extra_params = match[3] ? match[3].split(',') : [];
   const params = extra_params.reduce(function(map, obj) {

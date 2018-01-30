@@ -9,7 +9,7 @@ var handlebars = require('handlebars');
 // var optimize = Promise.promisify(svgo.optimize);
 
 var inline_svg = function(filepath) {
-  var svg_path = path.join(__dirname, '../..', filepath);
+  var svg_path = path.join(__dirname, '..', '..', filepath);
 
   return new handlebars.SafeString(fs.readFileSync(svg_path, 'utf8'));
   // .then(function (result) {
