@@ -17,7 +17,7 @@ const get_hash = text =>
 
 const get_unique_hash = hash_reference => filepath => {
   const hash = get_hash(filepath);
-  const shortlink_values = Object.values(hash_reference);
+  const shortlink_values = Object.keys(hash_reference).map(key => hash_reference[key]);
   const len_max = 16;
   let len = 3;
 

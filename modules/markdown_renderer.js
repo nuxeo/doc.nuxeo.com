@@ -7,19 +7,35 @@ const slug = require('slug');
 slug.defaults.modes.pretty.lower = true;
 const marked = require('marked');
 const renderer = new marked.Renderer();
-const href_matches = /(^.+?)( \?(.*))?$/;
+
+const external_url_regex = /(^https?:\/\/|^\/\/|^[a-zA-Z0-9]+\.)/;
+const is_external_url = url => external_url_regex.test(url);
+
+const get_href_params = href_str => {
+  let href = '';
+  let params = {};
+
+  if (href_str) {
+    const match = /(^.+?)( \?(.*))?$/.exec(href_str);
+    href = match[1];
+    const extra_params = match[3] ? match[3].split(',') : [];
+    params = extra_params.reduce((map, obj) => {
+      const split = obj.split('=');
+      map[split[0]] = split[1];
+      return map;
+    }, {});
+  }
+  return {
+    href,
+    params
+  };
+};
 
 renderer.image = function(href_str, title, alt) {
   // ![alt text](image.png ?w=180,h=360,border=true,thumbnail=true,align=right "title")
   const closing = this.options.xhtml ? '/>' : '>';
-  const match = href_matches.exec(href_str);
-  const href = match[1];
-  const extra_params = match[3] ? match[3].split(',') : [];
-  const params = extra_params.reduce(function(map, obj) {
-    let split = obj.split('=');
-    map[split[0]] = split[1];
-    return map;
-  }, {});
+
+  const { href, params } = get_href_params(href_str);
 
   const div_classes = [];
   const img_classes = [];
@@ -130,6 +146,35 @@ renderer.list = function(body, ordered) {
     ${body}
     </${type}>
     `;
+};
+
+renderer.link = function(href_str, title, text) {
+  const { href, params } = get_href_params(href_str);
+  if (this.options.sanitize) {
+    try {
+      var prot = decodeURIComponent(unescape(href))
+        .replace(/[^\w:]/g, '')
+        .toLowerCase();
+    } catch (e) {
+      return '';
+    }
+    /* eslint no-script-url: 0 */
+    if (prot.indexOf('javascript:') === 0 || prot.indexOf('vbscript:') === 0 || prot.indexOf('data:') === 0) {
+      return '';
+    }
+  }
+
+  const attrs = [`href="${href}"`];
+  if (params.title) {
+    attrs.push(`title="${title}"`);
+  }
+  if (params.external || is_external_url(href)) {
+    attrs.push('target="_blank"');
+  }
+
+  const attributes = attrs.join(' ');
+
+  return `<a ${attributes}>${text}</a>`;
 };
 
 renderer.heading = (text, level) => {
