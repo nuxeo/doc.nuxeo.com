@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 'use strict';
-/* eslint-env es6 */
 
 // Assume production if not set
 if (!process.env.NODE_ENV) {
@@ -24,9 +23,7 @@ const readdir = Promise.promisify(fs.readdir);
 const writeFile = Promise.promisify(fs.writeFile);
 
 // local packages
-const { debug, info, error } = require('../modules/debugger')(
-  'create-sitemap-index'
-);
+const { debug, info, error } = require('../modules/debugger')('create-sitemap-index');
 
 // Add sitemap index
 readdir(path.join(__dirname, '..', 'site'))

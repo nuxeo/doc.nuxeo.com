@@ -15,9 +15,7 @@ const cheerio = require('cheerio');
 const toc_headers = () => {
   return (files, metalsmith, done) => {
     // Get filepaths for files with toc only
-    const filepaths = Object.keys(files).filter(
-      filepath => files[filepath].toc
-    );
+    const filepaths = Object.keys(files).filter(filepath => files[filepath].toc);
 
     const get_files = filepath => {
       debug(`Processing: ${filepath}`);

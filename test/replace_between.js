@@ -9,11 +9,7 @@ test('replace_between is a function', assert => {
   // Get typeof string
   const expected = replace_between && {}.toString.call(replace_between);
 
-  assert.isEqual(
-    expected,
-    '[object Function]',
-    'replace_between is a function'
-  );
+  assert.isEqual(expected, '[object Function]', 'replace_between is a function');
   assert.end();
 });
 
@@ -56,12 +52,7 @@ test('replace_between returns values as expected', assert => {
   ];
 
   string_tests.forEach(string_test => {
-    const actual = replace_between(
-      string_test.test,
-      string_test.from,
-      string_test.to,
-      string_test.replace
-    );
+    const actual = replace_between(string_test.test, string_test.from, string_test.to, string_test.replace);
     assert.isEqual(actual, string_test.expected, string_test.message);
   });
 

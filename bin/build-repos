@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 'use strict';
-/* eslint-env es6 */
-/* eslint no-console: 0 */
 
 const path = require('path');
 const yaml_config = require('node-yaml-config');
@@ -11,5 +9,6 @@ const config = yaml_config.load(path.join(__dirname, '..', 'config.yml'));
 Object.keys(config.repositories).forEach(repo_id => {
   const repo = config.repositories[repo_id];
 
+  /* eslint no-console: 0 */
   console.log(`${repo_id} ${repo.url}`);
 });

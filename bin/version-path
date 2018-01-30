@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 'use strict';
-/* eslint-env es6 */
 /* eslint no-console: 0 */
 
 const current_version = require('../modules/current_version');

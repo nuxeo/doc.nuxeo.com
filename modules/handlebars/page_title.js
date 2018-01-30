@@ -11,10 +11,7 @@ const page_title = function(url, options) {
   }
   const file = options.data.root;
 
-  const page =
-    file.pages[url] ||
-    file.pages[url.substr(1)] ||
-    file.pages[`${url.substr(1)}/index`];
+  const page = file.pages[url] || file.pages[url.substr(1)] || file.pages[`${url.substr(1)}/index`];
   const title = page && page.title;
 
   if (title) {

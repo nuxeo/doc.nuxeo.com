@@ -1,5 +1,2 @@
 singleQuote: true
-overrides:
-- files: "*.scss"
-  options:
-    printWidth: 120
+printWidth: 120

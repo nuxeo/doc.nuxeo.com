@@ -9,11 +9,7 @@ test('get_placeholder_key is a function', assert => {
   // Get typeof string
   const expected = get_placeholder_key && {}.toString.call(get_placeholder_key);
 
-  assert.isEqual(
-    expected,
-    '[object Function]',
-    'get_placeholder_key is a function'
-  );
+  assert.isEqual(expected, '[object Function]', 'get_placeholder_key is a function');
   assert.end();
 });
 
@@ -143,10 +139,7 @@ test('get_placeholder_key returns values as expected', assert => {
   ];
 
   string_tests.forEach(string_test => {
-    const actual = get_placeholder_key(
-      string_test.test,
-      string_test.fallback || fallback_values
-    );
+    const actual = get_placeholder_key(string_test.test, string_test.fallback || fallback_values);
     assert.isEqual(actual, string_test.expected, string_test.message);
   });
 

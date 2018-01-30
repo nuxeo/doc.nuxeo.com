@@ -14,21 +14,13 @@ test('handlebars_object_key is a function', assert => {
 });
 
 test('handlebars_object_key returns values as expected', assert => {
-  assert.isEqual(
-    object_key({}, ''),
-    void 0,
-    'returns undefined when provided an empty object'
-  );
+  assert.isEqual(object_key({}, ''), void 0, 'returns undefined when provided an empty object');
   assert.isEqual(
     object_key({ hello: 'world' }, 'goodbye'),
     void 0,
     'returns undefined when key is not present in object'
   );
-  assert.isEqual(
-    object_key('hello', 'goodbye'),
-    void 0,
-    'returns undefined when object is a string'
-  );
+  assert.isEqual(object_key('hello', 'goodbye'), void 0, 'returns undefined when object is a string');
   assert.isEqual(
     object_key({ hello: 'world' }, 'hello'),
     'world',

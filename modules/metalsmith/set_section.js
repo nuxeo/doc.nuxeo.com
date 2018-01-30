@@ -32,9 +32,7 @@ const set_section = function(options) {
   return function(files, metalsmith, done) {
     const for_visible_pages = filepath => !files[filepath].hidden;
     const for_space_path = filepath =>
-      files[filepath].url &&
-      files[filepath].url.key &&
-      files[filepath].url.key.space_path;
+      files[filepath].url && files[filepath].url.key && files[filepath].url.key.space_path;
 
     // Check options fits schema
     const validation = schema.validate(options, { allowUnknown: true });
@@ -62,8 +60,7 @@ const set_section = function(options) {
           debug(`section_parent: ${file.section_parent}`);
           file.section = file.section_parent;
         } else {
-          const root = (trees[space_path] =
-            trees[space_path] || tree.parse(metadata.hierarchies[space_path]));
+          const root = (trees[space_path] = trees[space_path] || tree.parse(metadata.hierarchies[space_path]));
           let node = root.first(function(item) {
             return item.model.slug === file.slug;
           });

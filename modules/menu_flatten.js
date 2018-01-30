@@ -83,11 +83,7 @@ const menu_flatten = (pages, toc) => {
     // open children and siblings of active page
     const active_page = all_pages.find(page => page.active);
     if (active_page) {
-      const {
-        id: active_id,
-        level: active_level,
-        parents: active_parents
-      } = active_page;
+      const { id: active_id, level: active_level, parents: active_parents } = active_page;
       const last_parent = [].concat(active_parents).pop();
       if (active_level > 1) {
         active_page.open = true;
@@ -96,24 +92,14 @@ const menu_flatten = (pages, toc) => {
 
       // open children
       all_pages
-        .filter(
-          page =>
-            page.parents &&
-            page.parents.includes(active_id) &&
-            page.level === active_level + 1
-        )
+        .filter(page => page.parents && page.parents.includes(active_id) && page.level === active_level + 1)
         .forEach(page => {
           page.show = true;
         });
 
       // open siblings
       all_pages
-        .filter(
-          page =>
-            page.parents &&
-            page.parents.includes(last_parent) &&
-            page.level === active_level
-        )
+        .filter(page => page.parents && page.parents.includes(last_parent) && page.level === active_level)
         .forEach(page => {
           page.show = true;
         });
@@ -121,11 +107,7 @@ const menu_flatten = (pages, toc) => {
       // set parent open
       if (last_parent) {
         const active_parent = all_pages.find(page => page.id === last_parent);
-        if (
-          active_parent &&
-          active_parent.page_classes &&
-          active_parent.level > 1
-        ) {
+        if (active_parent && active_parent.page_classes && active_parent.level > 1) {
           active_parent.open = true;
           active_parent.page_classes.push('open');
         }

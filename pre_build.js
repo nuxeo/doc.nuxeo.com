@@ -72,10 +72,7 @@ co(function*() {
   });
   debug('metadata keys: %o', Object.keys(metadata));
 
-  writeFile(
-    path.join(__dirname, 'temp/metadata.json'),
-    JSON.stringify(metadata)
-  )
+  writeFile(path.join(__dirname, 'temp/metadata.json'), JSON.stringify(metadata))
     .then(() => info('Created `temp/metadata.json`'))
     .catch(err => {
       error('There was an issue creating `temp/metadata.json`');
@@ -86,9 +83,7 @@ co(function*() {
   var flat_json = Object.keys(metadata.pages)
     .filter(page_path => !metadata.pages[page_path].is_redirect)
     .map(page_path => metadata.pages[page_path]);
-  flat_json = flat_json.concat(
-    Object.keys(metadata.assets).map(asset_path => metadata.assets[asset_path])
-  );
+  flat_json = flat_json.concat(Object.keys(metadata.assets).map(asset_path => metadata.assets[asset_path]));
 
   writeFile(path.join(__dirname, 'editor.json'), JSON.stringify(flat_json))
     .then(() => info('Created `editor.json`'))
