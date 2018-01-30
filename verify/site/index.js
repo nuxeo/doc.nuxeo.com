@@ -6,11 +6,11 @@ const fs = require('fs');
 const path = require('path');
 const cheerio = require('cheerio');
 
-const site_path = path.join(__dirname, '../../site');
+const site_path = path.join(__dirname, '..', '..', 'site');
 const assets_path = path.join(site_path, 'assets');
 const spaces = [
-  '810/nxdoc',
-  '810/userdoc',
+  path.join('810', 'nxdoc'),
+  path.join('810', 'userdoc'),
   'connect',
   'corg',
   'glos',
@@ -22,10 +22,15 @@ const spaces = [
 
 test('site should have key files', assert => {
   const site_paths = [
-    path.join(assets_path, 'fonts/fontawesome-webfont.ttf'),
-    path.join(assets_path, 'fonts/AvenirNextLTPro/AvenirNextLTPro-Regular.ttf'),
-    path.join(assets_path, 'icons/favicon.ico'),
-    path.join(assets_path, 'imgs/logo340x60.png'),
+    path.join(assets_path, 'fonts', 'fontawesome-webfont.ttf'),
+    path.join(
+      assets_path,
+      'fonts',
+      'AvenirNextLTPro',
+      'AvenirNextLTPro-Regular.ttf'
+    ),
+    path.join(assets_path, 'icons', 'favicon.ico'),
+    path.join(assets_path, 'imgs', 'logo340x60.png'),
     path.join(site_path, 'index.html'),
     path.join(site_path, 'index.html.gz'),
     path.join(site_path, 'sitemap.xml')
@@ -34,7 +39,7 @@ test('site should have key files', assert => {
   spaces.forEach(space => {
     site_paths.push(path.join(site_path, `${space}.json`));
     site_paths.push(path.join(site_path, space, 'index.html'));
-    site_paths.push(path.join(site_path, space, '/label/index.html'));
+    site_paths.push(path.join(site_path, space, 'label', 'index.html'));
   });
 
   site_paths.forEach(filepath => {
@@ -50,22 +55,22 @@ test('canonical and robots metadata reference should be correct', assert => {
   const url_prefix = 'http://doc.nuxeo.com';
   const canonical_links = [
     {
-      filepath: '/index.html',
+      filepath: 'index.html',
       expected_url: '/',
       noindex: false
     },
     {
-      filepath: '810/nxdoc/rest-api/index.html',
+      filepath: path.join('810', 'nxdoc', 'rest-api', 'index.html'),
       expected_url: '/nxdoc/rest-api/',
       noindex: true
     },
     {
-      filepath: 'nxdoc/rest-api/index.html',
+      filepath: path.join('nxdoc', 'rest-api', 'index.html'),
       expected_url: '/nxdoc/rest-api/',
       noindex: false
     },
     {
-      filepath: 'corg/index.html',
+      filepath: path.join('corg', 'index.html'),
       expected_url: '/corg/',
       noindex: false
     }

@@ -18,14 +18,14 @@ const noLogging = {
 
 const debugLog = name => {
   if (logToFile) {
-    mkdirp(path.join(__dirname, '../logs'));
+    mkdirp(path.join(__dirname, '..', 'logs'));
   }
   const log = logToFile
     ? bunyan.createLogger({
         name,
         streams: [
           {
-            path: path.join(__dirname, '../logs', `${name}.log`),
+            path: path.join(__dirname, '..', 'logs', `${name}.log`),
             level
           }
         ]

@@ -6,15 +6,17 @@
 const path = require('path');
 const yaml_config = require('node-yaml-config');
 
-const config = yaml_config.load(path.join(__dirname, '../config.yml'));
+const config = yaml_config.load(path.join(__dirname, '..', 'config.yml'));
 
-Object.keys(config.repositories).forEach(function (repo_id) {
-    const repo = config.repositories[repo_id];
-    const target_base = path.join(__dirname, '../temp');
-    Object.keys(repo.branches).forEach(function (branch) {
-        const target_source_path = path.join(target_base, repo_id, branch, 'src');
-        const target_build_path = path.join(target_base, repo_id, branch, 'site');
+Object.keys(config.repositories).forEach(repo_id => {
+  const repo = config.repositories[repo_id];
+  const target_base = path.join(__dirname, '..', 'temp');
+  Object.keys(repo.branches).forEach(branch => {
+    const target_source_path = path.join(target_base, repo_id, branch, 'src');
+    const target_build_path = path.join(target_base, repo_id, branch, 'site');
 
-        console.log(`${repo_id} ${branch} "${target_source_path}" "${target_build_path}"`);
-    });
+    console.log(
+      `${repo_id} ${branch} "${target_source_path}" "${target_build_path}"`
+    );
+  });
 });

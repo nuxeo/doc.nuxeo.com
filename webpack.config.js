@@ -5,12 +5,12 @@ if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = 'production';
 }
 
-var webpack = require('webpack');
-var path = require('path');
+const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
   entry: {
-    docs: './client/js/docs.js',
+    docs: path.join(__dirname, 'client', 'js', 'docs.js'),
     vendor: [
       '!!script-loader!jquery/dist/jquery.js',
       '!!script-loader!what-input/dist/what-input.js',
@@ -21,7 +21,7 @@ module.exports = {
     jquery: 'jQuery'
   },
   output: {
-    path: path.join(__dirname, 'assets/js/', '[hash]'),
+    path: path.join(__dirname, 'assets', 'js', '[hash]'),
     publicPath: 'assets/js/[hash]/',
     filename: '[name].[hash].bundle.js',
     chunkFilename: '[id].[hash].bundle.js'
