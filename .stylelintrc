@@ -2,3 +2,7 @@ plugins:
   - stylelint-scss
 extends:
   - stylelint-config-standard
+  # - stylelint-config-sass-guidelines # Causes 'Could not find "stylelint-order". Do you need a `configBasedir`?'
+rules:
+  at-rule-no-unknown: null
+  scss/at-rule-no-unknown: true
