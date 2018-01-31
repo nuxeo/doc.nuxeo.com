@@ -30,6 +30,12 @@ module.exports = function($) {
       $search_box.addClass('closed');
       $search_button.removeClass('active');
     })
+    .on('keyup', function(e) {
+      // Escape key
+      if (e.which === 27) {
+        $(this).blur();
+      }
+    })
     .on('focus', function() {
       /* eslint no-invalid-this: 0 */
       this.setSelectionRange(0, this.value.length);

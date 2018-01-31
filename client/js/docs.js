@@ -48,12 +48,11 @@ $(document).ready(function() {
   // Add copy icon to codeblocks
   require('./modules/copy_code');
 
-  // Homepage search - focus on click
-  var $search_area = $('#search-area');
-  var $search_input_full = $('#search-input-full');
-  $search_area.on('click', function() {
-    $search_input_full.focus();
-  });
+  // Add copy shortlink functionality
+  require('./modules/copy_shortlink');
+
+  // Add Keyboard shortcuts
+  require('./modules/keyboard_shortcuts');
 
   // satellite_header
   satellite_header($);
