@@ -21,17 +21,11 @@ var clipboardSnippets = new Clipboard(permalink_selector, {
   }
 });
 clipboardSnippets.on('success', function(e) {
-  console.log('success', e);
-  console.info('Action:', e.action);
-  console.info('Text:', e.text);
-  console.info('Trigger:', e.trigger);
   showTooltip(e.trigger, 'Copied');
 });
 clipboardSnippets.on('error', function(e) {
   showTooltip(e.trigger, fallbackMessage(e.action));
 });
-
-console.log('clib', clipboardSnippets);
 
 $permalink
   .on('click', function(e) {
