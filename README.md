@@ -146,13 +146,29 @@ Build processes are defined here. Should be relatively self explanatory but anyt
 - Crawling configuration: https://github.com/algolia/docsearch-configs (specifically: https://github.com/algolia/docsearch-configs/blob/master/configs/nuxeo.json)
 - Implementation Documentation: https://community.algolia.com/docsearch/documentation/
 
-# Adding/removing versions
+# Creating a new _content_ branch.
+In the _Content_ repository (doc.nuxeo.com-content):
+
+```
+# on doc.nuxeo.com-content
+git checkout master
+git pull
+git checkout -b 910
+```
+- Open [config.yml](./config.yml).
+- Add/Update entry in `default > site > repositories > platform > branches`.
+```
+git push --set-upstream origin 910
+```
+
+# Adding/removing content versions to be published
 In the _Builder_ repository (doc.nuxeo.com):
 
 1. Create a new branch from **master**: `git checkout -b add/remove-version-xx` e.g. adding **9.10** would be `git checkout -b add-version-910`
 2. Open [config.yml](./config.yml).
 3. Add/Remove entry in `default > site > repositories > platform > branches`.
-4. Rebuild.
+4. Rebuild to preview site.
+5. Merge into `master` to _Go Live_.
 
 # Licenses
 
