@@ -54,7 +54,7 @@ const nuxeo_redirects = () => (files, metalsmith, done) => {
   let redirects;
 
   const finished = err => {
-    const shortlinks_json = JSON.stringify(shortlinks);
+    const shortlinks_json = JSON.stringify(shortlinks, null, 2);
     let yaml_string = '';
     if (err) {
       return done(err);

@@ -6,11 +6,13 @@ const fs = require('fs');
 const path = require('path');
 const cheerio = require('cheerio');
 
+const latest_space_version = '910';
+
 const site_path = path.join(__dirname, '..', '..', 'site');
 const assets_path = path.join(site_path, 'assets');
 const spaces = [
-  path.join('810', 'nxdoc'),
-  path.join('810', 'userdoc'),
+  path.join(latest_space_version, 'nxdoc'),
+  path.join(latest_space_version, 'userdoc'),
   'connect',
   'corg',
   'glos',
@@ -55,7 +57,7 @@ test('canonical and robots metadata reference should be correct', assert => {
       noindex: false
     },
     {
-      filepath: path.join('810', 'nxdoc', 'rest-api', 'index.html'),
+      filepath: path.join(latest_space_version, 'nxdoc', 'rest-api', 'index.html'),
       expected_url: '/nxdoc/rest-api/',
       noindex: true
     },
