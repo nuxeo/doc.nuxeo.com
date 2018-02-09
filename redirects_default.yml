@@ -135,7 +135,7 @@
 ^/userdoc/nuxeo-drive-faq/?$: /nxdoc/nuxeo-drive-faq
 ^/studio/configuration-management/?$: /studio/templates-reference
 ^/studio/availability-tab/?$: /studio/activation-tab
-^/nxdoc/getting-started-with-nuxeo-generator/?$: /nxdoc/getting-started-with-nuxeo-cli/
+^/nxdoc/getting-started-with-nuxeo-generator/?$: /nxdoc/develop-with-nuxeo-platform/
 ^/nxdoc/web-ui-customization/?$: /nxdoc/web-ui-tutorials
 ^/corg/docker-usages/?$: /corg/docker-usage
 ^/nxdoc/deployment-options/?$: /nxdoc/standard-high-availability-nuxeo-cluster-architecture/
@@ -174,7 +174,8 @@
 ^/810/nxdoc/soap-bridge/?$: /810/nxdoc/rest-api
 
 # IDE redirects
-^/idedoc/getting-started-with-nuxeo-ide/?$: /nxdoc/getting-started-with-nuxeo-cli/
+^/idedoc/getting-started-with-nuxeo-ide/?$: /nxdoc/develop-with-nuxeo-platform/
+^/idedoc/installing-nuxeo-ide/?$: /idedoc/nuxeo-ide
 
 # NXDOC-900: Studio doc cleanup
 ^/studio/contract-management/?$: /studio/external-templates/
