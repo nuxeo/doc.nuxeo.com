@@ -131,6 +131,10 @@ $second-level-fg: rgba($nuxeo-color-dark, 0.8);
         @include section-colours($nuxeo-web-ui-color);
       }
 
+      &.section-dam {
+        @include section-colours($nuxeo-dam-color);
+      }
+
       &.section-desktop-mob {
         @include section-colours($nuxeo-desktop-mob-color);
       }

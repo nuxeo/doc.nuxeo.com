@@ -49,6 +49,10 @@ $menu-fg-active: $nuxeo-color-dark;
     @include menu-section-colours($nuxeo-web-ui-color);
   }
 
+  &.doc-section-dam {
+    @include menu-section-colours($nuxeo-dam-color);
+  }
+
   &.doc-section-desktop-mob {
     @include menu-section-colours($nuxeo-desktop-mob-color);
   }
@@ -75,10 +79,7 @@ $menu-fg-active: $nuxeo-color-dark;
 }
 
 #side_menu_container {
-  background: scale-color(
-    $secondary-color,
-    $lightness: $callout-background-fade
-  );
+  background: scale-color($secondary-color, $lightness: $callout-background-fade);
   height: calc(100vh - 50px);
   left: 0;
   margin-top: 50px;

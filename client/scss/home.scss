@@ -90,6 +90,7 @@ h6 {
   @include section-color('tutorials', $nuxeo-tutorials-color);
   @include section-color('server', $nuxeo-server-color);
   @include section-color('web-ui', $nuxeo-web-ui-color);
+  @include section-color('dam', $nuxeo-dam-color);
   @include section-color('desktop-mob', $nuxeo-desktop-mob-color);
   @include section-color('addons', $nuxeo-addons-color);
   @include section-color('user-documentation', $nuxeo-user-documentation-color);
@@ -112,6 +113,10 @@ h6 {
 
     .hover-web-ui:hover {
       color: $nuxeo-web-ui-color;
+    }
+
+    .hover-dam:hover {
+      color: $nuxeo-dam-color;
     }
 
     .hover-desktop-mob:hover {
