@@ -10,14 +10,41 @@
 </div>
 
 <div id="docs_footer" class="row expanded">
-    <button id="goto_top" type="button">
-        <img src="/assets/imgs/icons/goto-top-icon.svg">
-        <span>To Top</span>
-    </button>
-    {{> versions_inline}}
+  <button id="prodpad_open_feedback" type="button" class="button success rounded" data-open="prodpad_feedback" title="Documentation Feedback" aria-controls="prodpad_feedback" aria-haspopup="true" tabindex="0">
+      <i class="fa fa-comment fa-fw fa-lg"></i> Not Helpful - Tell Us Why
+  </button>
+  <button id="goto_top" type="button">
+    <img src="/assets/imgs/icons/goto-top-icon.svg">
+    <span>To Top</span>
+  </button>
+  {{> versions_inline}}
 
-    <nuxeo-footer year="{{moment format='YYYY'}}" show-license></nuxeo-footer>
+  <nuxeo-footer year="{{moment format='YYYY'}}" show-license></nuxeo-footer>
 </div>
+
+<div class="tiny reveal" id="prodpad_feedback" data-reveal data-animation-in="slide-in-right" data-animation-out="slide-out-right">
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <div class="content">
+    <h3>We'd love to hear your thoughts!</h3>
+    <form>
+      <label>
+        What would make this page better?
+        <textarea name="feedback" placeholder="It would be awesome if..." rows="5"  required></textarea>
+      </label>
+      <label>
+        <input type="text" name="name" placeholder="Name" value="" required>
+      </label>
+      <label>
+        <input type="email" name="email" placeholder="Email" value="" required>
+      </label>
+      All fields required
+      <button id="prodpad_feedback_submit" type="button" disabled="disabled" class="disabled success button float-right">Submit Feedback</button>
+    </form>
+  </div>
+</div>
+
 <script type="text/javascript" src="/{{js.vendor}}"></script>
 <script type="text/javascript" src="/{{js.docs}}"></script>
 

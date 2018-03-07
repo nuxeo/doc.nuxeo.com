@@ -6,9 +6,7 @@ var initialise_toc = function() {
   var $content = $('#content');
   var no_h4 = $content.hasClass('toc-no-h4');
 
-  var $h_tags = no_h4
-    ? $content.filter('.toc').find('h2, h3')
-    : $content.filter('.toc').find('h2, h3, h4');
+  var $h_tags = no_h4 ? $content.filter('.toc').find('h2, h3') : $content.filter('.toc').find('h2, h3, h4');
 
   $h_tags.each(function() {
     /* eslint no-invalid-this: 0 */
