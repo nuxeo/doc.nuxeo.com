@@ -87,8 +87,7 @@ if ($toc.length) {
               // console.log('scroll_position:', $toc_list.scrollTop());
 
               // Scroll to display the current item (20% from top if possible)
-              var position =
-                scroll_position + toc_active_position - buffer_height;
+              var position = scroll_position + toc_active_position - buffer_height;
               position = position < 0 ? 0 : position;
               // console.log('list_position:', position);
               $side_menu_container.animate(

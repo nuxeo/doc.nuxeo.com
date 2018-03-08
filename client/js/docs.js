@@ -56,6 +56,9 @@ $(document).ready(function() {
 
   // satellite_header
   satellite_header($);
+
+  // Prodpad Feedback
+  require('./modules/prodpad');
 });
 
 $(window).load(function() {

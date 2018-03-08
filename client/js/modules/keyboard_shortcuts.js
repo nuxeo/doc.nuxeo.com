@@ -2,7 +2,7 @@
 /* eslint-env browser, jquery */
 
 $(document).on('keyup', function(e) {
-  if (e.target.tagName !== 'INPUT') {
+  if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
     if (e.which === 75) {
       // k shortcut
       e.preventDefault();

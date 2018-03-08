@@ -1,0 +1,33 @@
+.button.rounded {
+  border-radius: 999px;
+}
+
+#prodpad_open_feedback {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  z-index: 5;
+  color: $white;
+
+  .fa {
+    text-align: left;
+    vertical-align: 0;
+  }
+}
+
+#prodpad_feedback {
+  textarea,
+  input {
+    border: 1px solid $nuxeo-color-light-gray;
+    border-radius: $code-border-radius;
+
+    &:hover,
+    &:focus {
+      border-color: #333;
+    }
+  }
+}
+
+#prodpad_feedback_submit {
+  color: $white;
+}
