@@ -37,6 +37,7 @@ $submit.on('click', function() {
     email: $prodpad_feedback.find('[name="email"]').val(),
     feedback: $prodpad_feedback.find('[name="feedback"]').val(),
     products: [{ name: 'Documentation' }],
+    tags: [{ name: 'Documentation' }],
     source: 'customer_feedback_widget',
     external_links: [
       {
