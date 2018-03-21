@@ -22,6 +22,8 @@
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "bluebird": "^3.5.0",
+    "browser-sync": "^2.23.1",
+    "bs-fullscreen-message": "^1.1.0",
     "bunyan": "^1.8.10",
     "cheerio": "^0.22.0",
     "clipboard": "^1.6.1",
@@ -90,8 +92,6 @@
     "what-input": "^5.0.4"
   },
   "devDependencies": {
-    "browser-sync": "^2.23.1",
-    "bs-fullscreen-message": "^1.1.0",
     "nodemon": "^1.14.5"
   },
   "bin": {
