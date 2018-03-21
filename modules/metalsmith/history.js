@@ -91,7 +91,8 @@ const list_from_field = function(options) {
     // Convert to array if it's a string
     options.pattern = typeof options.pattern === 'string' ? [options.pattern] : options.pattern;
 
-    const checkout_command = options.repo_id ? `git checkout -f origin/${options.branch}` : 'echo ""';
+    const checkout_command =
+      options.repo_id && process.env.NODE_ENV === 'production' ? `git checkout -f origin/${options.branch}` : 'echo ""';
 
     debug('Repository: %s, Branch: %s', options.repo_path, options.branch);
 
