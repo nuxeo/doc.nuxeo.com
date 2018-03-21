@@ -12,8 +12,9 @@ Object.keys(config.repositories).forEach(repo_id => {
   Object.keys(repo.branches).forEach(branch => {
     const target_source_path = path.join(target_base, repo_id, branch, 'src');
     const target_build_path = path.join(target_base, repo_id, branch, 'site');
+    const branch_alias = repo.branches[branch].branch_alias || branch;
 
     /* eslint no-console: 0 */
-    console.log(`${repo_id} ${branch} "${target_source_path}" "${target_build_path}"`);
+    console.log(`${repo_id} ${branch} "${target_source_path}" "${target_build_path}" ${branch_alias}`);
   });
 });
