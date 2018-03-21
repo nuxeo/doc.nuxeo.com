@@ -95,8 +95,8 @@
     "nodemon": "^1.14.5"
   },
   "bin": {
-    "dev-server": "./bin/content_dev_server.js",
-    "verify": "./bin/content_verify.js"
+    "docs-dev-server": "./bin/content-dev-server",
+    "docs-verify": "./bin/content-verify"
   },
   "main": "lib/builder_module.js",
   "config": {
