@@ -1,6 +1,6 @@
 'use strict';
 
-const test = require('tap').test;
+const { test } = require('tap');
 const get_unique_hash = require('../modules/get_unique_hash');
 
 test('get_unique_hash returns a function', assert => {

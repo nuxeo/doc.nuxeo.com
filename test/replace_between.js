@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-env es6 */
 
-const test = require('tap').test;
+const { test } = require('tap');
 
 const replace_between = require('../modules/replace_between');
 

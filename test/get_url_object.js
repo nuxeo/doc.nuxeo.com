@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-env es6 */
 
-const test = require('tap').test;
+const { test } = require('tap');
 const extend = require('lodash.assign');
 
 const get_url_object = require('../modules/get_url_object');

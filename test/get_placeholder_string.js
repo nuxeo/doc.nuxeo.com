@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-env es6 */
 
-const test = require('tap').test;
+const { test } = require('tap');
 
 const get_placeholder_string = require('../modules/get_placeholder_string');
 

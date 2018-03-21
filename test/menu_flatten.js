@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-env es6 */
 
-const test = require('tap').test;
+const { test } = require('tap');
 
 const menu_flatten = require('../modules/menu_flatten');
 
