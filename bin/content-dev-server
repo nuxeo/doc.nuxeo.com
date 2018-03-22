@@ -38,9 +38,6 @@ const extend = require('lodash.defaultsdeep');
 const normalise_git_url = require('../modules/normalise_git_url');
 const { pre_builder, builder } = require('../lib/builder_module');
 
-// Core config
-const core_config = yaml_config.load(path.join(__dirname, '..', 'config.yml'));
-
 // Working copy
 const source_repo_path = process.cwd();
 const target_repo_path = path.join(source_repo_path, 'src');
@@ -49,25 +46,24 @@ const instance_config_path = path.join(source_repo_path, 'config.yml');
 
 info('target_repo_path', target_repo_path);
 
+// Config
+const core_config = yaml_config.load(path.join(__dirname, '..', 'config.yml'));
+const instance_config = yaml_config.load(instance_config_path);
+
 const exec_options = { cwd: source_repo_path, encoding: 'utf8' };
 const instance_repo_url = normalise_git_url(execSync('git config --get remote.origin.url', exec_options).trim());
 
 // Find repo_id for this repository
-const repo_id = (Object.keys(core_config.repositories).filter(repo_id => {
-  const repo = core_config.repositories[repo_id];
-  const repo_url = normalise_git_url(repo.url);
-  return instance_repo_url === repo_url;
-}) || [''])[0];
-
-if (!repo_id) {
-  error('instance_repo_url', instance_repo_url);
-  error('core_config.repositories', core_config.repositories);
-  throw new Error('Could not match repository to config');
-}
+const repo_id = (
+  Object.keys(core_config.repositories).filter(repo_id => {
+    const repo = core_config.repositories[repo_id];
+    const repo_url = normalise_git_url(repo.url);
+    return instance_repo_url === repo_url;
+  }) || ['']
+).pop();
 
 info(`repo_id: ${repo_id}`);
 
-const instance_config = yaml_config.load(instance_config_path);
 const dev_browser_path = (instance_config && instance_config.site && instance_config.site.dev_browser_path) || '';
 info(`dev_browser_path: ${dev_browser_path}`);
 

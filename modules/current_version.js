@@ -3,9 +3,9 @@
 
 const path = require('path');
 const yaml_config = require('node-yaml-config');
-const exec = require('child_process').execSync;
+const { execSync } = require('child_process');
 
-module.exports = function(config, path_only = true) {
+module.exports = (config, path_only = true) => {
   let cwd = __dirname;
   if (typeof config === 'string') {
     // Set the cwd to get the correct repo and branch
@@ -19,7 +19,7 @@ module.exports = function(config, path_only = true) {
 
   if (config.repositories) {
     // Get the repo_url
-    const repo_url = exec('git config --get remote.origin.url', {
+    const repo_url = execSync('git config --get remote.origin.url', {
       encoding: 'utf8',
       cwd: cwd
     });
@@ -34,7 +34,7 @@ module.exports = function(config, path_only = true) {
     // console.log('repo_url_part', repo_url_part);
 
     // Get the branch name
-    const branch_name = exec("git branch | grep ^\\* | grep -oE '[a-zA-Z0-9_-]+$'", {
+    const branch_name = execSync("git branch | grep ^\\* | grep -oE '[a-zA-Z0-9_-]+$'", {
       encoding: 'utf8',
       cwd: cwd
     }).trim();

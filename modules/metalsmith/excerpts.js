@@ -60,59 +60,57 @@ const special_methods = {
  * @param {Object} options
  * @return {Function}
  **/
-const excerpts = function(options) {
+const excerpts = options => (files, metalsmith, done) => {
   debug('Options: %o', options);
-  return function(files, metalsmith, done) {
-    // Check options fits schema
-    schema.validate(options, function(err, value) {
-      /* eslint consistent-return: 0 */
-      if (err) {
-        error('Validation failed, %o', err.details[0].message);
-        return done(err);
-      }
-      // Convert to array if it's a string
-      value.forEach(function(option, option_index) {
-        const value_option = value[option_index];
-        value_option.pattern = typeof value_option.pattern === 'string' ? [value_option.pattern] : value_option.pattern;
-      });
-      options = value;
+  // Check options fits schema
+  schema.validate(options, (err, value) => {
+    /* eslint consistent-return: 0 */
+    if (err) {
+      error('Validation failed, %o', err.details[0].message);
+      return done(err);
+    }
+    // Convert to array if it's a string
+    value.forEach((option, option_index) => {
+      const value_option = value[option_index];
+      value_option.pattern = typeof value_option.pattern === 'string' ? [value_option.pattern] : value_option.pattern;
     });
+    options = value;
+  });
 
-    const metadata = metalsmith.metadata();
+  const metadata = metalsmith.metadata();
+  metadata.excerpts = metadata.excerpts || {};
 
-    Object.keys(files).forEach(function(filepath) {
-      const file = files[filepath];
-      options.forEach(function(option) {
-        const key = get(file, option.metadata_key);
-        if (multimatch(filepath, option.pattern).length) {
-          let excerpt;
-          option.fields.forEach(function(field) {
-            if (!excerpt) {
-              if (typeof field === 'function') {
-                excerpt = field(file, metadata, key);
-              } else if (special_methods[field]) {
-                excerpt = special_methods[field](file, metadata, key);
-              } else {
-                excerpt = get(file, field);
-              }
+  Object.keys(files).forEach(filepath => {
+    const file = files[filepath];
+    options.forEach(option => {
+      const key = get(file, option.metadata_key);
+      if (multimatch(filepath, option.pattern).length) {
+        let excerpt;
+        option.fields.forEach(field => {
+          if (!excerpt) {
+            if (typeof field === 'function') {
+              excerpt = field(file, metadata, key);
+            } else if (special_methods[field]) {
+              excerpt = special_methods[field](file, metadata, key);
+            } else {
+              excerpt = get(file, field);
             }
-          });
-          excerpt = excerpt || option.default;
-
-          debug('Setting %s to %s', option.fields[0], excerpt);
-          set(file, option.fields[0], excerpt);
-
-          if (excerpt && key) {
-            excerpt = add_link_context(excerpt, file.url.key);
-            debug('Setting metadata %s to %s', key, excerpt);
-            metadata.excerpts = metadata.excerpts || {};
-            metadata.excerpts[key] = excerpt;
           }
+        });
+        excerpt = excerpt || option.default;
+
+        debug('Setting %s to %s', option.fields[0], excerpt);
+        set(file, option.fields[0], excerpt);
+
+        if (excerpt && key) {
+          excerpt = add_link_context(excerpt, file.url.key);
+          debug('Setting metadata %s to %s', key, excerpt);
+          metadata.excerpts[key] = excerpt;
         }
-      });
+      }
     });
-    done();
-  };
+  });
+  done();
 };
 
 module.exports = excerpts;
