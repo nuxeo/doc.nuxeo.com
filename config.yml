@@ -138,22 +138,36 @@ default:
           url_path: '910'
           noindex: true
           order: 10
-        # '810':
-        #   label: 'LTS 2016'
-        #   url_path: '810'
-        #   noindex: true
-        #   order: 20
-        # '710':
-        #   label: 'LTS 2015'
-        #   url_path: '710'
-        #   noindex: true
-        #   order: 30
-        # '60':
-        #   label: '6.0'
-        #   url_path: '60'
-        #   noindex: true
-        #   order: 40
-
+        '810':
+          label: 'LTS 2016'
+          url_path: '810'
+          noindex: true
+          order: 20
+        '710':
+          label: 'LTS 2015'
+          url_path: '710'
+          noindex: true
+          order: 30
+        '60':
+          label: '6.0'
+          url_path: '60'
+          noindex: true
+          order: 40
+    dotnet:
+      url: git@github.com:nuxeo/doc.nuxeo.com-client-dotnet.git
+      branches: {}
+    java:
+      url: git@github.com:nuxeo/doc.nuxeo.com-client-java.git
+      branches: {}
+    javascript:
+      url: git@github.com:nuxeo/doc.nuxeo.com-client-javascript.git
+      branches: {}
+    php:
+      url: git@github.com:nuxeo/doc.nuxeo.com-client-php.git
+      branches: {}
+    python:
+      url: git@github.com:nuxeo/doc.nuxeo.com-client-python.git
+      branches: {}
 development:
   isDev: true
   site:
