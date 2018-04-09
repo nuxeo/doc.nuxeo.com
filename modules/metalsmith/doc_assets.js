@@ -18,6 +18,7 @@ const element_mapping = {
   audio: 'src'
   // 'source': 'src'
 };
+const nx_assets_url_prefix = 'nx_asset://';
 const nx_assets_base = 'nx_assets';
 
 // options schema
@@ -60,6 +61,7 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
 
   const check_file = (filename, selector) =>
     new Promise((resolve, reject) => {
+      debug(`Processing: ${filename}`);
       const file = files[filename];
 
       const contents = file.contents.toString();
@@ -71,8 +73,8 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
         const $el = $(el);
         const attr = get_attribute(el);
         const url = $el.attr(attr);
-        if (url && url.search(/^nx_asset?:\/\//i) !== -1) {
-          const uid = url.replace(/(^\w+:|^)\/\//, '');
+        if (url && url.startsWith(nx_assets_url_prefix)) {
+          const uid = url.slice(nx_assets_url_prefix.length);
           debug(`uid: ${uid}`);
 
           const p = nuxeo
