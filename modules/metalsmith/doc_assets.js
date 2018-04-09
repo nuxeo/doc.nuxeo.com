@@ -47,8 +47,10 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
   const pattern = [].concat(validation.value.pattern);
   debug('pattern:', pattern);
 
+  const metadata = metalsmith.metadata();
+
   const nuxeo_config = {
-    baseURL: process.env.NX_ASSETS_URL || 'http://localhost:8080/nuxeo',
+    baseURL: process.env.NX_ASSETS_URL || metadata.site.nx_assets_url || 'http://localhost:8080/nuxeo',
     auth: {
       method: 'basic',
       username: process.env.NX_ASSETS_USER || 'Administrator',
