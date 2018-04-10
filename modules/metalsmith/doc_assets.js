@@ -1,8 +1,13 @@
 'use strict';
 /* eslint-env es6 */
 
-const { debug, info, error } = require('./../debugger')('metalsmith-nuxeo-assets');
-const fs = require('fs');
+// Debugging
+const { debug, error } = require('./../debugger')('metalsmith-nuxeo-assets');
+
+// npm packages
+const Promise = require('bluebird');
+const fs = Promise.promisifyAll(require('fs'));
+// const request = require('request');
 const crypto = require('crypto');
 const Joi = require('joi');
 const multimatch = require('multimatch');
@@ -19,7 +24,7 @@ const element_mapping = {
   // 'source': 'src'
 };
 const nx_assets_url_prefix = 'nx_asset://';
-const nx_assets_base = 'nx_assets';
+const nx_assets_base = 'assets/nx_assets';
 
 // options schema
 const schema = Joi.object().keys({
@@ -36,6 +41,33 @@ const checksum = (str, algorithm, encoding) => {
 };
 
 const get_attribute = el => (typeof element_mapping[el.name] !== 'undefined' ? element_mapping[el.name] : false);
+
+const get_file = (doc, local_path) => {
+  const file_content = doc.properties['file:content'];
+
+  return fs
+    .statAsync(local_path)
+    .then(() => fs.readFileAsync(local_path, 'utf8'), () => '')
+    .then(content => {
+      // Check file digest match otherwise get file
+      const file_digest = checksum(content, file_content.digestAlgorithm);
+
+      if (file_digest !== file_content.digest) {
+        // File doesn't match, go get it.
+        debug(`Getting file: ${local_path}`);
+        return doc
+          .fetchBlob()
+          .then(res => {
+            debug('Downloaded asset', res);
+            res.body.pipe(fs.createWriteStream(local_path));
+          })
+          .catch(err => {
+            error('File save err: ', err);
+          });
+      }
+      return void 0;
+    });
+};
 
 const doc_assets = (options = {}) => (files, metalsmith, done) => {
   // Check options fits schema
@@ -63,7 +95,6 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
 
   const check_file = (filename, selector) =>
     new Promise((resolve, reject) => {
-      debug(`Processing: ${filename}`);
       const file = files[filename];
 
       const contents = file.contents.toString();
@@ -93,43 +124,19 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
               // build the right url
               const ext = /(?:\.([^.]+))?$/.exec(doc.properties['file:content'].name)[1];
               const asset_type = doc.properties['doc_asset:nature'];
-              const asset_file = `${nx_assets_base}/${uid}+${asset_type}.${ext}`;
+              const asset_file = `${nx_assets_base}/${uid}-${asset_type}.${ext}`;
               const href = `/${asset_file}`;
               debug('ext:', ext);
               debug('asset_type:', asset_type);
               debug('asset_file:', asset_file);
               debug('href:', href);
 
+              // Update the href in the DOM
               $el.attr(attr, href);
               const html = $.html();
               file.contents = Buffer.from(html, 'utf8');
 
-              return new Promise(res => {
-                fs.stat(asset_file, err => {
-                  // file already exist in fs
-                  if (!err) {
-                    fs.readFile(asset_file, 'utf8', content => {
-                      const file_digest = checksum(content, doc.properties['file:content'].digestAlgorithm);
-
-                      // if digest matches ignore
-                      if (file_digest === doc.properties['file:content'].digest) {
-                        info('asset: %s already exists, ignoring', uid);
-                        return res();
-                      }
-                    });
-                  }
-
-                  return doc.fetchRendition('docAsset').then(res => {
-                    const writable = fs.createWriteStream(asset_file);
-                    res.body.pipe(writable);
-                    writable.on('finish', () => {
-                      info('Downloaded asset: %s', uid);
-                      writable.close();
-                      res();
-                    });
-                  });
-                });
-              });
+              return get_file(doc, asset_file);
             })
             .catch(err => {
               error('fetch err:', err);
@@ -137,11 +144,11 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
 
           url_promises.push(p);
         }
-
-        Promise.all(url_promises)
-          .then(() => resolve())
-          .catch(reject);
       });
+
+      Promise.all(url_promises)
+        .then(() => resolve())
+        .catch(reject);
     });
 
   const selector = Object.keys(element_mapping).join();
