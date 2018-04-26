@@ -40,6 +40,7 @@ const checksum = (str, algorithm, encoding) => {
     .digest(encoding || 'hex');
 };
 
+const fetch = require('node-fetch');
 const get_attribute = el => (typeof element_mapping[el.name] !== 'undefined' ? element_mapping[el.name] : false);
 
 const get_file = (doc, local_path) => {
@@ -55,12 +56,20 @@ const get_file = (doc, local_path) => {
       if (file_digest !== file_content.digest) {
         // File doesn't match, go get it.
         debug(`Getting file: ${local_path}`);
+
         return doc
           .fetchBlob()
-          .then(res => {
-            debug('Downloaded asset', res);
-            res.body.pipe(fs.createWriteStream(local_path));
-          })
+          .then(
+            res => {
+              debug('Downloaded asset via Nuxeo', res);
+              res.body.pipe(fs.createWriteStream(local_path));
+            },
+            err =>
+              fetch(err.response.url).then(res => {
+                debug('Downloaded asset via fetch', res);
+                res.body.pipe(fs.createWriteStream(local_path));
+              })
+          )
           .catch(err => {
             error('File save err: ', err);
           });
