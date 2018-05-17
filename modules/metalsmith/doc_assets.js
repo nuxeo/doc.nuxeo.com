@@ -6,6 +6,8 @@ const { debug, error } = require('./../debugger')('metalsmith-nuxeo-assets');
 
 // npm packages
 const Promise = require('bluebird');
+const retry = require('bluebird-retry');
+
 const fs = Promise.promisifyAll(require('fs'));
 // const request = require('request');
 const crypto = require('crypto');
@@ -101,6 +103,7 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
   debug('Nuxeo Config:', nuxeo_config);
 
   const nuxeo = new Nuxeo(nuxeo_config);
+  const repo = nuxeo.repository();
 
   const check_file = (filename, selector) =>
     new Promise((resolve, reject) => {
@@ -119,9 +122,12 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
           const uid = url.slice(nx_assets_url_prefix.length);
           debug(`uid: ${uid}`);
 
-          const p = nuxeo
-            .repository()
-            .fetch(uid, { schemas: ['dublincore', 'file', 'document_asset'] })
+          const p = retry(repo.fetch.bind(repo), {
+            max_tries: 5,
+            interval: 500,
+            throw_original: true,
+            args: [uid, { schemas: ['dublincore', 'file', 'document_asset'] }]
+          })
             .then(doc => {
               debug('doc:', doc);
               // if there is no file return
@@ -149,6 +155,7 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
             })
             .catch(err => {
               error('fetch err:', err);
+              return new Error('fetch err:', err);
             });
 
           url_promises.push(p);
