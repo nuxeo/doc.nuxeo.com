@@ -68,7 +68,7 @@
     "node-fetch": "^2.1.2",
     "node-sass": "^4.7.2",
     "node-yaml-config": "0.0.4",
-    "nuxeo": "^3.6.0",
+    "nuxeo": "github:nuxeo/nuxeo-js-client#master",
     "nuxeo-website-styles": "github:nuxeo/website-styles#v7.0.2",
     "open-sans-fontface": "^1.4.0",
     "postcss-cli": "^5.0.0",

@@ -17,8 +17,8 @@ default:
       - '**.DS_Store'
       - '*~'
       - '*.swp'
-    # nx_assets_url: https://intranet.nuxeo.com/nuxeo
-    nx_assets_url: http://intranet-preprod.nuxeocloud.com/nuxeo
+    nx_assets_url: https://intranet.nuxeo.com/nuxeo
+    # nx_assets_url: http://intranet-preprod.nuxeocloud.com/nuxeo
     canonical_version_preference: 'ft'
     new_version: '9.10'
 
