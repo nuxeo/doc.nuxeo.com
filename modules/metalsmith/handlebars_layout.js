@@ -1,10 +1,10 @@
 // Dependencies
 const debug_lib = require('debug');
 const debug = debug_lib('metalsmith-layouts');
-const Promise = require('bluebird');
+const Bluebird = require('bluebird');
 const extend = require('extend');
 const omit = require('lodash.omit');
-const fs = Promise.promisifyAll(require('fs'));
+const fs = Bluebird.promisifyAll(require('fs'));
 const path = require('path');
 const multimatch = require('multimatch');
 const is_utf8 = require('is-utf8');
@@ -14,20 +14,16 @@ const handlebars = require('handlebars');
 const readPartials = require('../read_partials');
 const templates = {};
 
-const get_template = template_name =>
-  new Promise((resolve, reject) => {
-    if (!templates[template_name]) {
-      fs
-        .readFileAsync(template_name, 'utf8')
-        .then(template => {
-          templates[template_name] = handlebars.compile(template);
-          resolve(templates[template_name]);
-        })
-        .catch(err => reject(err));
-    } else {
-      resolve(templates[template_name]);
-    }
-  });
+const get_template = template_name => {
+  if (!templates[template_name]) {
+    return fs.readFileAsync(template_name, 'utf8').then(template => {
+      templates[template_name] = handlebars.compile(template);
+      return templates[template_name];
+    });
+  } else {
+    return Promise.resolve(templates[template_name]);
+  }
+};
 
 /**
  * Settings
@@ -109,44 +105,41 @@ const handlebars_layouts = options => {
      *
      * @return {void}
      */
-    const convert = file =>
-      new Promise((resolve, reject) => {
-        debug('converting file: %s', file);
+    const convert = file => {
+      debug('converting file: %s', file);
 
-        // Rename file if necessary
-        if (rename) {
-          delete files[file];
-          const fileInfo = path.parse(file);
-          file = path.join(fileInfo.dir, fileInfo.name + '.html');
-          debug('renamed file to: %s', file);
-        }
+      // Rename file if necessary
+      if (rename) {
+        delete files[file];
+        const fileInfo = path.parse(file);
+        file = path.join(fileInfo.dir, fileInfo.name + '.html');
+        debug('renamed file to: %s', file);
+      }
 
-        const data = files[file];
+      const data = files[file];
 
-        const clone = extend({}, meta, data);
-        // Convert contents to "real" string from buffer
-        clone.contents = data.contents.toString();
+      const clone = extend({}, meta, data);
+      // Convert contents to "real" string from buffer
+      clone.contents = data.contents.toString();
 
-        const template_name = metalsmith.path(dir, data.layout || def);
-        debug(`template_name: ${template_name}`);
+      const template_name = metalsmith.path(dir, data.layout || def);
+      debug(`template_name: ${template_name}`);
 
-        get_template(template_name)
-          .then(template => {
-            debug(`handlebars compile - Start:  ${file}`);
-            data.contents = Buffer.from(template(clone), 'utf8');
-            debug(`handlebars compile - Finish: ${file}`);
+      return get_template(template_name).then(template => {
+        debug(`handlebars compile - Start:  ${file}`);
+        data.contents = Buffer.from(template(clone), 'utf8');
+        debug(`handlebars compile - Finish: ${file}`);
 
-            files[file] = data;
+        files[file] = data;
 
-            resolve();
-          })
-          .catch(err => reject(err));
+        return null;
       });
+    };
 
     // Render all matched files.
-    Promise.map(matched_files, convert, { concurrency: 100 })
+    return Promise.all(matched_files.map(convert))
       .then(() => done())
-      .catch(err => done(err));
+      .catch(done);
   };
 };
 

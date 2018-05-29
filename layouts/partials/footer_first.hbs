@@ -19,6 +19,11 @@
   </button>
   {{> versions_inline}}
 
+  {{! Standard Nuxeo footer }}
+  <script type="text/javascript" src="//static.nuxeo.com/satellite/latest/bower_components/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+  <script type="text/javascript" src="//static.nuxeo.com/satellite/latest/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="//static.nuxeo.com/satellite/latest/elements/elements.html">
+
   <nuxeo-footer year="{{moment format='YYYY'}}" show-license></nuxeo-footer>
 </div>
 
