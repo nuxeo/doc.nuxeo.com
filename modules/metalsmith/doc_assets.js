@@ -26,7 +26,7 @@ const element_mapping = {
   // 'source': 'src'
 };
 const nx_assets_url_prefix = 'nx_asset://';
-const nx_assets_base = 'assets/nx_assets';
+const nx_assets_base = 'nx_assets';
 
 // options schema
 const schema = Joi.object().keys({
