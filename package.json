@@ -140,7 +140,7 @@
     "dev": "NODE_ENV=development nodemon --exec 'npm run compile && npm run copy_assets'",
     "dev_server": "npm run server & NODE_ENV=development nodemon --exec 'npm start && browser-sync reload'",
     "dev_assets": "npm run server & NODE_ENV=development nodemon --exec 'npm run update_assets && browser-sync reload'",
-    "dev_test": "nodemon --exec 'npm run test'",
+    "dev:test": "nodemon --exec 'npm run test'",
     "duplicate_asset_stats": "npm run duplicate_css_stats && npm run duplicate_js_stats",
     "duplicate_css_stats": "test -e temp/css.md5 || cp lib/css.md5 temp",
     "duplicate_js_stats": "test -e temp/webpack.stats.json || cp lib/webpack.stats.json temp",
