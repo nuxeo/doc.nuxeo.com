@@ -17,7 +17,14 @@ const process_toc_items = (level = 1) => {
 
 const get_pages = (page, toc, level = 1, parents = []) => {
   let menu_items = [];
-  const { id, name, url: { full: url_full }, active, children, toggled } = page;
+  const {
+    id,
+    name,
+    url: { full: url_full },
+    active,
+    children,
+    toggled
+  } = page;
   const page_classes = parents.map(parent_id => `p${parent_id}`);
   if (active) {
     page_classes.push('active');

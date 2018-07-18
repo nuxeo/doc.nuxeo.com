@@ -3417,8 +3417,7 @@
   "/security/sec-153/": "0DI",
   "/studio/2018-04-02-studio-73-9/": "IF8",
   "/810/nxdoc/how-to-create-a-n-level-select-widget/": "Q0zi",
-  "/security/sec-153/": "0DI",
-    "/910/nxdoc/university/": "wQq",
+  "/910/nxdoc/university/": "wQq",
   "/910/nxdoc/nuxeo-sample-project/": "kLT",
   "/studio/2018-04-17-studio-73-11-1/": "4kx",
   "/userdoc/from-jsf-ui-to-web-ui/": "cQX",
@@ -3432,5 +3431,11 @@
   "/910/nxdoc/how-to-use-events/": "c-q",
   "/corg/code-review-guidelines/": "k2O",
   "/nxdoc/how-to-use-events/": "Bnq",
-  "/studio/2018-05-28-studio-73-13/": "9Hj"
+  "/studio/2018-05-28-studio-73-13/": "9Hj",
+  "/security/sec-259/": "33O",
+  "/studio/token-management/": "NkW",
+  "/studio/nuxeo-studio-designer-git-access/": "iU1",
+  "/studio/2018-06-11-studio-73-14/": "kZf",
+  "/nxdoc/how-to-validate-content/": "SxR",
+  "/nxdoc/core-server/": "0GN"
 }
