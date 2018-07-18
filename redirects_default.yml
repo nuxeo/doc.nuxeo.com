@@ -143,6 +143,7 @@
 ^/nxdoc/gwt-integration/?$: /nxdoc/
 ^/nxdoc/getting-started-with-nuxeo-studio/?$: /nxdoc/configure-nuxeo-platform
 ^/910/nxdoc/getting-started-with-nuxeo-studio/?$: /910/nxdoc/configure-nuxeo-platform
+^/nxdoc/how-to-enable-the-trash-feature/?$: /nxdoc/how-to-use-trash-feature/
 
 # NXDOC-1033: REST API doc reorg
 ^/nxdoc/search-endpoint/?$: /nxdoc/search-endpoints

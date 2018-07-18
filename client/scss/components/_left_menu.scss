@@ -5,7 +5,7 @@ $menu-fg: rgba($nuxeo-color-dark, 0.8);
 $menu-fg-active: $nuxeo-color-dark;
 
 // Left menu
-@mixin menu-section-colours ($color) {
+@mixin menu-section-colours($color) {
   $menu-hover: lighten($color, 20%);
   $level-0-color: lighten($color, $nuxeo-section-lighten);
   // $level-1-color: lighten($color, $nuxeo-section-lighten);
@@ -16,7 +16,7 @@ $menu-fg-active: $nuxeo-color-dark;
   }
 
   #side_menu ul {
-    li:not(.contains-toc, .toc-item) {
+    li {
       &.l1 {
         background-color: $level-0-color;
       }
@@ -27,6 +27,12 @@ $menu-fg-active: $nuxeo-color-dark;
 
       &:hover {
         background-color: $menu-hover;
+      }
+
+      .toc-item,
+      .fa,
+      &.contains-toc {
+        background: none;
       }
     }
   }

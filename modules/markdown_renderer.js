@@ -165,7 +165,7 @@ renderer.link = function(href_str, title, text) {
   }
 
   const attrs = [`href="${href}"`];
-  if (params.title) {
+  if (title) {
     attrs.push(`title="${title}"`);
   }
   if (params.external || is_external_url(href)) {

@@ -11,13 +11,18 @@
 
 <div id="docs_footer" class="row expanded">
   <button id="prodpad_open_feedback" type="button" class="button rounded" data-open="prodpad_feedback" title="Documentation Feedback" aria-controls="prodpad_feedback" aria-haspopup="true" tabindex="0">
-      <i class="fa fa-comment fa-fw fa-lg"></i> Not Helpful - Tell Us Why
+      <i class="fa fa-comment fa-fw fa-lg"></i> Not Helpful? Tell Us Why
   </button>
   <button id="goto_top" type="button">
     <img src="/assets/imgs/icons/goto-top-icon.svg">
     <span>To Top</span>
   </button>
   {{> versions_inline}}
+
+  {{! Standard Nuxeo footer }}
+  <script type="text/javascript" src="//static.nuxeo.com/satellite/latest/bower_components/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+  <script type="text/javascript" src="//static.nuxeo.com/satellite/latest/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="//static.nuxeo.com/satellite/latest/elements/elements.html">
 
   <nuxeo-footer year="{{moment format='YYYY'}}" show-license></nuxeo-footer>
 </div>
