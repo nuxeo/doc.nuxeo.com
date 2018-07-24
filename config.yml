@@ -160,7 +160,10 @@ default:
       branches: {}
     java:
       url: git@github.com:nuxeo/doc.nuxeo.com-client-java.git
-      branches: {}
+      branches:
+        'improvement-NXDOC-1544-first-documentation-test':
+          label: 'Java Client LTS'
+          # url_path: '1.2.3'
     javascript:
       url: git@github.com:nuxeo/doc.nuxeo.com-client-javascript.git
       branches: {}

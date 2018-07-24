@@ -40,7 +40,7 @@ const schema = Joi.object().keys({
  *     full
  * }
  */
-const get_url_object = function(filepath, options) {
+const get_url_object = (filepath, options) => {
   if (typeof filepath !== 'string' || !filepath) {
     const error_message = 'Parameter filepath not a string or empty';
     error(`${error_message}: ${filepath}`);
@@ -53,9 +53,14 @@ const get_url_object = function(filepath, options) {
     throw validation.error;
   }
   const { spaces, version_path, version_label, default_space } = validation.value;
+  debug('spaces', spaces);
+  debug('version_path', version_path);
+  debug('version_label', version_label);
+  debug('default_space', default_space);
 
   const file_path_info = path.parse(filepath);
   const filepath_parts = file_path_info.dir.split(path.sep);
+  debug('filepath_parts', filepath_parts);
 
   const parts = [];
   const url = {
@@ -70,16 +75,28 @@ const get_url_object = function(filepath, options) {
   };
   // Set the base version path
   if (version_path) {
+    debug('version path');
     url.key.version = version_path;
     url.key.version_label = version_label;
     parts.push(version_path);
   }
 
   // Set the space path
-  let space = filepath_parts.length ? filepath_parts.shift() : '';
+  let space;
+  if (default_space === 'client') {
+    space = spaces.find(space => space.space_path.split('/').pop() === filepath_parts[0]).space_path;
+  } else {
+    space = filepath_parts.length ? filepath_parts.shift() : '';
+  }
   if (space) {
+    debug('space');
     url.key.space = space;
-    parts.push(space);
+    if (default_space === 'client') {
+      parts.unshift(space);
+    } else {
+      parts.push(space);
+    }
+
     url.key.space_path = parts.join(path.sep);
 
     // Get the space_name
@@ -92,6 +109,7 @@ const get_url_object = function(filepath, options) {
     }
   }
   if (!space) {
+    debug('Setting default space', default_space);
     space = default_space;
   }
 
@@ -99,9 +117,7 @@ const get_url_object = function(filepath, options) {
   const slug = file_path_info.name;
 
   // Set full url path
-  const full_url_parts = parts.map(function(item) {
-    return item;
-  });
+  const full_url_parts = parts.map(item => item);
 
   if (slug === 'index') {
     if (space && !filepath_parts.length) {
@@ -119,8 +135,8 @@ const get_url_object = function(filepath, options) {
     parts.push(url.key.slug);
   }
 
-  // Set full key and new_filepath
   if (parts.length && url.key.space) {
+    // Set full key and new_filepath
     url.key.full = parts.join(path.sep);
     url.new_filepath = url.key.full + file_path_info.ext;
   } else {
@@ -132,6 +148,8 @@ const get_url_object = function(filepath, options) {
     url.key.full = parts.join(path.sep);
     debug('Full url could not be assigned to: %s', filepath);
   }
+
+  debug('****', url.new_filepath);
   return url;
 };
 

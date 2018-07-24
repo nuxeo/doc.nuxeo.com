@@ -35,7 +35,7 @@ const schema = Joi.object().keys({
 });
 
 const hierarchy = options => (files, metalsmith, done) => {
-  debug('Options: %o', options);
+  debug('Options:', options);
 
   // Check options fits schema
   const validation = schema.validate(options, { allowUnknown: true });
@@ -46,6 +46,7 @@ const hierarchy = options => (files, metalsmith, done) => {
   options = validation.value;
 
   const metadata = metalsmith.metadata();
+  debug('versions:', metadata.site.versions);
 
   const hierarchies = metadata.hierarchies;
 

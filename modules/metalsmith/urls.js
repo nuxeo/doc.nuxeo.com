@@ -22,6 +22,9 @@ const schema = Joi.object().keys({
           .default(false),
         url_path: Joi.string()
           .optional()
+          .default(''),
+        space: Joi.string()
+          .optional()
           .default('')
       })
     ),
@@ -42,18 +45,18 @@ const schema = Joi.object().keys({
     .default('main')
 });
 
-const urls = (options, add_to_metadata) => (files, metalsmith, done) => {
-  debug('Options: %o', options);
+const urls = add_to_metadata => (files, metalsmith, done) => {
   const metadata = metalsmith.metadata();
   metadata.pages = metadata.pages || {};
 
   // Check options fits schema
-  const validation = schema.validate(options, { allowUnknown: true });
+  const validation = schema.validate(metadata.site, { allowUnknown: true, stripUnknown: true });
   if (validation.error) {
     error('Validation failed, %o', validation.error.details[0].message);
     return done(validation.error);
   }
-  options = validation.value;
+  const options = validation.value;
+  debug('options:', options);
 
   let version_path = '';
   let version_label = '';
@@ -78,7 +81,7 @@ const urls = (options, add_to_metadata) => (files, metalsmith, done) => {
 
       file.slug = file.url.key.slug;
 
-      debug('Filepath: %s, url: %o', filepath, file.url.full);
+      debug(`Filepath: ${filepath}, url:`, file.url);
 
       // Add to metadata.pages array
       if (add_to_metadata) {

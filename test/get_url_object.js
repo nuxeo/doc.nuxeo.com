@@ -121,7 +121,7 @@ test('get_url_object returns values as expected', assert => {
     {
       /* eslint no-invalid-this: 0 */
       test: 'nxdoc/tutorials/pages/acls.md',
-      message: `path "${this.test}" processed correctly with version`,
+      message: 'path "nxdoc/tutorials/pages/acls.md" processed correctly with version',
       expected: {
         full: '/710/nxdoc/acls/',
         original_filepath: 'nxdoc/tutorials/pages/acls.md',
@@ -140,6 +140,31 @@ test('get_url_object returns values as expected', assert => {
         version_path: '710',
         version_label: 'LTS 2015'
       })
+    },
+    {
+      /* eslint no-invalid-this: 0 */
+      test: 'java/authentication.md',
+      message: 'path "authentication.md" processed correctly with version and space',
+      expected: {
+        full: '/clients/java/1.2.3/authentication/',
+        original_filepath: 'java/authentication.md',
+        new_filepath: 'clients/java/1.2.3/authentication.md',
+        key: {
+          full: 'clients/java/1.2.3/authentication',
+          slug: 'authentication',
+          space: 'clients/java',
+          space_name: 'Client SDK - Java',
+          space_path: 'clients/java/1.2.3',
+          version: '1.2.3',
+          version_label: 'Latest Java Client'
+        }
+      },
+      options: {
+        spaces: [{ space_path: 'clients/java', space_name: 'Client SDK - Java' }],
+        version_path: '1.2.3',
+        version_label: 'Latest Java Client',
+        default_space: 'client'
+      }
     }
   ];
 
