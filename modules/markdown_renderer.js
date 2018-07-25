@@ -3,8 +3,7 @@
 
 const crypto = require('crypto');
 const striptags = require('striptags');
-const slug = require('slug');
-slug.defaults.modes.pretty.lower = true;
+const slug = require('./slug');
 const marked = require('marked');
 const renderer = new marked.Renderer();
 

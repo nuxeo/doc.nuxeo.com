@@ -4,9 +4,8 @@
 // Debugging
 const { warn } = require('../debugger')('handlebars-file-content');
 
-// npm packages
-const slug = require('slug');
-slug.defaults.modes.pretty.lower = true;
+// local packages
+const slug = require('../slug');
 
 const file_content = function(options) {
   const url = options.hash.url || '';

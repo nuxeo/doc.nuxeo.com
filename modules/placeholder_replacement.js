@@ -2,8 +2,7 @@
 var debug = require('debug');
 var log = debug('placeholder-replacement');
 var error = debug('placeholder-replacement:error');
-var slug_string = require('slug');
-slug_string.defaults.modes.pretty.lower = true;
+var slug_string = require('./slug');
 var slug_nothing = function(x) {
   return x;
 };

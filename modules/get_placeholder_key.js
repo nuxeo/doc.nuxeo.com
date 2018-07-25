@@ -4,8 +4,7 @@ var debug_lib = require('debug');
 var debug = debug_lib('get-placeholder-key');
 var error = debug_lib('get-placeholder-key:error');
 
-var slug = require('slug');
-slug.defaults.modes.pretty.lower = true;
+var slug = require('./slug');
 
 var get_placeholder_key = function(page_name_raw, defaults) {
   var space_version_re = /^([a-z-]+)([0-9]+)?$/gi;

@@ -4,12 +4,8 @@
 // Debugging
 const { warn } = require('../debugger')('handlebars-multiexcerpt');
 
-// npm packages
-const slug = require('slug');
-slug.defaults.modes.pretty.lower = true;
-const slug_map = function(str) {
-  return slug(str);
-};
+// local packages
+const slug = require('../slug');
 
 const multiexcerpt = function(name, options) {
   // space:page-name:name-of-multiexcerpt
@@ -19,7 +15,7 @@ const multiexcerpt = function(name, options) {
     key_arr.unshift(options.data.root.hierarchy.space_path);
   }
   key_arr.push(name);
-  const key = key_arr.map(slug_map).join('/');
+  const key = key_arr.map(slug).join('/');
 
   if (
     !options.data.root.multiexcerpt ||

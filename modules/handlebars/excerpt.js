@@ -4,12 +4,8 @@
 // Debugging
 const { warn } = require('../debugger')('handlebars-excerpt');
 
-// npm packages
-const slug = require('slug');
-slug.defaults.modes.pretty.lower = true;
-const slug_map = function(str) {
-  return slug(str);
-};
+// local packages
+const slug = require('../slug');
 
 const excerpt = function(name, options) {
   // space:page-name
@@ -18,7 +14,7 @@ const excerpt = function(name, options) {
     // space is missing, add to the start of the array
     key_arr.unshift(options.data.root.hierarchy.space_path);
   }
-  const key = key_arr.map(slug_map).join('/');
+  const key = key_arr.map(slug).join('/');
 
   if (!options.data.root.excerpts && !options.data.root.excerpts[key]) {
     warn('"%s" is not defined. Page title: %s', key, options.data.root.title);

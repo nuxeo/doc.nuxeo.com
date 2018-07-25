@@ -6,8 +6,7 @@ const { debug, warn, error } = require('../debugger')('metalsmith-replace-multie
 
 // npm packages
 const escape_regex = require('escape-string-regexp');
-const slug = require('slug');
-slug.defaults.modes.pretty.lower = true;
+const slug = require('../slug');
 
 // local packages
 const get_placeholder_key = require('../get_placeholder_key');

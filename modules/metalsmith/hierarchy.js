@@ -7,8 +7,7 @@ const Joi = require('joi');
 const multimatch = require('multimatch');
 const TreeModel = require('tree-model');
 const tree = new TreeModel();
-const slug = require('slug');
-slug.defaults.modes.pretty.lower = true;
+
 const trees = {};
 
 const schema = Joi.object().keys({

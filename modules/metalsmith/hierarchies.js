@@ -6,8 +6,6 @@ const Joi = require('joi');
 const path = require('path');
 const multimatch = require('multimatch');
 const multisort = require('multisort');
-const slug = require('slug');
-slug.defaults.modes.pretty.lower = true;
 
 const run_on_tiers = require('../run_on_tiers');
 

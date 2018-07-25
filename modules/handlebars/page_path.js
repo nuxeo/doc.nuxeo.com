@@ -5,9 +5,6 @@
 const { warn, error } = require('../debugger')('handlebars-page');
 
 // npm packages
-const slug = require('slug');
-slug.defaults.modes.pretty.lower = true;
-
 const get_placeholder_key = require('../get_placeholder_key');
 const key_to_url = require('../key_to_url');
 

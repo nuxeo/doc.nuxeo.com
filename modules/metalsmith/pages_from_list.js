@@ -6,8 +6,7 @@ const { debug, warn, error } = require('../debugger')('metalsmith-pages-from-lis
 
 // npm packages
 const Joi = require('joi');
-const slug = require('slug');
-slug.defaults.modes.pretty.lower = true;
+const slug = require('../slug');
 
 const schema = Joi.array().items(
   Joi.object().keys({

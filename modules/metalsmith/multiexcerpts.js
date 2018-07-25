@@ -6,8 +6,7 @@ const { debug, warn, error } = require('../debugger')('metalsmith-multiexcerpts'
 
 // npm packages
 const Joi = require('joi');
-const slug = require('slug');
-slug.defaults.modes.pretty.lower = true;
+const slug = require('../slug');
 
 // local packages
 const add_link_context = require('../add_link_context');

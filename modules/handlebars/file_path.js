@@ -6,8 +6,6 @@ const { warn, error } = require('../debugger')('handlebars-file');
 
 // npm packages
 const handlebars = require('handlebars');
-const slug = require('slug');
-slug.defaults.modes.pretty.lower = true;
 
 const get_placeholder_string = require('../get_placeholder_string');
 
