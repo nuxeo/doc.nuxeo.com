@@ -161,9 +161,14 @@ default:
     java:
       url: git@github.com:nuxeo/doc.nuxeo.com-client-java.git
       branches:
-        'improvement-NXDOC-1544-first-documentation-test':
-          label: 'Java Client LTS'
-          # url_path: '1.2.3'
+        redirect:
+          label: 'Java Client redirect'
+        master:
+          label: 'Java Client master'
+          url_path: 'master'
+        '3.1':
+          label: 'Java Client 3.1'
+          url_path: '3.1'
     javascript:
       url: git@github.com:nuxeo/doc.nuxeo.com-client-javascript.git
       branches: {}

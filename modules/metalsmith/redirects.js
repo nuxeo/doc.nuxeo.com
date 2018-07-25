@@ -90,6 +90,10 @@ const nuxeo_redirects = () => (files, metalsmith, done) => {
   }
   redirects = reverse_object(redirects);
 
+  if (metadata.site.redirect) {
+    redirects = Object.assign({}, redirects, metadata.site.redirect);
+  }
+
   const matches = [];
   Object.keys(files).forEach(filepath => {
     const file = files[filepath];
