@@ -190,6 +190,9 @@
 ^/nxdoc/upgrade-from-lts-2016-to-92/?$: /nxdoc/upgrade-from-lts-2016-following-fast-tracks/
 ^/nxdoc/upgrade-from-lts-2016-to-93/?$: /nxdoc/upgrade-from-lts-2016-following-fast-tracks/
 
+# 10.2 upgrade pages redirects
+^/nxdoc/upgrade-from-lts-2017-to-101/?$: /nxdoc/upgrade-from-lts-to-102/
+
 ^/studio/application-dependencies/?$: /studio/application-definition
 
 # NXDOC-1276
