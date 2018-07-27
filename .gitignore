@@ -30,7 +30,7 @@ node_modules
 /temp
 
 # Build output
-/site
+/site*
 /pre-src
 /client/css
 /repositories
