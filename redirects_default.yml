@@ -194,6 +194,7 @@
 ^/nxdoc/upgrade-from-lts-2017-to-101/?$: /nxdoc/upgrade-from-lts-2017-to-102/
 
 ^/studio/application-dependencies/?$: /studio/application-definition
+^/studio/nuxeo-online-services-portal-roadmap/?$: /studio/nuxeo-studio-roadmap
 
 # NXDOC-1276
 ^/nxdoc/getting-started-with-the-nuxeo-platform/?$: /nxdoc/discover-nuxeo-platform-apis/
