@@ -3442,5 +3442,14 @@
   "/nxdoc/annotations/": "-qh",
   "/nxdoc/batch-handler/": "jip",
   "/nxdoc/bulk-action-framework/": "aoP",
-  "/nxdoc/upgrade-from-lts-2017-to-102/": "As6"
+  "/nxdoc/upgrade-from-lts-2017-to-102/": "As6",
+  "/security/sec-376/": "RkY",
+  "/studio/javascript-expression-examples/": "DYe",
+  "/nxdoc/amazon-s3-direct-upload/": "wMz",
+  "/nxdoc/nuxeo-for-adobe-cc/": "kUs",
+  "/nxdoc/web-ui-diff/": "OE9",
+  "/nxdoc/web-ui-upload-providers/": "3wR",
+  "/nxdoc/continuous-integration/": "ANd",
+  "/nxdoc/bulk-actions-directory/": "A5b",
+  "/studio/2018-09-17-studio-73-21-1/": "9YJ"
 }

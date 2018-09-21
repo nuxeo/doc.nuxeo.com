@@ -1,10 +1,13 @@
 'use strict';
 /* eslint-env es6, browser, jquery */
 
+console.log('search initialisation');
+
 const decode_url = require('html-entities').decode;
 const search = window.location.search;
 
 if (search) {
+  console.log('search has query', search);
   // e.g. '?q=search+string'
   const search_regex = /(\?|&)q=([^&]+)/i;
   const match = search_regex.exec(search);
