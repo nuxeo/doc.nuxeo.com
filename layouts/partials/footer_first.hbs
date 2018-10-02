@@ -58,7 +58,7 @@
 {{/if}}
 
 {{! Algolia DocSearch }}
-<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
 <script type="text/javascript">docsearch({
   apiKey: '482c0a65c92c01569f0d04bac01b5979',
   indexName: 'nuxeo',
@@ -66,11 +66,6 @@
   algoliaOptions: {
       filters: 'tags:{{#if (condition url.key.version '!=' '')}}{{url.key.version}}{{else}}ft{{/if}} OR tags:static',
       hitsPerPage: 10
-  },
-  handleSelected: function(input, event, suggestion) {
-    console.log('input', input);
-    console.log('event', event);
-    console.log('suggestion', suggestion);
   },
   debug: false // Set debug to true if you want to inspect the dropdown "{{url.key.version}}"
 });</script>
