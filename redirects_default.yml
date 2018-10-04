@@ -210,6 +210,24 @@
 ^/nxdoc/design-tips/?$: /nxdoc/configuration-tips
 ^/nxdoc/quick-start-series/?$: /nxdoc/best-practices
 
+#NXDOC-1595
+^/nxdoc/desktop-and-mobile/?$: /client-apps/index
+^/nxdoc/nuxeo-drive/?$: /client-apps/nuxeo-drive
+^/nxdoc/how-to-configure-nuxeo-drive-globally/?$: /client-apps/how-to-configure-nuxeo-drive-globally
+^/nxdoc/how-to-customize-nuxeo-drive-versioning-policy/?$: /client-apps/how-to-customize-nuxeo-drive-versioning-policy
+^/nxdoc/how-to-customize-the-drive-metadata-edit-layouts/?$: /client-apps/how-to-customize-the-drive-metadata-edit-layouts
+^/nxdoc/how-to-manually-initialize-or-deploy-a-nuxeo-drive-instance/?$: /client-apps/how-to-manually-initialize-or-deploy-a-nuxeo-drive-instance
+^/nxdoc/nuxeo-drive-core-implementation/?$: /client-apps/nuxeo-drive-core-implementation
+^/nxdoc/nuxeo-drive-faq/?$: /client-apps/nuxeo-drive-faq
+^/nxdoc/nuxeo-drive-installation-configuration/?$: /client-apps/nuxeo-drive-installation-configuration
+^/nxdoc/nuxeo-drive-roadmap/?$: /client-apps/nuxeo-drive-roadmap
+^/nxdoc/nuxeo-drive-update-site/?$: /client-apps/nuxeo-drive-update-site
+^/nxdoc/nuxeo-drive-user-profile-migration/?$: /client-apps/nuxeo-drive-user-profile-migration
+^/nxdoc/nuxeo-mobile/?$: /client-apps/nuxeo-mobile
+^/nxdoc/how-to-customize-nuxeo-mobile-metadata-layout/?$: /client-apps/how-to-customize-nuxeo-mobile-metadata-layout
+^/nxdoc/how-to-customize-nuxeo-mobile-themes/?$: /client-apps/how-to-customize-nuxeo-mobile-themes
+^/nxdoc/nuxeo-mobile-roadmap/?$: /client-apps/nuxeo-mobile-roadmap
+
 
 ^/nxdoc/first-steps-with-studio-technical-documentation-tutorial/?$: /nxdoc/getting-started
 ^/nxdoc/implementing-documentation-items/?$: /nxdoc/getting-started
