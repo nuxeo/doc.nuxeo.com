@@ -70,11 +70,11 @@ default:
           - /nxdoc/search-and-find
           - /nxdoc/share-and-distribute
       -
-        parent: /nxdoc/desktop-and-mobile
+        parent: /client-apps/index
         section_color: desktop-mob
         children:
-          - /nxdoc/nuxeo-drive
-          - /nxdoc/nuxeo-mobile
+          - /client-apps/nuxeo-drive
+          - /client-apps/nuxeo-mobile
       -
         parent: /nxdoc/nuxeo-add-ons
         section_color: addons
