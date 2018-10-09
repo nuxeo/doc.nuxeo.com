@@ -70,7 +70,7 @@ default:
           - /nxdoc/search-and-find
           - /nxdoc/share-and-distribute
       -
-        parent: /client-apps/index
+        parent: /client-apps
         section_color: desktop-mob
         children:
           - /client-apps/nuxeo-drive
