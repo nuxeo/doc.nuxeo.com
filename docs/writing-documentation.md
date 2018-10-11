@@ -38,8 +38,10 @@ git reset --hard
 ```
 #### Run Locally
 ```bash
-npm run dev
+NX_ASSETS_USER='username' NX_ASSETS_PWD='password' npm run dev
 ```
+Make sure to change `username` and `password` with your credentials. 
+
 Once started, http://localhost:3000 opens automatically. Browse to the URL you want to see your changes. 
 
 If you want to skip the initial build and use the existing one as the base, you can do: 
