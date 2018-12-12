@@ -20,7 +20,7 @@ default:
     nx_assets_url: https://intranet.nuxeo.com/nuxeo
     # nx_assets_url: http://intranet-preprod.nuxeocloud.com/nuxeo
     canonical_version_preference: 'ft'
-    new_version: '10.2'
+    new_version: '10.3'
 
     # Keys
     ga_exp_id: ''
