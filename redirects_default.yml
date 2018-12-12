@@ -253,7 +253,7 @@
 ^/nxdoc/how-to-create-custom-dashboards/?$: /nxdoc/how-to-create-custom-dashboard-entries/
 
 # For FT 10.3 
-^/nxdoc/uupgrade-from-lts-2017-to-102/?$: /nxdoc/upgrade-from-lts-2017-to-103/
+^/nxdoc/upgrade-from-lts-2017-to-102/?$: /nxdoc/upgrade-from-lts-2017-to-103/
 
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
