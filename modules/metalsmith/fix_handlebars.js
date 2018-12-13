@@ -17,7 +17,7 @@ const replacements = [
     replace: '{{> '
   },
   {
-    search: /&#39;/g,
+    search: /&#39;|&apos;/g,
     replace: "'"
   },
   {
