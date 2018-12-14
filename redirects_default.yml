@@ -252,6 +252,9 @@
 ^/nxdoc/how-to-setup-a-test-smtp-server/?$: https://app.quandora.com/object/8ab0a80d-ead7-4dc4-9658-9244b7984548
 ^/nxdoc/how-to-create-custom-dashboards/?$: /nxdoc/how-to-create-custom-dashboard-entries/
 
+# Delete Develop with React Redux page
+^/nxdoc/howto-develop-with-reactredux/?$: /nxdoc/rest-api
+
 # For FT 10.3 
 ^/nxdoc/upgrade-from-lts-2017-to-102/?$: /nxdoc/upgrade-from-lts-2017-to-103/
 
