@@ -60,7 +60,7 @@ const process_emojione = function(options) {
 
       if (contents !== contents_emoji && contents_emoji) {
         debug('Updating with emojione: %s', filename);
-        file.contents = new Buffer(contents_emoji);
+        file.contents = Buffer.from(contents_emoji, 'utf8');
       }
     });
 
