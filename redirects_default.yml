@@ -255,6 +255,8 @@
 # Delete Develop with React Redux page
 ^/nxdoc/howto-develop-with-reactredux/?$: /nxdoc/rest-api
 
+^/studio/how-to-migrate-trash-configuration/?$: /nxdoc/upgrade-from-lts-2017-following-fast-tracks/#trash-migration
+
 # For FT 10.3 
 ^/nxdoc/upgrade-from-lts-2017-to-102/?$: /nxdoc/upgrade-from-lts-2017-to-103/
 
