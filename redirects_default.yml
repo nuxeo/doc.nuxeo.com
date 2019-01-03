@@ -260,7 +260,8 @@
 
 # NXDOC-1739 
 
-^/studio/layouts-designer/?$: /studio/ui-designer/#layouts
+^/studio/layouts-designer/?$: /studio/ui-designer
+^/studio/left-menu/?$: /studio/working-in-view-designer
 
 # For FT 10.3 
 ^/nxdoc/upgrade-from-lts-2017-to-102/?$: /nxdoc/upgrade-from-lts-2017-to-103/
