@@ -31,7 +31,7 @@ brew install git
 
 Clone the repository to your local machine, using your favorite Git client or the command line:
 ```bash
-git lfs clone git@github.com:nuxeo/doc.nuxeo.com-content.git
+git clone git@github.com:nuxeo/doc.nuxeo.com-content.git
 cd doc.nuxeo.com-content
 git lfs install
 git reset --hard
