@@ -264,8 +264,8 @@
 ^/studio/left-menu/?$: /studio/working-in-view-designer
 
 # For FT 10.10 
-^/nxdoc/upgrade-from-lts-2017-to-102/?$: /nxdoc/upgrade-from-lts-2017-lts-2019/
-^/nxdoc/upgrade-from-lts-2017-to-103/?$: /nxdoc/upgrade-from-lts-2017-lts-2019/
+^/nxdoc/upgrade-from-lts-2017-to-102/?$: /nxdoc/upgrade-from-lts-2017-to-lts-2019/
+^/nxdoc/upgrade-from-lts-2017-to-103/?$: /nxdoc/upgrade-from-lts-2017-to-lts-2019/
 
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
