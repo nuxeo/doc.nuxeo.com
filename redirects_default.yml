@@ -259,9 +259,12 @@
 ^/userdoc/nuxeo-drive-mobile-edition/?$: /client-apps/nuxeo-mobile
 
 # NXDOC-1739 
-
 ^/studio/layouts-designer/?$: /studio/ui-designer
 ^/studio/left-menu/?$: /studio/working-in-view-designer
+
+# NXDOC-1723
+^/studio/jsf-web-ui-migration/?$: /studio/migration-services
+
 
 # For FT 10.10 
 ^/nxdoc/upgrade-from-lts-2017-to-102/?$: /nxdoc/upgrade-from-lts-2017-to-lts-2019/
