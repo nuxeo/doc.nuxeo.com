@@ -258,11 +258,9 @@
 ^/studio/how-to-migrate-trash-configuration/?$: /nxdoc/upgrade-from-lts-2017-following-fast-tracks/#trash-migration
 ^/userdoc/nuxeo-drive-mobile-edition/?$: /client-apps/nuxeo-mobile
 
-<!--
 # NXDOC-1739 
-^/studio/layouts-designer/?$: /studio/ui-designer
-^/studio/left-menu/?$: /studio/working-in-view-designer
--->
+#^/studio/layouts-designer/?$: /studio/ui-designer
+#^/studio/left-menu/?$: /studio/working-in-view-designer
 
 # NXDOC-1723
 ^/studio/jsf-web-ui-migration/?$: /studio/migration-services
