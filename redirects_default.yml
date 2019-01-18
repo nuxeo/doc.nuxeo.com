@@ -268,6 +268,9 @@
 # Annotations 
 ^/nxdoc/annotations/?$: /nxdoc/comments
 
+# NXDOC-1804 
+^/nxdoc/how-to-new-pill/?$: /nxdoc/how-to-new-tab
+
 
 # For FT 10.10 
 ^/nxdoc/upgrade-from-lts-2017-to-102/?$: /nxdoc/upgrade-from-lts-2017-to-lts-2019/
