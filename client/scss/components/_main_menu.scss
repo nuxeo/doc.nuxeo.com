@@ -2,8 +2,9 @@ $menu-shadow: rgba($black, 0.2);
 $menu-width: 370px;
 $second-level-fg: rgba($nuxeo-color-dark, 0.8);
 
-@mixin section-colours ($color) {
+@mixin section-colours($color) {
   $menu-hover: lighten($color, $nuxeo-section-lighten);
+
   border-left-color: $color;
 
   // a {
@@ -78,6 +79,7 @@ $second-level-fg: rgba($nuxeo-color-dark, 0.8);
   box-shadow: 4px 4px 4px 0 $menu-shadow;
   display: none;
   position: absolute;
+  top: 50px;
   z-index: 10;
 
   &.active,
@@ -100,22 +102,21 @@ $second-level-fg: rgba($nuxeo-color-dark, 0.8);
       letter-spacing: 1px;
       padding: 19px 5px 19px 10px;
       text-transform: capitalize;
+      transition: background-color 0.4s ease-in;
+      width: $menu-width;
+      line-height: normal !important;
 
-      & {
-        transition: background-color 0.4s ease-in;
-        width: $menu-width;
-
-        &:hover,
-        &.active {
-          ul.child {
-            display: block;
-          }
+      &:hover,
+      &.active {
+        ul.child {
+          display: block;
         }
       }
 
       a {
-        color: $nuxeo-color-dark;
+        color: $nuxeo-color-dark !important;
         display: block;
+        text-transform: capitalize !important;
         transition: color 0.2s ease;
       }
 

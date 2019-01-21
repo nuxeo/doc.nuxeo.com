@@ -159,7 +159,7 @@ const hierarchy = options => (files, metalsmith, done) => {
   // JSON files for space hierarchies
   Object.keys(hierarchies).forEach(function(space) {
     files[space + '.json'] = {
-      contents: new Buffer(JSON.stringify(hierarchies[space]))
+      contents: Buffer.from(JSON.stringify(hierarchies[space]), 'utf8')
     };
   });
 

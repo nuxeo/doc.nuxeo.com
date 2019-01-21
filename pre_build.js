@@ -53,8 +53,12 @@ const config = yaml_config.load(path.join(__dirname, 'config.yml'));
 const branches = get_repo_branches(config);
 debug('branches: %o', branches);
 
+// npm packages
+
 co(function*() {
   console.time('Pre-Build');
+
+  // yield algoliaClearIndex();
 
   // Copy Branches
   const pre_build = [];
@@ -91,6 +95,30 @@ co(function*() {
       error('There was an issue creating `editor.json`');
       throw err;
     });
+
+  // writeFile(
+  //   path.join(__dirname, 'search.json'),
+  //   JSON.stringify(
+  //     Object.keys(metadata.pages).map(id => {
+  //       const { title, url, space, version, version_label, version_path, space_path } = metadata.pages[id];
+  //       return {
+  //         objectID: url,
+  //         title,
+  //         url,
+  //         space,
+  //         version,
+  //         version_label,
+  //         version_path,
+  //         space_path
+  //       };
+  //     })
+  //   )
+  // )
+  //   .then(() => info('Created `search.json`'))
+  //   .catch(err => {
+  //     error('There was an issue creating `search.json`');
+  //     throw err;
+  //   });
 
   console.timeEnd('Pre-Build');
 }).catch(function(err) {

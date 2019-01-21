@@ -66,11 +66,15 @@ const get_file = (doc, local_path) => {
               debug('Downloaded asset via Nuxeo', res);
               res.body.pipe(fs.createWriteStream(local_path));
             },
-            err =>
-              fetch(err.response.url).then(res => {
-                debug('Downloaded asset via fetch', res);
-                res.body.pipe(fs.createWriteStream(local_path));
-              })
+            err => {
+              if (err && err.response) {
+                return fetch(err.response.url).then(res => {
+                  debug('Downloaded asset via fetch', res);
+                  res.body.pipe(fs.createWriteStream(local_path));
+                });
+              }
+              return Promise.reject(err);
+            }
           )
           .catch(err => {
             error('File save err: ', err);

@@ -26,9 +26,12 @@ default:
     ga_exp_id: ''
     ga_id: 'UA-81135-3'
     segment_write_key: '4qquvje3fv'
+    algolia_search_key: '77ebfff62b510b7ed7d845d6448967ee'
+
+    algolia_id: 'F6EQCOZI09'
+    algolia_index: 'doc'
     main_menu:
-      -
-        parent: /nxdoc/getting-started
+      - parent: /nxdoc/getting-started
         section_color: tutorials
         children:
           - /nxdoc/discover-nuxeo-platform-apis
@@ -37,8 +40,7 @@ default:
           - /nxdoc/best-practices
           - /nxdoc/learning-with-examples
           - /nxdoc/how-to-index
-      -
-        parent: /nxdoc/nuxeo-server
+      - parent: /nxdoc/nuxeo-server
         section_color: server
         children:
           - /nxdoc/installation
@@ -52,8 +54,7 @@ default:
           - /nxdoc/workflow
           - /nxdoc/security
           - /nxdoc/nuxeo-server-roadmap
-      -
-        parent: /nxdoc/web-ui
+      - parent: /nxdoc/web-ui
         section_color: web-ui
         children:
           - /nxdoc/web-ui-overview
@@ -62,29 +63,25 @@ default:
           - /nxdoc/web-ui-tutorials
           - /nxdoc/web-ui-roadmap
           - /userdoc/web-ui
-      -
-        parent: /nxdoc/dam
+      - parent: /nxdoc/dam
         section_color: dam
         children:
           - /nxdoc/upload-and-store
           - /nxdoc/manage-and-organize
           - /nxdoc/search-and-find
           - /nxdoc/share-and-distribute
-      -
-        parent: /client-apps
+      - parent: /client-apps
         section_color: desktop-mob
         children:
           - /client-apps/nuxeo-drive
           - /client-apps/nuxeo-mobile
-      -
-        parent: /nxdoc/nuxeo-add-ons
+      - parent: /nxdoc/nuxeo-add-ons
         section_color: addons
         children:
           - /nxdoc/installing-a-new-package-on-your-instance
           - /nxdoc/creating-nuxeo-packages
           - /nxdoc/nuxeo-add-ons
-      -
-        parent: /nxdoc/client-sdks
+      - parent: /nxdoc/client-sdks
         section_color: sdks
         children:
           - /nxdoc/java-client
@@ -96,16 +93,14 @@ default:
           - /nxdoc/php-automation-client
           - /nxdoc/client-api-test-suite-tck
           - /nxdoc/using-curl
-      -
-        parent: /studio
+      - parent: /studio
         section_color: services
         children:
           - /studio/nuxeo-online-services-portal
           - /studio/nuxeo-studio
           - /studio/nuxeo-studio-roadmap
           - /studio/support-jira
-      -
-        parent: /nxdoc/nuxeo-tools
+      - parent: /nxdoc/nuxeo-tools
         section_color: tools
         children:
           - /nxdoc/nuxeo-dev-tools-extension
@@ -113,19 +108,18 @@ default:
           - /nxdoc/nuxeo-cli
           - /corg
   page_defaults:
-    -
-      pattern: "**/*.md"
+    - pattern: '**/*.md'
       defaults:
         layout: 'default.hbs'
   markdown_options:
-    langPrefix : ''
-    breaks   : false
-    gfm    : true
-    pedantic   : false
-    sanitize   : false
-    smartLists : true
+    langPrefix: ''
+    breaks: false
+    gfm: true
+    pedantic: false
+    sanitize: false
+    smartLists: true
     smartypants: false
-    tables   : true
+    tables: true
   repositories:
     platform:
       url: git@github.com:nuxeo/doc.nuxeo.com-content.git
