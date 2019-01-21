@@ -39,8 +39,7 @@ $(document).ready(function() {
       templates: {
         empty: 'No results',
         item:
-          '<div class="columns small-12 medium-8"><a href="{{{url}}}">{{{_highlightResult.title.value}}}<br>{{{_highlightResult.description.value}}}</a></div><div class="columns show-for-medium medium-4"></div>'
-        // '<div class="columns small-12 medium-3"><a href="{{{path}}}">{{{_highlightResult.title.value}}}</a></div><div class="columns small-12 medium-9">{{{_highlightResult.desc.value}}}<br>{{{_snippetResult.contents.value}}}</div>'
+          '<div class="columns small-12 medium-8"><a href="{{{url}}}"><strong>{{{_highlightResult.title.value}}}</strong><br>{{{_highlightResult.description.value}}}</a></div><div class="columns show-for-medium medium-4"></div>'
       }
     })
   );

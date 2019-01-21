@@ -68,9 +68,9 @@ const initialise_search = () => {
     });
 
     const filters =
-      search_version === 'latest'
-        ? 'version:latest'
-        : `space_path:${search_space_path} OR version:latest AND NOT space_path:${search_space}`;
+      search_version !== 'latest' && search_space_path
+        ? `space_path:${search_space_path} OR version:latest AND NOT space_path:${search_space}`
+        : 'version:latest';
 
     menu_search.addWidget(
       configure({
@@ -97,7 +97,7 @@ const initialise_search = () => {
         templates: {
           empty: 'No results',
           item:
-            '<div><a href="{{{url}}}">{{{_highlightResult.title.value}}}<br>{{{_snippetResult.description.value}}}</a></div>'
+            '<div><a href="{{{url}}}"><strong>{{{_highlightResult.title.value}}}</strong><br>{{{_snippetResult.description.value}}}</a></div>'
         }
       })
     );
