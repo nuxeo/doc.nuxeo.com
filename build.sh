@@ -22,6 +22,10 @@ echo "Copying Branches Before Building";
 cat $BUILD_PATHS | while read line ; do $COPY_BRANCH $line; done;
 
 echo;
+echo "Renaming algolia.json";
+mv algolia.json algolia-ref.json || echo 'algolia.json not present';
+
+echo;
 echo "Run Pre-build For All Branches";
 node pre_build.js;
 
@@ -36,6 +40,10 @@ cat $BUILD_PATHS | while read line ; do $COPY_SITE $line; done;
 echo;
 echo "Creating sitemap index";
 ./bin/create-sitemap-index;
+
+echo;
+echo "Algolia search index update";
+./bin/update-algolia-index;
 
 echo;
 echo "Complete";

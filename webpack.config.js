@@ -11,6 +11,7 @@ const path = require('path');
 module.exports = {
   entry: {
     docs: path.join(__dirname, 'client', 'js', 'docs.js'),
+    search: path.join(__dirname, 'client', 'js', 'search.js'),
     vendor: [
       '!!script-loader!jquery/dist/jquery.js',
       '!!script-loader!what-input/dist/what-input.js',

@@ -16,6 +16,7 @@
     "node": ">=6.5"
   },
   "dependencies": {
+    "algoliasearch": "^3.32.0",
     "async": "^2.6.0",
     "autoprefixer": "^8.5.0",
     "babel-core": "^6.26.3",
@@ -28,6 +29,7 @@
     "clipboard": "^2.0.1",
     "co": "^4.6.0",
     "debug": "^3.1.0",
+    "deep-object-diff": "^1.1.0",
     "emojione": "^3.1.4",
     "escape-string-regexp": "^1.0.5",
     "eslint": "^4.16.0",
@@ -37,6 +39,8 @@
     "foundation-sites": "^6.4.3",
     "handlebars": "^4.0.12",
     "highlight.js": "^9.11.0",
+    "html-entities": "^1.2.1",
+    "instantsearch.js": "^2.7.1",
     "joi": "^13.3.0",
     "jquery": "^3.3.1",
     "js-yaml": "^3.6.1",

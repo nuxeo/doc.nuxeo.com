@@ -46,5 +46,7 @@ npm-debug.log.*
 /redirects.txt
 /redirects.yml
 
-# Generated editor.json
+# Generated json
+/algolia.json
+/algolia-ref.json
 /editor.json
