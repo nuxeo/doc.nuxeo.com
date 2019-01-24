@@ -1,6 +1,6 @@
 {{#if (condition type '===' 'code')}}
 {{#if heading}}<div class="code-heading">{{heading}}</div>{{/if}}
-{{#md}}{{> @partial-block }}{{/md}}
+{{> @partial-block }}
 {{else}}
-<div class="callout {{type}} nuxeo">{{#if heading}}<div class="heading">{{heading}}</div>{{/if}}<div>{{#md}}{{> @partial-block }}{{/md}}</div></div>
+<div class="callout {{type}} nuxeo">{{#if heading}}<div class="heading">{{heading}}</div>{{/if}}<div>{{> @partial-block }}</div></div>
 {{/if}}
