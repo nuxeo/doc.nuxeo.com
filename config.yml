@@ -129,6 +129,11 @@ default:
         master:
           label: 'FT'
           order: 0
+        '1010':
+          label: 'LTS 2019'
+          url_path: '1010'
+          noindex: true
+          order: 5
         '910':
           label: 'LTS 2017'
           url_path: '910'
