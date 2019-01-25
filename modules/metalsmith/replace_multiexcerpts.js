@@ -61,7 +61,7 @@ const replace_placeholder = function(options) {
       if (changed) {
         // if (file.title === 'Collaborative Features') { error('Saving changes in: %s', file.title, contents); }
         debug('Saving changes in: %s', file.title);
-        file.contents = new Buffer(contents);
+        file.contents = Buffer.from(contents, 'utf8');
       }
     });
     done();

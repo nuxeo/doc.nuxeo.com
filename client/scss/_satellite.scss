@@ -47,6 +47,8 @@ body {
   font-size: $global-font-size;
   font-weight: $global-weight-normal;
   line-height: $global-lineheight;
+  position: relative;
+  overflow: hidden;
 
   // Set box-sizing globally to handle padding and border widths
   *,
@@ -319,38 +321,38 @@ body {
       }
     }
 
-    #search-box {
-      margin-left: -1rem;
-      margin-right: 0.5rem;
-      transition: width 0.4s ease;
-      width: 300px;
-
-      &.closed {
-        width: 0;
-      }
-
-      input {
-        color: $white;
-        // Fixes FF issue
-        display: inline-block;
-      }
-
-      :placeholder {
-        color: $dark-gray;
-        font-size: 0.8rem;
-        text-transform: uppercase;
-      }
-    }
-
-    #search-button {
-      color: $white;
-      padding: 1rem;
-      transition: color 0.2s ease;
-
-      &:hover,
-      &.active {
-        color: $nuxeo-color-blue;
-      }
-    }
+    // #search-box {
+    //   margin-left: -1rem;
+    //   margin-right: 0.5rem;
+    //   transition: width 0.4s ease;
+    //   width: 300px;
+    //
+    //   &.closed {
+    //     width: 0;
+    //   }
+    //
+    //   input {
+    //     color: $white;
+    //     // Fixes FF issue
+    //     display: inline-block;
+    //   }
+    //
+    //   :placeholder {
+    //     color: $dark-gray;
+    //     font-size: 0.8rem;
+    //     text-transform: uppercase;
+    //   }
+    // }
+    //
+    // #search-button {
+    //   color: $white;
+    //   padding: 1rem;
+    //   transition: color 0.2s ease;
+    //
+    //   &:hover,
+    //   &.active {
+    //     color: $nuxeo-color-blue;
+    //   }
+    // }
   }
 }

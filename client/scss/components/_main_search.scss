@@ -1,23 +1,23 @@
-#nuxeo-satellite-header .nuxeo-satellite-menu #search-box {
-  &.closed {
-    input {
-      width: 0;
-    }
-
-    .algolia-autocomplete > pre {
-      right: 0;
-    }
-  }
-
-  .algolia-autocomplete {
-    width: 100%;
-  }
-
-  input {
-    vertical-align: inherit !important;
-
-    &::placeholder {
-      color: $medium-gray;
-    }
-  }
-}
+// #nuxeo-satellite-header .nuxeo-satellite-menu #search-box {
+//   &.closed {
+//     input {
+//       width: 0;
+//     }
+//
+//     .algolia-autocomplete > pre {
+//       right: 0;
+//     }
+//   }
+//
+//   .algolia-autocomplete {
+//     width: 100%;
+//   }
+//
+//   input {
+//     vertical-align: inherit !important;
+//
+//     &::placeholder {
+//       color: $medium-gray;
+//     }
+//   }
+// }

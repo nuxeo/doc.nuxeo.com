@@ -265,11 +265,21 @@
 # NXDOC-1723
 ^/studio/jsf-web-ui-migration/?$: /studio/migration-services
 
+# NXDOC-1746
+#^/userdoc/personal-space/?$: /userdoc/organizing-content
+#^/userdoc/document-actions/?$: /userdoc/organizing-content
+#^/userdoc/content-download/?$: /userdoc/share
+#^/userdoc/content-export/?$: /userdoc/share
+#^/userdoc/document-publishing/?$: /userdoc/share
+
 # Annotations 
 ^/nxdoc/annotations/?$: /nxdoc/comments
 
 # NXDOC-1804 
 ^/nxdoc/how-to-new-pill/?$: /nxdoc/how-to-new-tab
+
+# Studio Release Notes 
+^/studio/2019-01-07-studio-3-3-1/?$: /studio/studio-updates-2019-01
 
 
 # For FT 10.10 

@@ -17,7 +17,7 @@ const replacements = [
     replace: '{{> '
   },
   {
-    search: /&#39;/g,
+    search: /&#39;|&apos;/g,
     replace: "'"
   },
   {
@@ -38,7 +38,7 @@ const fix_content = (files, filepath) => {
     replacements.forEach(function(replacement) {
       contents = contents.replace(replacement.search, replacement.replace);
     });
-    file.contents = new Buffer(contents);
+    file.contents = Buffer.from(contents, 'utf8');
     resolve();
   });
 };
