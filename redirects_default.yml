@@ -270,7 +270,8 @@
 ^/userdoc/document-actions/?$: /userdoc/organizing-content
 ^/userdoc/content-download/?$: /userdoc/share
 ^/userdoc/content-export/?$: /userdoc/share
-^/userdoc/document-publishing/?$: /userdoc/share
+^/userdoc/document-publishing/?$: /userdoc/share/#publishing
+^/userdoc/comment/?$: /userdoc/content-edit/#commenting
 
 # Annotations 
 ^/nxdoc/annotations/?$: /nxdoc/comments
