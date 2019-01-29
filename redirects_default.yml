@@ -282,6 +282,11 @@
 # Studio Release Notes 
 ^/studio/2019-01-07-studio-3-3-1/?$: /studio/studio-updates-2019-01
 
+# NXDOC-1724
+^/studio/frequently-asked-questions/?$: /studio/studio-overview-and-concepts
+^/studio/is-it-possible-to-export-a-studio-project-in-eclipse/?$: /studio/studio-overview-and-concepts
+^/studio/collaboration-mode/?$: /studio/nuxeo-studio
+^/studio/templates-reference/?$: /studio/templates
 
 # For FT 10.10 
 ^/nxdoc/upgrade-from-lts-2017-to-102/?$: /nxdoc/upgrade-from-lts-2017-to-lts-2019/
