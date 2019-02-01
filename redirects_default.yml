@@ -64,6 +64,7 @@
 ^/display/DMDOC53/?$: /archived-documentation
 ^/display/CMDOC1x/?$: /archived-documentation
 ^/display/DAMDOC1x/?$: /archived-documentation
+^/display/DMDOC(/?|/.*): /archived-documentation
 
 
 ^/display/NXDOC/Learning\+with\+Videos/?$: https://university.nuxeo.io
