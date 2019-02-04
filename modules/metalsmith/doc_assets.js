@@ -16,6 +16,10 @@ const multimatch = require('multimatch');
 const Nuxeo = require('nuxeo');
 const cheerio = require('cheerio');
 
+const headers = {
+  'X-Nuxeo-Documentation-Asset': true
+};
+
 const element_mapping = {
   // 'a'     : 'href',
   // 'link'  : 'href',
@@ -60,7 +64,7 @@ const get_file = (doc, local_path) => {
         debug(`Getting file: ${local_path}`);
 
         return doc
-          .fetchBlob()
+          .fetchBlob(void 0, { headers })
           .then(
             res => {
               debug('Downloaded asset via Nuxeo', res);
@@ -130,7 +134,13 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
             max_tries: 5,
             interval: 500,
             throw_original: true,
-            args: [uid, { schemas: ['dublincore', 'file', 'document_asset'] }]
+            args: [
+              uid,
+              {
+                schemas: ['dublincore', 'file', 'document_asset'],
+                headers
+              }
+            ]
           })
             .then(doc => {
               debug('doc:', doc);
