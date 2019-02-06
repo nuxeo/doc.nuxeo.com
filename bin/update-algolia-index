@@ -28,6 +28,7 @@ const config = yaml_config.load(path.join(__dirname, '..', 'config.yml'));
 
 let needsClearing = false;
 let algolia_ref;
+let algolia_data;
 
 try {
   algolia_ref = require('../algolia-ref.json');
@@ -36,25 +37,11 @@ try {
   needsClearing = true;
   algolia_ref = {};
 }
-const algolia_data = require('../algolia.json');
-
-// let { added, updated, deleted } = diff(algolia_ref, algolia_data);
-let diffs = diff(algolia_ref, algolia_data);
-
-const deleteIDs = Object.entries(diffs)
-  .filter(([, data]) => data === void 0)
-  .map(([objectID]) => objectID);
-const updateIDs = Object.entries(diffs)
-  .filter(([, data]) => data !== void 0)
-  .map(([objectID, data]) => Object.assign({}, data, { objectID }));
-
-// console.log('added', added);
-// console.log('updated', Object.entries(updated).map(([objectID, data]) => Object.assign({}, data, { objectID })));
-// console.log(
-//   'concat',
-//   Object.values(added).concat(Object.entries(updated).map(([objectID, data]) => Object.assign({}, data, { objectID })))
-// );
-// console.log('deleted', deleted);
+try {
+  algolia_data = require('../algolia.json');
+} catch (err) {
+  error('Reference `algolia.json` was not found - Algolia index will not be updated');
+}
 
 const projectId = config.site.algolia_id;
 const indexID = config.site.algolia_index;
@@ -64,7 +51,16 @@ info('projectId', projectId);
 info('algolia_key', algolia_key);
 info('indexID', indexID);
 
-if (algolia_key) {
+if (algolia_data && algolia_key) {
+  let diffs = diff(algolia_ref, algolia_data);
+
+  const deleteIDs = Object.entries(diffs)
+    .filter(([, data]) => data === void 0)
+    .map(([objectID]) => objectID);
+  const updateIDs = Object.entries(diffs)
+    .filter(([, data]) => data !== void 0)
+    .map(([objectID, data]) => Object.assign({}, data, { objectID }));
+
   const algolia = algoliasearch(projectId, algolia_key);
   const index = algolia.initIndex(indexID);
 
