@@ -72,10 +72,11 @@ const urls = function(options) {
               version_key = get_placeholder_key(file.version_override[version.label], file.url.key);
             } else {
               const version_key_parts = [];
+              version_key_parts.push(file.url.key.space);
               if (version.url_path) {
                 version_key_parts.push(version.url_path);
               }
-              version_key_parts.push(file.url.key.space, file.url.key.slug);
+              version_key_parts.push(file.url.key.slug);
               version_key = version_key_parts.join('/');
             }
 
