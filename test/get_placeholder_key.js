@@ -51,18 +51,23 @@ test('get_placeholder_key returns values as expected', assert => {
     },
     {
       test: 'USERDOC70:Nuxeo CSV',
-      expected: '70/userdoc/nuxeo-csv',
+      expected: 'userdoc/70/nuxeo-csv',
       message: 'returns version prefixed value'
     },
     {
       test: '70/USERDOC/Nuxeo CSV',
-      expected: '70/userdoc/nuxeo-csv',
+      expected: 'userdoc/70/nuxeo-csv',
       message: 'returns normalised version key'
     },
     {
       test: '70/USERDOC/nuxeo-csv',
-      expected: '70/userdoc/nuxeo-csv',
+      expected: 'userdoc/70/nuxeo-csv',
       message: 'returns version key'
+    },
+    {
+      test: 'userdoc/70/nuxeo-csv',
+      expected: 'userdoc/70/nuxeo-csv',
+      message: 'returns version key from new format'
     },
     {
       test: 'Implementing Documentation+Items',
@@ -99,28 +104,28 @@ test('get_placeholder_key returns values as expected', assert => {
     },
     {
       test: 'install',
-      expected: '710/nxdoc/install',
+      expected: 'nxdoc/710/install',
       message: 'returns fallback version',
       fallback: {
         version: '710',
         space: 'nxdoc',
-        space_path: '710/nxdoc',
+        space_path: 'nxdoc/710',
         slug: 'index',
-        parts: ['710', 'nxdoc', 'index'],
-        full: '710/nxdoc/index'
+        parts: ['nxdoc', '710', 'index'],
+        full: 'nxdoc/710/index'
       }
     },
     {
       test: 'admindoc/install',
-      expected: '710/admindoc/install',
+      expected: 'admindoc/710/install',
       message: 'returns fallback version',
       fallback: {
         version: '710',
         space: 'nxdoc',
-        space_path: '710/nxdoc',
+        space_path: 'nxdoc/710',
         slug: 'index',
-        parts: ['710', 'nxdoc', 'index'],
-        full: '710/nxdoc/index'
+        parts: ['nxdoc', '710', 'index'],
+        full: 'nxdoc/710/index'
       }
     },
     {
@@ -130,10 +135,10 @@ test('get_placeholder_key returns values as expected', assert => {
       fallback: {
         version: '710',
         space: 'nxdoc',
-        space_path: '710/nxdoc',
+        space_path: 'nxdoc/710',
         slug: 'index',
-        parts: ['710', 'nxdoc', 'index'],
-        full: '710/nxdoc/index'
+        parts: ['nxdoc', '710', 'index'],
+        full: 'nxdoc/710/index'
       }
     }
   ];

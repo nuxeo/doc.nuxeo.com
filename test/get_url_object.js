@@ -123,15 +123,15 @@ test('get_url_object returns values as expected', assert => {
       test: 'nxdoc/tutorials/pages/acls.md',
       message: `path "${this.test}" processed correctly with version`,
       expected: {
-        full: '/710/nxdoc/acls/',
+        full: '/nxdoc/710/acls/',
         original_filepath: 'nxdoc/tutorials/pages/acls.md',
-        new_filepath: '710/nxdoc/acls.md',
+        new_filepath: 'nxdoc/710/acls.md',
         key: {
-          full: '710/nxdoc/acls',
+          full: 'nxdoc/710/acls',
           slug: 'acls',
           space: 'nxdoc',
           space_name: 'Developer Documentation Center',
-          space_path: '710/nxdoc',
+          space_path: 'nxdoc/710',
           version: '710',
           version_label: 'LTS 2015'
         }
