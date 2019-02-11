@@ -64,6 +64,7 @@
 ^/display/DMDOC53/?$: /archived-documentation
 ^/display/CMDOC1x/?$: /archived-documentation
 ^/display/DAMDOC1x/?$: /archived-documentation
+^/display/DMDOC(/?|/.*): /archived-documentation
 
 
 ^/display/NXDOC/Learning\+with\+Videos/?$: https://university.nuxeo.io
@@ -190,7 +191,11 @@
 ^/nxdoc/upgrade-from-lts-2016-to-92/?$: /nxdoc/upgrade-from-lts-2016-following-fast-tracks/
 ^/nxdoc/upgrade-from-lts-2016-to-93/?$: /nxdoc/upgrade-from-lts-2016-following-fast-tracks/
 
+# 10.2 upgrade pages redirects
+^/nxdoc/upgrade-from-lts-2017-to-101/?$: /nxdoc/upgrade-from-lts-2017-to-102/
+
 ^/studio/application-dependencies/?$: /studio/application-definition
+^/studio/nuxeo-online-services-portal-roadmap/?$: /studio/nuxeo-studio-roadmap
 
 # NXDOC-1276
 ^/nxdoc/getting-started-with-the-nuxeo-platform/?$: /nxdoc/discover-nuxeo-platform-apis/
@@ -205,6 +210,24 @@
 ^/nxdoc/tutorials/?$: /nxdoc/getting-started
 ^/nxdoc/design-tips/?$: /nxdoc/configuration-tips
 ^/nxdoc/quick-start-series/?$: /nxdoc/best-practices
+
+#NXDOC-1595
+^/nxdoc/desktop-and-mobile/?$: /client-apps/index
+^/nxdoc/nuxeo-drive/?$: /client-apps/nuxeo-drive
+^/nxdoc/how-to-configure-nuxeo-drive-globally/?$: /client-apps/how-to-configure-nuxeo-drive-globally
+^/nxdoc/how-to-customize-nuxeo-drive-versioning-policy/?$: /client-apps/how-to-customize-nuxeo-drive-versioning-policy
+^/nxdoc/how-to-customize-the-drive-metadata-edit-layouts/?$: /client-apps/how-to-customize-the-drive-metadata-edit-layouts
+^/nxdoc/how-to-manually-initialize-or-deploy-a-nuxeo-drive-instance/?$: /client-apps/how-to-manually-initialize-or-deploy-a-nuxeo-drive-instance
+^/nxdoc/nuxeo-drive-core-implementation/?$: /client-apps/nuxeo-drive-core-implementation
+^/nxdoc/nuxeo-drive-faq/?$: /client-apps/nuxeo-drive-faq
+^/nxdoc/nuxeo-drive-installation-configuration/?$: /client-apps/nuxeo-drive-installation-configuration
+^/nxdoc/nuxeo-drive-roadmap/?$: /client-apps/nuxeo-drive-roadmap
+^/nxdoc/nuxeo-drive-update-site/?$: /client-apps/nuxeo-drive-update-site
+^/nxdoc/nuxeo-drive-user-profile-migration/?$: /client-apps/nuxeo-drive-user-profile-migration
+^/nxdoc/nuxeo-mobile/?$: /client-apps/nuxeo-mobile
+^/nxdoc/how-to-customize-nuxeo-mobile-metadata-layout/?$: /client-apps/how-to-customize-nuxeo-mobile-metadata-layout
+^/nxdoc/how-to-customize-nuxeo-mobile-themes/?$: /client-apps/how-to-customize-nuxeo-mobile-themes
+^/nxdoc/nuxeo-mobile-roadmap/?$: /client-apps/nuxeo-mobile-roadmap
 
 
 ^/nxdoc/first-steps-with-studio-technical-documentation-tutorial/?$: /nxdoc/getting-started
@@ -229,6 +252,46 @@
 ^/nxdoc/how-to-unit-test-studio-bundle/?$: /studio/tutorials/
 ^/nxdoc/how-to-setup-a-test-smtp-server/?$: https://app.quandora.com/object/8ab0a80d-ead7-4dc4-9658-9244b7984548
 ^/nxdoc/how-to-create-custom-dashboards/?$: /nxdoc/how-to-create-custom-dashboard-entries/
+
+# Delete Develop with React Redux page
+^/nxdoc/howto-develop-with-reactredux/?$: /nxdoc/rest-api
+
+^/studio/how-to-migrate-trash-configuration/?$: /nxdoc/upgrade-from-lts-2017-following-fast-tracks/#trash-migration
+^/userdoc/nuxeo-drive-mobile-edition/?$: /client-apps/nuxeo-mobile
+
+# NXDOC-1739 
+^/studio/layouts-designer/?$: /studio/ui-designer
+^/studio/left-menu/?$: /studio/working-in-view-designer
+
+# NXDOC-1723
+^/studio/jsf-web-ui-migration/?$: /studio/migration-services
+
+# NXDOC-1746
+^/userdoc/personal-space/?$: /userdoc/organizing-content
+^/userdoc/document-actions/?$: /userdoc/organizing-content
+^/userdoc/content-download/?$: /userdoc/share
+^/userdoc/content-export/?$: /userdoc/share
+^/userdoc/document-publishing/?$: /userdoc/share/#publishing
+^/userdoc/comment/?$: /userdoc/content-edit/#commenting
+
+# Annotations 
+^/nxdoc/annotations/?$: /nxdoc/comments
+
+# NXDOC-1804 
+^/nxdoc/how-to-new-pill/?$: /nxdoc/how-to-new-tab
+
+# Studio Release Notes 
+^/studio/2019-01-07-studio-3-3-1/?$: /studio/studio-updates-2019-01
+
+# NXDOC-1724
+^/studio/frequently-asked-questions/?$: /studio/studio-overview-and-concepts
+^/studio/is-it-possible-to-export-a-studio-project-in-eclipse/?$: /studio/studio-overview-and-concepts
+^/studio/collaboration-mode/?$: /studio/nuxeo-studio
+^/studio/templates-reference/?$: /studio/templates
+
+# For FT 10.10 
+^/nxdoc/upgrade-from-lts-2017-to-102/?$: /nxdoc/upgrade-from-lts-2017-to-lts-2019/
+^/nxdoc/upgrade-from-lts-2017-to-103/?$: /nxdoc/upgrade-from-lts-2017-to-lts-2019/
 
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/

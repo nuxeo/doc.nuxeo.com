@@ -1,10 +1,10 @@
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
   <script/>
-  <ShortName>Nuxeo Documentation Search</ShortName>
+  <ShortName>Nuxeo Docs</ShortName>
   <Description>Search Nuxeo Documentation</Description>
   <InputEncoding>UTF-8</InputEncoding>
   <Image width="16" height="16" type="image/x-icon">https://doc.nuxeo.com/assets/icons/favicon.ico</Image>
-  <Url type="text/html" method="GET" template="https://doc.nuxeo.com/?q={searchTerms}" />
-  <moz:SearchForm>https://doc.nuxeo.com/</moz:SearchForm>
-  <SearchForm>https://doc.nuxeo.com/</SearchForm>
+  <Url type="text/html" method="GET" template="https://doc.nuxeo.com/search/?query={searchTerms}" />
+  <moz:SearchForm>https://doc.nuxeo.com/search/</moz:SearchForm>
+  <SearchForm>https://doc.nuxeo.com/search/</SearchForm>
 </OpenSearchDescription>

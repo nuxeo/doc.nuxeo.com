@@ -24,7 +24,7 @@
   <script type="text/javascript" src="//static.nuxeo.com/satellite/latest/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <link rel="import" href="//static.nuxeo.com/satellite/latest/elements/elements.html">
 
-  <nuxeo-footer year="{{moment format='YYYY'}}" show-license></nuxeo-footer>
+  <nuxeo-footer year="{{moment format='YYYY'}}" show-license {{#unless homepage}}footer-items="[]"{{/unless}}></nuxeo-footer>
 </div>
 
 <div class="tiny reveal" id="prodpad_feedback" data-reveal data-animation-in="slide-in-right" data-animation-out="slide-out-right">
@@ -56,17 +56,3 @@
 {{#if script}}
 <script type="text/javascript" src="/{{obj_key js script}}"></script>
 {{/if}}
-
-{{! Algolia DocSearch }}
-<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
-<script type="text/javascript"> docsearch({
-apiKey: '482c0a65c92c01569f0d04bac01b5979',
-indexName: 'nuxeo',
-inputSelector: '#search-input',
-algoliaOptions: {
-    filters: 'tags:{{#if (condition url.key.version '!=' '')}}{{url.key.version}}{{else}}ft{{/if}} OR tags:static',
-    hitsPerPage: 10
-},
-debug: false // Set debug to true if you want to inspect the dropdown "{{url.key.version}}"
-});
-</script>

@@ -1,7 +1,15 @@
 </head>
 <body>
 {{> header_menu}}
+<input type="hidden" id="algolia_search_config" data-search-key="{{site.algolia_search_key}}" data-id="{{site.algolia_id}}" data-search-version="{{url.key.version}}" data-search-space-path="{{url.key.space_path}}" data-search-space="{{url.key.space}}">
 <div id="page_container" class="row expanded doc-section doc-section-{{section}}">
+  <div id="algolia_search_results" style="display: none;">
+    <div class="scrollable">
+      <div id="menu-hits">
+        {{! Hits widget will appear here }}
+      </div>
+    </div>
+  </div>
 {{#unless no_side_menu}}
     <div id="content_container" class="column medium-8 large-9 medium-push-4 large-push-3{{#if is_overview}} overview{{/if}}">
 {{else}}

@@ -5,22 +5,6 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- 0. Include Nuxeo Font. -->
-<link rel="stylesheet" href="https://static.nuxeo.com/satellite/nuxeo-font.css" media="screen" title="Nuxeo Font">
-
-<!-- 1. Load webcomponents-lite.min.js for polyfill support. -->
-<script src="https://static.nuxeo.com/satellite/latest/bower_components/webcomponentsjs/custom-elements-es5-adapter.js"></script>
-<script src="https://static.nuxeo.com/satellite/latest/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-
-<!-- 2. Use an HTML Import Nuxeo Header and Footer. -->
-<link rel="import" href="https://static.nuxeo.com/satellite/latest/elements/elements.html">
-
-    {{! Styling }}
-    <link rel="stylesheet" href="/assets/css/{{css.md5}}/docs.css" />
-    {{#if style}}
-    <link rel="stylesheet" href="/assets/css/{{css.md5}}/{{style}}.css">
-    {{/if}}
-
     {{#if site.ga_exp_id}}
     {{!-- Google Analytics Content Experiment code --}}
     <script>function utmx_section(){}function utmx(){}(function(){var
@@ -40,16 +24,31 @@
     <!-- No GA Experiment ID -->
     {{/if}}
     {{#if site.ga_id}}
-    {{!-- Google Analytics Content Experiment code --}}
-    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    {{!-- Google Analytics code --}}
+    <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
     ga('create', '{{site.ga_id}}', 'auto');
     ga('send', 'pageview');
     </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
     {{else}}
     <!-- No GA ID -->
+    {{/if}}
+
+    <!-- 0. Include Nuxeo Font. -->
+    <link rel="stylesheet" href="https://static.nuxeo.com/satellite/nuxeo-font.css" media="screen" title="Nuxeo Font">
+
+    <!-- 1. Load webcomponents-lite.min.js for polyfill support. -->
+    <script src="https://static.nuxeo.com/satellite/latest/bower_components/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+    <script src="https://static.nuxeo.com/satellite/latest/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <!-- 2. Use an HTML Import Nuxeo Header and Footer. -->
+    <link rel="import" href="https://static.nuxeo.com/satellite/latest/elements/elements.html">
+
+    {{! Styling }}
+    <link rel="stylesheet" href="/assets/css/{{css.md5}}/docs.css" />
+    {{#if style}}
+    <link rel="stylesheet" href="/assets/css/{{css.md5}}/{{style}}.css">
     {{/if}}
 
     <title>{{head_title}}</title>
@@ -101,7 +100,7 @@
     {{/if}}
 
     {{! Algolia DocSearch }}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
     {{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
     //- Safely remove this block if you are not targeting IE8 --}}

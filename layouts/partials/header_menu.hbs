@@ -1,42 +1,56 @@
 <nuxeo-header {{#if homepage}}show-nuxeo-menu{{/if}}></nuxeo-header>
 <div id="nuxeo-satellite-header">
-    <div class="nuxeo-satellite-menu expanded">
-        <div class="nuxeo-satellite-left-menu">
-            <div class="rainbow-menu" role="menuitem">
-                <a href="/">
-                  <svg viewBox="0 0 5 5" xmlns="http://www.w3.org/2000/svg"><path class="nsvglogo-x" d="M0,0 1,0 5,4 5,5 4,5 0,1M0,5 0,4 4,0 5,0 5,1 1,5z"/></svg>
-                  <span class="menu-home-text">Documentation</span>
-                  <i class="fa fa-caret-down" aria-hidden="true"></i>
-                </a>
+  <div class="nuxeo-satellite-menu expanded">
+    <div class="nuxeo-satellite-left-menu">
+      <div class="rainbow-menu" role="menuitem">
+        <a href="/">
+          <svg viewBox="0 0 5 5" xmlns="http://www.w3.org/2000/svg"><path class="nsvglogo-x" d="M0,0 1,0 5,4 5,5 4,5 0,1M0,5 0,4 4,0 5,0 5,1 1,5z"/></svg>
+          <span class="menu-home-text">Documentation</span>
+          <i class="fa fa-caret-down" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+    <div class="nuxeo-satellite-right-menu">
+      <ul>
+        {{!-- <li>
+          <button id="search-button"><i class="fa fa-search"></i></button>
+        </li>
+        <li>
+          <form id="search-box" class="closed">
+            <input id="search-input" type="text" value="" placeholder="SEARCH DOCS&hellip;">
+          </form>
+        </li> --}}
+
+        <li id="menu-search-icon" class="nav-main__item">
+          <i class="fa fa-search"></i>
+          {{!-- <form id="search-box-mobile" action="/search/" method="get">
+            <input type="search" name="query" value="" placeholder="Search Nuxeo Docs">
+            <button type="submit" class="is-green"><i class="fa fa-search"></i></button>
+          </form> --}}
+        </li>
+        <li>
+          <form action="/search/" method="get" id="search-box">
+            <div id="menu-search-input" class="search-input">
+              {{! SearchBox widget will appear here }}
             </div>
-        </div>
-        <div class="nuxeo-satellite-right-menu">
-            <ul>
-                <li>
-                    <button id="search-button"><i class="fa fa-search"></i></button>
-                </li>
-                <li>
-                    <form id="search-box" class="closed">
-                        <input id="search-input" type="text" value="" placeholder="SEARCH DOCS&hellip;">
-                    </form>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div id="doc-main-menu">
-        <ul>
-        {{#each site.main_menu}}
-            <li class="section-{{section_color}}" role="menuitem">
-                <a href="{{parent}}" role="menuitem">{{page_title parent}}</a>
-                <ul class="child">
-                {{#each children as |child|}}
-                    <li>
-                        <a href="{{child}}" role="menuitem" title="{{page_title child}}">{{page_title child}}</a>
-                    </li>
-                {{/each}}
-                </ul>
-            </li>
-        {{/each}}
+          </form>
+        </li>
+      </ul>
+  </div>
+  <div id="doc-main-menu">
+    <ul>
+      {{#each site.main_menu}}
+      <li class="section-{{section_color}}" role="menuitem">
+        <a href="{{parent}}" role="menuitem">{{page_title parent}}</a>
+        <ul class="child">
+          {{#each children as |child|}}
+          <li>
+            <a href="{{child}}" role="menuitem" title="{{page_title child}}">{{page_title child}}</a>
+          </li>
+          {{/each}}
         </ul>
-    </div>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
 </div>

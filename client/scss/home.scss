@@ -7,7 +7,7 @@ $fast-track-icon-radius: 36px;
 $header-color: #384248;
 $body-background-color: #fafcfd;
 
-@mixin section-color ($section, $section-color) {
+@mixin section-color($section, $section-color) {
   &.#{$section} {
     > div {
       border-color: $section-color;
@@ -178,10 +178,16 @@ h6 {
 
   .input-group-label {
     color: $dark-gray;
+    cursor: pointer;
     font-size: $nuxeo-button-default;
     letter-spacing: 0.1rem;
     padding-left: 1rem;
     text-transform: uppercase;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $c_blue;
+    }
 
     &.closed {
       display: none;

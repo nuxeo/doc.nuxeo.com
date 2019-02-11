@@ -29,8 +29,8 @@ test('site should have key files', assert => {
     path.join(assets_path, 'icons', 'favicon.ico'),
     path.join(assets_path, 'imgs', 'logo340x60.png'),
     path.join(site_path, 'index.html'),
-    path.join(site_path, 'index.html.gz'),
-    path.join(site_path, 'sitemap.xml')
+    path.join(site_path, 'sitemap.xml'),
+    path.join(site_path, 'nx_assets', 'a26bfade-2438-4d00-a5f3-676f719ed4a8-screenshot.png')
   ];
   // Index of each of the spaces
   spaces.forEach(space => {
