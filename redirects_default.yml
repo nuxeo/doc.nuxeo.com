@@ -279,7 +279,7 @@
 
 # NXDOC-1804 
 ^/nxdoc/how-to-new-pill/?$: /nxdoc/how-to-new-tab
-^/810/nxdoc/how-to-new-pill/?$: 810/nxdoc/how-to-new-tab
+#^/810/nxdoc/how-to-new-pill/?$: 810/nxdoc/how-to-new-tab
 ^/910/nxdoc/how-to-new-pill/?$: 910/nxdoc/how-to-new-tab
 
 # Studio Release Notes 
