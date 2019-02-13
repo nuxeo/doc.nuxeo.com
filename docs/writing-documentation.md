@@ -556,9 +556,8 @@ Define a page specific style sheet. Defined in `doc.nuxeo.com/client/scss/`. e.g
 
 ```md
 ---
+style: home
 ---
-
-## style: home
 
 Page content here.
 ```
@@ -569,9 +568,8 @@ Define a page specific JavaScript. Defined in `doc.nuxeo.com/client/js/`. e.g. T
 
 ```md
 ---
+script: home
 ---
-
-## script: home
 
 Page content here.
 ```
