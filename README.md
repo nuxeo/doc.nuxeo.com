@@ -4,20 +4,22 @@
 
 ## Requirements
 
-* [Git](https://git-scm.com/) - make sure your Privacy & Security settings allow to download applications from anywhere
-* [Git LFS](https://github.com/github/git-lfs/wiki/Installation)
-* [SSH key associated with GitHub](https://help.github.com/articles/generating-an-ssh-key/)
-* [Node.js](https://github.com/creationix/nvm#install-script) &mdash; Stable: See [Release schedule](https://github.com/nodejs/LTS#lts_schedule)(version >= v6.9)
-  * `nvm install v6` will get the latest v6 version
-  * Test with `node --version`
-  * _Remember:_ `nvm use v6` at the start of your session
+- [Git](https://git-scm.com/) - make sure your Privacy & Security settings allow to download applications from anywhere
+- [SSH key associated with GitHub](https://help.github.com/articles/generating-an-ssh-key/).
+  - Test access with `ssh -T git@github.com` - see [here](https://help.github.com/articles/testing-your-ssh-connection/) for help.
+- [Node.js](https://github.com/creationix/nvm#install-script) &mdash; Latest Active LTS: See [Release schedule](https://github.com/nodejs/LTS#lts_schedule)(e.g. v8.11.3)
+  - `nvm install` will get the correct version to use from `.nvmrc`.
+  - You should run this at the start of your session to ensure the correct version is in use.
+  - The version can be verified by running `node --version`
+- Markdown capable editor: e.g. [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/) or similar.
+  - [The Atom Documentation plugin](https://github.com/nuxeo/atom-documentation-links#installation)-This plugin provides suggestions for {{file ...}} and {{page ...}} links.
+- [EditorConfig plugin](http://editorconfig.org/#download) (Recommended)
+
 * [libsass](http://sass-lang.com/libsass)
-* A Markdown text editor (https://atom.io/ or https://www.sublimetext.com/ for example)
-* [EditorConfig plugin](http://editorconfig.org/#download).
 
 ### Mac:
 
-* Install homebrew (http://brew.sh/) and run
+- Install homebrew (http://brew.sh/) and run
 
 ```bash
 # Update
@@ -164,9 +166,9 @@ The main build script for generating the output for `site`.
 
 Site configurations, ability to have production or development specific values.
 
-* `site.new_version: '{version number to match}'` for `NEW` tag
-* `site.review_period: '{number} {days, months, years}'`
-* `site.review_release_date: {date - YYYY-MM-DD}`
+- `site.new_version: '{version number to match}'` for `NEW` tag
+- `site.review_period: '{number} {days, months, years}'`
+- `site.review_release_date: {date - YYYY-MM-DD}`
 
 ### `./package.json`
 
@@ -178,8 +180,8 @@ Build processes are defined here. Should be relatively self explanatory but anyt
 
 # Algolia DocSearch
 
-* Crawling configuration: https://github.com/algolia/docsearch-configs (specifically: https://github.com/algolia/docsearch-configs/blob/master/configs/nuxeo.json)
-* Implementation Documentation: https://community.algolia.com/docsearch/documentation/
+- Crawling configuration: https://github.com/algolia/docsearch-configs (specifically: https://github.com/algolia/docsearch-configs/blob/master/configs/nuxeo.json)
+- Implementation Documentation: https://community.algolia.com/docsearch/documentation/
 
 # Creating a new _content_ branch.
 
@@ -196,11 +198,11 @@ git checkout -b 910
 
 Configure new branch:
 
-* Open `./config.yml`
-* Update:
-  * `default > site > branch`
-  * `default > site > dev_browser_path`
-  * `default > site > versions`
+- Open `./config.yml`
+- Update:
+  - `default > site > branch`
+  - `default > site > dev_browser_path`
+  - `default > site > versions`
     e.g.
     ```
     branch: '910'

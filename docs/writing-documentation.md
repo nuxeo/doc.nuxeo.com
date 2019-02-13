@@ -2,16 +2,14 @@
 
 ## Requirements
 
-- [Git](https://git-scm.com/) - Make sure your Privacy & Security settings allow to download applications from anywhere
-- [Git LFS](https://github.com/github/git-lfs/wiki/Installation)
-- [NVM](https://github.com/creationix/nvm/blob/master/README.md#installation)
-- [SSH key associated with GitHub](https://help.github.com/articles/generating-an-ssh-key/)
+- [Git](https://git-scm.com/) - make sure your Privacy & Security settings allow to download applications from anywhere
+- [SSH key associated with GitHub](https://help.github.com/articles/generating-an-ssh-key/).
   - Test access with `ssh -T git@github.com` - see [here](https://help.github.com/articles/testing-your-ssh-connection/) for help.
-- [node.js](https://github.com/creationix/nvm#install-script) &mdash; Stable: See [Release schedule](https://github.com/nodejs/LTS#lts_schedule)(version >= v6.9)
-     - `nvm install 'lts/*'` will get the latest v6 version
-  - Test with `node --version`
-  - _Remember:_ `nvm use 'lts/*'` at the start of your session
-- A Markdown text editor (https://atom.io/ or https://www.sublimetext.com/ for example)
+- [Node.js](https://github.com/creationix/nvm#install-script) &mdash; Latest Active LTS: See [Release schedule](https://github.com/nodejs/LTS#lts_schedule)(e.g. v8.11.3)
+  - `nvm install` will get the correct version to use from `.nvmrc`.
+  - You should run this at the start of your session to ensure the correct version is in use.
+  - The version can be verified by running `node --version`
+- Markdown capable editor: e.g. [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/) or similar.
   - [The Atom Documentation plugin](https://github.com/nuxeo/atom-documentation-links#installation)-This plugin provides suggestions for {{file ...}} and {{page ...}} links.
 - [EditorConfig plugin](http://editorconfig.org/#download) (Recommended)
 
@@ -26,30 +24,40 @@ brew update
 brew install git
 ```
 
-## Installation
+## Branches
 
-**[master, 910, 810, 710 and 60 branches](https://github.com/nuxeo/doc.nuxeo.com-content)**: For all the versioned documentation (nxdoc/userdoc/admindoc). The versions work with branches, one version = one branch.
+For all the versioned documentation (nxdoc/userdoc/admindoc). The versions work with branches, one version = one branch.
+E.g.
 
-**[Static Branch](https://github.com/nuxeo/doc.nuxeo.com-content/tree/static)**: For non-versioned documentation (studio/idedoc/corg)
+- **[master, 910, 810, 710 and 60 branches](https://github.com/nuxeo/doc.nuxeo.com-content)**
+- **[Static Branch](https://github.com/nuxeo/doc.nuxeo.com-content/tree/static)**: For non-versioned documentation (studio/idedoc/corg)
 
-Clone the repository to your local machine, using your favorite Git client or the command line:
+Clone the repository to your local machine, using your favorite Git client or the command line.
+
+E.g. With the content repository:
 
 ```bash
-git lfs clone git@github.com:nuxeo/doc.nuxeo.com-content.git
+git clone git@github.com:nuxeo/doc.nuxeo.com-content.git
 cd doc.nuxeo.com-content
-git lfs install
-git reset --hard
 ```
 
 #### Run Locally
 
+You will need your Nuxeo Intranet credentials for the screenshots to display correctly.
+
 ```bash
-NX_ASSETS_USER='username' NX_ASSETS_PWD='password' npm run dev
+NX_ASSETS_USER='{username}' NX_ASSETS_PWD='{password}' npm run dev
 ```
 
-Make sure to change `username` and `password` with your credentials.
+Make sure to replace `{username}` and `{password}` with your credentials.
 
 Once started, http://localhost:3000 opens automatically. Browse to the URL you want to see your changes.
+
+If the screenshots aren't a concern, you can run locally without the `NX_ASSETS_...` credentials:
+
+```bash
+npm run dev
+```
 
 If you want to skip the initial build and use the existing one as the base, you can do:
 
@@ -60,6 +68,41 @@ npm run dev:no-clean
 Have a look at the [new-page-template.md](new-page-template.md) with your editor or [view the raw source](https://raw.githubusercontent.com/nuxeo/doc.nuxeo.com/master/docs/new-page-template.md).
 
 For more information, have a look at the READMEs of the two repositories.
+
+### Change browser
+
+To [change the from the default browser](https://github.com/nuxeo/doc.nuxeo.com/blob/master/README.md#change-browser).
+
+## Project Structure
+
+### `./assets/...`
+
+Any files in this directory will be copied to `./site/assets` and can be referenced in html and templates.
+
+### `./build.js`
+
+The main build script for generating the output for `site`.
+
+### `./config.yml`
+
+Site configurations, ability to have production or development specific values.
+
+### `./site/...`
+
+Generated output of the site. This is what will be served in production.
+
+### `./src/...`
+
+Source Markdown and HTML files for content.
+[Read the page about writing documentation, markdown and handlebars](https://github.com/nuxeo/doc.nuxeo.com/blob/master/docs/writing-documentation.md)
+
+### `./verify/...`
+
+Verification tests specific to this repository post build.
+
+# Trouble shooting
+
+See [main project trouble shooting](https://github.com/nuxeo/doc.nuxeo.com/blob/master/README.md#trouble-shooting).
 
 # Create a Page
 
@@ -503,7 +546,7 @@ review:
 
 - Do not edit the Confluence section in the frontmatter.
 - Do not edit the History section in the frontmatter.
-- If you need to update an image, you need to do it via the command line but do not do it via the GitHub User Interface. Assets need to go through Git LFS to be added properly to the documentation.
+- If you need to update an image, you need to do it via the command line but do not do it via the GitHub User Interface.
 
 ## Global optional frontmatter
 
@@ -513,10 +556,9 @@ Define a page specific style sheet. Defined in `doc.nuxeo.com/client/scss/`. e.g
 
 ```md
 ---
+---
 
----
-style: home
----
+## style: home
 
 Page content here.
 ```
@@ -527,10 +569,9 @@ Define a page specific JavaScript. Defined in `doc.nuxeo.com/client/js/`. e.g. T
 
 ```md
 ---
+---
 
----
-script: home
----
+## script: home
 
 Page content here.
 ```
