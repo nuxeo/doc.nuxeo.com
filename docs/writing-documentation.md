@@ -3,7 +3,6 @@
 ## Requirements
 
 - [Git](https://git-scm.com/) - make sure your Privacy & Security settings allow to download applications from anywhere
-- [Git LFS](https://github.com/github/git-lfs/wiki/Installation)
 - [SSH key associated with GitHub](https://help.github.com/articles/generating-an-ssh-key/).
   - Test access with `ssh -T git@github.com` - see [here](https://help.github.com/articles/testing-your-ssh-connection/) for help.
 - [Node.js](https://github.com/creationix/nvm#install-script) &mdash; Latest Active LTS: See [Release schedule](https://github.com/nodejs/LTS#lts_schedule)(e.g. v8.11.3)
@@ -38,10 +37,8 @@ Clone the repository to your local machine, using your favorite Git client or th
 E.g. With the content repository:
 
 ```bash
-git lfs clone git@github.com:nuxeo/doc.nuxeo.com-content.git
+git clone git@github.com:nuxeo/doc.nuxeo.com-content.git
 cd doc.nuxeo.com-content
-git lfs install
-git reset --hard
 ```
 
 #### Run Locally
@@ -549,7 +546,7 @@ review:
 
 - Do not edit the Confluence section in the frontmatter.
 - Do not edit the History section in the frontmatter.
-- If you need to update an image, you need to do it via the command line but do not do it via the GitHub User Interface. Assets need to go through Git LFS to be added properly to the documentation.
+- If you need to update an image, you need to do it via the command line but do not do it via the GitHub User Interface.
 
 ## Global optional frontmatter
 
