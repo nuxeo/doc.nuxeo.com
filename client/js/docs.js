@@ -64,7 +64,7 @@ $(document).ready(function() {
   require('./modules/prodpad');
 });
 
-$(window).load(function() {
+$(window).on('load', function() {
   // Element supports attribute
   var testAttribute = function(element, attribute) {
     var test = document.createElement(element);

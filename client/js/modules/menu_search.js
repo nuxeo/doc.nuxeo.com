@@ -12,9 +12,9 @@ const search_version = $algolia_config.attr('data-search-version');
 const search_space_path = $algolia_config.attr('data-search-space-path');
 const search_space = $algolia_config.attr('data-search-space');
 
-console.log('search_version', search_version);
-console.log('search_space_path', search_space_path);
-console.log('search_space', search_space);
+// console.log('search_version', search_version);
+// console.log('search_space_path', search_space_path);
+// console.log('search_space', search_space);
 
 const $search_box = $main_menu.find('#search-box');
 const $hits = $('#algolia_search_results');
