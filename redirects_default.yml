@@ -291,6 +291,9 @@
 ^/studio/collaboration-mode/?$: /studio/nuxeo-studio
 ^/studio/templates-reference/?$: /studio/templates
 
+# NXDOC-1770
+^/studio/commit-push-and-pull/?$: /studio/commit-preferences
+
 # For FT 10.10 
 ^/nxdoc/upgrade-from-lts-2017-to-102/?$: /nxdoc/upgrade-from-lts-2017-to-lts-2019/
 ^/nxdoc/upgrade-from-lts-2017-to-103/?$: /nxdoc/upgrade-from-lts-2017-to-lts-2019/
