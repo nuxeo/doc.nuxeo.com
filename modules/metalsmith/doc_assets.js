@@ -59,23 +59,29 @@ const get_file = (doc, local_path) => {
         // File doesn't match, go get it.
         debug(`Getting file: ${local_path}`);
 
-        return doc.fetchBlob().then(
-          res => {
-            debug('Downloaded asset via Nuxeo', res);
-            res.body.pipe(fs.createWriteStream(local_path));
-          },
-          err => {
-            if (err && err.response) {
-              return fetch(err.response.url).then(res => {
-                debug('Downloaded asset via fetch', res);
-                res.body.pipe(fs.createWriteStream(local_path));
-              });
-            } else {
-              debug('No err.response', err);
-              return Promise.reject(err);
+        return doc
+          .fetchBlob()
+          .then(
+            res => {
+              debug('Downloaded asset via Nuxeo', res);
+              res.body.pipe(fs.createWriteStream(local_path));
+            },
+            err => {
+              if (err && err.response) {
+                return fetch(err.response.url).then(res => {
+                  debug('Downloaded asset via fetch', res);
+                  res.body.pipe(fs.createWriteStream(local_path));
+                });
+              } else {
+                debug('No err.response', err);
+                return Promise.reject(err);
+              }
             }
-          }
-        );
+          )
+          .catch(err => {
+            error('file save err: ', err);
+            return Promise.reject(err);
+          });
       } else {
         return void 0;
       }
@@ -170,7 +176,7 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
   const file_promises = multimatch(Object.keys(files), pattern).map(filename => check_file(filename, selector));
 
   Promise.all(file_promises)
-    .then(done)
+    .then(() => done())
     .catch(err => {
       error('file promises error', err);
       return done(err);

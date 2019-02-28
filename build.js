@@ -9,7 +9,7 @@ if (!process.env.NODE_ENV) {
 
 // Set Debugging up
 if (!process.env.DEBUG) {
-  process.env.DEBUG = '*:info,*:error';
+  process.env.DEBUG = '*:info,*:error,*:time';
 }
 
 // Debugging
