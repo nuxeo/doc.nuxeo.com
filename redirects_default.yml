@@ -290,6 +290,7 @@
 ^/userdoc/managing-topics/?$: /userdoc/
 ^/userdoc/participating-to-a-topic/?$: /userdoc/
 ^/userdoc/smart-search/?$: /userdoc/
+^/nxdoc/smart-search/?$: /nxdoc/nuxeo-add-ons
 
 # NXDOC-1724
 ^/studio/frequently-asked-questions/?$: /studio/studio-overview-and-concepts
