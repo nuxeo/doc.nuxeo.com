@@ -285,6 +285,12 @@
 # Studio Release Notes 
 ^/studio/2019-01-07-studio-3-3-1/?$: /studio/studio-updates-2019-01
 
+# NXDOC-1813
+^/userdoc/forums/?$: /userdoc/
+^/userdoc/managing-topics/?$: /userdoc/
+^/userdoc/participating-to-a-topic/?$: /userdoc/
+^/userdoc/smart-search/?$: /userdoc/
+
 # NXDOC-1724
 ^/studio/frequently-asked-questions/?$: /studio/studio-overview-and-concepts
 ^/studio/is-it-possible-to-export-a-studio-project-in-eclipse/?$: /studio/studio-overview-and-concepts
