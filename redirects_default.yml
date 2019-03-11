@@ -305,6 +305,9 @@
 ^/nxdoc/upgrade-from-lts-2017-to-102/?$: /nxdoc/upgrade-from-lts-2017-to-lts-2019/
 ^/nxdoc/upgrade-from-lts-2017-to-103/?$: /nxdoc/upgrade-from-lts-2017-to-lts-2019/
 
+# NXDOC-204
+^/corg/hot-reloading-xhtml-templates/?$: /corg/supporting-hot-reload/
+
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
 ^/display/NXDOC(/?|/.*): /nxdoc/
