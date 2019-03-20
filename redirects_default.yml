@@ -309,6 +309,9 @@
 # NXDOC-204
 ^/corg/hot-reloading-xhtml-templates/?$: /corg/supporting-hot-reload/
 
+# NXDOC-1846
+^/userdoc/jsf-ui/(.*)$: /nxdoc/jsf-ui-userdoc/$1
+
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
 ^/display/NXDOC(/?|/.*): /nxdoc/
