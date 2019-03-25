@@ -311,6 +311,41 @@
 
 # NXDOC-1846
 ^/userdoc/jsf-ui/(.*)$: /nxdoc/jsf-ui-userdoc/$1
+^/userdoc/nuxeo-platform-concepts/?$: /nxdoc/nuxeo-platform-concepts
+^/userdoc/user-home/?$: /nxdoc/user-home
+^/userdoc/user-preferences/?$: /nxdoc/user-preferences
+^/userdoc/browsing-content/?$: /nxdoc/browsing-content
+^/userdoc/collections/?$: /nxdoc/collections-jsf-ui
+^/userdoc/tags/?$: /nxdoc/tags
+^/userdoc/preview/?$: /nxdoc/preview-jsf-ui
+^/userdoc/managing-permissions/?$: /nxdoc/managing-permissions
+^/userdoc/document-types/?$: /nxdoc/document-types
+^/userdoc/attachments/?$: /nxdoc/attachments
+^/userdoc/using-workspace-templates/?$: /nxdoc/using-workspace-templates
+^/userdoc/creating-content/?$: /nxdoc/creating-content
+^/userdoc/editing-content/?$: /nxdoc/editing-content
+^/userdoc/working-with-webdav/?$: /nxdoc/working-with-webdav
+^/userdoc/traceability/?$: /nxdoc/traceability
+^/userdoc/deleting-content/?$: /nxdoc/deleting-content
+^/userdoc/collaborative-features/?$: /nxdoc/collaborative-features
+^/userdoc/searching-the-nuxeo-platform/?$: /nxdoc/searching-the-nuxeo-platform
+^/userdoc/default-search?$: /nxdoc/default-search
+^/userdoc/quick-search/?$: /nxdoc/quick-search-jsf-ui/
+^/userdoc/saved-searches/?$: /nxdoc/saved-searches/
+^/userdoc/workflows/?$: /nxdoc/workflows-jsf-ui
+^/userdoc/serial-document-workflow/?$: /nxdoc/serial-document-workflow
+^/userdoc/parallel-document-workflow/?$: /nxdoc/parallel-document-workflow
+^/userdoc/delegating-a-task/?$: /nxdoc/delegating-a-task
+^/userdoc/reassigning-a-task/?$: /nxdoc/reassigning-a-task
+^/userdoc/abandoning-a-workflow/?$: /nxdoc/abandoning-a-workflow
+^/userdoc/publishing-content/?$: /nxdoc/publishing-content
+^/userdoc/exporting-documents/?$: /nxdoc/exporting-documents
+^/userdoc/local-configuration/?$: /nxdoc/local-configuration
+^/userdoc/managing-your-nuxeo-application/?$: /nxdoc/managing-your-nuxeo-application
+^/userdoc/managing-users-and-groups/?$: /nxdoc/managing-users-and-groups
+^/userdoc/managing-vocabularies/?$: /nxdoc/managing-vocabularies
+^/userdoc/how-to-add-new-relation-types/?$: /nxdoc/how-to-add-new-relation-types
+^/userdoc/case-management-with-the-nuxeo-platform/?$: /nxdoc/case-management-with-the-nuxeo-platform
 
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
