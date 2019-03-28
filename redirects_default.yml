@@ -309,6 +309,8 @@
 # NXDOC-204
 ^/corg/hot-reloading-xhtml-templates/?$: /corg/supporting-hot-reload/
 
+^/client-apps/nuxeo-drive-user-profile-migration/?$: /client-apps/nuxeo-drive-faq
+
 # NXDOC-1846
 ^/userdoc/jsf-ui/(.*)$: /nxdoc/jsf-ui-userdoc/$1
 ^/userdoc/nuxeo-platform-concepts/?$: /nxdoc/nuxeo-platform-concepts
