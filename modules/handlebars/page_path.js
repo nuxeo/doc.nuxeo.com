@@ -10,7 +10,7 @@ const key_to_url = require('../key_to_url');
 
 const get_placeholder_string = require('../get_placeholder_string');
 
-let meta_pages_log = true;
+let meta_pages_log = !!process.env.META_PAGES_LOG;
 
 const page_url = options => {
   const file = options.data.root;
