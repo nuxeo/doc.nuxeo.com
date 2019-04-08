@@ -144,7 +144,10 @@ test('get_url_object returns values as expected', assert => {
   ];
 
   string_tests.forEach(string_test => {
-    const actual = get_url_object(string_test.test, string_test.options || options);
+    const actual = get_url_object(
+      string_test.test,
+      string_test.options || options
+    );
     assert.deepEqual(
       actual,
       string_test.expected,

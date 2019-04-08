@@ -58,7 +58,9 @@ const urls = (options, add_to_metadata) => (files, metalsmith, done) => {
   let version_path = '';
   let version_label = '';
   if (options.versions) {
-    const current_version = options.versions.find(version => version.is_current_version);
+    const current_version = options.versions.find(
+      version => version.is_current_version
+    );
     if (current_version) {
       version_path = current_version.url_path;
       version_label = current_version.label;
@@ -82,7 +84,11 @@ const urls = (options, add_to_metadata) => (files, metalsmith, done) => {
       // Add to metadata.pages array
       if (add_to_metadata) {
         if (metadata.pages[file.url.key.full]) {
-          warn('Duplicate key found: "%s" in "%s"', file.url.key.full, file.title);
+          warn(
+            'Duplicate key found: "%s" in "%s"',
+            file.url.key.full,
+            file.title
+          );
         } else {
           metadata.pages[file.url.key.full] = {
             title: file.title,

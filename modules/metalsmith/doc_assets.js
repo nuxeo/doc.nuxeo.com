@@ -43,7 +43,10 @@ const checksum = (str, algorithm, encoding) => {
 };
 
 const fetch = require('node-fetch');
-const get_attribute = el => (typeof element_mapping[el.name] !== 'undefined' ? element_mapping[el.name] : false);
+const get_attribute = el =>
+  typeof element_mapping[el.name] !== 'undefined'
+    ? element_mapping[el.name]
+    : false;
 
 const get_file = (doc, local_path) => {
   const file_content = doc.properties['file:content'];
@@ -74,7 +77,7 @@ const get_file = (doc, local_path) => {
                 });
               } else {
                 debug('No err.response', err);
-                return Promise.reject(err);
+              return Promise.reject(err);
               }
             }
           )
@@ -101,7 +104,10 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
   const metadata = metalsmith.metadata();
 
   const nuxeo_config = {
-    baseURL: process.env.NX_ASSETS_URL || metadata.site.nx_assets_url || 'http://localhost:8080/nuxeo',
+    baseURL:
+      process.env.NX_ASSETS_URL ||
+      metadata.site.nx_assets_url ||
+      'http://localhost:8080/nuxeo',
     auth: {
       method: 'basic',
       username: process.env.NX_ASSETS_USER || 'Administrator',
@@ -114,66 +120,70 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
   const repo = nuxeo.repository();
 
   const check_file = (filename, selector) => {
-    const file = files[filename];
+      const file = files[filename];
 
-    const contents = file.contents.toString();
-    const $ = cheerio.load(contents);
+      const contents = file.contents.toString();
+      const $ = cheerio.load(contents);
 
-    const url_promises = [];
+      const url_promises = [];
 
-    $(selector).each((i, el) => {
-      const $el = $(el);
-      const attr = get_attribute(el);
-      const url = $el.attr(attr);
-      if (url && url.startsWith(nx_assets_url_prefix)) {
-        const uid = url.slice(nx_assets_url_prefix.length);
-        debug(`uid: ${uid}`);
+      $(selector).each((i, el) => {
+        const $el = $(el);
+        const attr = get_attribute(el);
+        const url = $el.attr(attr);
+        if (url && url.startsWith(nx_assets_url_prefix)) {
+          const uid = url.slice(nx_assets_url_prefix.length);
+          debug(`uid: ${uid}`);
 
-        const p = retry(repo.fetch.bind(repo), {
-          max_tries: 5,
-          interval: 500,
-          throw_original: true,
-          args: [uid, { schemas: ['dublincore', 'file', 'document_asset'] }]
-        })
-          .then(doc => {
-            debug('doc:', doc);
-            // if there is no file return
-            if (!doc.properties['file:content']) {
-              error('nx_asset without file:content');
-              return null;
-            }
-
-            // build the right url
-            const ext = /(?:\.([^.]+))?$/.exec(doc.properties['file:content'].name)[1];
-            const asset_type = doc.properties['doc_asset:nature'];
-            const asset_file = `${nx_assets_base}/${uid}-${asset_type}.${ext}`;
-            const href = `/${asset_file}`;
-            debug('ext:', ext);
-            debug('asset_type:', asset_type);
-            debug('asset_file:', asset_file);
-            debug('href:', href);
-
-            // Update the href in the DOM
-            $el.attr(attr, href);
-            const html = $.html();
-            file.contents = Buffer.from(html, 'utf8');
-
-            return get_file(doc, asset_file);
+          const p = retry(repo.fetch.bind(repo), {
+            max_tries: 5,
+            interval: 500,
+            throw_original: true,
+            args: [uid, { schemas: ['dublincore', 'file', 'document_asset'] }]
           })
-          .catch(err => {
-            error('fetch err:', err);
-            return Promise.reject(err);
-          });
+            .then(doc => {
+              debug('doc:', doc);
+              // if there is no file return
+              if (!doc.properties['file:content']) {
+                error('nx_asset without file:content');
+                return null;
+              }
 
-        url_promises.push(p);
-      }
-    });
+              // build the right url
+              const ext = /(?:\.([^.]+))?$/.exec(
+                doc.properties['file:content'].name
+              )[1];
+              const asset_type = doc.properties['doc_asset:nature'];
+              const asset_file = `${nx_assets_base}/${uid}-${asset_type}.${ext}`;
+              const href = `/${asset_file}`;
+              debug('ext:', ext);
+              debug('asset_type:', asset_type);
+              debug('asset_file:', asset_file);
+              debug('href:', href);
+
+              // Update the href in the DOM
+              $el.attr(attr, href);
+              const html = $.html();
+              file.contents = Buffer.from(html, 'utf8');
+
+              return get_file(doc, asset_file);
+            })
+            .catch(err => {
+              error('fetch err:', err);
+            return Promise.reject(err);
+            });
+
+          url_promises.push(p);
+        }
+      });
 
     return Promise.all(url_promises);
   };
 
   const selector = Object.keys(element_mapping).join();
-  const file_promises = multimatch(Object.keys(files), pattern).map(filename => check_file(filename, selector));
+  const file_promises = multimatch(Object.keys(files), pattern).map(filename =>
+    check_file(filename, selector)
+  );
 
   Promise.all(file_promises)
     .then(() => done())
