@@ -139,7 +139,7 @@ default:
           url_path: '910'
           noindex: true
           order: 10
-        '810':
+        '810-assets':
           label: 'LTS 2016'
           url_path: '810'
           noindex: true

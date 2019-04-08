@@ -39,7 +39,9 @@ co(function*() {
   info('Starting Build: %s - %s', repo_id, branch);
 
   // Get the metadata
-  const metadata_raw = yield readFile(path.join(__dirname, 'temp/metadata.json'));
+  const metadata_raw = yield readFile(
+    path.join(__dirname, 'temp/metadata.json')
+  );
   const metadata = JSON.parse(metadata_raw);
 
   debug(Object.keys(metadata));

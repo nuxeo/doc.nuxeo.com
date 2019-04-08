@@ -13,7 +13,7 @@ if [ $BRANCH = 'master' ] || [ $BRANCH = 'static' ] ; then
 else
     # main version branch, include version for assets
     SOURCE_ASSETS="./temp/${REPO_ID}/$BRANCH/assets/";
-    TARGET_BASE_ASSETS="${TARGET_BASE}assets/${BRANCH}/";
+    TARGET_BASE_ASSETS="${TARGET_BASE}assets/";
 fi
 
 if [ -d $SOURCE_SITE -a ! -L $SOURCE_SITE ]; then

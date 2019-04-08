@@ -116,6 +116,7 @@ const initialise_search = () => {
 
     initialised = true;
   } else {
+    // eslint-disable-next-line no-console
     console.log('Alogia could not initialise');
   }
 };

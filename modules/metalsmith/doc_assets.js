@@ -43,7 +43,10 @@ const checksum = (str, algorithm, encoding) => {
 };
 
 const fetch = require('node-fetch');
-const get_attribute = el => (typeof element_mapping[el.name] !== 'undefined' ? element_mapping[el.name] : false);
+const get_attribute = el =>
+  typeof element_mapping[el.name] !== 'undefined'
+    ? element_mapping[el.name]
+    : false;
 
 const get_file = (doc, local_path) => {
   const file_content = doc.properties['file:content'];
@@ -97,7 +100,10 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
   const metadata = metalsmith.metadata();
 
   const nuxeo_config = {
-    baseURL: process.env.NX_ASSETS_URL || metadata.site.nx_assets_url || 'http://localhost:8080/nuxeo',
+    baseURL:
+      process.env.NX_ASSETS_URL ||
+      metadata.site.nx_assets_url ||
+      'http://localhost:8080/nuxeo',
     auth: {
       method: 'basic',
       username: process.env.NX_ASSETS_USER || 'Administrator',
@@ -141,7 +147,9 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
               }
 
               // build the right url
-              const ext = /(?:\.([^.]+))?$/.exec(doc.properties['file:content'].name)[1];
+              const ext = /(?:\.([^.]+))?$/.exec(
+                doc.properties['file:content'].name
+              )[1];
               const asset_type = doc.properties['doc_asset:nature'];
               const asset_file = `${nx_assets_base}/${uid}-${asset_type}.${ext}`;
               const href = `/${asset_file}`;
@@ -172,7 +180,9 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
     });
 
   const selector = Object.keys(element_mapping).join();
-  const file_promises = multimatch(Object.keys(files), pattern).map(filename => check_file(filename, selector));
+  const file_promises = multimatch(Object.keys(files), pattern).map(filename =>
+    check_file(filename, selector)
+  );
 
   Promise.all(file_promises)
     .then(() => done())

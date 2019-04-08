@@ -28,8 +28,10 @@ const get_filter = function(filter_text = '', filter_type = 'or') {
     debug('filters: %o', filters);
 
     return row => {
-      const reduce_and = (result, search) => result && !!~row[search.field].toLowerCase().indexOf(search.text);
-      const reduce_or = (result, search) => result || !!~row[search.field].toLowerCase().indexOf(search.text);
+      const reduce_and = (result, search) =>
+        result && !!~row[search.field].toLowerCase().indexOf(search.text);
+      const reduce_or = (result, search) =>
+        result || !!~row[search.field].toLowerCase().indexOf(search.text);
 
       if (row) {
         if (filter_type.toLowerCase() === 'and') {

@@ -69,7 +69,10 @@ const urls = function(options) {
               if (file.version_override[version.label] === 'none') {
                 add_item = false;
               }
-              version_key = get_placeholder_key(file.version_override[version.label], file.url.key);
+              version_key = get_placeholder_key(
+                file.version_override[version.label],
+                file.url.key
+              );
             } else {
               const version_key_parts = [];
               version_key_parts.push(file.url.key.space);
@@ -102,7 +105,11 @@ const urls = function(options) {
           file.url &&
           file.url.versions &&
           file.url.versions.length &&
-          file.url.versions.find(version => version.label.toLowerCase() === metadata.site.canonical_version_preference);
+          file.url.versions.find(
+            version =>
+              version.label.toLowerCase() ===
+              metadata.site.canonical_version_preference
+          );
 
         if (latest_version && latest_version.url && !latest_version.no_page) {
           debug('latest', filepath, latest_version.url);

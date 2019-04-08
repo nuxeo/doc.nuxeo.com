@@ -46,7 +46,11 @@ const set_versions = options => (files, metalsmith, done) => {
     return done(validation.error);
   }
   options = validation.value;
-  const { branch: current_branch_name, repo_id: current_repository_name, repositories } = options;
+  const {
+    branch: current_branch_name,
+    repo_id: current_repository_name,
+    repositories
+  } = options;
 
   const metadata = metalsmith.metadata();
 
@@ -59,7 +63,9 @@ const set_versions = options => (files, metalsmith, done) => {
     Object.keys(repository.branches).forEach(branch_name => {
       if (metadata.site.versions) {
         const branch = repository.branches[branch_name];
-        branch.is_current_version = repository_name === current_repository_name && branch_name === current_branch_name;
+        branch.is_current_version =
+          repository_name === current_repository_name &&
+          branch_name === current_branch_name;
 
         if (branch.is_current_version) {
           metadata.current_branch = branch;
@@ -74,7 +80,9 @@ const set_versions = options => (files, metalsmith, done) => {
       }
     });
   });
-  metadata.site.versions = metadata.site.versions && metadata.site.versions.sort(sort_by_field('order'));
+  metadata.site.versions =
+    metadata.site.versions &&
+    metadata.site.versions.sort(sort_by_field('order'));
   debug('versions', metadata.site.versions);
 
   return done();
