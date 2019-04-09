@@ -129,12 +129,12 @@ default:
         master:
           label: 'FT'
           order: 0
-        '1010':
+        '1010-assets':
           label: 'LTS 2019'
           url_path: '1010'
           noindex: true
           order: 5
-        '910':
+        '910-assets':
           label: 'LTS 2017'
           url_path: '910'
           noindex: true
@@ -144,12 +144,12 @@ default:
           url_path: '810'
           noindex: true
           order: 20
-        '710':
+        '710-assets':
           label: 'LTS 2015'
           url_path: '710'
           noindex: true
           order: 30
-        '60':
+        '60-assets':
           label: '6.0'
           url_path: '60'
           noindex: true
