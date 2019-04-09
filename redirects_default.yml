@@ -83,7 +83,7 @@
 ^/display/KB/How+to+do+incremental+deployment+%28hot+reload%29+in+the+JSF-Seam+layer/?$: /corg/supporting-hot-reload/
 
 ^/display/ADMINDOC/Configuration\+Templates/?$: /nxdoc/configuration-templates
-^/display/ADMINDOC710/How\+to\+Estimate\+Disk,\+Database\+and\+Elasticsearch\+Usage/?$: /710/admindoc/how-to-estimate-disk-database-and-elasticsearch-usage
+^/display/ADMINDOC710/How\+to\+Estimate\+Disk,\+Database\+and\+Elasticsearch\+Usage/?$: /admindoc/710/how-to-estimate-disk-database-and-elasticsearch-usage
 ^/display/ADMINDOC/Monitoring\+slow\+NXQL\+queries/?$: /nxdoc/monitoring-slow-nxql-queries
 
 ^/display/Studio/Nuxeo\+Studio\+Documentation\+Center/?$: /studio/nuxeo-studio
@@ -129,7 +129,7 @@
 ^/nxdoc/create-a-task-assignment-alert/?$: /nxdoc/workflow-use-cases/
 ^/nxdoc/functional-tour/?$: /nxdoc/workflow-use-cases/
 ^/nxdoc/implement-the-validation-logic/?$: /nxdoc/workflow-use-cases/
-^/nxdoc/hotfixes-installation-notes-for-nuxeo-platform-lts-2015/?$: /810/nxdoc/hotfixes-installation-notes-for-nuxeo-platform-lts-2016
+^/nxdoc/hotfixes-installation-notes-for-nuxeo-platform-lts-2015/?$: /nxdoc/810/hotfixes-installation-notes-for-nuxeo-platform-lts-2016
 
 ^/userdoc/nuxeo-drive/?$: /nxdoc/nuxeo-drive
 ^/userdoc/nuxeo-drive-faq/?$: /nxdoc/nuxeo-drive-faq
@@ -142,7 +142,7 @@
 ^/nxdoc/contributing-a-new-endpoint/?$: /nxdoc/howto-contribute-to-the-rest-api/
 ^/nxdoc/gwt-integration/?$: /nxdoc/
 ^/nxdoc/getting-started-with-nuxeo-studio/?$: /nxdoc/configure-nuxeo-platform
-^/910/nxdoc/getting-started-with-nuxeo-studio/?$: /910/nxdoc/configure-nuxeo-platform
+^/910/nxdoc/getting-started-with-nuxeo-studio/?$: /nxdoc/910/configure-nuxeo-platform
 ^/nxdoc/how-to-enable-the-trash-feature/?$: /nxdoc/how-to-use-trash-feature/
 
 # NXDOC-1033: REST API doc reorg
@@ -163,7 +163,7 @@
 
 # Delete page Deploying Nuxeo on Cloudfoundry
 ^/nxdoc/deploying-nuxeo-on-cloudfoundry/?$: /nxdoc/installation
-^/810/nxdoc/deploying-nuxeo-on-cloudfoundry/?$: /810/nxdoc/installation
+^/810/nxdoc/deploying-nuxeo-on-cloudfoundry/?$: /nxdoc/810/installation
 
 # Old search redirect
 ^/dosearchsite.action?queryString=(.*): /?q=$1
@@ -172,9 +172,9 @@
 ^/nxdoc/building-a-soap-based-webservice-client-in-nuxeo/?$: /nxdoc/rest-api
 ^/nxdoc/building-a-soap-based-webservice-in-the-nuxeo-platform/?$: /nxdoc/rest-api
 ^/nxdoc/soap-bridge/?$: /nxdoc/rest-api
-^/810/nxdoc/building-a-soap-based-webservice-client-in-nuxeo/?$: /810/nxdoc/rest-api
-^/810/nxdoc/building-a-soap-based-webservice-in-the-nuxeo-platform/?$: /810/nxdoc/rest-api
-^/810/nxdoc/soap-bridge/?$: /810/nxdoc/rest-api
+^/810/nxdoc/building-a-soap-based-webservice-client-in-nuxeo/?$: /nxdoc/810/rest-api
+^/810/nxdoc/building-a-soap-based-webservice-in-the-nuxeo-platform/?$: /nxdoc/810/rest-api
+^/810/nxdoc/soap-bridge/?$: /nxdoc/810/rest-api
 
 # IDE redirects
 ^/idedoc/getting-started-with-nuxeo-ide/?$: /nxdoc/develop-with-nuxeo-platform/
