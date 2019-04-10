@@ -1,18 +1,18 @@
 'use strict';
 
-var debug_lib = require('debug');
-var debug = debug_lib('get-placeholder-key');
-var error = debug_lib('get-placeholder-key:error');
+const debug_lib = require('debug');
+const debug = debug_lib('get-placeholder-key');
+const error = debug_lib('get-placeholder-key:error');
 
-var slug = require('slug');
+const slug = require('slug');
 slug.defaults.modes.pretty.lower = true;
 
-var get_placeholder_key = function(page_name_raw, defaults) {
-  var space_version_re = /^([a-z-]+)([0-9]+)?$/gi;
-  var page_name_split;
-  var page_name;
-  var key_parts = [];
-  var is_string = typeof page_name_raw === 'string';
+const get_placeholder_key = (page_name_raw, defaults) => {
+  const space_version_re = /^([a-z-]+)([0-9]+)?$/gi;
+  let page_name_split;
+  let page_name;
+  const key_parts = [];
+  const is_string = typeof page_name_raw === 'string';
   debug('page_name_raw: %s', page_name_raw);
   // Legacy method
   if (is_string && ~page_name_raw.indexOf(':')) {
@@ -20,7 +20,7 @@ var get_placeholder_key = function(page_name_raw, defaults) {
     page_name = page_name_split.pop();
 
     if (page_name_split.length === 1) {
-      var space_version_match = space_version_re.exec(page_name_split.pop());
+      const space_version_match = space_version_re.exec(page_name_split.pop());
       debug('space_version_match: %o', space_version_match);
 
       // Add version
@@ -61,6 +61,15 @@ var get_placeholder_key = function(page_name_raw, defaults) {
       });
     }
   }
+
+  // Check parts and swap first 2 if version is first
+  const is_version = /^\d+(\.\d+)*$/;
+  if (key_parts.length === 3 && is_version.test(key_parts[0])) {
+    const version = key_parts.shift();
+    const space = key_parts.shift();
+    key_parts.unshift(space, version);
+  }
+
   debug('result: %s', key_parts.join('/'));
   return key_parts.join('/');
 };

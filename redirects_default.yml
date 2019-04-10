@@ -1,10 +1,10 @@
 ^/nxdoc/marketplace-add-ons/?$: /nxdoc/nuxeo-add-ons/
 
 ^/display/ADMINDOC/Bulk\+Document\+Importer/?$: /nxdoc/nuxeo-bulk-document-importer
-^/display/ADMINDOC/Hotfixes\+Management\+for\+Nuxeo\+Platform\+LTS\+2015/?$: /710/admindoc/hotfixes-management-for-nuxeo-platform-lts-2015/
-^/display/ADMINDOC/LTS\+2015\+Packaging\+Changes\+and\+Deprecations/?$: /710/admindoc/lts-2015-packaging-changes-and-deprecations/
+^/display/ADMINDOC/Hotfixes\+Management\+for\+Nuxeo\+Platform\+LTS\+2015/?$: /admindoc/710/hotfixes-management-for-nuxeo-platform-lts-2015/
+^/display/ADMINDOC/LTS\+2015\+Packaging\+Changes\+and\+Deprecations/?$: /admindoc/710/lts-2015-packaging-changes-and-deprecations/
 ^/display/ADMINDOC/Supervision/?$: /nxdoc/metrics-and-monitoring/
-^/display/ADMINDOC/Upgrade\+from\+6.0\+to\+7.10/?$: /710/admindoc/upgrade-from-60-to-lts-2015/
+^/display/ADMINDOC/Upgrade\+from\+6.0\+to\+7.10/?$: /admindoc/710/upgrade-from-60-to-lts-2015/
 ^/display/ADMINDOC/Upgrade\+from\+7.10\+to\+8.1/?$: /nxdoc/upgrade-from-lts-2015-following-fast-tracks/
 ^/display/ADMINDOC/Upgrading\+your\+Nuxeo\+Version/?$: /nxdoc/upgrading-the-nuxeo-platform/
 ^/display/NXDOC/REST\+API\+Entity\+Types/?$: /nxdoc/rest-api-entity-types/
@@ -26,7 +26,7 @@
 ^/display/NXDOC/Amazon+S3+Online+Storage/?$: /nxdoc/amazon-s3-online-storage/
 ^/x/lAIz/?$: /nxdoc/intallation/
 ^/x/HABu/?$: /nxdoc/amazon-s3-online-storage/
-^/KB/Launcher+says+it+couldn%27t+retrieve+process+ID/?$: /710/admindoc/launcher-says-it-couldnt-retrieve-process-id/
+^/KB/Launcher+says+it+couldn%27t+retrieve+process+ID/?$: /admindoc/710/launcher-says-it-couldnt-retrieve-process-id/
 ^/x/IYBH/?$: /nxdoc/special-http-headers/
 ^/display/CORG/Compiling+Nuxeo+from+sources/?$: /corg/compiling-nuxeo-from-sources/
 ^/x/DhU5AQ/?$: /nxdoc/develop-with-nuxeo-platform/
@@ -38,12 +38,11 @@
 ^/display/public/NXDOC58/Dev+Cookbook/?$: /nxdoc/
 ^/display/public/IDEDOC/Installing+Nuxeo+IDE/?$: /corg/
 ^/display/DAMDOC/Nuxeo+DAM+Core/?$: /nxdoc/digital-asset-management-dam/
-^/x/monZ/?$: /60/nxdoc/quick-start-dev-guide/
-^/x/x4MlAQ/?$: /60/nxdoc/first-steps-with-studio-technical-documentation-tutorial/
-^/x/LANc/?$: /710/admindoc/configuration-templates/
-^/x/Ng7F/?$: /710/nxdoc/implementing-documentation-items/
+^/x/monZ/?$: /nxdoc/60/quick-start-dev-guide/
+^/x/x4MlAQ/?$: /nxdoc/60/first-steps-with-studio-technical-documentation-tutorial/
+^/x/LANc/?$: /admindoc/710/configuration-templates/
+^/x/Ng7F/?$: /nxdoc/710/implementing-documentation-items/
 ^/x/c4ao/?$: /nxdoc/drag-and-drop-service-for-content-capture-html5-based/
-
 
 # NXDOC-1038: Archived versions of the documentation
 ^/58/?$: /archived-documentation
@@ -67,7 +66,6 @@
 ^/display/DAMDOC1x/?$: /archived-documentation
 ^/display/DMDOC(/?|/.*): /archived-documentation
 
-
 ^/display/NXDOC/Learning\+with\+Videos/?$: https://university.nuxeo.io
 ^/display/NXDOC/How\+to\+Brand\+Your\+Application/?$: /studio/branding
 ^/nxdoc/how-to-brand-your-application/?$: /studio/branding
@@ -85,7 +83,7 @@
 ^/display/KB/How+to+do+incremental+deployment+%28hot+reload%29+in+the+JSF-Seam+layer/?$: /corg/supporting-hot-reload/
 
 ^/display/ADMINDOC/Configuration\+Templates/?$: /nxdoc/configuration-templates
-^/display/ADMINDOC710/How\+to\+Estimate\+Disk,\+Database\+and\+Elasticsearch\+Usage/?$: /710/admindoc/how-to-estimate-disk-database-and-elasticsearch-usage
+^/display/ADMINDOC710/How\+to\+Estimate\+Disk,\+Database\+and\+Elasticsearch\+Usage/?$: /admindoc/710/how-to-estimate-disk-database-and-elasticsearch-usage
 ^/display/ADMINDOC/Monitoring\+slow\+NXQL\+queries/?$: /nxdoc/monitoring-slow-nxql-queries
 
 ^/display/Studio/Nuxeo\+Studio\+Documentation\+Center/?$: /studio/nuxeo-studio
@@ -98,13 +96,13 @@
 ^/x/Nw0z/?$: /archived-documentation
 
 # For 7.10 - Web UI renamed into JSF UI
-^/710/nxdoc/from-the-web-ui-to-nuxeo-studio/$: /710/nxdoc/from-the-jsf-ui-to-nuxeo-studio
-^/710/nxdoc/web-ui-limitations/$: /710/nxdoc/jsf-ui-limitations
-^/710/nxdoc/web-ui-framework/$: /710/nxdoc/jsf-ui-framework
-^/710/nxdoc/web-ui-framework-overview/$: /710/nxdoc/jsf-ui-framework-overview
-^/710/nxdoc/web-ui-how-to-index/$: /710/nxdoc/jsf-ui-how-to-index
-^/710/nxdoc/how-to-add-a-button-in-the-web-ui/$: /710/nxdoc/how-to-add-a-button-in-the-jsf-ui
-^/710/nxdoc/how-to-bubble-errors-from-the-core-layer-in-the-web-ui/$: /710/nxdoc/how-to-bubble-errors-from-the-core-layer-in-the-jsf-ui
+^/710/nxdoc/from-the-web-ui-to-nuxeo-studio/$: /nxdoc/710/from-the-jsf-ui-to-nuxeo-studio
+^/710/nxdoc/web-ui-limitations/$: /nxdoc/710/jsf-ui-limitations
+^/710/nxdoc/web-ui-framework/$: /nxdoc/710/jsf-ui-framework
+^/710/nxdoc/web-ui-framework-overview/$: /nxdoc/710/jsf-ui-framework-overview
+^/710/nxdoc/web-ui-how-to-index/$: /nxdoc/710/jsf-ui-how-to-index
+^/710/nxdoc/how-to-add-a-button-in-the-web-ui/$: /nxdoc/710/how-to-add-a-button-in-the-jsf-ui
+^/710/nxdoc/how-to-bubble-errors-from-the-core-layer-in-the-web-ui/$: /nxdoc/710/how-to-bubble-errors-from-the-core-layer-in-the-jsf-ui
 
 # For LTS 2016
 ^/nxdoc/javaandroid-client/$: /nxdoc/java-client
@@ -131,7 +129,7 @@
 ^/nxdoc/create-a-task-assignment-alert/?$: /nxdoc/workflow-use-cases/
 ^/nxdoc/functional-tour/?$: /nxdoc/workflow-use-cases/
 ^/nxdoc/implement-the-validation-logic/?$: /nxdoc/workflow-use-cases/
-^/nxdoc/hotfixes-installation-notes-for-nuxeo-platform-lts-2015/?$: /810/nxdoc/hotfixes-installation-notes-for-nuxeo-platform-lts-2016
+^/nxdoc/hotfixes-installation-notes-for-nuxeo-platform-lts-2015/?$: /nxdoc/810/hotfixes-installation-notes-for-nuxeo-platform-lts-2016
 
 ^/userdoc/nuxeo-drive/?$: /nxdoc/nuxeo-drive
 ^/userdoc/nuxeo-drive-faq/?$: /nxdoc/nuxeo-drive-faq
@@ -144,7 +142,7 @@
 ^/nxdoc/contributing-a-new-endpoint/?$: /nxdoc/howto-contribute-to-the-rest-api/
 ^/nxdoc/gwt-integration/?$: /nxdoc/
 ^/nxdoc/getting-started-with-nuxeo-studio/?$: /nxdoc/configure-nuxeo-platform
-^/910/nxdoc/getting-started-with-nuxeo-studio/?$: /910/nxdoc/configure-nuxeo-platform
+^/910/nxdoc/getting-started-with-nuxeo-studio/?$: /nxdoc/910/configure-nuxeo-platform
 ^/nxdoc/how-to-enable-the-trash-feature/?$: /nxdoc/how-to-use-trash-feature/
 
 # NXDOC-1033: REST API doc reorg
@@ -154,30 +152,29 @@
 ^/nxdoc/web-adapters-for-the-rest-api/?$: /nxdoc/rest-api-web-adapters
 ^/nxdoc/authenticating-the-requests/?$: /nxdoc/request-authentication
 ^/nxdoc/web-exceptions-errors/?$: /nxdoc/error-handling
-^/nxdoc/how-to-upload-a-file-in-nuxeo-platform-using-rest-api-batch-processing-endpoint/?$ : /nxdoc/howto-upload-file-nuxeo-using-rest-api
+^/nxdoc/how-to-upload-a-file-in-nuxeo-platform-using-rest-api-batch-processing-endpoint/?$: /nxdoc/howto-upload-file-nuxeo-using-rest-api
 ^/nxdoc/use-nuxeo-api-playground-to-discover-the-api/?$: /nxdoc/nuxeo-api-playground
 ^/nxdoc/howto-nuxeo-api-playground/?$: /nxdoc/nuxeo-api-playground
 ^/nxdoc/developing-with-angular2/?$: /nxdoc/howto-develop-with-angular2
 
 # Updates with 8.10 documentation
-^/810/nxdoc/theme-upgrade-to-lts-2015/?$: /710/nxdoc/theme-upgrade-to-lts-2015/
-^/nxdoc/theme-upgrade-to-lts-2015/?$: /710/nxdoc/theme-upgrade-to-lts-2015/
+^/810/nxdoc/theme-upgrade-to-lts-2015/?$: /nxdoc/710/theme-upgrade-to-lts-2015/
+^/nxdoc/theme-upgrade-to-lts-2015/?$: /nxdoc/710/theme-upgrade-to-lts-2015/
 
 # Delete page Deploying Nuxeo on Cloudfoundry
 ^/nxdoc/deploying-nuxeo-on-cloudfoundry/?$: /nxdoc/installation
-^/810/nxdoc/deploying-nuxeo-on-cloudfoundry/?$: /810/nxdoc/installation
+^/810/nxdoc/deploying-nuxeo-on-cloudfoundry/?$: /nxdoc/810/installation
 
 # Old search redirect
 ^/dosearchsite.action?queryString=(.*): /?q=$1
-
 
 # NXDOC-11113
 ^/nxdoc/building-a-soap-based-webservice-client-in-nuxeo/?$: /nxdoc/rest-api
 ^/nxdoc/building-a-soap-based-webservice-in-the-nuxeo-platform/?$: /nxdoc/rest-api
 ^/nxdoc/soap-bridge/?$: /nxdoc/rest-api
-^/810/nxdoc/building-a-soap-based-webservice-client-in-nuxeo/?$: /810/nxdoc/rest-api
-^/810/nxdoc/building-a-soap-based-webservice-in-the-nuxeo-platform/?$: /810/nxdoc/rest-api
-^/810/nxdoc/soap-bridge/?$: /810/nxdoc/rest-api
+^/810/nxdoc/building-a-soap-based-webservice-client-in-nuxeo/?$: /nxdoc/810/rest-api
+^/810/nxdoc/building-a-soap-based-webservice-in-the-nuxeo-platform/?$: /nxdoc/810/rest-api
+^/810/nxdoc/soap-bridge/?$: /nxdoc/810/rest-api
 
 # IDE redirects
 ^/idedoc/getting-started-with-nuxeo-ide/?$: /nxdoc/develop-with-nuxeo-platform/
@@ -230,13 +227,11 @@
 ^/nxdoc/how-to-customize-nuxeo-mobile-themes/?$: /client-apps/how-to-customize-nuxeo-mobile-themes
 ^/nxdoc/nuxeo-mobile-roadmap/?$: /client-apps/nuxeo-mobile-roadmap
 
-
 ^/nxdoc/first-steps-with-studio-technical-documentation-tutorial/?$: /nxdoc/getting-started
 ^/nxdoc/implementing-documentation-items/?$: /nxdoc/getting-started
 ^/nxdoc/custom-content-view-for-documentation-items/?$: /nxdoc/getting-started
 ^/nxdoc/document-locking-right-after-its-creation/?$: /nxdoc/getting-started
 ^/nxdoc/validation-workflow-choosing-the-assignee-based-on-a-metadata/?$: /nxdoc/getting-started
-
 
 ^/nxdoc/learning-rest-api/?$: /nxdoc/discover-nuxeo-platform-apis
 ^/nxdoc/learning-rest-api-prerequisites/?$: /nxdoc/discover-nuxeo-platform-apis
@@ -248,7 +243,6 @@
 ^/nxdoc/execute-business-logic-through-automation/?$: /nxdoc/discover-nuxeo-platform-apis
 ^/nxdoc/launch-a-workflow/?$: /nxdoc/discover-nuxeo-platform-apis
 ^/nxdoc/bonus-contribute-your-own-enricher/?$: /nxdoc/discover-nuxeo-platform-apis
-
 
 ^/nxdoc/how-to-unit-test-studio-bundle/?$: /studio/tutorials/
 ^/nxdoc/how-to-setup-a-test-smtp-server/?$: https://app.quandora.com/object/8ab0a80d-ead7-4dc4-9658-9244b7984548
@@ -280,8 +274,8 @@
 
 # NXDOC-1804 
 ^/nxdoc/how-to-new-pill/?$: /nxdoc/how-to-new-tab
-#^/810/nxdoc/how-to-new-pill/?$: 810/nxdoc/how-to-new-tab
-^/910/nxdoc/how-to-new-pill/?$: 910/nxdoc/how-to-new-tab
+#^/810/nxdoc/how-to-new-pill/?$: /nxdoc/810/how-to-new-tab
+^/910/nxdoc/how-to-new-pill/?$: /nxdoc/910/how-to-new-tab
 
 # Studio Release Notes 
 ^/studio/2019-01-07-studio-3-3-1/?$: /studio/studio-updates-2019-01
@@ -354,14 +348,14 @@
 ^/display/NXDOC(/?|/.*): /nxdoc/
 ^/display/ADMINDOC(/?|/.*): /nxdoc/nuxeo-server
 
-^/display/USERDOC710(/?|/.*): /710/userdoc/
-^/display/USERDOC60(/?|/.*): /60/userdoc/
+^/display/USERDOC710(/?|/.*): /userdoc/710/
+^/display/USERDOC60(/?|/.*): /userdoc/60/
 
-^/display/NXDOC710(/?|/.*): /710/nxdoc/
-^/display/NXDOC60(/?|/.*): /60/nxdoc/
+^/display/NXDOC710(/?|/.*): /nxdoc/710/
+^/display/NXDOC60(/?|/.*): /nxdoc/60/
 
-^/display/ADMINDOC710(/?|/.*): /710/admindoc/
-^/display/ADMINDOC60(/?|/.*): /60/admindoc/
+^/display/ADMINDOC710(/?|/.*): /admindoc/710/
+^/display/ADMINDOC60(/?|/.*): /admindoc/60/
 
 ^/display/Studio(/?|/.*): /studio/
 ^/display/IDEDOC(/?|/.*): /idedoc/
@@ -371,3 +365,6 @@
 
 ^/display/SPRINT(/?|/.*): /
 ^/display/KB/?$: /
+
+# Redirects for VERSION/SPACE/... to SPACE/VERSION/...
+^/(\d+)/([^/]+)(/.*): /$2/$1/$3

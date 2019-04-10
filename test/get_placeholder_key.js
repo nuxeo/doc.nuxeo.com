@@ -9,7 +9,11 @@ test('get_placeholder_key is a function', assert => {
   // Get typeof string
   const expected = get_placeholder_key && {}.toString.call(get_placeholder_key);
 
-  assert.isEqual(expected, '[object Function]', 'get_placeholder_key is a function');
+  assert.isEqual(
+    expected,
+    '[object Function]',
+    'get_placeholder_key is a function'
+  );
   assert.end();
 });
 
@@ -51,18 +55,23 @@ test('get_placeholder_key returns values as expected', assert => {
     },
     {
       test: 'USERDOC70:Nuxeo CSV',
-      expected: '70/userdoc/nuxeo-csv',
+      expected: 'userdoc/70/nuxeo-csv',
       message: 'returns version prefixed value'
     },
     {
       test: '70/USERDOC/Nuxeo CSV',
-      expected: '70/userdoc/nuxeo-csv',
+      expected: 'userdoc/70/nuxeo-csv',
       message: 'returns normalised version key'
     },
     {
       test: '70/USERDOC/nuxeo-csv',
-      expected: '70/userdoc/nuxeo-csv',
+      expected: 'userdoc/70/nuxeo-csv',
       message: 'returns version key'
+    },
+    {
+      test: 'userdoc/70/nuxeo-csv',
+      expected: 'userdoc/70/nuxeo-csv',
+      message: 'returns version key from new format'
     },
     {
       test: 'Implementing Documentation+Items',
@@ -85,6 +94,11 @@ test('get_placeholder_key returns values as expected', assert => {
       message: 'returns space index'
     },
     {
+      test: '/userdoc/index',
+      expected: 'userdoc/index',
+      message: 'returns space index with / prefix'
+    },
+    {
       test: 'index',
       expected: 'index',
       message: 'returns root index',
@@ -99,28 +113,28 @@ test('get_placeholder_key returns values as expected', assert => {
     },
     {
       test: 'install',
-      expected: '710/nxdoc/install',
+      expected: 'nxdoc/710/install',
       message: 'returns fallback version',
       fallback: {
         version: '710',
         space: 'nxdoc',
-        space_path: '710/nxdoc',
+        space_path: 'nxdoc/710',
         slug: 'index',
-        parts: ['710', 'nxdoc', 'index'],
-        full: '710/nxdoc/index'
+        parts: ['nxdoc', '710', 'index'],
+        full: 'nxdoc/710/index'
       }
     },
     {
       test: 'admindoc/install',
-      expected: '710/admindoc/install',
+      expected: 'admindoc/710/install',
       message: 'returns fallback version',
       fallback: {
         version: '710',
         space: 'nxdoc',
-        space_path: '710/nxdoc',
+        space_path: 'nxdoc/710',
         slug: 'index',
-        parts: ['710', 'nxdoc', 'index'],
-        full: '710/nxdoc/index'
+        parts: ['nxdoc', '710', 'index'],
+        full: 'nxdoc/710/index'
       }
     },
     {
@@ -130,16 +144,19 @@ test('get_placeholder_key returns values as expected', assert => {
       fallback: {
         version: '710',
         space: 'nxdoc',
-        space_path: '710/nxdoc',
+        space_path: 'nxdoc/710',
         slug: 'index',
-        parts: ['710', 'nxdoc', 'index'],
-        full: '710/nxdoc/index'
+        parts: ['nxdoc', '710', 'index'],
+        full: 'nxdoc/710/index'
       }
     }
   ];
 
   string_tests.forEach(string_test => {
-    const actual = get_placeholder_key(string_test.test, string_test.fallback || fallback_values);
+    const actual = get_placeholder_key(
+      string_test.test,
+      string_test.fallback || fallback_values
+    );
     assert.isEqual(actual, string_test.expected, string_test.message);
   });
 

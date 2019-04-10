@@ -2,7 +2,9 @@
 /* eslint-env es6 */
 
 // Debugging
-const { debug, error } = require('../debugger')('handlebars-table-from-details');
+const { debug, error } = require('../debugger')(
+  'handlebars-table-from-details'
+);
 
 // npm packages
 const sortby = require('lodash.sortby');

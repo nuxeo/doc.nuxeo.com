@@ -42,69 +42,72 @@ const schema = Joi.object().keys({
     .default('main')
 });
 
-const urls = function(options, add_to_metadata) {
+const urls = (options, add_to_metadata) => (files, metalsmith, done) => {
   debug('Options: %o', options);
-  return function(files, metalsmith, done) {
-    const metadata = metalsmith.metadata();
-    metadata.pages = metadata.pages || {};
+  const metadata = metalsmith.metadata();
+  metadata.pages = metadata.pages || {};
 
-    // Check options fits schema
-    const validation = schema.validate(options, { allowUnknown: true });
-    if (validation.error) {
-      error('Validation failed, %o', validation.error.details[0].message);
-      return done(validation.error);
+  // Check options fits schema
+  const validation = schema.validate(options, { allowUnknown: true });
+  if (validation.error) {
+    error('Validation failed, %o', validation.error.details[0].message);
+    return done(validation.error);
+  }
+  options = validation.value;
+
+  let version_path = '';
+  let version_label = '';
+  if (options.versions) {
+    const current_version = options.versions.find(
+      version => version.is_current_version
+    );
+    if (current_version) {
+      version_path = current_version.url_path;
+      version_label = current_version.label;
     }
-    options = validation.value;
+  }
 
-    let version_path = '';
-    let version_label = '';
-    if (options.versions) {
-      const current_version = options.versions.find(version => version.is_current_version);
-      if (current_version) {
-        version_path = current_version.url_path;
-        version_label = current_version.label;
-      }
-    }
+  Object.entries(files).forEach(([filepath, file]) => {
+    debug('Filepath: %s', filepath);
+    if (multimatch(filepath, options.file_pattern).length) {
+      file.url = get_url_object(filepath, {
+        version_path,
+        version_label,
+        spaces: options.spaces,
+        default_space: options.default_space
+      });
 
-    Object.keys(files).forEach(function(filepath) {
-      debug('Filepath: %s', filepath);
-      const file = files[filepath];
-      if (multimatch(filepath, options.file_pattern).length) {
-        file.url = get_url_object(filepath, {
-          version_path,
-          version_label,
-          spaces: options.spaces,
-          default_space: options.default_space
-        });
+      file.slug = file.url.key.slug;
 
-        file.slug = file.url.key.slug;
+      debug('Filepath: %s, url: %o', filepath, file.url.full);
 
-        debug('Filepath: %s, url: %o', filepath, file.url.full);
-
-        // Add to metadata.pages array
-        if (add_to_metadata) {
-          if (metadata.pages[file.url.key.full]) {
-            warn('Duplicate key found: "%s" in "%s"', file.url.key.full, file.title);
-          } else {
-            metadata.pages[file.url.key.full] = {
-              title: file.title,
-              url: file.url.full,
-              id: file.slug,
-              space: file.url.key.space,
-              version: file.url.key.version,
-              version_path,
-              version_label,
-              space_path: file.url.key.space_path,
-              is_redirect: !!(file.redirect || file.redirect_source)
-            };
-          }
+      // Add to metadata.pages array
+      if (add_to_metadata) {
+        if (metadata.pages[file.url.key.full]) {
+          warn(
+            'Duplicate key found: "%s" in "%s"',
+            file.url.key.full,
+            file.title
+          );
+        } else {
+          metadata.pages[file.url.key.full] = {
+            title: file.title,
+            url: file.url.full,
+            id: file.slug,
+            space: file.url.key.space,
+            version: file.url.key.version,
+            version_path,
+            version_label,
+            space_path: file.url.key.space_path,
+            is_redirect: !!(file.redirect || file.redirect_source)
+          };
         }
-      } else {
-        debug('Ignorning: %s', filepath);
       }
-    });
-    return done();
-  };
+    } else {
+      debug('Ignorning: %s', filepath);
+    }
+  });
+  return done();
 };
 
 module.exports = urls;

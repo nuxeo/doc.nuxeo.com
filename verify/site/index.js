@@ -6,13 +6,13 @@ const fs = require('fs');
 const path = require('path');
 const cheerio = require('cheerio');
 
-const latest_space_version = '910';
+const latest_space_version = '1010';
 
 const site_path = path.join(__dirname, '..', '..', 'site');
 const assets_path = path.join(site_path, 'assets');
 const spaces = [
-  path.join(latest_space_version, 'nxdoc'),
-  path.join(latest_space_version, 'userdoc'),
+  path.join('nxdoc', latest_space_version),
+  path.join('userdoc', latest_space_version),
   'connect',
   'corg',
   'glos',
@@ -25,12 +25,21 @@ const spaces = [
 test('site should have key files', assert => {
   const site_paths = [
     path.join(assets_path, 'fonts', 'fontawesome-webfont.ttf'),
-    path.join(assets_path, 'fonts', 'AvenirNextLTPro', 'AvenirNextLTPro-Regular.ttf'),
+    path.join(
+      assets_path,
+      'fonts',
+      'AvenirNextLTPro',
+      'AvenirNextLTPro-Regular.ttf'
+    ),
     path.join(assets_path, 'icons', 'favicon.ico'),
     path.join(assets_path, 'imgs', 'logo340x60.png'),
     path.join(site_path, 'index.html'),
     path.join(site_path, 'sitemap.xml'),
-    path.join(site_path, 'nx_assets', 'a26bfade-2438-4d00-a5f3-676f719ed4a8-screenshot.png')
+    path.join(
+      site_path,
+      'nx_assets',
+      'a26bfade-2438-4d00-a5f3-676f719ed4a8-screenshot.png'
+    )
   ];
   // Index of each of the spaces
   spaces.forEach(space => {
@@ -57,7 +66,12 @@ test('canonical and robots metadata reference should be correct', assert => {
       noindex: false
     },
     {
-      filepath: path.join(latest_space_version, 'nxdoc', 'rest-api', 'index.html'),
+      filepath: path.join(
+        'nxdoc',
+        latest_space_version,
+        'rest-api',
+        'index.html'
+      ),
       expected_url: '/nxdoc/rest-api/',
       noindex: true
     },
@@ -83,9 +97,17 @@ test('canonical and robots metadata reference should be correct', assert => {
       `${filepath}: Canonical link is correct`
     );
     if (noindex) {
-      assert.isEqual($('meta[name="robots"]').attr('content'), 'noindex', `${filepath}: Robots meta is correct`);
+      assert.isEqual(
+        $('meta[name="robots"]').attr('content'),
+        'noindex',
+        `${filepath}: Robots meta is correct`
+      );
     } else {
-      assert.isEqual($('meta[name="robots"]').length, 0, `${filepath}: Robots meta is not present`);
+      assert.isEqual(
+        $('meta[name="robots"]').length,
+        0,
+        `${filepath}: Robots meta is not present`
+      );
     }
   });
   assert.end();

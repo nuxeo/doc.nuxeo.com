@@ -1,7 +1,12 @@
-'use strict';
-
-/* eslint-env es6 */
-module.exports = function(key, pages) {
+/**
+ * Key To URL
+ * Returns a URL for a key
+ *
+ * @param  {String} key
+ * @param  {Object} pages
+ * @return {String}
+ */
+module.exports = (key, pages) => {
   if (!key) {
     throw new Error('Key not provided');
   } else if (!pages) {

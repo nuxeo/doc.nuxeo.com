@@ -7,9 +7,14 @@ const get_placeholder_string = require('../modules/get_placeholder_string');
 
 test('get_placeholder_string is a function', assert => {
   // Get typeof string
-  const expected = get_placeholder_string && {}.toString.call(get_placeholder_string);
+  const expected =
+    get_placeholder_string && {}.toString.call(get_placeholder_string);
 
-  assert.isEqual(expected, '[object Function]', 'get_placeholder_string is a function');
+  assert.isEqual(
+    expected,
+    '[object Function]',
+    'get_placeholder_string is a function'
+  );
   assert.end();
 });
 
@@ -28,7 +33,7 @@ test('get_placeholder_string returns values as expected', assert => {
         page: 'install'
       },
       expected: 'install',
-      message: 'returns correct name without page'
+      message: 'returns correct name with page'
     },
     {
       test: {
@@ -37,7 +42,7 @@ test('get_placeholder_string returns values as expected', assert => {
         page: 'install'
       },
       expected: 'nxdoc/install',
-      message: 'returns correct name space and page'
+      message: 'returns correct name space, and page'
     },
     {
       test: {
@@ -47,7 +52,28 @@ test('get_placeholder_string returns values as expected', assert => {
         page: 'install'
       },
       expected: '60/nxdoc/install',
-      message: 'returns correct name, version, space and page'
+      message: 'returns correct name, version, space, and page'
+    },
+    {
+      test: {
+        page: 'install'
+      },
+      expected: 'install',
+      message: 'returns correct page'
+    },
+    {
+      test: {
+        page: 'nxdoc/install'
+      },
+      expected: 'nxdoc/install',
+      message: 'returns correct space, and page'
+    },
+    {
+      test: {
+        page: '1010/nxdoc/install'
+      },
+      expected: '1010/nxdoc/install',
+      message: 'returns correct version, space, and page'
     }
   ];
 

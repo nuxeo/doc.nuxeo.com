@@ -52,7 +52,12 @@ const get_url_object = function(filepath, options) {
     error(`Schema validation failed: ${validation.error.details[0].message}`);
     throw validation.error;
   }
-  const { spaces, version_path, version_label, default_space } = validation.value;
+  const {
+    spaces,
+    version_path,
+    version_label,
+    default_space
+  } = validation.value;
 
   const file_path_info = path.parse(filepath);
   const filepath_parts = file_path_info.dir.split(path.sep);
@@ -68,22 +73,25 @@ const get_url_object = function(filepath, options) {
     },
     original_filepath: filepath
   };
-  // Set the base version path
-  if (version_path) {
-    url.key.version = version_path;
-    url.key.version_label = version_label;
-    parts.push(version_path);
-  }
 
   // Set the space path
   let space = filepath_parts.length ? filepath_parts.shift() : '';
   if (space) {
     url.key.space = space;
     parts.push(space);
+
+    // Set the base version path
+    if (version_path) {
+      url.key.version = version_path;
+      url.key.version_label = version_label;
+      parts.push(version_path);
+    }
     url.key.space_path = parts.join(path.sep);
 
     // Get the space_name
-    const config_space = spaces.find(this_space => space === this_space.space_path);
+    const config_space = spaces.find(
+      this_space => space === this_space.space_path
+    );
     if (config_space && config_space.space_name) {
       url.key.space_name = config_space.space_name;
     } else {
@@ -111,7 +119,9 @@ const get_url_object = function(filepath, options) {
     full_url_parts.push(slug);
   }
   // root only has `/`
-  url.full = full_url_parts.join(path.sep) ? path.sep + full_url_parts.join(path.sep) + path.sep : '/';
+  url.full = full_url_parts.join(path.sep)
+    ? path.sep + full_url_parts.join(path.sep) + path.sep
+    : '/';
 
   // Add to url.key
   if (slug) {

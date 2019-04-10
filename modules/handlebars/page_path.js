@@ -1,6 +1,3 @@
-'use strict';
-/* eslint-env es6 */
-
 // Debugging
 const { warn, error } = require('../debugger')('handlebars-page');
 
@@ -13,20 +10,39 @@ const key_to_url = require('../key_to_url');
 
 const get_placeholder_string = require('../get_placeholder_string');
 
-const page_url = function(options) {
+let meta_pages_log = !!process.env.META_PAGES_LOG;
+
+const page_url = options => {
   const file = options.data.root;
   const defaults = file && file.url && file.url.key;
   options.hash = options.hash || {};
 
+  // Check all branches get correct list of pages
+  if (meta_pages_log) {
+    meta_pages_log = false;
+    const fs = require('fs');
+    const moment = require('moment');
+
+    const page_json_file = `./logs/pages-${moment().format('HH-mm-ss')}.json`;
+    const json = JSON.stringify(file.pages, null, 2);
+
+    fs.writeFile(page_json_file, json, err => {
+      if (err) {
+        error('Could NOT write ', page_json_file);
+      }
+    });
+  }
+
   let { page = '' } = options.hash;
+
+  // Strip # from page
   const page_hash_split = page.split('#');
   options.hash.page = page_hash_split.shift();
   let hash = page_hash_split.length ? page_hash_split.join('#') : '';
-  hash = hash ? '#' + hash : hash;
+  hash = hash ? `#${hash}` : hash;
 
   const raw_page_name = get_placeholder_string(options.hash);
 
-  // Strip # from page
   let url = '';
   if (defaults) {
     const key = get_placeholder_key(raw_page_name, defaults);
@@ -34,12 +50,16 @@ const page_url = function(options) {
     try {
       url = key_to_url(key, file.pages);
     } catch (e) {
-      warn('%s; Title: "%s"', e.message, file.title);
+      warn('%s; from path: "%s"', e.message, file.url.full);
     }
   } else {
-    error('file.url.key not present. page: "%s", defaults: %o', options.hash.page, defaults);
+    error(
+      'file.url.key not present. page: "%s", defaults: %o',
+      options.hash.page,
+      defaults
+    );
   }
-  return url + hash;
+  return `${url}${hash}`;
 };
 
 module.exports = page_url;
