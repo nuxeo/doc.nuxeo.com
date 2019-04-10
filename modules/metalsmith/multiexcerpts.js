@@ -2,7 +2,9 @@
 /* eslint-env es6 */
 
 // Debugging
-const { debug, warn, error } = require('../debugger')('metalsmith-multiexcerpts');
+const { debug, warn, error } = require('../debugger')(
+  'metalsmith-multiexcerpts'
+);
 
 // npm packages
 const Joi = require('joi');
@@ -39,7 +41,10 @@ const multiexcerpts = function(options) {
     options = validation.value;
 
     const metadata = metalsmith.metadata();
-    const re_definition = new RegExp('{{! ' + options.placeholder + '( +name=["\'](.+?)["\'])}}', 'gm');
+    const re_definition = new RegExp(
+      '{{! ' + options.placeholder + '( +name=["\'](.+?)["\'])}}',
+      'gm'
+    );
     const closing_placeholder = '{{! /multiexcerpt}}';
 
     const loop_completed = Object.keys(files).every(function(filepath) {
@@ -64,7 +69,12 @@ const multiexcerpts = function(options) {
       // Get opening placeholder positions
       while ((match = re_definition.exec(contents)) !== null) {
         // page as key: space:page-name else space:page-name:name-of-excerpt
-        debug('%s: page: %s, name: %s', options.placeholder, file.title, match[2]);
+        debug(
+          '%s: page: %s, name: %s',
+          options.placeholder,
+          file.title,
+          match[2]
+        );
 
         placeholder_positions.push({
           key: key,
@@ -96,7 +106,11 @@ const multiexcerpts = function(options) {
 
       // Get the open and closed positions of the nested placeholders
       try {
-        placeholder_positions = open_close_positions(placeholder_positions, 'name', 'position');
+        placeholder_positions = open_close_positions(
+          placeholder_positions,
+          'name',
+          'position'
+        );
       } catch (err) {
         error('%s: page: %s, %s', options.placeholder, file.title, err);
         return done(new Error('Page: ' + file.title + '\n\n' + err));
@@ -110,9 +124,16 @@ const multiexcerpts = function(options) {
           const placeholder_key = key + '/' + slug(placeholder.key);
           debug('placeholder key: %s', placeholder.key);
           if (metadata[options.placeholder][placeholder_key]) {
-            warn('Duplicate placeholder: %s - %s', options.placeholder, placeholder_key);
+            warn(
+              'Duplicate placeholder: %s - %s',
+              options.placeholder,
+              placeholder_key
+            );
           } else {
-            let multiexcerpt = contents.substring(placeholder.start, placeholder.end);
+            let multiexcerpt = contents.substring(
+              placeholder.start,
+              placeholder.end
+            );
             multiexcerpt = add_link_context(multiexcerpt, file.url.key);
             metadata[options.placeholder][placeholder_key] = multiexcerpt;
             debug('%s - Set: %s', options.placeholder, placeholder_key);

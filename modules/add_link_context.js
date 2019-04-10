@@ -56,8 +56,14 @@ const add_link_context = function(content, context) {
             .join(' ');
 
           const new_link = `{{${label} ${params_text}}}`;
-          file_re.lastIndex = file_re.lastIndex - (link.full_match.length - new_link.length);
-          content = replace_between(content, link.match_start, link.match_end, new_link);
+          file_re.lastIndex =
+            file_re.lastIndex - (link.full_match.length - new_link.length);
+          content = replace_between(
+            content,
+            link.match_start,
+            link.match_end,
+            new_link
+          );
         }
       }
     });

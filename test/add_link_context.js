@@ -9,7 +9,11 @@ test('add_link_context is a function', assert => {
   // Get typeof string
   const expected = add_link_context && {}.toString.call(add_link_context);
 
-  assert.isEqual(expected, '[object Function]', 'add_link_context is a function');
+  assert.isEqual(
+    expected,
+    '[object Function]',
+    'add_link_context is a function'
+  );
   assert.end();
 });
 
@@ -47,16 +51,20 @@ test('add_link_context returns page links (without version) as expected', assert
     },
     {
       test: "String contains {{page page='installation'}} link",
-      expected: "String contains {{page page='installation' space='nxdoc'}} link",
+      expected:
+        "String contains {{page page='installation' space='nxdoc'}} link",
       message: 'returns page link with context added'
     },
     {
-      test: "String contains {{page page='installation' space='admindoc'}} link",
-      expected: "String contains {{page page='installation' space='admindoc'}} link",
+      test:
+        "String contains {{page page='installation' space='admindoc'}} link",
+      expected:
+        "String contains {{page page='installation' space='admindoc'}} link",
       message: 'returns page link keeping existing context'
     },
     {
-      test: "String contains {{file name='image1.png'}}{{file name='image2.png'}} picture",
+      test:
+        "String contains {{file name='image1.png'}}{{file name='image2.png'}} picture",
       expected:
         "String contains {{file name='image1.png' page='authentication-and-user-management' space='nxdoc'}}{{file name='image2.png' page='authentication-and-user-management' space='nxdoc'}} picture",
       message: 'returns file links with context added'
@@ -64,7 +72,10 @@ test('add_link_context returns page links (without version) as expected', assert
   ];
 
   string_tests.forEach(string_test => {
-    const actual = add_link_context(string_test.test, string_test.fallback || fallback_values);
+    const actual = add_link_context(
+      string_test.test,
+      string_test.fallback || fallback_values
+    );
     assert.isEqual(actual, string_test.expected, string_test.message);
   });
 
@@ -94,17 +105,22 @@ test('add_link_context returns page links (with version) as expected', assert =>
       message: 'returns file link with context added'
     },
     {
-      test: "String contains {{page page='installation' space='admindoc'}} link",
-      expected: "String contains {{page page='installation' space='admindoc' version='710'}} link",
+      test:
+        "String contains {{page page='installation' space='admindoc'}} link",
+      expected:
+        "String contains {{page page='installation' space='admindoc' version='710'}} link",
       message: 'returns page link with version added'
     },
     {
-      test: "String contains {{page page='installation' space='admindoc' version='60'}} link",
-      expected: "String contains {{page page='installation' space='admindoc' version='60'}} link",
+      test:
+        "String contains {{page page='installation' space='admindoc' version='60'}} link",
+      expected:
+        "String contains {{page page='installation' space='admindoc' version='60'}} link",
       message: 'returns page link with existing context'
     },
     {
-      test: "String contains {{file name='image1.png'}}{{file name='image2.png'}} picture",
+      test:
+        "String contains {{file name='image1.png'}}{{file name='image2.png'}} picture",
       expected:
         "String contains {{file name='image1.png' page='authentication-and-user-management' space='nxdoc' version='710'}}{{file name='image2.png' page='authentication-and-user-management' space='nxdoc' version='710'}} picture",
       message: 'returns file links with context added'
@@ -112,7 +128,10 @@ test('add_link_context returns page links (with version) as expected', assert =>
   ];
 
   string_tests.forEach(string_test => {
-    const actual = add_link_context(string_test.test, string_test.fallback || fallback_values);
+    const actual = add_link_context(
+      string_test.test,
+      string_test.fallback || fallback_values
+    );
     assert.isEqual(actual, string_test.expected, string_test.message);
   });
 

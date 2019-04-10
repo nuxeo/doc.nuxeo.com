@@ -65,33 +65,40 @@ test('markdown_renderer converts text correctly', assert => {
     {
       message: 'link - normal',
       preposition: '[Nuxeo Blog](https://www.nuxeo.com/blog/)',
-      expected: '<p><a href="https://www.nuxeo.com/blog/" target="_blank">Nuxeo Blog</a></p>'
+      expected:
+        '<p><a href="https://www.nuxeo.com/blog/" target="_blank">Nuxeo Blog</a></p>'
     },
     {
       message: 'link - reference',
-      preposition: '[Nuxeo Platform][0]\n\n[0]: https://www.nuxeo.com/platform/',
-      expected: '<p><a href="https://www.nuxeo.com/platform/" target="_blank">Nuxeo Platform</a></p>'
+      preposition:
+        '[Nuxeo Platform][0]\n\n[0]: https://www.nuxeo.com/platform/',
+      expected:
+        '<p><a href="https://www.nuxeo.com/platform/" target="_blank">Nuxeo Platform</a></p>'
     },
     {
       message: 'link - external with title',
       preposition: '[Nuxeo Events](/events/ ?external=true "Link Title")',
-      expected: '<p><a href="/events/" title="Link Title" target="_blank">Nuxeo Events</a></p>'
+      expected:
+        '<p><a href="/events/" title="Link Title" target="_blank">Nuxeo Events</a></p>'
     },
     {
       message: 'image - normal',
       preposition: '![Example image](https://example.com/image.png)',
-      expected: '<p><img alt="Example image" src="https://example.com/image.png"></p>'
+      expected:
+        '<p><img alt="Example image" src="https://example.com/image.png"></p>'
     },
     // ?w=180,h=360,border=true,thumbnail=true,align=right "title"
     {
       message: 'image - border',
-      preposition: '![Example image](https://example.com/image.png ?border=true "Image title")',
+      preposition:
+        '![Example image](https://example.com/image.png ?border=true "Image title")',
       expected:
         '<p><img alt="Example image" src="https://example.com/image.png" title="Image title" class="nuxeo border"></p>'
     },
     {
       message: 'image - width and height',
-      preposition: '![Example image](https://example.com/image.png ?h=120,w=250 "Image title")',
+      preposition:
+        '![Example image](https://example.com/image.png ?h=120,w=250 "Image title")',
       expected: `<p>
         <div class="large reveal" id="image_afc9bdb942aafe8db202dc7127fa35a1" data-reveal data-animation-in="fade-in" data-animation-out="fade-out">
         <img alt="Example image" src="https://example.com/image.png" title="Image title" >

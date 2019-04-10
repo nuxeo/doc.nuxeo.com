@@ -2,7 +2,9 @@
 /* eslint-env es6 */
 
 // Debugging
-const { debug, warn, error } = require('../debugger')('metalsmith-replace-multiexcerpts');
+const { debug, warn, error } = require('../debugger')(
+  'metalsmith-replace-multiexcerpts'
+);
 
 // npm packages
 const escape_regex = require('escape-string-regexp');
@@ -43,16 +45,23 @@ const replace_placeholder = function(options) {
         const raw_page_name = get_placeholder_string(placeholder_parts);
         const { name } = placeholder_parts;
 
-        key = get_placeholder_key(raw_page_name, file.url.key) + '/' + slug(name);
+        key =
+          get_placeholder_key(raw_page_name, file.url.key) + '/' + slug(name);
         replacement_re = new RegExp(escape_regex(match[0]), 'g');
         debug('Looking for: %s in %s', key, file.title);
 
         if (metadata.multiexcerpt[key]) {
           debug('Replacing: %s', match[0]);
-          contents = contents.replace(replacement_re, metadata.multiexcerpt[key]);
+          contents = contents.replace(
+            replacement_re,
+            metadata.multiexcerpt[key]
+          );
         } else {
           warn('No replacement found for: %s in "%s"', key, file.title);
-          contents = contents.replace(replacement_re, '{{! Multiexcerpt replacement failed for: ' + match[1] + ' }}');
+          contents = contents.replace(
+            replacement_re,
+            '{{! Multiexcerpt replacement failed for: ' + match[1] + ' }}'
+          );
         }
       }
       if (!safeguard) {

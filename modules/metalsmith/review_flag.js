@@ -2,7 +2,9 @@
 /* eslint-env es6 */
 
 // Debugging
-const { debug, info, warn, error } = require('../debugger')('metalsmith-review-flag');
+const { debug, info, warn, error } = require('../debugger')(
+  'metalsmith-review-flag'
+);
 
 // npm packages
 const moment = require('moment');
@@ -12,7 +14,9 @@ const needs_review = function(file, comment, status = 'not-ok') {
   debug('needs_review - comment: "%s", file: "%s"', comment, file.title);
   file.review = file.review || {};
   file.review.status = status;
-  file.review.comment = file.review.comment ? file.review.comment + '\n\n' + comment : comment;
+  file.review.comment = file.review.comment
+    ? file.review.comment + '\n\n' + comment
+    : comment;
 };
 
 // plugin
@@ -31,13 +35,19 @@ const review_flag = function() {
       if (metadata.site.review_release_date) {
         review_point = moment(metadata.site.review_release_date, 'YYYY-MM-DD');
         if (!review_point.isValid()) {
-          error('Review release date is not a valid date (YYYY-MM-DD). %s', metadata.site.review_release_date);
+          error(
+            'Review release date is not a valid date (YYYY-MM-DD). %s',
+            metadata.site.review_release_date
+          );
           return done(new Error('Review release date is not a valid date'));
         }
       }
       let review_period_split = metadata.site.review_period.split(' ');
       if (review_period_split.length === 2) {
-        let review_period = moment.duration(+review_period_split[0], review_period_split[1]);
+        let review_period = moment.duration(
+          +review_period_split[0],
+          review_period_split[1]
+        );
 
         if (review_period.asMilliseconds()) {
           Object.keys(files).forEach(function(filepath) {
@@ -45,21 +55,34 @@ const review_flag = function() {
             let file = files[filepath];
 
             // Ignore pages with label: home and review_skip
-            if ((file.labels && ~file.labels.indexOf('home')) || file.review_skip) {
+            if (
+              (file.labels && ~file.labels.indexOf('home')) ||
+              file.review_skip
+            ) {
               debug('File ignored: %s', filepath);
             } else {
               if (file.review && file.review.date) {
                 let review_date = moment(file.review.date, 'YYYY-MM-DD');
                 if (review_date.isValid()) {
-                  let within_review_period = review_date.add(review_period).isAfter(review_point);
+                  let within_review_period = review_date
+                    .add(review_period)
+                    .isAfter(review_point);
                   if (!within_review_period) {
                     // Invalid Review Date
                     needs_review(file, review_messages.overdue);
-                    warn('Review date overdue: %s - %s', file.title, file.review.date);
+                    warn(
+                      'Review date overdue: %s - %s',
+                      file.title,
+                      file.review.date
+                    );
                   }
                 } else {
                   // Invalid Review Date
-                  warn('Review date invalid: %s - %s', file.title, file.review.date);
+                  warn(
+                    'Review date invalid: %s - %s',
+                    file.title,
+                    file.review.date
+                  );
                   needs_review(file, review_messages.invalid_date);
                 }
               } else {
@@ -72,11 +95,19 @@ const review_flag = function() {
             }
           });
         } else {
-          error('Review period did not result in a valid duration. %s', metadata.site.review_period);
-          return done(new Error('Review period did not result in a valid duration'));
+          error(
+            'Review period did not result in a valid duration. %s',
+            metadata.site.review_period
+          );
+          return done(
+            new Error('Review period did not result in a valid duration')
+          );
         }
       } else {
-        error('Review period in incorrect form. %s', metadata.site.review_period);
+        error(
+          'Review period in incorrect form. %s',
+          metadata.site.review_period
+        );
         return done(new Error('Review period in incorrect form'));
       }
     } else {

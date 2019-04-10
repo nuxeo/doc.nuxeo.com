@@ -7,9 +7,14 @@ const split_outside_of_quotes = require('../modules/split_outside_of_quotes');
 
 test('split_outside_of_quotes is a function', assert => {
   // Get typeof string
-  const expected = split_outside_of_quotes && {}.toString.call(split_outside_of_quotes);
+  const expected =
+    split_outside_of_quotes && {}.toString.call(split_outside_of_quotes);
 
-  assert.isEqual(expected, '[object Function]', 'split_outside_of_quotes is a function');
+  assert.isEqual(
+    expected,
+    '[object Function]',
+    'split_outside_of_quotes is a function'
+  );
   assert.end();
 });
 

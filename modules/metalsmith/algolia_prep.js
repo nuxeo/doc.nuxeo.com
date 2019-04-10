@@ -50,7 +50,11 @@ const algolia_prep = options => (files, metalsmith, done) => {
         .filter(filename => files[filename].algolia !== false)
         .filter(filename => files[filename].title)
         .filter(
-          filename => files[filename] && files[filename].url && files[filename].url.key && files[filename].url.key.full
+          filename =>
+            files[filename] &&
+            files[filename].url &&
+            files[filename].url.key &&
+            files[filename].url.key.full
         )
         .forEach(filename => {
           const file = files[filename];

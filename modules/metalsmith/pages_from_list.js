@@ -2,7 +2,9 @@
 /* eslint-env es6 */
 
 // Debugging
-const { debug, warn, error } = require('../debugger')('metalsmith-pages-from-list');
+const { debug, warn, error } = require('../debugger')(
+  'metalsmith-pages-from-list'
+);
 
 // npm packages
 const Joi = require('joi');
@@ -37,13 +39,18 @@ const pages_from_list = function(options) {
     options.forEach(function(option) {
       // Expects an array or object.
       const keys =
-        (metadata.lists && Array.isArray(metadata.lists[option.list_key]) && metadata.lists[option.list_key]) ||
+        (metadata.lists &&
+          Array.isArray(metadata.lists[option.list_key]) &&
+          metadata.lists[option.list_key]) ||
         (metadata.lists && Object.keys(metadata.lists[option.list_key])) ||
         [];
       if (keys) {
         keys.forEach(function(item) {
           // if index filepath is .../index/index.md to avoid conflicts
-          const filename = item === 'index' ? `${option.path}/index/index.md` : `${option.path}/${slug(item)}.md`;
+          const filename =
+            item === 'index'
+              ? `${option.path}/index/index.md`
+              : `${option.path}/${slug(item)}.md`;
 
           const data = Object.assign({}, option.defaults);
           data.title = data.title || item;

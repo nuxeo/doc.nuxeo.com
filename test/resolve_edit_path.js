@@ -9,7 +9,11 @@ test('resolve_edit_path is a function', assert => {
   // Get typeof string
   const actual = resolve_edit_path && {}.toString.call(resolve_edit_path);
 
-  assert.isEqual(actual, '[object Function]', 'resolve_edit_path is a function');
+  assert.isEqual(
+    actual,
+    '[object Function]',
+    'resolve_edit_path is a function'
+  );
 
   assert.end();
 });

@@ -7357,7 +7357,6 @@
   "/nxdoc/910/search-endpoints/": "tQQ",
   "/nxdoc/910/workflow-task-endpoints/": "qY8",
   "/nxdoc/910/filtering-exposed-operations/": "epj",
-  "/studio/studio-updates-2019-02/": "sNX",
   "/studio/studio-updates-2019-03/": "RVq",
   "/studio/how-to-customize-theme-studio/": "Wbz",
   "/studio/how-to-override-default-contributions/": "OYb",
@@ -7402,5 +7401,7 @@
   "/nxdoc/how-to-add-new-relation-types/": "AfW",
   "/nxdoc/1010/web-ui-default-rendition/": "jww",
   "/studio/studio-updates-2019-04/": "X0Q",
-  "/nxdoc/810/how-to-new-tab/": "k3s"
+  "/nxdoc/810/how-to-new-tab/": "k3s",
+  "/nxdoc/nuxeo-aspera-connector/": "Kvd",
+  "/nxdoc/nuxeo-zapier/": "Ann"
 }

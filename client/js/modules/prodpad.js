@@ -48,7 +48,8 @@ $submit.on('click', function() {
   };
 
   $.ajax({
-    url: 'https://api.prodpad.com/v1/feedbacks?apikey=43ebe94f3c4ff5ba36202a5757f9051ad4f7d87d1c3bae8882113efa56af8895',
+    url:
+      'https://api.prodpad.com/v1/feedbacks?apikey=43ebe94f3c4ff5ba36202a5757f9051ad4f7d87d1c3bae8882113efa56af8895',
     method: 'POST',
     data: data
   })

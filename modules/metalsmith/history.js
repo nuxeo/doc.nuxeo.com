@@ -30,7 +30,9 @@ const process_history = function(data, filepath, file, options) {
         const history_item_split = history_item_raw.split('\t');
         const history_item = {
           author: history_item_split[0],
-          date: moment.utc(history_item_split[1], 'ddd MMM DD HH:mm:ss YYYY Z').format('YYYY-MM-DD HH:mm'),
+          date: moment
+            .utc(history_item_split[1], 'ddd MMM DD HH:mm:ss YYYY Z')
+            .format('YYYY-MM-DD HH:mm'),
           message: history_item_split[2]
         };
         file.history.push(history_item);
@@ -51,7 +53,12 @@ const process_history = function(data, filepath, file, options) {
         file.history.reverse();
       }
     } else {
-      error('No git history for: %s, %s, %s', options.repo_path, options.branch, filepath);
+      error(
+        'No git history for: %s, %s, %s',
+        options.repo_path,
+        options.branch,
+        filepath
+      );
     }
   } else {
     error('file is empty. filepath: %s, data: %s', filepath, data.length);
@@ -89,9 +96,12 @@ const list_from_field = function(options) {
     options = validation.value;
 
     // Convert to array if it's a string
-    options.pattern = typeof options.pattern === 'string' ? [options.pattern] : options.pattern;
+    options.pattern =
+      typeof options.pattern === 'string' ? [options.pattern] : options.pattern;
 
-    const checkout_command = options.repo_id ? `git checkout -f origin/${options.branch}` : 'echo ""';
+    const checkout_command = options.repo_id
+      ? `git checkout -f origin/${options.branch}`
+      : 'echo ""';
 
     debug('Repository: %s, Branch: %s', options.repo_path, options.branch);
 
@@ -123,13 +133,19 @@ const list_from_field = function(options) {
 
               // Get GitHub file url
               if (repository_url) {
-                file.edit_url = repository_url.file(options.branch, `src/${filepath}`);
+                file.edit_url = repository_url.file(
+                  options.branch,
+                  `src/${filepath}`
+                );
               }
 
-              exec(`git log --pretty=format:'%cn%x09%cd%x09%s' src/${filepath}`, {
-                encoding: 'utf8',
-                cwd: options.repo_path
-              })
+              exec(
+                `git log --pretty=format:'%cn%x09%cd%x09%s' src/${filepath}`,
+                {
+                  encoding: 'utf8',
+                  cwd: options.repo_path
+                }
+              )
                 .then(function(history) {
                   process_history(history, filepath, file, options);
                   resolve();

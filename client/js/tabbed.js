@@ -29,7 +29,9 @@ if ($content.hasClass('tabbed')) {
             is_active = 'is-active';
             is_first = false;
             $this.before('<ul id="nuxeo-tabs" class="tabs" data-tabs></ul>');
-            $this.before('<div id="nuxeo-tabs-content" class="tabs-content" data-tabs-content="nuxeo-tabs"></div>');
+            $this.before(
+              '<div id="nuxeo-tabs-content" class="tabs-content" data-tabs-content="nuxeo-tabs"></div>'
+            );
 
             $tabs = $content_clone.find('#nuxeo-tabs');
             $tab_sections = $content_clone.find('#nuxeo-tabs-content');
@@ -49,7 +51,9 @@ if ($content.hasClass('tabbed')) {
               '</a></li>'
           );
 
-          $current_section = $('<div class="tabs-panel ' + is_active + '" id="' + id + '">');
+          $current_section = $(
+            '<div class="tabs-panel ' + is_active + '" id="' + id + '">'
+          );
           $tab_sections.append($current_section);
           $this.remove();
         }
