@@ -21,6 +21,7 @@ console.log(
 );
 
 // Redirects
+const add_prefix_regex = /^(\/|https?:\/\/)/;
 const escape_spaces = text => text.replace(/ /g, '\\ ');
 let redirects;
 
@@ -33,12 +34,18 @@ try {
 
 // Output to stdout
 console.log(
-  Object.keys(redirects)
-    .map(source => {
-      // default to `/`
-      let target = redirects[source] || '/';
+  Object.entries(redirects)
+    .map(([source, target_config = '/']) => {
+      if (
+        typeof target_config === 'string' ||
+        target_config instanceof String
+      ) {
+        target_config = { target: target_config };
+      }
+      let { target, type = 'permanent' } = target_config;
+
       // add leading /
-      if (target[0] !== '/' && !target.startsWith('http://') && !target.startsWith('https://')) {
+      if (!add_prefix_regex.test(target)) {
         target = `/${target}`;
       }
 
@@ -47,7 +54,7 @@ console.log(
       target = escape_spaces(target);
 
       // Build output string
-      return `rewrite ${source}\t${target}\tpermanent;`;
+      return `rewrite ${source}\t${target}\t${type};`;
     })
     .join('\n')
 );
