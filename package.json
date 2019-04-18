@@ -136,7 +136,7 @@
     "empty_logs": "rm -rf ./logs/*",
     "precopy_assets": "npm run copy_fontawesome && npm run copy_open_sans && npm run copy_fonts",
     "copy_assets": "rsync -a assets/ site/assets/ && rsync -a nx_assets/ site/nx_assets/ && npm run duplicate_asset_stats && cp editor.json ./site",
-    "copy_extras": "cp google197e4c8435c1cca7.html ./site && cp opensearch.xml ./site",
+    "copy_extras": "cp -v google197e4c8435c1cca7.html robots.txt opensearch.xml ./site",
     "server": "browser-sync start --server site --browser=$npm_package_config_browser",
     "server_reload": "browser-sync reload",
     "browser_sync": "echo 'This has been replaced by server. npm run server';",
