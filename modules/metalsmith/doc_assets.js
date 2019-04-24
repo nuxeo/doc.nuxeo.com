@@ -77,7 +77,7 @@ const get_file = (doc, local_path) => {
                 });
               } else {
                 debug('No err.response', err);
-              return Promise.reject(err);
+                return Promise.reject(err);
               }
             }
           )
@@ -120,62 +120,62 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
   const repo = nuxeo.repository();
 
   const check_file = (filename, selector) => {
-      const file = files[filename];
+    const file = files[filename];
 
-      const contents = file.contents.toString();
-      const $ = cheerio.load(contents);
+    const contents = file.contents.toString();
+    const $ = cheerio.load(contents);
 
-      const url_promises = [];
+    const url_promises = [];
 
-      $(selector).each((i, el) => {
-        const $el = $(el);
-        const attr = get_attribute(el);
-        const url = $el.attr(attr);
-        if (url && url.startsWith(nx_assets_url_prefix)) {
-          const uid = url.slice(nx_assets_url_prefix.length);
-          debug(`uid: ${uid}`);
+    $(selector).each((i, el) => {
+      const $el = $(el);
+      const attr = get_attribute(el);
+      const url = $el.attr(attr);
+      if (url && url.startsWith(nx_assets_url_prefix)) {
+        const uid = url.slice(nx_assets_url_prefix.length);
+        debug(`uid: ${uid}`);
 
-          const p = retry(repo.fetch.bind(repo), {
-            max_tries: 5,
-            interval: 500,
-            throw_original: true,
-            args: [uid, { schemas: ['dublincore', 'file', 'document_asset'] }]
+        const p = retry(repo.fetch.bind(repo), {
+          max_tries: 5,
+          interval: 500,
+          throw_original: true,
+          args: [uid, { schemas: ['dublincore', 'file', 'document_asset'] }]
+        })
+          .then(doc => {
+            debug('doc:', doc);
+            // if there is no file return
+            if (!doc.properties['file:content']) {
+              error('nx_asset without file:content');
+              return null;
+            }
+
+            // build the right url
+            const ext = /(?:\.([^.]+))?$/.exec(
+              doc.properties['file:content'].name
+            )[1];
+            const asset_type = doc.properties['doc_asset:nature'];
+            const asset_file = `${nx_assets_base}/${uid}-${asset_type}.${ext}`;
+            const href = `/${asset_file}`;
+            debug('ext:', ext);
+            debug('asset_type:', asset_type);
+            debug('asset_file:', asset_file);
+            debug('href:', href);
+
+            // Update the href in the DOM
+            $el.attr(attr, href);
+            const html = $.html();
+            file.contents = Buffer.from(html, 'utf8');
+
+            return get_file(doc, asset_file);
           })
-            .then(doc => {
-              debug('doc:', doc);
-              // if there is no file return
-              if (!doc.properties['file:content']) {
-                error('nx_asset without file:content');
-                return null;
-              }
-
-              // build the right url
-              const ext = /(?:\.([^.]+))?$/.exec(
-                doc.properties['file:content'].name
-              )[1];
-              const asset_type = doc.properties['doc_asset:nature'];
-              const asset_file = `${nx_assets_base}/${uid}-${asset_type}.${ext}`;
-              const href = `/${asset_file}`;
-              debug('ext:', ext);
-              debug('asset_type:', asset_type);
-              debug('asset_file:', asset_file);
-              debug('href:', href);
-
-              // Update the href in the DOM
-              $el.attr(attr, href);
-              const html = $.html();
-              file.contents = Buffer.from(html, 'utf8');
-
-              return get_file(doc, asset_file);
-            })
-            .catch(err => {
-              error('fetch err:', err);
+          .catch(err => {
+            error('fetch err:', err);
             return Promise.reject(err);
-            });
+          });
 
-          url_promises.push(p);
-        }
-      });
+        url_promises.push(p);
+      }
+    });
 
     return Promise.all(url_promises);
   };

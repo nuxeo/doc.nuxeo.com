@@ -15,8 +15,15 @@ const read = require('fs-readdir-recursive');
  *
  * @return {Object}
  */
-const readPartials = (partialsPath, partialExtension, layoutsPath, metalsmith) => {
-  const partial_abs = path.isAbsolute(partialsPath) ? partialsPath : path.join(metalsmith.path(), partialsPath);
+const readPartials = (
+  partialsPath,
+  partialExtension,
+  layoutsPath,
+  metalsmith
+) => {
+  const partial_abs = path.isAbsolute(partialsPath)
+    ? partialsPath
+    : path.join(metalsmith.path(), partialsPath);
   // const layoutsAbs = path.isAbsolute(layoutsPath) ? layoutsPath : path.join(metalsmith.path(), layoutsPath);
   const files = read(partial_abs);
 

@@ -18,7 +18,11 @@ const menu = function(options) {
 
     matched_files.forEach(filename => {
       const file = files[filename];
-      debug('filename: %s, space_path: %s', filename, file.url && file.url.key.space_path);
+      debug(
+        'filename: %s, space_path: %s',
+        filename,
+        file.url && file.url.key.space_path
+      );
       let data = clone(metadata.hierarchies[file.url.key.space_path]);
       if (!file.no_side_menu && data) {
         const children_only = file.url.key.space === 'nxdoc';

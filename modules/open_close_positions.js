@@ -5,7 +5,11 @@
 // var error = debug_lib('multiexcerpts-open-close-positions:error');
 var sortby = require('lodash.sortby');
 
-var open_close_positions = function(placeholder_positions, key_field, position_field) {
+var open_close_positions = function(
+  placeholder_positions,
+  key_field,
+  position_field
+) {
   var sequential = sortby(placeholder_positions, position_field);
   var pairs = [];
 
@@ -25,7 +29,12 @@ var open_close_positions = function(placeholder_positions, key_field, position_f
     };
 
     var safety = 99;
-    while (!(item_type(open_item()) === 'open' && item_type(close_item()) === 'close') && safety) {
+    while (
+      !(
+        item_type(open_item()) === 'open' && item_type(close_item()) === 'close'
+      ) &&
+      safety
+    ) {
       // console.log('status', item_type(open_item()), item_type(close_item()));
       if (item_type(close_item()) === 'open') {
         open_offset += close_offset;

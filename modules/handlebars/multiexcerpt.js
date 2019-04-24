@@ -13,7 +13,9 @@ const slug_map = function(str) {
 
 const multiexcerpt = function(name, options) {
   // space:page-name:name-of-multiexcerpt
-  const key_arr = (options.hash && options.hash.page && options.hash.page.split(':')) || [options.data.root.title];
+  const key_arr = (options.hash &&
+    options.hash.page &&
+    options.hash.page.split(':')) || [options.data.root.title];
   if (key_arr.length === 1) {
     // space is missing, add to the start of the array
     key_arr.unshift(options.data.root.hierarchy.space_path);

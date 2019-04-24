@@ -7,17 +7,27 @@ const get_collection_filter = require('../modules/get_collection_filter');
 
 test('get_collection_filter is a function', assert => {
   // Get typeof string
-  const expected = get_collection_filter && {}.toString.call(get_collection_filter);
+  const expected =
+    get_collection_filter && {}.toString.call(get_collection_filter);
 
-  assert.isEqual(expected, '[object Function]', 'get_collection_filter is a function');
+  assert.isEqual(
+    expected,
+    '[object Function]',
+    'get_collection_filter is a function'
+  );
   assert.end();
 });
 
 test('get_collection_filter returns a function', assert => {
   // Get typeof string
-  const expected = get_collection_filter() && {}.toString.call(get_collection_filter);
+  const expected =
+    get_collection_filter() && {}.toString.call(get_collection_filter);
 
-  assert.isEqual(expected, '[object Function]', 'get_collection_filter() is a function');
+  assert.isEqual(
+    expected,
+    '[object Function]',
+    'get_collection_filter() is a function'
+  );
   assert.end();
 });
 

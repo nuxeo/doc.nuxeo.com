@@ -138,7 +138,8 @@ renderer.list = function(body, ordered) {
         .toString()
         .toUpperCase()
         .charCodeAt(0) - 64;
-    attrs.start = start_letter > 1 && start_letter < 9 ? `start="${start_letter}"` : '';
+    attrs.start =
+      start_letter > 1 && start_letter < 9 ? `start="${start_letter}"` : '';
   }
   const attr = [attrs.type, attrs.start].filter(x => x).join(' ');
 
@@ -159,7 +160,11 @@ renderer.link = function(href_str, title, text) {
       return '';
     }
     /* eslint no-script-url: 0 */
-    if (prot.indexOf('javascript:') === 0 || prot.indexOf('vbscript:') === 0 || prot.indexOf('data:') === 0) {
+    if (
+      prot.indexOf('javascript:') === 0 ||
+      prot.indexOf('vbscript:') === 0 ||
+      prot.indexOf('data:') === 0
+    ) {
       return '';
     }
   }

@@ -44,7 +44,10 @@ module.exports = function($) {
         }
       };
 
-      if (last_filter !== filter && (filter.length > min_search_length || last_filter.length)) {
+      if (
+        last_filter !== filter &&
+        (filter.length > min_search_length || last_filter.length)
+      ) {
         if (filter && filter.length > min_search_length) {
           $side_menu.find('li.contains-toc').slideUp();
           $side_menu
@@ -54,7 +57,14 @@ module.exports = function($) {
               var $this = $(this);
               var $link = $this.find('a');
               if (search.exec($link.text())) {
-                $link.html($link.text().replace(search, '<span class="highlight">' + filter + '</span>'));
+                $link.html(
+                  $link
+                    .text()
+                    .replace(
+                      search,
+                      '<span class="highlight">' + filter + '</span>'
+                    )
+                );
                 matches.push($this.attr('id'));
               } else {
                 $link.html($link.text());
@@ -64,7 +74,9 @@ module.exports = function($) {
 
           matches_string = matches.length && '#' + matches.join(',#');
           $side_menu.find(matches_string).slideDown();
-          $side_menu.find('li:not(.contains-toc, .toc-item, ' + matches_string + ')').slideUp();
+          $side_menu
+            .find('li:not(.contains-toc, .toc-item, ' + matches_string + ')')
+            .slideUp();
 
           last_filter = filter;
         } else {

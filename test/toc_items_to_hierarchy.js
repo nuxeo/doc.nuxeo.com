@@ -7,9 +7,14 @@ const toc_items_to_hierarchy = require('../modules/toc_items_to_hierarchy');
 
 test('toc_items_to_hierarchy is a function', assert => {
   // Get typeof string
-  const expected = toc_items_to_hierarchy && {}.toString.call(toc_items_to_hierarchy);
+  const expected =
+    toc_items_to_hierarchy && {}.toString.call(toc_items_to_hierarchy);
 
-  assert.isEqual(expected, '[object Function]', 'toc_items_to_hierarchy is a function');
+  assert.isEqual(
+    expected,
+    '[object Function]',
+    'toc_items_to_hierarchy is a function'
+  );
   assert.end();
 });
 

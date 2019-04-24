@@ -38,7 +38,10 @@ var list_from_field = function(options) {
       // Convert to array if it's a string
       value.forEach(function(option, option_index) {
         var value_option = value[option_index];
-        value_option.pattern = typeof value_option.pattern === 'string' ? [value_option.pattern] : value_option.pattern;
+        value_option.pattern =
+          typeof value_option.pattern === 'string'
+            ? [value_option.pattern]
+            : value_option.pattern;
       });
       options = value;
     });
@@ -71,7 +74,8 @@ var list_from_field = function(options) {
               }
               fields.forEach(function(field) {
                 debug('field value: %s', field);
-                metadata.lists[option.key_name][field] = metadata.lists[option.key_name][field] || [];
+                metadata.lists[option.key_name][field] =
+                  metadata.lists[option.key_name][field] || [];
                 if (option.fields_to_store) {
                   metadata.lists[option.key_name][field].push(page_fields);
                 }
@@ -83,7 +87,10 @@ var list_from_field = function(options) {
 
       options.forEach(function(option) {
         Object.keys(metadata.lists[option.key_name]).forEach(function(field) {
-          metadata.lists[option.key_name][field] = sortby(metadata.lists[option.key_name][field], option.sort_field);
+          metadata.lists[option.key_name][field] = sortby(
+            metadata.lists[option.key_name][field],
+            option.sort_field
+          );
         });
       });
     }

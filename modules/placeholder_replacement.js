@@ -9,7 +9,11 @@ var slug_nothing = function(x) {
 };
 
 var get = require('lodash.get');
-var placeholder_replacement = function placeholder_replacement(string_pattern, data, slug_elements) {
+var placeholder_replacement = function placeholder_replacement(
+  string_pattern,
+  data,
+  slug_elements
+) {
   var slug = slug_elements ? slug_string : slug_nothing;
   var string_replaced = '';
 

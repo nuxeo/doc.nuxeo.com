@@ -24,8 +24,10 @@ module.exports = function($) {
       $side_menu_container.css('margin-top', margin_top);
     }
 
-    var reduced_height_footer_value = margin_top_value + pos + window_height - footer_pos;
-    var reduced_height = 'calc(100vh - ' + Math.max(reduced_height_footer_value, 0) + 'px)';
+    var reduced_height_footer_value =
+      margin_top_value + pos + window_height - footer_pos;
+    var reduced_height =
+      'calc(100vh - ' + Math.max(reduced_height_footer_value, 0) + 'px)';
     if (reduced_height !== $side_menu_container.css('height')) {
       $side_menu_container.css('height', reduced_height);
     }
