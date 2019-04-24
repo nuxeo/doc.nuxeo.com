@@ -116,7 +116,7 @@ You can create a new page from GitHub UI:
 
 3. A blank page is displayed, copy paste the content in the [new-page-template.md](new-page-template.md). 
 
-4. Make sure to give your page a title and to call your file `.md`
+4. Make sure to give your page a title and to name your file `.md`
 
 **FROM COMMAND LINE**
 
