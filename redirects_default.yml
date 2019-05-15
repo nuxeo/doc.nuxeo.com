@@ -313,6 +313,7 @@
 ^/userdoc/browsing-content/?$: /nxdoc/browsing-content
 ^/userdoc/collections/?$: /nxdoc/collections-jsf-ui
 ^/userdoc/tags/?$: /nxdoc/tags-jsf-ui
+^/nxdoc/tags/?$: /nxdoc/tags-jsf-ui
 ^/userdoc/preview/?$: /nxdoc/preview-jsf-ui
 ^/userdoc/managing-permissions/?$: /nxdoc/managing-permissions
 ^/userdoc/document-types/?$: /nxdoc/document-types
