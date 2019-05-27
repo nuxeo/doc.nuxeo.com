@@ -344,6 +344,10 @@
 ^/userdoc/how-to-add-new-relation-types/?$: /nxdoc/how-to-add-new-relation-types
 ^/userdoc/case-management-with-the-nuxeo-platform/?$: /nxdoc/case-management-with-the-nuxeo-platform
 
+# NXDOC-1454
+^/nxdoc/setting-up-a-ha-configuration-using-the-nuxeo-platform-and-postgresql/?$: /nxdoc/standard-high-availability-nuxeo-cluster-architecture
+^/nxdoc/1010/setting-up-a-ha-configuration-using-the-nuxeo-platform-and-postgresql/?$: /nxdoc/1010/standard-high-availability-nuxeo-cluster-architecture
+
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
 ^/display/NXDOC(/?|/.*): /nxdoc/
