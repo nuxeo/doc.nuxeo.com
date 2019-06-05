@@ -106,6 +106,20 @@ See [main project trouble shooting](https://github.com/nuxeo/doc.nuxeo.com/blob/
 
 # Create a Page
 
+**FROM GITHUB UI** 
+
+You can create a new page from GitHub UI: 
+
+1. Go to the folder on GitHub where you want your page to be created (for example if you want to add a new page under [Web UI](https://doc.nuxeo.com/nxdoc/web-ui), the new page will have to be created [here](https://github.com/nuxeo/doc.nuxeo.com-content/tree/master/src/nxdoc/web-ui)). 
+
+2. Click on **Create new file** at the top of the table 
+
+3. A blank page is displayed, copy paste the content in the [new-page-template.md](new-page-template.md). 
+
+4. Make sure to give your page a title and to name your file `.md`
+
+**FROM COMMAND LINE**
+
 The recommended editor is Atom. It handles markdown nicely and can provide a live preview, fast file finding and image previewing.
 
 **As a lot of people are contributing on the documentation, every creation or edition should go through a Pull Request to be reviewed by the doc team.**
@@ -314,6 +328,34 @@ These require us to use the reference style of links:
 
 ### To Images
 
+Most of the screenshots are stored in the Intranet under [this folder](https://intranet.nuxeo.com/nuxeo/ui/#!/doc/4af58911-f0b1-4a79-a517-4fdde449478e). 
+
+**Add a New Screenshot**
+
+1. On the Intranet, go to the folder related to your documentation page:
+  - NXDOC
+  - USERDOC
+  - STUDIO
+  - CLIENT-APPS
+  - CLIENTS
+
+2. Go to the existing folder named after the title of the documentation page concerned.
+3. Click on **Create** > **DOCASSET**.
+4. Fill in the metadata related to your screenshot and click on Create.</br>
+    Your screenshot document is created. 
+5. You will see an Asset markdown snippet section under the preview of your screenshot with a generated unique ID.
+6. Make sure to select **Use border** and **Override size** to adjust the size of your screenshot.</br> 
+    Generally, an icon is 20px, a pop-up 350px and a screenshot is 650px (that's the max size for a screenshot). 
+7. Click on the copy icon next to the snippet section and paste it on the documentation page. 
+
+**Update an Existing Screenshot**
+
+1. Go to the existing folder named after the title of the documentation page concerned
+2. Find the screenshot that you want to replace
+3. Click on the **Replace** icon under the preview of the screenshot. 
+4. The screenshot ID won't change so once the doc build will be redeployed it will fetch the updated screenshot. 
+
+<!--
 Link to images should be written like this:
 `![name-of-the-image]({{file version='VERSION' space='SPACE' page='page-name' name='image-name.png'}})`
 
@@ -331,7 +373,8 @@ All options with file from another space and page:
 ```
 ![Alt text - Required]({{file space='nxdoc' page='client-sdks' name='your_img.png'}} ?w=180,h=360,border=true,thumbnail=true,align=right "Title text - Optional")
 ```
-
+--> 
+<!--
 #### Image options
 
 | Option           | Behaviour                                                                                                                                  |
@@ -349,7 +392,7 @@ It is also easier to replace screenshots when they have a meaningful name, inste
 Don't hesitate to use screenshots from other pages. Huge advantage: when there is a UI change, only one screenshot at one place has to be updated instead of several ones.
 
 For schemas, please attach the Lucidchart version to the page for easy future modifications.
-
+-->
 ### To Download Files
 
 Link to download files should be written like this:
@@ -509,6 +552,18 @@ For instance:
 > - Getting registered applications links
 
 # Edit a Page
+
+To edit a page, you can directly click on the **Edit** button displayed under the title of every page, it will lead you to the correct page to edit on GitHub. 
+1. Click on the **Edit** button.</br>
+    The page is displayed on GitHub.
+2. Click once again on **Edit**. </br>
+    The page turns into Edition mode. 
+3. Add your modification (fix a typo, fix a link, add a new paragraph/section, etc. 
+4. You can check on the **Preview Changes** tab how your changes look like.
+5. Once you're ready, go to the bottom of the page, the option **Create a new branch for this commit and start a pull request.** is selected by default, click on **Propose file change**. </br>
+    The pull request screen is displayed. 
+6. Click on **Create pull request**. </br>
+    You're done! The pull request will be reviewed and merged by the documentation team. 
 
 ## Review a Page
 

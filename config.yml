@@ -1,7 +1,7 @@
 default:
   site:
     # Standard Site Configuration
-    url: http://doc.nuxeo.com
+    url: https://doc.nuxeo.com
     name: Nuxeo Documentation
     twitter: nuxeo
 

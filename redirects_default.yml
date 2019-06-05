@@ -312,7 +312,8 @@
 ^/userdoc/user-preferences/?$: /nxdoc/user-preferences
 ^/userdoc/browsing-content/?$: /nxdoc/browsing-content
 ^/userdoc/collections/?$: /nxdoc/collections-jsf-ui
-^/userdoc/tags/?$: /nxdoc/tags
+^/userdoc/tags/?$: /nxdoc/tags-jsf-ui
+^/nxdoc/tags/?$: /nxdoc/tags-jsf-ui
 ^/userdoc/preview/?$: /nxdoc/preview-jsf-ui
 ^/userdoc/managing-permissions/?$: /nxdoc/managing-permissions
 ^/userdoc/document-types/?$: /nxdoc/document-types
@@ -342,6 +343,10 @@
 ^/userdoc/managing-vocabularies/?$: /nxdoc/managing-vocabularies
 ^/userdoc/how-to-add-new-relation-types/?$: /nxdoc/how-to-add-new-relation-types
 ^/userdoc/case-management-with-the-nuxeo-platform/?$: /nxdoc/case-management-with-the-nuxeo-platform
+
+# NXDOC-1454
+^/nxdoc/setting-up-a-ha-configuration-using-the-nuxeo-platform-and-postgresql/?$: /nxdoc/standard-high-availability-nuxeo-cluster-architecture
+^/nxdoc/1010/setting-up-a-ha-configuration-using-the-nuxeo-platform-and-postgresql/?$: /nxdoc/1010/standard-high-availability-nuxeo-cluster-architecture
 
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/

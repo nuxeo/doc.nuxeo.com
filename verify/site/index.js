@@ -58,7 +58,7 @@ test('site should have key files', assert => {
 });
 
 test('canonical and robots metadata reference should be correct', assert => {
-  const url_prefix = 'http://doc.nuxeo.com';
+  const url_prefix = 'https://doc.nuxeo.com';
   const canonical_links = [
     {
       filepath: 'index.html',
