@@ -154,7 +154,13 @@ default:
           url_path: '60'
           noindex: true
           order: 40
-
+    java:
+      url: git@github.com:nuxeo/doc.nuxeo.com-client-java.git
+      branches:
+        'master-build-test':
+          label: '3.1'
+          url_path: '3.1'
+          order: 0
 development:
   isDev: true
   site:

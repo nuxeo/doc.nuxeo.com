@@ -254,7 +254,7 @@
 ^/studio/how-to-migrate-trash-configuration/?$: /nxdoc/upgrade-from-lts-2017-following-fast-tracks/#trash-migration
 ^/userdoc/nuxeo-drive-mobile-edition/?$: /client-apps/nuxeo-mobile
 
-# NXDOC-1739 
+# NXDOC-1739
 ^/studio/layouts-designer/?$: /studio/ui-designer
 ^/studio/left-menu/?$: /studio/working-in-view-designer
 
@@ -269,15 +269,15 @@
 ^/userdoc/document-publishing/?$: /userdoc/share/#publishing
 ^/userdoc/comment/?$: /userdoc/content-edit/#commenting
 
-# Annotations 
+# Annotations
 ^/nxdoc/annotations/?$: /nxdoc/comments
 
-# NXDOC-1804 
+# NXDOC-1804
 ^/nxdoc/how-to-new-pill/?$: /nxdoc/how-to-new-tab
 #^/810/nxdoc/how-to-new-pill/?$: /nxdoc/810/how-to-new-tab
 ^/910/nxdoc/how-to-new-pill/?$: /nxdoc/910/how-to-new-tab
 
-# Studio Release Notes 
+# Studio Release Notes
 ^/studio/2019-01-07-studio-3-3-1/?$: /studio/studio-updates-2019-01
 
 # NXDOC-1813
@@ -296,7 +296,7 @@
 # NXDOC-1770
 ^/studio/commit-push-and-pull/?$: /studio/commit-preferences
 
-# For FT 10.10 
+# For FT 10.10
 ^/nxdoc/upgrade-from-lts-2017-to-102/?$: /nxdoc/upgrade-from-lts-2017-to-lts-2019/
 ^/nxdoc/upgrade-from-lts-2017-to-103/?$: /nxdoc/upgrade-from-lts-2017-to-lts-2019/
 
@@ -373,3 +373,7 @@
 
 # Redirects for VERSION/SPACE/... to SPACE/VERSION/...
 ^/(\d+)/([^/]+)(/.*): /$2/$1/$3
+
+^/java/?$:
+  target: /java/3.1/
+  type: redirect

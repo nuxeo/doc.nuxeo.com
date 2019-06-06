@@ -7357,7 +7357,6 @@
   "/nxdoc/910/search-endpoints/": "tQQ",
   "/nxdoc/910/workflow-task-endpoints/": "qY8",
   "/nxdoc/910/filtering-exposed-operations/": "epj",
-  "/studio/studio-updates-2019-02/": "sNX",
   "/studio/studio-updates-2019-03/": "RVq",
   "/studio/how-to-customize-theme-studio/": "Wbz",
   "/studio/how-to-override-default-contributions/": "OYb",
@@ -7407,5 +7406,13 @@
   "/nxdoc/nuxeo-zapier/": "Ann",
   "/java/authentication/": "jAe",
   "/java/": "TEx",
-  "/nxdoc/tags-jsf-ui/": "ruN"
+  "/nxdoc/tags-jsf-ui/": "ruN",
+  "/studio/jsf-ui-migration/": "73a",
+  "/studio/studio-updates-2019-05/": "zs2g",
+  "/studio/studio-updates-2019-06/": "KM4",
+  "/studio/eclipse-export/": "_te",
+  "/nxdoc/nuxeo-gdpr/": "D6b",
+  "/nxdoc/how-to-save-work-in-progress-task/": "ftF",
+  "/java/3.1/authentication/": "I_E",
+  "/java/3.1/": "KAn"
 }
