@@ -73,9 +73,7 @@ const meta_hierarchies = options => (files, metalsmith, done) => {
           current_item.section_parent = file.section_parent;
 
           debug(
-            `Adding parent space_path: ${space_path} key: ${
-              file.url.key.full
-            }, path: ${filepath}`
+            `Adding parent space_path: ${space_path} key: ${file.url.key.full}, path: ${filepath}`
           );
         } else {
           filepath_parts.forEach(item => {
@@ -105,9 +103,7 @@ const meta_hierarchies = options => (files, metalsmith, done) => {
           // Don't include hidden pages
           if (!file.hidden && !is_space_index) {
             debug(
-              `Adding child space_path: ${space_path} key: ${
-                file.url.key.full
-              }, path: ${filepath}`
+              `Adding child space_path: ${space_path} key: ${file.url.key.full}, path: ${filepath}`
             );
             current_item.children = current_item.children || [];
             current_item.children.push({
@@ -121,9 +117,7 @@ const meta_hierarchies = options => (files, metalsmith, done) => {
             });
           } else {
             debug(
-              `Ignoring child space_path: ${space_path} key: ${
-                file.url.key.full
-              }, path: ${filepath}`
+              `Ignoring child space_path: ${space_path} key: ${file.url.key.full}, path: ${filepath}`
             );
           }
         }
