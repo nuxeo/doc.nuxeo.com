@@ -101,6 +101,14 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
   const pattern = [].concat(validation.value.pattern);
   debug('pattern:', pattern);
 
+  if (
+    process.env.NODE_ENV === 'development' &&
+    !process.env.NX_ASSETS_USER &&
+    !process.env.NX_ASSETS_PWD
+  ) {
+    return done();
+  }
+
   const metadata = metalsmith.metadata();
 
   const nuxeo_config = {
