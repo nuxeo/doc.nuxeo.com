@@ -1,116 +1,109 @@
 default:
   site:
-    # Standard Site Configuration
     url: https://doc.nuxeo.com
     name: Nuxeo Documentation
     twitter: nuxeo
-
-    # For RSS feeds
-    title: 'Nuxeo Documentation'
-    author: 'Nuxeo'
+    title: Nuxeo Documentation
+    author: Nuxeo
     review_messages:
       overdue: This page is scheduled for review and update. Check back soon for updated content!
       invalid_date: Invalid Review Date
       not_set: Review Date Not Set
     remove_files_pattern:
-      - '.DS_Store'
-      - '**.DS_Store'
-      - '*~'
-      - '*.swp'
+    - .DS_Store
+    - '**.DS_Store'
+    - '*~'
+    - '*.swp'
     nx_assets_url: https://intranet.nuxeo.com/nuxeo
-    # nx_assets_url: http://intranet-preprod.nuxeocloud.com/nuxeo
-    canonical_version_preference: 'ft'
+    canonical_version_preference: ft
     new_version: '10.10'
-
-    # Keys
     ga_exp_id: ''
-    ga_id: 'UA-81135-3'
-    segment_write_key: '4qquvje3fv'
-    algolia_search_key: '77ebfff62b510b7ed7d845d6448967ee'
-
-    algolia_id: 'F6EQCOZI09'
-    algolia_index: 'doc'
+    ga_id: UA-81135-3
+    segment_write_key: 4qquvje3fv
+    algolia_search_key: 77ebfff62b510b7ed7d845d6448967ee
+    algolia_id: F6EQCOZI09
+    algolia_index: doc
     main_menu:
-      - parent: /nxdoc/getting-started
-        section_color: tutorials
-        children:
-          - /nxdoc/discover-nuxeo-platform-apis
-          - /nxdoc/configure-nuxeo-platform
-          - /nxdoc/develop-with-nuxeo-platform
-          - /nxdoc/best-practices
-          - /nxdoc/learning-with-examples
-          - /nxdoc/how-to-index
-      - parent: /nxdoc/nuxeo-server
-        section_color: server
-        children:
-          - /nxdoc/installation
-          - /nxdoc/administration
-          - /nxdoc/rest-api
-          - /nxdoc/automation
-          - /nxdoc/upgrading-the-nuxeo-platform
-          - /nxdoc/monitoring-and-maintenance
-          - /nxdoc/runtime-and-component-model
-          - /nxdoc/data-modeling
-          - /nxdoc/workflow
-          - /nxdoc/security
-          - /nxdoc/nuxeo-server-roadmap
-      - parent: /nxdoc/web-ui
-        section_color: web-ui
-        children:
-          - /nxdoc/web-ui-overview
-          - /nxdoc/polymer-guide
-          - /nxdoc/nuxeo-elements
-          - /nxdoc/web-ui-tutorials
-          - /nxdoc/web-ui-roadmap
-          - /userdoc/web-ui
-      - parent: /nxdoc/dam
-        section_color: dam
-        children:
-          - /nxdoc/upload-and-store
-          - /nxdoc/manage-and-organize
-          - /nxdoc/search-and-find
-          - /nxdoc/share-and-distribute
-      - parent: /client-apps
-        section_color: desktop-mob
-        children:
-          - /client-apps/nuxeo-drive
-          - /client-apps/nuxeo-mobile
-      - parent: /nxdoc/nuxeo-add-ons
-        section_color: addons
-        children:
-          - /nxdoc/installing-a-new-package-on-your-instance
-          - /nxdoc/creating-nuxeo-packages
-          - /nxdoc/nuxeo-add-ons
-      - parent: /nxdoc/client-sdks
-        section_color: sdks
-        children:
-          - /nxdoc/java-client
-          - /nxdoc/javascript-client
-          - /nxdoc/python-client
-          - /nxdoc/net-client
-          - /nxdoc/ios-client
-          - /nxdoc/android-client
-          - /nxdoc/php-automation-client
-          - /nxdoc/client-api-test-suite-tck
-          - /nxdoc/using-curl
-      - parent: /studio
-        section_color: services
-        children:
-          - /studio/nuxeo-online-services-portal
-          - /studio/nuxeo-studio
-          - /studio/nuxeo-studio-roadmap
-          - /studio/support-jira
-      - parent: /nxdoc/nuxeo-tools
-        section_color: tools
-        children:
-          - /nxdoc/nuxeo-dev-tools-extension
-          - /studio/nuxeo-studio
-          - /nxdoc/nuxeo-cli
-          - /corg
+    - parent: /nxdoc/getting-started
+      section_color: tutorials
+      children:
+      - /nxdoc/discover-nuxeo-platform-apis
+      - /nxdoc/configure-nuxeo-platform
+      - /nxdoc/develop-with-nuxeo-platform
+      - /nxdoc/best-practices
+      - /nxdoc/learning-with-examples
+      - /nxdoc/how-to-index
+    - parent: /nxdoc/nuxeo-server
+      section_color: server
+      children:
+      - /nxdoc/installation
+      - /nxdoc/administration
+      - /nxdoc/rest-api
+      - /nxdoc/automation
+      - /nxdoc/upgrading-the-nuxeo-platform
+      - /nxdoc/monitoring-and-maintenance
+      - /nxdoc/runtime-and-component-model
+      - /nxdoc/data-modeling
+      - /nxdoc/workflow
+      - /nxdoc/security
+      - /nxdoc/nuxeo-server-roadmap
+    - parent: /nxdoc/web-ui
+      section_color: web-ui
+      children:
+      - /nxdoc/web-ui-overview
+      - /nxdoc/polymer-guide
+      - /nxdoc/nuxeo-elements
+      - /nxdoc/web-ui-tutorials
+      - /nxdoc/web-ui-roadmap
+      - /userdoc/web-ui
+    - parent: /nxdoc/dam
+      section_color: dam
+      children:
+      - /nxdoc/upload-and-store
+      - /nxdoc/manage-and-organize
+      - /nxdoc/search-and-find
+      - /nxdoc/share-and-distribute
+    - parent: /client-apps
+      section_color: desktop-mob
+      children:
+      - /client-apps/nuxeo-drive
+      - /client-apps/nuxeo-mobile
+    - parent: /nxdoc/nuxeo-add-ons
+      section_color: addons
+      children:
+      - /nxdoc/installing-a-new-package-on-your-instance
+      - /nxdoc/creating-nuxeo-packages
+      - /nxdoc/nuxeo-add-ons
+    - parent: /nxdoc/client-sdks
+      section_color: sdks
+      children:
+      - /nxdoc/java-client
+      - /nxdoc/javascript-client
+      - /nxdoc/python-client
+      - /nxdoc/net-client
+      - /nxdoc/ios-client
+      - /nxdoc/android-client
+      - /nxdoc/php-automation-client
+      - /nxdoc/client-api-test-suite-tck
+      - /nxdoc/using-curl
+    - parent: /studio
+      section_color: services
+      children:
+      - /studio/nuxeo-online-services-portal
+      - /studio/nuxeo-studio
+      - /studio/nuxeo-studio-roadmap
+      - /studio/support-jira
+    - parent: /nxdoc/nuxeo-tools
+      section_color: tools
+      children:
+      - /nxdoc/nuxeo-dev-tools-extension
+      - /studio/nuxeo-studio
+      - /nxdoc/nuxeo-cli
+      - /corg
   page_defaults:
-    - pattern: '**/*.md'
-      defaults:
-        layout: 'default.hbs'
+  - pattern: '**/*.md'
+    defaults:
+      layout: default.hbs
   markdown_options:
     langPrefix: ''
     breaks: false
@@ -127,25 +120,25 @@ default:
         static:
           no_versioning: true
         master:
-          label: 'FT'
+          label: FT
           order: 0
         '1010':
-          label: 'LTS 2019'
+          label: LTS 2019
           url_path: '1010'
           noindex: true
           order: 5
         '910':
-          label: 'LTS 2017'
+          label: LTS 2017
           url_path: '910'
           noindex: true
           order: 10
         '810':
-          label: 'LTS 2016'
+          label: LTS 2016
           url_path: '810'
           noindex: true
           order: 20
         '710':
-          label: 'LTS 2015'
+          label: LTS 2015
           url_path: '710'
           noindex: true
           order: 30
@@ -160,6 +153,11 @@ default:
         '3.2':
           label: '3.2'
           url_path: '3.2'
+          order: 10
+        ? !!org.codehaus.groovy.runtime.GStringImpl
+          metaClass: !!groovy.lang.MetaClassImpl {}
+        : label: 3.2.1
+          url_path: 3.2.1
           order: 0
 development:
   isDev: true
