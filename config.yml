@@ -50,7 +50,7 @@ default:
           - /nxdoc/upgrading-the-nuxeo-platform
           - /nxdoc/monitoring-and-maintenance
           - /nxdoc/runtime-and-component-model
-          - /nxdoc/content-repository
+          - /nxdoc/data-modeling
           - /nxdoc/workflow
           - /nxdoc/security
           - /nxdoc/nuxeo-server-roadmap
