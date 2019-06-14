@@ -380,6 +380,6 @@
 # Redirects for VERSION/SPACE/... to SPACE/VERSION/...
 ^/(\d+)/([^/]+)(/.*): /$2/$1/$3
 
-^/java/?$:
-  target: /java/3.2/
+^/client-java/?$:
+  target: /client-java/3.2/
   type: redirect
