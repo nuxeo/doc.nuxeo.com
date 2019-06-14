@@ -84,7 +84,7 @@ default:
       - parent: /nxdoc/client-sdks
         section_color: sdks
         children:
-          - /nxdoc/java-client
+          - /client-java
           - /nxdoc/javascript-client
           - /nxdoc/python-client
           - /nxdoc/net-client
