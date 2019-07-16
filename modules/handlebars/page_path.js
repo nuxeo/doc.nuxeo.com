@@ -5,10 +5,9 @@ const { warn, error } = require('../debugger')('handlebars-page');
 const slug = require('slug');
 slug.defaults.modes.pretty.lower = true;
 
+const get_placeholder_string = require('../get_placeholder_string');
 const get_placeholder_key = require('../get_placeholder_key');
 const key_to_url = require('../key_to_url');
-
-const get_placeholder_string = require('../get_placeholder_string');
 
 let meta_pages_log = !!process.env.META_PAGES_LOG;
 
@@ -46,11 +45,20 @@ const page_url = options => {
   let url = '';
   if (defaults) {
     const key = get_placeholder_key(raw_page_name, defaults);
+    const fallback_key = get_placeholder_key(
+      raw_page_name,
+      Object.assign({}, defaults, { version: '' })
+    );
 
     try {
       url = key_to_url(key, file.pages);
     } catch (e) {
       warn('%s; from path: "%s"', e.message, file.url.full);
+      try {
+        url = key_to_url(fallback_key, file.pages);
+      } catch (e) {
+        warn('%s; from fallback path: "%s"', e.message, file.url.full);
+      }
     }
   } else {
     error(

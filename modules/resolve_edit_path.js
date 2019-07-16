@@ -8,7 +8,7 @@ const error = debug_lib('resolve-edit-path:error');
 
 const github_match = /^(https:\/\/github\.com\/|git@github.com:)(.+)\.git$/;
 
-const resolve_repository = function(push_url) {
+const resolve_repository = push_url => {
   if (!push_url) {
     return void 0;
   }
@@ -18,7 +18,9 @@ const resolve_repository = function(push_url) {
   if (is_github && is_github[2]) {
     file_url_prefix = `https://github.com/${is_github[2]}/`;
   } else {
-    error('Incorrect push_url or repository matcher: %s', push_url);
+    const error_message = `Incorrect push_url or repository matcher: ${push_url}`;
+    error(error_message);
+    throw new Error(error_message);
   }
 
   const url = () => file_url_prefix;
