@@ -46,7 +46,7 @@
     "lodash.assign": "^4.2.0",
     "lodash.clonedeep": "^4.5.0",
     "lodash.debounce": "^4.0.8",
-    "lodash.defaultsdeep": "^4.5.1",
+    "lodash.defaultsdeep": "^4.6.1",
     "lodash.get": "^4.4.1",
     "lodash.isempty": "^4.3.1",
     "lodash.set": "^4.3.1",
