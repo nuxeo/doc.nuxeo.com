@@ -38,19 +38,17 @@ const hb_moment = function(context, block) {
   // Reset the language back to default before doing anything else
   date.locale('en');
 
-  for (let i in block.hash) {
-    if (block.hash.hasOwnProperty(i)) {
-      if (is_output_function.indexOf(i) !== -1) {
-        output_function_name = i;
-        output_function_paramater = block.hash[i];
-      } else if (date[i]) {
-        debug('Applying %s function with: %s', i, block.hash[i]);
-        date = date[i](block.hash[i]);
-      } else {
-        error('moment.js does not support %s', i);
-      }
+  Object.keys(block.hash).forEach(i => {
+    if (is_output_function.indexOf(i) !== -1) {
+      output_function_name = i;
+      output_function_paramater = block.hash[i];
+    } else if (date[i]) {
+      debug('Applying %s function with: %s', i, block.hash[i]);
+      date = date[i](block.hash[i]);
+    } else {
+      error('moment.js does not support %s', i);
     }
-  }
+  });
 
   if (output_function_name) {
     debug(
