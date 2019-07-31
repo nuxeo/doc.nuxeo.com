@@ -359,7 +359,7 @@
 ^/nxdoc/document-type-how-to-index/?$: /nxdoc/data-modeling-tutorials
 ^/nxdoc/repository-concepts/?$: /nxdoc/data-modeling
 
-# NXDOC-1931 - Java Client doc 
+# NXDOC-1931 - Java Client doc
 ^/nxdoc/java-client/?$: /client-java
 
 # Catch alls - keep at the bottom
@@ -390,4 +390,8 @@
 
 ^/client-java/?$:
   target: /client-java/3.2/
+  type: redirect
+
+^/rest-api/?$:
+  target: /rest-api/1/
   type: redirect
