@@ -359,6 +359,9 @@
 ^/nxdoc/document-type-how-to-index/?$: /nxdoc/data-modeling-tutorials
 ^/nxdoc/repository-concepts/?$: /nxdoc/data-modeling
 
+# NXDOC-1925
+^/nxdoc/how-to-follow-single-workflow-transition/?$: /studio/node-transitions-tab
+
 # NXDOC-1931 - Java Client doc
 ^/nxdoc/java-client/?$: /client-java
 
