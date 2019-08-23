@@ -124,7 +124,7 @@ default:
     platform:
       url: git@github.com:nuxeo/doc.nuxeo.com-content.git
       branches:
-        private-NXDOC-1954-retention:
+        static:
           no_versioning: true
         master:
           label: 'FT'
