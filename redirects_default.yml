@@ -274,6 +274,9 @@
 # Annotations
 ^/nxdoc/annotations/?$: /nxdoc/comments
 
+# NXP-27864
+^/nxdoc/nuxeo-connect-report-tools/?$: /nxdoc/nuxeo-add-ons
+
 # NXDOC-1804
 ^/nxdoc/how-to-new-pill/?$: /nxdoc/how-to-new-tab
 #^/810/nxdoc/how-to-new-pill/?$: /nxdoc/810/how-to-new-tab
