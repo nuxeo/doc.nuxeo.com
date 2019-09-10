@@ -2,6 +2,7 @@
 /* eslint-env browser */
 /* global $ */
 
+import algoliasearch from 'algoliasearch/lite';
 import instantsearch from 'instantsearch.js';
 import { configure, hits, searchBox } from 'instantsearch.js/es/widgets';
 
@@ -14,9 +15,8 @@ $(document).ready(function() {
   // const search_space_path = $algolia_config.attr('data-search-space-path');
 
   const search = instantsearch({
-    appId: id,
-    apiKey: search_key,
     indexName: 'doc',
+    searchClient: algoliasearch(id, search_key),
     routing: true
   });
 

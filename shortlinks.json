@@ -7516,5 +7516,12 @@
   "/rest-api/1/user-enrichers/": "5bR",
   "/rest-api/1/workflow-fetch-properties/": "LXr",
   "/rest-api/1/document-enrichers/": "gkB",
-  "/rest-api/1/document-fetch-properties/": "00a"
+  "/rest-api/1/document-fetch-properties/": "00a",
+  "/nxdoc/1010/google-storage/": "e_X",
+  "/retention-management/": "QPb",
+  "/retention-management/nuxeo-retention-functional-overview/": "0U2",
+  "/retention-management/nuxeo-retention-installation/": "S_u",
+  "/studio/studio-updates-2019-07/": "LNc",
+  "/nxdoc/nuxeo-architecture-prerequisites/": "mFQ",
+  "/nxdoc/google-storage/": "bkP"
 }

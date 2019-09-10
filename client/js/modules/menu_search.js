@@ -1,4 +1,5 @@
 /* eslint-env browser, jquery */
+import algoliasearch from 'algoliasearch/lite';
 import instantsearch from 'instantsearch.js';
 import { configure, hits, searchBox } from 'instantsearch.js/es/widgets';
 
@@ -61,9 +62,8 @@ $('#menu-search-input').on('change keyup', 'input', function(e) {
 const initialise_search = () => {
   if (!initialised && search_key && id) {
     const menu_search = instantsearch({
-      appId: id,
-      apiKey: search_key,
       indexName: 'doc',
+      searchClient: algoliasearch(id, search_key),
       routing: false
     });
 

@@ -10,21 +10,29 @@
     height: 16px;
   }
 
-  .ais-search-box {
+  .ais-SearchBox {
     padding: 1rem 0.5rem;
     border: 1px solid $c-blue;
   }
 
-  .ais-search-box--input {
+  .ais-SearchBox-input {
     display: inline;
     font-style: normal;
   }
 
-  .ais-search-box--reset {
+  .ais-SearchBox-submit,
+  .ais-SearchBox-reset {
     position: absolute;
-    top: 1.6rem;
-    right: 7px;
+    top: 1.8rem;
     cursor: pointer;
+  }
+
+  .ais-SearchBox-submit {
+    right: 36px;
+  }
+
+  .ais-SearchBox-reset {
+    right: 12px;
   }
 }
 
