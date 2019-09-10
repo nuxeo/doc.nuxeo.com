@@ -16,7 +16,7 @@
     "node": ">=6.5"
   },
   "dependencies": {
-    "algoliasearch": "^3.32.1",
+    "algoliasearch": "^3.34.0",
     "async": "^3.1.0",
     "autoprefixer": "^9.6.1",
     "babel-core": "^6.26.3",
@@ -39,7 +39,7 @@
     "handlebars": "^4.1.1",
     "highlight.js": "^9.15.9",
     "html-entities": "^1.2.1",
-    "instantsearch.js": "^2.7.1",
+    "instantsearch.js": "^3.6.0",
     "joi": "^14.3.1",
     "jquery": "^3.3.1",
     "js-yaml": "^3.13.1",
