@@ -361,6 +361,8 @@
 ^/nxdoc/core-server/?$: /nxdoc/data-store
 ^/nxdoc/document-type-how-to-index/?$: /nxdoc/data-modeling-tutorials
 ^/nxdoc/repository-concepts/?$: /nxdoc/data-modeling
+^/nxdoc/events-and-listeners/?$: /nxdoc/events-and-messages
+^/nxdoc/event-and-listener-how-to-index/?$: /nxdoc/events-and-messages-how-to-index/
 
 # NXDOC-1925
 ^/nxdoc/how-to-follow-single-workflow-transition/?$: /studio/node-transitions-tab
