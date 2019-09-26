@@ -1,0 +1,60 @@
+#!/usr/bin/env node
+// Set debug level
+process.env.DEBUG = process.env.DEBUG || '*:error,*:info';
+
+// core packages
+const fs = require('fs');
+const path = require('path');
+
+// npm packages
+const debug = require('debug')('remove-history');
+const info = debug.extend('info');
+const error = debug.extend('error');
+const matter = require('gray-matter');
+
+const filepath = process.argv[2];
+
+debug('filepath', filepath);
+
+if (!filepath) {
+  error('No file provided');
+  process.exit(1);
+}
+
+const filename = path.join(__dirname, '..', filepath);
+info('filename', filename);
+
+fs.stat(filename, (err, stats) => {
+  if (!err && stats.isFile()) {
+    debug('isFile');
+
+    const file = matter.read(filename);
+    debug('File matter:\n', file);
+
+    // remove History
+    if (file && file.data && file.data.history) {
+      delete file.data.history;
+    } else {
+      info('No history needed to be removed');
+      process.exit(0);
+    }
+
+    const data = matter.stringify(file.content, file.data);
+    if (data) {
+      debug('New file contents:\n', data);
+      fs.writeFile(filename, data, err => {
+        if (err) {
+          error('File write failure', err);
+          process.exit(1);
+        }
+
+        info('Updated Successfully');
+      });
+    } else {
+      error(data);
+    }
+  } else {
+    error(`Path provided is not a file: ${filepath}`);
+    process.exit(1);
+  }
+});
