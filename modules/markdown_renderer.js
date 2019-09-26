@@ -174,7 +174,7 @@ renderer.link = function(href_str, title, text) {
     attrs.push(`title="${title}"`);
   }
   if (params.external || is_external_url(href)) {
-    attrs.push('target="_blank"');
+    attrs.push('target="_blank" rel="noopener"');
   }
 
   const attributes = attrs.join(' ');

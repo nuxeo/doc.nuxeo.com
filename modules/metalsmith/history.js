@@ -137,6 +137,8 @@ const list_from_field = function(options) {
                   options.branch,
                   `src/${filepath}`
                 );
+
+                file.history_url = file.edit_url.replace('/tree/', '/commits/');
               }
 
               exec(

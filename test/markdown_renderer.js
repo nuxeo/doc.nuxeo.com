@@ -66,20 +66,20 @@ test('markdown_renderer converts text correctly', assert => {
       message: 'link - normal',
       preposition: '[Nuxeo Blog](https://www.nuxeo.com/blog/)',
       expected:
-        '<p><a href="https://www.nuxeo.com/blog/" target="_blank">Nuxeo Blog</a></p>'
+        '<p><a href="https://www.nuxeo.com/blog/" target="_blank" rel="noopener">Nuxeo Blog</a></p>'
     },
     {
       message: 'link - reference',
       preposition:
         '[Nuxeo Platform][0]\n\n[0]: https://www.nuxeo.com/platform/',
       expected:
-        '<p><a href="https://www.nuxeo.com/platform/" target="_blank">Nuxeo Platform</a></p>'
+        '<p><a href="https://www.nuxeo.com/platform/" target="_blank" rel="noopener">Nuxeo Platform</a></p>'
     },
     {
       message: 'link - external with title',
       preposition: '[Nuxeo Events](/events/ ?external=true "Link Title")',
       expected:
-        '<p><a href="/events/" title="Link Title" target="_blank">Nuxeo Events</a></p>'
+        '<p><a href="/events/" title="Link Title" target="_blank" rel="noopener">Nuxeo Events</a></p>'
     },
     {
       message: 'image - normal',

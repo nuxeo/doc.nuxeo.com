@@ -1,24 +1,12 @@
 <div class="small reveal" id="page-information" data-reveal data-animation-in="slide-in-right" data-animation-out="slide-out-right">
-    <button class="close-button" data-close aria-label="Close modal" type="button">
-        <span aria-hidden="true">&times;</span>
-    </button>
-    <div class="content">
-        <div id="page-information-tags" class="column {{!-- #if toc}}large-8 end{{/if --}}">
-            {{#each labels as |label|}}
-                <a href="/{{../url.key.space_path}}/label/{{sluggy label}}">{{label}}</a>{{#unless @last}}, {{/unless}}
-            {{/each}}
-        </div>
-        <table class="hover stack">
-            {{#each history}}
-                <tr>
-                    <td title="{{moment this.date format='D MMM YYYY HH:mm'}}">{{moment this.date fromNow=''}}</td>
-                    <td>{{this.author}}</td>
-                    <td>{{this.version}}{{#if (condition this.message '&&' this.version)}} | {{/if}}{{this.message}}</td>
-                </tr>
-                {{#if @last}}
-                    </table>
-                    <div class="summary">History: Created by <strong>{{this.author}}</strong></div>
-                {{/if}}
-            {{/each}}
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <div class="content">
+    <div id="page-information-tags" class="column {{!-- #if toc}}large-8 end{{/if --}}">
+      {{#each labels as |label|}}
+      <a href="/{{../url.key.space_path}}/label/{{sluggy label}}">{{label}}</a>{{#unless @last}}, {{/unless}}
+      {{/each}}
     </div>
+  </div>
 </div>
