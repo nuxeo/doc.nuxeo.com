@@ -367,7 +367,10 @@
 ^/nxdoc/how-to-follow-single-workflow-transition/?$: /studio/node-transitions-tab
 
 # NXDOC-1931 - Java Client doc
-^/nxdoc/java-client/?$: /client-java
+^/nxdoc/java-client/?$: /client-java 
+
+# NXDOC-1966 - ARender rename
+^/nxdoc/nuxeo-arender-connector/?$: /nxdoc/nuxeo-enhanced-viewer
 
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
