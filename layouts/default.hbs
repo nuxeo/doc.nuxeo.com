@@ -9,14 +9,11 @@
       <div>
         {{> versions}}
         Updated: {{moment history.[0].date format='LL'}}
-        <a data-open="page-information" title="Page Information" aria-controls="page-information" aria-haspopup="true" tabindex="0">
-          <i class="fa fa-info-circle"></i>
-        </a>
-        {{#if edit_url}}<a title="Edit on GitHub" href="{{edit_url}}" target="_blank" rel="noopener">
-          <i class="fa fa-edit"></i>
-        </a>{{/if}}
         {{#if history_url}}<a title="GitHub History" href="{{history_url}}" target="_blank" rel="noopener">
           <i class="fa fa-history"></i>
+        </a>{{/if}}
+        {{#if edit_url}}<a title="Edit on GitHub" href="{{edit_url}}" target="_blank" rel="noopener">
+          <i class="fa fa-edit"></i>
         </a>{{/if}}
         {{#if url.shortlink}}<a class="get_permalink" title="Copy Permalink" href="/n/{{url.shortlink}}">
           <i class="fa fa-link"></i>
@@ -54,8 +51,6 @@
 </nav>
 </div>
 {{/if --}}
-
-{{> information}}
 </div>
 
 {{> footer_standard}}
