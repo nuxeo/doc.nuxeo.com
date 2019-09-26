@@ -4,7 +4,6 @@ process.env.DEBUG = process.env.DEBUG || '*:error,*:info';
 
 // core packages
 const fs = require('fs');
-const path = require('path');
 
 // npm packages
 const debug = require('debug')('remove-history');
@@ -21,14 +20,11 @@ if (!filepath) {
   process.exit(1);
 }
 
-const filename = path.join(__dirname, '..', filepath);
-info('filename', filename);
-
-fs.stat(filename, (err, stats) => {
+fs.stat(filepath, (err, stats) => {
   if (!err && stats.isFile()) {
     debug('isFile');
 
-    const file = matter.read(filename);
+    const file = matter.read(filepath);
     debug('File matter:\n', file);
 
     // remove History
@@ -42,7 +38,7 @@ fs.stat(filename, (err, stats) => {
     const data = matter.stringify(file.content, file.data);
     if (data) {
       debug('New file contents:\n', data);
-      fs.writeFile(filename, data, err => {
+      fs.writeFile(filepath, data, err => {
         if (err) {
           error('File write failure', err);
           process.exit(1);
