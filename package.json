@@ -36,6 +36,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "font-awesome": "^4.6.1",
     "foundation-sites": "^6.4.3",
+    "gray-matter": "^4.0.2",
     "handlebars": "^4.1.1",
     "highlight.js": "^9.15.9",
     "html-entities": "^1.2.1",
@@ -151,7 +152,8 @@
     "add_css_to_existing_build": "cp -r assets/css/`cat css.md5`/* site/assets/css/`cat temp/css.md5`",
     "add_js_to_existing_build": "./bin/add_js_to_existing_build lib/webpack.stats.json temp/webpack.stats.json",
     "update_assets": "npm run compile && npm run add_css_to_existing_build && npm run add_js_to_existing_build && browser-sync reload",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "remove_history": "./bin/remove-history"
   },
   "repository": {
     "type": "git",
