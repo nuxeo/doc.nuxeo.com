@@ -1,58 +1,61 @@
 {{> header_standard}}
 <div class="row">
-    <div class="column">
-        {{> breadcrumb}}
-        <div class="heading-group">
-            <div id="section_name" class="hide">{{hierarchy.section_name}}</div>
-            <h1 id="page-title">{{title}}</h1>
-            <div class="style-bar"></div>
-            <div>
-                {{> versions}}
-                Updated: {{moment history.[0].date format='LL'}}
-                <a data-open="page-information" title="Page Information" aria-controls="page-information" aria-haspopup="true" tabindex="0">
-                    <img src="/assets/imgs/icons/info-icon.svg" alt="Page Information" width="18px" height="18px">
-                </a>
-                {{#if edit_url}}<a class="edit-page" title="Edit on GitHub" href="{{edit_url}}">
-                    <img src="/assets/imgs/icons/edit-in-github-icon.svg" alt="Edit on GitHub" width="15px" height="15px">
-                </a>{{/if}}
-                {{#if url.shortlink}}<a class="get_permalink" title="Permalink" href="/n/{{url.shortlink}}">
-                    <i class="fa fa-link"></i>
-                </a>{{/if}}
-            </div>
-        </div>
-        {{> flag_review}}
+  <div class="column">
+    {{> breadcrumb}}
+    <div class="heading-group">
+      <div id="section_name" class="hide">{{hierarchy.section_name}}</div>
+      <h1 id="page-title">{{title}}</h1>
+      <div class="style-bar"></div>
+      <div>
+        {{> versions}}
+        Updated: {{moment history.[0].date format='LL'}}
+        <a data-open="page-information" title="Page Information" aria-controls="page-information" aria-haspopup="true" tabindex="0">
+          <i class="fa fa-info-circle"></i>
+        </a>
+        {{#if edit_url}}<a title="Edit on GitHub" href="{{edit_url}}" target="_blank" rel="noopener">
+          <i class="fa fa-edit"></i>
+        </a>{{/if}}
+        {{#if history_url}}<a title="GitHub History" href="{{history_url}}" target="_blank" rel="noopener">
+          <i class="fa fa-history"></i>
+        </a>{{/if}}
+        {{#if url.shortlink}}<a class="get_permalink" title="Copy Permalink" href="/n/{{url.shortlink}}">
+          <i class="fa fa-link"></i>
+        </a>{{/if}}
+      </div>
     </div>
-    <div id="content" class="column{{#if toc}} toc{{#if toc_no_h4}} toc-no-h4{{/if}}{{/if}}{{#if tabbed_page}} tabbed{{/if}} end">
-        {{{contents}}}
+    {{> flag_review}}
+  </div>
+  <div id="content" class="column{{#if toc}} toc{{#if toc_no_h4}} toc-no-h4{{/if}}{{/if}}{{#if tabbed_page}} tabbed{{/if}} end">
+    {{{contents}}}
 
-        {{#if (condition previous_link '||' next_link)}}
-        <div class="row expanded collapse">
-            <div class="column medium-6">
-                {{#if previous_link}}
-                <a href="{{page page=previous_link}}" class="sequence-link previous-link">
-                    <i class="fa fa-long-arrow-left" aria-hidden="true"></i> {{page_title previous_link}}
-                </a>
-                {{/if}}
-            </div>
-            <div class="column medium-6 text-right">
-                {{#if next_link}}
-                <a href="{{page page=next_link}}" class="sequence-link next-link">
-                    {{page_title next_link}} <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                </a>
-                {{/if}}
-            </div>
-        </div>
+    {{#if (condition previous_link '||' next_link)}}
+    <div class="row expanded collapse">
+      <div class="column medium-6">
+        {{#if previous_link}}
+        <a href="{{page page=previous_link}}" class="sequence-link previous-link">
+          <i class="fa fa-long-arrow-left" aria-hidden="true"></i> {{page_title previous_link}}
+        </a>
         {{/if}}
+      </div>
+      <div class="column medium-6 text-right">
+        {{#if next_link}}
+        <a href="{{page page=next_link}}" class="sequence-link next-link">
+          {{page_title next_link}} <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        </a>
+        {{/if}}
+      </div>
     </div>
-    {{!-- #if toc} }
-    <div id="toc" class="column large-4 show-for-large" data-sticky-container>
-        <nav class="columns sticky" data-sticky data-top-anchor="content" data-sticky-on="large">
-            <ul id="toc_list" class="vertical menu" data-magellan data-bar-offset="50"></ul>
-        </nav>
-    </div>
-    {{/if --}}
+    {{/if}}
+  </div>
+  {{!-- #if toc} }
+  <div id="toc" class="column large-4 show-for-large" data-sticky-container>
+  <nav class="columns sticky" data-sticky data-top-anchor="content" data-sticky-on="large">
+  <ul id="toc_list" class="vertical menu" data-magellan data-bar-offset="50"></ul>
+</nav>
+</div>
+{{/if --}}
 
-    {{> information}}
+{{> information}}
 </div>
 
 {{> footer_standard}}
