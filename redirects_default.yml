@@ -183,6 +183,7 @@
 # NXDOC-900: Studio doc cleanup
 ^/studio/contract-management/?$: /studio/external-templates/
 ^/studio/custom-doc-id-generation/?$: /studio/external-templates/
+^/studio/test-your-studio-config-with-a-new-version-of-dm-or-cmf/?$: /studio/
 
 # LTS 2017 upgrade pages redirects
 ^/nxdoc/upgrade-from-lts-2016-to-91/?$: /nxdoc/upgrade-from-lts-2016-following-fast-tracks/
