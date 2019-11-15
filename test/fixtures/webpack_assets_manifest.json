@@ -1,0 +1,10 @@
+{
+  "errors": [],
+  "warnings": [],
+  "publicPath": "assets/js/73a6b39143936276a53f/",
+  "assetsByChunkName": {
+    "docs": "docs.73a6b39143936276a53f.bundle.js",
+    "search": "search.73a6b39143936276a53f.bundle.js",
+    "vendor": "vendor.bundle.js"
+  }
+}
