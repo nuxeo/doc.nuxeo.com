@@ -15,7 +15,8 @@ $menu-fg-active: $nuxeo-color-dark;
     background: $level-0-color;
   }
 
-  #side_menu ul {
+  #side_menu ul,
+  #toc ul {
     li {
       &.l1 {
         background-color: $level-0-color;
@@ -85,7 +86,11 @@ $menu-fg-active: $nuxeo-color-dark;
 }
 
 #side_menu_container {
-  background: scale-color($secondary-color, $lightness: $callout-background-fade);
+  background:
+    scale-color(
+      $secondary-color,
+      $lightness: $callout-background-fade
+    );
   height: calc(100vh - 50px);
   left: 0;
   margin-top: 50px;
@@ -143,7 +148,8 @@ $menu-fg-active: $nuxeo-color-dark;
 }
 
 // Menu
-#side_menu {
+#side_menu,
+#toc {
   ul {
     list-style: none;
     margin: 0;
@@ -257,18 +263,18 @@ $menu-fg-active: $nuxeo-color-dark;
   // TOC
   #toc_list {
     background-color: $white;
-    margin: 1rem;
+    margin-top: 2rem;
+    max-width: 300px;
 
     .toc-item {
       background-color: transparent;
       // font-size: 12px;
-      margin-left: 1rem;
-      margin-right: 1rem;
       padding-left: 0;
 
       a {
         color: $menu-fg-active;
         font-weight: normal;
+        padding: 0.3rem 0;
       }
 
       &:hover a,

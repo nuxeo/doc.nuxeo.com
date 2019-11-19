@@ -1,18 +1,7 @@
 $content-background: $white;
 
 #content_container {
-  background-color: $white;
-  min-height: calc(100vh - 100px);
-
-  #content {
-    margin-bottom: 5rem;
-    margin-top: 0;
-
-    > .row {
-      margin-left: -1rem;
-      margin-right: -1rem;
-    }
-  }
+  max-width: 900px;
 }
 
 // large+
@@ -43,32 +32,6 @@ $content-background: $white;
     > table,
     > .table-scroll {
       max-width: 100%;
-    }
-  }
-}
-
-// Medium screen support
-@media screen and (min-width: 1050px) {
-  #content_container {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-}
-
-// Large screen support
-@media screen and (min-width: 1800px) {
-  $wide-max-menu-width: 446px;
-
-  #side_menu_container {
-    max-width: $wide-max-menu-width;
-  }
-
-  #content_container {
-    &.large-9.large-push-3 {
-      left: $wide-max-menu-width;
-      padding-left: 5rem;
-      padding-right: 3rem;
-      width: calc(100% - #{$wide-max-menu-width});
     }
   }
 }

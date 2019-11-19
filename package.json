@@ -143,7 +143,7 @@
     "browser_sync": "echo 'This has been replaced by server. npm run server';",
     "browser_sync_reload": "echo 'This has been replaced by server_reload. npm run server_reload';",
     "dev": "NODE_ENV=development nodemon --exec 'npm run compile && npm run copy_assets'",
-    "dev_server": "npm run server & NODE_ENV=development nodemon --exec 'npm start && browser-sync reload'",
+    "dev_server": "npm run server & NODE_ENV=development nodemon --watch lib --watch modules --watch layouts --watch client --exec 'npm start && browser-sync reload'",
     "dev_assets": "npm run server & NODE_ENV=development nodemon --exec 'npm run update_assets && browser-sync reload'",
     "test:dev:server": "browser-sync start --server coverage/lcov-report",
     "test:dev": "nodemon --watch test --watch modules --ignore **/build --exec 'npx tap -b --coverage-report=html --no-browser test && npx browser-sync reload && npm run posttest'",
