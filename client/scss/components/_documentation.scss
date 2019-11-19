@@ -4,6 +4,14 @@ $content-background: $white;
   max-width: 900px;
 }
 
+.ml-1-5 {
+  margin-left: 1.5rem;
+}
+
+.collapse {
+  padding: 0;
+}
+
 // large+
 @media screen and #{breakpoint(large up)} {
   #content {
