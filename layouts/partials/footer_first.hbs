@@ -1,29 +1,28 @@
-        </div>
     </div>
-    {{#if toc}}
-    <div id="toc" class="column large-3 show-for-large" data-sticky-container>
-      <nav class="columns sticky" data-sticky data-top-anchor="content_container" data-sticky-on="large">
-        <ul id="toc_list" class="vertical menu" data-magellan data-bar-offset="50">
-          {{#each menu_data}}
-          {{#if toc_items}}
-          {{!-- <li class="{{toc_classes}} contains-toc">
-            <ul id="toc_list" data-magellan> --}}
-              {{#each toc_items}}
-              <li id="toc_item_{{@index}}" class="{{classes}}" {{#unless show}}style="display: none;"{{/unless}}>
-                {{#if (condition id '||' title)}}
-                <a href="#{{id}}">{{title}}</a>
-                {{/if}}
-              </li>
-              {{/each}}
-            {{!-- </ul>
-          </li> --}}
+  </div>
+  {{#if toc}}
+  <div id="toc" class="column large-3 show-for-large" data-sticky-container>
+    <nav class="sticky" data-sticky data-anchor="content_container" data-sticky-on="large">
+      <ul id="toc_list" class="vertical menu" data-magellan data-bar-offset="50">
+      {{#each menu_data}}
+      {{#if toc_items}}
+        {{!-- <li class="{{toc_classes}} contains-toc">
+        <ul id="toc_list" data-magellan> --}}
+        {{#each toc_items}}
+        <li id="toc_item_{{@index}}" class="{{classes}}" {{#unless show}}style="display: none;"{{/unless}}>
+          {{#if (condition id '||' title)}}
+          <a href="#{{id}}">{{title}}</a>
           {{/if}}
-          {{/each}}
-        </ul>
-      </nav>
-    </div>
-    {{/if}}
-
+        </li>
+        {{/each}}
+        {{!-- </ul>
+      </li> --}}
+      {{/if}}
+      {{/each}}
+      </ul>
+    </nav>
+  </div>
+  {{/if}}
 </div>
 
 <div id="docs_footer" class="row expanded">
