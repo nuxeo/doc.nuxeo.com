@@ -18,19 +18,6 @@
             <a href="{{url_full}}">{{name}}</a>
         </li>
     {{/if}}
-    {{#if toc_items}}
-        <li class="{{toc_classes}} contains-toc">
-            <ul id="toc_list" data-magellan>
-                {{#each toc_items}}
-                <li id="toc_item_{{@index}}" class="{{classes}}" {{#unless show}}style="display: none;"{{/unless}}>
-                    {{#if (condition id '||' title)}}
-                    <a href="#{{id}}">{{title}}</a>
-                    {{/if}}
-                </li>
-                {{/each}}
-            </ul>
-        </li>
-    {{/if}}
     {{/each}}
     </ul>
 </div>

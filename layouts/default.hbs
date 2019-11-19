@@ -1,6 +1,4 @@
 {{> header_standard}}
-<div class="row">
-  <div class="column">
     {{> breadcrumb}}
     <div class="heading-group">
       <div id="section_name" class="hide">{{hierarchy.section_name}}</div>
@@ -21,8 +19,7 @@
       </div>
     </div>
     {{> flag_review}}
-  </div>
-  <div id="content" class="column{{#if toc}} toc{{#if toc_no_h4}} toc-no-h4{{/if}}{{/if}}{{#if tabbed_page}} tabbed{{/if}} end">
+  <div id="content" class="{{#if toc}} toc{{#if toc_no_h4}} toc-no-h4{{/if}}{{/if}}{{#if tabbed_page}} tabbed{{/if}} end">
     {{{contents}}}
 
     {{#if (condition previous_link '||' next_link)}}
@@ -44,13 +41,5 @@
     </div>
     {{/if}}
   </div>
-  {{!-- #if toc} }
-  <div id="toc" class="column large-4 show-for-large" data-sticky-container>
-  <nav class="columns sticky" data-sticky data-top-anchor="content" data-sticky-on="large">
-  <ul id="toc_list" class="vertical menu" data-magellan data-bar-offset="50"></ul>
-</nav>
-</div>
-{{/if --}}
-</div>
 
 {{> footer_standard}}
