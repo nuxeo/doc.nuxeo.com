@@ -4,19 +4,23 @@ $content-background: $white;
   max-width: 900px;
 }
 
-.ml-1-5 {
-  margin-left: 1.5rem;
-}
-
 .collapse {
   padding: 0;
 }
 
+@media screen and #{breakpoint(medium up)} {
+  .content-gutter {
+    margin-left: 1.5rem;
+  }
+}
+
 // large+
 @media screen and #{breakpoint(large up)} {
-  #content {
-    max-width: 1024px;
+  .content-gutter {
+    margin-left: 5.5rem;
+  }
 
+  #content {
     > p,
     > h1,
     > h2,
@@ -80,7 +84,7 @@ $content-background: $white;
     height: 4px;
     margin-bottom: 2rem;
     margin-top: 2rem;
-    width: 100px;
+    width: 40px;
   }
 }
 
