@@ -6,6 +6,7 @@ const fs = require('fs');
 const path = require('path');
 
 // npm packages
+const cheerio = require('cheerio');
 const multimatch = require('multimatch');
 const Joi = require('joi');
 
@@ -59,11 +60,24 @@ const algolia_prep = options => (files, metalsmith, done) => {
         .forEach(filename => {
           const file = files[filename];
           const description = file.description || file.excerpt || '';
+          const $ = cheerio.load(file.contents.toString() || '');
+          const $content_container = $('#content_container');
+          const $el = $content_container.length ? $content_container : $.root();
+          const content = $el
+            .text()
+            .replace(/×+/g, '')
+            .replace(/\s+/g, ' ');
           const { title, ranking = 5 } = file;
           const key = file && file.url && file.url.key;
-          const url = url_mangle(filename);
           const objectID = key.full;
+          const url = url_mangle(objectID);
+          if (objectID === 'main/index' || objectID === 'main/search') {
+            error('filename', filename, url);
+            error('file.contents.toString()', file.contents.toString());
+            error('content', content);
+          }
           debug('filename', filename);
+          debug('objectID', objectID);
           file.algolia = true;
 
           if (algolia[objectID]) {
@@ -80,7 +94,8 @@ const algolia_prep = options => (files, metalsmith, done) => {
               space: key.space,
               // key,
               // url_obj: file.url,
-              url
+              url,
+              content
             };
           }
         });
