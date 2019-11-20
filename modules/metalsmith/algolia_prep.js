@@ -71,11 +71,11 @@ const algolia_prep = options => (files, metalsmith, done) => {
           const key = file && file.url && file.url.key;
           const objectID = key.full;
           const url = url_mangle(objectID);
-          if (objectID === 'main/index' || objectID === 'main/search') {
-            error('filename', filename, url);
-            error('file.contents.toString()', file.contents.toString());
-            error('content', content);
-          }
+          // if (objectID === 'main/index' || objectID === 'main/search') {
+          //   error('filename', filename, url);
+          //   error('file.contents.toString()', file.contents.toString());
+          //   error('content', content);
+          // }
           debug('filename', filename);
           debug('objectID', objectID);
           file.algolia = true;
