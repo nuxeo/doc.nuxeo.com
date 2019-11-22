@@ -3,195 +3,150 @@
 @import 'settings';
 @import 'components/layout_helpers';
 
-$fast-track-icon-radius: 36px;
-$header-color: #384248;
-$body-background-color: #fafcfd;
-
-@mixin section-color($section, $section-color) {
-  &.#{$section} {
-    > div {
-      border-color: $section-color;
-      color: $section-color;
-
-      > div {
-        border-color: lighten($section-color, 20%);
-      }
-    }
-  }
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: inherit;
+  font-weight: 600;
 }
 
-%center-image {
-  display: block;
-  margin: auto;
+p {
+  color: inherit;
 }
 
-html > body {
-  background: $body-background-color;
+a,
+a img,
+.button.button--arrow {
+  transition: filter 0.25s ease-out;
 }
 
-// Homepage typeography
-#quick-access {
-  a {
-    border-bottom: 8px solid darken($primary-color, 15%);
-    font-size: 1.2rem;
-    padding-bottom: 0.8em;
-    padding-top: 1.2em;
-    text-transform: uppercase;
-  }
+a:hover,
+a:hover img,
+.button.button--arrow:hover {
+  filter: contrast(0.85);
 }
 
-.fast-track {
-  box-shadow: 0 4px 4px 0 $nuxeo-overview-shaddow;
-  display: inline-block;
-  margin-bottom: 1rem;
-  margin-top: calc(#{$fast-track-icon-radius} + 1rem);
+.is-black {
+  color: $c-black;
+}
+
+.is-bg-blue,
+.is-bg-blue.button {
+  background-color: $c-blue;
+  color: $c-white !important;
+}
+
+.is-bg-purple {
+  background-color: $c-purple;
+  color: $c-white !important;
+}
+
+.is-bg-aqua,
+.is-bg-aqua.button {
+  background-color: $c-aqua;
+  color: $c-white !important;
+}
+
+.is-bg-blue-light {
+  background-color: $c-light-blue;
+}
+
+.is-bg-green {
+  background-color: $c-green;
+}
+
+.is-bg-aqua-light {
+  background-color: $c-light-aqua;
+}
+
+.item-label {
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.button.button--arrow {
+  height: 50px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 50px;
+  max-width: 250px;
+  padding: 0;
+  position: relative;
   width: 100%;
 
-  > div {
-    background-color: #f8f8f8;
-    border-style: solid;
-    border-width: 0;
-    border-bottom-width: 2rem; // Ignore sass-lint error
-    // color: $nuxeo-tutorials-color;
-    position: relative;
-
-    img {
-      @extend %center-image;
-
-      display: block;
-      left: calc(50% - #{$fast-track-icon-radius});
-      margin: auto;
-      position: absolute;
-      top: -#{$fast-track-icon-radius};
-    }
-
-    > div {
-      border-style: solid;
-      border-width: 0;
-      border-bottom-width: 0.7em; // Ignore sass-lint error
-      overflow: hidden;
-      padding-bottom: 2rem;
-      padding-top: 5rem;
-      text-overflow: ellipsis;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
+  &::after {
+    border: 0;
+    content: '\2192';
+    right: -40px;
+    height: 50px;
+    top: -1px;
+    width: 50px;
+    line-height: 50px;
+    position: absolute;
   }
 
-  @include section-color('tutorials', $nuxeo-tutorials-color);
-  @include section-color('server', $nuxeo-server-color);
-  @include section-color('web-ui', $nuxeo-web-ui-color);
-  @include section-color('dam', $nuxeo-dam-color);
-  @include section-color('desktop-mob', $nuxeo-desktop-mob-color);
-  @include section-color('addons', $nuxeo-addons-color);
-  @include section-color('user-documentation', $nuxeo-user-documentation-color);
-  @include section-color('sdks', $nuxeo-sdks-color);
-  @include section-color('services', $nuxeo-services-color);
-  @include section-color('tools', $nuxeo-tools-color);
+  &.is-bg-blue::after {
+    background: $c-grey;
+    color: $c-blue;
+  }
 
-  .nuxeo-satellite-menu > .nuxeo-satellite-left-menu {
-    .menu-link {
-      transition: color 0.4s ease;
-    }
-
-    .hover-tutorials:hover {
-      color: $nuxeo-tutorials-color;
-    }
-
-    .hover-server:hover {
-      color: $nuxeo-server-color;
-    }
-
-    .hover-web-ui:hover {
-      color: $nuxeo-web-ui-color;
-    }
-
-    .hover-dam:hover {
-      color: $nuxeo-dam-color;
-    }
-
-    .hover-desktop-mob:hover {
-      color: $nuxeo-desktop-mob-color;
-    }
-
-    .hover-addons:hover {
-      color: $nuxeo-addons-color;
-    }
-
-    .hover-sdks:hover {
-      color: $nuxeo-sdks-color;
-    }
-
-    .hover-services:hover {
-      color: $nuxeo-services-color;
-    }
-
-    .hover-tools:hover {
-      color: $nuxeo-tools-color;
-    }
+  &.is-bg-aqua::after {
+    background: $c-white;
+    color: $c-aqua;
   }
 }
 
-#client-libs {
-  img {
-    @extend %center-image;
+.more {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  &::before {
+    content: '\2192  ';
+    font-size: 1.3em;
+  }
+}
+
+.boxes {
+  display: block;
+}
+
+a.box {
+  color: inherit;
+  cursor: pointer;
+}
+
+.box {
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  position: relative;
+  transition: box-shadow 0.25s ease-out;
+  padding: 0 1rem 4rem;
+
+  &:hover {
+    box-shadow: 0 5px 7px 0 rgba(0, 0, 0, 0.4);
   }
 
-  > div ~ div {
-    max-width: 23rem;
-
-    > .column {
-      margin-bottom: 1rem;
-    }
+  .more {
+    display: inline-block;
+    position: absolute;
+    bottom: 1em;
   }
 }
 
 @media screen and #{breakpoint(medium up)} {
-  #client-libs > div ~ div {
-    max-width: 32rem;
-  }
-}
+  .boxes {
+    display: flex;
+    justify-content: space-between;
 
-@media screen and #{breakpoint(large up)} {
-  #client-libs > div ~ div {
-    max-width: 55rem;
-  }
-}
-
-#search-area {
-  background-color: $white;
-  border: 1px solid $primary-color;
-  margin-top: 2em;
-
-  .input-group {
-    padding-top: 1rem;
-  }
-
-  .input-group-label {
-    color: $dark-gray;
-    cursor: pointer;
-    font-size: $nuxeo-button-default;
-    letter-spacing: 0.1rem;
-    padding-left: 1rem;
-    text-transform: uppercase;
-    transition: color 0.2s ease;
-
-    &:hover {
-      color: $c_blue;
+    &.boxes--3 .box {
+      width: calc((100% / 3) - 2rem);
     }
-
-    &.closed {
-      display: none;
-    }
-  }
-
-  // Algolia
-  .input-group .algolia-autocomplete {
-    margin-left: 1em;
-    width: 100%;
-  }
-
-  #search-input-full {
-    width: 100%;
   }
 }
