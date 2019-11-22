@@ -30,15 +30,6 @@ html > body {
 }
 
 // Homepage typeography
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: $c-blue;
-}
-
 #quick-access {
   a {
     border-bottom: 8px solid darken($primary-color, 15%);
