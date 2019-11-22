@@ -1,4 +1,6 @@
 {{> header_standard}}
+<div id="content_container" class="column {{#if no_side_menu}}small-centered{{else}}medium-8 large-{{#if toc}}6{{else}}9{{/if}}{{/if}}{{#if is_overview}} overview{{/if}}">
+  <div class="{{#unless no_side_menu}}content-gutter max-900{{/unless}}">
     {{> breadcrumb}}
     <div class="heading-group">
       <div id="section_name" class="hide">{{hierarchy.section_name}}</div>
@@ -19,27 +21,49 @@
       </div>
     </div>
     {{> flag_review}}
-  <div id="content" class="{{#if toc}} toc{{#if toc_no_h4}} toc-no-h4{{/if}}{{/if}}{{#if tabbed_page}} tabbed{{/if}} end">
-    {{{contents}}}
+    <div id="content" class="{{#if toc}} toc{{#if toc_no_h4}} toc-no-h4{{/if}}{{/if}}{{#if tabbed_page}} tabbed{{/if}} end">
+      {{{contents}}}
 
-    {{#if (condition previous_link '||' next_link)}}
-    <div class="row expanded collapse">
-      <div class="column medium-6">
-        {{#if previous_link}}
-        <a href="{{page page=previous_link}}" class="sequence-link previous-link">
-          <i class="fa fa-long-arrow-left" aria-hidden="true"></i> {{page_title previous_link}}
-        </a>
-        {{/if}}
+      {{#if (condition previous_link '||' next_link)}}
+      <div class="row expanded collapse">
+        <div class="column medium-6">
+          {{#if previous_link}}
+          <a href="{{page page=previous_link}}" class="sequence-link previous-link">
+            <i class="fa fa-long-arrow-left" aria-hidden="true"></i> {{page_title previous_link}}
+          </a>
+          {{/if}}
+        </div>
+        <div class="column medium-6 text-right">
+          {{#if next_link}}
+          <a href="{{page page=next_link}}" class="sequence-link next-link">
+            {{page_title next_link}} <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+          </a>
+          {{/if}}
+        </div>
       </div>
-      <div class="column medium-6 text-right">
-        {{#if next_link}}
-        <a href="{{page page=next_link}}" class="sequence-link next-link">
-          {{page_title next_link}} <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-        </a>
-        {{/if}}
-      </div>
+      {{/if}}
     </div>
-    {{/if}}
   </div>
+</div>
+
+{{#if toc}}
+<div id="toc" class="column large-3 show-for-large" data-sticky-container>
+  <nav class="sticky" data-sticky data-anchor="content_container" data-sticky-on="large">
+    <ul id="toc_list" class="vertical menu" data-magellan data-bar-offset="50">
+      {{#each menu_data}}
+      {{#if toc_items}}
+      {{#each toc_items}}
+      <li id="toc_item_{{@index}}" class="{{classes}}" {{#unless show}}style="display: none;"{{/unless}}>
+        {{#if (condition id '||' title)}}
+        <a href="#{{id}}">{{title}}</a>
+        {{/if}}
+      </li>
+      {{/each}}
+      {{/if}}
+      {{/each}}
+    </ul>
+  </nav>
+</div>
+{{/if}}
 
 {{> footer_standard}}
