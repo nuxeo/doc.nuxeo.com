@@ -9,7 +9,7 @@
   </button>
   {{> versions_inline}}
 
-  <nuxeo-footer year="{{moment format='YYYY'}}" show-license {{#unless homepage}}footer-items="[]"{{/unless}}></nuxeo-footer>
+  <nx-footer showlicense {{#unless homepage}}nolinks{{/unless}}></nx-footer>
 </div>
 
 <div class="tiny reveal" id="prodpad_feedback" data-reveal data-animation-in="slide-in-right" data-animation-out="slide-out-right">
