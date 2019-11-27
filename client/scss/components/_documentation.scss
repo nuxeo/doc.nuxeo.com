@@ -12,6 +12,10 @@ $content-background: $white;
   .background-for-medium {
     background-image: none !important;
   }
+
+  .small-text-center-only {
+    text-align: center;
+  }
 }
 
 @media screen and #{breakpoint(medium down)} {
