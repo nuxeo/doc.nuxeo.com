@@ -8,6 +8,18 @@ $content-background: $white;
   padding: 0;
 }
 
+@media screen and #{breakpoint(small down)} {
+  .background-for-medium {
+    background-image: none !important;
+  }
+}
+
+@media screen and #{breakpoint(medium down)} {
+  .background-for-large {
+    background-image: none !important;
+  }
+}
+
 @media screen and #{breakpoint(medium up)} {
   .content-gutter {
     margin-left: 1.5rem;
