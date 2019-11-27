@@ -38,7 +38,8 @@ a:hover img,
   color: $c-white !important;
 }
 
-.is-bg-purple {
+.is-bg-purple,
+.is-bg-purple.button {
   background-color: $c-purple;
   color: $c-white !important;
 }
@@ -98,6 +99,11 @@ a:hover img,
   &.is-bg-aqua::after {
     background: $c-white;
     color: $c-aqua;
+  }
+
+  &.is-bg-purple::after {
+    background: $c-grey;
+    color: $c-purple;
   }
 }
 
