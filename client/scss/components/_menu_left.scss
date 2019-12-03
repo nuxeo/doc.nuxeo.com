@@ -189,7 +189,7 @@ $menu-fg-active: $nuxeo-color-dark;
   :not(.contains-toc, .toc-item) {
     &.l1 {
       padding-left: 0.5rem;
-      font-weight: 700;
+      font-weight: $global-weight-bold;
     }
 
     &.l2,

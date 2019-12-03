@@ -33,16 +33,15 @@ h6 {
   }
 }
 
-h1 {
-  font-weight: $global-weight-bold;
-}
-
+h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
-  font-weight: 200;
+h6,
+b,
+strong {
+  font-weight: $global-weight-bold;
 }
 
 .heading-anchor {
@@ -53,11 +52,6 @@ h6 {
   h4 & {
     padding-top: 0.2em;
   }
-}
-
-b,
-strong {
-  font-weight: $global-weight-bold;
 }
 
 a {

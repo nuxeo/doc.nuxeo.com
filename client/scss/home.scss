@@ -129,14 +129,14 @@ a.box {
 }
 
 .box {
-  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
   display: inline-block;
   position: relative;
   transition: box-shadow 0.25s ease-out;
   padding: 0 1rem 4rem;
 
   &:hover {
-    box-shadow: 0 5px 7px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.4);
   }
 
   .more {
