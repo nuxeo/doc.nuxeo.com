@@ -28,19 +28,6 @@ $(document).ready(function() {
 
   require('./modules/list_span');
 
-  // Rainbow menu - enable open and close
-  var $rainbow_menu = $('#doc-main-menu');
-  $('#nuxeo-satellite-header')
-    .find('.rainbow-menu')
-    .hover(
-      function() {
-        $rainbow_menu.addClass('active');
-      },
-      function() {
-        $rainbow_menu.removeClass('active');
-      }
-    );
-
   // Style codeblocks
   var hljs = require('highlight.js');
   hljs.initHighlightingOnLoad();

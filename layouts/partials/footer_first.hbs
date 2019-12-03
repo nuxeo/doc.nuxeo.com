@@ -1,8 +1,10 @@
 </div>
 <div id="docs_footer" class="row expanded">
+  {{#unless homepage}}
   <button id="prodpad_open_feedback" type="button" class="button rounded" data-open="prodpad_feedback" title="Documentation Feedback" aria-controls="prodpad_feedback" aria-haspopup="true" tabindex="0">
-      <i class="fa fa-comment fa-fw fa-lg"></i> Not Helpful? Tell Us Why
+      <i class="fa fa-comment fa-fw fa-lg"></i> Send Feedback
   </button>
+  {{/unless}}
   <button id="goto_top" type="button">
     <img src="/assets/imgs/icons/goto-top-icon.svg">
     <span>To Top</span>
@@ -12,6 +14,7 @@
   <nx-footer showlicense {{#unless homepage}}nolinks{{/unless}}></nx-footer>
 </div>
 
+{{#unless homepage}}
 <div class="tiny reveal" id="prodpad_feedback" data-reveal data-animation-in="slide-in-right" data-animation-out="slide-out-right">
   <button class="close-button" data-close aria-label="Close modal" type="button">
     <span aria-hidden="true">&times;</span>
@@ -34,6 +37,7 @@
     </form>
   </div>
 </div>
+{{/unless}}
 
 <script type="text/javascript" src="/{{js.vendor}}"></script>
 <script type="text/javascript" src="/{{js.docs}}"></script>

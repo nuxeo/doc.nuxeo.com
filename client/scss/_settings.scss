@@ -1,4 +1,25 @@
-@import 'variables-smakk';
+$c-black: #000;
+$c-white: #fff;
+$c-green: #73d2cf;
+$c-blue: #06f;
+$c-navy: #1f28bf;
+$c-light-grey: #f0f1f1;
+$c-grey: #f5f5f5;
+$c-grey-1: #bcbfbf;
+$c-grey-2: #7f8284;
+$c-grey-3: #4a4a4a;
+$c-red: #f04;
+$c-purple: #8400ff;
+$c-aqua: #00aded;
+$c-orange: #ff9e00;
+$c-barely-black: #3c3b3b;
+$c-light-blue: #e5f1ff;
+$c-light-aqua: #f2fafa;
+
+$font-primary: 'neue-haas-grotesk-display', Helvetica, Arial, sans-serif;
+
+$weight-roman: 500;
+$weight-medium: 600;
 
 //  Foundation for Sites Settings
 //  -----------------------------
@@ -90,7 +111,7 @@ $body-antialiased: false;
 // $global-padding: 1rem;
 // $global-position: 1rem;
 // $global-weight-normal: normal;
-// $global-weight-bold: bold;
+$global-weight-bold: 600;
 // $global-radius: 0;
 // $global-menu-padding: 0.7rem 1rem;
 // $global-menu-nested-margin: 1rem;
@@ -162,19 +183,19 @@ $header-styles: (
   ),
   medium: (
     'h1': (
-      'font-size': 48
+      'font-size': 42
     ),
     'h2': (
       'font-size': 40
     ),
     'h3': (
-      'font-size': 31
+      'font-size': 34
     ),
     'h4': (
-      'font-size': 25
+      'font-size': 28
     ),
     'h5': (
-      'font-size': 20
+      'font-size': 22
     ),
     'h6': (
       'font-size': 16
@@ -920,7 +941,7 @@ $nuxeo-sdks-color: #ff1744;
 $nuxeo-services-color: #ff6d00;
 $nuxeo-tools-color: #f9a825;
 
-$nuxeo-section-lighten: 30%;
+$nuxeo-section-lighten: 40%;
 
 $nuxeo-overview-shaddow: rgba($black, 0.2);
 
@@ -929,21 +950,3 @@ $nuxeo-body-large: 1.25rem;
 $nuxeo-body-small: 0.85rem;
 $nuxeo-body-smaller: 0.7rem;
 $nuxeo-button-default: 0.9rem;
-
-$c-black: #000;
-$c-white: #fff;
-$c-green: #73d2cf;
-$c-blue: #06f;
-$c-navy: #1f28bf;
-$c-light-grey: #f0f1f1;
-$c-grey: #f5f5f5;
-$c-grey-1: #bcbfbf;
-$c-grey-2: #7f8284;
-$c-grey-3: #4a4a4a;
-$c-red: #f04;
-$c-purple: #8400ff;
-$c-aqua: #00aded;
-$c-orange: #ff9e00;
-$c-barely-black: #3c3b3b;
-$c-light-blue: #e5f1ff;
-$c-light-aqua: #f2fafa;
