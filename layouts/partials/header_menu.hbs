@@ -61,9 +61,9 @@
           <div class="nav-container">
             <ul>
               <li><a href="/" class="is-grey end-of-section">Docs Home</a></li>
-              {{#each site.main_menu}}
-              <li class="section-{{section_color}}" role="menuitem">
-                <a href="{{page}}" role="menuitem">{{page_title page}}</a>
+              {{#each site.main_menu as |menu_item|}}
+              <li class="section-{{menu_item.section_color}}" role="menuitem">
+                <a href="{{menu_item.page}}" role="menuitem">{{page_title menu_item.page}}</a>
               </li>
               {{/each}}
             </ul>
