@@ -52,11 +52,11 @@
     <div class="top-menu--left">
       <div class="menu-item menu-item--first">
         <a href="https://www.nuxeo.com/">
-          <span class="main-menu--logo"><svg viewBox="0 0 128 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M0,0 18,0 24,6 24,24 18,24 18,6 6,6 6,24 0,24M26,0 32,0 32,18 44,18 44,0 50,0 50,24 32,24 26,18M78,0 102,0 102,6 84,6 84,9 102,9 102,15 84,15 84,18 102,18 102,24 78,24M104,0 122,0 128,6 128,24 110,24 104,18 104,0 110,6 110,18 122,18 122,6 110,6z"/><path fill="#73d2cf" d="M52,0 57,0 76,19 76,24 71,24 52,5M52,24 52,19 71,0 76,0 76,5 57,24z"/></svg></span>
+          <span class="main-menu--logo svg"><svg viewBox="0 0 128 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M0,0 18,0 24,6 24,24 18,24 18,6 6,6 6,24 0,24M26,0 32,0 32,18 44,18 44,0 50,0 50,24 32,24 26,18M78,0 102,0 102,6 84,6 84,9 102,9 102,15 84,15 84,18 102,18 102,24 78,24M104,0 122,0 128,6 128,24 110,24 104,18 104,0 110,6 110,18 122,18 122,6 110,6z"/><path fill="#73d2cf" d="M52,0 57,0 76,19 76,24 71,24 52,5M52,24 52,19 71,0 76,0 76,5 57,24z"/></svg></span>
         </a>
       </div>
       <div class="menu-item drop-menu">
-        <span class="drop-menu__parent for-desktop">Documentation <span class="fa fa-chevron-down"></span></span>
+        <span class="drop-menu__parent for-desktop">Documentation <span class="svg svg--arrow-space">{{inline_svg '/assets/imgs/icons/chevron-down.min.svg'}}</span></span>
         <div id="main_menu" class="drop-menu__items">
           <div class="nav-container">
             <ul>
@@ -72,7 +72,7 @@
       </div>
     </div>
     <div class="top-menu--right">
-      <div class="menu-item menu-item--search for-desktop" style="margin-right: 200px;">
+      <div class="menu-item menu-item--search for-desktop">
         <form action="/search/" method="get" id="search-box">
           <div id="menu-search-input" class="search-input">
             {{! SearchBox widget will appear here }}
@@ -89,8 +89,8 @@
           </div>
         </div>
       </div>
-      <div id="whats_new" class="menu-item drop-menu drop-menu--persist for-desktop" style="position: absolute; right: 0;">
-        <span class="drop-menu__parent whats-new"><span class="whats-new__icon">{{inline_svg '/assets/imgs/notif.svg'}}</span> What's New</span>
+      <div id="whats_new" class="menu-item drop-menu drop-menu--persist for-desktop for-desktop--large" style="position: absolute; right: 0;">
+        <span class="drop-menu__parent whats-new"><span class="whats-new__icon svg">{{inline_svg '/assets/imgs/icons/notif.min.svg'}}</span> What's New</span>
         <div class="drop-menu__items drop-menu__items--news">
           <div class="nav-container">
             <ul>

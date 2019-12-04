@@ -1,7 +1,3 @@
-// $menu-shadow: rgba($black, 0.2);
-// $menu-width: 370px;
-// $second-level-fg: rgba($nuxeo-color-dark, 0.8);
-//
 @mixin section-colours($color) {
   $menu-hover: lighten($color, $nuxeo-section-lighten);
 
@@ -9,170 +5,8 @@
     background-color: $menu-hover;
   }
 }
-//
-// #nuxeo-satellite-header {
-//   .rainbow-menu a {
-//     color: $white;
-//     position: relative;
-//     transition: color 0.2s ease;
-//
-//     .menu-home-text {
-//       padding-left: 48px;
-//     }
-//
-//     svg {
-//       display: inline-block;
-//       height: 22px;
-//       left: 14px;
-//       position: absolute;
-//       top: 14px;
-//       width: 22px;
-//     }
-//
-//     svg .nsvglogo-x {
-//       fill: #0067ff;
-//       // transition: fill 0.2s ease;
-//     }
-//
-//     &:hover {
-//       color: #73d2cf;
-//
-//       // svg .nsvglogo-x {
-//       //   fill: #73d2cf;
-//       // }
-//     }
-//   }
-//
-//   .rainbow-menu > a {
-//     display: block;
-//     font-stretch: normal;
-//     font-style: normal;
-//     left: 0;
-//     letter-spacing: 1px;
-//     line-height: 50px;
-//     text-transform: capitalize;
-//     width: $menu-width;
-//
-//     i.fa {
-//       line-height: 50px;
-//       margin-left: 0.5em;
-//     }
-//   }
-// }
-//
-// #doc-main-menu {
-//   background-color: $white;
-//   box-shadow: 4px 4px 4px 0 $menu-shadow;
-//   display: none;
-//   position: absolute;
-//   top: 50px;
-//   z-index: 10;
-//
-//   &.active,
-//   &:hover {
-//     display: block;
-//   }
-//
-//   ul {
-//     list-style: none;
-//     margin: 0;
-//
-//     li {
-//       border-left-style: solid;
-//       border-left-width: 30px;
-//       // font-family: AvenirNext;
-//       font-size: 0.88rem;
-//       font-stretch: normal;
-//       font-style: normal;
-//       font-weight: 500;
-//       letter-spacing: 1px;
-//       padding: 19px 5px 19px 10px;
-//       text-transform: capitalize;
-//       transition: background-color 0.4s ease-in;
-//       width: $menu-width;
-//       line-height: normal !important;
-//
-//       &:hover,
-//       &.active {
-//         ul.child {
-//           display: block;
-//         }
-//       }
-//
-//       a {
-//         color: $nuxeo-color-dark !important;
-//         display: block;
-//         text-transform: capitalize !important;
-//         transition: color 0.2s ease;
-//       }
-//
-//       &.section-tutorials {
-//         @include section-colours($nuxeo-tutorials-color);
-//       }
-//
-//       &.section-server {
-//         @include section-colours($nuxeo-server-color);
-//       }
-//
-//       &.section-web-ui {
-//         @include section-colours($nuxeo-web-ui-color);
-//       }
-//
-//       &.section-dam {
-//         @include section-colours($nuxeo-dam-color);
-//       }
-//
-//       &.section-desktop-mob {
-//         @include section-colours($nuxeo-desktop-mob-color);
-//       }
-//
-//       &.section-addons {
-//         @include section-colours($nuxeo-addons-color);
-//       }
-//
-//       &.section-user-documentation {
-//         @include section-colours($nuxeo-user-documentation-color);
-//       }
-//
-//       &.section-sdks {
-//         @include section-colours($nuxeo-sdks-color);
-//       }
-//
-//       &.section-services {
-//         @include section-colours($nuxeo-services-color);
-//       }
-//
-//       &.section-tools {
-//         @include section-colours($nuxeo-tools-color);
-//       }
-//
-//       ul.child {
-//         background: $white;
-//         border-left: 0;
-//         box-shadow: 4px 4px 4px 0 $menu-shadow;
-//         display: none;
-//         left: $menu-width;
-//         min-height: 484px;
-//         padding: 0;
-//         position: absolute;
-//         top: 0;
-//
-//         a {
-//           color: $second-level-fg;
-//         }
-//
-//         li {
-//           border-left: 0;
-//           padding: 14px 20px;
-//         }
-//       }
-//     }
-//   }
-// }
 
-//////////////////////////////////////////////////////////////////////////////////
-
-$menu-breakpoint: 1050px;
+$menu-breakpoint: 830px;
 $header-top-margin: 13px;
 $header-height: 50px;
 
@@ -233,17 +67,24 @@ $max-width: 1600px;
   }
 }
 
+.svg {
+  &--arrow-space {
+    font-size: 8px;
+    margin-left: 0.5rem;
+  }
+
+  svg {
+    height: 1em;
+    width: auto;
+  }
+}
+
 .main-menu--logo {
   display: inline-flex;
   font-size: 22px;
   max-width: 120px;
   vertical-align: middle;
   vertical-align: baseline-middle;
-
-  svg {
-    height: 1em;
-    width: auto;
-  }
 }
 
 .menu-item {
@@ -256,6 +97,7 @@ $max-width: 1600px;
 
   &--search {
     display: flex;
+    margin-right: 200px;
   }
 
   &--first {
@@ -543,23 +385,23 @@ $max-width: 1600px;
     width: 100%;
     z-index: -9999;
 
-    // &.open {
-    //   left: 0;
-    //   opacity: 1;
-    //   transition: opacity 0.2s ease;
-    //   z-index: 9999;
-    //
-    //   .nav-container {
-    //     height: 100%;
-    //     left: 0;
-    //     -webkit-overflow-scrolling: touch;
-    //     overflow-y: auto;
-    //     padding: $container-padding (2 * $gutter-foundation);
-    //     position: absolute;
-    //     top: 0;
-    //     width: 100%;
-    //   }
-    // }
+    &.open {
+      left: 0;
+      opacity: 1;
+      transition: opacity 0.2s ease;
+      z-index: 9999;
+
+      .nav-container {
+        height: 100%;
+        left: 0;
+        -webkit-overflow-scrolling: touch;
+        overflow-y: auto;
+        padding: $container-padding (2 * $gutter-foundation);
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+    }
 
     .nav-container > ul {
       flex-direction: column;
@@ -588,6 +430,17 @@ $max-width: 1600px;
   }
 }
 
+@media all and (max-width: 1100px) {
+  .for-desktop--large {
+    display: none;
+  }
+
+  .menu-item--search {
+    margin-right: 0;
+    padding-right: 0;
+  }
+}
+
 // Strange dimensions allowances
 @media all and (min-width: 600px) and (max-width: $menu-breakpoint) {
   $spacing: 2vh;
@@ -603,15 +456,11 @@ $max-width: 1600px;
   &__icon {
     vertical-align: middle;
     margin-right: 0.25em;
-
-    svg {
-      height: 1em;
-      width: auto;
-    }
   }
 
   .whats-new__icon--alert {
     fill: transparent;
+    transition: fill 0.4s ease;
   }
 
   &--alert {
