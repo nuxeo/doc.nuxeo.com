@@ -7,7 +7,7 @@ $(document).ready(function() {
   var menu = require('./modules/left_menu');
   var menu_height = require('./modules/left_menu_height');
   var menu_filter = require('./modules/left_menu_filter');
-  var satellite_header = require('./satellite_header');
+  var top_menu = require('./modules/top_menu');
 
   // Tabbed page
   require('./tabbed');
@@ -41,8 +41,8 @@ $(document).ready(function() {
   // Add Keyboard shortcuts
   require('./modules/keyboard_shortcuts');
 
-  // satellite_header
-  satellite_header($);
+  // top_menu
+  top_menu($);
 
   // menu search
   require('./modules/menu_search');
