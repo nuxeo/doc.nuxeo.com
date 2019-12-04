@@ -106,12 +106,24 @@ $max-width: 1600px;
   }
 }
 
+#page_container {
+  margin-top: 50px;
+}
+
 #menu-top {
   background: $c-black;
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.15);
   height: $header-height;
-  width: 100%;
   padding: 0 20px;
+  position: fixed;
+  top: 0;
+  transition: top 0.4s ease;
+  width: 100%;
+  z-index: 1;
+
+  &.nav-up {
+    top: -#{$header-height + 10px};
+  }
 
   .container {
     display: flex;
@@ -220,16 +232,20 @@ $max-width: 1600px;
           transition: all 0.2s ease;
           padding: 0.7em 1em;
 
-          &.is-grey {
-            color: $c-grey-1;
-          }
-
           &.end-of-section {
             border-bottom: 1px solid $c-grey;
           }
 
           &:hover {
             background: $c-grey;
+          }
+
+          &.is-grey {
+            color: $c-grey-1;
+
+            &:hover {
+              color: $c-black;
+            }
           }
         }
 
