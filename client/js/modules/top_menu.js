@@ -16,4 +16,9 @@ module.exports = function($) {
     $main_menu.toggleClass('open');
     $html.toggleClass('no-scroll');
   });
+
+  const whats_new_read = localStorage.getItem('whats_new');
+  console.log('whats_new_read', whats_new_read);
+  const whats_new_latest = $('#whats_new_latest').attr('data-date');
+  console.log('whats_new_latest', whats_new_latest);
 };

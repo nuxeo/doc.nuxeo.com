@@ -172,7 +172,7 @@
 
 //////////////////////////////////////////////////////////////////////////////////
 
-$menu-breakpoint: 1100px;
+$menu-breakpoint: 1050px;
 $header-top-margin: 13px;
 $header-height: 50px;
 
@@ -257,6 +257,10 @@ $max-width: 1600px;
   &--search {
     display: flex;
   }
+
+  &--first {
+    padding-left: 0;
+  }
 }
 
 #menu-top {
@@ -328,6 +332,10 @@ $max-width: 1600px;
     cursor: pointer;
     position: relative;
     transition: background 0.2s ease;
+
+    .drop-menu__parent .fa {
+      padding-left: 0.25rem;
+    }
 
     &.drop-menu--persist .drop-menu__parent::after {
       content: '\00D7';
@@ -535,23 +543,23 @@ $max-width: 1600px;
     width: 100%;
     z-index: -9999;
 
-    &.open {
-      left: 0;
-      opacity: 1;
-      transition: opacity 0.2s ease;
-      z-index: 9999;
-
-      .nav-container {
-        height: 100%;
-        left: 0;
-        -webkit-overflow-scrolling: touch;
-        overflow-y: auto;
-        padding: $container-padding (2 * $gutter-foundation);
-        position: absolute;
-        top: 0;
-        width: 100%;
-      }
-    }
+    // &.open {
+    //   left: 0;
+    //   opacity: 1;
+    //   transition: opacity 0.2s ease;
+    //   z-index: 9999;
+    //
+    //   .nav-container {
+    //     height: 100%;
+    //     left: 0;
+    //     -webkit-overflow-scrolling: touch;
+    //     overflow-y: auto;
+    //     padding: $container-padding (2 * $gutter-foundation);
+    //     position: absolute;
+    //     top: 0;
+    //     width: 100%;
+    //   }
+    // }
 
     .nav-container > ul {
       flex-direction: column;
