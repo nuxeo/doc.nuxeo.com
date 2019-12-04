@@ -598,3 +598,25 @@ $max-width: 1600px;
     padding: 0 0 ($spacing * 1.5);
   }
 }
+
+.whats-new {
+  &__icon {
+    vertical-align: middle;
+    margin-right: 0.25em;
+
+    svg {
+      height: 1em;
+      width: auto;
+    }
+  }
+
+  .whats-new__icon--alert {
+    fill: transparent;
+  }
+
+  &--alert {
+    .whats-new__icon--alert {
+      fill: $c-red;
+    }
+  }
+}
