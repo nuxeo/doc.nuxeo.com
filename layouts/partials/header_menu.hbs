@@ -1,52 +1,3 @@
-{{!-- <div id="nuxeo-satellite-header">
-  <div class="nuxeo-satellite-menu expanded">
-    <div class="nuxeo-satellite-left-menu">
-      <div class="rainbow-menu" role="menuitem">
-        <a href="/">
-          <svg viewBox="0 0 128 24" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M0,0 18,0 24,6 24,24 18,24 18,6 6,6 6,24 0,24M26,0 32,0 32,18 44,18 44,0 50,0 50,24 32,24 26,18M78,0 102,0 102,6 84,6 84,9 102,9 102,15 84,15 84,18 102,18 102,24 78,24M104,0 122,0 128,6 128,24 110,24 104,18 104,0 110,6 110,18 122,18 122,6 110,6z"/><path fill="#73d2cf" d="M52,0 57,0 76,19 76,24 71,24 52,5M52,24 52,19 71,0 76,0 76,5 57,24z"/></svg>
-          <span class="menu-home-text">Documentation</span>
-          <i class="fa fa-caret-down" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
-    <div class="nuxeo-satellite-right-menu">
-      <ul>
-        {{!-- <li>
-          <button id="search-button"><i class="fa fa-search"></i></button>
-        </li>
-        <li>
-          <form id="search-box" class="closed">
-            <input id="search-input" type="text" value="" placeholder="SEARCH DOCS&hellip;">
-          </form>
-        </li> -- }}
-
-        <li id="menu-search-icon" class="nav-main__item">
-          <i class="fa fa-search"></i>
-          {{!-- <form id="search-box-mobile" action="/search/" method="get">
-            <input type="search" name="query" value="" placeholder="Search Nuxeo Docs">
-            <button type="submit" class="is-green"><i class="fa fa-search"></i></button>
-          </form> -- }}
-        </li>
-        <li>
-          <form action="/search/" method="get" id="search-box">
-            <div id="menu-search-input" class="search-input">
-              {{! SearchBox widget will appear here }}
-            </div>
-          </form>
-        </li>
-      </ul>
-  </div>
-  <div id="doc-main-menu">
-    <ul>
-      {{#each site.main_menu}}
-      <li class="section-{{section_color}}" role="menuitem">
-        <a href="{{parent}}" role="menuitem">{{page_title parent}}</a>
-      </li>
-      {{/each}}
-    </ul>
-  </div>
-</div> --}}
-
 <div id="menu-top">
   <div class="container">
     <div class="top-menu--left">
@@ -62,8 +13,8 @@
             <ul>
               <li><a href="/" class="is-grey end-of-section">Docs Home</a></li>
               {{#each site.main_menu as |menu_item|}}
-              <li class="section-{{menu_item.section_color}}" role="menuitem">
-                <a href="{{menu_item.page}}" role="menuitem">{{page_title menu_item.page}}</a>
+              <li class="section-{{menu_item.section_color}}">
+                <a href="{{menu_item.page}}">{{page_title menu_item.page}}</a>
               </li>
               {{/each}}
             </ul>
