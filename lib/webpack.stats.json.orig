@@ -1,0 +1,5 @@
+<<<<<<< Updated upstream
+{"errors":[],"assetsByChunkName":{"docs":"docs.cd21945fcf98901d5aa2.bundle.js","search":"search.cd21945fcf98901d5aa2.bundle.js","vendor":"vendor.bundle.js"},"publicPath":"assets/js/cd21945fcf98901d5aa2/"}
+=======
+{"errors":[],"assetsByChunkName":{"docs":"docs.83288d6ae767ae327b47.bundle.js","search":"search.83288d6ae767ae327b47.bundle.js","vendor":"vendor.bundle.js"},"publicPath":"assets/js/83288d6ae767ae327b47/"}
+>>>>>>> Stashed changes
