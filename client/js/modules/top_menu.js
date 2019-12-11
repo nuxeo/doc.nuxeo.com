@@ -1,6 +1,5 @@
 module.exports = function($) {
   /* eslint-env browser, jquery */
-  const throttle = require('lodash.throttle');
   const $html = $('html');
   const $main_menu = $('#main_menu');
   const $menu_top = $('#menu-top');
@@ -41,43 +40,4 @@ module.exports = function($) {
       $whats_new.find('.whats-new').removeClass('whats-new--alert');
     }
   });
-
-  // Set menu as active when in use
-  $menu_top.hover(
-    () => $menu_top.addClass('active'),
-    () => $menu_top.removeClass('active')
-  );
-
-  // Hide Header on on scroll down
-  let last_scroll_position = 0;
-  const hide_offset = 200;
-
-  const scroll_handler = throttle(
-    () => {
-      const scroll_position = $(document).scrollTop();
-
-      // Don't hide if the menu is being used
-      if (!$menu_top.hasClass('active')) {
-        if (
-          scroll_position > last_scroll_position &&
-          scroll_position > hide_offset
-        ) {
-          // Scroll Down
-          $('#menu-top').addClass('nav-up');
-        } else {
-          // Scroll Up
-          $('#menu-top').removeClass('nav-up');
-        }
-      }
-
-      last_scroll_position = scroll_position;
-    },
-    250,
-    { leading: false }
-  );
-
-  // Only add the scroll handler if it's not fixed
-  if (!$menu_top.hasClass('nav-fixed')) {
-    $(window).on('scroll', scroll_handler);
-  }
 };
