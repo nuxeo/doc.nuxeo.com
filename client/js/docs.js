@@ -5,7 +5,6 @@
 $(document).ready(function() {
   require('./modules/polyfills');
   var menu = require('./modules/left_menu');
-  var menu_height = require('./modules/left_menu_height');
   var menu_filter = require('./modules/left_menu_filter');
   var top_menu = require('./modules/top_menu');
 
@@ -14,7 +13,6 @@ $(document).ready(function() {
 
   // Menu
   if ($('#side_menu').find('div').length) {
-    menu_height($);
     menu($);
 
     // Menu filtering
