@@ -4,12 +4,18 @@ $versions-bg: rgba(255, 255, 255, 0.2);
 #page-versions {
   background-color: $versions-bg;
   border-radius: 5rem;
+  display: inline-block;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 2px;
   line-height: 19px;
+  margin-left: 1rem;
   padding: 0.5em 1em 0.4em 0;
   text-transform: uppercase;
+
+  .version-label {
+    border-bottom: 1px solid $c-black;
+  }
 
   > ul {
     height: inherit;

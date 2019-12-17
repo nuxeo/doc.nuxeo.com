@@ -5,9 +5,7 @@
     <div class="heading-group">
       <div id="section_name" class="hide">{{hierarchy.section_name}}</div>
       <h1 id="page-title">{{title}}</h1>
-      <div class="style-bar"></div>
       <div>
-        {{> versions}}
         Updated: {{moment history.[0].date format='LL'}}
         {{#if history_url}}<a title="GitHub History" href="{{history_url}}" target="_blank" rel="noopener">
           <i class="fa fa-history"></i>
@@ -18,6 +16,7 @@
         {{#if url.shortlink}}<a class="get_permalink" title="Copy Permalink" href="/n/{{url.shortlink}}">
           <i class="fa fa-link"></i>
         </a>{{/if}}
+        {{> versions}}
       </div>
     </div>
     {{> flag_review}}
@@ -48,7 +47,8 @@
 
 {{#if toc}}
 <div id="toc" class="column large-3 show-for-large" data-sticky-container>
-  <nav class="sticky" data-sticky data-anchor="content_container" data-sticky-on="large">
+  <nav class="sticky" data-sticky data-anchor="content_container" data-sticky-on="large" data-margin-top="7.3">
+    <div class="toc__heading">On this page</div>
     <ul id="toc_list" class="vertical menu" data-magellan data-bar-offset="50">
       {{#each menu_data}}
       {{#if toc_items}}

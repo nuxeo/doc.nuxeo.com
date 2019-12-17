@@ -104,8 +104,8 @@ Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
 }
 
 // Standard Dark syntax highlighting
-$base: #282c34;
-$mono-1: #abb2bf;
+$base: $nuxeo-color-code-background;
+$mono-1: $nuxeo-color-code-foreground;
 // $mono-2:   #818896;
 $mono-3: #5c6370;
 $hue-1: #56b6c2;
