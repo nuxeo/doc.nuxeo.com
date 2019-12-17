@@ -1,14 +1,19 @@
-.button.rounded {
-  border-radius: 999px;
-}
-
 #prodpad_open_feedback {
-  box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.5);
+  background: $nuxeo-menu-bg;
+  box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.2);
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
   position: fixed;
   bottom: 10px;
   right: 20px;
   z-index: 5;
-  color: $white;
+  color: $c-blue;
+  text-transform: uppercase;
+  transition: box-shadow 0.25s ease-out;
+
+  &:hover {
+    box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.4);
+  }
 
   .fa {
     text-align: left;

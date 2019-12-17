@@ -1,7 +1,7 @@
 // Inline code
 code {
-  background: rgba(0, 102, 255, 0.08);
-  border: 1px solid rgba(31, 76, 191, 0.3);
+  color: $c-black;
+  background: #61aeee4f;
   overflow-wrap: break-word;
 
   a > & {
@@ -12,7 +12,6 @@ code {
 // Code block
 pre {
   background: $nuxeo-color-code-background;
-  border: solid 1px $nuxeo-color-code-border;
   color: $nuxeo-color-code-foreground;
   font-family: 'Courier 10 Pitch', Courier, monospace;
   font-size: 15px !important;
@@ -52,6 +51,7 @@ pre {
     background: transparent;
     border: 0;
     color: $nuxeo-color-code-foreground;
+    display: contents;
 
     > code {
       background: transparent;

@@ -5,6 +5,7 @@ $c-blue: #06f;
 $c-navy: #1f28bf;
 $c-light-grey: #f0f1f1;
 $c-grey: #f5f5f5;
+$c-grey-0: #e6e6e7;
 $c-grey-1: #bcbfbf;
 $c-grey-2: #7f8284;
 $c-grey-3: #4a4a4a;
@@ -93,7 +94,7 @@ $global-width: rem-calc(1400);
 $global-lineheight: 1.6;
 $foundation-palette: (
   primary: $c_blue,
-  secondary: #777,
+  secondary: #f2f2f3,
   success: $c_green,
   warning: $c_orange,
   alert: $c_red
@@ -920,13 +921,13 @@ $tab-content-padding: 0;
 
 $nuxeo-color-accent: #ff452a;
 $nuxeo-color-light-blue: #9ec2d5;
-$nuxeo-menu-bg: #f3f6fd;
+$nuxeo-menu-bg: #f8f9f9;
 $nuxeo-color-light-gray: #ccc;
 $nuxeo-color-dark: #000522;
 
 // Code Block
-$nuxeo-color-code-background: #f7f7f7;
-$nuxeo-color-code-foreground: #000;
+$nuxeo-color-code-background: #282c34;
+$nuxeo-color-code-foreground: #abb2bf;
 $nuxeo-color-code-border: #ccc;
 
 // Section colours
