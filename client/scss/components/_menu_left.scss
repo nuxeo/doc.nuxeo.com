@@ -88,7 +88,7 @@ $menu-fg-active: $nuxeo-color-dark;
 
 #side_menu_container {
   background: $nuxeo-menu-bg;
-  height: calc(100vh - 50px);
+  max-height: calc(100vh - #{$header-height});
   overflow-y: auto;
 
   &::-webkit-scrollbar {
@@ -106,6 +106,8 @@ $menu-fg-active: $nuxeo-color-dark;
 
 // Filtering input
 #side_menu {
+  height: calc(100vh - #{$header-height});
+
   .input-container {
     margin: 0;
     padding: 1rem 1.25rem;
