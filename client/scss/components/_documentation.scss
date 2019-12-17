@@ -28,6 +28,21 @@ $content-background: $white;
   .content-gutter {
     margin-left: 1.5rem;
   }
+
+  #content {
+    // Remove padding on boxes
+    > .row > .column {
+      &.medium-6 {
+        &:nth-of-type(odd) {
+          padding-left: 0;
+        }
+
+        &:nth-of-type(even) {
+          padding-right: 0;
+        }
+      }
+    }
+  }
 }
 
 // large+

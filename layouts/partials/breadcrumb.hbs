@@ -2,8 +2,10 @@
   <a href="/">Home</a>
   &gt;
   {{#each hierarchy.parents}}
+  {{#unless (condition this.name '===' 'Developer Documentation')}}
   <a href="{{this.url}}">{{this.name}}</a>
   &gt;
+  {{/unless}}
   {{/each}}
   <span class="breadcrumb__current">{{#if name}}{{name}}{{else}}{{title}}{{/if}}</span>
 </div>

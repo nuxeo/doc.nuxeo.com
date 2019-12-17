@@ -86,6 +86,10 @@ $menu-fg-active: $nuxeo-color-dark;
   }
 }
 
+#content_container {
+  min-height: calc(100vh - #{$header-height});
+}
+
 #side_menu_container {
   background: $nuxeo-menu-bg;
   max-height: calc(100vh - #{$header-height});
