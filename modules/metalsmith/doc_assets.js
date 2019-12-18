@@ -53,7 +53,10 @@ const get_file = (doc, local_path) => {
 
   return fs
     .statAsync(local_path)
-    .then(() => fs.readFileAsync(local_path, 'utf8'), () => '')
+    .then(
+      () => fs.readFileAsync(local_path, 'utf8'),
+      () => ''
+    )
     .then(content => {
       // Check file digest match otherwise get file
       const file_digest = checksum(content, file_content.digestAlgorithm);

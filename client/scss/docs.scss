@@ -1,5 +1,6 @@
 @charset 'utf-8';
 
+@import 'components/fonts';
 @import 'settings';
 @import 'foundation';
 @import 'motion-ui';
@@ -39,26 +40,24 @@
 @include foundation-table;
 @include foundation-tabs;
 @include foundation-thumbnail;
-@include foundation-title-bar;
+// @include foundation-title-bar;
 @include foundation-tooltip;
-@include foundation-top-bar;
+// @include foundation-top-bar;
 @include foundation-visibility-classes;
 @include foundation-float-classes;
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
 @import 'font-awesome';
-@import 'satellite';
 @import 'components/documentation';
 @import 'components/tooltips';
 @import 'components/typography';
-@import 'components/main_menu';
+@import 'components/menu_top';
 @import 'components/menu_search';
 @import 'components/main_search';
-@import 'components/left_menu';
-@import 'components/footer';
-@import 'components/goto_top';
-@import 'components/nuxeo_googlecode_highlightjs';
+@import 'components/menu_left';
+@import 'components/toc';
+@import 'components/nuxeo_atom_one_highlightjs';
 @import 'components/breadcrumb';
 @import 'components/callout';
 @import 'components/code_block';

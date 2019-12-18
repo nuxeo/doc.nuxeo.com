@@ -1,6 +1,4 @@
-$active-border-width: 8px;
 $scrollbar-color: rgba($black, 0.3);
-$menu-background: #eee;
 $menu-fg: rgba($nuxeo-color-dark, 0.8);
 $menu-fg-active: $nuxeo-color-dark;
 
@@ -11,9 +9,9 @@ $menu-fg-active: $nuxeo-color-dark;
   // $level-1-color: lighten($color, $nuxeo-section-lighten);
 
   //
-  #side_menu_container #side_menu .input-container {
-    background: $level-0-color;
-  }
+  // #side_menu_container #side_menu .input-container {
+  //   background: $level-0-color;
+  // }
 
   #side_menu ul {
     li {
@@ -21,20 +19,24 @@ $menu-fg-active: $nuxeo-color-dark;
         background-color: $level-0-color;
       }
 
-      // &.l2 {
-      //   background-color: $level-1-color;
+      // // &.l2 {
+      // //   background-color: $level-1-color;
+      // // }
+      //
+      // &:hover {
+      //   background-color: $menu-hover;
       // }
-
-      &:hover {
-        background-color: $menu-hover;
-      }
-
-      .toc-item,
-      .fa,
-      &.contains-toc {
-        background: none;
-      }
+      //
+      // .toc-item,
+      // .fa,
+      // &.contains-toc {
+      //   background: none;
+      // }
     }
+  }
+
+  .breadcrumb__current {
+    color: $color;
   }
 }
 
@@ -84,16 +86,14 @@ $menu-fg-active: $nuxeo-color-dark;
   }
 }
 
+#content_container {
+  min-height: calc(100vh - #{$header-height});
+}
+
 #side_menu_container {
-  background: scale-color($secondary-color, $lightness: $callout-background-fade);
-  height: calc(100vh - 50px);
-  left: 0;
-  margin-top: 50px;
-  max-width: 450px;
+  background: $nuxeo-menu-bg;
+  max-height: calc(100vh - #{$header-height});
   overflow-y: auto;
-  padding: 0;
-  position: fixed;
-  top: 0;
 
   &::-webkit-scrollbar {
     width: 4px;
@@ -110,26 +110,31 @@ $menu-fg-active: $nuxeo-color-dark;
 
 // Filtering input
 #side_menu {
+  height: calc(100vh - #{$header-height});
+
   .input-container {
     margin: 0;
-    padding: 1rem 2rem;
+    padding: 1rem 1.25rem;
   }
 
   .input-group {
-    background-color: rgba($white, 0.4);
-    margin: 0;
-    padding: 0.5rem;
+    margin: 0.6rem 0;
     width: 100%;
   }
 
   .input-group-field {
+    border-bottom: 1px solid $c-black;
     color: $menu-fg-active;
-    font-size: 0.9rem;
-    height: 2rem;
+    font-size: 0.75rem;
+    padding: 0;
+    height: auto;
+    // font-size: 0.9rem;
+    // height: 2rem;
 
     &::placeholder {
       color: $menu-fg;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
       text-transform: uppercase;
     }
   }
@@ -158,7 +163,7 @@ $menu-fg-active: $nuxeo-color-dark;
       cursor: pointer;
       float: right;
       margin-right: 0.4em;
-      margin-top: 0.8em;
+      margin-top: 0.5em;
       transition: transform 0.2s ease;
     }
 
@@ -169,7 +174,7 @@ $menu-fg-active: $nuxeo-color-dark;
     a {
       color: $menu-fg;
       display: block;
-      padding: 0.5rem 1rem;
+      padding: 0.2rem 1.5rem 0.2rem 0;
       transition: color 0.2s ease;
     }
 
@@ -180,11 +185,11 @@ $menu-fg-active: $nuxeo-color-dark;
     .highlight {
       color: $primary-color;
     }
-  }
 
-  :not(.contains-toc, .toc-item) {
     &.l1 {
-      padding-left: 1rem;
+      padding-left: 1.25rem;
+      font-weight: $global-weight-bold;
+      text-transform: uppercase;
     }
 
     &.l2,
@@ -193,126 +198,49 @@ $menu-fg-active: $nuxeo-color-dark;
     &.l5,
     &.l6,
     &.l7 {
+      &:hover,
       &.active {
-        position: relative;
+        background-color: $c-grey-0;
+      }
 
-        &::before {
-          content: '•';
-          left: 1rem;
-          position: absolute;
-          top: 0.5em;
-        }
+      &.active {
+        font-weight: $global-weight-bold;
       }
     }
 
     &.l2 {
-      padding-left: 1.5rem;
-
-      &.active::before {
-        left: 1.5rem;
-      }
+      padding-left: 1.25rem;
+      margin: 0.8rem 0;
     }
 
-    &.l3 {
-      padding-left: 2.5rem;
+    // &.l3,
+    // &.l4,
+    // &.l5,
+    // &.l6,
+    // &.l7 {
+    //   background-image: url('data:image/svg+xml,<svg stroke="%23999" stroke-linejoin="round" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" viewBox="-1 0 18 13"><path d="M0 4L8 12L16 4L8 12z"/></svg>');
+    //   background-position: left;
+    //   background-size: 100% 1rem;
+    // }
 
-      &.active::before {
-        left: 2.5rem;
-      }
+    &.l3 {
+      padding-left: 2.25rem;
     }
 
     &.l4 {
-      padding-left: 3.5rem;
-
-      &.active::before {
-        left: 3.5rem;
-      }
+      padding-left: 3.25rem;
     }
 
     &.l5 {
-      padding-left: 4.5rem;
-
-      &.active::before {
-        left: 4.5rem;
-      }
+      padding-left: 4.25rem;
     }
 
     &.l6 {
-      padding-left: 5.5rem;
-
-      &.active::before {
-        left: 5.5rem;
-      }
+      padding-left: 5.25rem;
     }
 
     &.l7 {
-      padding-left: 6.5rem;
-
-      &.active::before {
-        left: 6.5rem;
-      }
-    }
-  }
-
-  // TOC
-  #toc_list {
-    background-color: $white;
-    margin: 1rem;
-
-    .toc-item {
-      background-color: transparent;
-      // font-size: 12px;
-      margin-left: 1rem;
-      margin-right: 1rem;
-      padding-left: 0;
-
-      a {
-        color: $menu-fg-active;
-        font-weight: normal;
-      }
-
-      &:hover a,
-      & a.is-active {
-        color: $primary-color;
-      }
-
-      // Default indentation
-      &.l1 {
-        margin-left: 0;
-      }
-
-      &.l2 {
-        margin-left: 0.5rem;
-      }
-
-      &.l3 {
-        margin-left: 1.5rem;
-      }
-
-      &.l4 {
-        margin-left: 2.5rem;
-      }
-
-      &.l5 {
-        margin-left: 3.5rem;
-      }
-
-      &.l6 {
-        margin-left: 4.5rem;
-      }
-
-      &.l7 {
-        margin-left: 5.5rem;
-      }
-
-      // TOC level indentation
-      &.h3 {
-        padding-left: 1rem;
-      }
-
-      &.h4 {
-        padding-left: 2rem;
-      }
+      padding-left: 6.25rem;
     }
   }
 }

@@ -1,6 +1,7 @@
 // Inline code
 code {
-  border-radius: $code-border-radius;
+  color: $c-black;
+  background: #61aeee4f;
   overflow-wrap: break-word;
 
   a > & {
@@ -11,8 +12,6 @@ code {
 // Code block
 pre {
   background: $nuxeo-color-code-background;
-  border: solid 2px $nuxeo-color-code-border;
-  border-radius: $code-border-radius;
   color: $nuxeo-color-code-foreground;
   font-family: 'Courier 10 Pitch', Courier, monospace;
   font-size: 15px !important;
@@ -20,7 +19,6 @@ pre {
   margin-bottom: 1.6em;
   max-width: 100%;
   overflow: auto;
-  padding: 1.6em;
   position: relative;
   white-space: pre-wrap;
 
@@ -53,6 +51,7 @@ pre {
     background: transparent;
     border: 0;
     color: $nuxeo-color-code-foreground;
+    display: contents;
 
     > code {
       background: transparent;

@@ -1,6 +1,25 @@
 .breadcrumb {
-  color: $medium-gray;
-  font-size: $nuxeo-body-small;
-  font-weight: 300;
-  margin-top: 0.85rem;
+  color: #7f8284;
+  font-size: 0.75rem;
+  font-weight: $global-weight-bold;
+  letter-spacing: 1px;
+  margin-top: 2.5rem;
+  text-transform: uppercase;
+
+  a {
+    color: #7f8284;
+
+    &:hover {
+      color: $c-blue;
+    }
+  }
+}
+
+.breadcrumb__current {
+  color: $c-black;
+}
+
+#page-title {
+  line-height: 1.2;
+  margin-top: 0;
 }

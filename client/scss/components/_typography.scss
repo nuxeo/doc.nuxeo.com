@@ -8,24 +8,15 @@ h6 {
   margin-top: 1.5rem;
   position: relative;
 
-  &.style-bar::after {
-    background: black;
-    content: '';
-    display: block;
-    height: 4px;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    width: 100px;
-  }
-
   .heading-anchor {
     color: transparent;
     font-size: 1.3rem;
     left: -1.7rem;
+    line-height: 1em;
     padding-right: 2rem;
     padding-top: 0.4em;
     position: absolute;
-    top: 0;
+    top: 0.3em;
   }
 
   &:hover .heading-anchor {
@@ -33,16 +24,15 @@ h6 {
   }
 }
 
-h1 {
-  font-weight: $global-weight-bold;
-}
-
+h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
-  font-weight: 200;
+h6,
+b,
+strong {
+  font-weight: $global-weight-bold;
 }
 
 .heading-anchor {
@@ -53,11 +43,6 @@ h6 {
   h4 & {
     padding-top: 0.2em;
   }
-}
-
-b,
-strong {
-  font-weight: $global-weight-bold;
 }
 
 a {

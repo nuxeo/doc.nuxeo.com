@@ -4,7 +4,7 @@ import instantsearch from 'instantsearch.js';
 import { configure, hits, searchBox } from 'instantsearch.js/es/widgets';
 
 let initialised = false;
-const $main_menu = $('#nuxeo-satellite-header');
+const $main_menu = $('#menu-top');
 const $algolia_config = $('#algolia_search_config');
 
 const search_key = $algolia_config.attr('data-search-key');
@@ -91,9 +91,6 @@ const initialise_search = () => {
     menu_search.addWidget(
       hits({
         container: '#menu-hits',
-        cssClasses: {
-          item: 'row paddedt0'
-        },
         templates: {
           empty: 'No results',
           item:
@@ -117,7 +114,7 @@ const initialise_search = () => {
     initialised = true;
   } else {
     // eslint-disable-next-line no-console
-    console.log('Alogia could not initialise');
+    console.log('Algolia could not initialise');
   }
 };
 

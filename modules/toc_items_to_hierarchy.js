@@ -43,7 +43,9 @@ const toc_items_to_hierarchy = function(items, filename = '') {
       do {
         previous = parents.pop();
         debug(
-          `level: ${level}, base: ${parents[parents.length - 1].level}, previous: ${previous.level}`
+          `level: ${level}, base: ${
+            parents[parents.length - 1].level
+          }, previous: ${previous.level}`
         );
       } while (
         level >= parents[parents.length - 1].level &&

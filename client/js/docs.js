@@ -5,16 +5,14 @@
 $(document).ready(function() {
   require('./modules/polyfills');
   var menu = require('./modules/left_menu');
-  var menu_height = require('./modules/left_menu_height');
   var menu_filter = require('./modules/left_menu_filter');
-  var satellite_header = require('./satellite_header');
+  var top_menu = require('./modules/top_menu');
 
   // Tabbed page
   require('./tabbed');
 
   // Menu
   if ($('#side_menu').find('div').length) {
-    menu_height($);
     menu($);
 
     // Menu filtering
@@ -27,19 +25,6 @@ $(document).ready(function() {
   $(document).foundation();
 
   require('./modules/list_span');
-
-  // Rainbow menu - enable open and close
-  var $rainbow_menu = $('#doc-main-menu');
-  $('#nuxeo-satellite-header')
-    .find('.rainbow-menu')
-    .hover(
-      function() {
-        $rainbow_menu.addClass('active');
-      },
-      function() {
-        $rainbow_menu.removeClass('active');
-      }
-    );
 
   // Style codeblocks
   var hljs = require('highlight.js');
@@ -54,8 +39,8 @@ $(document).ready(function() {
   // Add Keyboard shortcuts
   require('./modules/keyboard_shortcuts');
 
-  // satellite_header
-  satellite_header($);
+  // top_menu
+  top_menu($);
 
   // menu search
   require('./modules/menu_search');

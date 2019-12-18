@@ -31,82 +31,24 @@ default:
     algolia_id: 'F6EQCOZI09'
     algolia_index: 'doc'
     main_menu:
-      - parent: /nxdoc/getting-started
+      - page: /nxdoc/getting-started
         section_color: tutorials
-        children:
-          - /nxdoc/discover-nuxeo-platform-apis
-          - /nxdoc/configure-nuxeo-platform
-          - /nxdoc/develop-with-nuxeo-platform
-          - /nxdoc/best-practices
-          - /nxdoc/learning-with-examples
-          - /nxdoc/how-to-index
-      - parent: /nxdoc/nuxeo-server
+      - page: /nxdoc/nuxeo-server
         section_color: server
-        children:
-          - /nxdoc/installation
-          - /nxdoc/administration
-          - /nxdoc/rest-api
-          - /nxdoc/automation
-          - /nxdoc/upgrading-the-nuxeo-platform
-          - /nxdoc/monitoring-and-maintenance
-          - /nxdoc/runtime-and-component-model
-          - /nxdoc/data-modeling
-          - /nxdoc/workflow
-          - /nxdoc/security
-          - /nxdoc/nuxeo-server-roadmap
-      - parent: /nxdoc/web-ui
+      - page: /nxdoc/web-ui
         section_color: web-ui
-        children:
-          - /nxdoc/web-ui-overview
-          - /nxdoc/polymer-guide
-          - /nxdoc/nuxeo-elements
-          - /nxdoc/web-ui-tutorials
-          - /nxdoc/web-ui-roadmap
-          - /userdoc/web-ui
-      - parent: /nxdoc/dam
+      - page: /nxdoc/dam
         section_color: dam
-        children:
-          - /nxdoc/upload-and-store
-          - /nxdoc/manage-and-organize
-          - /nxdoc/search-and-find
-          - /nxdoc/share-and-distribute
-      - parent: /client-apps
+      - page: /client-apps
         section_color: desktop-mob
-        children:
-          - /client-apps/nuxeo-drive
-          - /client-apps/nuxeo-mobile
-      - parent: /nxdoc/nuxeo-add-ons
+      - page: /nxdoc/nuxeo-add-ons
         section_color: addons
-        children:
-          - /nxdoc/installing-a-new-package-on-your-instance
-          - /nxdoc/creating-nuxeo-packages
-          - /nxdoc/nuxeo-add-ons
-      - parent: /nxdoc/client-sdks
+      - page: /nxdoc/client-sdks
         section_color: sdks
-        children:
-          - /client-java
-          - /nxdoc/javascript-client
-          - /nxdoc/python-client
-          - /nxdoc/net-client
-          - /nxdoc/ios-client
-          - /nxdoc/android-client
-          - /nxdoc/php-automation-client
-          - /nxdoc/client-api-test-suite-tck
-          - /nxdoc/using-curl
-      - parent: /studio
+      - page: /studio
         section_color: services
-        children:
-          - /studio/nuxeo-online-services-portal
-          - /studio/nuxeo-studio
-          - /studio/nuxeo-studio-roadmap
-          - /studio/support-jira
-      - parent: /nxdoc/nuxeo-tools
+      - page: /nxdoc/nuxeo-tools
         section_color: tools
-        children:
-          - /nxdoc/nuxeo-dev-tools-extension
-          - /studio/nuxeo-studio
-          - /nxdoc/nuxeo-cli
-          - /corg
   page_defaults:
     - pattern: '**/*.md'
       defaults:

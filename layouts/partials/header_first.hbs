@@ -35,15 +35,7 @@
     <!-- No GA ID -->
     {{/if}}
 
-    <!-- 0. Include Nuxeo Font. -->
-    <link rel="stylesheet" href="https://static.nuxeo.com/satellite/nuxeo-font.css" media="screen" title="Nuxeo Font">
-
-    <!-- 1. Load webcomponents-lite.min.js for polyfill support. -->
-    <script src="https://static.nuxeo.com/satellite/latest/bower_components/webcomponentsjs/custom-elements-es5-adapter.js"></script>
-    <script src="https://static.nuxeo.com/satellite/latest/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-
-    <!-- 2. Use an HTML Import Nuxeo Header and Footer. -->
-    <link rel="import" href="https://static.nuxeo.com/satellite/latest/elements/elements.html">
+    <script defer src="https://static.nuxeo.com/components/bundle.min.js"></script>
 
     {{! Styling }}
     <link rel="stylesheet" href="/assets/css/{{css.md5}}/docs.css" />
@@ -99,9 +91,6 @@
       }}();
     </script>
     {{/if}}
-
-    {{! Algolia DocSearch }}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
     {{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
     //- Safely remove this block if you are not targeting IE8 --}}

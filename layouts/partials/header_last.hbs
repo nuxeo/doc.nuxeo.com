@@ -3,16 +3,12 @@
 {{> header_menu}}
 <input type="hidden" id="algolia_search_config" data-search-key="{{site.algolia_search_key}}" data-id="{{site.algolia_id}}" data-search-version="{{url.key.version}}" data-search-space-path="{{url.key.space_path}}" data-search-space="{{url.key.space}}">
 <div id="page_container" class="row expanded doc-section doc-section-{{section}}">
-  <div id="algolia_search_results" style="display: none;">
-    <div class="scrollable">
-      <div id="menu-hits">
-        {{! Hits widget will appear here }}
+  {{#unless no_side_menu}}
+  <div class="side-menu column collapse show-for-medium medium-4 large-3" data-sticky-container>
+    <div id="side_menu_container" class="sticky" data-sticky data-anchor="content_container" data-sticky-on="medium" data-margin-top="3.125">
+      <div id="side_menu" data-space="{{url.key.space_path}}">
+        {{> left_menu}}
       </div>
     </div>
   </div>
-{{#unless no_side_menu}}
-    <div id="content_container" class="column medium-8 large-9 medium-push-4 large-push-3{{#if is_overview}} overview{{/if}}">
-{{else}}
-    <div id="content_container" class="column{{#if is_overview}} overview{{/if}}">
-{{/unless}}
-        <div>
+  {{/unless}}

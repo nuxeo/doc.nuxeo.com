@@ -1,4 +1,26 @@
-@import 'variables-smakk';
+$c-black: #000;
+$c-white: #fff;
+$c-green: #73d2cf;
+$c-blue: #06f;
+$c-navy: #1f28bf;
+$c-light-grey: #f0f1f1;
+$c-grey: #f5f5f5;
+$c-grey-0: #e6e6e7;
+$c-grey-1: #bcbfbf;
+$c-grey-2: #7f8284;
+$c-grey-3: #4a4a4a;
+$c-red: #f04;
+$c-purple: #8400ff;
+$c-aqua: #00aded;
+$c-orange: #ff9e00;
+$c-barely-black: #3c3b3b;
+$c-light-blue: #e5f1ff;
+$c-light-aqua: #f2fafa;
+
+$font-primary: 'neue-haas-grotesk-display', Helvetica, Arial, sans-serif;
+
+$weight-roman: 500;
+$weight-medium: 600;
 
 //  Foundation for Sites Settings
 //  -----------------------------
@@ -68,11 +90,11 @@
 // ---------
 
 // $global-font-size: 100%;
-$global-width: rem-calc(1200);
+$global-width: rem-calc(1400);
 $global-lineheight: 1.6;
 $foundation-palette: (
   primary: $c_blue,
-  secondary: #777,
+  secondary: #f2f2f3,
   success: $c_green,
   warning: $c_orange,
   alert: $c_red
@@ -84,13 +106,13 @@ $black: #0a0a0a;
 $white: #fff;
 // $body-background: $white;
 // $body-font-color: $black;
-$body-font-family: $font-primary;
+$body-font-family: 'neue-haas-grotesk-display', Helvetica, Arial, sans-serif;
 $body-antialiased: false;
 // $global-margin: 1rem;
 // $global-padding: 1rem;
 // $global-position: 1rem;
 // $global-weight-normal: normal;
-// $global-weight-bold: bold;
+$global-weight-bold: 600;
 // $global-radius: 0;
 // $global-menu-padding: 0.7rem 1rem;
 // $global-menu-nested-margin: 1rem;
@@ -126,7 +148,7 @@ $body-antialiased: false;
 //   medium: 30px,
 // );
 // $grid-column-align-edge: true;
-// $grid-column-alias: 'columns';
+$grid-column-alias: false;
 // $block-grid-max: 8;
 
 // 4. Base Typography
@@ -140,24 +162,46 @@ $body-antialiased: false;
 // $header-lineheight: 1.4;
 // $header-margin-bottom: 0.5rem;
 $header-styles: (
-  small:
-    (
-      'h1': ('font-size': 24),
-      'h2': ('font-size': 20),
-      'h3': ('font-size': 19),
-      'h4': ('font-size': 18),
-      'h5': ('font-size': 17),
-      'h6': ('font-size': 16)
+  small: (
+    'h1': (
+      'font-size': 24
     ),
-  medium:
-    (
-      'h1': ('font-size': 48),
-      'h2': ('font-size': 40),
-      'h3': ('font-size': 31),
-      'h4': ('font-size': 25),
-      'h5': ('font-size': 20),
-      'h6': ('font-size': 16)
+    'h2': (
+      'font-size': 20
+    ),
+    'h3': (
+      'font-size': 19
+    ),
+    'h4': (
+      'font-size': 18
+    ),
+    'h5': (
+      'font-size': 17
+    ),
+    'h6': (
+      'font-size': 16
     )
+  ),
+  medium: (
+    'h1': (
+      'font-size': 42
+    ),
+    'h2': (
+      'font-size': 34
+    ),
+    'h3': (
+      'font-size': 28
+    ),
+    'h4': (
+      'font-size': 22
+    ),
+    'h5': (
+      'font-size': 18
+    ),
+    'h6': (
+      'font-size': 16
+    )
+  )
 );
 
 // $header-text-rendering: optimizeLegibility;
@@ -877,14 +921,14 @@ $tab-content-padding: 0;
 
 $nuxeo-color-accent: #ff452a;
 $nuxeo-color-light-blue: #9ec2d5;
+$nuxeo-menu-bg: #f8f9f9;
 $nuxeo-color-light-gray: #ccc;
 $nuxeo-color-dark: #000522;
 
 // Code Block
-$nuxeo-color-code-background: #fff;
-$nuxeo-color-code-foreground: #000;
-$nuxeo-color-code-border: #d9e6f0;
-$code-border-radius: 4px;
+$nuxeo-color-code-background: #282c34;
+$nuxeo-color-code-foreground: #abb2bf;
+$nuxeo-color-code-border: #ccc;
 
 // Section colours
 $nuxeo-tutorials-color: #00d1a4;
@@ -898,7 +942,7 @@ $nuxeo-sdks-color: #ff1744;
 $nuxeo-services-color: #ff6d00;
 $nuxeo-tools-color: #f9a825;
 
-$nuxeo-section-lighten: 30%;
+$nuxeo-section-lighten: 40%;
 
 $nuxeo-overview-shaddow: rgba($black, 0.2);
 

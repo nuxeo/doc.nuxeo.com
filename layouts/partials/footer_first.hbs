@@ -1,27 +1,16 @@
-        </div>
-    </div>
-    {{#unless no_side_menu}}
-    <div id="side_menu_container" class="column show-for-medium medium-4 large-3 medium-pull-8 large-pull-9">
-        <div id="side_menu" data-space="{{url.key.space_path}}">
-            {{> left_menu}}
-        </div>
-    </div>
-    {{/unless}}
 </div>
-
 <div id="docs_footer" class="row expanded">
-  <button id="prodpad_open_feedback" type="button" class="button rounded" data-open="prodpad_feedback" title="Documentation Feedback" aria-controls="prodpad_feedback" aria-haspopup="true" tabindex="0">
-      <i class="fa fa-comment fa-fw fa-lg"></i> Not Helpful? Tell Us Why
+  {{#unless homepage}}
+  <button id="prodpad_open_feedback" type="button" class="button" data-open="prodpad_feedback" title="Documentation Feedback" aria-controls="prodpad_feedback" aria-haspopup="true" tabindex="0">
+      <i class="fa fa-comment fa-fw fa-lg"></i> Send Feedback
   </button>
-  <button id="goto_top" type="button">
-    <img src="/assets/imgs/icons/goto-top-icon.svg">
-    <span>To Top</span>
-  </button>
+  {{/unless}}
   {{> versions_inline}}
 
-  <nuxeo-footer year="{{moment format='YYYY'}}" show-license {{#unless homepage}}footer-items="[]"{{/unless}}></nuxeo-footer>
+  <nx-footer showlicense {{#unless homepage}}nolinks{{/unless}}></nx-footer>
 </div>
 
+{{#unless homepage}}
 <div class="tiny reveal" id="prodpad_feedback" data-reveal data-animation-in="slide-in-right" data-animation-out="slide-out-right">
   <button class="close-button" data-close aria-label="Close modal" type="button">
     <span aria-hidden="true">&times;</span>
@@ -44,6 +33,7 @@
     </form>
   </div>
 </div>
+{{/unless}}
 
 <script type="text/javascript" src="/{{js.vendor}}"></script>
 <script type="text/javascript" src="/{{js.docs}}"></script>
