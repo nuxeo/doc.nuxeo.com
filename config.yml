@@ -23,13 +23,11 @@ default:
     new_version: '10.10'
 
     # Keys
-    ga_exp_id: ''
-    ga_id: 'UA-81135-3'
-    segment_write_key: '4qquvje3fv'
+    segment_write_key: 'sZThf2dfXJ8qDKnpdOWiQJmvgd4xfplU'
     algolia_search_key: '77ebfff62b510b7ed7d845d6448967ee'
-
     algolia_id: 'F6EQCOZI09'
     algolia_index: 'doc'
+
     main_menu:
       - page: /nxdoc/getting-started
         section_color: tutorials
