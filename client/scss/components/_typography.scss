@@ -74,6 +74,8 @@ strong {
 a {
   transition: color 0.2s ease;
   word-break: break-word;
+  position: relative;
+  z-index: 1;
 
   &:hover {
     color: darken($primary-color, 15%);
