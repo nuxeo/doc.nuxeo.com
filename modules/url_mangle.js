@@ -1,5 +1,5 @@
 module.exports = filepath => {
-  const index = 'index.html';
+  const index = 'index';
   let newPath = filepath;
 
   // Add / at start if not present
