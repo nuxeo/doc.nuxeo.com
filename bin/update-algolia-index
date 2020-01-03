@@ -19,28 +19,27 @@ const path = require('path');
 
 // npm packages
 const algoliasearch = require('algoliasearch');
-// const { detailedDiff: diff } = require('deep-object-diff');
-const { diff } = require('deep-object-diff');
-const Promise = require('bluebird');
 const yaml_config = require('node-yaml-config');
+const chunk = require('lodash.chunk');
 
 const config = yaml_config.load(path.join(__dirname, '..', 'config.yml'));
+const batchSize = 500;
 
 let needsClearing = false;
-let algolia_ref;
-let algolia_data;
+let local_data;
 
 try {
-  algolia_ref = require('../algolia-ref.json');
+  require('../algolia-ref.json');
 } catch (err) {
   error('Reference `algolia-ref.json` was not found');
   needsClearing = true;
-  algolia_ref = {};
 }
 try {
-  algolia_data = require('../algolia.json');
+  local_data = require('../algolia.json');
 } catch (err) {
-  error('Reference `algolia.json` was not found - Algolia index will not be updated');
+  error(
+    'Reference `algolia.json` was not found - Algolia index will not be updated'
+  );
 }
 
 const projectId = config.site.algolia_id;
@@ -51,18 +50,59 @@ info('projectId', projectId);
 info('algolia_key', algolia_key);
 info('indexID', indexID);
 
-if (algolia_data && algolia_key) {
-  let diffs = diff(algolia_ref, algolia_data);
-
-  const deleteIDs = Object.entries(diffs)
-    .filter(([, data]) => data === void 0)
-    .map(([objectID]) => objectID);
-  const updateIDs = Object.entries(diffs)
-    .filter(([, data]) => data !== void 0)
-    .map(([objectID, data]) => Object.assign({}, data, { objectID }));
-
+if (local_data && algolia_key) {
   const algolia = algoliasearch(projectId, algolia_key);
   const index = algolia.initIndex(indexID);
+
+  const getAllAlgoliaHashes = () =>
+    new Promise((resolve, reject) => {
+      const browser = index.browseAll('', { attributesToRetrieve: ['hash'] });
+      let hits = [];
+
+      browser.on('result', content => {
+        hits = hits.concat(content.hits);
+      });
+
+      browser.on('end', () => {
+        debug('hits', hits);
+        debug('We got %d hits', hits.length);
+        resolve(hits);
+      });
+
+      browser.on('error', err => {
+        reject(err);
+      });
+    });
+
+  const processChanges = algoliaValues => {
+    const algoliaIDs = algoliaValues.map(({ objectID }) => objectID);
+
+    // Default with missing entries
+    const updateIDs = Object.entries(local_data)
+      .filter(([objectID]) => !algoliaIDs.includes(objectID))
+      .map(([, data]) => data);
+
+    // Find removed entries
+    const deleteIDs = algoliaValues
+      .filter(({ objectID, hash }) => {
+        const local = local_data[objectID];
+        if (local) {
+          if (local.hash !== hash) {
+            // Add changed entries to be updated
+            updateIDs.push(local);
+          }
+          return false;
+        } else {
+          // No local instance; remove index
+          return true;
+        }
+      })
+      .map(({ objectID }) => objectID);
+
+    debug('updateIDs', updateIDs);
+    debug('deleteIDs', deleteIDs);
+    return Promise.resolve({ updateIDs, deleteIDs });
+  };
 
   const clearIndex = () => {
     if (needsClearing) {
@@ -81,46 +121,56 @@ if (algolia_data && algolia_key) {
     }
   };
 
-  const deleteObjects = () => {
+  const deleteObjects = entryLists => {
+    const { deleteIDs } = entryLists;
     if (deleteIDs && deleteIDs.length) {
       return new Promise((resolve, reject) => {
-        info('Objects being removed');
+        info('Objects being removed:', deleteIDs.length);
         debug('deleteIDs', deleteIDs);
         index.deleteObjects(deleteIDs, err => {
           if (err) {
             reject(`error while removing objects: ${err}`);
           } else {
-            resolve();
+            resolve(entryLists);
           }
         });
       });
     } else {
-      return Promise.resolve();
+      return Promise.resolve(entryLists);
     }
   };
 
-  const updateObjects = () => {
+  const updateObjects = entryLists => {
+    const { updateIDs } = entryLists;
     if (updateIDs && updateIDs.length) {
-      return new Promise((resolve, reject) => {
-        info('Objects being added/amended');
-        debug('updateIDs', updateIDs);
-        index.partialUpdateObjects(updateIDs, err => {
-          if (err) {
-            reject(`error while removing objects: ${err}`);
-          } else {
-            resolve();
-          }
-        });
-      });
+      const updateEntries = chunk(updateIDs, batchSize).map(
+        updateIDsBatch =>
+          new Promise((resolve, reject) => {
+            info('Objects being added/amended:', updateIDs.length);
+            debug('updateIDs', updateIDsBatch);
+            index.partialUpdateObjects(updateIDsBatch, err => {
+              if (err) {
+                reject(`error while updating objects: ${err}`);
+              } else {
+                resolve();
+              }
+            });
+          })
+      );
+
+      return Promise.all(updateEntries);
     } else {
       return Promise.resolve();
     }
   };
 
   clearIndex()
+    .then(getAllAlgoliaHashes)
+    .then(processChanges)
     .then(deleteObjects)
     .then(updateObjects)
     .catch(err => {
-      throw new Error(err);
+      error(err);
+      process.exit(1);
     });
 }

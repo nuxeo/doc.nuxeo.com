@@ -1,9 +1,5 @@
-'use strict';
-
-const debug_lib = require('debug');
-const package_name = 'get-unique-hash';
-const debug = debug_lib(package_name);
-// const error = debug_lib(`${package_name}:error`);
+// Debugging
+const { debug } = require('./debugger')('get-unique-hash');
 
 const crypto = require('crypto');
 
