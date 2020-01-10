@@ -74,6 +74,11 @@ test('get_placeholder_key returns values as expected', assert => {
       message: 'returns version key from new format'
     },
     {
+      test: 'java-client/2.3/authentication',
+      expected: 'java-client/2.3/authentication',
+      message: 'returns version key from new format'
+    },
+    {
       test: 'Implementing Documentation+Items',
       expected: 'nxdoc/implementing-documentation-items',
       message: 'Correctly converts spaces and + to -'
