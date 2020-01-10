@@ -13,6 +13,7 @@ const get_placeholder_key = (page_name_raw, defaults) => {
   let page_name;
   const key_parts = [];
   const is_string = typeof page_name_raw === 'string';
+  const is_version_re = /^\d+(\.\d+)*$/;
   debug('page_name_raw: %s', page_name_raw);
   // Legacy method
   if (is_string && ~page_name_raw.indexOf(':')) {
@@ -57,14 +58,22 @@ const get_placeholder_key = (page_name_raw, defaults) => {
         page_name_split.shift();
       }
       page_name_split.map(function(item) {
+        const is_version = is_version_re.test(item);
+        // Versions shouldn't have . removed. E.g. "2.0" should not be "20"
+        if (is_version) {
+          // eslint-disable-next-line no-empty-character-class
+          slug.defaults.modes.pretty.remove = /[]/g;
+        }
         key_parts.push(slug(item));
+        if (is_version) {
+          slug.defaults.modes.pretty.remove = /[.]/g;
+        }
       });
     }
   }
 
   // Check parts and swap first 2 if version is first
-  const is_version = /^\d+(\.\d+)*$/;
-  if (key_parts.length === 3 && is_version.test(key_parts[0])) {
+  if (key_parts.length === 3 && is_version_re.test(key_parts[0])) {
     const version = key_parts.shift();
     const space = key_parts.shift();
     key_parts.unshift(space, version);
