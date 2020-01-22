@@ -373,6 +373,9 @@
 # NXDOC-1966 - ARender rename
 ^/nxdoc/nuxeo-arender-connector/?$: /nxdoc/nuxeo-enhanced-viewer
 
+^/nxdoc/nuxeo-cli-roadmap/?$: /nxdoc/nuxeo-cli
+^/nxdoc/1010/nuxeo-cli-roadmap/?$: /nxdoc/1010/nuxeo-cli
+
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
 ^/display/NXDOC(/?|/.*): /nxdoc/
