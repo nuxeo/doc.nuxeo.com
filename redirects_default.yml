@@ -376,6 +376,13 @@
 ^/nxdoc/nuxeo-cli-roadmap/?$: /nxdoc/nuxeo-cli
 ^/nxdoc/1010/nuxeo-cli-roadmap/?$: /nxdoc/1010/nuxeo-cli
 
+# NXDOC-2073 Client SDKs Clean up 
+^/nxdoc/client-api-test-suite-tck/?$: /nxdoc/client-sdks
+^/nxdoc/android-client/?$: /nxdoc/client-sdks
+^/nxdoc/nuxeo-dart-client/?$: /nxdoc/client-sdks
+^/nxdoc/ios-client/?$: /nxdoc/client-sdks
+^/nxdoc/java-automation-client/?$: /client-java 
+
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
 ^/display/NXDOC(/?|/.*): /nxdoc/
