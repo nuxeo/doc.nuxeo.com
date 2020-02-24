@@ -375,6 +375,10 @@
 
 ^/nxdoc/nuxeo-cli-roadmap/?$: /nxdoc/nuxeo-cli
 ^/nxdoc/1010/nuxeo-cli-roadmap/?$: /nxdoc/1010/nuxeo-cli
+^/nxdoc/deploying-nuxeo-on-amazon-aws/?$: /nxdoc/installing-the-nuxeo-platform-on-linux
+^/nxdoc/1010/deploying-nuxeo-on-amazon-aws/?$: /nxdoc/installing-the-nuxeo-platform-on-linux
+^/nxdoc/deploying-as-a-standard-static-war/?$: /nxdoc/installing-the-nuxeo-platform-on-linux
+^/nxdoc/1010/deploying-as-a-standard-static-war/?$: /nxdoc/installing-the-nuxeo-platform-on-linux
 
 # NXDOC-2073 Client SDKs Clean up 
 ^/nxdoc/client-api-test-suite-tck/?$: /nxdoc/client-sdks
