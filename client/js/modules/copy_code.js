@@ -4,7 +4,7 @@
 var Clipboard = require('clipboard');
 
 var showTooltip = function(elem, msg) {
-  elem.setAttribute('class', 'copy-button tooltipped tooltipped-sw');
+  elem.setAttribute('class', 'copy-button tooltipped tooltipped-w');
   elem.setAttribute('aria-label', msg);
 };
 
@@ -27,7 +27,7 @@ $('pre').prepend(
 $('.copy-button').on('mouseleave', function() {
   /* eslint no-invalid-this: 0 */
   $(this)
-    .removeClass('tooltipped tooltipped-sw')
+    .removeClass('tooltipped tooltipped-w')
     .removeAttr('aria-label');
 });
 
