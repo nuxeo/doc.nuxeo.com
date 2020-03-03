@@ -1,7 +1,9 @@
-$tooltip-background-color: rgba(0, 0, 0, 0.8);
-$tooltip-text-color: $white;
+$tooltip-background-color: #ccc;
+$tooltip-text-color: $black;
 $tooltip-duration: 0.4s;
 $tooltip-delay: 0.2s;
+
+// https://github.com/primer/css/blob/master/src/tooltips/tooltips.scss#L1
 
 .tooltipped {
   position: relative;
@@ -81,23 +83,20 @@ $tooltip-delay: 0.2s;
 //   }
 // }
 
-// Tooltipped south
-.tooltipped-sw {
+// Tooltipped to the left
+.tooltipped-w {
   &::after {
-    top: 100%;
-    right: 50%;
-    margin-top: 5px;
+    right: 100%;
+    bottom: 50%;
+    margin-right: 6px;
+    transform: translateY(50%);
   }
 
   &::before {
-    top: auto;
-    right: 50%;
-    bottom: -5px;
-    margin-right: -5px;
-    border-bottom-color: $tooltip-background-color;
+    top: 50%;
+    bottom: 50%;
+    left: -7px;
+    margin-top: -6px;
+    border-left-color: $tooltip-background-color;
   }
-}
-
-.tooltipped-sw::after {
-  margin-right: -15px;
 }
