@@ -23,7 +23,8 @@ default:
     new_version: '10.10'
 
     # Keys
-    segment_write_key: 'sZThf2dfXJ8qDKnpdOWiQJmvgd4xfplU'
+    segment_write_key:
+    ga_key: 'UA-81135-3'
     algolia_search_key: '77ebfff62b510b7ed7d845d6448967ee'
     algolia_id: 'F6EQCOZI09'
     algolia_index: 'doc'
