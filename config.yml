@@ -124,7 +124,7 @@ default:
     platform:
       url: git@github.com:nuxeo/doc.nuxeo.com-content.git
       branches:
-        static:
+        NXDOC-2059-cloud-doc:
           no_versioning: true
         master:
           label: 'FT'
