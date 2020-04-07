@@ -25,15 +25,8 @@ const chunk = require('lodash.chunk');
 const config = yaml_config.load(path.join(__dirname, '..', 'config.yml'));
 const batchSize = 500;
 
-let needsClearing = false;
 let local_data;
 
-try {
-  require('../algolia-ref.json');
-} catch (err) {
-  error('Reference `algolia-ref.json` was not found');
-  needsClearing = true;
-}
 try {
   local_data = require('../algolia.json');
 } catch (err) {
@@ -104,23 +97,6 @@ if (local_data && algolia_key) {
     return Promise.resolve({ updateIDs, deleteIDs });
   };
 
-  const clearIndex = () => {
-    if (needsClearing) {
-      return new Promise((resolve, reject) => {
-        info('Index being cleared');
-        index.clearIndex(err => {
-          if (err) {
-            reject(`Error while cleaning index: ${err}`);
-          } else {
-            resolve();
-          }
-        });
-      });
-    } else {
-      return Promise.resolve();
-    }
-  };
-
   const deleteObjects = entryLists => {
     const { deleteIDs } = entryLists;
     if (deleteIDs && deleteIDs.length) {
@@ -164,8 +140,7 @@ if (local_data && algolia_key) {
     }
   };
 
-  clearIndex()
-    .then(getAllAlgoliaHashes)
+  getAllAlgoliaHashes()
     .then(processChanges)
     .then(deleteObjects)
     .then(updateObjects)

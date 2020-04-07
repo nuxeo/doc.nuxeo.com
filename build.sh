@@ -22,8 +22,8 @@ echo "Copying Branches Before Building";
 cat $BUILD_PATHS | while read line ; do $COPY_BRANCH $line; done;
 
 echo;
-echo "Renaming algolia.json";
-mv algolia.json algolia-ref.json || echo 'algolia.json not present';
+echo "Removing algolia.json";
+rm -v algolia.json algolia-ref.json || echo 'algolia.json not present';
 
 echo;
 echo "Run Pre-build For All Branches";
