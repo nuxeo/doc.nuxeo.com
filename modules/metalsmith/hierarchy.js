@@ -22,7 +22,10 @@ const schema = Joi.object().keys({
           .default(false),
         url_path: Joi.string()
           .optional()
-          .default('')
+          .default(''),
+        menu_separator: Joi.bool()
+          .optional()
+          .default(false)
       })
     ),
   flatten: Joi.bool()

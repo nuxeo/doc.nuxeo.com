@@ -74,6 +74,7 @@ default:
           label: 'Next'
           noindex: true
           order: 20
+          menu_separator: true
           url_path: 'next'
         '910-1010-next-switch':
           label: 'LTS 2017'
