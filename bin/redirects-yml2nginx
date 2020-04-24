@@ -11,12 +11,10 @@ const redirects_file = path.join(__dirname, '..', 'redirects.yml');
 
 // Shortlinks
 console.log(
-  Object.keys(shortlinks)
-    .map(shortlink_url => {
-      const shortlink = shortlinks[shortlink_url];
-      // Build output string
-      return `rewrite ^/n/${shortlink}/?\t${shortlink_url}\tpermanent;`;
-    })
+  Object.entries(shortlinks)
+    .map(([url, shortlink_arr]) => shortlink_arr
+        .map(shortlink => `rewrite ^/n/${shortlink}/?\t${url}\tpermanent;`)
+        .join('\n'))
     .join('\n')
 );
 

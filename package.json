@@ -48,6 +48,7 @@
     "lodash.clonedeep": "^4.5.0",
     "lodash.debounce": "^4.0.8",
     "lodash.defaultsdeep": "^4.6.1",
+    "lodash.flatten": "^4.4.0",
     "lodash.get": "^4.4.1",
     "lodash.isempty": "^4.3.1",
     "lodash.set": "^4.3.1",
@@ -101,7 +102,7 @@
   },
   "devDependencies": {
     "browser-sync": "^2.24.4",
-    "nodemon": "^1.18.11"
+    "nodemon": "^1.19.4"
   },
   "main": "lib/builder_module.js",
   "config": {

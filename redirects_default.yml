@@ -1,7 +1,7 @@
 ^/nxdoc/marketplace-add-ons/?$: /nxdoc/nuxeo-add-ons/
 
-^/display/ADMINDOC/Bulk\+Document\+Importer/?$: /nxdoc/nuxeo-bulk-document-importer
-^/display/ADMINDOC/Hotfixes\+Management\+for\+Nuxeo\+Platform\+LTS\+2015/?$: /admindoc/710/hotfixes-management-for-nuxeo-platform-lts-2015/
+^/display/ADMINDOC/Bulk\+Document\+Importer/?$: /nxdoc/nuxeo-bulk-document-importer/
+^/display/ADMINDOC/Hotfixes\+Management\+for\+Nuxeo\+Platform\+LTS\+2015/?$: /admindoc/710/hotfixes-installation-notes-for-nuxeo-platform-lts-2015/
 ^/display/ADMINDOC/LTS\+2015\+Packaging\+Changes\+and\+Deprecations/?$: /admindoc/710/lts-2015-packaging-changes-and-deprecations/
 ^/display/ADMINDOC/Supervision/?$: /nxdoc/metrics-and-monitoring/
 ^/display/ADMINDOC/Upgrade\+from\+6.0\+to\+7.10/?$: /admindoc/710/upgrade-from-60-to-lts-2015/
@@ -11,7 +11,7 @@
 
 ^/display/KB/java.net.SocketException\+Too\+many\+open\+files/?$: /nxdoc/java.net.SocketException-too-many-open-files/
 
-^/x/94Wo/?$: /nxdoc/creating-nuxeo-packages
+^/x/94Wo/?$: /nxdoc/creating-nuxeo-packages/
 ^/x/VQQz/?$: /nxdoc/quick-overview/
 ^/x/uAwz/?$: https://nuxeo.com/
 ^/x/ygwz/?$: https://nuxeo.com/
@@ -21,10 +21,10 @@
 ^/display/public/ADMINDOC/Configuring+PostgreSQL/?$: /nxdoc/postgresql/
 ^/display/ADMINDOC/Configuring+PostgreSQL/?$: /nxdoc/postgresql/
 ^/display/NXDOC/Directories+and+Vocabularies/?$: /nxdoc/data-lists-and-directories/
-^/x/cYKE/?$: /nxdoc/nuxeo-cli/
-^/x/LQBu/?$: /nxdoc/embedding-nuxeo/
+^/x/cYKE/?$: /nxdoc/configure-nuxeo-platform/
+^/x/LQBu/?$: /nxdoc/
 ^/display/NXDOC/Amazon+S3+Online+Storage/?$: /nxdoc/amazon-s3-online-storage/
-^/x/lAIz/?$: /nxdoc/intallation/
+^/x/lAIz/?$: /nxdoc/installation/
 ^/x/HABu/?$: /nxdoc/amazon-s3-online-storage/
 ^/KB/Launcher+says+it+couldn%27t+retrieve+process+ID/?$: /admindoc/710/launcher-says-it-couldnt-retrieve-process-id/
 ^/x/IYBH/?$: /nxdoc/special-http-headers/
@@ -34,7 +34,7 @@
 ^/x/UIKe/?$: /nxdoc/
 ^/x/w4SE/?$: /archived-documentation/
 ^/x/64SE/?$: /archived-documentation/
-^/x/rQAt/?$: /nxdoc/workflow-use-cases/
+^/x/rQAt/?$: /nxdoc/workflow-tutorials/
 ^/display/public/NXDOC58/Dev+Cookbook/?$: /nxdoc/
 ^/display/public/IDEDOC/Installing+Nuxeo+IDE/?$: /corg/
 ^/display/DAMDOC/Nuxeo+DAM+Core/?$: /nxdoc/digital-asset-management-dam/
@@ -45,140 +45,137 @@
 ^/x/c4ao/?$: /nxdoc/drag-and-drop-service-for-content-capture-html5-based/
 
 # NXDOC-1038: Archived versions of the documentation
-^/58/?$: /archived-documentation
-^/58/.+: /archived-documentation
-^/display/NXDOC58(/?|/.*): /archived-documentation
-^/display/ADMINDOC58(/?|/.*): /archived-documentation
-^/display/USERDOC58(/?|/.*): /archived-documentation
-^/display/NXDOC56/?$: /archived-documentation
-^/display/ADMINDOC56/?$: /archived-documentation
-^/display/USERDOC56/?$: /archived-documentation
-^/display/NXDOC55/?$: /archived-documentation
-^/display/ADMINDOC55/?$: /archived-documentation
-^/display/DMDOC55/?$: /archived-documentation
-^/display/DAMDOC55/?$: /archived-documentation
-^/display/CMDOC55/?$: /archived-documentation
-^/display/NXDOC54/?$: /archived-documentation
-^/display/DMDOC54/?$: /archived-documentation
-^/display/NXDOC53/?$: /archived-documentation
-^/display/DMDOC53/?$: /archived-documentation
-^/display/CMDOC1x/?$: /archived-documentation
-^/display/DAMDOC1x/?$: /archived-documentation
-^/display/DMDOC(/?|/.*): /archived-documentation
+^/58/?$: /archived-documentation/
+^/58/.+: /archived-documentation/
+^/display/NXDOC58(/?|/.*): /archived-documentation/
+^/display/ADMINDOC58(/?|/.*): /archived-documentation/
+^/display/USERDOC58(/?|/.*): /archived-documentation/
+^/display/NXDOC56/?$: /archived-documentation/
+^/display/ADMINDOC56/?$: /archived-documentation/
+^/display/USERDOC56/?$: /archived-documentation/
+^/display/NXDOC55/?$: /archived-documentation/
+^/display/ADMINDOC55/?$: /archived-documentation/
+^/display/DMDOC55/?$: /archived-documentation/
+^/display/DAMDOC55/?$: /archived-documentation/
+^/display/CMDOC55/?$: /archived-documentation/
+^/display/NXDOC54/?$: /archived-documentation/
+^/display/DMDOC54/?$: /archived-documentation/
+^/display/NXDOC53/?$: /archived-documentation/
+^/display/DMDOC53/?$: /archived-documentation/
+^/display/CMDOC1x/?$: /archived-documentation/
+^/display/DAMDOC1x/?$: /archived-documentation/
+^/display/DMDOC(/?|/.*): /archived-documentation/
 
-^/display/NXDOC/Learning\+with\+Videos/?$: https://university.nuxeo.io
-^/display/NXDOC/How\+to\+Brand\+Your\+Application/?$: /studio/branding
-^/nxdoc/how-to-brand-your-application/?$: /studio/branding
-^/nxdoc/quick-start-dev-guide/?$: /nxdoc/start-customizing-the-nuxeo-platform
-^/display/NXDOC/Web\+UI\+Framework/?$: /nxdoc/jsf-ui-framework
+^/display/NXDOC/Learning\+with\+Videos/?$: https://university.nuxeo.io/
+^/display/NXDOC/How\+to\+Brand\+Your\+Application/?$: /studio/branding/
+^/nxdoc/how-to-brand-your-application/?$: /studio/branding/
+^/nxdoc/quick-start-dev-guide/?$: /nxdoc/configure-nuxeo-platform/
+^/display/NXDOC/Web\+UI\+Framework/?$: /nxdoc/jsf-ui-framework/
 ^/display/NXDOC/Web\+UI\+Framework\+Overview/?$: /nxdoc/nuxeo-jsf-ui
-^/display/NXDOC/How\+to\+Hide\+a\+Tab,\+a\+Link\+or\+a\+Button\+for\+a\+Group\+or\+a\+User/?$: /nxdoc/how-to-hide-a-tab-a-link-or-a-button-for-a-group-or-a-user
-^/display/NXDOC/Authentication,\+Users\+and\+Groups/?$: /nxdoc/authentication-and-user-management
-^/display/NXDOC/From\+the\+Web\+UI\+to\+Nuxeo\+Studio/?$: /nxdoc/from-the-jsf-ui-to-nuxeo-studio
-^/display/NXDOC/How\+to\+Add\+a\+Button\+in\+the\+Web\+UI/?$: /nxdoc/how-to-add-a-button-in-the-jsf-ui
-^/display/NXDOC/First\+Steps\+With\+Studio:\+Technical\+Documentation\+Tutorial/?$: /nxdoc/first-steps-with-studio-technical-documentation-tutorial
-^/display/NXDOC/Setting\+up\+a\+HA\+Configuration\+Using\+the\+Nuxeo\+Platform\+and\+PostgreSQL/?$: /nxdoc/setting-up-a-ha-configuration-using-the-nuxeo-platform-and-postgresql/
+^/display/NXDOC/How\+to\+Hide\+a\+Tab,\+a\+Link\+or\+a\+Button\+for\+a\+Group\+or\+a\+User/?$: /nxdoc/how-to-hide-a-tab-a-link-or-a-button-for-a-group-or-a-user/
+^/display/NXDOC/Authentication,\+Users\+and\+Groups/?$: /nxdoc/authentication-and-user-management/
+^/display/NXDOC/From\+the\+Web\+UI\+to\+Nuxeo\+Studio/?$: /nxdoc/from-the-jsf-ui-to-nuxeo-studio/
+^/display/NXDOC/How\+to\+Add\+a\+Button\+in\+the\+Web\+UI/?$: /nxdoc/how-to-add-a-button-in-the-jsf-ui/
+^/display/NXDOC/First\+Steps\+With\+Studio:\+Technical\+Documentation\+Tutorial/?$: /nxdoc/getting-started/
+^/display/NXDOC/Setting\+up\+a\+HA\+Configuration\+Using\+the\+Nuxeo\+Platform\+and\+PostgreSQL/?$: /nxdoc/standard-high-availability-nuxeo-cluster-architecture/
 ^/display/NXDOC/Set\+Up\+Best\+Practices/?$: /nxdoc/setup-best-practices/
 ^/display/NXDOC/Choosing\+How\+to\+Customize\+the\+UI/?$: /nxdoc/web-ui/
 ^/display/KB/How+to+do+incremental+deployment+%28hot+reload%29+in+the+JSF-Seam+layer/?$: /corg/supporting-hot-reload/
 
-^/display/ADMINDOC/Configuration\+Templates/?$: /nxdoc/configuration-templates
-^/display/ADMINDOC710/How\+to\+Estimate\+Disk,\+Database\+and\+Elasticsearch\+Usage/?$: /admindoc/710/how-to-estimate-disk-database-and-elasticsearch-usage
-^/display/ADMINDOC/Monitoring\+slow\+NXQL\+queries/?$: /nxdoc/monitoring-slow-nxql-queries
+^/display/ADMINDOC/Configuration\+Templates/?$: /nxdoc/configuration-templates/
+^/display/ADMINDOC710/How\+to\+Estimate\+Disk,\+Database\+and\+Elasticsearch\+Usage/?$: /admindoc/710/how-to-estimate-disk-database-and-elasticsearch-usage/
+^/display/ADMINDOC/Monitoring\+slow\+NXQL\+queries/?$: /nxdoc/monitoring-slow-nxql-queries/
 
-^/display/Studio/Nuxeo\+Studio\+Documentation\+Center/?$: /studio/nuxeo-studio
+^/display/Studio/Nuxeo\+Studio\+Documentation\+Center/?$: /studio/nuxeo-studio/
 
 ^/x/aAfF/?$: /nxdoc/nuxeo-add-ons/
-^/x/04HQ/?$: /nxdoc/nuxeo-drive
-^/x/IwHF/?$: /archived-documentation
-^/x/swQz/?$: /archived-documentation
-^/x/JQAz/?$: /archived-documentation
-^/x/Nw0z/?$: /archived-documentation
+^/x/04HQ/?$: /client-apps/nuxeo-drive/
+^/x/IwHF/?$: /archived-documentation/
+^/x/swQz/?$: /archived-documentation/
+^/x/JQAz/?$: /archived-documentation/
+^/x/Nw0z/?$: /archived-documentation/
 
 # For 7.10 - Web UI renamed into JSF UI
-^/710/nxdoc/from-the-web-ui-to-nuxeo-studio/$: /nxdoc/710/from-the-jsf-ui-to-nuxeo-studio
-^/710/nxdoc/web-ui-limitations/$: /nxdoc/710/jsf-ui-limitations
-^/710/nxdoc/web-ui-framework/$: /nxdoc/710/jsf-ui-framework
-^/710/nxdoc/web-ui-framework-overview/$: /nxdoc/710/jsf-ui-framework-overview
-^/710/nxdoc/web-ui-how-to-index/$: /nxdoc/710/jsf-ui-how-to-index
-^/710/nxdoc/how-to-add-a-button-in-the-web-ui/$: /nxdoc/710/how-to-add-a-button-in-the-jsf-ui
-^/710/nxdoc/how-to-bubble-errors-from-the-core-layer-in-the-web-ui/$: /nxdoc/710/how-to-bubble-errors-from-the-core-layer-in-the-jsf-ui
+^/710/nxdoc/from-the-web-ui-to-nuxeo-studio/$: /nxdoc/710/from-the-jsf-ui-to-nuxeo-studio/
+^/710/nxdoc/web-ui-limitations/$: /nxdoc/710/jsf-ui-limitations/
+^/710/nxdoc/web-ui-framework/$: /nxdoc/710/jsf-ui-framework/
+^/710/nxdoc/web-ui-framework-overview/$: /nxdoc/710/jsf-ui-framework-overview/
+^/710/nxdoc/web-ui-how-to-index/$: /nxdoc/710/jsf-ui-how-to-index/
+^/710/nxdoc/how-to-add-a-button-in-the-web-ui/$: /nxdoc/710/how-to-add-a-button-in-the-jsf-ui/
+^/710/nxdoc/how-to-bubble-errors-from-the-core-layer-in-the-web-ui/$: /nxdoc/710/how-to-bubble-errors-from-the-core-layer-in-the-jsf-ui/
 
 # For LTS 2016
-^/nxdoc/javaandroid-client/$: /nxdoc/java-client
-^/nxdoc/getting-started-with-nuxeo-ide/$: /nxdoc/getting-started-with-nuxeo-generator
-^/nxdoc/developing-with-angularjs/?$: /nxdoc/howto-develop-with-angular2
-^/nxdoc/how-to-enable-dragn-drop-and-new-button-on-a-custom-content-view/?$: /nxdoc/how-to-enable-drag-and-drop-and-new-button-on-a-custom-content-view
-^/nxdoc/how-to-inherit-a-metadata-from-a-parent-document/?$: /nxdoc/how-to-inherit-metadata-from-a-parent-document
-^/nxdoc/using-saml2/?$: /nxdoc/saml-20-authentication
-^/nxdoc/nuxeo-and-kibana/?$: /nxdoc/nuxeo-elements
-^/nxdoc/pdf-conversion-troubleshooting/?$: /nxdoc/how-to-automatically-convert-a-document-to-pdf
-^/nxdoc/nuxeo-android-connector/?$: /nxdoc/java-client
-^/nxdoc/nuxeo-automation-client/?$: /nxdoc/java-client
-^/nxdoc/android-connector-and-caching/?$: /nxdoc/java-client
-^/nxdoc/android-connector-additional-service/?$: /nxdoc/java-client
-^/nxdoc/documentproviders-in-android-connector/?$: /nxdoc/java-client
-^/nxdoc/android-sdk-integration/?$: /nxdoc/java-client
-^/nxdoc/nuxeo-layout-in-android/?$: /nxdoc/java-client
-^/nxdoc/sdk-provided-base-classes/?$: /nxdoc/java-client
-^/nxdoc/jsf-ui-limitations/?$: /nxdoc/jsf-ui-framework-overview
-^/nxdoc/jsf-page-layout-system-overview/?$: /nxdoc/jsf-ui-framework-overview
+^/nxdoc/javaandroid-client/$: /nxdoc/java-client/
+^/nxdoc/getting-started-with-nuxeo-ide/$: /nxdoc/develop-with-nuxeo-platform/
+^/nxdoc/developing-with-angularjs/?$: /nxdoc/howto-develop-with-angular2/
+^/nxdoc/how-to-enable-dragn-drop-and-new-button-on-a-custom-content-view/?$: /nxdoc/how-to-enable-drag-and-drop-and-new-button-on-a-custom-content-view/
+^/nxdoc/how-to-inherit-a-metadata-from-a-parent-document/?$: /nxdoc/how-to-inherit-metadata-from-a-parent-document/
+^/nxdoc/using-saml2/?$: /nxdoc/saml-20-authentication/
+^/nxdoc/nuxeo-and-kibana/?$: /nxdoc/nuxeo-elements/
+^/nxdoc/pdf-conversion-troubleshooting/?$: /nxdoc/how-to-automatically-convert-a-document-to-pdf/
+^/nxdoc/nuxeo-android-connector/?$: /nxdoc/java-client/
+^/nxdoc/nuxeo-automation-client/?$: /nxdoc/java-client/
+^/nxdoc/android-connector-and-caching/?$: /nxdoc/java-client/
+^/nxdoc/android-connector-additional-service/?$: /nxdoc/java-client/
+^/nxdoc/documentproviders-in-android-connector/?$: /nxdoc/java-client/
+^/nxdoc/android-sdk-integration/?$: /nxdoc/java-client/
+^/nxdoc/nuxeo-layout-in-android/?$: /nxdoc/java-client/
+^/nxdoc/sdk-provided-base-classes/?$: /nxdoc/java-client/
+^/nxdoc/jsf-ui-limitations/?$: /nxdoc/jsf-ui-framework-overview/
+^/nxdoc/jsf-page-layout-system-overview/?$: /nxdoc/jsf-ui-framework-overview/
 ^/nxdoc/nuxeo-elements-quickstart/?$: /nxdoc/nuxeo-elements-tutorial/
-^/nxdoc/one-step-validation-flow-based-on-lifecycle-only/?$: /nxdoc/workflow-use-cases/
-^/nxdoc/create-a-button-that-triggers-the-task-assignment/?$: /nxdoc/workflow-use-cases/
-^/nxdoc/create-a-task-assignment-alert/?$: /nxdoc/workflow-use-cases/
-^/nxdoc/functional-tour/?$: /nxdoc/workflow-use-cases/
-^/nxdoc/implement-the-validation-logic/?$: /nxdoc/workflow-use-cases/
-^/nxdoc/hotfixes-installation-notes-for-nuxeo-platform-lts-2015/?$: /nxdoc/810/hotfixes-installation-notes-for-nuxeo-platform-lts-2016
+^/nxdoc/one-step-validation-flow-based-on-lifecycle-only/?$: /nxdoc/workflow-tutorials/
+^/nxdoc/create-a-button-that-triggers-the-task-assignment/?$: /nxdoc/workflow-tutorials/
+^/nxdoc/create-a-task-assignment-alert/?$: /nxdoc/workflow-tutorials/
+^/nxdoc/functional-tour/?$: /nxdoc/workflow-tutorials/
+^/nxdoc/implement-the-validation-logic/?$: /nxdoc/workflow-tutorials/
+^/nxdoc/hotfixes-installation-notes-for-nuxeo-platform-lts-2015/?$: /nxdoc/810/hotfixes-installation-notes-for-nuxeo-platform-lts-2016/
 
-^/userdoc/nuxeo-drive/?$: /nxdoc/nuxeo-drive
-^/userdoc/nuxeo-drive-faq/?$: /nxdoc/nuxeo-drive-faq
-^/studio/configuration-management/?$: /studio/templates-reference
-^/studio/availability-tab/?$: /studio/activation-tab
+^/userdoc/nuxeo-drive/?$: /client-apps/nuxeo-drive/
+^/userdoc/nuxeo-drive-faq/?$: /client-apps/nuxeo-drive-faq/
+^/studio/configuration-management/?$: /studio/templates-reference/
+^/studio/availability-tab/?$: /studio/activation-tab/
 ^/nxdoc/getting-started-with-nuxeo-generator/?$: /nxdoc/develop-with-nuxeo-platform/
-^/nxdoc/web-ui-customization/?$: /nxdoc/web-ui-tutorials
-^/corg/docker-usages/?$: /corg/docker-usage
+^/nxdoc/web-ui-customization/?$: /nxdoc/web-ui-tutorials/
+^/corg/docker-usages/?$: /corg/docker-usage/
 ^/nxdoc/deployment-options/?$: /nxdoc/standard-high-availability-nuxeo-cluster-architecture/
 ^/nxdoc/contributing-a-new-endpoint/?$: /nxdoc/howto-contribute-to-the-rest-api/
 ^/nxdoc/gwt-integration/?$: /nxdoc/
-^/nxdoc/getting-started-with-nuxeo-studio/?$: /nxdoc/configure-nuxeo-platform
-^/910/nxdoc/getting-started-with-nuxeo-studio/?$: /nxdoc/910/configure-nuxeo-platform
+^/nxdoc/getting-started-with-nuxeo-studio/?$: /nxdoc/configure-nuxeo-platform/
+^/910/nxdoc/getting-started-with-nuxeo-studio/?$: /nxdoc/910/configure-nuxeo-platform/
 ^/nxdoc/how-to-enable-the-trash-feature/?$: /nxdoc/how-to-use-trash-feature/
 
 # NXDOC-1033: REST API doc reorg
-^/nxdoc/search-endpoint/?$: /nxdoc/search-endpoints
-^/nxdoc/content-enricher/?$: /nxdoc/content-enrichers
-^/nxdoc/blob-upload-for-batch-processing/?$: /nxdoc/batch-upload-endpoint
-^/nxdoc/web-adapters-for-the-rest-api/?$: /nxdoc/rest-api-web-adapters
-^/nxdoc/authenticating-the-requests/?$: /nxdoc/request-authentication
-^/nxdoc/web-exceptions-errors/?$: /nxdoc/error-handling
-^/nxdoc/how-to-upload-a-file-in-nuxeo-platform-using-rest-api-batch-processing-endpoint/?$: /nxdoc/howto-upload-file-nuxeo-using-rest-api
-^/nxdoc/use-nuxeo-api-playground-to-discover-the-api/?$: /nxdoc/nuxeo-api-playground
-^/nxdoc/howto-nuxeo-api-playground/?$: /nxdoc/nuxeo-api-playground
-^/nxdoc/developing-with-angular2/?$: /nxdoc/howto-develop-with-angular2
+^/nxdoc/search-endpoint/?$: /nxdoc/search-endpoints/
+^/nxdoc/content-enricher/?$: /nxdoc/content-enrichers/
+^/nxdoc/blob-upload-for-batch-processing/?$: /nxdoc/batch-upload-endpoint/
+^/nxdoc/web-adapters-for-the-rest-api/?$: /nxdoc/rest-api-web-adapters/
+^/nxdoc/authenticating-the-requests/?$: /nxdoc/request-authentication/
+^/nxdoc/web-exceptions-errors/?$: /nxdoc/error-handling/
+^/nxdoc/how-to-upload-a-file-in-nuxeo-platform-using-rest-api-batch-processing-endpoint/?$: /nxdoc/howto-upload-file-nuxeo-using-rest-api/
+^/nxdoc/use-nuxeo-api-playground-to-discover-the-api/?$: /nxdoc/nuxeo-api-playground/
+^/nxdoc/howto-nuxeo-api-playground/?$: /nxdoc/nuxeo-api-playground/
+^/nxdoc/developing-with-angular2/?$: /nxdoc/howto-develop-with-angular2/
 
 # Updates with 8.10 documentation
 ^/810/nxdoc/theme-upgrade-to-lts-2015/?$: /nxdoc/710/theme-upgrade-to-lts-2015/
 ^/nxdoc/theme-upgrade-to-lts-2015/?$: /nxdoc/710/theme-upgrade-to-lts-2015/
 
 # Delete page Deploying Nuxeo on Cloudfoundry
-^/nxdoc/deploying-nuxeo-on-cloudfoundry/?$: /nxdoc/installation
-^/810/nxdoc/deploying-nuxeo-on-cloudfoundry/?$: /nxdoc/810/installation
-
-# Old search redirect
-^/dosearchsite.action?queryString=(.*): /?q=$1
+^/nxdoc/deploying-nuxeo-on-cloudfoundry/?$: /nxdoc/installation/
+^/810/nxdoc/deploying-nuxeo-on-cloudfoundry/?$: /nxdoc/810/installation/
 
 # NXDOC-11113
-^/nxdoc/building-a-soap-based-webservice-client-in-nuxeo/?$: /nxdoc/rest-api
-^/nxdoc/building-a-soap-based-webservice-in-the-nuxeo-platform/?$: /nxdoc/rest-api
-^/nxdoc/soap-bridge/?$: /nxdoc/rest-api
-^/810/nxdoc/building-a-soap-based-webservice-client-in-nuxeo/?$: /nxdoc/810/rest-api
-^/810/nxdoc/building-a-soap-based-webservice-in-the-nuxeo-platform/?$: /nxdoc/810/rest-api
-^/810/nxdoc/soap-bridge/?$: /nxdoc/810/rest-api
+^/nxdoc/building-a-soap-based-webservice-client-in-nuxeo/?$: /nxdoc/rest-api/
+^/nxdoc/building-a-soap-based-webservice-in-the-nuxeo-platform/?$: /nxdoc/rest-api/
+^/nxdoc/soap-bridge/?$: /nxdoc/rest-api/
+^/810/nxdoc/building-a-soap-based-webservice-client-in-nuxeo/?$: /nxdoc/810/rest-api/
+^/810/nxdoc/building-a-soap-based-webservice-in-the-nuxeo-platform/?$: /nxdoc/810/rest-api/
+^/810/nxdoc/soap-bridge/?$: /nxdoc/810/rest-api/
 
 # IDE redirects
 ^/idedoc/getting-started-with-nuxeo-ide/?$: /nxdoc/develop-with-nuxeo-platform/
-^/idedoc/installing-nuxeo-ide/?$: /idedoc/nuxeo-ide
+^/idedoc/installing-nuxeo-ide/?$: /idedoc/nuxeo-ide/
 
 # NXDOC-900: Studio doc cleanup
 ^/studio/contract-management/?$: /studio/external-templates/
@@ -191,10 +188,10 @@
 ^/nxdoc/upgrade-from-lts-2016-to-93/?$: /nxdoc/upgrade-from-lts-2016-following-fast-tracks/
 
 # 10.2 upgrade pages redirects
-^/nxdoc/upgrade-from-lts-2017-to-101/?$: /nxdoc/upgrade-from-lts-2017-to-102/
+^/nxdoc/upgrade-from-lts-2017-to-101/?$: /nxdoc/upgrade-from-lts-2017-following-fast-tracks/
 
-^/studio/application-dependencies/?$: /studio/application-definition
-^/studio/nuxeo-online-services-portal-roadmap/?$: /studio/nuxeo-studio-roadmap
+^/studio/application-dependencies/?$: /studio/application-definition/
+^/studio/nuxeo-online-services-portal-roadmap/?$: /studio/nuxeo-studio-roadmap/
 
 # NXDOC-1276
 ^/nxdoc/getting-started-with-the-nuxeo-platform/?$: /nxdoc/discover-nuxeo-platform-apis/
@@ -203,27 +200,27 @@
 ^/nxdoc/start-customizing-the-nuxeo-platform/?$: /nxdoc/configure-nuxeo-platform/
 
 #NXDOC-1326
-^/nxdoc/educational/?$: /nxdoc/best-practices
-^/nxdoc/transversal-how-tos/?$: /nxdoc/getting-started
-^/nxdoc/workflow-use-cases/?$: /nxdoc/workflow-tutorials
-^/nxdoc/tutorials/?$: /nxdoc/getting-started
+^/nxdoc/educational/?$: /nxdoc/best-practices/
+^/nxdoc/transversal-how-tos/?$: /nxdoc/getting-started/
+^/nxdoc/workflow-use-cases/?$: /nxdoc/workflow-tutorials/
+^/nxdoc/tutorials/?$: /nxdoc/getting-started/
 ^/nxdoc/design-tips/?$: /nxdoc/configuration-tips
-^/nxdoc/quick-start-series/?$: /nxdoc/best-practices
+^/nxdoc/quick-start-series/?$: /nxdoc/best-practices/
 
 #NXDOC-1595
-^/nxdoc/desktop-and-mobile/?$: /client-apps/index
-^/nxdoc/nuxeo-drive/?$: /client-apps/nuxeo-drive
-^/nxdoc/how-to-configure-nuxeo-drive-globally/?$: /client-apps/how-to-configure-nuxeo-drive-globally
-^/nxdoc/how-to-customize-nuxeo-drive-versioning-policy/?$: /client-apps/how-to-customize-nuxeo-drive-versioning-policy
-^/nxdoc/how-to-customize-the-drive-metadata-edit-layouts/?$: /client-apps/how-to-customize-the-drive-metadata-edit-layouts
-^/nxdoc/how-to-manually-initialize-or-deploy-a-nuxeo-drive-instance/?$: /client-apps/how-to-manually-initialize-or-deploy-a-nuxeo-drive-instance
+^/nxdoc/desktop-and-mobile/?$: /client-apps/
+^/nxdoc/nuxeo-drive/?$: /client-apps/nuxeo-drive/
+^/nxdoc/how-to-configure-nuxeo-drive-globally/?$: /client-apps/how-to-configure-nuxeo-drive-globally/
+^/nxdoc/how-to-customize-nuxeo-drive-versioning-policy/?$: /client-apps/how-to-customize-nuxeo-drive-versioning-policy/
+^/nxdoc/how-to-customize-the-drive-metadata-edit-layouts/?$: /client-apps/how-to-customize-the-drive-metadata-edit-layouts/
+^/nxdoc/how-to-manually-initialize-or-deploy-a-nuxeo-drive-instance/?$: /client-apps/how-to-manually-initialize-or-deploy-a-nuxeo-drive-instance/
 ^/nxdoc/nuxeo-drive-core-implementation/?$: /client-apps/nuxeo-drive-core-implementation
-^/nxdoc/nuxeo-drive-faq/?$: /client-apps/nuxeo-drive-faq
-^/nxdoc/nuxeo-drive-installation-configuration/?$: /client-apps/nuxeo-drive-installation-configuration
-^/nxdoc/nuxeo-drive-roadmap/?$: /client-apps/nuxeo-drive-roadmap
+^/nxdoc/nuxeo-drive-faq/?$: /client-apps/nuxeo-drive-faq/
+^/nxdoc/nuxeo-drive-installation-configuration/?$: /client-apps/nuxeo-drive/
+^/nxdoc/nuxeo-drive-roadmap/?$: /client-apps/nuxeo-drive-roadmap/
 ^/nxdoc/nuxeo-drive-update-site/?$: /client-apps/nuxeo-drive-update-site
-^/nxdoc/nuxeo-drive-user-profile-migration/?$: /client-apps/nuxeo-drive-user-profile-migration
-^/nxdoc/nuxeo-mobile/?$: /client-apps/nuxeo-mobile
+^/nxdoc/nuxeo-drive-user-profile-migration/?$: /client-apps/nuxeo-drive/
+^/nxdoc/nuxeo-mobile/?$: /client-apps/nuxeo-mobile/
 ^/nxdoc/how-to-customize-nuxeo-mobile-metadata-layout/?$: /client-apps/how-to-customize-nuxeo-mobile-metadata-layout
 ^/nxdoc/how-to-customize-nuxeo-mobile-themes/?$: /client-apps/how-to-customize-nuxeo-mobile-themes
 ^/nxdoc/nuxeo-mobile-roadmap/?$: /client-apps/nuxeo-mobile-roadmap
@@ -247,8 +244,8 @@
 ^/nxdoc/nuxeo-simflofy-connector/?$: /nxdoc/nuxeo-federation-framework
 
 ^/nxdoc/how-to-unit-test-studio-bundle/?$: /studio/tutorials/
-^/nxdoc/how-to-setup-a-test-smtp-server/?$: https://app.quandora.com/object/8ab0a80d-ead7-4dc4-9658-9244b7984548
-^/nxdoc/how-to-create-custom-dashboards/?$: /nxdoc/how-to-create-custom-dashboard-entries/
+^/nxdoc/how-to-setup-a-test-smtp-server/?$: https://answers.nuxeo.com/general/q/8ab0a80dead74dc496589244b7984548/How-can-I-setup-a-SMTP-server/
+^/nxdoc/how-to-create-custom-dashboards/?$: /nxdoc/howto-create-custom-dashboard-entries/
 
 # Delete Develop with React Redux page
 ^/nxdoc/howto-develop-with-reactredux/?$: /nxdoc/rest-api
@@ -316,76 +313,76 @@
 
 # NXDOC-1846
 ^/userdoc/jsf-ui/(.*)$: /nxdoc/jsf-ui-userdoc/$1
-^/userdoc/nuxeo-platform-concepts/?$: /nxdoc/nuxeo-platform-concepts
-^/userdoc/user-home/?$: /nxdoc/user-home
-^/userdoc/user-preferences/?$: /nxdoc/user-preferences
-^/userdoc/browsing-content/?$: /nxdoc/browsing-content
-^/userdoc/collections/?$: /nxdoc/collections-jsf-ui
-^/nxdoc/tags/?$: /nxdoc/tags-jsf-ui
-^/userdoc/preview/?$: /nxdoc/preview-jsf-ui
-^/userdoc/managing-permissions/?$: /nxdoc/managing-permissions
-^/userdoc/document-types/?$: /nxdoc/document-types
-^/userdoc/attachments/?$: /nxdoc/attachments
-^/userdoc/using-workspace-templates/?$: /nxdoc/using-workspace-templates
-^/userdoc/creating-content/?$: /nxdoc/creating-content
-^/userdoc/editing-content/?$: /nxdoc/editing-content
-^/userdoc/working-with-webdav/?$: /nxdoc/working-with-webdav
-^/userdoc/traceability/?$: /nxdoc/traceability
-^/userdoc/deleting-content/?$: /nxdoc/deleting-content
-^/userdoc/collaborative-features/?$: /nxdoc/collaborative-features
-^/userdoc/searching-the-nuxeo-platform/?$: /nxdoc/searching-the-nuxeo-platform
-^/userdoc/default-search?$: /nxdoc/default-search
-^/userdoc/quick-search/?$: /nxdoc/quick-search-jsf-ui/
-^/userdoc/saved-searches/?$: /nxdoc/saved-searches/
-^/userdoc/workflows/?$: /nxdoc/workflows-jsf-ui
-^/userdoc/serial-document-workflow/?$: /nxdoc/serial-document-workflow
-^/userdoc/parallel-document-workflow/?$: /nxdoc/parallel-document-workflow
-^/userdoc/delegating-a-task/?$: /nxdoc/delegating-a-task
-^/userdoc/reassigning-a-task/?$: /nxdoc/reassigning-a-task
-^/userdoc/abandoning-a-workflow/?$: /nxdoc/abandoning-a-workflow
-^/userdoc/publishing-content/?$: /nxdoc/publishing-content
-^/userdoc/exporting-documents/?$: /nxdoc/exporting-documents
-^/userdoc/local-configuration/?$: /nxdoc/local-configuration
-^/userdoc/managing-your-nuxeo-application/?$: /nxdoc/managing-your-nuxeo-application
-^/userdoc/managing-users-and-groups/?$: /nxdoc/managing-users-and-groups
-^/userdoc/managing-vocabularies/?$: /nxdoc/managing-vocabularies
-^/userdoc/how-to-add-new-relation-types/?$: /nxdoc/how-to-add-new-relation-types
-^/userdoc/case-management-with-the-nuxeo-platform/?$: /nxdoc/case-management-with-the-nuxeo-platform
+^/userdoc/nuxeo-platform-concepts/?$: /nxdoc/nuxeo-platform-concepts/
+^/userdoc/user-home/?$: /userdoc/web-ui/
+^/userdoc/user-preferences/?$: /nxdoc/user-preferences/
+^/userdoc/browsing-content/?$: /userdoc/browse/
+^/userdoc/collections/?$: /userdoc/collections-web-ui/
+^/nxdoc/tags/?$: /userdoc/tags/
+^/userdoc/preview/?$: /userdoc/browse/
+^/userdoc/managing-permissions/?$: /userdoc/permissions/
+^/userdoc/document-types/?$: /userdoc/document-types-in-web-ui/
+^/userdoc/attachments/?$: /userdoc/document-types-in-web-ui/
+^/userdoc/using-workspace-templates/?$: /nxdoc/using-workspace-templates/
+^/userdoc/creating-content/?$: /userdoc/content-create/
+^/userdoc/editing-content/?$: /userdoc/content-edit/
+^/userdoc/working-with-webdav/?$: /nxdoc/webdav/
+^/userdoc/traceability/?$: /nxdoc/traceability/
+^/userdoc/deleting-content/?$: /userdoc/content-delete/
+^/userdoc/collaborative-features/?$: /userdoc/organizing-content/
+^/userdoc/searching-the-nuxeo-platform/?$: /userdoc/search/
+^/userdoc/default-search?$: /userdoc/search/
+^/userdoc/quick-search/?$: /userdoc/search/
+^/userdoc/saved-searches/?$: /userdoc/search/
+^/userdoc/workflows/?$: /nxdoc/workflows-jsf-ui/
+^/userdoc/serial-document-workflow/?$: /userdoc/document-workflow/
+^/userdoc/parallel-document-workflow/?$: /userdoc/document-workflow/
+^/userdoc/delegating-a-task/?$: /userdoc/delegating-task/
+^/userdoc/reassigning-a-task/?$: /userdoc/reassigning-task/
+^/userdoc/abandoning-a-workflow/?$: /userdoc/document-workflow/
+^/userdoc/publishing-content/?$: /userdoc/share/
+^/userdoc/exporting-documents/?$: /userdoc/share/
+^/userdoc/local-configuration/?$: /nxdoc/local-configuration/
+^/userdoc/managing-your-nuxeo-application/?$: /userdoc/managing-accounts/
+^/userdoc/managing-users-and-groups/?$: /userdoc/managing-accounts/
+^/userdoc/managing-vocabularies/?$: /nxdoc/data-lists-and-directories/
+^/userdoc/how-to-add-new-relation-types/?$: /nxdoc/howto-manage-relations/
+^/userdoc/case-management-with-the-nuxeo-platform/?$: /nxdoc/getting-started/
 
 # NXDOC-1454
-^/nxdoc/setting-up-a-ha-configuration-using-the-nuxeo-platform-and-postgresql/?$: /nxdoc/standard-high-availability-nuxeo-cluster-architecture
-^/nxdoc/1010/setting-up-a-ha-configuration-using-the-nuxeo-platform-and-postgresql/?$: /nxdoc/1010/standard-high-availability-nuxeo-cluster-architecture
+^/nxdoc/setting-up-a-ha-configuration-using-the-nuxeo-platform-and-postgresql/?$: /nxdoc/standard-high-availability-nuxeo-cluster-architecture/
+^/nxdoc/1010/setting-up-a-ha-configuration-using-the-nuxeo-platform-and-postgresql/?$: /nxdoc/standard-high-availability-nuxeo-cluster-architecture/
 
 # NXDOC-1765
-^/nxdoc/content-repository/?$: /nxdoc/data-modeling
-^/nxdoc/core-server/?$: /nxdoc/data-store
-^/nxdoc/document-type-how-to-index/?$: /nxdoc/data-modeling-tutorials
-^/nxdoc/repository-concepts/?$: /nxdoc/data-modeling
-^/nxdoc/events-and-listeners/?$: /nxdoc/events-and-messages
+^/nxdoc/content-repository/?$: /nxdoc/data-modeling/
+^/nxdoc/core-server/?$: /nxdoc/data-store/
+^/nxdoc/document-type-how-to-index/?$: /nxdoc/data-modeling-tutorials/
+^/nxdoc/repository-concepts/?$: /nxdoc/data-modeling/
+^/nxdoc/events-and-listeners/?$: /nxdoc/events-and-messages/
 ^/nxdoc/event-and-listener-how-to-index/?$: /nxdoc/events-and-messages-how-to-index/
 
 # NXDOC-1925
-^/nxdoc/how-to-follow-single-workflow-transition/?$: /studio/node-transitions-tab
+^/nxdoc/how-to-follow-single-workflow-transition/?$: /studio/node-transitions-tab/
 
 # NXDOC-1931 - Java Client doc
-^/nxdoc/java-client/?$: /client-java 
+^/nxdoc/java-client/?$: /client-java/
 
 # NXDOC-1966 - ARender rename
-^/nxdoc/nuxeo-arender-connector/?$: /nxdoc/nuxeo-enhanced-viewer
+^/nxdoc/nuxeo-arender-connector/?$: /nxdoc/nuxeo-enhanced-viewer/
 
-^/nxdoc/nuxeo-cli-roadmap/?$: /nxdoc/nuxeo-cli
-^/nxdoc/1010/nuxeo-cli-roadmap/?$: /nxdoc/1010/nuxeo-cli
-^/nxdoc/deploying-nuxeo-on-amazon-aws/?$: /nxdoc/installing-the-nuxeo-platform-on-linux
-^/nxdoc/1010/deploying-nuxeo-on-amazon-aws/?$: /nxdoc/installing-the-nuxeo-platform-on-linux
-^/nxdoc/deploying-as-a-standard-static-war/?$: /nxdoc/installing-the-nuxeo-platform-on-linux
-^/nxdoc/1010/deploying-as-a-standard-static-war/?$: /nxdoc/installing-the-nuxeo-platform-on-linux
+^/nxdoc/nuxeo-cli-roadmap/?$: /nxdoc/nuxeo-cli/
+^/nxdoc/1010/nuxeo-cli-roadmap/?$: /nxdoc/1010/nuxeo-cli/
+^/nxdoc/deploying-nuxeo-on-amazon-aws/?$: /nxdoc/installing-the-nuxeo-platform-on-linux/
+^/nxdoc/1010/deploying-nuxeo-on-amazon-aws/?$: /nxdoc/installing-the-nuxeo-platform-on-linux/
+^/nxdoc/deploying-as-a-standard-static-war/?$: /nxdoc/installing-the-nuxeo-platform-on-linux/
+^/nxdoc/1010/deploying-as-a-standard-static-war/?$: /nxdoc/installing-the-nuxeo-platform-on-linux/
 
-# NXDOC-2073 Client SDKs Clean up 
-^/nxdoc/client-api-test-suite-tck/?$: /nxdoc/client-sdks
-^/nxdoc/android-client/?$: /nxdoc/client-sdks
-^/nxdoc/nuxeo-dart-client/?$: /nxdoc/client-sdks
-^/nxdoc/ios-client/?$: /nxdoc/client-sdks
-^/nxdoc/java-automation-client/?$: /client-java 
+# NXDOC-2073 Client SDKs Clean up
+^/nxdoc/client-api-test-suite-tck/?$: /nxdoc/client-sdks/
+^/nxdoc/android-client/?$: /nxdoc/client-sdks/
+^/nxdoc/nuxeo-dart-client/?$: /nxdoc/client-sdks/
+^/nxdoc/ios-client/?$: /nxdoc/client-sdks/
+^/nxdoc/java-automation-client/?$: /client-java/
 
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
