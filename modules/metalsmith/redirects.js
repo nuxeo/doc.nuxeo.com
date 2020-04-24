@@ -46,8 +46,8 @@ const escape_regex_url = str => str.replace(/([.+])/g, '\\$1');
  **/
 const nuxeo_redirects = () => (files, metalsmith, done) => {
   const metadata = metalsmith.metadata();
-  const shotlinks_file = path.join(metalsmith.path(), 'shortlinks.json');
-  const shortlinks = require(shotlinks_file);
+  const shortlinks_file = path.join(metalsmith.path(), 'shortlinks.json');
+  const shortlinks = require(shortlinks_file);
   const redirects_file = path.join(metalsmith.path(), 'redirects.yml');
 
   const get_unique_shortlink = get_unique_hash(shortlinks);
@@ -74,7 +74,7 @@ const nuxeo_redirects = () => (files, metalsmith, done) => {
         )
       );
     }
-    fs.writeFile(shotlinks_file, shortlinks_json, 'utf8', err => done(err));
+    fs.writeFile(shortlinks_file, shortlinks_json, 'utf8', err => done(err));
   };
 
   // Get exisiting redirects
@@ -100,12 +100,12 @@ const nuxeo_redirects = () => (files, metalsmith, done) => {
       if (!shortlinks[url_full]) {
         const shortlink = get_unique_shortlink(url_full);
         if (shortlink !== false) {
-          shortlinks[url_full] = shortlink;
+          shortlinks[url_full] = [shortlink];
         } else {
           error(`Could not create unique link for: ${url_full}`);
         }
       }
-      file.url.shortlink = shortlinks[url_full];
+      file.url.shortlink = shortlinks[url_full][0];
     }
 
     if (
