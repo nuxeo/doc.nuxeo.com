@@ -371,7 +371,7 @@
 ^/nxdoc/nuxeo-arender-connector/?$: /nxdoc/nuxeo-enhanced-viewer/
 
 ^/nxdoc/nuxeo-cli-roadmap/?$: /nxdoc/nuxeo-cli/
-^/nxdoc/1010/nuxeo-cli-roadmap/?$: /nxdoc/1010/nuxeo-cli/
+^/nxdoc/1010/nuxeo-cli-roadmap/?$: /nxdoc/nuxeo-cli/
 ^/nxdoc/deploying-nuxeo-on-amazon-aws/?$: /nxdoc/installing-the-nuxeo-platform-on-linux/
 ^/nxdoc/1010/deploying-nuxeo-on-amazon-aws/?$: /nxdoc/installing-the-nuxeo-platform-on-linux/
 ^/nxdoc/deploying-as-a-standard-static-war/?$: /nxdoc/installing-the-nuxeo-platform-on-linux/
@@ -406,6 +406,12 @@
 
 ^/display/SPRINT(/?|/.*): /
 ^/display/KB/?$: /
+
+# 1010-Next switch
+^/nxdoc/1010/?$: /nxdoc/
+^/nxdoc/1010/(.*): /nxdoc/$1
+^/userdoc/1010/?$: /userdoc/
+^/userdoc/1010/(.*): /userdoc/$1
 
 # Redirects for VERSION/SPACE/... to SPACE/VERSION/...
 ^/(\d+)/([^/]+)(/.*): /$2/$1/$3
