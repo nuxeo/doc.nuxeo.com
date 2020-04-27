@@ -22,7 +22,10 @@ const schema = Joi.object().keys({
           .default(false),
         url_path: Joi.string()
           .optional()
-          .default('')
+          .default(''),
+        menu_separator: Joi.bool()
+          .optional()
+          .default(false)
       })
     ),
   spaces: Joi.array()
@@ -44,6 +47,7 @@ const schema = Joi.object().keys({
 
 const urls = (options, add_to_metadata) => (files, metalsmith, done) => {
   debug('Options: %o', options);
+
   const metadata = metalsmith.metadata();
   metadata.pages = metadata.pages || {};
 

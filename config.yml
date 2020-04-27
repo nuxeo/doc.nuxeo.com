@@ -19,7 +19,7 @@ default:
       - '*.swp'
     nx_assets_url: https://intranet.nuxeo.com/nuxeo
     # nx_assets_url: http://intranet-preprod.nuxeocloud.com/nuxeo
-    canonical_version_preference: 'ft'
+    canonical_version_preference: 'LTS 2019'
     new_version: '10.10'
 
     # Keys
@@ -67,34 +67,35 @@ default:
       branches:
         static:
           no_versioning: true
-        master:
-          label: 'FT'
-          order: 0
         '1010':
           label: 'LTS 2019'
-          url_path: '1010'
-          noindex: true
-          order: 5
-        '910':
-          label: 'LTS 2017'
-          url_path: '910'
-          noindex: true
           order: 10
-        '810':
-          label: 'LTS 2016'
-          url_path: '810'
+        master:
+          label: 'Next'
           noindex: true
           order: 20
-        '710':
-          label: 'LTS 2015'
-          url_path: '710'
+          menu_separator: true
+          url_path: 'next'
+        '910':
+          label: 'LTS 2017'
           noindex: true
           order: 30
-        '60':
-          label: '6.0'
-          url_path: '60'
+          url_path: '910'
+        '810':
+          label: 'LTS 2016'
           noindex: true
           order: 40
+          url_path: '810'
+        '710':
+          label: 'LTS 2015'
+          noindex: true
+          order: 50
+          url_path: '710'
+        '60':
+          label: '6.0'
+          noindex: true
+          order: 60
+          url_path: '60'
     java:
       url: git@github.com:nuxeo/doc.nuxeo.com-client-java.git
       branches:

@@ -113,6 +113,10 @@ $content-background: $white;
   }
 }
 
+.separator {
+  border-bottom: 1px solid $medium-gray;
+}
+
 .heading-group {
   margin-bottom: 1.5rem;
 
@@ -124,7 +128,7 @@ $content-background: $white;
     color: $medium-gray;
   }
 
-  a {
+  div > a {
     color: $medium-gray;
     margin-left: 0.5rem;
 

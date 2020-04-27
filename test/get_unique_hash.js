@@ -20,7 +20,7 @@ test('get_unique_hash returns a function', assert => {
 
 test('get_unique_hash returns correct hash', assert => {
   const existing_list = {
-    '/some/url/': 'd5g'
+    '/some/url/': ['d5g']
   };
   const get_unique_shortlink = get_unique_hash(existing_list);
 
