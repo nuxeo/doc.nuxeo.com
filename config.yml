@@ -67,31 +67,31 @@ default:
       branches:
         static:
           no_versioning: true
-        '1010-1010-next-switch':
+        '1010':
           label: 'LTS 2019'
           order: 10
-        master-1010-next-switch:
+        master:
           label: 'Next'
           noindex: true
           order: 20
           menu_separator: true
           url_path: 'next'
-        '910-1010-next-switch':
+        '910':
           label: 'LTS 2017'
           noindex: true
           order: 30
           url_path: '910'
-        '810-1010-next-switch':
+        '810':
           label: 'LTS 2016'
           noindex: true
           order: 40
           url_path: '810'
-        '710-1010-next-switch':
+        '710':
           label: 'LTS 2015'
           noindex: true
           order: 50
           url_path: '710'
-        '60-1010-next-switch':
+        '60':
           label: '6.0'
           noindex: true
           order: 60
