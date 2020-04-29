@@ -360,6 +360,9 @@
 ^/nxdoc/repository-concepts/?$: /nxdoc/data-modeling/
 ^/nxdoc/events-and-listeners/?$: /nxdoc/events-and-messages/
 ^/nxdoc/event-and-listener-how-to-index/?$: /nxdoc/events-and-messages-how-to-index/
+^/nxdoc/additional-services/?$: /nxdoc/platform-services/
+^/nxdoc/next/additional-services/?$: /nxdoc/next/platform-services/
+^/nxdoc/deleting-documents/?$: /nxdoc/trash-service/
 
 # NXDOC-1925
 ^/nxdoc/how-to-follow-single-workflow-transition/?$: /studio/node-transitions-tab/
