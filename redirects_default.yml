@@ -387,6 +387,8 @@
 ^/nxdoc/ios-client/?$: /nxdoc/client-sdks/
 ^/nxdoc/java-automation-client/?$: /client-java/
 
+^/retention-management/?$: /nxdoc/next/nuxeo-retention-management/
+
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
 ^/display/NXDOC(/?|/.*): /nxdoc/
