@@ -388,6 +388,9 @@
 ^/nxdoc/java-automation-client/?$: /client-java/
 
 ^/retention-management/?$: /nxdoc/next/nuxeo-retention-management/
+^/retention-management/nuxeo-retention-functional-overview/?$: /nxdoc/next/nuxeo-retention-functional-overview/
+^/retention-management/nuxeo-retention-technical-overview/?$: /nxdoc/next/nuxeo-retention-technical-overview/
+
 
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
