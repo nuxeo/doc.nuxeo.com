@@ -104,6 +104,8 @@
 ^/710/nxdoc/how-to-add-a-button-in-the-web-ui/$: /nxdoc/710/how-to-add-a-button-in-the-jsf-ui/
 ^/710/nxdoc/how-to-bubble-errors-from-the-core-layer-in-the-web-ui/$: /nxdoc/710/how-to-bubble-errors-from-the-core-layer-in-the-jsf-ui/
 
+^/main/whats-new-in-nuxeo-platform-56/?$: /whats-new-in-nuxeo-platform-56/
+
 # For LTS 2016
 ^/nxdoc/javaandroid-client/$: /nxdoc/java-client/
 ^/nxdoc/getting-started-with-nuxeo-ide/$: /nxdoc/develop-with-nuxeo-platform/
