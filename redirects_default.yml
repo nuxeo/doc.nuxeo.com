@@ -391,6 +391,7 @@
 ^/retention-management/nuxeo-retention-functional-overview/?$: /nxdoc/next/nuxeo-retention-functional-overview/
 ^/retention-management/nuxeo-retention-technical-overview/?$: /nxdoc/next/nuxeo-retention-technical-overview/
 
+^/nxdoc/scheduling-periodic-events/?$: /studio/scheduling-periodic-events
 
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
