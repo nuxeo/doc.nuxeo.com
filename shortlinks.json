@@ -16985,5 +16985,167 @@
   ],
   "/client-java/": [
     "TEx"
+  ],
+  "/nxdoc/how-to-filter-data-in-directory-suggestion/": [
+    "hALB"
+  ],
+  "/nxdoc/howto-execute-ui-functions/": [
+    "sM4m"
+  ],
+  "/nxdoc/data-store/": [
+    "UOPP"
+  ],
+  "/nxdoc/events-and-messages/": [
+    "gP4H"
+  ],
+  "/nxdoc/platform-services/": [
+    "wJbB"
+  ],
+  "/nxdoc/data-modeling/": [
+    "zna4"
+  ],
+  "/nxdoc/data-modeling-tutorials/": [
+    "RPBZ"
+  ],
+  "/nxdoc/trash-service/": [
+    "r56O"
+  ],
+  "/nxdoc/how-to-set-enhanced-viewer-as-default-document-preview/": [
+    "NPzl"
+  ],
+  "/nxdoc/jsf-ui-userdoc/": [
+    "GL8I"
+  ],
+  "/nxdoc/browsing-content/": [
+    "-_f7"
+  ],
+  "/nxdoc/case-management-with-the-nuxeo-platform/": [
+    "qJAV"
+  ],
+  "/nxdoc/document-types/": [
+    "5i6L"
+  ],
+  "/nxdoc/editing-content/": [
+    "IjXG"
+  ],
+  "/nxdoc/collaborative-features/": [
+    "mVjS"
+  ],
+  "/nxdoc/creating-content/": [
+    "zZI4"
+  ],
+  "/nxdoc/deleting-content/": [
+    "eJ-4"
+  ],
+  "/nxdoc/exporting-documents/": [
+    "d8IR"
+  ],
+  "/nxdoc/managing-your-nuxeo-application/": [
+    "_Ww0"
+  ],
+  "/nxdoc/nuxeo-platform-concepts/": [
+    "vuRW"
+  ],
+  "/nxdoc/local-configuration/": [
+    "XuSl"
+  ],
+  "/nxdoc/searching-the-nuxeo-platform/": [
+    "alHO"
+  ],
+  "/nxdoc/managing-permissions/": [
+    "brir"
+  ],
+  "/nxdoc/user-home/": [
+    "Pq2o"
+  ],
+  "/nxdoc/publishing-content/": [
+    "5NNp"
+  ],
+  "/nxdoc/traceability/": [
+    "4ifJ"
+  ],
+  "/nxdoc/workflows-jsf-ui/": [
+    "uLFN"
+  ],
+  "/nxdoc/attachments/": [
+    "z4q9"
+  ],
+  "/nxdoc/using-workspace-templates/": [
+    "AUosi"
+  ],
+  "/nxdoc/working-with-webdav/": [
+    "DIHa"
+  ],
+  "/nxdoc/collections-jsf-ui/": [
+    "s3cp_"
+  ],
+  "/nxdoc/tags-jsf-ui/": [
+    "ruN2"
+  ],
+  "/nxdoc/preview-jsf-ui/": [
+    "EZ4E"
+  ],
+  "/nxdoc/default-search/": [
+    "79A6"
+  ],
+  "/nxdoc/quick-search-jsf-ui/": [
+    "uaax"
+  ],
+  "/nxdoc/saved-searches/": [
+    "eIDR"
+  ],
+  "/nxdoc/user-preferences/": [
+    "PB8F"
+  ],
+  "/nxdoc/abandoning-a-workflow/": [
+    "3ftj"
+  ],
+  "/nxdoc/delegating-a-task/": [
+    "wpTdZ"
+  ],
+  "/nxdoc/parallel-document-workflow/": [
+    "XJUn"
+  ],
+  "/nxdoc/reassigning-a-task/": [
+    "6otK"
+  ],
+  "/nxdoc/serial-document-workflow/": [
+    "ozbJ"
+  ],
+  "/nxdoc/managing-users-and-groups/": [
+    "itxw"
+  ],
+  "/nxdoc/managing-vocabularies/": [
+    "aoJu"
+  ],
+  "/nxdoc/how-to-add-new-relation-types/": [
+    "AfWe"
+  ],
+  "/client-apps/nuxeo-drive-release-notes/": [
+    "Bm2"
+  ],
+  "/studio/studio-updates-2020-04/": [
+    "Ux5"
+  ],
+  "/nxdoc/next/": [
+    "E7qQ"
+  ],
+  "/nxdoc/next/how-to-populate-a-directory-with-csv/": [
+    "xg-"
+  ],
+  "/nxdoc/next/nuxeo-retention-management/": [
+    "dUn"
+  ],
+  "/nxdoc/next/nuxeo-retention-functional-overview/": [
+    "05a"
+  ],
+  "/nxdoc/next/nuxeo-retention-technical-overview/": [
+    "Cyz"
+  ],
+  "/nxdoc/next/nuxeo-retention-installation/": [
+    "lUZ"
+  ],
+  "/rest-api/1/": [
+    "J0d5"
   ]
 }
