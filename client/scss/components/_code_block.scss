@@ -1,8 +1,10 @@
 // Inline code
 code {
-  color: $c-black;
   background: #61aeee4f;
+  color: $c-black;
   overflow-wrap: break-word;
+  position: relative;
+  z-index: 1;
 
   a > & {
     border: 1px solid;
