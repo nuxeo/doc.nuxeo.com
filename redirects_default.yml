@@ -389,6 +389,15 @@
 ^/nxdoc/ios-client/?$: /nxdoc/client-sdks/
 ^/nxdoc/java-automation-client/?$: /client-java/
 
+# NXDOC-2076 Observability section 
+^/nxdoc/next/logs-analysis/?$: /nxdoc/next/logs
+^/nxdoc/next/monitoring-and-maintenance/?$: /nxdoc/next/maintenance
+^/nxdoc/next/metrics-and-monitoring/?$: /nxdoc/next/metrics
+^/nxdoc/next/remote-monitoring-through-https/?$: /nxdoc/next/maintenance
+^/nxdoc/next/remote-monitoring-through-a-ssh-tunnel/?$: /nxdoc/next/maintenance
+^/nxdoc/next/monitoring-slow-nxql-queries/?$: /nxdoc/next/maintenance
+^/nxdoc/next/transactions-and-connections/?$: /nxdoc/next/maintenance
+
 ^/retention-management/?$: /nxdoc/next/nuxeo-retention-management/
 ^/retention-management/nuxeo-retention-functional-overview/?$: /nxdoc/next/nuxeo-retention-functional-overview/
 ^/retention-management/nuxeo-retention-technical-overview/?$: /nxdoc/next/nuxeo-retention-technical-overview/
