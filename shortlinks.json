@@ -17147,5 +17147,95 @@
   ],
   "/rest-api/1/": [
     "J0d5"
+  ],
+  "/nxdoc/how-to-customize-creation-form/": [
+    "CGix"
+  ],
+  "/nxdoc/how-to-display-user-information/": [
+    "FCgd"
+  ],
+  "/nxdoc/how-to-assign-a-task-to-the-user-manager/": [
+    "b3O0"
+  ],
+  "/nxdoc/howto-manage-relations/": [
+    "3f7G"
+  ],
+  "/nxdoc/how-to-save-work-in-progress-task/": [
+    "ftFg"
+  ],
+  "/nxdoc/how-to-populate-a-directory-with-csv/": [
+    "nd0"
+  ],
+  "/nxdoc/how-to-make-elasticsearch-hints-extension-point/": [
+    "asq4"
+  ],
+  "/nxdoc/nuxeo-retention-management/": [
+    "5lz"
+  ],
+  "/nxdoc/how-to-configure-adobe-connector/": [
+    "F1lj"
+  ],
+  "/nxdoc/nuxeo-retention-configuration/": [
+    "2-r"
+  ],
+  "/nxdoc/nuxeo-retention-functional-overview/": [
+    "Dce"
+  ],
+  "/nxdoc/nuxeo-retention-installation/": [
+    "Xpz"
+  ],
+  "/nxdoc/nuxeo-retention-technical-overview/": [
+    "xkG"
+  ],
+  "/nxdoc/how-to-display-a-button-a-tab-only-when-a-workflow-is-started-jsf/": [
+    "ipIv"
+  ],
+  "/client-apps/442-nuxeo-drive-release-notes/": [
+    "uf6"
+  ],
+  "/studio/studio-updates-2020-05/": [
+    "23M"
+  ],
+  "/studio/studio-updates-2020-06/": [
+    "Wbb"
+  ],
+  "/studio/scheduling-periodic-events/": [
+    "wgf"
+  ],
+  "/nxdoc/next/web-ui-release-notes/": [
+    "Nrs"
+  ],
+  "/nxdoc/next/web-ui-upgrade-notes/": [
+    "Cod"
+  ],
+  "/nxdoc/next/web-ui-11-1-release-notes/": [
+    "0JD"
+  ],
+  "/nxdoc/next/web-ui-11-1-upgrade-notes/": [
+    "Yq-F"
+  ],
+  "/nxdoc/next/maintenance/": [
+    "X53"
+  ],
+  "/nxdoc/next/observability/": [
+    "Eir"
+  ],
+  "/nxdoc/next/health-check/": [
+    "8Na"
+  ],
+  "/nxdoc/next/tracing/": [
+    "_R2"
+  ],
+  "/nxdoc/next/logs/": [
+    "np8"
+  ],
+  "/nxdoc/next/metrics/": [
+    "S28"
+  ],
+  "/nxdoc/next/profiling/": [
+    "9HV"
+  ],
+  "/client-apps/next/nuxeo-drive/": [
+    "Q5q"
   ]
 }
