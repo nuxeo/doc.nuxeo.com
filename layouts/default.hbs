@@ -1,5 +1,5 @@
 {{> header_standard}}
-<div id="content_container" class="column {{#if no_side_menu}}small-centered{{else}}medium-8 large-{{#if toc}}6{{else}}9{{/if}}{{/if}}{{#if is_overview}} overview{{/if}}">
+<div id="content_container" class="column {{#if no_side_menu}}small-centered{{else}}medium-8 large-6{{/if}}{{#if is_overview}} overview{{/if}}">
   <div class="{{#unless no_side_menu}}content-gutter max-900{{/unless}}">
     {{> breadcrumb}}
     <div class="heading-group">
@@ -45,8 +45,8 @@
   </div>
 </div>
 
-{{#if toc}}
-<div id="toc" class="column large-3 show-for-large" data-sticky-container>
+<div {{#if toc}}id="toc"{{/if}} class="column large-3 show-for-large" data-sticky-container>
+  {{#if toc}}
   <nav class="sticky" data-sticky data-anchor="content_container" data-sticky-on="large" data-margin-top="7.3" style="margin-top: 7.3em;">
     <div class="toc__heading">On this page</div>
     <ul id="toc_list" class="vertical menu" data-magellan data-offset="70">
@@ -63,7 +63,7 @@
       {{/each}}
     </ul>
   </nav>
+  {{/if}}
 </div>
-{{/if}}
 
 {{> footer_standard}}
