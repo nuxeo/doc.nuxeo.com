@@ -404,6 +404,29 @@
 
 ^/nxdoc/scheduling-periodic-events/?$: /studio/scheduling-periodic-events
 
+# NXP-28101: Remove Nuxeo IDE Doc 
+^/idedoc/creating-your-first-nuxeo-project/?$: /nxdoc/nuxeo-cli
+^/idedoc/frequently-asked-questions/?$: /nxdoc/nuxeo-cli
+^/idedoc/getting-started-with-nuxeo-ide/?$: /nxdoc/nuxeo-cli
+^/idedoc/index/?$: /nxdoc/nuxeo-cli
+^/idedoc/installing-nuxeo-ide/?$: /nxdoc/nuxeo-cli
+^/idedoc/nuxeo-codenvy-plugin/?$: /nxdoc/nuxeo-cli
+^/idedoc/nuxeo-ide/?$: /nxdoc/nuxeo-cli
+^/idedoc/managing-project-dependencies/?$: /nxdoc/nuxeo-cli
+^/idedoc/nuxeo-ide/running-your-projects-on-the-server/?$: /nxdoc/nuxeo-cli
+^/idedoc/nuxeo-ide/setting-up-a-nuxeo-sdk/?$: /nxdoc/nuxeo-cli
+^/idedoc/nuxeo-ide/the-nuxeo-ide-perspective/?$: /nxdoc/nuxeo-cli
+^/idedoc/nuxeo-ide/wizard-index/?$: /nxdoc/nuxeo-cli
+^/idedoc/nuxeo-ide/working-with-studio-projects/?$: /nxdoc/nuxeo-cli
+^/idedoc/browsing-a-studio-project-content/?$: /nxdoc/nuxeo-cli
+^/idedoc/binding-studio-projects-to-an-nuxeo-ide-project/?$: /nxdoc/nuxeo-cli
+^/idedoc/configuring-a-nuxeo-online-services-account/?$: /nxdoc/nuxeo-cli
+^/idedoc/creating-a-custom-nuxeo-package/?$: /nxdoc/nuxeo-cli
+^/idedoc/deploying-a-project-with-studio-dependencies/?$: /nxdoc/nuxeo-cli
+^/idedoc/settings-eclipse-development-templates/?$: /nxdoc/nuxeo-cli
+^/idedoc/uploading-custom-operations-in-nuxeo-studio/?$: /nxdoc/nuxeo-cli
+^/idedoc/preparing-your-project-for-building/?$: /nxdoc/nuxeo-cli
+
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
 ^/display/NXDOC(/?|/.*): /nxdoc/
