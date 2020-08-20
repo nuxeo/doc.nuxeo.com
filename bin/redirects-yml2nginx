@@ -6,15 +6,20 @@ const yaml = require('js-yaml');
 const fs = require('fs');
 const path = require('path');
 
-const shortlinks = require('../shortlinks');
+const { debug } = require('../modules/debugger')('redirects-yml2nginx');
+const shortlinks = require('../shortlinks.json');
 const redirects_file = path.join(__dirname, '..', 'redirects.yml');
+
+debug('shortlinks', Object.entries(shortlinks).slice(0, 100));
 
 // Shortlinks
 console.log(
   Object.entries(shortlinks)
-    .map(([url, shortlink_arr]) => shortlink_arr
+    .map(([url, shortlink_arr]) =>
+      shortlink_arr
         .map(shortlink => `rewrite ^/n/${shortlink}/?\t${url}\tpermanent;`)
-        .join('\n'))
+        .join('\n')
+    )
     .join('\n')
 );
 
@@ -29,6 +34,8 @@ try {
   redirects = {};
   throw new Error(`Failed to load: ${redirects_file}\n${e}`);
 }
+
+debug('redirects', Object.entries(redirects).slice(0, 100));
 
 // Output to stdout
 console.log(

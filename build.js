@@ -2,6 +2,8 @@
 /* eslint-env es6 */
 /* eslint no-console: 0 */
 
+require('dotenv').config();
+
 // Assume production if not set
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = 'production';

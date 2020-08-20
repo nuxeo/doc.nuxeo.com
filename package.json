@@ -28,6 +28,7 @@
     "clipboard": "^2.0.1",
     "co": "^4.6.0",
     "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
     "emojione": "^3.1.4",
     "escape-string-regexp": "^2.0.0",
     "eslint": "^6.1.0",
