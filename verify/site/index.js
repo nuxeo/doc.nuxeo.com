@@ -16,7 +16,6 @@ const spaces = [
   'connect',
   'corg',
   'glos',
-  'idedoc',
   'nxdoc',
   'studio',
   'userdoc'
