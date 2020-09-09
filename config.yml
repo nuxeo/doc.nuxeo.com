@@ -65,7 +65,7 @@ default:
     platform:
       url: git@github.com:nuxeo/doc.nuxeo.com-content.git
       branches:
-        NXDOC-2059-cloud-doc:
+        test-doc-addon:
           no_versioning: true
         '1010':
           label: 'LTS 2019'
