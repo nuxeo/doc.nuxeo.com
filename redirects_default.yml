@@ -222,6 +222,8 @@
 ^/nxdoc/how-to-customize-nuxeo-mobile-metadata-layout/?$: /client-apps/how-to-customize-nuxeo-mobile-metadata-layout
 ^/nxdoc/how-to-customize-nuxeo-mobile-themes/?$: /client-apps/how-to-customize-nuxeo-mobile-themes
 ^/nxdoc/nuxeo-mobile-roadmap/?$: /client-apps/nuxeo-mobile-roadmap
+'^/client-apps/nuxeo-drive/?#access-local-drive-folder$: /client-apps/nuxeo-drive-functional-overview/#accessing-the-nuxeo-drive-folder
+'^/client-apps/nuxeo-drive/?#synchronizing-workspaces-root$: /client-apps/nuxeo-drive-functional-overview/#synchronizing-a-folder 
 
 ^/nxdoc/first-steps-with-studio-technical-documentation-tutorial/?$: /nxdoc/getting-started
 ^/nxdoc/implementing-documentation-items/?$: /nxdoc/getting-started
