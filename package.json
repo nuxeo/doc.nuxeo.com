@@ -71,7 +71,7 @@
     "motion-ui": "^2.0.3",
     "multimatch": "^4.0.0",
     "multisort": "^0.5.3",
-    "node-fetch": "^2.1.2",
+    "node-fetch": "^2.6.1",
     "node-sass": "^4.7.2",
     "node-yaml-config": "0.0.5",
     "nuxeo": "github:nuxeo/nuxeo-js-client#master",
