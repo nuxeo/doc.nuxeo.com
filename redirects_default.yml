@@ -222,8 +222,8 @@
 ^/nxdoc/how-to-customize-nuxeo-mobile-metadata-layout/?$: /client-apps/how-to-customize-nuxeo-mobile-metadata-layout
 ^/nxdoc/how-to-customize-nuxeo-mobile-themes/?$: /client-apps/how-to-customize-nuxeo-mobile-themes
 ^/nxdoc/nuxeo-mobile-roadmap/?$: /client-apps/nuxeo-mobile-roadmap
-'^/client-apps/nuxeo-drive/?#access-local-drive-folder$: /client-apps/nuxeo-drive-functional-overview/#accessing-the-nuxeo-drive-folder
-'^/client-apps/nuxeo-drive/?#synchronizing-workspaces-root$: /client-apps/nuxeo-drive-functional-overview/#synchronizing-a-folder 
+'^/client-apps/nuxeo-drive/?#access-local-drive-folder$': /client-apps/nuxeo-drive-functional-overview/#accessing-the-nuxeo-drive-folder
+'^/client-apps/nuxeo-drive/?#synchronizing-workspaces-root$': /client-apps/nuxeo-drive-functional-overview/#synchronizing-a-folder
 
 ^/nxdoc/first-steps-with-studio-technical-documentation-tutorial/?$: /nxdoc/getting-started
 ^/nxdoc/implementing-documentation-items/?$: /nxdoc/getting-started
@@ -425,10 +425,10 @@
 ^/idedoc/uploading-custom-operations-in-nuxeo-studio/?$: /nxdoc/nuxeo-cli
 ^/idedoc/preparing-your-project-for-building/?$: /nxdoc/nuxeo-cli
 
-# Getting Started Section 
+# Getting Started Section
 ^/nxdoc/configuration-tips/?$: /studio/best-practices
-^/nxdoc/locking-vs-permission-to-restrict-edit-access-to-a-document/?$: /studio/locking-vs-permission-to-restrict-edit-access-to-a-document 
-^/nxdoc/several-document-types-vs-one-document-type-with-a-nature-metadata?$: /studio/several-document-types-vs-one-document-type-with-a-nature-metadata 
+^/nxdoc/locking-vs-permission-to-restrict-edit-access-to-a-document/?$: /studio/locking-vs-permission-to-restrict-edit-access-to-a-document
+^/nxdoc/several-document-types-vs-one-document-type-with-a-nature-metadata?$: /studio/several-document-types-vs-one-document-type-with-a-nature-metadata
 ^/nxdoc/workflow-tutorials/?$: /studio/workflow-tutorials
 ^/nxdoc/simple-workflow-example/?$: /studio/simple-workflow-example
 ^/nxdoc/sub-workflow-example/?$: /studio/sub-workflow-example
@@ -436,7 +436,7 @@
 ^/nxdoc/2-creating-the-subworkflows/?$: /studio/2-creating-the-subworkflows
 ^/nxdoc/3-creating-the-main-workflow/?$: /studio/3-creating-the-main-workflow
 ^/nxdoc/workflow-escalation-rules-example/?$: /studio/workflow-escalation-rules-example
-^/nxdoc/available-variables-in-email-templates/?$: /studio/available-variables-in-email-templates 
+^/nxdoc/available-variables-in-email-templates/?$: /studio/available-variables-in-email-templates
 ^/nxdoc/continuous-integration/?$: /corg/continuous-integration
 ^/nxdoc/learning-with-examples/?$: /nxdoc/web-ui-tutorials
 ^/nxdoc/how-to-publish-a-news-feature-in-workspaces/?$: /nxdoc/web-ui-tutorials
