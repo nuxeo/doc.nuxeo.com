@@ -425,7 +425,7 @@
 ^/idedoc/uploading-custom-operations-in-nuxeo-studio/?$: /nxdoc/nuxeo-cli
 ^/idedoc/preparing-your-project-for-building/?$: /nxdoc/nuxeo-cli
 
-# Getting Started Section
+# Getting Started Section - 1010 
 ^/nxdoc/configuration-tips/?$: /studio/best-practices
 ^/nxdoc/locking-vs-permission-to-restrict-edit-access-to-a-document/?$: /studio/locking-vs-permission-to-restrict-edit-access-to-a-document
 ^/nxdoc/several-document-types-vs-one-document-type-with-a-nature-metadata?$: /studio/several-document-types-vs-one-document-type-with-a-nature-metadata
@@ -443,6 +443,25 @@
 ^/nxdoc/add-a-news-content-view-on-workspaces/?$: /nxdoc/web-ui-tutorials
 ^/nxdoc/implement-the-news-document/?$: /nxdoc/web-ui-tutorials
 ^/nxdoc/implement-the-news-publishing-process/?$: /nxdoc/web-ui-tutorials
+
+# Getting Started Section - master
+^/nxdoc/next/configuration-tips/?$: /studio/best-practices
+^/nxdoc/next/locking-vs-permission-to-restrict-edit-access-to-a-document/?$: /studio/locking-vs-permission-to-restrict-edit-access-to-a-document
+^/nxdoc/next/several-document-types-vs-one-document-type-with-a-nature-metadata?$: /studio/several-document-types-vs-one-document-type-with-a-nature-metadata
+^/nxdoc/next/workflow-tutorials/?$: /studio/workflow-tutorials
+^/nxdoc/next/simple-workflow-example/?$: /studio/simple-workflow-example
+^/nxdoc/next/sub-workflow-example/?$: /studio/sub-workflow-example
+^/nxdoc/next/1-creating-the-expense-document-type/?$: /studio/1-creating-the-expense-document-type
+^/nxdoc/next/2-creating-the-subworkflows/?$: /studio/2-creating-the-subworkflows
+^/nxdoc/next/3-creating-the-main-workflow/?$: /studio/3-creating-the-main-workflow
+^/nxdoc/next/workflow-escalation-rules-example/?$: /studio/workflow-escalation-rules-example
+^/nxdoc/next/available-variables-in-email-templates/?$: /studio/available-variables-in-email-templates
+^/nxdoc/next/continuous-integration/?$: /corg/continuous-integration
+^/nxdoc/next/learning-with-examples/?$: /nxdoc/next/web-ui-tutorials
+^/nxdoc/next/how-to-publish-a-news-feature-in-workspaces/?$: /nxdoc/next/web-ui-tutorials
+^/nxdoc/next/add-a-news-content-view-on-workspaces/?$: /nxdoc/next/web-ui-tutorials
+^/nxdoc/next/implement-the-news-document/?$: /nxdoc/next/web-ui-tutorials
+^/nxdoc/next/implement-the-news-publishing-process/?$: /nxdoc/next/web-ui-tutorials
 
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
