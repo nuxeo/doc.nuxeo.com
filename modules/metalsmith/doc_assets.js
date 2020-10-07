@@ -180,8 +180,12 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
             return get_file(doc, asset_file);
           })
           .catch(err => {
-            error('fetch err:', err);
-            return Promise.reject(err);
+            if (err && err.response && err.response.status === 404) {
+              error(err.response.statusText, err.response.url);
+            } else {
+              error('fetch err:', err);
+              return Promise.reject(err);
+            }
           });
 
         url_promises.push(p);
