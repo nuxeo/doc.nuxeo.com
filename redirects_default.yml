@@ -425,6 +425,11 @@
 ^/idedoc/uploading-custom-operations-in-nuxeo-studio/?$: /nxdoc/nuxeo-cli
 ^/idedoc/preparing-your-project-for-building/?$: /nxdoc/nuxeo-cli
 
+# NXDOC-2203 - Delete Jenkins report doc 
+^/nxdoc/next/nuxeo-jenkins-report/?$: /nxdoc/next/nuxeo-add-ons/
+^/userdoc/next/nuxeo-jenkins-report/?$: /userdoc/next/adding-features/ 
+^/corg/jenkins-duty/?$: /corg/quality-assurance-and-continuous-integration/ 
+
 # Getting Started Section - 1010 
 ^/nxdoc/configuration-tips/?$: /studio/best-practices
 ^/nxdoc/locking-vs-permission-to-restrict-edit-access-to-a-document/?$: /studio/locking-vs-permission-to-restrict-edit-access-to-a-document
