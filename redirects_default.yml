@@ -43,6 +43,7 @@
 ^/x/LANc/?$: /admindoc/710/configuration-templates/
 ^/x/Ng7F/?$: /nxdoc/710/implementing-documentation-items/
 ^/x/c4ao/?$: /nxdoc/drag-and-drop-service-for-content-capture-html5-based/
+^/x/eABu/?$: https://app.quandora.com/object/71064c69-fcf2-4c41-aed5-6b54e423f3c4
 
 # NXDOC-1038: Archived versions of the documentation
 ^/58/?$: /archived-documentation/
