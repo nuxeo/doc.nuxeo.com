@@ -28,6 +28,8 @@
     "clipboard": "^2.0.1",
     "co": "^4.6.0",
     "debug": "^4.1.1",
+    "deep-object-diff": "^1.1.0",
+    "dotenv": "^8.2.0",
     "emojione": "^3.1.4",
     "escape-string-regexp": "^2.0.0",
     "eslint": "^6.1.0",
@@ -155,6 +157,7 @@
     "add_css_to_existing_build": "cp -r assets/css/`cat css.md5`/* site/assets/css/`cat temp/css.md5`",
     "add_js_to_existing_build": "./bin/add_js_to_existing_build lib/webpack.stats.json temp/webpack.stats.json",
     "update_assets": "npm run compile && npm run add_css_to_existing_build && npm run add_js_to_existing_build && browser-sync reload",
+    "yaml_lint": "js-yaml -t > /dev/null",
     "postversion": "git push && git push --tags"
   },
   "repository": {

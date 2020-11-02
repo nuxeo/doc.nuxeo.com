@@ -43,6 +43,7 @@
 ^/x/LANc/?$: /admindoc/710/configuration-templates/
 ^/x/Ng7F/?$: /nxdoc/710/implementing-documentation-items/
 ^/x/c4ao/?$: /nxdoc/drag-and-drop-service-for-content-capture-html5-based/
+^/x/eABu/?$: https://app.quandora.com/object/71064c69-fcf2-4c41-aed5-6b54e423f3c4
 
 # NXDOC-1038: Archived versions of the documentation
 ^/58/?$: /archived-documentation/
@@ -175,10 +176,6 @@
 ^/810/nxdoc/building-a-soap-based-webservice-in-the-nuxeo-platform/?$: /nxdoc/810/rest-api/
 ^/810/nxdoc/soap-bridge/?$: /nxdoc/810/rest-api/
 
-# IDE redirects
-^/idedoc/getting-started-with-nuxeo-ide/?$: /nxdoc/develop-with-nuxeo-platform/
-^/idedoc/installing-nuxeo-ide/?$: /idedoc/nuxeo-ide/
-
 # NXDOC-900: Studio doc cleanup
 ^/studio/contract-management/?$: /studio/external-templates/
 ^/studio/custom-doc-id-generation/?$: /studio/external-templates/
@@ -226,6 +223,8 @@
 ^/nxdoc/how-to-customize-nuxeo-mobile-metadata-layout/?$: /client-apps/how-to-customize-nuxeo-mobile-metadata-layout
 ^/nxdoc/how-to-customize-nuxeo-mobile-themes/?$: /client-apps/how-to-customize-nuxeo-mobile-themes
 ^/nxdoc/nuxeo-mobile-roadmap/?$: /client-apps/nuxeo-mobile-roadmap
+'^/client-apps/nuxeo-drive/?#access-local-drive-folder$': /client-apps/nuxeo-drive-functional-overview/#accessing-the-nuxeo-drive-folder
+'^/client-apps/nuxeo-drive/?#synchronizing-workspaces-root$': /client-apps/nuxeo-drive-functional-overview/#synchronizing-a-folder
 
 ^/nxdoc/first-steps-with-studio-technical-documentation-tutorial/?$: /nxdoc/getting-started
 ^/nxdoc/implementing-documentation-items/?$: /nxdoc/getting-started
@@ -389,7 +388,7 @@
 ^/nxdoc/ios-client/?$: /nxdoc/client-sdks/
 ^/nxdoc/java-automation-client/?$: /client-java/
 
-# NXDOC-2076 Observability section 
+# NXDOC-2076 Observability section
 ^/nxdoc/next/logs-analysis/?$: /nxdoc/next/logs
 ^/nxdoc/next/monitoring-and-maintenance/?$: /nxdoc/next/maintenance
 ^/nxdoc/next/metrics-and-monitoring/?$: /nxdoc/next/metrics
@@ -403,6 +402,72 @@
 ^/retention-management/nuxeo-retention-technical-overview/?$: /nxdoc/next/nuxeo-retention-technical-overview/
 
 ^/nxdoc/scheduling-periodic-events/?$: /studio/scheduling-periodic-events
+
+# NXP-28101: Remove Nuxeo IDE Doc
+^/idedoc/creating-your-first-nuxeo-project/?$: /nxdoc/nuxeo-cli
+^/idedoc/frequently-asked-questions/?$: /nxdoc/nuxeo-cli
+^/idedoc/getting-started-with-nuxeo-ide/?$: /nxdoc/nuxeo-cli
+^/idedoc/index/?$: /nxdoc/nuxeo-cli
+^/idedoc/installing-nuxeo-ide/?$: /nxdoc/nuxeo-cli
+^/idedoc/nuxeo-codenvy-plugin/?$: /nxdoc/nuxeo-cli
+^/idedoc/nuxeo-ide/?$: /nxdoc/nuxeo-cli
+^/idedoc/managing-project-dependencies/?$: /nxdoc/nuxeo-cli
+^/idedoc/nuxeo-ide/running-your-projects-on-the-server/?$: /nxdoc/nuxeo-cli
+^/idedoc/nuxeo-ide/setting-up-a-nuxeo-sdk/?$: /nxdoc/nuxeo-cli
+^/idedoc/nuxeo-ide/the-nuxeo-ide-perspective/?$: /nxdoc/nuxeo-cli
+^/idedoc/nuxeo-ide/wizard-index/?$: /nxdoc/nuxeo-cli
+^/idedoc/nuxeo-ide/working-with-studio-projects/?$: /nxdoc/nuxeo-cli
+^/idedoc/browsing-a-studio-project-content/?$: /nxdoc/nuxeo-cli
+^/idedoc/binding-studio-projects-to-an-nuxeo-ide-project/?$: /nxdoc/nuxeo-cli
+^/idedoc/configuring-a-nuxeo-online-services-account/?$: /nxdoc/nuxeo-cli
+^/idedoc/creating-a-custom-nuxeo-package/?$: /nxdoc/nuxeo-cli
+^/idedoc/deploying-a-project-with-studio-dependencies/?$: /nxdoc/nuxeo-cli
+^/idedoc/settings-eclipse-development-templates/?$: /nxdoc/nuxeo-cli
+^/idedoc/uploading-custom-operations-in-nuxeo-studio/?$: /nxdoc/nuxeo-cli
+^/idedoc/preparing-your-project-for-building/?$: /nxdoc/nuxeo-cli
+
+# NXDOC-2203 - Delete Jenkins report doc 
+^/nxdoc/next/nuxeo-jenkins-report/?$: /nxdoc/next/nuxeo-add-ons/
+^/userdoc/next/nuxeo-jenkins-report/?$: /userdoc/next/adding-features/ 
+^/corg/jenkins-duty/?$: /corg/quality-assurance-and-continuous-integration/ 
+
+# Getting Started Section - 1010 
+^/nxdoc/configuration-tips/?$: /studio/best-practices
+^/nxdoc/locking-vs-permission-to-restrict-edit-access-to-a-document/?$: /studio/locking-vs-permission-to-restrict-edit-access-to-a-document
+^/nxdoc/several-document-types-vs-one-document-type-with-a-nature-metadata?$: /studio/several-document-types-vs-one-document-type-with-a-nature-metadata
+^/nxdoc/workflow-tutorials/?$: /studio/workflow-tutorials
+^/nxdoc/simple-workflow-example/?$: /studio/simple-workflow-example
+^/nxdoc/sub-workflow-example/?$: /studio/sub-workflow-example
+^/nxdoc/1-creating-the-expense-document-type/?$: /studio/1-creating-the-expense-document-type
+^/nxdoc/2-creating-the-subworkflows/?$: /studio/2-creating-the-subworkflows
+^/nxdoc/3-creating-the-main-workflow/?$: /studio/3-creating-the-main-workflow
+^/nxdoc/workflow-escalation-rules-example/?$: /studio/workflow-escalation-rules-example
+^/nxdoc/available-variables-in-email-templates/?$: /studio/available-variables-in-email-templates
+^/nxdoc/continuous-integration/?$: /corg/continuous-integration
+^/nxdoc/learning-with-examples/?$: /nxdoc/web-ui-tutorials
+^/nxdoc/how-to-publish-a-news-feature-in-workspaces/?$: /nxdoc/web-ui-tutorials
+^/nxdoc/add-a-news-content-view-on-workspaces/?$: /nxdoc/web-ui-tutorials
+^/nxdoc/implement-the-news-document/?$: /nxdoc/web-ui-tutorials
+^/nxdoc/implement-the-news-publishing-process/?$: /nxdoc/web-ui-tutorials
+
+# Getting Started Section - master
+^/nxdoc/next/configuration-tips/?$: /studio/best-practices
+^/nxdoc/next/locking-vs-permission-to-restrict-edit-access-to-a-document/?$: /studio/locking-vs-permission-to-restrict-edit-access-to-a-document
+^/nxdoc/next/several-document-types-vs-one-document-type-with-a-nature-metadata?$: /studio/several-document-types-vs-one-document-type-with-a-nature-metadata
+^/nxdoc/next/workflow-tutorials/?$: /studio/workflow-tutorials
+^/nxdoc/next/simple-workflow-example/?$: /studio/simple-workflow-example
+^/nxdoc/next/sub-workflow-example/?$: /studio/sub-workflow-example
+^/nxdoc/next/1-creating-the-expense-document-type/?$: /studio/1-creating-the-expense-document-type
+^/nxdoc/next/2-creating-the-subworkflows/?$: /studio/2-creating-the-subworkflows
+^/nxdoc/next/3-creating-the-main-workflow/?$: /studio/3-creating-the-main-workflow
+^/nxdoc/next/workflow-escalation-rules-example/?$: /studio/workflow-escalation-rules-example
+^/nxdoc/next/available-variables-in-email-templates/?$: /studio/available-variables-in-email-templates
+^/nxdoc/next/continuous-integration/?$: /corg/continuous-integration
+^/nxdoc/next/learning-with-examples/?$: /nxdoc/next/web-ui-tutorials
+^/nxdoc/next/how-to-publish-a-news-feature-in-workspaces/?$: /nxdoc/next/web-ui-tutorials
+^/nxdoc/next/add-a-news-content-view-on-workspaces/?$: /nxdoc/next/web-ui-tutorials
+^/nxdoc/next/implement-the-news-document/?$: /nxdoc/next/web-ui-tutorials
+^/nxdoc/next/implement-the-news-publishing-process/?$: /nxdoc/next/web-ui-tutorials
 
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/

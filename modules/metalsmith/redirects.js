@@ -47,8 +47,10 @@ const escape_regex_url = str => str.replace(/([.+])/g, '\\$1');
 const nuxeo_redirects = () => (files, metalsmith, done) => {
   const metadata = metalsmith.metadata();
   const shortlinks_file = path.join(metalsmith.path(), 'shortlinks.json');
+  debug('shortlinks_file', shortlinks_file);
   const shortlinks = require(shortlinks_file);
   const redirects_file = path.join(metalsmith.path(), 'redirects.yml');
+  debug('redirects_file', redirects_file);
 
   const get_unique_shortlink = get_unique_hash(shortlinks);
   let redirects;
@@ -83,9 +85,9 @@ const nuxeo_redirects = () => (files, metalsmith, done) => {
   } catch (e) {
     redirects = {};
     if (process.env.NODE_ENV === 'production') {
-      error('Failed to load: %s: %j', redirects_file);
+      error('Failed to load: %s: %j', redirects_file, e);
     } else {
-      warn('Failed to load: %s: %j', redirects_file);
+      warn('Failed to load: %s: %j', redirects_file, e);
     }
   }
   redirects = reverse_object(redirects);
@@ -108,13 +110,13 @@ const nuxeo_redirects = () => (files, metalsmith, done) => {
       file.url.shortlink = shortlinks[url_full][0];
     }
 
-    if (
+    const has_redirect =
       (file.confluence && file.confluence.shortlink) ||
       file.redirect ||
-      file.redirect_source
-    ) {
+      file.redirect_source;
+    if (has_redirect) {
       matches.push(filepath);
-      debug('Pushed: %s with: %s', filepath, file.redirect);
+      debug('Pushed: %s with: %s', filepath, has_redirect);
     }
   });
 
