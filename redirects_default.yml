@@ -192,6 +192,13 @@
 ^/studio/application-dependencies/?$: /studio/application-definition/
 ^/studio/nuxeo-online-services-portal-roadmap/?$: /studio/nuxeo-studio-roadmap/
 
+# NXDOC-521
+^/x/VoVH/?$: /nxdoc/next/explorer/
+^/nxdoc/next/using-the-java-api-server-side/?$: /nxdoc/next/howto-use-the-runtime-java-api/ 
+^/nxdoc/next/writing-a-bundle-manifest/?$: /nxdoc/next/howto-write-a-bundle-manifest/
+^/userdoc/next/nuxeo-platform-explorer/?$: /nxdoc/next/explorer/
+
+
 # NXDOC-1276
 ^/nxdoc/getting-started-with-the-nuxeo-platform/?$: /nxdoc/discover-nuxeo-platform-apis/
 ^/nxdoc/customizing-with-studio-modeler-and-designer/?$: /nxdoc/configure-nuxeo-platform/
