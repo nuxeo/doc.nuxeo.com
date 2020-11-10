@@ -1,5 +1,3 @@
-'use strict';
-/* eslint-env es6 */
 /* eslint no-console: 0 */
 
 require('dotenv').config();
@@ -16,6 +14,8 @@ if (!process.env.DEBUG) {
 
 // Debugging
 const { debug, info, error } = require('./modules/debugger')('nuxeo-build');
+
+debug('DEBUG', process.env.DEBUG);
 
 // npm packages
 const Promise = require('bluebird');
