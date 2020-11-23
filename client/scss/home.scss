@@ -32,6 +32,12 @@ a:hover img,
   color: $c-black;
 }
 
+.is-bg-black,
+.is-bg-black.button {
+  background-color: $c-black;
+  color: $c-white !important;
+}
+
 .is-bg-blue,
 .is-bg-blue.button {
   background-color: $c-blue;

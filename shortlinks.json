@@ -17270,5 +17270,134 @@
   ],
   "/nxdoc/next/nuxeo-sitecore-connector/": [
     "OFs"
+  ],
+  "/nxdoc/nuxeo-integration-guide/": [
+    "fIY"
+  ],
+  "/nxdoc/tracks/": [
+    "cKFI"
+  ],
+  "/nxdoc/use-cases/": [
+    "E2J"
+  ],
+  "/nxdoc/how-to-search-or-operator/": [
+    "_Ej"
+  ],
+  "/nxdoc/how-to-trigger-automation-dialog/": [
+    "JSo"
+  ],
+  "/nxdoc/web-ui-translations/": [
+    "LnY"
+  ],
+  "/nxdoc/nuxeo-sitecore-connector/": [
+    "ra-"
+  ],
+  "/nxdoc/nuxeo-aspera-release-notes/": [
+    "So0"
+  ],
+  "/nxdoc/nuxeo-aspera-upgrade-notes/": [
+    "nkJ"
+  ],
+  "/nxdoc/next/release-notes/": [
+    "sZq"
+  ],
+  "/nxdoc/next/how-to-trigger-automation-dialog/": [
+    "9w2"
+  ],
+  "/nxdoc/next/how-to-update-default-nuxeo-page/": [
+    "ILY"
+  ],
+  "/nxdoc/next/how-to-create-a-service/": [
+    "lxi"
+  ],
+  "/nxdoc/next/howto-use-the-runtime-java-api/": [
+    "lAN"
+  ],
+  "/nxdoc/next/howto-write-a-bundle-manifest/": [
+    "g5_"
+  ],
+  "/nxdoc/next/explorer/": [
+    "zrJ"
+  ],
+  "/nxdoc/next/nuxeo-aspera-release-notes/": [
+    "RdX"
+  ],
+  "/nxdoc/next/nuxeo-aspera-upgrade-notes/": [
+    "5S7"
+  ],
+  "/nuxeo-cloud/day-to-day/": [
+    "zAl"
+  ],
+  "/nuxeo-cloud/": [
+    "rzK"
+  ],
+  "/nuxeo-cloud/new-to-nuxeo-cloud/": [
+    "Ns4"
+  ],
+  "/nuxeo-cloud/nuxeo-cloud-addons/": [
+    "IxO"
+  ],
+  "/nuxeo-cloud/security/": [
+    "Ozo"
+  ],
+  "/nuxeo-cloud/start-developing/": [
+    "QJA"
+  ],
+  "/nuxeo-cloud/what-is-nuxeo-cloud/": [
+    "7pd"
+  ],
+  "/nuxeo-cloud/deployment/": [
+    "f0l"
+  ],
+  "/nuxeo-cloud/support/": [
+    "WzN"
+  ],
+  "/client-apps/444-nuxeo-drive-release-notes/": [
+    "N_k"
+  ],
+  "/corg/continuous-integration/": [
+    "BIh"
+  ],
+  "/studio/partner-certified-addons/": [
+    "0VY"
+  ],
+  "/studio/account-management/": [
+    "zUm"
+  ],
+  "/studio/best-practices/": [
+    "iYV"
+  ],
+  "/studio/locking-vs-permission-to-restrict-edit-access-to-a-document/": [
+    "zMw9"
+  ],
+  "/studio/several-document-types-vs-one-document-type-with-a-nature-metadata/": [
+    "ilg"
+  ],
+  "/studio/studio-updates-2020-07-08-09/": [
+    "Ui7"
+  ],
+  "/studio/workflow-tutorials/": [
+    "udn"
+  ],
+  "/studio/simple-workflow-example/": [
+    "7n9"
+  ],
+  "/studio/sub-workflow-example/": [
+    "Wrs"
+  ],
+  "/studio/workflow-escalation-rules-example/": [
+    "kMU"
+  ],
+  "/studio/1-creating-the-expense-document-type/": [
+    "sSp"
+  ],
+  "/studio/2-creating-the-subworkflows/": [
+    "sMp"
+  ],
+  "/studio/3-creating-the-main-workflow/": [
+    "PkN"
+  ],
+  "/studio/available-variables-in-email-templates/": [
+    "2ep"
   ]
 }
