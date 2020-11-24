@@ -38,7 +38,7 @@
     "foundation-sites": "^6.4.3",
     "gray-matter": "^4.0.2",
     "handlebars": "^4.1.1",
-    "highlight.js": "^9.15.9",
+    "highlight.js": "^10.1.2",
     "html-entities": "^1.2.1",
     "instantsearch.js": "^3.6.0",
     "joi": "^14.3.1",
