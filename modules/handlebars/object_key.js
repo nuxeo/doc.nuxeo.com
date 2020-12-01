@@ -1,6 +1,6 @@
 'use strict';
 
-var object_key = function(obj, key) {
+var object_key = function (obj, key) {
   return obj[key];
 };
 

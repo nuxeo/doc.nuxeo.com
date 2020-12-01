@@ -10,16 +10,10 @@ const path = require('path');
 
 // validation schema
 const schema = Joi.object().keys({
-  spaces: Joi.array()
-    .min(1)
-    .required(),
-  version_path: Joi.string()
-    .allow('')
-    .required(),
-  version_label: Joi.string()
-    .allow('')
-    .required(),
-  default_space: Joi.string().required()
+  spaces: Joi.array().min(1).required(),
+  version_path: Joi.string().allow('').required(),
+  version_label: Joi.string().allow('').required(),
+  default_space: Joi.string().required(),
 });
 
 /**
@@ -40,7 +34,7 @@ const schema = Joi.object().keys({
  *     full
  * }
  */
-const get_url_object = function(filepath, options) {
+const get_url_object = function (filepath, options) {
   if (typeof filepath !== 'string' || !filepath) {
     const error_message = 'Parameter filepath not a string or empty';
     error(`${error_message}: ${filepath}`);
@@ -56,7 +50,7 @@ const get_url_object = function(filepath, options) {
     spaces,
     version_path,
     version_label,
-    default_space
+    default_space,
   } = validation.value;
 
   const file_path_info = path.parse(filepath);
@@ -69,9 +63,9 @@ const get_url_object = function(filepath, options) {
       space: '',
       space_path: '',
       slug: '',
-      full: ''
+      full: '',
     },
-    original_filepath: filepath
+    original_filepath: filepath,
   };
 
   // Set the space path
@@ -90,7 +84,7 @@ const get_url_object = function(filepath, options) {
 
     // Get the space_name
     const config_space = spaces.find(
-      this_space => space === this_space.space_path
+      (this_space) => space === this_space.space_path
     );
     if (config_space && config_space.space_name) {
       url.key.space_name = config_space.space_name;
@@ -107,7 +101,7 @@ const get_url_object = function(filepath, options) {
   const slug = file_path_info.name;
 
   // Set full url path
-  const full_url_parts = parts.map(function(item) {
+  const full_url_parts = parts.map(function (item) {
     return item;
   });
 

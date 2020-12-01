@@ -7,11 +7,11 @@ const { warn } = require('../debugger')('handlebars-multiexcerpt');
 // npm packages
 const slug = require('slug');
 slug.defaults.modes.pretty.lower = true;
-const slug_map = function(str) {
+const slug_map = function (str) {
   return slug(str);
 };
 
-const multiexcerpt = function(name, options) {
+const multiexcerpt = function (name, options) {
   // space:page-name:name-of-multiexcerpt
   const key_arr = (options.hash &&
     options.hash.page &&

@@ -17,17 +17,14 @@ const Joi = require('joi');
 // local packages
 const url_mangle = require('../url_mangle');
 
-const get_hash = text =>
-  crypto
-    .createHash('sha256')
-    .update(text)
-    .digest('base64');
+const get_hash = (text) =>
+  crypto.createHash('sha256').update(text).digest('base64');
 
 // validation schema
 const schema = Joi.object().keys({
   pattern: Joi.alternatives()
     .try(Joi.string(), Joi.array().min(1))
-    .default('**/*.html')
+    .default('**/*.html'),
 });
 
 const maxByteLength = 15000;
@@ -39,7 +36,7 @@ const maxByteLength = 15000;
  *
  * @return {Function}
  **/
-const algolia_prep = options => (files, metalsmith, done) => {
+const algolia_prep = (options) => (files, metalsmith, done) => {
   debug('options', options);
   // Check options fits schema
   const validation = schema.validate(options);
@@ -59,17 +56,17 @@ const algolia_prep = options => (files, metalsmith, done) => {
       const algolia = (data && JSON.parse(data)) || {};
 
       multimatch(Object.keys(files), pattern)
-        .filter(filename => !files[filename].private)
-        .filter(filename => files[filename].algolia !== false)
-        .filter(filename => files[filename].title)
+        .filter((filename) => !files[filename].private)
+        .filter((filename) => files[filename].algolia !== false)
+        .filter((filename) => files[filename].title)
         .filter(
-          filename =>
+          (filename) =>
             files[filename] &&
             files[filename].url &&
             files[filename].url.key &&
             files[filename].url.key.full
         )
-        .forEach(filename => {
+        .forEach((filename) => {
           const file = files[filename];
           const description = file.description || file.excerpt || '';
 
@@ -131,14 +128,14 @@ const algolia_prep = options => (files, metalsmith, done) => {
               version_label: key.version_label,
               space: key.space,
               url,
-              content
+              content,
             };
           }
         });
 
       const json = JSON.stringify(algolia, null, 2);
 
-      fs.writeFile(algolia_file, json, err => {
+      fs.writeFile(algolia_file, json, (err) => {
         if (err) {
           return done(err);
         }

@@ -16,17 +16,17 @@ const schema = Joi.array().items(
     path: Joi.string().required(),
     list_key: Joi.string().required(),
     list_index_defaults: Joi.object().optional(),
-    defaults: Joi.object().optional()
+    defaults: Joi.object().optional(),
   })
 );
 
-const pages_from_list = function(options) {
+const pages_from_list = function (options) {
   debug('Options: %o', options);
-  return function(files, metalsmith, done) {
+  return function (files, metalsmith, done) {
     const metadata = metalsmith.metadata();
 
     // Check options fits schema
-    schema.validate(options, function(err, value) {
+    schema.validate(options, function (err, value) {
       /* eslint consistent-return: 0 */
       if (err) {
         error('Validation failed, %o', err.details[0].message);
@@ -36,7 +36,7 @@ const pages_from_list = function(options) {
       options = value;
     });
 
-    options.forEach(function(option) {
+    options.forEach(function (option) {
       // Expects an array or object.
       const keys =
         (metadata.lists &&
@@ -45,7 +45,7 @@ const pages_from_list = function(options) {
         (metadata.lists && Object.keys(metadata.lists[option.list_key])) ||
         [];
       if (keys) {
-        keys.forEach(function(item) {
+        keys.forEach(function (item) {
           // if index filepath is .../index/index.md to avoid conflicts
           const filename =
             item === 'index'

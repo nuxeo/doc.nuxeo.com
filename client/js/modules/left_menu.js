@@ -1,10 +1,10 @@
 'use strict';
 /* eslint-env browser */
 
-module.exports = function($) {
+module.exports = function ($) {
   var $side_menu = $('#side_menu');
 
-  $side_menu.find('.has-control > i').on('click', function() {
+  $side_menu.find('.has-control > i').on('click', function () {
     /* eslint no-invalid-this: 0 */
     var $this = $(this);
     var $parent = $this.parent();

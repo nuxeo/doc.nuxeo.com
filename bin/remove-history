@@ -1,4 +1,12 @@
 #!/usr/bin/env node
+
+require('dotenv').config();
+
+// Assume production if not set
+if (!process.env.NODE_ENV) {
+  process.env.NODE_ENV = 'production';
+}
+
 // Set debug level
 process.env.DEBUG = process.env.DEBUG || '*:error,*:info';
 
@@ -38,7 +46,7 @@ fs.stat(filepath, (err, stats) => {
     const data = matter.stringify(file.content, file.data);
     if (data) {
       debug('New file contents:\n', data);
-      fs.writeFile(filepath, data, err => {
+      fs.writeFile(filepath, data, (err) => {
         if (err) {
           error('File write failure', err);
           process.exit(1);

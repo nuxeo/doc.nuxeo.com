@@ -18,10 +18,10 @@ const spaces = [
   'glos',
   'nxdoc',
   'studio',
-  'userdoc'
+  'userdoc',
 ];
 
-test('site should have key files', assert => {
+test('site should have key files', (assert) => {
   const site_paths = [
     path.join(assets_path, 'fonts', 'fontawesome-webfont.ttf'),
     path.join(
@@ -38,16 +38,16 @@ test('site should have key files', assert => {
       site_path,
       'nx_assets',
       'a26bfade-2438-4d00-a5f3-676f719ed4a8-screenshot.png'
-    )
+    ),
   ];
   // Index of each of the spaces
-  spaces.forEach(space => {
+  spaces.forEach((space) => {
     site_paths.push(path.join(site_path, `${space}.json`));
     site_paths.push(path.join(site_path, space, 'index.html'));
     site_paths.push(path.join(site_path, space, 'label', 'index.html'));
   });
 
-  site_paths.forEach(filepath => {
+  site_paths.forEach((filepath) => {
     assert.doesNotThrow(() => {
       fs.accessSync(filepath, fs.F_OK);
     }, `${filepath} is present`);
@@ -56,13 +56,13 @@ test('site should have key files', assert => {
   assert.end();
 });
 
-test('canonical and robots metadata reference should be correct', assert => {
+test('canonical and robots metadata reference should be correct', (assert) => {
   const url_prefix = 'https://doc.nuxeo.com';
   const canonical_links = [
     {
       filepath: 'index.html',
       expected_url: '/',
-      noindex: false
+      noindex: false,
     },
     {
       filepath: path.join(
@@ -72,18 +72,18 @@ test('canonical and robots metadata reference should be correct', assert => {
         'index.html'
       ),
       expected_url: '/nxdoc/next/rest-api/',
-      noindex: true
+      noindex: true,
     },
     {
       filepath: path.join('nxdoc', 'rest-api', 'index.html'),
       expected_url: '/nxdoc/rest-api/',
-      noindex: false
+      noindex: false,
     },
     {
       filepath: path.join('corg', 'index.html'),
       expected_url: '/corg/',
-      noindex: false
-    }
+      noindex: false,
+    },
   ];
 
   canonical_links.forEach(({ filepath, expected_url, noindex }) => {

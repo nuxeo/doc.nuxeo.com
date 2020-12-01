@@ -5,7 +5,7 @@ const test = require('tap').test;
 
 const get_placeholder_string = require('../modules/get_placeholder_string');
 
-test('get_placeholder_string is a function', assert => {
+test('get_placeholder_string is a function', (assert) => {
   // Get typeof string
   const expected =
     get_placeholder_string && {}.toString.call(get_placeholder_string);
@@ -18,66 +18,66 @@ test('get_placeholder_string is a function', assert => {
   assert.end();
 });
 
-test('get_placeholder_string returns values as expected', assert => {
+test('get_placeholder_string returns values as expected', (assert) => {
   const string_tests = [
     {
       test: {
-        name: 'useless'
+        name: 'useless',
       },
       expected: '',
-      message: 'returns empty string when no relevant parts passed'
+      message: 'returns empty string when no relevant parts passed',
     },
     {
       test: {
         name: 'useless',
-        page: 'install'
+        page: 'install',
       },
       expected: 'install',
-      message: 'returns correct name with page'
+      message: 'returns correct name with page',
     },
     {
       test: {
         name: 'useless',
         space: 'nxdoc',
-        page: 'install'
+        page: 'install',
       },
       expected: 'nxdoc/install',
-      message: 'returns correct name space, and page'
+      message: 'returns correct name space, and page',
     },
     {
       test: {
         name: 'useless',
         version: '60',
         space: 'nxdoc',
-        page: 'install'
+        page: 'install',
       },
       expected: '60/nxdoc/install',
-      message: 'returns correct name, version, space, and page'
+      message: 'returns correct name, version, space, and page',
     },
     {
       test: {
-        page: 'install'
+        page: 'install',
       },
       expected: 'install',
-      message: 'returns correct page'
+      message: 'returns correct page',
     },
     {
       test: {
-        page: 'nxdoc/install'
+        page: 'nxdoc/install',
       },
       expected: 'nxdoc/install',
-      message: 'returns correct space, and page'
+      message: 'returns correct space, and page',
     },
     {
       test: {
-        page: '1010/nxdoc/install'
+        page: '1010/nxdoc/install',
       },
       expected: '1010/nxdoc/install',
-      message: 'returns correct version, space, and page'
-    }
+      message: 'returns correct version, space, and page',
+    },
   ];
 
-  string_tests.forEach(string_test => {
+  string_tests.forEach((string_test) => {
     const actual = get_placeholder_string(string_test.test);
     assert.isEquivalent(actual, string_test.expected, string_test.message);
   });

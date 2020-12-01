@@ -14,9 +14,9 @@ const handlebars = require('handlebars');
 const readPartials = require('../read_partials');
 const templates = {};
 
-const get_template = template_name => {
+const get_template = (template_name) => {
   if (!templates[template_name]) {
-    return fs.readFileAsync(template_name, 'utf8').then(template => {
+    return fs.readFileAsync(template_name, 'utf8').then((template) => {
       templates[template_name] = handlebars.compile(template);
       return templates[template_name];
     });
@@ -37,7 +37,7 @@ const settings = [
   'partials',
   'partialExtension',
   'pattern',
-  'rename'
+  'rename',
 ];
 
 /**
@@ -53,7 +53,7 @@ const settings = [
  *
  * @return {Function}
  */
-const handlebars_layouts = options => {
+const handlebars_layouts = (options) => {
   // Init
   options = options || {};
 
@@ -83,8 +83,8 @@ const handlebars_layouts = options => {
 
     const meta = extend({}, metadata);
 
-    const contents_are_utf8 = filename => is_utf8(files[filename].contents);
-    const has_layout = filename => files[filename].layout || def;
+    const contents_are_utf8 = (filename) => is_utf8(files[filename].contents);
+    const has_layout = (filename) => files[filename].layout || def;
 
     /**
      * Process any partials and pass them to consolidate as a partials object
@@ -101,13 +101,13 @@ const handlebars_layouts = options => {
         params.partials = partials;
       }
     }
-    Object.keys(params.partials).forEach(partial =>
+    Object.keys(params.partials).forEach((partial) =>
       handlebars.registerPartial(
         partial,
         fs.readFileSync(metalsmith.path(params.partials[partial]), 'utf8')
       )
     );
-    Object.keys(params.helpers).forEach(helper =>
+    Object.keys(params.helpers).forEach((helper) =>
       handlebars.registerHelper(helper, params.helpers[helper])
     );
 
@@ -123,7 +123,7 @@ const handlebars_layouts = options => {
      *
      * @return {void}
      */
-    const convert = file => {
+    const convert = (file) => {
       debug('converting file: %s', file);
 
       // Rename file if necessary
@@ -143,7 +143,7 @@ const handlebars_layouts = options => {
       const template_name = metalsmith.path(dir, data.layout || def);
       debug(`template_name: ${template_name}`);
 
-      return get_template(template_name).then(template => {
+      return get_template(template_name).then((template) => {
         debug(`handlebars compile - Start:  ${file}`);
         data.contents = Buffer.from(template(clone), 'utf8');
         debug(`handlebars compile - Finish: ${file}`);

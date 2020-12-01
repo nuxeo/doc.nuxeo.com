@@ -18,7 +18,7 @@ const schema = Joi.object().keys({
   file_pattern: Joi.array()
     .items(Joi.string())
     .optional()
-    .default(['**/*.md', '**/*.html'])
+    .default(['**/*.md', '**/*.html']),
 });
 
 /**
@@ -27,11 +27,11 @@ const schema = Joi.object().keys({
  * @param {Object} options
  * @return {Function}
  **/
-const set_section = function(options) {
+const set_section = function (options) {
   debug('Options: %o', options);
-  return function(files, metalsmith, done) {
-    const for_visible_pages = filepath => !files[filepath].hidden;
-    const for_space_path = filepath =>
+  return function (files, metalsmith, done) {
+    const for_visible_pages = (filepath) => !files[filepath].hidden;
+    const for_space_path = (filepath) =>
       files[filepath].url &&
       files[filepath].url.key &&
       files[filepath].url.key.space_path;
@@ -49,7 +49,7 @@ const set_section = function(options) {
     multimatch(Object.keys(files), options.file_pattern)
       .filter(for_visible_pages)
       .filter(for_space_path)
-      .forEach(filepath => {
+      .forEach((filepath) => {
         const file = files[filepath];
         const space_path = file.url.key.space_path;
 
@@ -64,7 +64,7 @@ const set_section = function(options) {
         } else {
           const root = (trees[space_path] =
             trees[space_path] || tree.parse(metadata.hierarchies[space_path]));
-          let node = root.first(function(item) {
+          let node = root.first(function (item) {
             return item.model.slug === file.slug;
           });
 

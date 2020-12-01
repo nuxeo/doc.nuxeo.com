@@ -4,7 +4,7 @@ const { debug } = require('./debugger')('get-unique-hash');
 const crypto = require('crypto');
 const flatten = require('lodash.flatten');
 
-const get_hash = text =>
+const get_hash = (text) =>
   crypto
     .createHash('sha256')
     .update(text)
@@ -12,10 +12,10 @@ const get_hash = text =>
     .replace(/\+/g, '-')
     .replace(/\//g, '_');
 
-const get_unique_hash = hash_reference => filepath => {
+const get_unique_hash = (hash_reference) => (filepath) => {
   const hash = get_hash(filepath);
   const shortlink_values = flatten(
-    Object.keys(hash_reference).map(key => hash_reference[key])
+    Object.keys(hash_reference).map((key) => hash_reference[key])
   );
   const len_max = 16;
   let len = 3;

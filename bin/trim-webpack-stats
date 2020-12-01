@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-'use strict';
 
 const path = require('path');
 
@@ -9,7 +8,9 @@ if (!process.argv[2]) {
 const [, , stats_path] = process.argv;
 
 // Work out absolute path
-const stats_filepath = path.isAbsolute(stats_path) ? stats_path : path.join(process.cwd(), stats_path);
+const stats_filepath = path.isAbsolute(stats_path)
+  ? stats_path
+  : path.join(process.cwd(), stats_path);
 
 const { errors, assetsByChunkName, publicPath } = require(stats_filepath);
 

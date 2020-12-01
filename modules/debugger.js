@@ -9,7 +9,7 @@ const logToFile = !!level;
 const logBase = path.join(__dirname, '..', 'logs');
 const levels = ['debug', 'info', 'warn', 'error'];
 
-const debugLog = name => {
+const debugLog = (name) => {
   let logs;
   if (logToFile) {
     mkdirp(logBase);

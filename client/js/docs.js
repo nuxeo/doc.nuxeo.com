@@ -2,7 +2,7 @@
 /* eslint-env browser */
 /* global $ */
 
-$(document).ready(function() {
+$(document).ready(function () {
   require('./modules/polyfills');
   var menu = require('./modules/left_menu');
   var menu_filter = require('./modules/left_menu_filter');
@@ -49,9 +49,9 @@ $(document).ready(function() {
   require('./modules/prodpad');
 });
 
-$(window).on('load', function() {
+$(window).on('load', function () {
   // Element supports attribute
-  var testAttribute = function(element, attribute) {
+  var testAttribute = function (element, attribute) {
     var test = document.createElement(element);
     return !!(attribute in test);
   };

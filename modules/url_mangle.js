@@ -1,4 +1,4 @@
-module.exports = filepath => {
+module.exports = (filepath) => {
   const index = 'index';
   let newPath = filepath;
 

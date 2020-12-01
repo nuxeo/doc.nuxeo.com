@@ -25,7 +25,7 @@ if ($toc.length) {
   // On magellan (scroll-spy) change ensure current item is visible.
   $toc_list.on(
     'update.zf.magellan',
-    debounce(function() {
+    debounce(function () {
       var $active_li = $toc_list.find('.is-active').closest('li');
       if ($active_li.length) {
         var active_position = $active_li.position().top;
@@ -39,7 +39,7 @@ if ($toc.length) {
             var found_active = false;
             var all_found = false;
             // Find closest h2 and children of active
-            $lis.each(function() {
+            $lis.each(function () {
               /* eslint no-invalid-this: 0 */
               var $this = $(this);
               var is_h2 = $this.hasClass('h2');
@@ -75,7 +75,7 @@ if ($toc.length) {
           }
 
           if (can_scroll_list) {
-            setTimeout(function() {
+            setTimeout(function () {
               $side_menu_container.stop(true);
               // Total height of list within scroll area
               // var list_height = $toc_list[0].scrollHeight;
@@ -93,7 +93,7 @@ if ($toc.length) {
               // console.log('list_position:', position);
               $side_menu_container.animate(
                 {
-                  scrollTop: position
+                  scrollTop: position,
                 },
                 slide_speed
               );
@@ -105,11 +105,11 @@ if ($toc.length) {
   );
 
   // Cancel scrolling upon hover
-  $side_menu_container.on('mouseenter', function() {
+  $side_menu_container.on('mouseenter', function () {
     $side_menu_container.stop(true);
     can_scroll_list = false;
   });
-  $side_menu_container.on('mouseleave', function() {
+  $side_menu_container.on('mouseleave', function () {
     can_scroll_list = true;
   });
 }

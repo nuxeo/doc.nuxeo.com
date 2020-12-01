@@ -17,7 +17,7 @@ const clone_deep = require('lodash.clonedeep');
  *
  * @returns {Mixed}
  */
-const hb_moment = function(context, block) {
+const hb_moment = function (context, block) {
   // debug('Date passed to moment:', context);
   if (context && context.hash) {
     block = clone_deep(context);
@@ -25,7 +25,7 @@ const hb_moment = function(context, block) {
   }
   const input_format = block.hash.input_format || [
     'YYYY-MM-DD HH:mm',
-    'YYYY-MM-DD'
+    'YYYY-MM-DD',
   ];
   debug('Date passed to moment: %s, input_format: %o', context, input_format);
   delete block.hash.input_format;
@@ -38,7 +38,7 @@ const hb_moment = function(context, block) {
   // Reset the language back to default before doing anything else
   date.locale('en');
 
-  Object.keys(block.hash).forEach(i => {
+  Object.keys(block.hash).forEach((i) => {
     if (is_output_function.indexOf(i) !== -1) {
       output_function_name = i;
       output_function_paramater = block.hash[i];

@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-'use strict';
+
+require('dotenv').config();
 
 // Assume production if not set
 if (!process.env.NODE_ENV) {
@@ -52,7 +53,7 @@ if (local_data && algolia_key) {
       const browser = index.browseAll('', { attributesToRetrieve: ['hash'] });
       let hits = [];
 
-      browser.on('result', content => {
+      browser.on('result', (content) => {
         hits = hits.concat(content.hits);
       });
 
@@ -62,12 +63,12 @@ if (local_data && algolia_key) {
         resolve(hits);
       });
 
-      browser.on('error', err => {
+      browser.on('error', (err) => {
         reject(err);
       });
     });
 
-  const processChanges = algoliaValues => {
+  const processChanges = (algoliaValues) => {
     const algoliaIDs = algoliaValues.map(({ objectID }) => objectID);
 
     // Default with missing entries
@@ -97,13 +98,13 @@ if (local_data && algolia_key) {
     return Promise.resolve({ updateIDs, deleteIDs });
   };
 
-  const deleteObjects = entryLists => {
+  const deleteObjects = (entryLists) => {
     const { deleteIDs } = entryLists;
     if (deleteIDs && deleteIDs.length) {
       return new Promise((resolve, reject) => {
         info('Objects being removed:', deleteIDs.length);
         debug('deleteIDs', deleteIDs);
-        index.deleteObjects(deleteIDs, err => {
+        index.deleteObjects(deleteIDs, (err) => {
           if (err) {
             reject(`error while removing objects: ${err}`);
           } else {
@@ -116,15 +117,15 @@ if (local_data && algolia_key) {
     }
   };
 
-  const updateObjects = entryLists => {
+  const updateObjects = (entryLists) => {
     const { updateIDs } = entryLists;
     if (updateIDs && updateIDs.length) {
       const updateEntries = chunk(updateIDs, batchSize).map(
-        updateIDsBatch =>
+        (updateIDsBatch) =>
           new Promise((resolve, reject) => {
             info('Objects being added/amended:', updateIDs.length);
             debug('updateIDs', updateIDsBatch);
-            index.partialUpdateObjects(updateIDsBatch, err => {
+            index.partialUpdateObjects(updateIDsBatch, (err) => {
               if (err) {
                 reject(`error while updating objects: ${err}`);
               } else {
@@ -144,7 +145,7 @@ if (local_data && algolia_key) {
     .then(processChanges)
     .then(deleteObjects)
     .then(updateObjects)
-    .catch(err => {
+    .catch((err) => {
       error(err);
       process.exit(1);
     });

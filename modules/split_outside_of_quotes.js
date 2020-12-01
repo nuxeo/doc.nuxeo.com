@@ -3,7 +3,7 @@
 
 const debug = require('debug')('split_outside_of_quotes');
 
-module.exports = str => {
+module.exports = (str) => {
   const quote_stack = [];
   const is_quote = /["']/;
   const is_space = /\s/;

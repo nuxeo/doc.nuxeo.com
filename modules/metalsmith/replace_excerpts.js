@@ -20,13 +20,13 @@ const get_placeholder_string = require('../get_placeholder_string');
  * @param {Object} options
  * @return {Function}
  **/
-const replace_placeholder = function(options) {
+const replace_placeholder = function (options) {
   debug('Options: %o', options);
-  return function(files, metalsmith, done) {
+  return function (files, metalsmith, done) {
     const metadata = metalsmith.metadata();
     const placeholder_re = /\{\{\{?excerpt +([^}]+)\}\}\}?/i;
 
-    Object.keys(files).forEach(function(filepath) {
+    Object.keys(files).forEach(function (filepath) {
       const file = files[filepath];
 
       let changed = false;

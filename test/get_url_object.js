@@ -6,7 +6,7 @@ const extend = require('lodash.assign');
 
 const get_url_object = require('../modules/get_url_object');
 
-test('get_url_object is a function', assert => {
+test('get_url_object is a function', (assert) => {
   // Get typeof string
   const expected = get_url_object && {}.toString.call(get_url_object);
 
@@ -16,25 +16,25 @@ test('get_url_object is a function', assert => {
 
 // TODO: Test void 0 and '' filepath
 
-test('get_url_object returns values as expected', assert => {
+test('get_url_object returns values as expected', (assert) => {
   const options = {
     spaces: [
       {
         space_path: 'nxdoc',
-        space_name: 'Developer Documentation Center'
+        space_name: 'Developer Documentation Center',
       },
       {
         space_path: 'userdoc',
-        space_name: 'Nuxeo Platform User Documentation'
+        space_name: 'Nuxeo Platform User Documentation',
       },
       {
         space_path: 'admindoc',
-        space_name: 'Nuxeo Installation and Administration'
-      }
+        space_name: 'Nuxeo Installation and Administration',
+      },
     ],
     version_path: '',
     version_label: 'FT',
-    default_space: 'main'
+    default_space: 'main',
   };
 
   const string_tests = [
@@ -50,9 +50,9 @@ test('get_url_object returns values as expected', assert => {
           slug: 'index',
           space: 'main',
           space_path: '',
-          version: ''
-        }
-      }
+          version: '',
+        },
+      },
     },
     {
       test: 'main-page.md',
@@ -65,9 +65,9 @@ test('get_url_object returns values as expected', assert => {
           slug: 'main-page',
           space: 'main',
           space_path: '',
-          version: ''
-        }
-      }
+          version: '',
+        },
+      },
     },
     {
       test: 'nxdoc/index.md',
@@ -82,9 +82,9 @@ test('get_url_object returns values as expected', assert => {
           space: 'nxdoc',
           space_name: 'Developer Documentation Center',
           space_path: 'nxdoc',
-          version: ''
-        }
-      }
+          version: '',
+        },
+      },
     },
     {
       test: 'nxdoc/client-sdks.md',
@@ -98,9 +98,9 @@ test('get_url_object returns values as expected', assert => {
           space: 'nxdoc',
           space_name: 'Developer Documentation Center',
           space_path: 'nxdoc',
-          version: ''
-        }
-      }
+          version: '',
+        },
+      },
     },
     {
       test: 'nxdoc/tutorials/pages/acls.md',
@@ -114,9 +114,9 @@ test('get_url_object returns values as expected', assert => {
           space: 'nxdoc',
           space_name: 'Developer Documentation Center',
           space_path: 'nxdoc',
-          version: ''
-        }
-      }
+          version: '',
+        },
+      },
     },
     {
       /* eslint no-invalid-this: 0 */
@@ -133,17 +133,17 @@ test('get_url_object returns values as expected', assert => {
           space_name: 'Developer Documentation Center',
           space_path: 'nxdoc/710',
           version: '710',
-          version_label: 'LTS 2015'
-        }
+          version_label: 'LTS 2015',
+        },
       },
       options: extend({}, options, {
         version_path: '710',
-        version_label: 'LTS 2015'
-      })
-    }
+        version_label: 'LTS 2015',
+      }),
+    },
   ];
 
-  string_tests.forEach(string_test => {
+  string_tests.forEach((string_test) => {
     const actual = get_url_object(
       string_test.test,
       string_test.options || options

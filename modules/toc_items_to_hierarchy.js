@@ -4,11 +4,11 @@
 // Debugging
 const { debug, error } = require('./debugger')('toc-items-to-hierarchy');
 
-const toc_items_to_hierarchy = function(items, filename = '') {
+const toc_items_to_hierarchy = function (items, filename = '') {
   const children = [];
   let parents = [];
   debug(`filename: ${filename}, items`, items);
-  items.forEach(item => {
+  items.forEach((item) => {
     const { id, title } = item;
     const level = item.level - 1;
     const parent_id = parents.length - 1;
@@ -17,9 +17,9 @@ const toc_items_to_hierarchy = function(items, filename = '') {
       level,
       name: title,
       url: {
-        full: `#${id}`
+        full: `#${id}`,
       },
-      toc: true
+      toc: true,
     };
 
     debug(`id: ${id}, level: ${level}, parents`, parents);

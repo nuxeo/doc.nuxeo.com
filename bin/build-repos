@@ -1,12 +1,18 @@
 #!/usr/bin/env node
-'use strict';
+
+require('dotenv').config();
+
+// Assume production if not set
+if (!process.env.NODE_ENV) {
+  process.env.NODE_ENV = 'production';
+}
 
 const path = require('path');
 const yaml_config = require('node-yaml-config');
 
 const config = yaml_config.load(path.join(__dirname, '..', 'config.yml'));
 
-Object.keys(config.repositories).forEach(repo_id => {
+Object.keys(config.repositories).forEach((repo_id) => {
   const repo = config.repositories[repo_id];
 
   /* eslint no-console: 0 */

@@ -7,17 +7,17 @@ const replace_between = require('./replace_between');
 const link_types = [
   {
     file_re: /\{\{ *file ([^}]+)\}\}/g,
-    label: 'file'
+    label: 'file',
   },
   {
     file_re: /\{\{ *page ([^}]+)\}\}/g,
-    label: 'page'
-  }
+    label: 'page',
+  },
 ];
 const param_re = / *([^=]+)=["'](.+?)["']/g;
 
-const add_link_context = function(content, context) {
-  const add_context_to_params = function(params) {
+const add_link_context = function (content, context) {
+  const add_context_to_params = function (params) {
     const { page, space, version } = params;
     if (!page) {
       params.page = context.slug;
@@ -32,7 +32,7 @@ const add_link_context = function(content, context) {
   };
 
   if (content) {
-    link_types.forEach(function({ file_re, label }) {
+    link_types.forEach(function ({ file_re, label }) {
       let match;
       // Get file definitions
       while ((match = file_re.exec(content)) !== null) {
@@ -40,7 +40,7 @@ const add_link_context = function(content, context) {
           full_match: match[0],
           params_raw: match[1],
           match_start: match.index,
-          match_end: file_re.lastIndex
+          match_end: file_re.lastIndex,
         };
         let params = {};
         let param_match;
@@ -52,7 +52,7 @@ const add_link_context = function(content, context) {
         // Only add params if it's in the short form
         if (!~params.page.indexOf(':') && !~params.page.indexOf('/')) {
           const params_text = Object.keys(params)
-            .map(field => `${field}=${quote(params[field], "'")}`)
+            .map((field) => `${field}=${quote(params[field], "'")}`)
             .join(' ');
 
           const new_link = `{{${label} ${params_text}}}`;

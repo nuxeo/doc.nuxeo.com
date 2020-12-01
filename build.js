@@ -9,13 +9,14 @@ if (!process.env.NODE_ENV) {
 
 // Set Debugging up
 if (!process.env.DEBUG) {
-  process.env.DEBUG = '*:info,*:error,*:time';
+  process.env.DEBUG = '*:info,*:warn,*:error,*:time';
 }
 
 // Debugging
 const { debug, info, error } = require('./modules/debugger')('nuxeo-build');
 
 debug('DEBUG', process.env.DEBUG);
+info('NODE_ENV', process.env.NODE_ENV);
 
 // npm packages
 const Promise = require('bluebird');
@@ -36,7 +37,7 @@ const source_path = process.argv[4].replace(/(^"|"$)/g, '');
 const target_path = process.argv[5].replace(/(^"|"$)/g, '');
 debug({ repo_id, branch, source_path, target_path });
 
-co(function*() {
+co(function* () {
   console.time('Build');
   info('Starting Build: %s - %s', repo_id, branch);
 
@@ -51,11 +52,11 @@ co(function*() {
   yield builder(source_path, metadata, target_path, {
     repo_id,
     repo_path,
-    branch
+    branch,
   });
 
   console.timeEnd('Build');
-}).catch(function(err) {
+}).catch(function (err) {
   error(err);
   throw err;
 });

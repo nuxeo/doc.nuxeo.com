@@ -16,23 +16,23 @@ const toc_headers = () => {
   return (files, metalsmith, done) => {
     // Get filepaths for files with toc only
     const filepaths = Object.keys(files).filter(
-      filepath => files[filepath].toc
+      (filepath) => files[filepath].toc
     );
 
-    const get_files = filepath => {
+    const get_files = (filepath) => {
       debug(`Processing: ${filepath}`);
       const file = files[filepath];
 
       file.toc_items = [];
 
       const $ = cheerio.load(file.contents.toString(), {
-        decodeEntities: false
+        decodeEntities: false,
       });
 
       // Make ids unique
       const ids = {};
       let has_duplicate = false;
-      $('*[id]').each(function() {
+      $('*[id]').each(function () {
         /* eslint no-invalid-this: 0 */
         const $this = $(this);
         const id = $this.attr('id');
@@ -57,7 +57,7 @@ const toc_headers = () => {
       const $titles = $(titles.join(','));
 
       // function definition for `this`
-      $titles.each(function() {
+      $titles.each(function () {
         /* eslint no-invalid-this: 0 */
         const $this = $(this);
 

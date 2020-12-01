@@ -1,7 +1,7 @@
 // Debugging
 const { debug, error } = require('../debugger')('metalsmith-webpack-assets');
 
-const webpack_assets = options => (files, metalsmith, done) => {
+const webpack_assets = (options) => (files, metalsmith, done) => {
   const metadata = metalsmith.metadata();
   const stats_filepath = metalsmith.path(options.stats_file);
 
@@ -12,7 +12,7 @@ const webpack_assets = options => (files, metalsmith, done) => {
 
   /* istanbul ignore else: Not needed for testing */
   if (stats.assetsByChunkName) {
-    Object.keys(stats.assetsByChunkName).forEach(function(asset) {
+    Object.keys(stats.assetsByChunkName).forEach(function (asset) {
       metadata.js[asset] = stats.publicPath + stats.assetsByChunkName[asset];
       debug('Name: %s; Path: %s', asset, metadata.js[asset]);
     });

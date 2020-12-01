@@ -11,7 +11,7 @@ const key_to_url = require('../key_to_url');
 
 let meta_pages_log = !!process.env.META_PAGES_LOG;
 
-const page_url = options => {
+const page_url = (options) => {
   const file = options.data.root;
   const defaults = file && file.url && file.url.key;
   options.hash = options.hash || {};
@@ -25,7 +25,7 @@ const page_url = options => {
     const page_json_file = `./logs/pages-${moment().format('HH-mm-ss')}.json`;
     const json = JSON.stringify(file.pages, null, 2);
 
-    fs.writeFile(page_json_file, json, err => {
+    fs.writeFile(page_json_file, json, (err) => {
       if (err) {
         error('Could NOT write ', page_json_file);
       }

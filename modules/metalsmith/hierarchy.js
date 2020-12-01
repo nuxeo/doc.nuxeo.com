@@ -17,27 +17,19 @@ const schema = Joi.object().keys({
     .items(
       Joi.object().keys({
         label: Joi.string().required(),
-        is_current_version: Joi.bool()
-          .optional()
-          .default(false),
-        url_path: Joi.string()
-          .optional()
-          .default(''),
-        menu_separator: Joi.bool()
-          .optional()
-          .default(false)
+        is_current_version: Joi.bool().optional().default(false),
+        url_path: Joi.string().optional().default(''),
+        menu_separator: Joi.bool().optional().default(false),
       })
     ),
-  flatten: Joi.bool()
-    .optional()
-    .default(true),
+  flatten: Joi.bool().optional().default(true),
   file_pattern: Joi.array()
     .items(Joi.string())
     .optional()
-    .default(['*.md', '*.html', '**/*.md', '**/*.html'])
+    .default(['*.md', '*.html', '**/*.md', '**/*.html']),
 });
 
-const hierarchy = options => (files, metalsmith, done) => {
+const hierarchy = (options) => (files, metalsmith, done) => {
   debug('Options: %o', options);
 
   // Check options fits schema
@@ -53,7 +45,7 @@ const hierarchy = options => (files, metalsmith, done) => {
   const hierarchies = metadata.hierarchies;
 
   // Add hierarchy to files and flatten
-  Object.keys(files).forEach(function(filepath) {
+  Object.keys(files).forEach(function (filepath) {
     const file = files[filepath];
     const space_path = file.url.key.space_path;
     file.hierarchy = file.hierarchy || {};
@@ -65,7 +57,7 @@ const hierarchy = options => (files, metalsmith, done) => {
         const root = (trees[space_path] =
           trees[space_path] || tree.parse(hierarchies[space_path]));
 
-        let node = root.first(item => item.model.slug === file.slug);
+        let node = root.first((item) => item.model.slug === file.slug);
         if (!node) {
           error(`Missing hierarchy item for file:  ${filepath}`);
           error(`file.slug: ${file.slug}`);
@@ -87,7 +79,7 @@ const hierarchy = options => (files, metalsmith, done) => {
         for (let i = 0; i < node_path.length - 1; i++) {
           file.hierarchy.parents.push({
             url: node_path[i].model.url.full,
-            name: node_path[i].model.name
+            name: node_path[i].model.name,
           });
           // error('Node Element: %o', node_path[i].model.id);
         }
@@ -113,7 +105,7 @@ const hierarchy = options => (files, metalsmith, done) => {
         for (let i = 0; i < node.children.length; i++) {
           file.hierarchy.children.push({
             url: node.children[i].model.url.full,
-            name: node.children[i].model.name
+            name: node.children[i].model.name,
           });
         }
         // Add siblings
@@ -126,7 +118,7 @@ const hierarchy = options => (files, metalsmith, done) => {
             if (node.children[i].model.slug !== file.slug) {
               file.hierarchy.siblings.push({
                 url: node.children[i].model.url.full,
-                name: node.children[i].model.name
+                name: node.children[i].model.name,
               });
             } else {
               found_myself = true;
@@ -172,9 +164,9 @@ const hierarchy = options => (files, metalsmith, done) => {
   });
 
   // JSON files for space hierarchies
-  Object.keys(hierarchies).forEach(function(space) {
+  Object.keys(hierarchies).forEach(function (space) {
     files[space + '.json'] = {
-      contents: Buffer.from(JSON.stringify(hierarchies[space]), 'utf8')
+      contents: Buffer.from(JSON.stringify(hierarchies[space]), 'utf8'),
     };
   });
 

@@ -5,36 +5,34 @@ var Clipboard = require('clipboard');
 
 var permalink_selector = '#content_container .heading-group .get_permalink';
 var $permalink = $(permalink_selector);
-var showTooltip = function(elem, msg) {
+var showTooltip = function (elem, msg) {
   elem.setAttribute('class', 'get_permalink tooltipped tooltipped-sw');
   elem.setAttribute('aria-label', msg);
 };
 
-var fallbackMessage = function() {
+var fallbackMessage = function () {
   var actionMsg = 'Manually copy from URL';
   return actionMsg;
 };
 
 var clipboardSnippets = new Clipboard(permalink_selector, {
-  text: function(trigger) {
+  text: function (trigger) {
     return window.location.origin + trigger.getAttribute('href');
-  }
+  },
 });
-clipboardSnippets.on('success', function(e) {
+clipboardSnippets.on('success', function (e) {
   showTooltip(e.trigger, 'Copied');
 });
-clipboardSnippets.on('error', function(e) {
+clipboardSnippets.on('error', function (e) {
   showTooltip(e.trigger, fallbackMessage(e.action));
 });
 
 $permalink
-  .on('click', function(e) {
+  .on('click', function (e) {
     e.preventDefault();
     history.pushState('permalink', document.title, $permalink.attr('href'));
   })
-  .on('mouseleave', function() {
+  .on('mouseleave', function () {
     /* eslint no-invalid-this: 0 */
-    $(this)
-      .removeClass('tooltipped tooltipped-sw')
-      .removeAttr('aria-label');
+    $(this).removeClass('tooltipped tooltipped-sw').removeAttr('aria-label');
   });

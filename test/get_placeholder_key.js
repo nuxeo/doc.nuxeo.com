@@ -5,7 +5,7 @@ const test = require('tap').test;
 
 const get_placeholder_key = require('../modules/get_placeholder_key');
 
-test('get_placeholder_key is a function', assert => {
+test('get_placeholder_key is a function', (assert) => {
   // Get typeof string
   const expected = get_placeholder_key && {}.toString.call(get_placeholder_key);
 
@@ -17,91 +17,91 @@ test('get_placeholder_key is a function', assert => {
   assert.end();
 });
 
-test('get_placeholder_key returns values as expected', assert => {
+test('get_placeholder_key returns values as expected', (assert) => {
   const fallback_values = {
     version: '',
     space: 'nxdoc',
     space_path: 'nxdoc',
     slug: 'authentication-and-user-management',
     parts: ['nxdoc', 'authentication-and-user-management'],
-    full: 'nxdoc/authentication-and-user-management'
+    full: 'nxdoc/authentication-and-user-management',
   };
 
   const string_tests = [
     {
       test: void 0,
       expected: 'nxdoc/authentication-and-user-management',
-      message: 'returns default when not a string'
+      message: 'returns default when not a string',
     },
     {
       test: '',
       expected: 'nxdoc/authentication-and-user-management',
-      message: 'returns default when empty'
+      message: 'returns default when empty',
     },
     {
       test: 'USERDOC:Nuxeo Diff',
       expected: 'userdoc/nuxeo-diff',
-      message: 'returns correct space'
+      message: 'returns correct space',
     },
     {
       test: 'SAML 2.0 Authentication',
       expected: 'nxdoc/saml-20-authentication',
-      message: 'returns current space key'
+      message: 'returns current space key',
     },
     {
       test: 'editing-content',
       expected: 'nxdoc/editing-content',
-      message: 'returns current space key'
+      message: 'returns current space key',
     },
     {
       test: 'USERDOC70:Nuxeo CSV',
       expected: 'userdoc/70/nuxeo-csv',
-      message: 'returns version prefixed value'
+      message: 'returns version prefixed value',
     },
     {
       test: '70/USERDOC/Nuxeo CSV',
       expected: 'userdoc/70/nuxeo-csv',
-      message: 'returns normalised version key'
+      message: 'returns normalised version key',
     },
     {
       test: '70/USERDOC/nuxeo-csv',
       expected: 'userdoc/70/nuxeo-csv',
-      message: 'returns version key'
+      message: 'returns version key',
     },
     {
       test: 'userdoc/70/nuxeo-csv',
       expected: 'userdoc/70/nuxeo-csv',
-      message: 'returns version key from new format'
+      message: 'returns version key from new format',
     },
     {
       test: 'java-client/2.3/authentication',
       expected: 'java-client/2.3/authentication',
-      message: 'returns version key from new format'
+      message: 'returns version key from new format',
     },
     {
       test: 'Implementing Documentation+Items',
       expected: 'nxdoc/implementing-documentation-items',
-      message: 'Correctly converts spaces and + to -'
+      message: 'Correctly converts spaces and + to -',
     },
     {
       test: 'FAIL:KEY:Admin Config',
       expected: '',
-      message: 'returns empty string when badly formed'
+      message: 'returns empty string when badly formed',
     },
     {
       test: 'index',
       expected: 'nxdoc/index',
-      message: 'returns space index'
+      message: 'returns space index',
     },
     {
       test: 'userdoc/index',
       expected: 'userdoc/index',
-      message: 'returns space index'
+      message: 'returns space index',
     },
     {
       test: '/userdoc/index',
       expected: 'userdoc/index',
-      message: 'returns space index with / prefix'
+      message: 'returns space index with / prefix',
     },
     {
       test: 'index',
@@ -113,8 +113,8 @@ test('get_placeholder_key returns values as expected', assert => {
         space_path: '',
         slug: 'index',
         parts: ['index'],
-        full: 'index'
-      }
+        full: 'index',
+      },
     },
     {
       test: 'install',
@@ -126,8 +126,8 @@ test('get_placeholder_key returns values as expected', assert => {
         space_path: 'nxdoc/710',
         slug: 'index',
         parts: ['nxdoc', '710', 'index'],
-        full: 'nxdoc/710/index'
-      }
+        full: 'nxdoc/710/index',
+      },
     },
     {
       test: 'admindoc/install',
@@ -139,8 +139,8 @@ test('get_placeholder_key returns values as expected', assert => {
         space_path: 'nxdoc/710',
         slug: 'index',
         parts: ['nxdoc', '710', 'index'],
-        full: 'nxdoc/710/index'
-      }
+        full: 'nxdoc/710/index',
+      },
     },
     {
       test: '/admindoc/install',
@@ -152,12 +152,12 @@ test('get_placeholder_key returns values as expected', assert => {
         space_path: 'nxdoc/710',
         slug: 'index',
         parts: ['nxdoc', '710', 'index'],
-        full: 'nxdoc/710/index'
-      }
-    }
+        full: 'nxdoc/710/index',
+      },
+    },
   ];
 
-  string_tests.forEach(string_test => {
+  string_tests.forEach((string_test) => {
     const actual = get_placeholder_key(
       string_test.test,
       string_test.fallback || fallback_values

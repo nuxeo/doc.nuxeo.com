@@ -9,24 +9,24 @@ const config = yaml_config.load(path.join(__dirname, '..', 'config.yml'));
 
 const md_options = Object.assign(config.markdown_options, {
   renderer,
-  highlight: code => require('highlight.js').highlightAuto(code).value
+  highlight: (code) => require('highlight.js').highlightAuto(code).value,
 });
 marked.setOptions(md_options);
 
-test('markdown_renderer is an object', assert => {
+test('markdown_renderer is an object', (assert) => {
   // Get typeof string
   assert.isEqual(typeof renderer, 'object', 'renderer is an object');
   assert.end();
 });
 
-test('markdown_renderer converts text correctly', assert => {
+test('markdown_renderer converts text correctly', (assert) => {
   let test_cases = [];
   for (let i = 1; i <= 6; i++) {
     const heading_prefix = Array(i + 1).join('#');
     test_cases.push({
       message: `typography - heading ${i}`,
       preposition: `${heading_prefix} heading ${i}`,
-      expected: `<h${i} id="heading-${i}"><a href="#heading-${i}" class="heading-anchor"><i class="fa fa-link"></i></a>heading ${i}</h${i}>`
+      expected: `<h${i} id="heading-${i}"><a href="#heading-${i}" class="heading-anchor"><i class="fa fa-link"></i></a>heading ${i}</h${i}>`,
     });
   }
 
@@ -34,27 +34,27 @@ test('markdown_renderer converts text correctly', assert => {
     {
       message: 'typography - italic',
       preposition: 'this is _italic_',
-      expected: '<p>this is <em>italic</em></p>'
+      expected: '<p>this is <em>italic</em></p>',
     },
     {
       message: 'typography - bold',
       preposition: 'this is **bold**',
-      expected: '<p>this is <strong>bold</strong></p>'
+      expected: '<p>this is <strong>bold</strong></p>',
     },
     {
       message: 'typography - strikethrough',
       preposition: 'this is ~~strikethrough~~',
-      expected: '<p>this is <del>strikethrough</del></p>'
+      expected: '<p>this is <del>strikethrough</del></p>',
     },
     {
       message: 'typography - smartypants',
       preposition: '"double quotes", \'single quotes\'',
-      expected: '<p>&quot;double quotes&quot;, &#39;single quotes&#39;</p>'
+      expected: '<p>&quot;double quotes&quot;, &#39;single quotes&#39;</p>',
     },
     {
       message: 'structure - horizontal rule',
       preposition: '---',
-      expected: '<hr>'
+      expected: '<hr>',
     },
     // Un-reproducable behaviour on Jenkins
     // {
@@ -66,26 +66,26 @@ test('markdown_renderer converts text correctly', assert => {
       message: 'link - normal',
       preposition: '[Nuxeo Blog](https://www.nuxeo.com/blog/)',
       expected:
-        '<p><a href="https://www.nuxeo.com/blog/" target="_blank" rel="noopener">Nuxeo Blog</a></p>'
+        '<p><a href="https://www.nuxeo.com/blog/" target="_blank" rel="noopener">Nuxeo Blog</a></p>',
     },
     {
       message: 'link - reference',
       preposition:
         '[Nuxeo Platform][0]\n\n[0]: https://www.nuxeo.com/platform/',
       expected:
-        '<p><a href="https://www.nuxeo.com/platform/" target="_blank" rel="noopener">Nuxeo Platform</a></p>'
+        '<p><a href="https://www.nuxeo.com/platform/" target="_blank" rel="noopener">Nuxeo Platform</a></p>',
     },
     {
       message: 'link - external with title',
       preposition: '[Nuxeo Events](/events/ ?external=true "Link Title")',
       expected:
-        '<p><a href="/events/" title="Link Title" target="_blank" rel="noopener">Nuxeo Events</a></p>'
+        '<p><a href="/events/" title="Link Title" target="_blank" rel="noopener">Nuxeo Events</a></p>',
     },
     {
       message: 'image - normal',
       preposition: '![Example image](https://example.com/image.png)',
       expected:
-        '<p><img alt="Example image" src="https://example.com/image.png"></p>'
+        '<p><img alt="Example image" src="https://example.com/image.png"></p>',
     },
     // ?w=180,h=360,border=true,thumbnail=true,align=right "title"
     {
@@ -93,7 +93,7 @@ test('markdown_renderer converts text correctly', assert => {
       preposition:
         '![Example image](https://example.com/image.png ?border=true "Image title")',
       expected:
-        '<p><img alt="Example image" src="https://example.com/image.png" title="Image title" class="nuxeo border"></p>'
+        '<p><img alt="Example image" src="https://example.com/image.png" title="Image title" class="nuxeo border"></p>',
     },
     {
       message: 'image - width and height',
@@ -108,14 +108,14 @@ test('markdown_renderer converts text correctly', assert => {
         </div>
         <div class="">
         <img alt="Example image" src="https://example.com/image.png" title="Image title" width="250" height="120" class="thumbnail" data-open="image_afc9bdb942aafe8db202dc7127fa35a1">
-        </div></p>`
+        </div></p>`,
     },
     {
       message: 'code block - syntax highlighting',
       preposition: '```\nsome text\nto display\n```',
       expected: `<pre><code><span class="hljs-keyword">some</span> <span class="hljs-built_in">text</span>
 <span class="hljs-keyword">to</span> display
-</code></pre>`
+</code></pre>`,
     },
     {
       message: 'structure - blockquotes',
@@ -125,8 +125,8 @@ test('markdown_renderer converts text correctly', assert => {
       expected: `<blockquote>
 <p>Some quoted text</p>
 <p>Continued</p>
-</blockquote>`
-    }
+</blockquote>`,
+    },
   ]);
 
   test_cases.forEach(({ message, preposition, expected }) => {

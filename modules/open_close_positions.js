@@ -5,7 +5,7 @@
 // var error = debug_lib('multiexcerpts-open-close-positions:error');
 var sortby = require('lodash.sortby');
 
-var open_close_positions = function(
+var open_close_positions = function (
   placeholder_positions,
   key_field,
   position_field
@@ -14,17 +14,17 @@ var open_close_positions = function(
   var pairs = [];
 
   var item_start = 0;
-  var add_pair = function() {
+  var add_pair = function () {
     var open_offset = 0;
     var close_offset = 1;
 
-    var item_type = function(item) {
+    var item_type = function (item) {
       return sequential[item] && sequential[item].type;
     };
-    var open_item = function() {
+    var open_item = function () {
       return item_start + open_offset;
     };
-    var close_item = function() {
+    var close_item = function () {
       return item_start + open_offset + close_offset;
     };
 
@@ -55,7 +55,7 @@ var open_close_positions = function(
     pairs.push({
       key: sequential[open_item()][key_field],
       start: sequential[open_item()][position_field],
-      end: sequential[close_item()][position_field]
+      end: sequential[close_item()][position_field],
     });
     delete sequential[open_item()];
     delete sequential[close_item()];

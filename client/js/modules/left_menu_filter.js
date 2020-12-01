@@ -10,14 +10,14 @@ var debounce = require('lodash.debounce');
 // var a = ['a', 1, 'a', 2, '1'];
 // var unique = a.filter(onlyUnique);
 
-module.exports = function($) {
+module.exports = function ($) {
   var $side_menu = $('#side_menu');
   var last_filter = '';
   var min_search_length = 2;
 
   $side_menu.find('.menu-filter').on(
     'keyup',
-    debounce(function() {
+    debounce(function () {
       /* eslint no-invalid-this: 0 */
       const $filter = $(this);
 
@@ -29,7 +29,7 @@ module.exports = function($) {
       var matches = [];
       var matches_string;
 
-      const add_parents = function(id) {
+      const add_parents = function (id) {
         // console.log('id', id);
         if (!~matches.indexOf(id)) {
           matches.push(id);
@@ -53,7 +53,7 @@ module.exports = function($) {
           $side_menu
             .find('li:not(.contains-toc, .toc-item)')
             .removeClass('open')
-            .each(function() {
+            .each(function () {
               var $this = $(this);
               var $link = $this.find('a');
               if (search.exec($link.text())) {
@@ -87,7 +87,7 @@ module.exports = function($) {
             .end()
             .find('li[data-init-show=show]')
             .slideDown()
-            .each(function() {
+            .each(function () {
               var $this = $(this);
               // set open state
               var is_open = $this.attr('data-init-open');

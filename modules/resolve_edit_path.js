@@ -8,7 +8,7 @@ const error = debug_lib('resolve-edit-path:error');
 
 const github_match = /^(https:\/\/github\.com\/|git@github.com:)(.+)\.git$/;
 
-const resolve_repository = push_url => {
+const resolve_repository = (push_url) => {
   if (!push_url) {
     return void 0;
   }
@@ -30,7 +30,7 @@ const resolve_repository = push_url => {
 
   return {
     url,
-    file
+    file,
   };
 };
 

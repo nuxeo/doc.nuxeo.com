@@ -6,9 +6,9 @@ var page_href = window.location.href;
 var $prodpad_feedback = $('#prodpad_feedback');
 var $required = $prodpad_feedback.find('[required]');
 var $submit = $('#prodpad_feedback_submit');
-$prodpad_feedback.on('change keyup', 'textarea, input', function() {
+$prodpad_feedback.on('change keyup', 'textarea, input', function () {
   var valid = true;
-  $required.each(function() {
+  $required.each(function () {
     var $this = $(this);
     if ($this.val().trim() === '') {
       valid = false;
@@ -21,12 +21,9 @@ $prodpad_feedback.on('change keyup', 'textarea, input', function() {
   }
 });
 
-$submit.on('click', function() {
+$submit.on('click', function () {
   // Disable Inputs
-  $submit
-    .attr('disabled', 'disabled')
-    .addClass('disabled')
-    .text('Sending...');
+  $submit.attr('disabled', 'disabled').addClass('disabled').text('Sending...');
   $prodpad_feedback
     .find('textarea, input')
     .attr('disabled', 'disabled')
@@ -42,24 +39,24 @@ $submit.on('click', function() {
     external_links: [
       {
         name: document.title || 'Documentation Source',
-        url: page_href
-      }
-    ]
+        url: page_href,
+      },
+    ],
   };
 
   $.ajax({
     url:
       'https://api.prodpad.com/v1/feedbacks?apikey=43ebe94f3c4ff5ba36202a5757f9051ad4f7d87d1c3bae8882113efa56af8895',
     method: 'POST',
-    data: data
+    data: data,
   })
-    .done(function() {
+    .done(function () {
       // console.log('success', msg);
       $prodpad_feedback.find('form').slideUp();
       $prodpad_feedback.find('h3').text('Thank you - Feedback received');
       // .after('See your feedback here: ' + msg);
     })
-    .fail(function(qXHR, textStatus) {
+    .fail(function (qXHR, textStatus) {
       $submit
         .removeAttr('disabled')
         .removeClass('disabled')

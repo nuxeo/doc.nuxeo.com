@@ -5,7 +5,7 @@ const test = require('tap').test;
 
 const object_key = require('../modules/handlebars/object_key');
 
-test('handlebars_object_key is a function', assert => {
+test('handlebars_object_key is a function', (assert) => {
   // Get typeof string
   const expected = object_key && {}.toString.call(object_key);
 
@@ -13,7 +13,7 @@ test('handlebars_object_key is a function', assert => {
   assert.end();
 });
 
-test('handlebars_object_key returns values as expected', assert => {
+test('handlebars_object_key returns values as expected', (assert) => {
   assert.isEqual(
     object_key({}, ''),
     void 0,

@@ -57,7 +57,7 @@ const get_placeholder_key = (page_name_raw, defaults) => {
         // Test for blank version for full path
         page_name_split.shift();
       }
-      page_name_split.map(function(item) {
+      page_name_split.map(function (item) {
         const is_version = is_version_re.test(item);
         // Versions shouldn't have . removed. E.g. "2.0" should not be "20"
         if (is_version) {
