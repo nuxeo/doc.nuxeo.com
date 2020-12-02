@@ -33,12 +33,6 @@ test('site should have key files', assert => {
     css_stats,
     js_stats,
     path.join(assets_path, 'fonts', 'fontawesome-webfont.ttf'),
-    path.join(
-      assets_path,
-      'fonts',
-      'AvenirNextLTPro',
-      'AvenirNextLTPro-Regular.ttf'
-    ),
     path.join(assets_path, 'icons', 'favicon.ico'),
     path.join(assets_path, 'imgs', 'logo340x60.png')
   ];
