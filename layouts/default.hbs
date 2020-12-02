@@ -1,5 +1,5 @@
 {{> header_standard}}
-<div id="content_container" class="column {{#if no_side_menu}}small-centered{{else}}medium-8 large-6{{/if}}{{#if is_overview}} overview{{/if}}">
+<div id="content_container" class="column {{#if no_side_menu}}small-centered{{else if is_overview}}small-12 medium-8 large-9 overview{{else}}medium-8 large-6{{/if}}">
   <div class="{{#unless no_side_menu}}content-gutter max-900{{/unless}}">
     {{> breadcrumb}}
     <div class="heading-group">
