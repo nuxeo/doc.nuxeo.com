@@ -17,10 +17,12 @@ $c-barely-black: #3c3b3b;
 $c-light-blue: #e5f1ff;
 $c-light-aqua: #f2fafa;
 
-$font-primary: 'neue-haas-grotesk-display', Helvetica, Arial, sans-serif;
+//Fonts
+$font-primary: 'Inter', sans-serif;
+$font-primary-var: 'Inter var', sans-serif;
 
-$weight-roman: 500;
-$weight-medium: 600;
+$weight-roman: 400;
+$weight-bold: 600;
 
 //  Foundation for Sites Settings
 //  -----------------------------
@@ -106,13 +108,13 @@ $black: #0a0a0a;
 $white: #fff;
 // $body-background: $white;
 // $body-font-color: $black;
-$body-font-family: 'neue-haas-grotesk-display', Helvetica, Arial, sans-serif;
+$body-font-family: $font-primary;
 $body-antialiased: false;
 // $global-margin: 1rem;
 // $global-padding: 1rem;
 // $global-position: 1rem;
 // $global-weight-normal: normal;
-$global-weight-bold: 600;
+$global-weight-bold: $weight-bold;
 // $global-radius: 0;
 // $global-menu-padding: 0.7rem 1rem;
 // $global-menu-nested-margin: 1rem;
@@ -164,44 +166,44 @@ $grid-column-alias: false;
 $header-styles: (
   small: (
     'h1': (
+      'font-size': 30
+    ),
+    'h2': (
       'font-size': 24
     ),
-    'h2': (
+    'h3': (
       'font-size': 20
     ),
-    'h3': (
-      'font-size': 19
-    ),
     'h4': (
       'font-size': 18
     ),
     'h5': (
-      'font-size': 17
+      'font-size': 16
     ),
     'h6': (
-      'font-size': 16
+      'font-size': 14
     )
-  ),
-  medium: (
-    'h1': (
-      'font-size': 42
-    ),
-    'h2': (
-      'font-size': 34
-    ),
-    'h3': (
-      'font-size': 28
-    ),
-    'h4': (
-      'font-size': 22
-    ),
-    'h5': (
-      'font-size': 18
-    ),
-    'h6': (
-      'font-size': 16
-    )
-  )
+  )//,
+  // medium: (
+  //   'h1': (
+  //     'font-size': 42
+  //   ),
+  //   'h2': (
+  //     'font-size': 34
+  //   ),
+  //   'h3': (
+  //     'font-size': 28
+  //   ),
+  //   'h4': (
+  //     'font-size': 22
+  //   ),
+  //   'h5': (
+  //     'font-size': 18
+  //   ),
+  //   'h6': (
+  //     'font-size': 16
+  //   )
+  // )
 );
 
 // $header-text-rendering: optimizeLegibility;
