@@ -4,7 +4,7 @@ var log = debug('placeholder-replacement');
 var error = debug('placeholder-replacement:error');
 var slug_string = require('slug');
 slug_string.defaults.modes.pretty.lower = true;
-var slug_nothing = function(x) {
+var slug_nothing = function (x) {
   return x;
 };
 
@@ -40,7 +40,7 @@ var placeholder_replacement = function placeholder_replacement(
     var pattern = string_pattern;
     var params = get_params(pattern);
 
-    params.forEach(function(element) {
+    params.forEach(function (element) {
       var replacement = get(data, element);
       if (replacement) {
         pattern = pattern.replace(':' + element, slug(replacement.toString()));

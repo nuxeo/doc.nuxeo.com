@@ -61,6 +61,7 @@ default:
     smartLists: true
     smartypants: false
     tables: true
+production:
   repositories:
     platform:
       url: git@github.com:nuxeo/doc.nuxeo.com-content.git
@@ -116,3 +117,18 @@ development:
     ga_exp_id: ''
     ga_id: ''
     segment_write_key: ''
+  repositories:
+    platform:
+      url: git@github.com:nuxeo/doc.nuxeo.com-content.git
+      branches:
+        static:
+          no_versioning: true
+        '1010':
+          label: 'LTS 2019'
+          order: 10
+        master:
+          label: 'Next'
+          noindex: true
+          order: 20
+          menu_separator: true
+          url_path: 'next'

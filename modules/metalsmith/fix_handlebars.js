@@ -10,32 +10,32 @@ const co = require('co');
 const replacements = [
   {
     search: /\{\{#&gt; /g,
-    replace: '{{#> '
+    replace: '{{#> ',
   },
   {
     search: /\{\{&gt; /g,
-    replace: '{{> '
+    replace: '{{> ',
   },
   {
     search: /&#39;|&apos;/g,
-    replace: "'"
+    replace: "'",
   },
   {
     search: /&quot;/g,
-    replace: '"'
+    replace: '"',
   },
   {
     search: /url=(['"])<a href="(.+?)(['"])(.+?)">.*?<\/a>/g,
-    replace: 'url=$1$2$3$4'
-  }
+    replace: 'url=$1$2$3$4',
+  },
 ];
 
 const fix_content = (files, filepath) => {
-  return new Promise(function(resolve) {
+  return new Promise(function (resolve) {
     debug('Processing: %s', filepath);
     const file = files[filepath];
     let contents = file.contents.toString();
-    replacements.forEach(function(replacement) {
+    replacements.forEach(function (replacement) {
       contents = contents.replace(replacement.search, replacement.replace);
     });
     file.contents = Buffer.from(contents, 'utf8');
@@ -49,17 +49,17 @@ const fix_content = (files, filepath) => {
  * @param {Object} options
  * @return {Function}
  **/
-const fix_handlebars = options => {
+const fix_handlebars = (options) => {
   debug('Options: %o', options);
-  return function(files, metalsmith, done) {
-    co(function*() {
+  return function (files, metalsmith, done) {
+    co(function* () {
       const file_fixes = [];
-      Object.keys(files).forEach(function(filepath) {
+      Object.keys(files).forEach(function (filepath) {
         file_fixes.push(fix_content(files, filepath));
       });
       yield file_fixes;
       return done();
-    }).catch(function(e) {
+    }).catch(function (e) {
       error('Problem making replacement');
       return done(e);
     });

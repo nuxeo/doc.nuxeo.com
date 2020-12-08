@@ -9,14 +9,12 @@ const Joi = require('joi');
 
 // Options schema
 const schema = Joi.object().keys({
-  repo_id: Joi.string()
-    .allow('')
-    .required(),
+  repo_id: Joi.string().allow('').required(),
   branch: Joi.string().required(),
-  repositories: Joi.object().required()
+  repositories: Joi.object().required(),
 });
 
-const sort_by_field = field => {
+const sort_by_field = (field) => {
   return (one, two) => {
     const a = one && one[field];
     const b = two && two[field];
@@ -37,7 +35,7 @@ const sort_by_field = field => {
  * @param {Object} options
  * @return {Function}
  **/
-const set_versions = options => (files, metalsmith, done) => {
+const set_versions = (options) => (files, metalsmith, done) => {
   debug('Options: %o', options);
   // Check options fits schema
   const validation = schema.validate(options);
@@ -49,7 +47,7 @@ const set_versions = options => (files, metalsmith, done) => {
   const {
     branch: current_branch_name,
     repo_id: current_repository_name,
-    repositories
+    repositories,
   } = options;
 
   const metadata = metalsmith.metadata();
@@ -57,10 +55,10 @@ const set_versions = options => (files, metalsmith, done) => {
   // Overwrite site.versions
   metadata.site.versions = [];
 
-  Object.keys(repositories).forEach(repository_name => {
+  Object.keys(repositories).forEach((repository_name) => {
     const repository = repositories[repository_name];
     debug('repos', repository);
-    Object.keys(repository.branches).forEach(branch_name => {
+    Object.keys(repository.branches).forEach((branch_name) => {
       if (metadata.site.versions) {
         const branch = repository.branches[branch_name];
         branch.is_current_version =

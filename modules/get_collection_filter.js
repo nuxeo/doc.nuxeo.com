@@ -5,17 +5,17 @@
 const { debug } = require('./debugger')('get_collection_filter');
 
 // filter function generation
-const get_filter = function(filter_text = '', filter_type = 'or') {
+const get_filter = function (filter_text = '', filter_type = 'or') {
   if (filter_text) {
-    const get_field_search = definition => {
+    const get_field_search = (definition) => {
       const [field, text] = definition.split('=');
       return {
         field,
-        text
+        text,
       };
     };
 
-    const remove_empty_search_text = definition => definition.text !== '';
+    const remove_empty_search_text = (definition) => definition.text !== '';
 
     const filters = filter_text
       .trim()
@@ -27,7 +27,7 @@ const get_filter = function(filter_text = '', filter_type = 'or') {
 
     debug('filters: %o', filters);
 
-    return row => {
+    return (row) => {
       const reduce_and = (result, search) =>
         result && !!~row[search.field].toLowerCase().indexOf(search.text);
       const reduce_or = (result, search) =>

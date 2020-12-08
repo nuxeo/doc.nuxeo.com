@@ -14,7 +14,7 @@ const schema = Joi.object().keys({
   file_pattern: Joi.array()
     .items(Joi.string())
     .optional()
-    .default(['**/*.md', '**/*.html'])
+    .default(['**/*.md', '**/*.html']),
 });
 
 /**
@@ -23,7 +23,7 @@ const schema = Joi.object().keys({
  * @param {Object} options
  * @return {Function}
  **/
-const set_description = options => (files, metalsmith, done) => {
+const set_description = (options) => (files, metalsmith, done) => {
   debug('Options: %o', options);
   // Check options fits schema
   const validation = schema.validate(options);
@@ -36,7 +36,7 @@ const set_description = options => (files, metalsmith, done) => {
   const metadata = metalsmith.metadata();
   metadata.excerpts = metadata.excerpts || {};
 
-  multimatch(Object.keys(files), options.file_pattern).forEach(filepath => {
+  multimatch(Object.keys(files), options.file_pattern).forEach((filepath) => {
     const file = files[filepath];
 
     const file_key = file.url && file.url.key && file.url.key.full;

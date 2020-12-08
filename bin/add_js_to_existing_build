@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-'use strict';
 
 const path = require('path');
 const exec = require('child_process').execSync;
 
-const get_path = path_name => (path.isAbsolute(path_name) ? path_name : path.join(process.cwd(), path_name));
+const get_path = (path_name) =>
+  path.isAbsolute(path_name) ? path_name : path.join(process.cwd(), path_name);
 
 if (!process.argv[2] || !process.argv[3]) {
   throw new Error('Missing Filename parameter');
@@ -32,7 +32,7 @@ const copy_commands = Object.keys(source_stats.assetsByChunkName)
     });
     return files;
   }, [])
-  .map(files => `cp -v ${files.source} ${files.target}`)
+  .map((files) => `cp -v ${files.source} ${files.target}`)
   .join(' && ');
 
 // console.log('copy_commands');

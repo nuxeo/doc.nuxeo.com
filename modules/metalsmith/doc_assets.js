@@ -2,7 +2,9 @@
 /* eslint-env es6 */
 
 // Debugging
-const { debug, error } = require('./../debugger')('metalsmith-nuxeo-assets');
+const { debug, info, error } = require('./../debugger')(
+  'metalsmith-nuxeo-assets'
+);
 
 // npm packages
 const Promise = require('bluebird');
@@ -22,7 +24,7 @@ const element_mapping = {
   // 'script': 'src',
   img: 'src',
   video: 'src',
-  audio: 'src'
+  audio: 'src',
   // 'source': 'src'
 };
 const nx_assets_url_prefix = 'nx_asset://';
@@ -32,7 +34,7 @@ const nx_assets_base = 'nx_assets';
 const schema = Joi.object().keys({
   pattern: Joi.alternatives()
     .try(Joi.string(), Joi.array().min(1))
-    .default('**/*.html')
+    .default('**/*.html'),
 });
 
 const checksum = (str, algorithm, encoding) => {
@@ -43,7 +45,7 @@ const checksum = (str, algorithm, encoding) => {
 };
 
 const fetch = require('node-fetch');
-const get_attribute = el =>
+const get_attribute = (el) =>
   typeof element_mapping[el.name] !== 'undefined'
     ? element_mapping[el.name]
     : false;
@@ -57,7 +59,7 @@ const get_file = (doc, local_path) => {
       () => fs.readFileAsync(local_path, 'utf8'),
       () => ''
     )
-    .then(content => {
+    .then((content) => {
       // Check file digest match otherwise get file
       const file_digest = checksum(content, file_content.digestAlgorithm);
 
@@ -68,13 +70,13 @@ const get_file = (doc, local_path) => {
         return doc
           .fetchBlob()
           .then(
-            res => {
+            (res) => {
               debug('Downloaded asset via Nuxeo', res);
               res.body.pipe(fs.createWriteStream(local_path));
             },
-            err => {
+            (err) => {
               if (err && err.response) {
-                return fetch(err.response.url).then(res => {
+                return fetch(err.response.url).then((res) => {
                   debug('Downloaded asset via fetch', res);
                   res.body.pipe(fs.createWriteStream(local_path));
                 });
@@ -84,9 +86,11 @@ const get_file = (doc, local_path) => {
               }
             }
           )
-          .catch(err => {
+          .catch((err) => {
             error('file save err: ', err);
-            return Promise.reject(err);
+            if (process.env.NODE_ENV !== 'development') {
+              return Promise.reject(err);
+            }
           });
       } else {
         return void 0;
@@ -105,11 +109,18 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
   debug('pattern:', pattern);
 
   if (
-    process.env.NODE_ENV === 'development' &&
-    !process.env.NX_ASSETS_USER &&
-    !process.env.NX_ASSETS_PWD
+    !(
+      (process.env.NX_ASSETS_USER && process.env.NX_ASSETS_PWD) ||
+      process.env.NX_TOKEN
+    )
   ) {
-    return done();
+    if (process.env.NODE_ENV === 'development') {
+      info('No Credentials provided (Development)');
+      return done();
+    } else {
+      error('No Credentials provided (Production)');
+      return done(new Error('No Credentials provided'));
+    }
   }
 
   const metadata = metalsmith.metadata();
@@ -119,12 +130,19 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
       process.env.NX_ASSETS_URL ||
       metadata.site.nx_assets_url ||
       'http://localhost:8080/nuxeo',
-    auth: {
-      method: 'basic',
-      username: process.env.NX_ASSETS_USER || 'Administrator',
-      password: process.env.NX_ASSETS_PWD || 'Administrator'
-    }
   };
+
+  nuxeo_config.auth = process.env.NX_TOKEN
+    ? {
+        method: 'token',
+        token: process.env.NX_TOKEN,
+      }
+    : {
+        method: 'basic',
+        username: process.env.NX_ASSETS_USER,
+        password: process.env.NX_ASSETS_PWD,
+      };
+
   debug('Nuxeo Config:', nuxeo_config);
 
   const nuxeo = new Nuxeo(nuxeo_config);
@@ -150,9 +168,9 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
           max_tries: 5,
           interval: 500,
           throw_original: true,
-          args: [uid, { schemas: ['dublincore', 'file', 'document_asset'] }]
+          args: [uid, { schemas: ['dublincore', 'file', 'document_asset'] }],
         })
-          .then(doc => {
+          .then((doc) => {
             debug('doc:', doc);
             // if there is no file return
             if (!doc.properties['file:content']) {
@@ -179,7 +197,7 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
 
             return get_file(doc, asset_file);
           })
-          .catch(err => {
+          .catch((err) => {
             error('fetch err:', err);
             return Promise.reject(err);
           });
@@ -192,13 +210,14 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
   };
 
   const selector = Object.keys(element_mapping).join();
-  const file_promises = multimatch(Object.keys(files), pattern).map(filename =>
-    check_file(filename, selector)
-  );
+  const file_promises = multimatch(
+    Object.keys(files),
+    pattern
+  ).map((filename) => check_file(filename, selector));
 
   Promise.all(file_promises)
     .then(() => done())
-    .catch(err => {
+    .catch((err) => {
       error('file promises error', err);
       return done(err);
     });

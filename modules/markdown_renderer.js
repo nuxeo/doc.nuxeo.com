@@ -9,9 +9,9 @@ const marked = require('marked');
 const renderer = new marked.Renderer();
 
 const external_url_regex = /(^https?:\/\/|^\/\/|^[a-zA-Z0-9]+\.)/;
-const is_external_url = url => external_url_regex.test(url);
+const is_external_url = (url) => external_url_regex.test(url);
 
-const get_href_params = href_str => {
+const get_href_params = (href_str) => {
   let href = '';
   let params = {};
 
@@ -27,11 +27,11 @@ const get_href_params = href_str => {
   }
   return {
     href,
-    params
+    params,
   };
 };
 
-renderer.image = function(href_str, title, alt) {
+renderer.image = function (href_str, title, alt) {
   // ![alt text](image.png ?w=180,h=360,border=true,thumbnail=true,align=right "title")
   const closing = this.options.xhtml ? '/>' : '>';
 
@@ -41,7 +41,7 @@ renderer.image = function(href_str, title, alt) {
   const img_classes = [];
   const attrs = [`alt="${alt}"`, `src="${href}"`];
   const max_dimension_for_inline = 32;
-  const check_dimension = dimension => {
+  const check_dimension = (dimension) => {
     if (dimension > max_dimension_for_inline) {
       params.thumbnail = true;
     }
@@ -119,11 +119,11 @@ renderer.table = (header, body) => `
         </table>
     </div>`;
 
-renderer.list = function(body, ordered) {
+renderer.list = function (body, ordered) {
   const type = ordered ? 'ol' : 'ul';
   const attrs = {
     type: '',
-    start: ''
+    start: '',
   };
 
   if (+ordered || +ordered === 0) {
@@ -133,15 +133,11 @@ renderer.list = function(body, ordered) {
   } else {
     const type_case = ordered === ordered.toUpperCase() ? 'A' : 'a';
     attrs.type = `type="${type_case}"`;
-    const start_letter =
-      ordered
-        .toString()
-        .toUpperCase()
-        .charCodeAt(0) - 64;
+    const start_letter = ordered.toString().toUpperCase().charCodeAt(0) - 64;
     attrs.start =
       start_letter > 1 && start_letter < 9 ? `start="${start_letter}"` : '';
   }
-  const attr = [attrs.type, attrs.start].filter(x => x).join(' ');
+  const attr = [attrs.type, attrs.start].filter((x) => x).join(' ');
 
   return `<${type} ${attr}>
     ${body}
@@ -149,7 +145,7 @@ renderer.list = function(body, ordered) {
     `;
 };
 
-renderer.link = function(href_str, title, text) {
+renderer.link = function (href_str, title, text) {
   const { href, params } = get_href_params(href_str);
   if (this.options.sanitize) {
     try {

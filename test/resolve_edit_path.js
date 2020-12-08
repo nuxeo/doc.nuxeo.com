@@ -5,7 +5,7 @@ const test = require('tap').test;
 
 const resolve_edit_path = require('../modules/resolve_edit_path');
 
-test('resolve_edit_path is a function', assert => {
+test('resolve_edit_path is a function', (assert) => {
   // Get typeof string
   const actual = resolve_edit_path && {}.toString.call(resolve_edit_path);
 
@@ -14,7 +14,7 @@ test('resolve_edit_path is a function', assert => {
   assert.end();
 });
 
-test('resolve_edit_path returns value as expected', assert => {
+test('resolve_edit_path returns value as expected', (assert) => {
   const url = '';
   const expected = void 0;
   const message = 'Returns undefined when nothing passed';
@@ -25,7 +25,7 @@ test('resolve_edit_path returns value as expected', assert => {
   assert.end();
 });
 
-test('resolve_edit_path throws errors', assert => {
+test('resolve_edit_path throws errors', (assert) => {
   const url = 'https://example.com';
   const message = 'Throws error with unexpected url';
 
@@ -35,7 +35,7 @@ test('resolve_edit_path throws errors', assert => {
   assert.end();
 });
 
-test('resolve_edit_path returns object as expected', assert => {
+test('resolve_edit_path returns object as expected', (assert) => {
   const url = 'git@github.com:nuxeo/doc.nuxeo.com.git';
   const actual = resolve_edit_path(url);
   assert.type(actual, 'object', 'Returns file url object');

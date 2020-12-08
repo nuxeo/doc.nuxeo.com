@@ -13,7 +13,7 @@ if ($content.hasClass('tabbed')) {
   var is_first = true;
   var finished = false;
 
-  $sections.each(function() {
+  $sections.each(function () {
     /* eslint no-invalid-this: 0 */
     var $this = $(this);
     var tag = $this.prop('tagName').toLowerCase();
@@ -66,7 +66,7 @@ if ($content.hasClass('tabbed')) {
   // Replace the $content with the cloned version.
   $content.replaceWith($content_clone);
 
-  $tabs.on('change.zf.tabs', function() {
+  $tabs.on('change.zf.tabs', function () {
     initialise_toc();
   });
 }

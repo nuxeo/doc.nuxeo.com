@@ -4,7 +4,7 @@
 
 // filter
 if (!Array.prototype.filter) {
-  Array.prototype.filter = function(fun /*, thisArg*/) {
+  Array.prototype.filter = function (fun /*, thisArg*/) {
     if (this === void 0 || this === null) {
       throw new TypeError();
     }
@@ -40,7 +40,7 @@ if (!Array.prototype.filter) {
 // Production steps of ECMA-262, Edition 5, 15.4.4.14
 // Reference: http://es5.github.io/#x15.4.4.14
 if (!Array.prototype.indexOf) {
-  Array.prototype.indexOf = function(searchElement, fromIndex) {
+  Array.prototype.indexOf = function (searchElement, fromIndex) {
     /* eslint eqeqeq: 0 */
 
     var k;

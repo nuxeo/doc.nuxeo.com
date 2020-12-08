@@ -5,7 +5,7 @@
 const marked = require('marked');
 const handlebars = require('handlebars');
 
-const hb_constructor = md_options => {
+const hb_constructor = (md_options) => {
   const markdown = (text, options) => {
     /* eslint no-invalid-this:0 */
     if (options) {

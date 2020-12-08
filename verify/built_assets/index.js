@@ -11,7 +11,7 @@ const js_stats = path.join(__dirname, '..', '..', 'lib', 'webpack.stats.json');
 
 // console.log(fs.accessSync('./sites', fs.F_OK));
 
-test('lib assets directory should be generated', assert => {
+test('lib assets directory should be generated', (assert) => {
   assert.doesNotThrow(
     () => fs.accessSync(assets_path, fs.F_OK),
     './lib/assets directory is present'
@@ -28,16 +28,16 @@ test('lib assets directory should be generated', assert => {
   assert.end();
 });
 
-test('site should have key files', assert => {
+test('site should have key files', (assert) => {
   const site_paths = [
     css_stats,
     js_stats,
     path.join(assets_path, 'fonts', 'fontawesome-webfont.ttf'),
     path.join(assets_path, 'icons', 'favicon.ico'),
-    path.join(assets_path, 'imgs', 'logo340x60.png')
+    path.join(assets_path, 'imgs', 'logo340x60.png'),
   ];
 
-  site_paths.forEach(filepath => {
+  site_paths.forEach((filepath) => {
     assert.doesNotThrow(
       () => fs.accessSync(filepath, fs.F_OK),
       `${filepath} is present`
@@ -47,11 +47,8 @@ test('site should have key files', assert => {
   assert.end();
 });
 
-test('key files should have content', assert => {
-  const css_hash = fs
-    .readFileSync(css_stats)
-    .toString()
-    .split('\n')[0];
+test('key files should have content', (assert) => {
+  const css_hash = fs.readFileSync(css_stats).toString().split('\n')[0];
   const js_obj = require(js_stats);
   const is_32_chars = /^[a-z0-9]{32}$/;
 

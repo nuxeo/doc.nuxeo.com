@@ -12,7 +12,7 @@ slug.defaults.modes.pretty.lower = true;
 const get_placeholder_string = require('../get_placeholder_string');
 
 const get_placeholder_key = require('../get_placeholder_key');
-const file_url = function(options) {
+const file_url = function (options) {
   const file = options.data.root;
   const hash = options.hash || {};
   const defaults = file && file.url && file.url.key;

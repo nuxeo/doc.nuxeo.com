@@ -5,7 +5,7 @@ const test = require('tap').test;
 
 const toc_items_to_hierarchy = require('../modules/toc_items_to_hierarchy');
 
-test('toc_items_to_hierarchy is a function', assert => {
+test('toc_items_to_hierarchy is a function', (assert) => {
   // Get typeof string
   const expected =
     toc_items_to_hierarchy && {}.toString.call(toc_items_to_hierarchy);
@@ -18,20 +18,20 @@ test('toc_items_to_hierarchy is a function', assert => {
   assert.end();
 });
 
-test('toc_items_to_hierarchy returns values as expected', assert => {
+test('toc_items_to_hierarchy returns values as expected', (assert) => {
   const string_tests = [
     {
       test: [],
       expected: [],
-      message: 'returns empty array when nothing passed'
+      message: 'returns empty array when nothing passed',
     },
     {
       test: [
         {
           id: 'field-bindings',
           title: 'Field Bindings',
-          level: 2
-        }
+          level: 2,
+        },
       ],
       expected: [
         {
@@ -39,28 +39,28 @@ test('toc_items_to_hierarchy returns values as expected', assert => {
           level: 1,
           name: 'Field Bindings',
           toc: true,
-          url: { full: '#field-bindings' }
-        }
+          url: { full: '#field-bindings' },
+        },
       ],
-      message: 'returns single array item'
+      message: 'returns single array item',
     },
     {
       test: [
         {
           id: 'a',
           title: 'A',
-          level: 2
+          level: 2,
         },
         {
           id: 'b',
           title: 'B',
-          level: 3
+          level: 3,
         },
         {
           id: 'c',
           title: 'C',
-          level: 4
-        }
+          level: 4,
+        },
       ],
       expected: [
         {
@@ -82,32 +82,32 @@ test('toc_items_to_hierarchy returns values as expected', assert => {
                   level: 3,
                   name: 'C',
                   toc: true,
-                  url: { full: '#c' }
-                }
-              ]
-            }
-          ]
-        }
+                  url: { full: '#c' },
+                },
+              ],
+            },
+          ],
+        },
       ],
-      message: 'returns nested items'
+      message: 'returns nested items',
     },
     {
       test: [
         {
           id: 'a1',
           title: 'A1',
-          level: 2
+          level: 2,
         },
         {
           id: 'b',
           title: 'B',
-          level: 3
+          level: 3,
         },
         {
           id: 'a2',
           title: 'A2',
-          level: 2
-        }
+          level: 2,
+        },
       ],
       expected: [
         {
@@ -122,23 +122,23 @@ test('toc_items_to_hierarchy returns values as expected', assert => {
               level: 2,
               name: 'B',
               toc: true,
-              url: { full: '#b' }
-            }
-          ]
+              url: { full: '#b' },
+            },
+          ],
         },
         {
           id: 'a2',
           level: 1,
           name: 'A2',
           toc: true,
-          url: { full: '#a2' }
-        }
+          url: { full: '#a2' },
+        },
       ],
-      message: 'returns root items after nesting'
-    }
+      message: 'returns root items after nesting',
+    },
   ];
 
-  string_tests.forEach(string_test => {
+  string_tests.forEach((string_test) => {
     const actual = toc_items_to_hierarchy(string_test.test);
     assert.isEquivalent(actual, string_test.expected, string_test.message);
   });

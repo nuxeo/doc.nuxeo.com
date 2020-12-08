@@ -5,7 +5,7 @@ const test = require('tap').test;
 
 const replace_between = require('../modules/replace_between');
 
-test('replace_between is a function', assert => {
+test('replace_between is a function', (assert) => {
   // Get typeof string
   const expected = replace_between && {}.toString.call(replace_between);
 
@@ -17,17 +17,17 @@ test('replace_between is a function', assert => {
   assert.end();
 });
 
-test('replace_between returns values as expected', assert => {
+test('replace_between returns values as expected', (assert) => {
   const string_tests = [
     {
       test: void 0,
       expected: void 0,
-      message: 'returns what is passed if not a string'
+      message: 'returns what is passed if not a string',
     },
     {
       test: '',
       expected: '',
-      message: 'returns empty when empty'
+      message: 'returns empty when empty',
     },
     {
       test: 'foo bar baz',
@@ -35,7 +35,7 @@ test('replace_between returns values as expected', assert => {
       to: 3,
       replace: 'cat',
       expected: 'cat bar baz',
-      message: 'returns replacement at start of string'
+      message: 'returns replacement at start of string',
     },
     {
       test: 'foo bar baz',
@@ -43,7 +43,7 @@ test('replace_between returns values as expected', assert => {
       to: 7,
       replace: 'cat',
       expected: 'foo cat baz',
-      message: 'returns replacement at start of string'
+      message: 'returns replacement at start of string',
     },
     {
       test: 'foo bar baz',
@@ -51,11 +51,11 @@ test('replace_between returns values as expected', assert => {
       to: 11,
       replace: 'cat',
       expected: 'foo bar cat',
-      message: 'returns replacement at start of string'
-    }
+      message: 'returns replacement at start of string',
+    },
   ];
 
-  string_tests.forEach(string_test => {
+  string_tests.forEach((string_test) => {
     const actual = replace_between(
       string_test.test,
       string_test.from,

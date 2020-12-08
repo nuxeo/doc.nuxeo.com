@@ -10,7 +10,7 @@ const { debug, info, warn, error } = require('../debugger')(
 const moment = require('moment');
 
 // functions
-const needs_review = function(file, comment, status = 'not-ok') {
+const needs_review = function (file, comment, status = 'not-ok') {
   debug('needs_review - comment: "%s", file: "%s"', comment, file.title);
   file.review = file.review || {};
   file.review.status = status;
@@ -20,8 +20,8 @@ const needs_review = function(file, comment, status = 'not-ok') {
 };
 
 // plugin
-const review_flag = function() {
-  return function(files, metalsmith, done) {
+const review_flag = function () {
+  return function (files, metalsmith, done) {
     const metadata = metalsmith.metadata();
     const review_messages = metadata.site.review_messages;
 
@@ -50,7 +50,7 @@ const review_flag = function() {
         );
 
         if (review_period.asMilliseconds()) {
-          Object.keys(files).forEach(function(filepath) {
+          Object.keys(files).forEach(function (filepath) {
             debug('Filepath: %s', filepath);
             let file = files[filepath];
 

@@ -16,10 +16,10 @@ var re_definition = /({{|\()file_content url=['"]([^'"]+)['"](}}|\))/g;
  *
  * @return {Function}
  **/
-var file_contents_preprocess = function() {
-  return function(files, metalsmith, done) {
+var file_contents_preprocess = function () {
+  return function (files, metalsmith, done) {
     var matches = {};
-    Object.keys(files).forEach(function(filepath) {
+    Object.keys(files).forEach(function (filepath) {
       var file = files[filepath];
       var contents = file.contents.toString();
       var match;
@@ -35,10 +35,10 @@ var file_contents_preprocess = function() {
       }
     });
 
-    var get_files = function(filepath, callback) {
+    var get_files = function (filepath, callback) {
       var file = files[filepath];
-      var get_file_contents = function(url, cb) {
-        request(url, function(err, res, body) {
+      var get_file_contents = function (url, cb) {
+        request(url, function (err, res, body) {
           if (err) {
             error(err);
             // Only throw if running production - allows offline dev

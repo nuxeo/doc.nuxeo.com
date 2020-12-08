@@ -11,12 +11,12 @@ const readdirs = require('recursive-readdir');
 
 // options schema
 const schema = Joi.object().keys({
-  assets_path: Joi.string().required()
+  assets_path: Joi.string().required(),
 });
 
-const get_assets = function(options) {
+const get_assets = function (options) {
   debug(`Options: ${options}`);
-  return function(files, metalsmith, done) {
+  return function (files, metalsmith, done) {
     const metadata = metalsmith.metadata();
     metadata.assets = metadata.assets || {};
 
@@ -31,7 +31,7 @@ const get_assets = function(options) {
     let version_path = '';
     if (metadata.site.versions) {
       const current_version = metadata.site.versions.filter(
-        version => version.is_current_version
+        (version) => version.is_current_version
       );
       if (current_version && current_version[0] && current_version.url_path) {
         version_path = current_version[0].url_path;
@@ -42,14 +42,14 @@ const get_assets = function(options) {
     debug(`version_path: ${version_path}`);
 
     // Get assets list
-    readdirs(options.assets_path, function(err, asset_filenames) {
+    readdirs(options.assets_path, function (err, asset_filenames) {
       if (err) {
         error('Problem reading assets directory');
         return done(err);
       }
 
       // Files is an array of filename
-      asset_filenames.forEach(asset_filename => {
+      asset_filenames.forEach((asset_filename) => {
         // Strip the path and add the path prefix
         asset_filename = path.relative(options.assets_path, asset_filename);
 
@@ -67,7 +67,7 @@ const get_assets = function(options) {
             id: asset_info.base,
             version: version_path,
             space,
-            page
+            page,
           };
         }
       });

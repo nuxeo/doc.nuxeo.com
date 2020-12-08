@@ -20,7 +20,7 @@ module.exports = (filename, file) => {
       excerpt,
       version,
       path,
-      ranking
+      ranking,
     });
   }
 

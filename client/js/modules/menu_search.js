@@ -26,7 +26,7 @@ const close_search = () => {
   $hits.hide();
 };
 
-const close_handler = e => {
+const close_handler = (e) => {
   const $target = $(e.target);
   if (
     $search_box.hasClass('active') &&
@@ -47,7 +47,7 @@ const show_results = () => {
   }
 };
 
-$('#menu-search-input').on('change keyup', 'input', function(e) {
+$('#menu-search-input').on('change keyup', 'input', function (e) {
   const $this = $(this);
 
   if (e.type === 'keyup' && e.which === 27) {
@@ -64,7 +64,7 @@ const initialise_search = () => {
     const menu_search = instantsearch({
       indexName: 'doc',
       searchClient: algoliasearch(id, search_key),
-      routing: false
+      routing: false,
     });
 
     const filters =
@@ -74,7 +74,7 @@ const initialise_search = () => {
 
     menu_search.addWidget(
       configure({
-        filters
+        filters,
       })
     );
 
@@ -84,7 +84,7 @@ const initialise_search = () => {
       searchBox({
         container: '#menu-search-input',
         placeholder: 'Search Nuxeo Docs',
-        autofocus: true
+        autofocus: true,
       })
     );
 
@@ -94,18 +94,18 @@ const initialise_search = () => {
         templates: {
           empty: 'No results',
           item:
-            '<div><a href="{{{url}}}"><strong>{{{_highlightResult.title.value}}}</strong><br>{{{_snippetResult.description.value}}}</a></div>'
-        }
+            '<div><a href="{{{url}}}"><strong>{{{_highlightResult.title.value}}}</strong><br>{{{_snippetResult.description.value}}}</a></div>',
+        },
       })
     );
 
     menu_search.start();
 
-    menu_search.on('render', function() {
+    menu_search.on('render', function () {
       $('#menu-search-input input').change();
     });
 
-    $search_box.on('click', '.ais-search-box--reset', function() {
+    $search_box.on('click', '.ais-search-box--reset', function () {
       $main_menu.find('#search-box input').select();
     });
 

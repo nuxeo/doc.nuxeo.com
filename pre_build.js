@@ -1,6 +1,6 @@
-'use strict';
-/* eslint-env es6 */
 /* eslint no-console: 0 */
+
+require('dotenv').config();
 
 // Assume production if not set
 if (!process.env.NODE_ENV) {
@@ -9,7 +9,7 @@ if (!process.env.NODE_ENV) {
 
 // Set Debugging up
 if (!process.env.DEBUG) {
-  process.env.DEBUG = '*:info,*:error';
+  process.env.DEBUG = '*:info,*:warn,*:error';
 }
 
 // Debugging
@@ -31,18 +31,18 @@ const pre_builder = require('./lib/pre_builder');
 
 const metadata = {};
 
-const get_repo_branches = function(config) {
+const get_repo_branches = function (config) {
   const repo_branches = [];
-  Object.keys(config.repositories).forEach(function(repo_id) {
+  Object.keys(config.repositories).forEach(function (repo_id) {
     const repo = config.repositories[repo_id];
     const target_base = path.join(__dirname, 'temp');
-    Object.keys(repo.branches).forEach(function(branch) {
+    Object.keys(repo.branches).forEach(function (branch) {
       info('Adding - repo: %s, branch: %s', repo_id, branch);
       repo_branches.push({
         target_source_path: path.join(target_base, repo_id, branch, 'src'),
         target_build_path: path.join(target_base, repo_id, branch, 'site'),
         repo_id: repo_id,
-        branch: branch
+        branch: branch,
       });
     });
   });
@@ -55,7 +55,7 @@ debug('branches: %o', branches);
 
 // npm packages
 
-co(function*() {
+co(function* () {
   console.time('Pre-Build');
 
   // yield algoliaClearIndex();
@@ -71,7 +71,7 @@ co(function*() {
   // console.time('prebuild');
   const pre_build_result = yield pre_build;
   // console.timeEnd('prebuild');
-  pre_build_result.forEach(function(data) {
+  pre_build_result.forEach(function (data) {
     extend(metadata, data);
   });
   debug('metadata keys: %o', Object.keys(metadata));
@@ -81,22 +81,24 @@ co(function*() {
     JSON.stringify(metadata)
   )
     .then(() => info('Created `temp/metadata.json`'))
-    .catch(err => {
+    .catch((err) => {
       error('There was an issue creating `temp/metadata.json`');
       throw err;
     });
 
   // Create Flat JSON list of files and assets
   var flat_json = Object.keys(metadata.pages)
-    .filter(page_path => !metadata.pages[page_path].is_redirect)
-    .map(page_path => metadata.pages[page_path]);
+    .filter((page_path) => !metadata.pages[page_path].is_redirect)
+    .map((page_path) => metadata.pages[page_path]);
   flat_json = flat_json.concat(
-    Object.keys(metadata.assets).map(asset_path => metadata.assets[asset_path])
+    Object.keys(metadata.assets).map(
+      (asset_path) => metadata.assets[asset_path]
+    )
   );
 
   writeFile(path.join(__dirname, 'editor.json'), JSON.stringify(flat_json))
     .then(() => info('Created `editor.json`'))
-    .catch(err => {
+    .catch((err) => {
       error('There was an issue creating `editor.json`');
       throw err;
     });
@@ -126,7 +128,7 @@ co(function*() {
   //   });
 
   console.timeEnd('Pre-Build');
-}).catch(function(err) {
+}).catch(function (err) {
   error(err);
   throw err;
 });

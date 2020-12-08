@@ -6,7 +6,7 @@
 
 const is_legacy = require('./is_legacy_space');
 
-const get_placeholder_string = parts => {
+const get_placeholder_string = (parts) => {
   const { version, space, page = '' } = parts;
 
   let raw_page_name = '';

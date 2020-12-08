@@ -5,7 +5,7 @@ const path = require('path');
 const yaml_config = require('node-yaml-config');
 const exec = require('child_process').execSync;
 
-module.exports = function(config, path_only = true) {
+module.exports = function (config, path_only = true) {
   let cwd = __dirname;
   if (typeof config === 'string') {
     // Set the cwd to get the correct repo and branch
@@ -21,16 +21,11 @@ module.exports = function(config, path_only = true) {
     // Get the repo_url
     const repo_url = exec('git config --get remote.origin.url', {
       encoding: 'utf8',
-      cwd: cwd
+      cwd: cwd,
     });
     // Only use the last part of the url to allow for protocol differences
     const repo_url_part =
-      (typeof repo_url === 'string' &&
-        repo_url
-          .split('/')
-          .pop()
-          .trim()) ||
-      '';
+      (typeof repo_url === 'string' && repo_url.split('/').pop().trim()) || '';
     // console.log('repo_url_part', repo_url_part);
 
     // Get the branch name
@@ -38,7 +33,7 @@ module.exports = function(config, path_only = true) {
       "git branch | grep ^\\* | grep -oE '[a-zA-Z0-9_-]+$'",
       {
         encoding: 'utf8',
-        cwd: cwd
+        cwd: cwd,
       }
     ).trim();
 
@@ -46,14 +41,14 @@ module.exports = function(config, path_only = true) {
 
     // find the current version from the repositories object.
     const current_version = Object.keys(config.repositories)
-      .filter(repo_id =>
+      .filter((repo_id) =>
         config.repositories[repo_id].url.includes(repo_url_part)
       )
-      .map(repo_id => {
+      .map((repo_id) => {
         const repo = config.repositories[repo_id];
         return Object.keys(repo.branches)
-          .filter(branch_id => branch_id === branch_name)
-          .map(branch_id => {
+          .filter((branch_id) => branch_id === branch_name)
+          .map((branch_id) => {
             return repo.branches[branch_id];
           })
           .pop();

@@ -18,24 +18,16 @@ const schema = Joi.object().keys({
     .items(
       Joi.object().keys({
         label: Joi.string().required(),
-        is_current_version: Joi.bool()
-          .optional()
-          .default(false),
-        menu_separator: Joi.bool()
-          .optional()
-          .default(false),
-        url_path: Joi.string()
-          .optional()
-          .default(''),
-        noindex: Joi.bool()
-          .optional()
-          .default(false)
+        is_current_version: Joi.bool().optional().default(false),
+        menu_separator: Joi.bool().optional().default(false),
+        url_path: Joi.string().optional().default(''),
+        noindex: Joi.bool().optional().default(false),
       })
     ),
   file_pattern: Joi.array()
     .items(Joi.string())
     .optional()
-    .default(['**/*.md', '**/*.html'])
+    .default(['**/*.md', '**/*.html']),
 });
 
 const urls = () => (files, metalsmith, done) => {
@@ -51,12 +43,12 @@ const urls = () => (files, metalsmith, done) => {
   }
   const options = validation.value;
 
-  Object.keys(files).forEach(function(filepath) {
+  Object.keys(files).forEach(function (filepath) {
     debug('Filepath: %s', filepath);
     const file = files[filepath];
     if (multimatch(filepath, options.file_pattern).length && file.url) {
       if (options.versions && options.versions.length) {
-        options.versions.forEach(function(version) {
+        options.versions.forEach(function (version) {
           file.url.versions = file.url.versions || [];
           let add_item = true;
           let version_key;
@@ -64,7 +56,7 @@ const urls = () => (files, metalsmith, done) => {
           const version_item = {
             label: version.label,
             is_current_version: !!version.is_current_version,
-            menu_separator: !!version.menu_separator
+            menu_separator: !!version.menu_separator,
           };
           if (file.version_override && file.version_override[version.label]) {
             if (file.version_override[version.label] === 'none') {
@@ -107,7 +99,7 @@ const urls = () => (files, metalsmith, done) => {
         file.url.versions &&
         file.url.versions.length &&
         file.url.versions.find(
-          version =>
+          (version) =>
             version.label.toLowerCase() ===
             metadata.site.canonical_version_preference
         );

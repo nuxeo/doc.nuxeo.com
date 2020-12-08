@@ -19,21 +19,21 @@ const sort_by = require('lodash.sortby');
 // local packages
 const resolve_edit_path = require('../resolve_edit_path');
 
-const process_history = function(data, filepath, file, options) {
+const process_history = function (data, filepath, file, options) {
   if (file) {
     file.history = file.history || [];
 
     data = (data && typeof data[0] === 'string' && data[0]) || data.toString();
     debug(`data: src/${filepath}`, data);
     if (data) {
-      data.split('\n').forEach(function(history_item_raw) {
+      data.split('\n').forEach(function (history_item_raw) {
         const history_item_split = history_item_raw.split('\t');
         const history_item = {
           author: history_item_split[0],
           date: moment
             .utc(history_item_split[1], 'ddd MMM DD HH:mm:ss YYYY Z')
             .format('YYYY-MM-DD HH:mm'),
-          message: history_item_split[2]
+          message: history_item_split[2],
         };
         file.history.push(history_item);
         debug('history_item: ', history_item);
@@ -66,26 +66,17 @@ const process_history = function(data, filepath, file, options) {
 };
 
 const schema = Joi.object().keys({
-  pattern: [
-    Joi.array()
-      .min(1)
-      .required(),
-    Joi.string().required()
-  ],
+  pattern: [Joi.array().min(1).required(), Joi.string().required()],
   sort_by: Joi.func().optional(),
-  reverse: Joi.bool()
-    .optional()
-    .default(false),
-  repo_id: Joi.string()
-    .optional()
-    .allow(''),
+  reverse: Joi.bool().optional().default(false),
+  repo_id: Joi.string().optional().allow(''),
   repo_path: Joi.string(),
-  branch: Joi.string()
+  branch: Joi.string(),
 });
 
-const list_from_field = function(options) {
+const list_from_field = function (options) {
   debug('Options: %o', options);
-  return function(files, metalsmith, done) {
+  return function (files, metalsmith, done) {
     // const files_source = metalsmith.source();
     // Check options fits schema
     const validation = schema.validate(options);
@@ -109,10 +100,10 @@ const list_from_field = function(options) {
       .then(() => {
         return exec('git remote get-url --push origin', {
           encoding: 'utf8',
-          cwd: options.repo_path
+          cwd: options.repo_path,
         });
       })
-      .then(data => {
+      .then((data) => {
         let repository_url;
         if (data && data[0] && typeof data[0] === 'string') {
           repository_url = resolve_edit_path(data[0].trim());
@@ -122,7 +113,7 @@ const list_from_field = function(options) {
 
         Promise.map(
           matched_files,
-          filepath => {
+          (filepath) => {
             return new Promise((resolve, reject) => {
               if (!filepath) {
                 error('Filepath not populated');
@@ -145,14 +136,14 @@ const list_from_field = function(options) {
                 `git log --pretty=format:'%cn%x09%cd%x09%s' src/${filepath}`,
                 {
                   encoding: 'utf8',
-                  cwd: options.repo_path
+                  cwd: options.repo_path,
                 }
               )
-                .then(function(history) {
+                .then(function (history) {
                   process_history(history, filepath, file, options);
                   resolve();
                 })
-                .catch(err => {
+                .catch((err) => {
                   reject(err);
                 });
             });
@@ -160,9 +151,9 @@ const list_from_field = function(options) {
           { concurrency: 20 }
         )
           .then(() => done())
-          .catch(err => done(err));
+          .catch((err) => done(err));
       })
-      .catch(err => done(err));
+      .catch((err) => done(err));
   };
 };
 

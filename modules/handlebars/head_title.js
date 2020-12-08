@@ -1,6 +1,6 @@
 'use strict';
 
-var head_title = function(options) {
+var head_title = function (options) {
   var file = options.data.root;
   var title = options.hash.title || file.title;
 

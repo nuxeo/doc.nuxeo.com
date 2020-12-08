@@ -4,7 +4,7 @@
 var slug = require('slug');
 slug.defaults.modes.pretty.lower = true;
 
-var sluggy = function(text, options) {
+var sluggy = function (text, options) {
   return options && text ? slug(text) : '';
 };
 

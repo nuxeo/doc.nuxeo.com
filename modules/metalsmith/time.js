@@ -3,7 +3,7 @@
 
 const time = require('debug')('plugin-timer:time');
 
-const timer = title => (f, m, done) => {
+const timer = (title) => (f, m, done) => {
   time(`After: ${title}`);
   return done();
 };

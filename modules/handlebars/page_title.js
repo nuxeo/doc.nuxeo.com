@@ -4,7 +4,7 @@
 // Debugging
 const { warn, error } = require('../debugger')('handlebars-title');
 
-const page_title = function(url, options) {
+const page_title = function (url, options) {
   if (!options) {
     error('no url passed');
     return '';

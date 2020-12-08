@@ -5,7 +5,7 @@
 const { debug } = require('./debugger')('menu-flatten');
 
 const process_toc_items = (level = 1) => {
-  return toc_item => {
+  return (toc_item) => {
     toc_item.show = toc_item.level === 2;
     toc_item.is_toc = true;
     const classes = ['toc-item', `l${level}`, `h${toc_item.level}`];
@@ -23,9 +23,9 @@ const get_pages = (page, toc, level = 1, parents = []) => {
     url: { full: url_full },
     active,
     children,
-    toggled
+    toggled,
   } = page;
-  const page_classes = parents.map(parent_id => `p${parent_id}`);
+  const page_classes = parents.map((parent_id) => `p${parent_id}`);
   if (active) {
     page_classes.push('active');
   }
@@ -47,11 +47,11 @@ const get_pages = (page, toc, level = 1, parents = []) => {
     show,
     parents,
     has_control,
-    page_classes
+    page_classes,
   };
 
   if (active && toc) {
-    page_item.toc_classes = parents.map(parent_id => `p${parent_id}`);
+    page_item.toc_classes = parents.map((parent_id) => `p${parent_id}`);
     page_item.toc_classes.push(`l${level}`);
     page_item.toc_classes = page_item.toc_classes.join(' ');
     page_item.toc_items = toc.map(process_toc_items(level));
@@ -63,18 +63,18 @@ const get_pages = (page, toc, level = 1, parents = []) => {
   if (children) {
     const new_level = level + 1;
     children
-      .map(child => {
+      .map((child) => {
         const new_parents = [];
         debug('parents', parents);
         if (parents && parents.length) {
-          parents.forEach(parent => new_parents.push(parent));
+          parents.forEach((parent) => new_parents.push(parent));
         }
         new_parents.push(id);
         debug('new_parents', new_parents);
 
         return get_pages(child, toc, new_level, new_parents);
       })
-      .forEach(child => {
+      .forEach((child) => {
         // debug('child', child);
         menu_items = menu_items.concat(child);
       });
@@ -88,12 +88,12 @@ const menu_flatten = (pages, toc) => {
     all_pages = get_pages(pages, toc);
 
     // open children and siblings of active page
-    const active_page = all_pages.find(page => page.active);
+    const active_page = all_pages.find((page) => page.active);
     if (active_page) {
       const {
         id: active_id,
         level: active_level,
-        parents: active_parents
+        parents: active_parents,
       } = active_page;
       const last_parent = [].concat(active_parents).pop();
       if (active_level > 1) {
@@ -104,30 +104,30 @@ const menu_flatten = (pages, toc) => {
       // open children
       all_pages
         .filter(
-          page =>
+          (page) =>
             page.parents &&
             page.parents.includes(active_id) &&
             page.level === active_level + 1
         )
-        .forEach(page => {
+        .forEach((page) => {
           page.show = true;
         });
 
       // open siblings
       all_pages
         .filter(
-          page =>
+          (page) =>
             page.parents &&
             page.parents.includes(last_parent) &&
             page.level === active_level
         )
-        .forEach(page => {
+        .forEach((page) => {
           page.show = true;
         });
 
       // set parent open
       if (last_parent) {
-        const active_parent = all_pages.find(page => page.id === last_parent);
+        const active_parent = all_pages.find((page) => page.id === last_parent);
         if (
           active_parent &&
           active_parent.page_classes &&
@@ -140,7 +140,7 @@ const menu_flatten = (pages, toc) => {
     }
 
     // Add classes
-    all_pages = all_pages.map(page => {
+    all_pages = all_pages.map((page) => {
       if (page.page_classes) {
         page.classes = page.page_classes.join(' ');
         delete page.page_classes;
@@ -150,8 +150,8 @@ const menu_flatten = (pages, toc) => {
   } else if (toc) {
     all_pages = [
       {
-        toc_items: toc.map(process_toc_items())
-      }
+        toc_items: toc.map(process_toc_items()),
+      },
     ];
   }
 

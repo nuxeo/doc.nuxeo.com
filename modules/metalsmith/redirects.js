@@ -15,7 +15,7 @@ const get_placeholder_key = require('../get_placeholder_key');
 const key_to_url = require('../key_to_url');
 const get_unique_hash = require('../get_unique_hash');
 
-const reverse_object = obj => {
+const reverse_object = (obj) => {
   return Object.keys(obj)
     .reverse()
     .reduce((existing, current) => {
@@ -24,7 +24,7 @@ const reverse_object = obj => {
     }, {});
 };
 
-const get_redirect_url = function(file, metadata) {
+const get_redirect_url = function (file, metadata) {
   const page = file.redirect_source || file.redirect || '';
   let url;
 
@@ -37,7 +37,7 @@ const get_redirect_url = function(file, metadata) {
   return url;
 };
 
-const escape_regex_url = str => str.replace(/([.+])/g, '\\$1');
+const escape_regex_url = (str) => str.replace(/([.+])/g, '\\$1');
 
 /**
  * A Metalsmith plugin to add redirects to yaml file.
@@ -55,7 +55,7 @@ const nuxeo_redirects = () => (files, metalsmith, done) => {
   const get_unique_shortlink = get_unique_hash(shortlinks);
   let redirects;
 
-  const finished = err => {
+  const finished = (err) => {
     const shortlinks_json = JSON.stringify(shortlinks, null, 2);
     let yaml_string = '';
     if (err) {
@@ -76,7 +76,7 @@ const nuxeo_redirects = () => (files, metalsmith, done) => {
         )
       );
     }
-    fs.writeFile(shortlinks_file, shortlinks_json, 'utf8', err => done(err));
+    fs.writeFile(shortlinks_file, shortlinks_json, 'utf8', (err) => done(err));
   };
 
   // Get exisiting redirects
@@ -93,7 +93,7 @@ const nuxeo_redirects = () => (files, metalsmith, done) => {
   redirects = reverse_object(redirects);
 
   const matches = [];
-  Object.keys(files).forEach(filepath => {
+  Object.keys(files).forEach((filepath) => {
     const file = files[filepath];
     if (file.url) {
       const url_full = file.url.full;

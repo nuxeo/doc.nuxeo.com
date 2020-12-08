@@ -22,10 +22,10 @@
  * @return {Function}
  **/
 
-var sorter = function(order) {
+var sorter = function (order) {
   order = order || [];
 
-  return function(one, two) {
+  return function (one, two) {
     var a = one;
     var b = two;
 

@@ -8,7 +8,7 @@ const { warn } = require('../debugger')('handlebars-file-content');
 const slug = require('slug');
 slug.defaults.modes.pretty.lower = true;
 
-const file_content = function(options) {
+const file_content = function (options) {
   const url = options.hash.url || '';
   const content =
     options.data.root.file_content && options.data.root.file_content[slug(url)];

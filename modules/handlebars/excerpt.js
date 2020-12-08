@@ -7,11 +7,11 @@ const { warn } = require('../debugger')('handlebars-excerpt');
 // npm packages
 const slug = require('slug');
 slug.defaults.modes.pretty.lower = true;
-const slug_map = function(str) {
+const slug_map = function (str) {
   return slug(str);
 };
 
-const excerpt = function(name, options) {
+const excerpt = function (name, options) {
   // space:page-name
   const key_arr = name.split(':') || [options.data.root.title];
   if (key_arr.length === 1) {

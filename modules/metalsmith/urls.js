@@ -17,15 +17,9 @@ const schema = Joi.object().keys({
     .items(
       Joi.object().keys({
         label: Joi.string().required(),
-        is_current_version: Joi.bool()
-          .optional()
-          .default(false),
-        url_path: Joi.string()
-          .optional()
-          .default(''),
-        menu_separator: Joi.bool()
-          .optional()
-          .default(false)
+        is_current_version: Joi.bool().optional().default(false),
+        url_path: Joi.string().optional().default(''),
+        menu_separator: Joi.bool().optional().default(false),
       })
     ),
   spaces: Joi.array()
@@ -33,16 +27,14 @@ const schema = Joi.object().keys({
     .items(
       Joi.object().keys({
         space_path: Joi.string().required(),
-        space_name: Joi.string().required()
+        space_name: Joi.string().required(),
       })
     ),
   file_pattern: Joi.array()
     .items(Joi.string())
     .optional()
     .default(['**/*.md', '**/*.html']),
-  default_space: Joi.string()
-    .optional()
-    .default('main')
+  default_space: Joi.string().optional().default('main'),
 });
 
 const urls = (options, add_to_metadata) => (files, metalsmith, done) => {
@@ -63,7 +55,7 @@ const urls = (options, add_to_metadata) => (files, metalsmith, done) => {
   let version_label = '';
   if (options.versions) {
     const current_version = options.versions.find(
-      version => version.is_current_version
+      (version) => version.is_current_version
     );
     if (current_version) {
       version_path = current_version.url_path;
@@ -78,7 +70,7 @@ const urls = (options, add_to_metadata) => (files, metalsmith, done) => {
         version_path,
         version_label,
         spaces: options.spaces,
-        default_space: options.default_space
+        default_space: options.default_space,
       });
 
       file.slug = file.url.key.slug;
@@ -103,7 +95,7 @@ const urls = (options, add_to_metadata) => (files, metalsmith, done) => {
             version_path,
             version_label,
             space_path: file.url.key.space_path,
-            is_redirect: !!(file.redirect || file.redirect_source)
+            is_redirect: !!(file.redirect || file.redirect_source),
           };
         }
       }

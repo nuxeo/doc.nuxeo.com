@@ -6,9 +6,9 @@ const debug = debug_lib('get-placeholder-object');
 
 const split_outside_of_quotes = require('./split_outside_of_quotes');
 
-const equals = text => !!~text.indexOf('=');
-const not_equals = text => !~text.indexOf('=');
-const trim_quotes = text =>
+const equals = (text) => !!~text.indexOf('=');
+const not_equals = (text) => !~text.indexOf('=');
+const trim_quotes = (text) =>
   /^("[^"]*"|'[^']*')$/.test(text) ? text.slice(1, -1) : text;
 
 const get_key_values = (map, str) => {

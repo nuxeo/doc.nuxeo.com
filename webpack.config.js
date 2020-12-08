@@ -15,41 +15,41 @@ module.exports = {
     vendor: [
       '!!script-loader!jquery/dist/jquery.js',
       '!!script-loader!what-input/dist/what-input.js',
-      '!!script-loader!foundation-sites/dist/js/foundation.js'
-    ]
+      '!!script-loader!foundation-sites/dist/js/foundation.js',
+    ],
   },
   externals: {
-    jquery: 'jQuery'
+    jquery: 'jQuery',
   },
   output: {
     path: path.join(__dirname, 'assets', 'js', '[hash]'),
     publicPath: 'assets/js/[hash]/',
     filename: '[name].[hash].bundle.js',
-    chunkFilename: '[id].[hash].bundle.js'
+    chunkFilename: '[id].[hash].bundle.js',
   },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV)
-      }
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+      },
     }),
     new webpack.ProvidePlugin({
       'window.jQuery': 'jquery',
       $: 'jquery',
-      jQuery: 'jquery'
+      jQuery: 'jquery',
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      filename: 'vendor.bundle.js'
+      filename: 'vendor.bundle.js',
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        warnings: false
+        warnings: false,
       },
       mangle: {
-        except: ['$', 'jQuery', 'exports', 'require', 'foundation']
-      }
-    })
+        except: ['$', 'jQuery', 'exports', 'require', 'foundation'],
+      },
+    }),
   ],
   module: {
     loaders: [
@@ -58,10 +58,10 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015']
-        }
-      }
-    ]
+          presets: ['es2015'],
+        },
+      },
+    ],
   },
-  devtool: 'source-map'
+  devtool: 'source-map',
 };

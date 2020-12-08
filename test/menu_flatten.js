@@ -5,7 +5,7 @@ const test = require('tap').test;
 
 const menu_flatten = require('../modules/menu_flatten');
 
-test('menu_flatten is a function', assert => {
+test('menu_flatten is a function', (assert) => {
   // Get typeof string
   const expected = menu_flatten && {}.toString.call(menu_flatten);
 
@@ -13,13 +13,13 @@ test('menu_flatten is a function', assert => {
   assert.end();
 });
 
-test('menu_flatten returns values as expected', assert => {
+test('menu_flatten returns values as expected', (assert) => {
   const tests = [
     {
       message: 'Undefined returns undefined',
       pages: void 0,
       toc: void 0,
-      expected: void 0
+      expected: void 0,
     },
     {
       message: 'TOC only returns TOC',
@@ -28,18 +28,18 @@ test('menu_flatten returns values as expected', assert => {
         {
           id: 'a',
           title: 'A',
-          level: 2
+          level: 2,
         },
         {
           id: 'b',
           title: 'B',
-          level: 3
+          level: 3,
         },
         {
           id: 'c',
           title: 'C',
-          level: 4
-        }
+          level: 4,
+        },
       ],
       expected: [
         {
@@ -50,7 +50,7 @@ test('menu_flatten returns values as expected', assert => {
               level: 2,
               show: true,
               is_toc: true,
-              classes: 'toc-item l1 h2'
+              classes: 'toc-item l1 h2',
             },
             {
               id: 'b',
@@ -58,7 +58,7 @@ test('menu_flatten returns values as expected', assert => {
               level: 3,
               show: false,
               is_toc: true,
-              classes: 'toc-item l1 h3'
+              classes: 'toc-item l1 h3',
             },
             {
               id: 'c',
@@ -66,11 +66,11 @@ test('menu_flatten returns values as expected', assert => {
               level: 4,
               show: false,
               is_toc: true,
-              classes: 'toc-item l1 h4'
-            }
-          ]
-        }
-      ]
+              classes: 'toc-item l1 h4',
+            },
+          ],
+        },
+      ],
     },
     {
       message: 'Process one page correctly',
@@ -78,9 +78,9 @@ test('menu_flatten returns values as expected', assert => {
         id: 'studio',
         name: 'Nuxeo Online Services',
         url: {
-          full: '/studio/'
+          full: '/studio/',
         },
-        active: true
+        active: true,
       },
       toc: void 0,
       expected: [
@@ -93,9 +93,9 @@ test('menu_flatten returns values as expected', assert => {
           show: false,
           parents: [],
           has_control: false,
-          classes: 'active l1'
-        }
-      ]
+          classes: 'active l1',
+        },
+      ],
     },
     {
       message: 'Process children correctly',
@@ -103,7 +103,7 @@ test('menu_flatten returns values as expected', assert => {
         id: 'studio',
         name: 'Nuxeo Online Services',
         url: {
-          full: '/studio/'
+          full: '/studio/',
         },
         active: true,
         toggled: true,
@@ -112,17 +112,17 @@ test('menu_flatten returns values as expected', assert => {
             id: 'child1',
             name: 'Child One',
             url: {
-              full: '/child1/'
-            }
+              full: '/child1/',
+            },
           },
           {
             id: 'child2',
             name: 'Child Two',
             url: {
-              full: '/child2/'
-            }
-          }
-        ]
+              full: '/child2/',
+            },
+          },
+        ],
       },
       toc: void 0,
       expected: [
@@ -135,7 +135,7 @@ test('menu_flatten returns values as expected', assert => {
           show: true,
           parents: [],
           has_control: false,
-          classes: 'active l1'
+          classes: 'active l1',
         },
         {
           id: 'child1',
@@ -146,7 +146,7 @@ test('menu_flatten returns values as expected', assert => {
           show: true,
           parents: ['studio'],
           has_control: false,
-          classes: 'pstudio l2'
+          classes: 'pstudio l2',
         },
         {
           id: 'child2',
@@ -157,9 +157,9 @@ test('menu_flatten returns values as expected', assert => {
           show: true,
           parents: ['studio'],
           has_control: false,
-          classes: 'pstudio l2'
-        }
-      ]
+          classes: 'pstudio l2',
+        },
+      ],
     },
     {
       message: 'Process pages with children and TOC correctly',
@@ -167,7 +167,7 @@ test('menu_flatten returns values as expected', assert => {
         id: 'studio',
         name: 'Nuxeo Online Services',
         url: {
-          full: '/studio/'
+          full: '/studio/',
         },
         toggled: true,
         children: [
@@ -176,24 +176,24 @@ test('menu_flatten returns values as expected', assert => {
             id: 'child1',
             name: 'Child One',
             url: {
-              full: '/child1/'
-            }
+              full: '/child1/',
+            },
           },
           {
             id: 'child2',
             name: 'Child Two',
             url: {
-              full: '/child2/'
-            }
-          }
-        ]
+              full: '/child2/',
+            },
+          },
+        ],
       },
       toc: [
         {
           id: 'a',
           title: 'A',
-          level: 2
-        }
+          level: 2,
+        },
       ],
       expected: [
         {
@@ -205,7 +205,7 @@ test('menu_flatten returns values as expected', assert => {
           show: true,
           parents: [],
           has_control: false,
-          classes: 'l1'
+          classes: 'l1',
         },
         {
           id: 'child1',
@@ -224,11 +224,11 @@ test('menu_flatten returns values as expected', assert => {
               level: 2,
               show: true,
               is_toc: true,
-              classes: 'toc-item l2 h2'
-            }
+              classes: 'toc-item l2 h2',
+            },
           ],
           open: true,
-          classes: 'pstudio active l2 open'
+          classes: 'pstudio active l2 open',
         },
         {
           id: 'child2',
@@ -239,13 +239,13 @@ test('menu_flatten returns values as expected', assert => {
           show: true,
           parents: ['studio'],
           has_control: false,
-          classes: 'pstudio l2'
-        }
-      ]
-    }
+          classes: 'pstudio l2',
+        },
+      ],
+    },
   ];
 
-  tests.forEach(single_test => {
+  tests.forEach((single_test) => {
     const actual = menu_flatten(single_test.pages, single_test.toc);
     assert.deepEqual(actual, single_test.expected, single_test.message);
   });

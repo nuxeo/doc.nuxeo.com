@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-'use strict';
+
+require('dotenv').config();
 
 // Assume production if not set
 if (!process.env.NODE_ENV) {
@@ -34,10 +35,10 @@ const config = yaml_config.load(config_path);
 
 // Add sitemap index
 readdir(path.join(__dirname, '..', 'site'))
-  .then(files => {
+  .then((files) => {
     const sitemap_files = multimatch(files, 'sitemap*.xml')
       .reverse()
-      .map(file => `${config.site.url}/${file}`);
+      .map((file) => `${config.site.url}/${file}`);
     debug('sitemap files: %o', sitemap_files);
     return writeFile(
       path.join(__dirname, '..', 'site', 'sitemap.xml'),
@@ -47,7 +48,7 @@ readdir(path.join(__dirname, '..', 'site'))
     );
   })
   .then(() => info('Saved `sitemap.xml` index'))
-  .catch(err => {
+  .catch((err) => {
     error('There was an issue creating `sitemap.xml`');
     throw err;
   });

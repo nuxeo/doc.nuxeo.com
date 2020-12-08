@@ -5,7 +5,7 @@ const test = require('tap').test;
 
 const hierarchy = require('../modules/metalsmith/hierarchies');
 
-test('hierarchy is a function', assert => {
+test('hierarchy is a function', (assert) => {
   // Get typeof string
   const expected = hierarchy && {}.toString.call(hierarchy);
 
@@ -13,7 +13,7 @@ test('hierarchy is a function', assert => {
   assert.end();
 });
 
-test('hierarchy() returns a function', assert => {
+test('hierarchy() returns a function', (assert) => {
   // Get typeof string
   const expected = {}.toString.call(hierarchy());
 
@@ -21,21 +21,21 @@ test('hierarchy() returns a function', assert => {
   assert.end();
 });
 
-test('hierarchy(min_options) returns a mutated "metalsmith" object with empty hierarchies', assert => {
+test('hierarchy(min_options) returns a mutated "metalsmith" object with empty hierarchies', (assert) => {
   // Get typeof string
   const hierarchy_instance = hierarchy({});
   const actual = {
     _metadata: {},
-    metadata: function() {
+    metadata: function () {
       return this._metadata;
-    }
+    },
   };
 
   const expected = {
-    hierarchies: {}
+    hierarchies: {},
   };
 
-  hierarchy_instance({}, actual, err => {
+  hierarchy_instance({}, actual, (err) => {
     assert.error(err, 'Has not errored');
     assert.isEquivalent(
       actual._metadata,
@@ -46,7 +46,7 @@ test('hierarchy(min_options) returns a mutated "metalsmith" object with empty hi
   });
 });
 
-test('hierarchy({}) returns mutated "metalsmith" object with populated hierarchies', assert => {
+test('hierarchy({}) returns mutated "metalsmith" object with populated hierarchies', (assert) => {
   // Get typeof string
   const hierarchy_instance = hierarchy({});
   const files = {
@@ -57,18 +57,18 @@ test('hierarchy({}) returns mutated "metalsmith" object with populated hierarchi
           space_path: 'nxdoc',
           slug: 'index',
           is_space_index: true,
-          full: 'nxdoc/index'
-        }
+          full: 'nxdoc/index',
+        },
       },
       tree_item_index: void 0,
-      section_parent: ''
-    }
+      section_parent: '',
+    },
   };
   const actual = {
     _metadata: {},
-    metadata: function() {
+    metadata: function () {
       return this._metadata;
-    }
+    },
   };
 
   const expected = {
@@ -84,16 +84,16 @@ test('hierarchy({}) returns mutated "metalsmith" object with populated hierarchi
             full: 'nxdoc/index',
             slug: 'index',
             is_space_index: true,
-            space_path: 'nxdoc'
-          }
+            space_path: 'nxdoc',
+          },
         },
         tree_item_index: 0,
-        section_parent: ''
-      }
-    }
+        section_parent: '',
+      },
+    },
   };
 
-  hierarchy_instance(files, actual, err => {
+  hierarchy_instance(files, actual, (err) => {
     assert.error(err, 'Has not errored');
     assert.isEquivalent(
       actual._metadata,
