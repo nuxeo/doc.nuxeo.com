@@ -76,7 +76,6 @@
     "node-yaml-config": "0.0.6",
     "nuxeo": "github:nuxeo/nuxeo-js-client#master",
     "nuxeo-website-styles": "github:nuxeo/website-styles#v7.0.2",
-    "open-sans-fontface": "^1.4.0",
     "pino": "^6.7.0",
     "postcss-cli": "^6.1.3",
     "prettier": "^2.2.0",
@@ -128,7 +127,6 @@
     "build_css": "node-sass --source-map true --source-map-contents --include-path ./client/scss/ --include-path ./node_modules/foundation-sites/scss/ --include-path ./node_modules/motion-ui/src --include-path ./node_modules/font-awesome/scss --include-path ./node_modules/nuxeo-website-styles/SMAKK/sass --output-style compressed --output ./client/css/ ./client/scss/",
     "postbuild_css": "openssl md5 client/css/* | awk '{print $2}' | sort | openssl md5 | grep -oE '[a-zA-Z0-9]+$' > css.md5",
     "copy_fontawesome": "find ./node_modules/font-awesome/fonts/* -maxdepth 0 -type f -exec cp -f \"{}\" ./assets/fonts/ \\;",
-    "copy_open_sans": "cp -r ./node_modules/open-sans-fontface/fonts/* ./assets/fonts/",
     "copy_fonts": "cp -r ./assets/fonts ./assets/css/",
     "build_css_postcss": "postcss --use autoprefixer -c postcss.json -d assets/css/`cat css.md5` client/css/*.css",
     "lint": "eslint --cache --fix .",
@@ -138,7 +136,7 @@
     "empty_site": "rm -rf ./site/*",
     "empty_temp": "rm -rf ./temp/*",
     "empty_logs": "rm -rf ./logs/*",
-    "precopy_assets": "npm run copy_fontawesome && npm run copy_open_sans && npm run copy_fonts",
+    "precopy_assets": "npm run copy_fontawesome && npm run copy_fonts",
     "copy_assets": "rsync -a assets/ site/assets/ && rsync -a nx_assets/ site/nx_assets/ && npm run duplicate_asset_stats && cp editor.json ./site",
     "copy_extras": "cp -v google197e4c8435c1cca7.html robots.txt opensearch.xml ./site",
     "server": "browser-sync start --server site --browser=$npm_package_config_browser",
@@ -156,7 +154,6 @@
     "add_css_to_existing_build": "cp -r assets/css/`cat css.md5`/* site/assets/css/`cat temp/css.md5`",
     "add_js_to_existing_build": "./bin/add_js_to_existing_build lib/webpack.stats.json temp/webpack.stats.json",
     "update_assets": "npm run compile && npm run add_css_to_existing_build && npm run add_js_to_existing_build && browser-sync reload",
-    "yaml_lint": "js-yaml -t > /dev/null",
     "postversion": "git push && git push --tags"
   },
   "repository": {

@@ -91,7 +91,7 @@ $max-width: 1600px;
 .menu-item {
   color: $c-white;
   display: inline-block;
-  font-weight: $weight-medium;
+  font-weight: $weight-bold;
   padding: 0 1.5em;
   position: relative;
   line-height: $header-height;
@@ -351,7 +351,7 @@ $max-width: 1600px;
   //
   //     > li {
   //       cursor: default;
-  //       font-weight: $weight-medium;
+  //       font-weight: $weight-bold;
   //       line-height: 1;
   //       padding: 19px 1.5em;
   //       position: relative;
