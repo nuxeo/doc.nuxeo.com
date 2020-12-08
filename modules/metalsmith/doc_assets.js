@@ -2,7 +2,9 @@
 /* eslint-env es6 */
 
 // Debugging
-const { debug, error } = require('./../debugger')('metalsmith-nuxeo-assets');
+const { debug, info, error } = require('./../debugger')(
+  'metalsmith-nuxeo-assets'
+);
 
 // npm packages
 const Promise = require('bluebird');
@@ -107,11 +109,18 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
   debug('pattern:', pattern);
 
   if (
-    process.env.NODE_ENV === 'development' &&
-    !process.env.NX_ASSETS_USER &&
-    !process.env.NX_ASSETS_PWD
+    !(
+      (process.env.NX_ASSETS_USER && process.env.NX_ASSETS_PWD) ||
+      process.env.NX_TOKEN
+    )
   ) {
-    return done();
+    if (process.env.NODE_ENV === 'development') {
+      info('No Credentials provided (Development)');
+      return done();
+    } else {
+      error('No Credentials provided (Production)');
+      return done(new Error('No Credentials provided'));
+    }
   }
 
   const metadata = metalsmith.metadata();
@@ -121,12 +130,19 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
       process.env.NX_ASSETS_URL ||
       metadata.site.nx_assets_url ||
       'http://localhost:8080/nuxeo',
-    auth: {
-      method: 'basic',
-      username: process.env.NX_ASSETS_USER || 'Administrator',
-      password: process.env.NX_ASSETS_PWD || 'Administrator',
-    },
   };
+
+  nuxeo_config.auth = process.env.NX_TOKEN
+    ? {
+        method: 'token',
+        token: process.env.NX_TOKEN,
+      }
+    : {
+        method: 'basic',
+        username: process.env.NX_ASSETS_USER,
+        password: process.env.NX_ASSETS_PWD,
+      };
+
   debug('Nuxeo Config:', nuxeo_config);
 
   const nuxeo = new Nuxeo(nuxeo_config);
