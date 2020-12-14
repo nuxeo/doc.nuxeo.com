@@ -68,34 +68,37 @@ production:
       branches:
         static:
           no_versioning: true
+        '2021':
+          label: 'LTS 2021'
+          order: 10
         '1010':
           label: 'LTS 2019'
-          order: 10
+          order: 20
         master:
           label: 'Next'
           noindex: true
-          order: 20
+          order: 30
           menu_separator: true
           url_path: 'next'
         '910':
           label: 'LTS 2017'
           noindex: true
-          order: 30
+          order: 40
           url_path: '910'
         '810':
           label: 'LTS 2016'
           noindex: true
-          order: 40
+          order: 50
           url_path: '810'
         '710':
           label: 'LTS 2015'
           noindex: true
-          order: 50
+          order: 60
           url_path: '710'
         '60':
           label: '6.0'
           noindex: true
-          order: 60
+          order: 70
           url_path: '60'
     java:
       url: git@github.com:nuxeo/doc.nuxeo.com-client-java.git
