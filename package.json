@@ -134,7 +134,7 @@
     "empty_directories": "npm run empty_site && npm run empty_temp && npm run empty_logs",
     "empty_site": "rm -rf ./site/*",
     "empty_temp": "rm -rf ./temp/*",
-    "empty_logs": "rm -rf ./logs/*",
+    "empty_logs": "rm -rf ./logs/* && mkdir -p ./logs",
     "precopy_assets": "npm run copy_fontawesome && npm run copy_fonts",
     "copy_assets": "rsync -a assets/ site/assets/ && rsync -a nx_assets/ site/nx_assets/ && npm run duplicate_asset_stats && cp editor.json ./site",
     "copy_extras": "cp -v google197e4c8435c1cca7.html robots.txt opensearch.xml ./site",
