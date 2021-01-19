@@ -68,8 +68,8 @@ production:
       branches:
         static:
           no_versioning: true
-        '2020':
-          label: 'LTS 2020'
+        '2021':
+          label: 'LTS 2021'
           order: 10
         master:
           label: 'Cloud'
