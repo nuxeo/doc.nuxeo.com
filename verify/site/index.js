@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 const cheerio = require('cheerio');
 
-const next_space_version = 'next';
+const next_space_version = 'cloud';
 
 const site_path = path.join(__dirname, '..', '..', 'site');
 const assets_path = path.join(site_path, 'assets');
@@ -65,7 +65,7 @@ test('canonical and robots metadata reference should be correct', (assert) => {
         'rest-api',
         'index.html'
       ),
-      expected_url: '/nxdoc/next/rest-api/',
+      expected_url: `/nxdoc/${next_space_version}/rest-api/`,
       noindex: true,
     },
     {
