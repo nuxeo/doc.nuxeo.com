@@ -71,23 +71,23 @@ production:
         '2021':
           label: 'LTS 2021'
           order: 10
-        master:
+        'master-2021-release':
           label: 'Cloud'
           noindex: true
           order: 20
           menu_separator: true
           url_path: 'cloud'
-        '1010':
+        '1010-2021-release':
           label: 'LTS 2019'
           noindex: true
           order: 30
           url_path: '1010'
-        '910':
+        '910-2021-release':
           label: 'LTS 2017'
           noindex: true
           order: 40
           url_path: '910'
-        '810':
+        '810-2021-release':
           label: 'LTS 2016'
           noindex: true
           order: 50
