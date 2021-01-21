@@ -12,7 +12,7 @@
             <ul class="menu">
                 {{#each url.versions}}
                 {{#unless this.no_page}}
-                {{#if (conditional this.label '!==' 'none')}}
+                {{#if (condition this.label '!==' 'none')}}
                 <li{{#if this.menu_separator}} class="separator"{{/if}}><a href="{{this.url}}"{{#if this.is_current_version}} class="active"{{/if}}>{{this.label}}</a></li>
                 {{/if}}
                 {{/unless}}
