@@ -438,6 +438,13 @@
 ^/userdoc/next/nuxeo-jenkins-report/?$: /userdoc/cloud/adding-features/
 ^/corg/jenkins-duty/?$: /corg/quality-assurance-and-continuous-integration/
 
+# Delete "java.net.SocketException Too many open files" 
+^/nxdoc/java.net.SocketException-too-many-open-files/?$: /nxdoc/installation/
+^/nxdoc/cloud/java.net.SocketException-too-many-open-files/?$: /nxdoc/cloud/installation/
+^/nxdoc/1010/java.net.SocketException-too-many-open-files/?$: /nxdoc/1010/installation/
+^/nxdoc/910/java.net.SocketException-too-many-open-files/?$: /nxdoc/910/installation/
+^/nxdoc/810/java.net.SocketException-too-many-open-files/?$: /nxdoc/810/installation/
+
 # Getting Started Section - 1010
 ^/nxdoc/configuration-tips/?$: /studio/best-practices
 ^/nxdoc/locking-vs-permission-to-restrict-edit-access-to-a-document/?$: /studio/locking-vs-permission-to-restrict-edit-access-to-a-document
