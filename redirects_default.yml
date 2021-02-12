@@ -438,7 +438,7 @@
 ^/userdoc/next/nuxeo-jenkins-report/?$: /userdoc/cloud/adding-features/
 ^/corg/jenkins-duty/?$: /corg/quality-assurance-and-continuous-integration/
 
-# Delete "java.net.SocketException Too many open files" 
+# Delete "java.net.SocketException Too many open files"
 ^/nxdoc/java.net.SocketException-too-many-open-files/?$: /nxdoc/installation/
 ^/nxdoc/cloud/java.net.SocketException-too-many-open-files/?$: /nxdoc/cloud/installation/
 ^/nxdoc/1010/java.net.SocketException-too-many-open-files/?$: /nxdoc/1010/installation/
@@ -522,3 +522,7 @@
 ^/rest-api/?$:
   target: /rest-api/1/
   type: redirect
+
+/javadoc/2021-lts/:
+  target: https://community.nuxeo.com/api/nuxeo/2021/javadoc/
+  type: reverse_proxy
