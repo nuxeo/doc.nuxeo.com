@@ -21572,5 +21572,32 @@
   ],
   "/nxdoc/1010/how-to-override-a-default-style/": [
     "8sKt"
+  ],
+  "/nxdoc/1010/how-to-import-documents-with-annotations/": [
+    "R0O"
+  ],
+  "/nxdoc/1010/nuxeo-enhanced-viewer-release-notes/": [
+    "jgO"
+  ],
+  "/nxdoc/build-a-custom-docker-image/": [
+    "OZF"
+  ],
+  "/nxdoc/how-to-import-documents-with-annotations/": [
+    "IWd"
+  ],
+  "/nxdoc/nuxeo-enhanced-viewer-release-notes/": [
+    "lS4"
+  ],
+  "/client-apps/450-nuxeo-drive-release-notes/": [
+    "YjU"
+  ],
+  "/nxdoc/cloud/build-a-custom-docker-image/": [
+    "L5e"
+  ],
+  "/nxdoc/cloud/how-to-import-documents-with-annotations/": [
+    "Ues"
+  ],
+  "/nxdoc/cloud/nuxeo-enhanced-viewer-release-notes/": [
+    "VqY"
   ]
 }

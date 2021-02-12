@@ -48,46 +48,45 @@ const urls = () => (files, metalsmith, done) => {
     const file = files[filepath];
     if (multimatch(filepath, options.file_pattern).length && file.url) {
       if (options.versions && options.versions.length) {
-        options.versions
-          .forEach((version) => {
-            file.url.versions = file.url.versions || [];
-            let add_item = true;
-            let version_key;
+        options.versions.forEach((version) => {
+          file.url.versions = file.url.versions || [];
+          let add_item = true;
+          let version_key;
 
-            const version_item = {
-              label: version.label,
-              is_current_version: !!version.is_current_version,
-              menu_separator: !!version.menu_separator,
-            };
-            if (file.version_override && file.version_override[version.label]) {
-              if (file.version_override[version.label] === 'none') {
-                add_item = false;
-              }
-              version_key = get_placeholder_key(
-                file.version_override[version.label],
-                file.url.key
-              );
-            } else {
-              const version_key_parts = [];
-              version_key_parts.push(file.url.key.space);
-              if (version.url_path) {
-                version_key_parts.push(version.url_path);
-              }
-              version_key_parts.push(file.url.key.slug);
-              version_key = version_key_parts.join('/');
+          const version_item = {
+            label: version.label,
+            is_current_version: !!version.is_current_version,
+            menu_separator: !!version.menu_separator,
+          };
+          if (file.version_override && file.version_override[version.label]) {
+            if (file.version_override[version.label] === 'none') {
+              add_item = false;
             }
+            version_key = get_placeholder_key(
+              file.version_override[version.label],
+              file.url.key
+            );
+          } else {
+            const version_key_parts = [];
+            version_key_parts.push(file.url.key.space);
+            if (version.url_path) {
+              version_key_parts.push(version.url_path);
+            }
+            version_key_parts.push(file.url.key.slug);
+            version_key = version_key_parts.join('/');
+          }
 
-            if (add_item) {
-              try {
-                version_item.url = key_to_url(version_key, metadata.pages);
-              } catch (e) {
-                warn('Missing version %s; Title: "%s"', e.message, file.title);
-                version_item.no_page = true;
-                version_item.url = '/' + version_key;
-              }
-              file.url.versions.push(version_item);
+          if (add_item) {
+            try {
+              version_item.url = key_to_url(version_key, metadata.pages);
+            } catch (e) {
+              warn('Missing version %s; Title: "%s"', e.message, file.title);
+              version_item.no_page = true;
+              version_item.url = '/' + version_key;
             }
-          });
+            file.url.versions.push(version_item);
+          }
+        });
         // metadata.pages[file.url.key.full] = {
         //     title: file.title,
         //     url  : file.url.full

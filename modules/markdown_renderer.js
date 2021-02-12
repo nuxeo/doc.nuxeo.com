@@ -179,7 +179,9 @@ renderer.link = function (href_str, title, text) {
 };
 
 renderer.heading = (text, level) => {
-  const text_slug = slug(striptags(text.replace(/\{\{[^}]*?\}\}/g, '')));
+  const text_slug = slug(
+    striptags(text.replace(/\{\{[^}]*?\}\}/g, '').replace(/&amp;/gi, 'and'))
+  );
 
   // return `<h${level} id="${text_slug}">${text}</h${level}>`;
   return `<h${level} id="${text_slug}"><a href="#${text_slug}" class="heading-anchor"><i class="fa fa-link"></i></a>${text}</h${level}>`;

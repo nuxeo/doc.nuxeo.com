@@ -32,6 +32,30 @@ test('markdown_renderer converts text correctly', (assert) => {
 
   test_cases = test_cases.concat([
     {
+      message: 'typography - heading with ampersand',
+      preposition: '## Heading & more',
+      expected:
+        '<h2 id="heading-and-more"><a href="#heading-and-more" class="heading-anchor"><i class="fa fa-link"></i></a>Heading &amp; more</h2>',
+    },
+    {
+      message: 'typography - heading with anchor',
+      preposition: "## Custom Anchor {{> anchor 'something-else'}}",
+      expected:
+        '<h2 id="custom-anchor"><a href="#custom-anchor" class="heading-anchor"><i class="fa fa-link"></i></a>Custom Anchor {{&gt; anchor &#39;something-else&#39;}}</h2>',
+    },
+    {
+      message: 'typography - heading with link',
+      preposition: '## [Link](/another/page/)',
+      expected:
+        '<h2 id="link"><a href="#link" class="heading-anchor"><i class="fa fa-link"></i></a><a href="/another/page/">Link</a></h2>',
+    },
+    {
+      message: 'typography - heading with tags',
+      preposition: "## Tagged {{> tag 'new'}}",
+      expected:
+        '<h2 id="tagged"><a href="#tagged" class="heading-anchor"><i class="fa fa-link"></i></a>Tagged {{&gt; tag &#39;new&#39;}}</h2>',
+    },
+    {
       message: 'typography - italic',
       preposition: 'this is _italic_',
       expected: '<p>this is <em>italic</em></p>',

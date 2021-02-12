@@ -1,46 +1,26 @@
-#page-information-tags {
-  color: $secondary-color;
-  font-size: $nuxeo-body-small;
-  font-weight: $global-weight-bold;
-  margin-bottom: 2rem;
-  margin-top: 1rem;
-
-  > :first-child {
-    &::before {
-      color: $medium-gray;
-      content: 'Tags ';
-      font-style: italic;
-    }
-  }
-
-  a {
-    color: $secondary-color;
-  }
-}
-
-$new-tag-bg: #d9e6f0;
-$new-tag-fg: rgba(0, 5, 34, 0.6);
-
-.tag-new {
-  background-color: $new-tag-bg;
-  color: $new-tag-fg;
+.doc-tag {
+  background-color: transparent;
+  border: 1px solid $c-black;
+  border-radius: 4px;
+  color: $c-black;
   display: inline-block;
   font-size: 1rem;
-  font-weight: 200;
-  letter-spacing: .1rem;
-  line-height: 1.8rem;
-  margin-left: .5rem;
-  padding: 0 .4em;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  line-height: 1.5;
+  margin-left: 0.5em;
+  padding: 0 0.25em;
   text-transform: uppercase;
   vertical-align: middle;
 
-  &::after {
-    content: 'NEW';
+  &--new {
+    background-color: $c-blue;
+    border-color: $c-blue;
+    color: $c-white;
   }
 
   .pnuxeo-server & {
-    font-size: .7rem;
-    letter-spacing: .06rem;
-    line-height: 1.2rem;
+    font-size: 0.75rem;
+    letter-spacing: 0;
   }
 }
