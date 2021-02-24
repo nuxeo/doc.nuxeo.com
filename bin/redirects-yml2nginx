@@ -1,13 +1,38 @@
 #!/usr/bin/env node
 /* eslint no-console: 0 */
 
+require('dotenv').config();
+// Set debug level
+process.env.DEBUG = process.env.DEBUG || '*:error,*:info';
+
 const yaml = require('js-yaml');
 const fs = require('fs');
 const path = require('path');
 
-const { debug } = require('../modules/debugger')('redirects-yml2nginx');
+const { debug, error } = require('../modules/debugger')('redirects-yml2nginx');
 const shortlinks = require('../shortlinks.json');
 const redirects_file = path.join(__dirname, '..', 'redirects.yml');
+
+const formater = {
+  redirect: (source, target, type) => {
+    // add leading /
+    if (!add_prefix_regex.test(target)) {
+      target = `/${target}`;
+    }
+
+    // Escape spaces in source and target
+    source = escape_spaces(source);
+    target = escape_spaces(target);
+
+    // Build output string
+    return `rewrite ${source}\t${target}\t${type};`;
+  },
+  reverse_proxy: (source, target) => `location ${source} {
+    proxy_pass ${target};
+}`
+};
+
+const default_type = 'permanent';
 
 debug('shortlinks', Object.entries(shortlinks).slice(0, 100));
 
@@ -46,19 +71,15 @@ console.log(
       ) {
         target_config = { target: target_config };
       }
-      let { target, type = 'permanent' } = target_config;
+      const { target, type = default_type } = target_config;
+      const format_type = type === default_type ? 'redirect' : type;
 
-      // add leading /
-      if (!add_prefix_regex.test(target)) {
-        target = `/${target}`;
+      if (typeof formater[format_type] === 'function') {
+        return formater[format_type](source, target, type);
+      } else {
+        error(`generator.${format_type} not found`);
+        return null;
       }
-
-      // Escape spaces in source and target
-      source = escape_spaces(source);
-      target = escape_spaces(target);
-
-      // Build output string
-      return `rewrite ${source}\t${target}\t${type};`;
     })
     .join('\n')
 );
