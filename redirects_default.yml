@@ -522,6 +522,10 @@
 ^/rest-api/?$:
   target: /rest-api/1/
   type: redirect
+  
+/javadoc/2019-lts/:
+  target: https://community.nuxeo.com/api/nuxeo/10.10/javadoc/
+  type: reverse_proxy
 
 /javadoc/2021-lts/:
   target: https://community.nuxeo.com/api/nuxeo/2021/javadoc/
