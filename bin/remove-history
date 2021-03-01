@@ -15,6 +15,13 @@ const fs = require('fs');
 
 // npm packages
 const debug = require('debug')('remove-history');
+
+if (!debug.extend) {
+  debug.extend = (level) => (...args) => {
+    debug(`[${level}]`, `${args}`)
+  }
+}
+
 const info = debug.extend('info');
 const error = debug.extend('error');
 const matter = require('gray-matter');
