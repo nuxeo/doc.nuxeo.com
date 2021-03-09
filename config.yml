@@ -48,6 +48,8 @@ default:
         section_color: services
       - page: /nxdoc/nuxeo-tools
         section_color: tools
+      - page: /nuxeo-cloud
+        section_color: user-documentation-color
   page_defaults:
     - pattern: '**/*.md'
       defaults:
@@ -71,12 +73,10 @@ production:
         '2021':
           label: 'LTS 2021'
           order: 10
-        'master':
-          label: 'Cloud'
+        'master-to-master':
+          label: 'none'
           noindex: true
-          order: 20
-          menu_separator: true
-          url_path: 'cloud'
+          url_path: 'master'
         '1010':
           label: 'LTS 2019'
           noindex: true
