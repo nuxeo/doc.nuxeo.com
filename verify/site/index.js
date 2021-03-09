@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 const cheerio = require('cheerio');
 
-const next_space_version = 'cloud';
+const next_space_version = 'master';
 
 const site_path = path.join(__dirname, '..', '..', 'site');
 const assets_path = path.join(site_path, 'assets');
