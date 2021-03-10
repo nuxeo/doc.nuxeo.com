@@ -4,7 +4,9 @@
         <li class="version-label">Documentation versions <span class="vertical-bar"></span></li>
         {{#each url.versions}}
         {{#unless this.no_page}}
+        {{#unless (condition this.label '===' 'none')}}
         <li><a href="{{this.url}}" class="{{#if this.is_current_version}}active{{/if}}">{{this.label}}</a></li>
+        {{/unless}}
         {{/unless}}
         {{/each}}
     </ul>
