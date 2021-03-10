@@ -160,3 +160,14 @@ img {
     }
   }
 }
+
+.flex-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1rem;
+  justify-content: center;
+}
+.flex-box {
+  max-width: calc(33.3% - 0.7rem);
+  min-width: 174px;
+}
