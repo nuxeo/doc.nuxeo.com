@@ -34,6 +34,8 @@ default:
         section_color: tutorials
       - page: /nxdoc/nuxeo-server
         section_color: server
+      - page: /nuxeo-cloud
+        section_color: user-documentation-color
       - page: /nxdoc/web-ui
         section_color: web-ui
       - page: /nxdoc/dam
@@ -71,12 +73,10 @@ production:
         '2021':
           label: 'LTS 2021'
           order: 10
-        'master':
-          label: 'Cloud'
+        master:
+          label: 'none'
           noindex: true
-          order: 20
-          menu_separator: true
-          url_path: 'cloud'
+          url_path: 'master'
         '1010':
           label: 'LTS 2019'
           noindex: true

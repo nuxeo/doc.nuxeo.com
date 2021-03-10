@@ -5,16 +5,16 @@
             {{#each url.versions}}
             {{#if this.is_current_version}}
             <a href="#">
-                Version: <span class="version-label">{{this.label}}</span> <i class="fa fa-caret-down"></i>
+                Version: <span class="version-label">{{#if (condition this.label '===' 'none')}}Select{{else}}{{this.label}}{{/if}}</span> <i class="fa fa-caret-down"></i>
             </a>
             {{/if}}
             {{/each}}
             <ul class="menu">
                 {{#each url.versions}}
                 {{#unless this.no_page}}
-                {{#if (condition this.label '!==' 'none')}}
+                {{#unless (condition this.label '===' 'none')}}
                 <li{{#if this.menu_separator}} class="separator"{{/if}}><a href="{{this.url}}"{{#if this.is_current_version}} class="active"{{/if}}>{{this.label}}</a></li>
-                {{/if}}
+                {{/unless}}
                 {{/unless}}
                 {{/each}}
             </ul>

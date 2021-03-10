@@ -193,10 +193,10 @@
 ^/studio/nuxeo-online-services-portal-roadmap/?$: /studio/nuxeo-studio-roadmap/
 
 # NXDOC-521
-^/x/VoVH/?$: /nxdoc/cloud/explorer/
-^/nxdoc/next/using-the-java-api-server-side/?$: /nxdoc/cloud/howto-use-the-runtime-java-api/
-^/nxdoc/next/writing-a-bundle-manifest/?$: /nxdoc/cloud/howto-write-a-bundle-manifest/
-^/userdoc/next/nuxeo-platform-explorer/?$: /nxdoc/cloud/explorer/
+^/x/VoVH/?$: /nxdoc/master/explorer/
+^/nxdoc/next/using-the-java-api-server-side/?$: /nxdoc/master/howto-use-the-runtime-java-api/
+^/nxdoc/next/writing-a-bundle-manifest/?$: /nxdoc/master/howto-write-a-bundle-manifest/
+^/userdoc/next/nuxeo-platform-explorer/?$: /nxdoc/master/explorer/
 
 # NXDOC-1276
 ^/nxdoc/getting-started-with-the-nuxeo-platform/?$: /nxdoc/discover-nuxeo-platform-apis/
@@ -368,7 +368,7 @@
 ^/nxdoc/events-and-listeners/?$: /nxdoc/events-and-messages/
 ^/nxdoc/event-and-listener-how-to-index/?$: /nxdoc/events-and-messages-how-to-index/
 ^/nxdoc/additional-services/?$: /nxdoc/platform-services/
-^/nxdoc/next/additional-services/?$: /nxdoc/cloud/platform-services/
+^/nxdoc/next/additional-services/?$: /nxdoc/master/platform-services/
 ^/nxdoc/deleting-documents/?$: /nxdoc/trash-service/
 
 # NXDOC-1925
@@ -395,17 +395,17 @@
 ^/nxdoc/java-automation-client/?$: /client-java/
 
 # NXDOC-2076 Observability section
-^/nxdoc/next/logs-analysis/?$: /nxdoc/cloud/logs
-^/nxdoc/next/monitoring-and-maintenance/?$: /nxdoc/cloud/maintenance
-^/nxdoc/next/metrics-and-monitoring/?$: /nxdoc/cloud/metrics
-^/nxdoc/next/remote-monitoring-through-https/?$: /nxdoc/cloud/maintenance
-^/nxdoc/next/remote-monitoring-through-a-ssh-tunnel/?$: /nxdoc/cloud/maintenance
-^/nxdoc/next/monitoring-slow-nxql-queries/?$: /nxdoc/cloud/maintenance
-^/nxdoc/next/transactions-and-connections/?$: /nxdoc/cloud/maintenance
+^/nxdoc/next/logs-analysis/?$: /nxdoc/master/logs
+^/nxdoc/next/monitoring-and-maintenance/?$: /nxdoc/master/maintenance
+^/nxdoc/next/metrics-and-monitoring/?$: /nxdoc/master/metrics
+^/nxdoc/next/remote-monitoring-through-https/?$: /nxdoc/master/maintenance
+^/nxdoc/next/remote-monitoring-through-a-ssh-tunnel/?$: /nxdoc/master/maintenance
+^/nxdoc/next/monitoring-slow-nxql-queries/?$: /nxdoc/master/maintenance
+^/nxdoc/next/transactions-and-connections/?$: /nxdoc/master/maintenance
 
-^/retention-management/?$: /nxdoc/cloud/nuxeo-retention-management/
-^/retention-management/nuxeo-retention-functional-overview/?$: /nxdoc/cloud/nuxeo-retention-functional-overview/
-^/retention-management/nuxeo-retention-technical-overview/?$: /nxdoc/cloud/nuxeo-retention-technical-overview/
+^/retention-management/?$: /nxdoc/master/nuxeo-retention-management/
+^/retention-management/nuxeo-retention-functional-overview/?$: /nxdoc/master/nuxeo-retention-functional-overview/
+^/retention-management/nuxeo-retention-technical-overview/?$: /nxdoc/master/nuxeo-retention-technical-overview/
 
 ^/nxdoc/scheduling-periodic-events/?$: /studio/scheduling-periodic-events
 ^/nxdoc/nuxeo-management-rest-api/?$: /nxdoc/1010/nuxeo-management-rest-api
@@ -434,13 +434,13 @@
 ^/idedoc/preparing-your-project-for-building/?$: /nxdoc/nuxeo-cli
 
 # NXDOC-2203 - Delete Jenkins report doc
-^/nxdoc/next/nuxeo-jenkins-report/?$: /nxdoc/cloud/nuxeo-add-ons/
-^/userdoc/next/nuxeo-jenkins-report/?$: /userdoc/cloud/adding-features/
+^/nxdoc/next/nuxeo-jenkins-report/?$: /nxdoc/master/nuxeo-add-ons/
+^/userdoc/next/nuxeo-jenkins-report/?$: /userdoc/master/adding-features/
 ^/corg/jenkins-duty/?$: /corg/quality-assurance-and-continuous-integration/
 
 # Delete "java.net.SocketException Too many open files"
 ^/nxdoc/java.net.SocketException-too-many-open-files/?$: /nxdoc/installation/
-^/nxdoc/cloud/java.net.SocketException-too-many-open-files/?$: /nxdoc/cloud/installation/
+^/nxdoc/master/java.net.SocketException-too-many-open-files/?$: /nxdoc/master/installation/
 ^/nxdoc/1010/java.net.SocketException-too-many-open-files/?$: /nxdoc/1010/installation/
 ^/nxdoc/910/java.net.SocketException-too-many-open-files/?$: /nxdoc/910/installation/
 ^/nxdoc/810/java.net.SocketException-too-many-open-files/?$: /nxdoc/810/installation/
@@ -477,11 +477,11 @@
 ^/nxdoc/next/workflow-escalation-rules-example/?$: /studio/workflow-escalation-rules-example
 ^/nxdoc/next/available-variables-in-email-templates/?$: /studio/available-variables-in-email-templates
 ^/nxdoc/next/continuous-integration/?$: /corg/continuous-integration
-^/nxdoc/next/learning-with-examples/?$: /nxdoc/cloud/web-ui-tutorials
-^/nxdoc/next/how-to-publish-a-news-feature-in-workspaces/?$: /nxdoc/cloud/web-ui-tutorials
-^/nxdoc/next/add-a-news-content-view-on-workspaces/?$: /nxdoc/cloud/web-ui-tutorials
-^/nxdoc/next/implement-the-news-document/?$: /nxdoc/cloud/web-ui-tutorials
-^/nxdoc/next/implement-the-news-publishing-process/?$: /nxdoc/cloud/web-ui-tutorials
+^/nxdoc/next/learning-with-examples/?$: /nxdoc/master/web-ui-tutorials
+^/nxdoc/next/how-to-publish-a-news-feature-in-workspaces/?$: /nxdoc/master/web-ui-tutorials
+^/nxdoc/next/add-a-news-content-view-on-workspaces/?$: /nxdoc/master/web-ui-tutorials
+^/nxdoc/next/implement-the-news-document/?$: /nxdoc/master/web-ui-tutorials
+^/nxdoc/next/implement-the-news-publishing-process/?$: /nxdoc/master/web-ui-tutorials
 
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
@@ -507,10 +507,10 @@
 ^/display/KB/?$: /
 
 # Next-Cloud switch
-^/nxdoc/next/?$: /nxdoc/cloud/
-^/nxdoc/next/(.*): /nxdoc/cloud/$1
-^/userdoc/next/?$: /userdoc/cloud/
-^/userdoc/next/(.*): /userdoc/cloud/$1
+^/nxdoc/next/?$: /nxdoc/master/
+^/nxdoc/next/(.*): /nxdoc/master/$1
+^/userdoc/next/?$: /userdoc/master/
+^/userdoc/next/(.*): /userdoc/master/$1
 
 # Redirects for VERSION/SPACE/... to SPACE/VERSION/...
 ^/(\d+)/([^/]+)(/.*): /$2/$1/$3
@@ -522,7 +522,7 @@
 ^/rest-api/?$:
   target: /rest-api/1/
   type: redirect
-  
+
 /javadoc/2019-lts/:
   target: https://community.nuxeo.com/api/nuxeo/10.10/javadoc/
   type: reverse_proxy
