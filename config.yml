@@ -34,6 +34,8 @@ default:
         section_color: tutorials
       - page: /nxdoc/nuxeo-server
         section_color: server
+      - page: /nuxeo-cloud
+        section_color: user-documentation-color
       - page: /nxdoc/web-ui
         section_color: web-ui
       - page: /nxdoc/dam
@@ -48,8 +50,6 @@ default:
         section_color: services
       - page: /nxdoc/nuxeo-tools
         section_color: tools
-      - page: /nuxeo-cloud
-        section_color: user-documentation-color
   page_defaults:
     - pattern: '**/*.md'
       defaults:
