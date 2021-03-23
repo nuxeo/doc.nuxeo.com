@@ -70,7 +70,7 @@ production:
       branches:
         static:
           no_versioning: true
-        '2021':
+        'NXDOC-2300-review-cluster-architecture':
           label: 'LTS 2021'
           order: 10
         master:
