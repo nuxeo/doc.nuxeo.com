@@ -68,7 +68,7 @@ production:
     platform:
       url: git@github.com:nuxeo/doc.nuxeo.com-content.git
       branches:
-        static:
+        'static-doc-asset-test':
           no_versioning: true
         'NXDOC-2300-review-cluster-architecture':
           label: 'LTS 2021'
