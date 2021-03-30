@@ -23648,5 +23648,71 @@
   ],
   "/nxdoc/master/how-to-add-new-relation-types/": [
     "_7_"
+  ],
+  "/client-apps/5.0.0-nuxeo-drive-release-notes/": [
+    "BPH"
+  ],
+  "/studio/studio-updates-2021-01-02/": [
+    "3kc"
+  ],
+  "/studio/studio-updates-2021-03/": [
+    "evj"
+  ],
+  "/nxdoc/master/installing-the-nuxeo-platform-on-mac-os/": [
+    "Xq3"
+  ],
+  "/nxdoc/nuxeo-cluster-architecture/": [
+    "aHlW"
+  ],
+  "/nxdoc/nuxeo-storage-alternatives/": [
+    "0LJ"
+  ],
+  "/nxdoc/nuxeo-architecture-components/": [
+    "vhK"
+  ],
+  "/nxdoc/nuxeo-architecture-introduction/": [
+    "8Nu"
+  ],
+  "/nxdoc/nuxeo-reference-architectures/": [
+    "apd"
+  ],
+  "/nxdoc/nuxeo-scalability-options/": [
+    "d03"
+  ],
+  "/nxdoc/asynchronous-processing-architecture/": [
+    "Dal"
+  ],
+  "/nxdoc/database-architecture/": [
+    "LXH"
+  ],
+  "/nxdoc/elasticsearch-architecture/": [
+    "dEk"
+  ],
+  "/nxdoc/file-storage-architecture/": [
+    "JIp"
+  ],
+  "/nxdoc/load-balancers-architecture/": [
+    "8JQ"
+  ],
+  "/nxdoc/nuxeo-server-architecture/": [
+    "S9k"
+  ],
+  "/nxdoc/pubsub-architecture/": [
+    "gDH"
+  ],
+  "/nxdoc/redis-architecture/": [
+    "Q0L"
+  ],
+  "/nxdoc/reverse-proxy-architecture/": [
+    "KLL"
+  ],
+  "/nxdoc/compact-architecture-with-kafka/": [
+    "ySh"
+  ],
+  "/nxdoc/compact-architecture-with-redis/": [
+    "zEK"
+  ],
+  "/nxdoc/distributed-architecture-with-kafka/": [
+    "wHr"
   ]
 }

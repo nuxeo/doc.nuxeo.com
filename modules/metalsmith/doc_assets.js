@@ -81,8 +81,10 @@ const get_file = (doc, local_path) => {
                   res.body.pipe(fs.createWriteStream(local_path));
                 });
               } else {
-                debug('No err.response', err);
-                return Promise.reject(err);
+                error('No err.response', err);
+                if (process.env.NODE_ENV !== 'development') {
+                  return Promise.reject(err);
+                }
               }
             }
           )
@@ -199,7 +201,9 @@ const doc_assets = (options = {}) => (files, metalsmith, done) => {
           })
           .catch((err) => {
             error('fetch err:', err);
-            return Promise.reject(err);
+            if (process.env.NODE_ENV !== 'development') {
+              return Promise.reject(err);
+            }
           });
 
         url_promises.push(p);

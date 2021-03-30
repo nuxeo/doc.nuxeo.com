@@ -17,8 +17,8 @@ default:
       - '**.DS_Store'
       - '*~'
       - '*.swp'
-    # nx_assets_url: https://intranet.nuxeo.com/nuxeo
-    nx_assets_url: http://intranet-preprod.nuxeocloud.com/nuxeo
+    nx_assets_url: https://intranet.nuxeo.com/nuxeo
+    # nx_assets_url: http://intranet-preprod.nuxeocloud.com/nuxeo
     canonical_version_preference: 'LTS 2019'
     new_version: '10.10'
 
@@ -68,7 +68,7 @@ production:
     platform:
       url: git@github.com:nuxeo/doc.nuxeo.com-content.git
       branches:
-        'static-doc-asset-test':
+        static:
           no_versioning: true
         'NXDOC-2300-review-cluster-architecture':
           label: 'LTS 2021'
@@ -126,12 +126,10 @@ development:
       branches:
         static:
           no_versioning: true
-        '1010':
-          label: 'LTS 2019'
+        '2021':
+          label: 'LTS 2021'
           order: 10
         master:
-          label: 'Next'
+          label: 'none'
           noindex: true
-          order: 20
-          menu_separator: true
-          url_path: 'next'
+          url_path: 'master'
