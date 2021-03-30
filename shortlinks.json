@@ -23714,5 +23714,131 @@
   ],
   "/nxdoc/distributed-architecture-with-kafka/": [
     "wHr"
+  ],
+  "/design/buttons/": [
+    "QDQ"
+  ],
+  "/design/card/": [
+    "lcE"
+  ],
+  "/design/checkboxes/": [
+    "DRo"
+  ],
+  "/design/color/": [
+    "BMw"
+  ],
+  "/design/file-uploader/": [
+    "KBK"
+  ],
+  "/design/form/": [
+    "D2V"
+  ],
+  "/design/icons/": [
+    "qw3"
+  ],
+  "/design/": [
+    "Pp6"
+  ],
+  "/design/modal-dialogs/": [
+    "jA9"
+  ],
+  "/design/notification/": [
+    "UV6p"
+  ],
+  "/design/radio-button/": [
+    "Hvl"
+  ],
+  "/design/select/": [
+    "vQx"
+  ],
+  "/design/selectivity/": [
+    "XkJV"
+  ],
+  "/design/spacing/": [
+    "XUP"
+  ],
+  "/design/toggle/": [
+    "lBo"
+  ],
+  "/design/typography/": [
+    "e0J"
+  ],
+  "/design/dark-theme-buttons/": [
+    "vpX"
+  ],
+  "/design/default-theme-buttons/": [
+    "UOJ"
+  ],
+  "/design/style-buttons/": [
+    "T9a"
+  ],
+  "/design/style-card/": [
+    "wKa"
+  ],
+  "/design/dark-theme/": [
+    "Uk8"
+  ],
+  "/design/default-theme/": [
+    "JEQ"
+  ],
+  "/design/light-theme/": [
+    "Ykt"
+  ],
+  "/design/style-modal-dialogs/": [
+    "vPl"
+  ],
+  "/design/dark-theme-notification/": [
+    "upT"
+  ],
+  "/design/default-theme-notification/": [
+    "zn_"
+  ],
+  "/design/style-notification/": [
+    "6Eh"
+  ],
+  "/design/dropzone/": [
+    "4hn"
+  ],
+  "/design/style-dropzone/": [
+    "GP6"
+  ],
+  "/advanced-usage/": [
+    "LlN"
+  ],
+  "/authentication/": [
+    "NMi"
+  ],
+  "/automation/": [
+    "mbC"
+  ],
+  "/configuration/": [
+    "1ta"
+  ],
+  "/user-group/": [
+    "vpo"
+  ],
+  "/workflows/": [
+    "FTE"
+  ],
+  "/client-php/advanced-usage/": [
+    "e-D"
+  ],
+  "/client-php/authentication/": [
+    "ZNQ"
+  ],
+  "/client-php/automation/": [
+    "Og3"
+  ],
+  "/client-php/configuration/": [
+    "WAm"
+  ],
+  "/client-php/": [
+    "41d"
+  ],
+  "/client-php/user-group/": [
+    "MvR"
+  ],
+  "/client-php/workflows/": [
+    "o_-"
   ]
 }
