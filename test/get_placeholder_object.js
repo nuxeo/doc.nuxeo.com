@@ -69,6 +69,16 @@ test('get_placeholder_object returns values as expected', (assert) => {
       message: 'returns correct name, version, space and page',
     },
     {
+      test: "'target_name' version='' space='nxdoc' page='install'",
+      expected: {
+        name: 'target_name',
+        version: '',
+        space: 'nxdoc',
+        page: 'install',
+      },
+      message: 'returns correct name, version, space and page',
+    },
+    {
       test: " 'MP-packages-list' page='USERDOC710:Adding Features'",
       expected: {
         name: 'MP-packages-list',
