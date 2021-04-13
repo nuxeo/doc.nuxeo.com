@@ -408,7 +408,9 @@
 ^/retention-management/nuxeo-retention-technical-overview/?$: /nxdoc/master/nuxeo-retention-technical-overview/
 
 ^/nxdoc/scheduling-periodic-events/?$: /studio/scheduling-periodic-events
-^/nxdoc/nuxeo-management-rest-api/?$: /nxdoc/1010/nuxeo-management-rest-api
+^/nxdoc/nuxeo-management-rest-api/?$: /nxdoc/1010/nuxeo-management-rest-api 
+
+^/nxdoc/hotfixes-installation-notes-for-nuxeo-platform-lts-2019/?$: /nxdoc/hotfixes-installation-notes-for-nuxeo-platform-lts-2021/
 
 # NXP-28101: Remove Nuxeo IDE Doc
 ^/idedoc/creating-your-first-nuxeo-project/?$: /nxdoc/nuxeo-cli
