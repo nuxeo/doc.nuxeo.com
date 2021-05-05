@@ -447,6 +447,9 @@
 ^/nxdoc/910/java.net.SocketException-too-many-open-files/?$: /nxdoc/910/installation/
 ^/nxdoc/810/java.net.SocketException-too-many-open-files/?$: /nxdoc/810/installation/
 
+# NXDOC-1986 
+^/nuxeo-release-cycle/?$: /nxdoc/nuxeo-release-cycle/
+
 # Getting Started Section - 1010
 ^/nxdoc/configuration-tips/?$: /studio/best-practices
 ^/nxdoc/locking-vs-permission-to-restrict-edit-access-to-a-document/?$: /studio/locking-vs-permission-to-restrict-edit-access-to-a-document
