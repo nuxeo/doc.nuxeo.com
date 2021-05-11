@@ -120,9 +120,7 @@ production:
       url: git@github.com:nuxeo/doc.nuxeo.com-client-php.git
       branches:
         'main':
-          label: 'Main'
-          url_path: 'main'
-          order: 0
+          no_versioning: true
 development:
   isDev: true
   site:

@@ -528,10 +528,6 @@
   target: /rest-api/1/
   type: redirect
 
-^/php/?$:
-  target: /rest-api/main/
-  type: redirect
-
 /javadoc/2019-lts/:
   target: https://community.nuxeo.com/api/nuxeo/10.10/javadoc/
   type: reverse_proxy
