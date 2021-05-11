@@ -70,6 +70,8 @@ production:
       branches:
         static:
           no_versioning: true
+        design:
+          no_versioning: true
         '2021':
           label: 'LTS 2021'
           order: 10
@@ -113,6 +115,13 @@ production:
         '1':
           label: '1'
           url_path: '1'
+          order: 0
+    php:
+      url: git@github.com:nuxeo/doc.nuxeo.com-client-php.git
+      branches:
+        'main':
+          label: 'Main'
+          url_path: 'main'
           order: 0
 development:
   isDev: true

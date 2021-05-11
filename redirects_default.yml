@@ -408,7 +408,7 @@
 ^/retention-management/nuxeo-retention-technical-overview/?$: /nxdoc/master/nuxeo-retention-technical-overview/
 
 ^/nxdoc/scheduling-periodic-events/?$: /studio/scheduling-periodic-events
-^/nxdoc/nuxeo-management-rest-api/?$: /nxdoc/1010/nuxeo-management-rest-api 
+^/nxdoc/nuxeo-management-rest-api/?$: /nxdoc/1010/nuxeo-management-rest-api
 
 ^/nxdoc/hotfixes-installation-notes-for-nuxeo-platform-lts-2019/?$: /nxdoc/hotfixes-installation-notes-for-nuxeo-platform-lts-2021/
 
@@ -447,7 +447,7 @@
 ^/nxdoc/910/java.net.SocketException-too-many-open-files/?$: /nxdoc/910/installation/
 ^/nxdoc/810/java.net.SocketException-too-many-open-files/?$: /nxdoc/810/installation/
 
-# NXDOC-1986 
+# NXDOC-1986
 ^/nuxeo-release-cycle/?$: /nxdoc/nuxeo-release-cycle/
 
 # Getting Started Section - 1010
@@ -526,6 +526,10 @@
 
 ^/rest-api/?$:
   target: /rest-api/1/
+  type: redirect
+
+^/php/?$:
+  target: /rest-api/main/
   type: redirect
 
 /javadoc/2019-lts/:
