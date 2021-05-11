@@ -28,11 +28,14 @@ const schema = Joi.object()
 const multiexcerpts = (options) => (files, metalsmith, done) => {
   debug('Options: %o', options);
   // Check options fits schema
-  const validation = schema.validate(options);
+  const validation = schema.validate(options, { allowUnknown: true });
   if (validation.error) {
     return done(validation.error);
   }
   options = validation.value;
+
+  debug('repo_id', options.repo_id);
+  debug('branch', options.branch);
 
   const metadata = metalsmith.metadata();
   const re_definition = new RegExp(

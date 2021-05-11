@@ -39,9 +39,9 @@ test('get_placeholder_string returns values as expected', (assert) => {
       test: {
         name: 'useless',
         space: 'nxdoc',
-        page: 'install',
+        page: 'install-1',
       },
-      expected: 'nxdoc/install',
+      expected: 'nxdoc/install-1',
       message: 'returns correct name space, and page',
     },
     {
@@ -49,30 +49,39 @@ test('get_placeholder_string returns values as expected', (assert) => {
         name: 'useless',
         version: '60',
         space: 'nxdoc',
-        page: 'install',
+        page: 'install-2',
       },
-      expected: '60/nxdoc/install',
+      expected: 'nxdoc/60/install-2',
       message: 'returns correct name, version, space, and page',
     },
     {
       test: {
-        page: 'install',
+        version: '',
+        space: 'nxdoc',
+        page: 'install-3',
       },
-      expected: 'install',
+      expected: '/nxdoc/install-3',
+      message: 'returns correct name, empty version, space, and page',
+    },
+    {
+      test: {
+        page: 'install-4',
+      },
+      expected: 'install-4',
       message: 'returns correct page',
     },
     {
       test: {
-        page: 'nxdoc/install',
+        page: 'nxdoc/install-5',
       },
-      expected: 'nxdoc/install',
+      expected: 'nxdoc/install-5',
       message: 'returns correct space, and page',
     },
     {
       test: {
-        page: '1010/nxdoc/install',
+        page: 'nxdoc/1010/install-6',
       },
-      expected: '1010/nxdoc/install',
+      expected: 'nxdoc/1010/install-6',
       message: 'returns correct version, space, and page',
     },
   ];

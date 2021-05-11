@@ -54,3 +54,5 @@ npm-debug.log.*
 /algolia.json
 /algolia-ref.json
 /editor.json
+
+/test-*.js

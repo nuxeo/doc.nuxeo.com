@@ -12,8 +12,10 @@ const get_placeholder_string = (parts) => {
   let raw_page_name = '';
 
   // version and space
-  if (version && space && page) {
-    raw_page_name = [version, space, page].join('/');
+  if (typeof version !== 'undefined' && space && page) {
+    raw_page_name = version
+      ? [space, version, page].join('/')
+      : [version, space, page].join('/'); // No version has `/` prefix
   } else {
     // space without page - index
     const join_char = is_legacy(space) ? ':' : '/';

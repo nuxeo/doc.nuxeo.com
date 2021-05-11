@@ -59,18 +59,18 @@ test('get_placeholder_key returns values as expected', (assert) => {
       message: 'returns version prefixed value',
     },
     {
-      test: '70/USERDOC/Nuxeo CSV',
-      expected: 'userdoc/70/nuxeo-csv',
+      test: '70/USERDOC/Nuxeo CSV one',
+      expected: 'userdoc/70/nuxeo-csv-one',
       message: 'returns normalised version key',
     },
     {
-      test: '70/USERDOC/nuxeo-csv',
-      expected: 'userdoc/70/nuxeo-csv',
+      test: '70/USERDOC/nuxeo-csv-two',
+      expected: 'userdoc/70/nuxeo-csv-two',
       message: 'returns version key',
     },
     {
-      test: 'userdoc/70/nuxeo-csv',
-      expected: 'userdoc/70/nuxeo-csv',
+      test: 'userdoc/70/nuxeo-csv-three',
+      expected: 'userdoc/70/nuxeo-csv-three',
       message: 'returns version key from new format',
     },
     {
@@ -91,12 +91,12 @@ test('get_placeholder_key returns values as expected', (assert) => {
     {
       test: 'index',
       expected: 'nxdoc/index',
-      message: 'returns space index',
+      message: 'returns space index 1',
     },
     {
       test: 'userdoc/index',
       expected: 'userdoc/index',
-      message: 'returns space index',
+      message: 'returns space index 2',
     },
     {
       test: '/userdoc/index',
@@ -119,7 +119,7 @@ test('get_placeholder_key returns values as expected', (assert) => {
     {
       test: 'install',
       expected: 'nxdoc/710/install',
-      message: 'returns fallback version',
+      message: 'returns version space fallback',
       fallback: {
         version: '710',
         space: 'nxdoc',
@@ -132,7 +132,7 @@ test('get_placeholder_key returns values as expected', (assert) => {
     {
       test: 'admindoc/install',
       expected: 'admindoc/710/install',
-      message: 'returns fallback version',
+      message: 'returns version fallback',
       fallback: {
         version: '710',
         space: 'nxdoc',
@@ -153,6 +153,18 @@ test('get_placeholder_key returns values as expected', (assert) => {
         slug: 'index',
         parts: ['nxdoc', '710', 'index'],
         full: 'nxdoc/710/index',
+      },
+    },
+    {
+      test: 'nxdoc/editing-content',
+      expected: 'nxdoc/master/editing-content',
+      message: 'Allows master version to be applied',
+      fallback: {
+        version: 'master',
+        space: 'nxdoc',
+        space_path: 'nxdoc/master',
+        slug: 'deleting-content',
+        full: 'nxdoc/master/deleting-content',
       },
     },
   ];

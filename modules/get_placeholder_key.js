@@ -11,12 +11,14 @@ const get_placeholder_key = (page_name_raw, defaults) => {
   const space_version_re = /^([a-z-]+)([0-9]+)?$/gi;
   let page_name_split;
   let page_name;
+  let needs_switch = false;
   const key_parts = [];
   const is_string = typeof page_name_raw === 'string';
   const is_version_re = /^\d+(\.\d+)*$/;
   debug('page_name_raw: %s', page_name_raw);
   // Legacy method
   if (is_string && ~page_name_raw.indexOf(':')) {
+    debug('legacy');
     page_name_split = page_name_raw.replace(/\+/g, '-').split(':');
     page_name = page_name_split.pop();
 
@@ -41,20 +43,25 @@ const get_placeholder_key = (page_name_raw, defaults) => {
     }
     key_parts.push(slug(page_name));
   } else {
+    debug('preferred');
     // new method
     if (!page_name_raw) {
       key_parts.push(defaults.space_path);
       key_parts.push(defaults.slug);
     } else {
       page_name_split = page_name_raw.replace(/\+/g, '-').split('/');
-      // Doesn't have version space so add default
       if (page_name_split.length === 1 && defaults.space_path) {
+        // Doesn't have version space so add default
+        debug('Does not have version space so add default');
         key_parts.push(defaults.space_path);
       } else if (page_name_split.length === 2 && defaults.version) {
         // Doesn't have version so add default
-        key_parts.unshift(defaults.version);
+        debug('Does not have version so add default');
+        needs_switch = true;
+        key_parts.splice(1, 0, defaults.version);
       } else if (page_name_split.length === 3 && !page_name_split[0]) {
         // Test for blank version for full path
+        debug('Test for blank version for full path');
         page_name_split.shift();
       }
       page_name_split.map(function (item) {
@@ -73,7 +80,11 @@ const get_placeholder_key = (page_name_raw, defaults) => {
   }
 
   // Check parts and swap first 2 if version is first
-  if (key_parts.length === 3 && is_version_re.test(key_parts[0])) {
+  if (
+    key_parts.length === 3 &&
+    (needs_switch || is_version_re.test(key_parts[0]))
+  ) {
+    debug('Switch space and version');
     const version = key_parts.shift();
     const space = key_parts.shift();
     key_parts.unshift(space, version);

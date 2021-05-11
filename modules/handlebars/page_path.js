@@ -1,5 +1,5 @@
 // Debugging
-const { warn, error } = require('../debugger')('handlebars-page');
+const { debug, warn, error } = require('../debugger')('handlebars-page');
 
 // npm packages
 const slug = require('slug');
@@ -54,10 +54,16 @@ const page_url = (options) => {
       url = key_to_url(key, file.pages);
     } catch (e) {
       warn('%s; from path: "%s"', e.message, file.url.full);
+      debug('defaults', defaults);
+      debug('options.hash', options.hash);
+      debug('raw_page_name', raw_page_name);
+      debug('key', key);
+
       try {
         url = key_to_url(fallback_key, file.pages);
       } catch (e) {
         warn('%s; from fallback path: "%s"', e.message, file.url.full);
+        debug('fallback_key', fallback_key);
       }
     }
   } else {
