@@ -9,7 +9,6 @@ const page_title = function (url, options) {
     error('no url passed');
     return '';
   }
-  url = url.replace(/^\//, '');
   const file = options.data.root;
 
   const page =
