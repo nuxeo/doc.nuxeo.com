@@ -491,6 +491,13 @@
 ^/nxdoc/next/implement-the-news-document/?$: /nxdoc/master/web-ui-tutorials
 ^/nxdoc/next/implement-the-news-publishing-process/?$: /nxdoc/master/web-ui-tutorials
 
+# NXDOC-2300
+^/nxdoc/nuxeo-architecture-prerequisites/?$: /nxdoc/nuxeo-architecture-introduction
+^/nxdoc/nuxeo-cluster-architecture-introduction/?$: /nxdoc/nuxeo-architecture-components
+^/nxdoc/standard-high-availability-nuxeo-cluster-architecture/?$: /nxdoc/nuxeo-reference-architectures
+^/nxdoc/nuxeo-cluster-scalability-options/?$: /nxdoc/nuxeo-scalability-options
+^/nxdoc/nuxeo-clustering-configuration/?$: /nxdoc/nuxeo-architecture-components
+
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
 ^/display/NXDOC(/?|/.*): /nxdoc/
