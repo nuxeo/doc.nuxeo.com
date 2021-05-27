@@ -108,10 +108,10 @@
     "browser": "chromium-browser"
   },
   "scripts": {
-    "prestart": "npm run empty_directories && npm run compile && npm run default_redirects",
+    "prestart": "npm run pretest && npm run empty_directories && npm run compile && npm run default_redirects",
     "start": "./build.sh",
     "poststart": "npm run copy_assets && npm run copy_extras && npm run verify",
-    "pretest": "npm run yaml_lint config.yml",
+    "pretest": "npm run yaml_lint config.yml && npm run yaml_lint redirects_default.yml",
     "test": "tap -b --reporter=classic test",
     "posttest": "npm run lint",
     "verify": "tap -b --no-coverage --reporter=terse verify/site",
