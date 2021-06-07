@@ -495,6 +495,9 @@
 ^/nxdoc/nuxeo-cluster-scalability-options/?$: /nxdoc/nuxeo-scalability-options
 ^/nxdoc/nuxeo-clustering-configuration/?$: /nxdoc/nuxeo-architecture-components
 
+# NXDOC-2309 
+^/client-apps/nuxeo-drive-functional-overview/?$: /client-apps/nuxeo-drive
+
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
 ^/display/NXDOC(/?|/.*): /nxdoc/
