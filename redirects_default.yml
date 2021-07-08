@@ -403,6 +403,15 @@
 ^/nxdoc/next/monitoring-slow-nxql-queries/?$: /nxdoc/master/maintenance
 ^/nxdoc/next/transactions-and-connections/?$: /nxdoc/master/maintenance
 
+# NXDOC_2287
+^/nxdoc/logs-analysis/?$: /nxdoc/master/logs
+^/nxdoc/monitoring-and-maintenance/?$: /nxdoc/maintenance
+^/nxdoc/metrics-and-monitoring/?$: /nxdoc/metrics
+^/nxdoc/remote-monitoring-through-https/?$: /nxdoc/maintenance
+^/nxdoc/remote-monitoring-through-a-ssh-tunnel/?$: /nxdoc/maintenance
+^/nxdoc/monitoring-slow-nxql-queries/?$: /nxdoc/maintenance
+^/nxdoc/transactions-and-connections/?$: /nxdoc/maintenance
+
 ^/retention-management/?$: /nxdoc/master/nuxeo-retention-management/
 ^/retention-management/nuxeo-retention-functional-overview/?$: /nxdoc/master/nuxeo-retention-functional-overview/
 ^/retention-management/nuxeo-retention-technical-overview/?$: /nxdoc/master/nuxeo-retention-technical-overview/
@@ -497,9 +506,6 @@
 
 # NXDOC-2309 
 ^/client-apps/nuxeo-drive-functional-overview/?$: /client-apps/nuxeo-drive
-
-# NXDOC_2287
-^/nxdoc/logs-analysis/?$: /nxdoc/logs
 
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
