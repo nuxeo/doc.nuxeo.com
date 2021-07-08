@@ -498,6 +498,9 @@
 # NXDOC-2309 
 ^/client-apps/nuxeo-drive-functional-overview/?$: /client-apps/nuxeo-drive
 
+# NXDOC_2287
+^/nxdoc/logs-analysis/?$: /nxdoc/logs
+
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
 ^/display/NXDOC(/?|/.*): /nxdoc/
