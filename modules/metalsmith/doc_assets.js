@@ -98,130 +98,131 @@ const get_file = (doc, local_path) => {
     });
 };
 
-const doc_assets = (options = {}) => (files, metalsmith, done) => {
-  // Check options fits schema
-  const validation = schema.validate(options);
-  if (validation.error) {
-    error(`Validation failed, ${validation.error.details[0].message}`);
-    return done(validation.error);
-  }
-  const pattern = [].concat(validation.value.pattern);
-  debug('pattern:', pattern);
-
-  if (
-    !(
-      (process.env.NX_ASSETS_USER && process.env.NX_ASSETS_PWD) ||
-      process.env.NX_TOKEN
-    )
-  ) {
-    if (process.env.NODE_ENV === 'development') {
-      info('No Credentials provided (Development)');
-      return done();
-    } else {
-      error('No Credentials provided (Production)');
-      return done(new Error('No Credentials provided'));
+const doc_assets =
+  (options = {}) =>
+  (files, metalsmith, done) => {
+    // Check options fits schema
+    const validation = schema.validate(options);
+    if (validation.error) {
+      error(`Validation failed, ${validation.error.details[0].message}`);
+      return done(validation.error);
     }
-  }
+    const pattern = [].concat(validation.value.pattern);
+    debug('pattern:', pattern);
 
-  const metadata = metalsmith.metadata();
-
-  const nuxeo_config = {
-    baseURL:
-      process.env.NX_ASSETS_URL ||
-      metadata.site.nx_assets_url ||
-      'http://localhost:8080/nuxeo',
-  };
-
-  nuxeo_config.auth = process.env.NX_TOKEN
-    ? {
-        method: 'token',
-        token: process.env.NX_TOKEN,
+    if (
+      !(
+        (process.env.NX_ASSETS_USER && process.env.NX_ASSETS_PWD) ||
+        process.env.NX_TOKEN
+      )
+    ) {
+      if (process.env.NODE_ENV === 'development') {
+        info('No Credentials provided (Development)');
+        return done();
+      } else {
+        error('No Credentials provided (Production)');
+        return done(new Error('No Credentials provided'));
       }
-    : {
-        method: 'basic',
-        username: process.env.NX_ASSETS_USER,
-        password: process.env.NX_ASSETS_PWD,
-      };
+    }
 
-  debug('Nuxeo Config:', nuxeo_config);
+    const metadata = metalsmith.metadata();
 
-  const nuxeo = new Nuxeo(nuxeo_config);
-  const repo = nuxeo.repository();
+    const nuxeo_config = {
+      baseURL:
+        process.env.NX_ASSETS_URL ||
+        metadata.site.nx_assets_url ||
+        'http://localhost:8080/nuxeo',
+    };
 
-  const check_file = (filename, selector) => {
-    const file = files[filename];
+    nuxeo_config.auth = process.env.NX_TOKEN
+      ? {
+          method: 'token',
+          token: process.env.NX_TOKEN,
+        }
+      : {
+          method: 'basic',
+          username: process.env.NX_ASSETS_USER,
+          password: process.env.NX_ASSETS_PWD,
+        };
 
-    const contents = file.contents.toString();
-    const $ = cheerio.load(contents);
+    debug('Nuxeo Config:', nuxeo_config);
 
-    const url_promises = [];
+    const nuxeo = new Nuxeo(nuxeo_config);
+    const repo = nuxeo.repository();
 
-    $(selector).each((i, el) => {
-      const $el = $(el);
-      const attr = get_attribute(el);
-      const url = $el.attr(attr);
-      if (url && url.startsWith(nx_assets_url_prefix)) {
-        const uid = url.slice(nx_assets_url_prefix.length);
-        debug(`uid: ${uid}`);
+    const check_file = (filename, selector) => {
+      const file = files[filename];
 
-        const p = retry(repo.fetch.bind(repo), {
-          max_tries: 5,
-          interval: 500,
-          throw_original: true,
-          args: [uid, { schemas: ['dublincore', 'file', 'document_asset'] }],
-        })
-          .then((doc) => {
-            debug('doc:', doc);
-            // if there is no file return
-            if (!doc.properties['file:content']) {
-              error('nx_asset without file:content');
-              return null;
-            }
+      const contents = file.contents.toString();
+      const $ = cheerio.load(contents);
 
-            // build the right url
-            const ext = /(?:\.([^.]+))?$/.exec(
-              doc.properties['file:content'].name
-            )[1];
-            const asset_type = doc.properties['doc_asset:nature'];
-            const asset_file = `${nx_assets_base}/${uid}-${asset_type}.${ext}`;
-            const href = `/${asset_file}`;
-            debug('ext:', ext);
-            debug('asset_type:', asset_type);
-            debug('asset_file:', asset_file);
-            debug('href:', href);
+      const url_promises = [];
 
-            // Update the href in the DOM
-            $el.attr(attr, href);
-            const html = $.html();
-            file.contents = Buffer.from(html, 'utf8');
+      $(selector).each((i, el) => {
+        const $el = $(el);
+        const attr = get_attribute(el);
+        const url = $el.attr(attr);
+        if (url && url.startsWith(nx_assets_url_prefix)) {
+          const uid = url.slice(nx_assets_url_prefix.length);
+          debug(`uid: ${uid}`);
 
-            return get_file(doc, asset_file);
+          const p = retry(repo.fetch.bind(repo), {
+            max_tries: 5,
+            interval: 500,
+            throw_original: true,
+            args: [uid, { schemas: ['dublincore', 'file', 'document_asset'] }],
           })
-          .catch((err) => {
-            error('fetch err:', err);
-            return Promise.reject(err);
-          });
+            .then((doc) => {
+              debug('doc:', doc);
+              // if there is no file return
+              if (!doc.properties['file:content']) {
+                error('nx_asset without file:content');
+                return null;
+              }
 
-        url_promises.push(p);
-      }
-    });
+              // build the right url
+              const ext = /(?:\.([^.]+))?$/.exec(
+                doc.properties['file:content'].name
+              )[1];
+              const asset_type = doc.properties['doc_asset:nature'];
+              const asset_file = `${nx_assets_base}/${uid}-${asset_type}.${ext}`;
+              const href = `/${asset_file}`;
+              debug('ext:', ext);
+              debug('asset_type:', asset_type);
+              debug('asset_file:', asset_file);
+              debug('href:', href);
 
-    return Promise.all(url_promises);
+              // Update the href in the DOM
+              $el.attr(attr, href);
+              const html = $.html();
+              file.contents = Buffer.from(html, 'utf8');
+
+              return get_file(doc, asset_file);
+            })
+            .catch((err) => {
+              error('fetch err:', err);
+              return Promise.reject(err);
+            });
+
+          url_promises.push(p);
+        }
+      });
+
+      return Promise.all(url_promises);
+    };
+
+    const selector = Object.keys(element_mapping).join();
+    const file_promises = multimatch(Object.keys(files), pattern).map(
+      (filename) => check_file(filename, selector)
+    );
+
+    Promise.all(file_promises)
+      .then(() => done())
+      .catch((err) => {
+        error('file promises error', err);
+        return done(err);
+      });
   };
-
-  const selector = Object.keys(element_mapping).join();
-  const file_promises = multimatch(
-    Object.keys(files),
-    pattern
-  ).map((filename) => check_file(filename, selector));
-
-  Promise.all(file_promises)
-    .then(() => done())
-    .catch((err) => {
-      error('file promises error', err);
-      return done(err);
-    });
-};
 
 // Expose `doc_assets`
 module.exports = doc_assets;

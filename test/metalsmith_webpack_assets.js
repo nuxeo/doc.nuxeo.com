@@ -75,8 +75,7 @@ test('webpack_assets populates metadata accordingly', (assert) => {
   const expected = assign({}, actual, {
     _metadata: {
       js: {
-        docs:
-          'assets/js/73a6b39143936276a53f/docs.73a6b39143936276a53f.bundle.js',
+        docs: 'assets/js/73a6b39143936276a53f/docs.73a6b39143936276a53f.bundle.js',
         search:
           'assets/js/73a6b39143936276a53f/search.73a6b39143936276a53f.bundle.js',
         vendor: 'assets/js/73a6b39143936276a53f/vendor.bundle.js',

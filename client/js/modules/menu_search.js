@@ -93,8 +93,7 @@ const initialise_search = () => {
         container: '#menu-hits',
         templates: {
           empty: 'No results',
-          item:
-            '<div><a href="{{{url}}}"><strong>{{{_highlightResult.title.value}}}</strong><br>{{{_snippetResult.description.value}}}</a></div>',
+          item: '<div><a href="{{{url}}}"><strong>{{{_highlightResult.title.value}}}</strong><br>{{{_snippetResult.description.value}}}</a></div>',
         },
       })
     );
