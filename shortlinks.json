@@ -23705,5 +23705,110 @@
   ],
   "/studio/studio-updates-2021-05/": [
     "ueXl"
+  ],
+  "/nxdoc/1010/how-to-add-a-header-and-a-footer/": [
+    "2Ca"
+  ],
+  "/client-apps/nuxeo-drive-configuration/": [
+    "szD"
+  ],
+  "/client-apps/nuxeo-drive-direct-edit/": [
+    "Qc2"
+  ],
+  "/client-apps/nuxeo-drive-sync/": [
+    "U8o"
+  ],
+  "/client-apps/local-configuration/": [
+    "Hqr"
+  ],
+  "/client-apps/parameters/": [
+    "0mg"
+  ],
+  "/client-apps/5.1.1-nuxeo-drive-release-notes/": [
+    "z5k"
+  ],
+  "/client-apps/5.2.0-nuxeo-drive-release-notes/": [
+    "kY9"
+  ],
+  "/client-apps/5.2.1-nuxeo-drive-release-notes/": [
+    "AVp"
+  ],
+  "/client-apps/5.2.2-nuxeo-drive-release-notes/": [
+    "zXx"
+  ],
+  "/client-apps/5.2.3-nuxeo-drive-release-notes/": [
+    "AD8"
+  ],
+  "/studio/studio-updates-2021-06/": [
+    "bSb"
+  ],
+  "/studio/studio-updates-2021-07/": [
+    "I49"
+  ],
+  "/nxdoc/master/nuxeo-devcontainer/": [
+    "0oo"
+  ],
+  "/nxdoc/master/develop-your-own-java-code/": [
+    "EZ-"
+  ],
+  "/nxdoc/master/first-package-with-studio/": [
+    "uqq"
+  ],
+  "/nxdoc/master/package-publish-deploy-hotreload/": [
+    "1sD"
+  ],
+  "/nxdoc/master/nuxeo-cluster-architecture/": [
+    "irP"
+  ],
+  "/nxdoc/master/nuxeo-storage-alternatives/": [
+    "MJT"
+  ],
+  "/nxdoc/master/nuxeo-architecture-components/": [
+    "7eY"
+  ],
+  "/nxdoc/master/nuxeo-architecture-introduction/": [
+    "rF8"
+  ],
+  "/nxdoc/master/nuxeo-reference-architectures/": [
+    "hq-"
+  ],
+  "/nxdoc/master/nuxeo-scalability-options/": [
+    "g5i"
+  ],
+  "/nxdoc/master/compact-architecture-with-kafka/": [
+    "WxO"
+  ],
+  "/nxdoc/master/compact-architecture-with-redis/": [
+    "m-G"
+  ],
+  "/nxdoc/master/distributed-architecture-with-kafka/": [
+    "Ce6"
+  ],
+  "/nxdoc/master/database-architecture/": [
+    "mzL"
+  ],
+  "/nxdoc/master/elasticsearch-architecture/": [
+    "3UC"
+  ],
+  "/nxdoc/master/file-storage-architecture/": [
+    "2C1"
+  ],
+  "/nxdoc/master/load-balancers-architecture/": [
+    "iD2"
+  ],
+  "/nxdoc/master/messaging-system-architecture/": [
+    "b1f"
+  ],
+  "/nxdoc/master/nuxeo-server-architecture/": [
+    "74r"
+  ],
+  "/nxdoc/master/reverse-proxy-architecture/": [
+    "12k"
+  ],
+  "/nxdoc/master/pubsub-architecture/": [
+    "1jb"
+  ],
+  "/nxdoc/master/redis-architecture/": [
+    "VZY"
   ]
 }

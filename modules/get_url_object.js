@@ -46,12 +46,8 @@ const get_url_object = function (filepath, options) {
     error(`Schema validation failed: ${validation.error.details[0].message}`);
     throw validation.error;
   }
-  const {
-    spaces,
-    version_path,
-    version_label,
-    default_space,
-  } = validation.value;
+  const { spaces, version_path, version_label, default_space } =
+    validation.value;
 
   const file_path_info = path.parse(filepath);
   const filepath_parts = file_path_info.dir.split(path.sep);

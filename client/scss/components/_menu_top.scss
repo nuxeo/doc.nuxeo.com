@@ -82,10 +82,10 @@ $max-width: 1600px;
 
 .main-menu--logo {
   display: inline-flex;
-  font-size: 22px;
-  max-width: 120px;
+  font-size: 50px;
   vertical-align: middle;
   vertical-align: baseline-middle;
+  margin-block-start: -5px;
 }
 
 .menu-item {
