@@ -316,7 +316,16 @@
 ^/client-apps/nuxeo-drive-user-profile-migration/?$: /client-apps/nuxeo-drive-faq
 
 # Technical Blogs
-^/blog/speeding-up-the-android-emulator/?$: /blog/
+^/blog/jgit-example/?$: https://www.nuxeo.com/blog/jgit-example/
+^/n/GfQ/?$: https://www.nuxeo.com/blog/jgit-example/
+^/blog/jsf-angularjs-ui-rewrite-story/?$: https://www.nuxeo.com/blog/jsf-angularjs-ui-rewrite-story/
+^/n/sCJ/?$: https://www.nuxeo.com/blog/jsf-angularjs-ui-rewrite-story/
+^/blog/speeding-up-the-android-emulator/?$: https://www.nuxeo.com/blog/
+^/n/jSE/?$: https://www.nuxeo.com/blog/
+^/blog/using-httpclient-properly-avoid-closewait-tcp-connections/?$: https://www.nuxeo.com/blog/using-httpclient-properly-avoid-closewait-tcp-connections/
+^/n/Nrr/?$: https://www.nuxeo.com/blog/using-httpclient-properly-avoid-closewait-tcp-connections/
+^/blog/?$: https://www.nuxeo.com/blog/
+^/n/aKE/?$: https://www.nuxeo.com/blog/
 
 # NXDOC-1846
 ^/userdoc/jsf-ui/(.*)$: /nxdoc/jsf-ui-userdoc/$1
@@ -504,7 +513,7 @@
 ^/nxdoc/nuxeo-cluster-scalability-options/?$: /nxdoc/nuxeo-scalability-options
 ^/nxdoc/nuxeo-clustering-configuration/?$: /nxdoc/nuxeo-architecture-components
 
-# NXDOC-2309 
+# NXDOC-2309
 ^/client-apps/nuxeo-drive-functional-overview/?$: /client-apps/nuxeo-drive
 
 # Catch alls - keep at the bottom
