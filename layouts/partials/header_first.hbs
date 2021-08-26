@@ -14,7 +14,7 @@
     {{/if}}
 
     <title>{{head_title}}</title>
-    <meta name="description" content="{{description}}" />
+    <meta name="description" content="{{head_description}}" />
     <meta name="lang" content="en">
     <meta name="language" content="en">
     <link rel="canonical" href="{{site.url}}{{url.full}}">
@@ -28,7 +28,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@{{site.twitter}}">
     <meta name="twitter:title" content="{{title}}{{#unless title}}{{site.name}}{{/unless}}">
-    <meta name="twitter:description" content="{{description}}">
+    <meta name="twitter:description" content="{{head_description}}">
     <meta name="twitter:creator" content="@{{site.twitter}}">
     {{!-- Twitter Summary card images must be at least 120x120px --}}
     <meta name="twitter:image" content="{{#if featured_image}}{{site.url}}{{featured_image}}{{else}}{{site.url}}/assets/imgs/logo340x60.png{{/if}}">
@@ -38,7 +38,7 @@
     <meta property="og:type" content="article" />
     <meta property="og:url" content="{{site.url}}{{url.full}}" />
     <meta property="og:image" content="{{#if featured_image}}{{site.url}}{{featured_image}}{{else}}{{site.url}}/assets/imgs/logo340x60.png{{/if}}" />
-    <meta property="og:description" content="{{description}}" />
+    <meta property="og:description" content="{{head_description}}" />
     <meta property="og:site_name" content="{{site.name}}" />
 
     {{!-- Favicons --}}
