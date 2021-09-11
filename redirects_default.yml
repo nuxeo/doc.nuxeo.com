@@ -44,6 +44,7 @@
 ^/x/Ng7F/?$: /nxdoc/710/implementing-documentation-items/
 ^/x/c4ao/?$: /nxdoc/drag-and-drop-service-for-content-capture-html5-based/
 ^/x/eABu/?$: https://app.quandora.com/object/71064c69-fcf2-4c41-aed5-6b54e423f3c4
+^/x/aoKE/?$: /nxdoc/develop-your-own-java-code/
 
 # NXDOC-1038: Archived versions of the documentation
 ^/58/?$: /archived-documentation/
@@ -420,6 +421,29 @@
 ^/nxdoc/remote-monitoring-through-a-ssh-tunnel/?$: /nxdoc/maintenance
 ^/nxdoc/monitoring-slow-nxql-queries/?$: /nxdoc/maintenance
 ^/nxdoc/transactions-and-connections/?$: /nxdoc/maintenance
+^/pages/viewpage.action?pageId=21299487/?$: /
+^/pages/viewpage.action?pageId=21921917/?$: /
+^/pages/viewpage.action?pageId=22380547/?$: /
+^/pages/viewpage.action?pageId=22380627/?$: /
+^/pages/viewpage.action?pageId=22380686/?$: /
+^/pages/viewpage.action?pageId=22380883/?$: /
+^/pages/viewpage.action?pageId=28475571/?$: /
+^/pages/viewpage.action?pageId=28475768/?$: /
+^/pages/viewpage.action?pageId=3867532/?$: /nxdoc/how-to-upload-labels-translations-in-nuxeo-studio-i18n
+^/userdoc/nuxeo-platform-explorer/?$: /nxdoc/explorer
+^/userdoc/nuxeo-jenkins-report/?$: /userdoc/1010/nuxeo-jenkins-report
+^/nxdoc/using-the-java-api-server-side/?$: /nxdoc/howto-use-the-runtime-java-api
+^/nxdoc/rest-api/1/?$: /rest-api/1 
+^/nxdoc/nuxeo-jenkins-report/?$: /nxdoc/1010/nuxeo-jenkins-report 
+^/nxdoc/installing-the-nuxeo-platform-on-mac-os/?$: /nxdoc/installation
+^/nxdoc/additional-ui-frameworks/?$: /nxdoc/extending-the-shell
+^/nxdoc/available-installers/?$: /nxdoc/installation
+^/nxdoc/configuration-wizard/?$: /nxdoc/installation
+^/nxdoc/configure-nuxeo-platform/?$: /nxdoc/first-package-with-studio
+^/nxdoc/develop-with-nuxeo-platform/?$: /nxdoc/develop-your-own-java-code
+^/nxdoc/from-the-jsf-ui-to-nuxeo-studio/?$: /studio/jsf-ui-migration
+
+
 
 ^/retention-management/?$: /nxdoc/master/nuxeo-retention-management/
 ^/retention-management/nuxeo-retention-functional-overview/?$: /nxdoc/master/nuxeo-retention-functional-overview/
