@@ -413,7 +413,7 @@
 ^/nxdoc/next/monitoring-slow-nxql-queries/?$: /nxdoc/master/maintenance
 ^/nxdoc/next/transactions-and-connections/?$: /nxdoc/master/maintenance
 
-# NXDOC_2287
+# NXDOC-2287
 ^/nxdoc/logs-analysis/?$: /nxdoc/master/logs
 ^/nxdoc/monitoring-and-maintenance/?$: /nxdoc/maintenance
 ^/nxdoc/metrics-and-monitoring/?$: /nxdoc/metrics
@@ -442,7 +442,9 @@
 ^/nxdoc/configure-nuxeo-platform/?$: /nxdoc/first-package-with-studio
 ^/nxdoc/develop-with-nuxeo-platform/?$: /nxdoc/develop-your-own-java-code
 ^/nxdoc/from-the-jsf-ui-to-nuxeo-studio/?$: /studio/jsf-ui-migration
-
+^/nxdoc/cloud/built-in-commands/?$: /nxdoc/built-in-commands
+^/nxdoc/cloud/develop-with-nuxeo-platform/?$: /nxdoc/develop-your-own-java-code
+^/nxdoc/cloud/package-publish-deploy-hotreload/?$: /nxdoc/package-publish-deploy-hotreload
 
 
 ^/retention-management/?$: /nxdoc/master/nuxeo-retention-management/
