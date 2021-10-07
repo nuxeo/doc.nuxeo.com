@@ -327,6 +327,7 @@
 ^/n/Nrr/?$: https://www.nuxeo.com/blog/using-httpclient-properly-avoid-closewait-tcp-connections/
 ^/blog/?$: https://www.nuxeo.com/blog/
 ^/n/aKE/?$: https://www.nuxeo.com/blog/
+https://www.nuxeo.com/blog/cross-validation-with-jsf/?$: ^/nxdoc/cross-validation-with-jsf
 
 # NXDOC-1846
 ^/userdoc/jsf-ui/(.*)$: /nxdoc/jsf-ui-userdoc/$1
