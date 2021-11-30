@@ -144,7 +144,7 @@ production:
         '3.2':
           label: '3.2'
           url_path: '3.2'
-          order: 80
+          order: 90
     rest:
       url: git@github.com:nuxeo/doc.nuxeo.com-rest-api.git
       branches:
