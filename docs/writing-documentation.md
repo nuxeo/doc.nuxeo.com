@@ -9,7 +9,7 @@
   - `nvm install` will get the correct version to use from `.nvmrc`.
   - You should run this at the start of your session to ensure the correct version is in use.
   - The version can be verified by running `node --version`
-- Markdown capable editor: e.g. [Atom](https://atom.io/), [Sublime Text](https://www.sublimetext.com/) or similar.
+- Markdown capable editor: e.g. [VS Codium](https://vscodium.com/), [Sublime Text](https://www.sublimetext.com/) or similar.
   - [The Atom Documentation plugin](https://github.com/nuxeo/atom-documentation-links#installation)-This plugin provides suggestions for {{file ...}} and {{page ...}} links.
 - [EditorConfig plugin](http://editorconfig.org/#download) (Recommended)
 
