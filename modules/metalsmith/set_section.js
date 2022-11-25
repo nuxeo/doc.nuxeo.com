@@ -62,8 +62,19 @@ const set_section = function (options) {
           debug(`section_parent: ${file.section_parent}`);
           file.section = file.section_parent;
         } else {
-          const root = (trees[space_path] =
-            trees[space_path] || tree.parse(metadata.hierarchies[space_path]));
+          let root;
+          try {
+            root = trees[space_path] =
+              trees[space_path] || tree.parse(metadata.hierarchies[space_path]);
+          } catch (err) {
+            error(
+              `Can't find '${space_path}' in ${Object.keys(
+                metadata.hierarchies
+              ).join(', ')}`
+            );
+            return done(err);
+          }
+
           let node = root.first(function (item) {
             return item.model.slug === file.slug;
           });

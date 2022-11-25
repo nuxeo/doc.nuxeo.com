@@ -54,8 +54,18 @@ const hierarchy = (options) => (files, metalsmith, done) => {
     if (multimatch(filepath, options.file_pattern).length && space_path) {
       // Don't include hidden pages
       if (!file.hidden) {
-        const root = (trees[space_path] =
-          trees[space_path] || tree.parse(hierarchies[space_path]));
+        let root;
+        try {
+          root = trees[space_path] =
+            trees[space_path] || tree.parse(hierarchies[space_path]);
+        } catch (err) {
+          error(
+            `Can't find '${space_path}' in ${Object.keys(hierarchies).join(
+              ', '
+            )}`
+          );
+          return done(err);
+        }
 
         let node = root.first((item) => item.model.slug === file.slug);
         if (!node) {
