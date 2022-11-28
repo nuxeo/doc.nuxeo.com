@@ -79,7 +79,7 @@
     "postcss-cli": "^6.1.3",
     "prettier": "^2.3.0",
     "quotation": "^1.1.1",
-    "recursive-readdir": "^2.1.0",
+    "recursive-readdir": "^2.2.3",
     "remove-markdown": "^0.3.0",
     "request": "^2.81.0",
     "rst2mdown": "^0.1.0",
