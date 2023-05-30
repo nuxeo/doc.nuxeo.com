@@ -44,9 +44,6 @@ $(document).ready(function () {
 
   // menu search
   require('./modules/menu_search');
-
-  // Prodpad Feedback
-  require('./modules/prodpad');
 });
 
 $(window).on('load', function () {
