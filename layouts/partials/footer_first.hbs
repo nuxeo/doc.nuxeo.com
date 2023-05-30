@@ -1,39 +1,9 @@
 </div>
 <div id="docs_footer" class="row expanded">
-  {{#unless homepage}}
-  <button id="prodpad_open_feedback" type="button" class="button" data-open="prodpad_feedback" title="Documentation Feedback" aria-controls="prodpad_feedback" aria-haspopup="true" tabindex="0">
-      <i class="fa fa-comment fa-fw fa-lg"></i> Send Feedback
-  </button>
-  {{/unless}}
   {{> versions_inline}}
 
   <nx-footer showlicense {{#unless homepage}}nolinks{{/unless}}></nx-footer>
 </div>
-
-{{#unless homepage}}
-<div class="tiny reveal" id="prodpad_feedback" data-reveal data-animation-in="slide-in-right" data-animation-out="slide-out-right">
-  <button class="close-button" data-close aria-label="Close modal" type="button">
-    <span aria-hidden="true">&times;</span>
-  </button>
-  <div class="content">
-    <h3>We'd love to hear your thoughts!</h3>
-    <form>
-      <label>
-        What would make this page better?
-        <textarea name="feedback" placeholder="It would be awesome if..." rows="5"  required></textarea>
-      </label>
-      <label>
-        <input type="text" name="name" placeholder="Name" value="" required>
-      </label>
-      <label>
-        <input type="email" name="email" placeholder="Email" value="" required>
-      </label>
-      All fields required
-      <button id="prodpad_feedback_submit" type="button" disabled="disabled" class="disabled button float-right">Submit Feedback</button>
-    </form>
-  </div>
-</div>
-{{/unless}}
 
 <script type="text/javascript" src="/{{js.vendor}}"></script>
 <script type="text/javascript" src="/{{js.docs}}"></script>
