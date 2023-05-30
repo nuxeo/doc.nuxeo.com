@@ -23903,5 +23903,1019 @@
   ],
   "/nxdoc/1010/nuxeo-retention-installation-standard/": [
     "pYI"
+  ],
+  "/nxdoc/nuxeo-devcontainer/": [
+    "DaB"
+  ],
+  "/nxdoc/develop-your-own-java-code/": [
+    "jRz"
+  ],
+  "/nxdoc/first-package-with-studio/": [
+    "xYr"
+  ],
+  "/nxdoc/package-publish-deploy-hotreload/": [
+    "NYb"
+  ],
+  "/nxdoc/notify-behavior/": [
+    "0PW"
+  ],
+  "/nxdoc/web-ui-release-notes-3-0-0-to-3-0-5/": [
+    "KBq"
+  ],
+  "/nxdoc/web-ui-release-notes-3-0-10/": [
+    "b9w"
+  ],
+  "/nxdoc/web-ui-release-notes-3-0-11/": [
+    "4YJ"
+  ],
+  "/nxdoc/web-ui-release-notes-3-0-12/": [
+    "ujH"
+  ],
+  "/nxdoc/web-ui-release-notes-3-0-13/": [
+    "17n"
+  ],
+  "/nxdoc/web-ui-release-notes-3-0-14/": [
+    "0pS"
+  ],
+  "/nxdoc/web-ui-release-notes-3-0-15/": [
+    "ZCz"
+  ],
+  "/nxdoc/web-ui-release-notes-3-0-16/": [
+    "MpH"
+  ],
+  "/nxdoc/web-ui-release-notes-3-0-17/": [
+    "G_s"
+  ],
+  "/nxdoc/web-ui-release-notes-3-0-6/": [
+    "-Nv"
+  ],
+  "/nxdoc/web-ui-release-notes-3-0-7/": [
+    "r-a"
+  ],
+  "/nxdoc/web-ui-release-notes-3-0-8/": [
+    "yR2"
+  ],
+  "/nxdoc/web-ui-release-notes-3-0-9/": [
+    "Skg"
+  ],
+  "/nxdoc/web-ui-upgrade-notes-lts-2021/": [
+    "aaM"
+  ],
+  "/nxdoc/how-to-add-a-header-and-a-footer/": [
+    "Kyw"
+  ],
+  "/nxdoc/how-to-create-bulk-actions-studio/": [
+    "lba"
+  ],
+  "/nxdoc/how-to-create-bulk-edit-form-studio/": [
+    "Ur_"
+  ],
+  "/nxdoc/how-to-use-rich-text-editor-rte-for-article-publishing/": [
+    "f8V"
+  ],
+  "/nxdoc/web-ui-bulk-actions/": [
+    "8lV"
+  ],
+  "/nxdoc/nuxeo-coldstorage/": [
+    "WdU"
+  ],
+  "/nxdoc/nuxeo-frameio/": [
+    "E7H"
+  ],
+  "/nxdoc/nuxeo-coldstorage-faq/": [
+    "DyF"
+  ],
+  "/nxdoc/nuxeo-coldstorage-installation/": [
+    "iuM7"
+  ],
+  "/nxdoc/nuxeo-salesforce-release-notes/": [
+    "rYU"
+  ],
+  "/nxdoc/nuxeo-aspera-connector-2021-3-1/": [
+    "820"
+  ],
+  "/nxdoc/nuxeo-aspera-connector-2021-3-3/": [
+    "JcX"
+  ],
+  "/nxdoc/nuxeo-aspera-connector-2021-3-4/": [
+    "Fxn"
+  ],
+  "/nxdoc/how-to-use-content-redaction/": [
+    "BWl"
+  ],
+  "/nxdoc/how-to-use-renditions-on-nev/": [
+    "4MB"
+  ],
+  "/nxdoc/nuxeo-enhanced-viewer-installation/": [
+    "0I-"
+  ],
+  "/nxdoc/nuxeo-enhanced-viewer-release-notes-2-0-0/": [
+    "aj4"
+  ],
+  "/nxdoc/nuxeo-enhanced-viewer-release-notes-2-1-0/": [
+    "gjO"
+  ],
+  "/nxdoc/nuxeo-enhanced-viewer-release-notes-2-1-2/": [
+    "Dzx"
+  ],
+  "/nxdoc/nuxeo-enhanced-viewer-release-notes-2-2-0/": [
+    "y5v"
+  ],
+  "/nxdoc/nuxeo-enhanced-viewer-release-notes-2021-1-1/": [
+    "SBI"
+  ],
+  "/nxdoc/nuxeo-retention-installation-compliance/": [
+    "6qW"
+  ],
+  "/nxdoc/nuxeo-retention-installation-standard/": [
+    "ozf"
+  ],
+  "/nxdoc/cross-validation-with-jsf/": [
+    "wG1"
+  ],
+  "/nxdoc/nuxeo-release-cycle/": [
+    "NfF"
+  ],
+  "/nxdoc/nuxeo-server-tutorials/": [
+    "9Jc"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-1/": [
+    "pdJ"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-10/": [
+    "wu-"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-11/": [
+    "E03"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-12/": [
+    "5aS"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-13/": [
+    "Hb0"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-14/": [
+    "5X5"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-15/": [
+    "7vP"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-16/": [
+    "tRy"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-17/": [
+    "La8"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-18/": [
+    "_-L"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-19/": [
+    "T7Z"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-2/": [
+    "eat"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-20/": [
+    "M0S"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-21/": [
+    "jya"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-22/": [
+    "pJn"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-23/": [
+    "Ccy"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-24/": [
+    "wcL"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-25/": [
+    "3Hw"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-26/": [
+    "3kZ"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-27/": [
+    "zOi"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-28/": [
+    "lYK"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-29/": [
+    "jLk"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-3/": [
+    "rKy"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-30/": [
+    "aKV"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-4/": [
+    "OAR"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-5/": [
+    "wUg"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-6/": [
+    "GECc"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-7/": [
+    "-rc"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-8/": [
+    "4Im"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-9/": [
+    "-KO"
+  ],
+  "/nxdoc/hotfixes-installation-notes-for-nuxeo-platform-lts-2021/": [
+    "VPl"
+  ],
+  "/nxdoc/nuxeo-cluster-architecture/": [
+    "aHlW"
+  ],
+  "/nxdoc/nuxeo-storage-alternatives/": [
+    "0LJ"
+  ],
+  "/nxdoc/nuxeo-architecture-components/": [
+    "vhK"
+  ],
+  "/nxdoc/nuxeo-architecture-introduction/": [
+    "8Nu"
+  ],
+  "/nxdoc/nuxeo-reference-architectures/": [
+    "apd"
+  ],
+  "/nxdoc/nuxeo-scalability-options/": [
+    "d03"
+  ],
+  "/nxdoc/compact-architecture-with-kafka/": [
+    "ySh"
+  ],
+  "/nxdoc/compact-architecture-with-redis/": [
+    "zEK"
+  ],
+  "/nxdoc/distributed-architecture-with-kafka/": [
+    "wHr"
+  ],
+  "/nxdoc/database-architecture/": [
+    "LXH"
+  ],
+  "/nxdoc/elasticsearch-architecture/": [
+    "dEk"
+  ],
+  "/nxdoc/file-storage-architecture/": [
+    "JIp"
+  ],
+  "/nxdoc/load-balancers-architecture/": [
+    "8JQ"
+  ],
+  "/nxdoc/messaging-system-architecture/": [
+    "X_n"
+  ],
+  "/nxdoc/nuxeo-server-architecture/": [
+    "S9k"
+  ],
+  "/nxdoc/reverse-proxy-architecture/": [
+    "KLL"
+  ],
+  "/nxdoc/pubsub-architecture/": [
+    "gDH"
+  ],
+  "/nxdoc/redis-architecture/": [
+    "Q0L"
+  ],
+  "/nuxeo-insight/release-notes/": [
+    "rbQ"
+  ],
+  "/client-apps/5.2.6-nuxeo-drive-release-notes/": [
+    "lr9"
+  ],
+  "/client-apps/5.2.7-nuxeo-drive-release-notes/": [
+    "hV3u"
+  ],
+  "/client-apps/5.2.8-nuxeo-drive-release-notes/": [
+    "ZuvV"
+  ],
+  "/client-apps/5.2.9-nuxeo-drive-release-notes/": [
+    "p9Q"
+  ],
+  "/studio/studio-updates-2021-08/": [
+    "z7G"
+  ],
+  "/studio/studio-updates-2021-09/": [
+    "ogM"
+  ],
+  "/studio/studio-updates-2021-11/": [
+    "jJ7"
+  ],
+  "/studio/studio-updates-2021-12/": [
+    "7V0"
+  ],
+  "/studio/studio-updates-2022-02/": [
+    "lEt"
+  ],
+  "/studio/studio-updates-2022-03/": [
+    "CX-"
+  ],
+  "/studio/studio-updates-2022-05/": [
+    "5AY"
+  ],
+  "/studio/studio-updates-2022-07/": [
+    "yNe"
+  ],
+  "/studio/project-inheritance-multi-layer/": [
+    "LVQ"
+  ],
+  "/studio/es-mapping/": [
+    "dGp"
+  ],
+  "/design/": [
+    "Pp6"
+  ],
+  "/design/components/": [
+    "MP8"
+  ],
+  "/design/visual-design-guidelines/": [
+    "IQP"
+  ],
+  "/design/color/": [
+    "BMw"
+  ],
+  "/design/icons/": [
+    "qw3"
+  ],
+  "/design/spacing/": [
+    "XUP"
+  ],
+  "/design/typography/": [
+    "e0J"
+  ],
+  "/design/dark-theme/": [
+    "Uk8"
+  ],
+  "/design/default-theme/": [
+    "JEQ"
+  ],
+  "/design/light-theme/": [
+    "Ykt"
+  ],
+  "/design/buttons/": [
+    "QDQ"
+  ],
+  "/design/card/": [
+    "lcE"
+  ],
+  "/design/checkboxes/": [
+    "DRo"
+  ],
+  "/design/file-uploader/": [
+    "KBK"
+  ],
+  "/design/form/": [
+    "D2V"
+  ],
+  "/design/modal-dialogs/": [
+    "jA9"
+  ],
+  "/design/notification/": [
+    "UV6p"
+  ],
+  "/design/radio-button/": [
+    "Hvl"
+  ],
+  "/design/select/": [
+    "vQx"
+  ],
+  "/design/selectivity/": [
+    "XkJV"
+  ],
+  "/design/toggle/": [
+    "lBo"
+  ],
+  "/design/dark-theme-buttons/": [
+    "vpX"
+  ],
+  "/design/default-theme-buttons/": [
+    "UOJ"
+  ],
+  "/design/style-buttons/": [
+    "T9a"
+  ],
+  "/design/style-card/": [
+    "wKa"
+  ],
+  "/design/style-modal-dialogs/": [
+    "vPl"
+  ],
+  "/design/dark-theme-notification/": [
+    "upT"
+  ],
+  "/design/default-theme-notification/": [
+    "zn_"
+  ],
+  "/design/style-notification/": [
+    "6Eh"
+  ],
+  "/design/dropzone/": [
+    "4hn"
+  ],
+  "/design/style-dropzone/": [
+    "GP6"
+  ],
+  "/nxdoc/cloud/nuxeo-devcontainer/": [
+    "Hxy"
+  ],
+  "/nxdoc/cloud/develop-your-own-java-code/": [
+    "MLR"
+  ],
+  "/nxdoc/cloud/first-package-with-studio/": [
+    "AYs"
+  ],
+  "/nxdoc/cloud/package-publish-deploy-hotreload/": [
+    "Jq7"
+  ],
+  "/nxdoc/cloud/web-ui-accessibility/": [
+    "uoz"
+  ],
+  "/nxdoc/cloud/notify-behavior/": [
+    "jQK"
+  ],
+  "/nxdoc/cloud/web-ui-release-notes-3-0-0-to-3-0-5/": [
+    "8SHY"
+  ],
+  "/nxdoc/cloud/web-ui-release-notes-3-0-10/": [
+    "_Qr"
+  ],
+  "/nxdoc/cloud/web-ui-release-notes-3-0-11/": [
+    "-qc"
+  ],
+  "/nxdoc/cloud/web-ui-release-notes-3-0-12/": [
+    "wWe"
+  ],
+  "/nxdoc/cloud/web-ui-release-notes-3-0-13/": [
+    "Ffg"
+  ],
+  "/nxdoc/cloud/web-ui-release-notes-3-0-14/": [
+    "yPO"
+  ],
+  "/nxdoc/cloud/web-ui-release-notes-3-0-15/": [
+    "QYr"
+  ],
+  "/nxdoc/cloud/web-ui-release-notes-3-0-16/": [
+    "z53"
+  ],
+  "/nxdoc/cloud/web-ui-release-notes-3-0-17/": [
+    "2Us6"
+  ],
+  "/nxdoc/cloud/web-ui-release-notes-3-0-6/": [
+    "84G"
+  ],
+  "/nxdoc/cloud/web-ui-release-notes-3-0-7/": [
+    "Dss"
+  ],
+  "/nxdoc/cloud/web-ui-release-notes-3-0-8/": [
+    "fPB"
+  ],
+  "/nxdoc/cloud/web-ui-release-notes-3-0-9/": [
+    "vSS"
+  ],
+  "/nxdoc/cloud/web-ui-upgrade-notes-lts-2021/": [
+    "-V5"
+  ],
+  "/nxdoc/cloud/how-to-create-bulk-actions-studio/": [
+    "oX4"
+  ],
+  "/nxdoc/cloud/how-to-create-bulk-edit-form-studio/": [
+    "HOZ"
+  ],
+  "/nxdoc/cloud/how-to-use-rich-text-editor-rte-for-article-publishing/": [
+    "zY7"
+  ],
+  "/nxdoc/cloud/web-ui-bulk-actions/": [
+    "HWE"
+  ],
+  "/nxdoc/cloud/nuxeo-coldstorage/": [
+    "nUo"
+  ],
+  "/nxdoc/cloud/nuxeo-coldstorage-faq/": [
+    "8z-"
+  ],
+  "/nxdoc/cloud/nuxeo-coldstorage-installation/": [
+    "mcc"
+  ],
+  "/nxdoc/cloud/nuxeo-enhanced-viewer-release-notes-10-4-2/": [
+    "E2s"
+  ],
+  "/nxdoc/cloud/nuxeo-enhanced-viewer-release-notes-10-4-3/": [
+    "PC9"
+  ],
+  "/nxdoc/cloud/nuxeo-enhanced-viewer-release-notes-10-4-5/": [
+    "eNC"
+  ],
+  "/nxdoc/cloud/nuxeo-enhanced-viewer-release-notes-10-4-6/": [
+    "Pda"
+  ],
+  "/nxdoc/cloud/nuxeo-enhanced-viewer-release-notes-10-4-7/": [
+    "8aW"
+  ],
+  "/nxdoc/cloud/nuxeo-enhanced-viewer-release-notes-10-5-1/": [
+    "rF4"
+  ],
+  "/nxdoc/cloud/nuxeo-enhanced-viewer-release-notes-10-5-3/": [
+    "fDQ"
+  ],
+  "/nxdoc/cloud/nuxeo-enhanced-viewer-release-notes-10-5-4/": [
+    "0NA"
+  ],
+  "/nxdoc/cloud/nuxeo-enhanced-viewer-release-notes-10-5/": [
+    "Dap"
+  ],
+  "/nxdoc/cloud/nuxeo-enhanced-viewer-release-notes-10-6-10/": [
+    "Xu4"
+  ],
+  "/nxdoc/cloud/nuxeo-enhanced-viewer-release-notes-10-6-11/": [
+    "Zes"
+  ],
+  "/nxdoc/cloud/nuxeo-enhanced-viewer-release-notes-10-6-2/": [
+    "zhr"
+  ],
+  "/nxdoc/cloud/nuxeo-enhanced-viewer-release-notes-10-6-3/": [
+    "2NA"
+  ],
+  "/nxdoc/cloud/nuxeo-enhanced-viewer-release-notes-10-6-4/": [
+    "ZMuz"
+  ],
+  "/nxdoc/cloud/nuxeo-enhanced-viewer-release-notes-10-6-5/": [
+    "llQ"
+  ],
+  "/nxdoc/cloud/nuxeo-enhanced-viewer-release-notes-10-6-6/": [
+    "uzH"
+  ],
+  "/nxdoc/cloud/nuxeo-enhanced-viewer-release-notes-10-6-7/": [
+    "x57"
+  ],
+  "/nxdoc/cloud/nuxeo-enhanced-viewer-release-notes-10-6-8/": [
+    "L86"
+  ],
+  "/nxdoc/cloud/nuxeo-enhanced-viewer-release-notes-10-6-9/": [
+    "SOb"
+  ],
+  "/nxdoc/cloud/nuxeo-enhanced-viewer-release-notes-2-0-0/": [
+    "4kr"
+  ],
+  "/nxdoc/cloud/nuxeo-enhanced-viewer-release-notes-2-1-0/": [
+    "U35"
+  ],
+  "/nxdoc/cloud/nuxeo-enhanced-viewer-release-notes-2-1-2/": [
+    "Ea2"
+  ],
+  "/nxdoc/cloud/nuxeo-enhanced-viewer-release-notes-2-1-3/": [
+    "6_q"
+  ],
+  "/nxdoc/cloud/nuxeo-enhanced-viewer-release-notes-2-1-4/": [
+    "Qle"
+  ],
+  "/nxdoc/cloud/nuxeo-cluster-architecture/": [
+    "K2t"
+  ],
+  "/nxdoc/cloud/nuxeo-storage-alternatives/": [
+    "AJh"
+  ],
+  "/nxdoc/cloud/nuxeo-architecture-components/": [
+    "BxJ"
+  ],
+  "/nxdoc/cloud/nuxeo-architecture-introduction/": [
+    "-Q4"
+  ],
+  "/nxdoc/cloud/nuxeo-reference-architectures/": [
+    "aec"
+  ],
+  "/nxdoc/cloud/nuxeo-scalability-options/": [
+    "KXO"
+  ],
+  "/nxdoc/cloud/compact-architecture-with-kafka/": [
+    "Qpo"
+  ],
+  "/nxdoc/cloud/compact-architecture-with-redis/": [
+    "lvg"
+  ],
+  "/nxdoc/cloud/distributed-architecture-with-kafka/": [
+    "PEV"
+  ],
+  "/nxdoc/cloud/database-architecture/": [
+    "9dP"
+  ],
+  "/nxdoc/cloud/elasticsearch-architecture/": [
+    "iN_"
+  ],
+  "/nxdoc/cloud/file-storage-architecture/": [
+    "Bwh"
+  ],
+  "/nxdoc/cloud/load-balancers-architecture/": [
+    "EN0"
+  ],
+  "/nxdoc/cloud/messaging-system-architecture/": [
+    "PQj"
+  ],
+  "/nxdoc/cloud/nuxeo-server-architecture/": [
+    "OEf"
+  ],
+  "/nxdoc/cloud/reverse-proxy-architecture/": [
+    "VI_"
+  ],
+  "/nxdoc/cloud/pubsub-architecture/": [
+    "vQT"
+  ],
+  "/nxdoc/cloud/redis-architecture/": [
+    "U0e"
+  ],
+  "/client-java/3.13/advanced-usage/": [
+    "97A"
+  ],
+  "/client-java/3.13/authentication/": [
+    "Ao8"
+  ],
+  "/client-java/3.13/blob/": [
+    "DgO"
+  ],
+  "/client-java/3.13/automation/": [
+    "xNL"
+  ],
+  "/client-java/3.13/configuration/": [
+    "FQy"
+  ],
+  "/client-java/3.13/directory/": [
+    "Esi"
+  ],
+  "/client-java/3.13/document/": [
+    "CKy"
+  ],
+  "/client-java/3.13/": [
+    "FOA"
+  ],
+  "/client-java/3.13/user-group/": [
+    "2ns"
+  ],
+  "/client-java/3.13/workflow/": [
+    "qu1"
+  ],
+  "/client-java/3.12/advanced-usage/": [
+    "XV4"
+  ],
+  "/client-java/3.12/automation/": [
+    "W30"
+  ],
+  "/client-java/3.12/blob/": [
+    "NUB"
+  ],
+  "/client-java/3.12/configuration/": [
+    "bnw"
+  ],
+  "/client-java/3.12/authentication/": [
+    "EM3"
+  ],
+  "/client-java/3.12/directory/": [
+    "Ye0"
+  ],
+  "/client-java/3.12/document/": [
+    "rca"
+  ],
+  "/client-java/3.12/": [
+    "34l"
+  ],
+  "/client-java/3.12/user-group/": [
+    "1z3"
+  ],
+  "/client-java/3.12/workflow/": [
+    "g6Y"
+  ],
+  "/client-java/3.11/advanced-usage/": [
+    "Pf5"
+  ],
+  "/client-java/3.11/authentication/": [
+    "vV_"
+  ],
+  "/client-java/3.11/blob/": [
+    "zNq"
+  ],
+  "/client-java/3.11/automation/": [
+    "qSw"
+  ],
+  "/client-java/3.11/configuration/": [
+    "i9C"
+  ],
+  "/client-java/3.11/directory/": [
+    "hPt"
+  ],
+  "/client-java/3.11/document/": [
+    "wae"
+  ],
+  "/client-java/3.11/": [
+    "G5W"
+  ],
+  "/client-java/3.11/user-group/": [
+    "GY_"
+  ],
+  "/client-java/3.11/workflow/": [
+    "Tl9"
+  ],
+  "/client-java/3.10/advanced-usage/": [
+    "-Vw"
+  ],
+  "/client-java/3.10/automation/": [
+    "sJQ"
+  ],
+  "/client-java/3.10/authentication/": [
+    "4Gt"
+  ],
+  "/client-java/3.10/blob/": [
+    "u2L"
+  ],
+  "/client-java/3.10/configuration/": [
+    "tNn"
+  ],
+  "/client-java/3.10/directory/": [
+    "0eO"
+  ],
+  "/client-java/3.10/document/": [
+    "vEv"
+  ],
+  "/client-java/3.10/": [
+    "ftW"
+  ],
+  "/client-java/3.10/user-group/": [
+    "2Q6"
+  ],
+  "/client-java/3.10/workflow/": [
+    "ytT"
+  ],
+  "/client-java/3.9/advanced-usage/": [
+    "Dqz"
+  ],
+  "/client-java/3.9/authentication/": [
+    "WsG"
+  ],
+  "/client-java/3.9/automation/": [
+    "eMw"
+  ],
+  "/client-java/3.9/blob/": [
+    "9Uk"
+  ],
+  "/client-java/3.9/configuration/": [
+    "Ld7"
+  ],
+  "/client-java/3.9/directory/": [
+    "Jhm"
+  ],
+  "/client-java/3.9/document/": [
+    "e5X"
+  ],
+  "/client-java/3.9/": [
+    "8G2"
+  ],
+  "/client-java/3.9/user-group/": [
+    "B1d"
+  ],
+  "/client-java/3.9/workflow/": [
+    "M3L"
+  ],
+  "/client-java/3.8/advanced-usage/": [
+    "Zag"
+  ],
+  "/client-java/3.8/authentication/": [
+    "ntL"
+  ],
+  "/client-java/3.8/blob/": [
+    "fWX"
+  ],
+  "/client-java/3.8/automation/": [
+    "LWk"
+  ],
+  "/client-java/3.8/configuration/": [
+    "Z_I"
+  ],
+  "/client-java/3.8/document/": [
+    "Knf"
+  ],
+  "/client-java/3.8/directory/": [
+    "E2f"
+  ],
+  "/client-java/3.8/": [
+    "HCZ"
+  ],
+  "/client-java/3.8/user-group/": [
+    "Nom"
+  ],
+  "/client-java/3.8/workflow/": [
+    "Tbq"
+  ],
+  "/client-java/3.7/advanced-usage/": [
+    "7r8"
+  ],
+  "/client-java/3.7/authentication/": [
+    "kEp"
+  ],
+  "/client-java/3.7/configuration/": [
+    "KkJd"
+  ],
+  "/client-java/3.7/directory/": [
+    "P43"
+  ],
+  "/client-java/3.7/blob/": [
+    "3BX"
+  ],
+  "/client-java/3.7/automation/": [
+    "pPf3"
+  ],
+  "/client-java/3.7/document/": [
+    "K5Q"
+  ],
+  "/client-java/3.7/": [
+    "WdW"
+  ],
+  "/client-java/3.7/user-group/": [
+    "Cfb"
+  ],
+  "/client-java/3.7/workflow/": [
+    "FRD"
+  ],
+  "/client-java/3.6/authentication/": [
+    "BRh"
+  ],
+  "/client-java/3.6/blob/": [
+    "n-z"
+  ],
+  "/client-java/3.6/automation/": [
+    "u6c"
+  ],
+  "/client-java/3.6/configuration/": [
+    "Z-K"
+  ],
+  "/client-java/3.6/directory/": [
+    "olC"
+  ],
+  "/client-java/3.6/document/": [
+    "7SZ"
+  ],
+  "/client-java/3.6/": [
+    "BYg"
+  ],
+  "/client-java/3.6/user-group/": [
+    "Sb1"
+  ],
+  "/client-java/3.6/workflow/": [
+    "pkN"
+  ],
+  "/client-java/3.6/advanced-usage/": [
+    "ufz"
+  ],
+  "/client-java/3.5/advanced-usage/": [
+    "2sT"
+  ],
+  "/client-java/3.5/authentication/": [
+    "HIY"
+  ],
+  "/client-java/3.5/automation/": [
+    "iHh"
+  ],
+  "/client-java/3.5/blob/": [
+    "hOo"
+  ],
+  "/client-java/3.5/directory/": [
+    "AAc"
+  ],
+  "/client-java/3.5/configuration/": [
+    "dX2"
+  ],
+  "/client-java/3.5/document/": [
+    "BK4"
+  ],
+  "/client-java/3.5/": [
+    "FgM"
+  ],
+  "/client-java/3.5/user-group/": [
+    "LdD"
+  ],
+  "/client-java/3.5/workflow/": [
+    "V41"
+  ],
+  "/client-java/3.4/advanced-usage/": [
+    "h76"
+  ],
+  "/client-java/3.4/blob/": [
+    "kL1"
+  ],
+  "/client-java/3.4/automation/": [
+    "SEb"
+  ],
+  "/client-java/3.4/configuration/": [
+    "m2I"
+  ],
+  "/client-java/3.4/authentication/": [
+    "pLI"
+  ],
+  "/client-java/3.4/directory/": [
+    "dNC"
+  ],
+  "/client-java/3.4/document/": [
+    "WwO"
+  ],
+  "/client-java/3.4/user-group/": [
+    "FMQ"
+  ],
+  "/client-java/3.4/": [
+    "Flw"
+  ],
+  "/client-java/3.4/workflow/": [
+    "1Ul"
+  ],
+  "/client-java/3.3/advanced-usage/": [
+    "BZu"
+  ],
+  "/client-java/3.3/authentication/": [
+    "mXQ"
+  ],
+  "/client-java/3.3/automation/": [
+    "-4H"
+  ],
+  "/client-java/3.3/blob/": [
+    "Y3p"
+  ],
+  "/client-java/3.3/configuration/": [
+    "AJi"
+  ],
+  "/client-java/3.3/directory/": [
+    "tWy"
+  ],
+  "/client-java/3.3/document/": [
+    "lp0"
+  ],
+  "/client-java/3.3/": [
+    "HYL"
+  ],
+  "/client-java/3.3/user-group/": [
+    "BXC"
+  ],
+  "/client-java/3.3/workflow/": [
+    "eI2"
+  ],
+  "/rest-api/1/management-endpoint/": [
+    "WLK"
+  ],
+  "/rest-api/1/binaries-endpoint/": [
+    "oz2"
+  ],
+  "/rest-api/1/bulk-endpoint/": [
+    "94W"
+  ],
+  "/rest-api/1/elasticsearch-endpoint/": [
+    "fgH"
+  ],
+  "/rest-api/1/pictures-endpoint/": [
+    "5E3h"
+  ],
+  "/rest-api/1/probes-endpoint/": [
+    "Us_"
+  ],
+  "/rest-api/1/distribution-endpoint/": [
+    "1cd"
+  ],
+  "/rest-api/1/stream-endpoint/": [
+    "Wk-"
+  ],
+  "/rest-api/1/videos-endpoint/": [
+    "VhT"
+  ],
+  "/rest-api/1/workmanager-endpoint/": [
+    "2x7"
+  ],
+  "/rest-api/1/thumbnails-endpoint/": [
+    "H1t"
+  ],
+  "/rest-api/1/bulk-status-entity-type/": [
+    "ku4"
+  ],
+  "/client-php/advanced-usage/": [
+    "e-D"
+  ],
+  "/client-php/automation/": [
+    "Og3"
+  ],
+  "/client-php/configuration/": [
+    "WAm"
+  ],
+  "/client-php/": [
+    "41d"
+  ],
+  "/client-php/workflows/": [
+    "o_-"
+  ],
+  "/client-php/user-group/": [
+    "MvR"
+  ],
+  "/client-php/authentication/": [
+    "ZNQ"
   ]
 }
