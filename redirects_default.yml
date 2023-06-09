@@ -541,6 +541,16 @@
 ^/nxdoc/nuxeo-cluster-scalability-options/?$: /nxdoc/nuxeo-scalability-options
 ^/nxdoc/nuxeo-clustering-configuration/?$: /nxdoc/nuxeo-architecture-components
 
+# NXDOC-2569
+^/nxdoc/nuxeo-server-roadmap/?$: /nxdoc/
+^/nxdoc/roadmap/?$: /nxdoc/
+^/nxdoc/web-ui/web-ui-roadmapp/?$: /nxdoc/web-ui
+^/client-apps/nuxeo-drive-roadmap/?$: /client-apps/nuxeo-drive
+^/client-apps/nuxeo-mobile-roadmap/?$: /client-apps/nuxeo-mobile
+^/nuxeo-insight/give-feedback/?$: /nuxeo-insight/
+^/nuxeo-insight/roadmap/?$: /nuxeo-insight/
+^/studio/nuxeo-studio-roadmap/?$: /studio/
+
 # NXDOC-2309
 ^/client-apps/nuxeo-drive-functional-overview/?$: /client-apps/nuxeo-drive
 
