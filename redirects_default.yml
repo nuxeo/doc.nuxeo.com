@@ -544,7 +544,7 @@
 # NXDOC-2569
 ^/nxdoc/nuxeo-server-roadmap/?$: /nxdoc/
 ^/nxdoc/roadmap/?$: /nxdoc/
-^/nxdoc/web-ui/web-ui-roadmapp/?$: /nxdoc/web-ui
+^/nxdoc/web-ui/web-ui-roadmap/?$: /nxdoc/web-ui
 ^/client-apps/nuxeo-drive-roadmap/?$: /client-apps/nuxeo-drive
 ^/client-apps/nuxeo-mobile-roadmap/?$: /client-apps/nuxeo-mobile
 ^/nuxeo-insight/give-feedback/?$: /nuxeo-insight/
