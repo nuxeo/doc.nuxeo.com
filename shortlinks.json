@@ -24995,5 +24995,2396 @@
   ],
   "/nxdoc/nuxeo-server-release-notes-2021-37/": [
     "SLF"
+  ],
+  "/nxdoc/web-ui-release-notes-3-0-23/": [
+    "QnS"
+  ],
+  "/nxdoc/web-ui-release-notes-3-0-24/": [
+    "RDO"
+  ],
+  "/nxdoc/web-ui-release-notes-3-0-25/": [
+    "tEb"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-38/": [
+    "7oc"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-39/": [
+    "aWz"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2021-40/": [
+    "g0Z"
+  ],
+  "/nxdoc/how-to-clean-up-content/": [
+    "Hpz"
+  ],
+  "/nxdoc/garbage-collecting-orphaned-blobs/": [
+    "JVf"
+  ],
+  "/userdoc/2023/adding-features/": [
+    "Wy2"
+  ],
+  "/userdoc/2023/from-jsf-ui-to-web-ui/": [
+    "xwJ"
+  ],
+  "/userdoc/2023/icons-index/": [
+    "HCp"
+  ],
+  "/userdoc/2023/": [
+    "G50"
+  ],
+  "/userdoc/2023/web-ui/": [
+    "NiM"
+  ],
+  "/userdoc/2023/digital-asset-management-with-the-nuxeo-platform/": [
+    "LeH"
+  ],
+  "/userdoc/2023/digital-signature/": [
+    "Pc-"
+  ],
+  "/userdoc/2023/easyshare/": [
+    "-jU"
+  ],
+  "/userdoc/2023/nuxeo-agenda/": [
+    "RCA"
+  ],
+  "/userdoc/2023/nuxeo-diff/": [
+    "8dY"
+  ],
+  "/userdoc/2023/nuxeo-groups-and-rights-audit/": [
+    "zsL"
+  ],
+  "/userdoc/2023/nuxeo-imap-connector/": [
+    "ia3"
+  ],
+  "/userdoc/2023/nuxeo-multi-tenant/": [
+    "bM4"
+  ],
+  "/userdoc/2023/managing-accounts/": [
+    "Syu"
+  ],
+  "/userdoc/2023/browse/": [
+    "Sol"
+  ],
+  "/userdoc/2023/organizing-content/": [
+    "riO"
+  ],
+  "/userdoc/2023/managing-content/": [
+    "20l"
+  ],
+  "/userdoc/2023/administration/": [
+    "bru"
+  ],
+  "/userdoc/2023/user-settings/": [
+    "X7s"
+  ],
+  "/userdoc/2023/content-create/": [
+    "5f4"
+  ],
+  "/userdoc/2023/content-delete/": [
+    "IJL"
+  ],
+  "/userdoc/2023/content-edit/": [
+    "fNa"
+  ],
+  "/userdoc/2023/content-lock/": [
+    "3_l"
+  ],
+  "/userdoc/2023/history/": [
+    "SNi"
+  ],
+  "/userdoc/2023/version/": [
+    "XvP"
+  ],
+  "/userdoc/2023/alerts/": [
+    "6oE"
+  ],
+  "/userdoc/2023/collections-web-ui/": [
+    "Eik"
+  ],
+  "/userdoc/2023/compare/": [
+    "UXx"
+  ],
+  "/userdoc/2023/document-types-in-web-ui/": [
+    "3aS"
+  ],
+  "/userdoc/2023/favorites/": [
+    "bCN"
+  ],
+  "/userdoc/2023/permissions/": [
+    "rue"
+  ],
+  "/userdoc/2023/search/": [
+    "x2f"
+  ],
+  "/userdoc/2023/share/": [
+    "JWW"
+  ],
+  "/userdoc/2023/tags/": [
+    "zY71"
+  ],
+  "/userdoc/2023/task/": [
+    "uqE"
+  ],
+  "/userdoc/2023/delegating-task/": [
+    "p7u"
+  ],
+  "/userdoc/2023/document-workflow/": [
+    "Dah"
+  ],
+  "/userdoc/2023/handling-tasks/": [
+    "V5A"
+  ],
+  "/userdoc/2023/reassigning-task/": [
+    "YZk"
+  ],
+  "/nxdoc/2023/client-sdks/": [
+    "HMZ"
+  ],
+  "/nxdoc/2023/contributing-to-nuxeo/": [
+    "mjR"
+  ],
+  "/nxdoc/2023/custom-page-providers/": [
+    "Co3"
+  ],
+  "/nxdoc/2023/contributing-to-an-extension-using-nuxeo-ide/": [
+    "r0w"
+  ],
+  "/nxdoc/2023/dbs-mongodb/": [
+    "pqy"
+  ],
+  "/nxdoc/2023/dam/": [
+    "KzU"
+  ],
+  "/nxdoc/2023/generic-multi-excerpts/": [
+    "nXp"
+  ],
+  "/nxdoc/2023/getting-started/": [
+    "Y_Z"
+  ],
+  "/nxdoc/2023/how-to-configure-a-new-search-tab/": [
+    "U6n"
+  ],
+  "/nxdoc/2023/": [
+    "ufX"
+  ],
+  "/nxdoc/2023/jsf-ui-to-web-ui/": [
+    "SQy"
+  ],
+  "/nxdoc/2023/licenses/": [
+    "TLC"
+  ],
+  "/nxdoc/2023/nuxeo-add-ons/": [
+    "eA7j"
+  ],
+  "/nxdoc/2023/nuxeo-server/": [
+    "O6v"
+  ],
+  "/nxdoc/2023/nuxeo-tools/": [
+    "N8a"
+  ],
+  "/nxdoc/2023/release-notes/": [
+    "vFC"
+  ],
+  "/nxdoc/2023/resources-endpoints/": [
+    "Ov2"
+  ],
+  "/nxdoc/2023/roadmap/": [
+    "jtGv"
+  ],
+  "/nxdoc/2023/supported-application-servers/": [
+    "YBH"
+  ],
+  "/nxdoc/2023/supported-databases/": [
+    "TL0"
+  ],
+  "/nxdoc/2023/university/": [
+    "v1F"
+  ],
+  "/nxdoc/2023/web-ui/": [
+    "Lyj"
+  ],
+  "/nxdoc/2023/how-to-submit-a-bug-report/": [
+    "kwW"
+  ],
+  "/nxdoc/2023/how-to-translate-the-nuxeo-platform/": [
+    "cGf"
+  ],
+  "/nxdoc/2023/is-source-code-needed/": [
+    "oCmv"
+  ],
+  "/nxdoc/2023/java-client/": [
+    "B3w"
+  ],
+  "/nxdoc/2023/javascript-client/": [
+    "_z0"
+  ],
+  "/nxdoc/2023/net-client/": [
+    "1v8"
+  ],
+  "/nxdoc/2023/python-client/": [
+    "ARH"
+  ],
+  "/nxdoc/2023/php-automation-client/": [
+    "pv9"
+  ],
+  "/nxdoc/2023/digital-asset-management-dam/": [
+    "fHn"
+  ],
+  "/nxdoc/2023/manage-and-organize/": [
+    "JoW"
+  ],
+  "/nxdoc/2023/search-and-find/": [
+    "7bf"
+  ],
+  "/nxdoc/2023/share-and-distribute/": [
+    "9j9"
+  ],
+  "/nxdoc/2023/upload-and-store/": [
+    "jWl"
+  ],
+  "/nxdoc/2023/alternative-command-parameters-for-prores-codec-users/": [
+    "Y5A"
+  ],
+  "/nxdoc/2023/how-to-contribute-a-new-video-conversion/": [
+    "RMBM"
+  ],
+  "/nxdoc/2023/how-to-contribute-picture-conversions/": [
+    "BfA"
+  ],
+  "/nxdoc/2023/supported-file-formats/": [
+    "vVu"
+  ],
+  "/nxdoc/2023/nuxeo-cli/": [
+    "rVd"
+  ],
+  "/nxdoc/2023/nuxeo-dev-tools-extension/": [
+    "nHO"
+  ],
+  "/nxdoc/2023/nuxeo-devcontainer/": [
+    "Aqz"
+  ],
+  "/nxdoc/2023/discover-nuxeo-cli-by-example/": [
+    "s1S"
+  ],
+  "/nxdoc/2023/best-practices/": [
+    "jEb"
+  ],
+  "/nxdoc/2023/essential-nuxeo-platform-terminology/": [
+    "j4B"
+  ],
+  "/nxdoc/2023/how-to-index/": [
+    "2lq"
+  ],
+  "/nxdoc/2023/quick-overview/": [
+    "fof"
+  ],
+  "/nxdoc/2023/tracks/": [
+    "Y-U"
+  ],
+  "/nxdoc/2023/use-cases/": [
+    "1vg"
+  ],
+  "/nxdoc/2023/choosing-how-to-import-data-in-the-nuxeo-platform/": [
+    "0A5"
+  ],
+  "/nxdoc/2023/understand-expression-and-scripting-languages-used-in-nuxeo/": [
+    "KRB"
+  ],
+  "/nxdoc/2023/bootstrap-your-case-management-project/": [
+    "0Q6"
+  ],
+  "/nxdoc/2023/bootstrap-your-document-management-project/": [
+    "ZJZ"
+  ],
+  "/nxdoc/2023/develop-your-own-java-code/": [
+    "den"
+  ],
+  "/nxdoc/2023/discover-nuxeo-platform-apis/": [
+    "uJX"
+  ],
+  "/nxdoc/2023/first-package-with-studio/": [
+    "NHa"
+  ],
+  "/nxdoc/2023/package-publish-deploy-hotreload/": [
+    "j8c"
+  ],
+  "/nxdoc/2023/handling-permissions/": [
+    "btF"
+  ],
+  "/nxdoc/2023/managing-files/": [
+    "6ep"
+  ],
+  "/nxdoc/2023/manipulating-documents/": [
+    "W-_"
+  ],
+  "/nxdoc/2023/retrieving-audit-log/": [
+    "YAs"
+  ],
+  "/nxdoc/2023/setting-up-your-javascript-environment/": [
+    "Q_k"
+  ],
+  "/nxdoc/2023/using-automation/": [
+    "jqT"
+  ],
+  "/nxdoc/2023/using-renditions/": [
+    "rz7"
+  ],
+  "/nxdoc/2023/setting-up-your-nuxeo-environment/": [
+    "3P_"
+  ],
+  "/nxdoc/2023/using-workflows/": [
+    "6tg"
+  ],
+  "/nxdoc/2023/nuxeo-elements/": [
+    "sId"
+  ],
+  "/nxdoc/2023/polymer-guide/": [
+    "iSA"
+  ],
+  "/nxdoc/2023/web-ui-accessibility/": [
+    "t1C"
+  ],
+  "/nxdoc/2023/web-ui-functional-testing/": [
+    "mJk"
+  ],
+  "/nxdoc/2023/web-ui-overview/": [
+    "g2Yy"
+  ],
+  "/nxdoc/2023/web-ui-performance/": [
+    "J75"
+  ],
+  "/nxdoc/2023/web-ui-release-notes/": [
+    "UWj"
+  ],
+  "/nxdoc/2023/web-ui-tutorials/": [
+    "IvT"
+  ],
+  "/nxdoc/2023/web-ui-upgrade-notes/": [
+    "z8r"
+  ],
+  "/nxdoc/2023/notify-behavior/": [
+    "bta"
+  ],
+  "/nxdoc/2023/nuxeo-elements-tutorial/": [
+    "uJP"
+  ],
+  "/nxdoc/2023/quality-assurance/": [
+    "4oM"
+  ],
+  "/nxdoc/2023/web-ui-release-notes-3-1-2/": [
+    "sBY"
+  ],
+  "/nxdoc/2023/web-ui-upgrade-notes-lts-2023/": [
+    "I0v"
+  ],
+  "/nxdoc/2023/how-to-add-a-header-and-a-footer/": [
+    "CZr"
+  ],
+  "/nxdoc/2023/how-to-create-and-customize-nuxeo-actions-menu/": [
+    "8fk"
+  ],
+  "/nxdoc/2023/how-to-create-and-reuse-custom-element/": [
+    "yE9"
+  ],
+  "/nxdoc/2023/how-to-create-bulk-actions-studio/": [
+    "a53"
+  ],
+  "/nxdoc/2023/how-to-create-bulk-edit-form-studio/": [
+    "PUa"
+  ],
+  "/nxdoc/2023/how-to-customize-creation-form/": [
+    "dt_"
+  ],
+  "/nxdoc/2023/how-to-disable-trash/": [
+    "z5a"
+  ],
+  "/nxdoc/2023/how-to-display-children-documents-listing/": [
+    "KwO"
+  ],
+  "/nxdoc/2023/how-to-display-user-information/": [
+    "R8p"
+  ],
+  "/nxdoc/2023/how-to-filter-data-in-directory-suggestion/": [
+    "1V3"
+  ],
+  "/nxdoc/2023/how-to-insert-user-action/": [
+    "3N0"
+  ],
+  "/nxdoc/2023/how-to-new-tab/": [
+    "YLo"
+  ],
+  "/nxdoc/2023/how-to-search-or-operator/": [
+    "E98"
+  ],
+  "/nxdoc/2023/how-to-trigger-automation-dialog/": [
+    "THY"
+  ],
+  "/nxdoc/2023/how-to-update-default-nuxeo-page/": [
+    "lb6"
+  ],
+  "/nxdoc/2023/how-to-use-events/": [
+    "7Da"
+  ],
+  "/nxdoc/2023/how-to-use-rich-text-editor-rte-for-article-publishing/": [
+    "BXG"
+  ],
+  "/nxdoc/2023/how-to-validate-content/": [
+    "d6s"
+  ],
+  "/nxdoc/2023/howto-create-custom-dashboard-entries/": [
+    "kXi"
+  ],
+  "/nxdoc/2023/howto-execute-ui-functions/": [
+    "qV-"
+  ],
+  "/nxdoc/2023/web-ui-bulk-actions/": [
+    "-Md"
+  ],
+  "/nxdoc/2023/web-ui-configuration-properties/": [
+    "855"
+  ],
+  "/nxdoc/2023/web-ui-customization-tutorial/": [
+    "Syg"
+  ],
+  "/nxdoc/2023/web-ui-dashboard/": [
+    "9qe"
+  ],
+  "/nxdoc/2023/web-ui-default-rendition/": [
+    "q0CZ"
+  ],
+  "/nxdoc/2023/web-ui-deployment/": [
+    "XSR"
+  ],
+  "/nxdoc/2023/web-ui-diff/": [
+    "8Au"
+  ],
+  "/nxdoc/2023/web-ui-document-layouts/": [
+    "WmH"
+  ],
+  "/nxdoc/2023/web-ui-layouts/": [
+    "_US"
+  ],
+  "/nxdoc/2023/web-ui-routing/": [
+    "BUk"
+  ],
+  "/nxdoc/2023/web-ui-search/": [
+    "Q3JF"
+  ],
+  "/nxdoc/2023/web-ui-slots/": [
+    "pV3"
+  ],
+  "/nxdoc/2023/web-ui-theme-customization/": [
+    "FE4"
+  ],
+  "/nxdoc/2023/web-ui-translations/": [
+    "Dcg"
+  ],
+  "/nxdoc/2023/web-ui-upload-providers/": [
+    "BGJ"
+  ],
+  "/nxdoc/2023/web-ui-workflow-tasks/": [
+    "pNW"
+  ],
+  "/nxdoc/2023/web-ui-automated-translation-labels/": [
+    "xqI"
+  ],
+  "/nxdoc/2023/web-ui-managing-translations/": [
+    "4cx"
+  ],
+  "/nxdoc/2023/amazon-s3-direct-upload/": [
+    "svCN"
+  ],
+  "/nxdoc/2023/amazon-s3-online-storage/": [
+    "u7s"
+  ],
+  "/nxdoc/2023/creating-nuxeo-packages/": [
+    "_eh"
+  ],
+  "/nxdoc/2023/digital-signature/": [
+    "FZ_"
+  ],
+  "/nxdoc/2023/easyshare/": [
+    "_Qd"
+  ],
+  "/nxdoc/2023/explorer/": [
+    "bhH"
+  ],
+  "/nxdoc/2023/google-storage/": [
+    "Adg"
+  ],
+  "/nxdoc/2023/installing-a-new-package-on-your-instance/": [
+    "JhJ"
+  ],
+  "/nxdoc/2023/microsoft-azure-online-storage/": [
+    "gkX"
+  ],
+  "/nxdoc/2023/nuxeo-3d/": [
+    "iVY"
+  ],
+  "/nxdoc/2023/nuxeo-adobe-cc-connector/": [
+    "iLi"
+  ],
+  "/nxdoc/2023/nuxeo-agenda/": [
+    "D0z"
+  ],
+  "/nxdoc/2023/nuxeo-ai/": [
+    "XLA"
+  ],
+  "/nxdoc/2023/nuxeo-aspera-connector/": [
+    "l1i"
+  ],
+  "/nxdoc/2023/nuxeo-bulk-document-importer/": [
+    "Z7T"
+  ],
+  "/nxdoc/2023/nuxeo-coldstorage/": [
+    "T5L"
+  ],
+  "/nxdoc/2023/nuxeo-csv/": [
+    "KKR"
+  ],
+  "/nxdoc/2023/nuxeo-datadog-reporter/": [
+    "px1"
+  ],
+  "/nxdoc/2023/nuxeo-diff-pictures/": [
+    "GPs"
+  ],
+  "/nxdoc/2023/nuxeo-diff/": [
+    "PLT"
+  ],
+  "/nxdoc/2023/nuxeo-edge-cache/": [
+    "7G5"
+  ],
+  "/nxdoc/2023/nuxeo-enhanced-viewer/": [
+    "S36"
+  ],
+  "/nxdoc/2023/nuxeo-federation-framework/": [
+    "Dw6"
+  ],
+  "/nxdoc/2023/nuxeo-file-system-exporter/": [
+    "n7J"
+  ],
+  "/nxdoc/2023/nuxeo-for-adobe-cc/": [
+    "5fw"
+  ],
+  "/nxdoc/2023/nuxeo-for-salesforce/": [
+    "mc_"
+  ],
+  "/nxdoc/2023/nuxeo-frameio/": [
+    "BXx"
+  ],
+  "/nxdoc/2023/nuxeo-groups-and-rights-audit/": [
+    "fW0"
+  ],
+  "/nxdoc/2023/nuxeo-jsf-to-web-ui/": [
+    "y2d"
+  ],
+  "/nxdoc/2023/nuxeo-jsf-ui/": [
+    "tm5"
+  ],
+  "/nxdoc/2023/nuxeo-lambda-pictureview/": [
+    "ST6"
+  ],
+  "/nxdoc/2023/nuxeo-live-connect/": [
+    "oPi"
+  ],
+  "/nxdoc/2023/nuxeo-media-publishing/": [
+    "BOZ"
+  ],
+  "/nxdoc/2023/nuxeo-multi-tenant/": [
+    "u6S"
+  ],
+  "/nxdoc/2023/nuxeo-office-online-integration/": [
+    "gY6"
+  ],
+  "/nxdoc/2023/nuxeo-outlook-connector/": [
+    "UyF"
+  ],
+  "/nxdoc/2023/nuxeo-platform-feature-table/": [
+    "2qH"
+  ],
+  "/nxdoc/2023/nuxeo-platform-user-registration/": [
+    "RPkX"
+  ],
+  "/nxdoc/2023/nuxeo-quota/": [
+    "4PD"
+  ],
+  "/nxdoc/2023/nuxeo-retention-management/": [
+    "stz"
+  ],
+  "/nxdoc/2023/nuxeo-sample-project/": [
+    "vRj"
+  ],
+  "/nxdoc/2023/nuxeo-shibboleth-invitation/": [
+    "I9h"
+  ],
+  "/nxdoc/2023/nuxeo-showcase-content/": [
+    "hFc"
+  ],
+  "/nxdoc/2023/nuxeo-sitecore-connector/": [
+    "Izo"
+  ],
+  "/nxdoc/2023/nuxeo-spreadsheet/": [
+    "k_2"
+  ],
+  "/nxdoc/2023/nuxeo-tree-snapshot/": [
+    "4RT"
+  ],
+  "/nxdoc/2023/nuxeo-virtual-navigation/": [
+    "hLn"
+  ],
+  "/nxdoc/2023/nuxeo-vision/": [
+    "HHO"
+  ],
+  "/nxdoc/2023/nuxeo-zapier/": [
+    "cMH"
+  ],
+  "/nxdoc/2023/resources-compatibility/": [
+    "9vw"
+  ],
+  "/nxdoc/2023/scan-documents-importer/": [
+    "QmO"
+  ],
+  "/nxdoc/2023/template-rendering-addon/": [
+    "fve"
+  ],
+  "/nxdoc/2023/amazon-cloudfront-distribution/": [
+    "JQ-"
+  ],
+  "/nxdoc/2023/package-manifest/": [
+    "dVP"
+  ],
+  "/nxdoc/2023/packaging-examples/": [
+    "rtv"
+  ],
+  "/nxdoc/2023/scripting-commands/": [
+    "1TV"
+  ],
+  "/nxdoc/2023/nuxeo-coldstorage-faq/": [
+    "DFE"
+  ],
+  "/nxdoc/2023/nuxeo-coldstorage-installation/": [
+    "S8-"
+  ],
+  "/nxdoc/2023/how-to-enable-csv-import-on-a-custom-document-type/": [
+    "JIf"
+  ],
+  "/nxdoc/2023/how-to-configure-adobe-connector/": [
+    "vjr"
+  ],
+  "/nxdoc/2023/nuxeo-salesforce-release-notes/": [
+    "NDY"
+  ],
+  "/nxdoc/2023/how-to-contribute-a-new-user-registration-request-document-type/": [
+    "thE"
+  ],
+  "/nxdoc/2023/how-to-enable-quotas-on-document-types/": [
+    "ogm"
+  ],
+  "/nxdoc/2023/how-to-add-a-new-virtual-navigation-entry/": [
+    "Rdi"
+  ],
+  "/nxdoc/2023/how-to-disable-by-coverage-and-by-subjects-virtual-navigations/": [
+    "mpT"
+  ],
+  "/nxdoc/2023/nuxeo-aspera-release-notes/": [
+    "n3q"
+  ],
+  "/nxdoc/2023/nuxeo-aspera-upgrade-notes/": [
+    "2lY"
+  ],
+  "/nxdoc/2023/nuxeo-aspera-connector-2021-3-1/": [
+    "VnG"
+  ],
+  "/nxdoc/2023/nuxeo-aspera-connector-2021-3-3/": [
+    "oPo"
+  ],
+  "/nxdoc/2023/nuxeo-aspera-connector-2021-3-4/": [
+    "Awx"
+  ],
+  "/nxdoc/2023/nuxeo-aspera-connector-2021-3-6/": [
+    "G6d"
+  ],
+  "/nxdoc/2023/nuxeo-aspera-connector-2021-3-8/": [
+    "GVU"
+  ],
+  "/nxdoc/2023/how-to-import-documents-with-annotations/": [
+    "Iv5"
+  ],
+  "/nxdoc/2023/how-to-set-enhanced-viewer-as-default-document-preview/": [
+    "bsf"
+  ],
+  "/nxdoc/2023/how-to-use-content-redaction/": [
+    "f6f"
+  ],
+  "/nxdoc/2023/how-to-use-renditions-on-nev/": [
+    "34c"
+  ],
+  "/nxdoc/2023/nuxeo-enhanced-viewer-installation/": [
+    "JOs"
+  ],
+  "/nxdoc/2023/nuxeo-enhanced-viewer-release-notes/": [
+    "asj"
+  ],
+  "/nxdoc/2023/nuxeo-enhanced-viewer-release-notes-2-0-0/": [
+    "3o8"
+  ],
+  "/nxdoc/2023/nuxeo-enhanced-viewer-release-notes-2-1-0/": [
+    "AQ5"
+  ],
+  "/nxdoc/2023/nuxeo-enhanced-viewer-release-notes-2-1-2/": [
+    "LfK"
+  ],
+  "/nxdoc/2023/nuxeo-enhanced-viewer-release-notes-2-1-3/": [
+    "Lj7"
+  ],
+  "/nxdoc/2023/nuxeo-enhanced-viewer-release-notes-2-1-4/": [
+    "9Wz"
+  ],
+  "/nxdoc/2023/nuxeo-enhanced-viewer-release-notes-2-2-0/": [
+    "E3-"
+  ],
+  "/nxdoc/2023/nuxeo-enhanced-viewer-release-notes-2-2-1/": [
+    "H5l"
+  ],
+  "/nxdoc/2023/nuxeo-enhanced-viewer-release-notes-2-3-0/": [
+    "aIY"
+  ],
+  "/nxdoc/2023/nuxeo-enhanced-viewer-release-notes-2021-1-1/": [
+    "X8k"
+  ],
+  "/nxdoc/2023/nuxeo-retention-functional-overview/": [
+    "2CB"
+  ],
+  "/nxdoc/2023/nuxeo-retention-installation/": [
+    "DBX"
+  ],
+  "/nxdoc/2023/nuxeo-retention-technical-overview/": [
+    "OW6"
+  ],
+  "/nxdoc/2023/nuxeo-retention-installation-compliance/": [
+    "loQ"
+  ],
+  "/nxdoc/2023/nuxeo-retention-installation-standard/": [
+    "ht_"
+  ],
+  "/nxdoc/2023/jsf-ui-framework/": [
+    "BGS"
+  ],
+  "/nxdoc/2023/jsf-ui-userdoc/": [
+    "kZ1"
+  ],
+  "/nxdoc/2023/actions-links-buttons-icons-tabs-and-more/": [
+    "i1F"
+  ],
+  "/nxdoc/2023/content-views/": [
+    "YQ4"
+  ],
+  "/nxdoc/2023/cross-validation-with-jsf/": [
+    "Odm"
+  ],
+  "/nxdoc/2023/document-list-management/": [
+    "8y8"
+  ],
+  "/nxdoc/2023/documents-display-configuration/": [
+    "AUrX"
+  ],
+  "/nxdoc/2023/jsf-and-ajax-tips-and-how-to-index/": [
+    "KuT"
+  ],
+  "/nxdoc/2023/jsf-ui-framework-overview/": [
+    "Qcn"
+  ],
+  "/nxdoc/2023/jsf-ui-how-to-index/": [
+    "jen"
+  ],
+  "/nxdoc/2023/labels-and-translations-management/": [
+    "tki"
+  ],
+  "/nxdoc/2023/layouts-and-widgets-forms-listings-grids/": [
+    "EbI"
+  ],
+  "/nxdoc/2023/navigation-urls/": [
+    "9ZZ"
+  ],
+  "/nxdoc/2023/theme/": [
+    "Avk"
+  ],
+  "/nxdoc/2023/upgrade-to-jsf2/": [
+    "89v"
+  ],
+  "/nxdoc/2023/document-content-views/": [
+    "MGt"
+  ],
+  "/nxdoc/2023/document-layouts/": [
+    "Nsl"
+  ],
+  "/nxdoc/2023/document-views/": [
+    "Q0R"
+  ],
+  "/nxdoc/2023/drag-and-drop-service-for-content-capture-html5-based/": [
+    "r2O"
+  ],
+  "/nxdoc/2023/ajax-forms-and-actions/": [
+    "G0C"
+  ],
+  "/nxdoc/2023/ajax4jsf-best-practices/": [
+    "ZRr"
+  ],
+  "/nxdoc/2023/configuring-the-jsf-number-of-views/": [
+    "6Ec"
+  ],
+  "/nxdoc/2023/double-click-shield/": [
+    "PLZ"
+  ],
+  "/nxdoc/2023/how-to-add-a-jsf-form-validation/": [
+    "sFM"
+  ],
+  "/nxdoc/2023/how-to-impact-another-jsf-component-from-a-command-or-select/": [
+    "Ptv"
+  ],
+  "/nxdoc/2023/how-to-register-a-jsf-tag-library/": [
+    "_zY"
+  ],
+  "/nxdoc/2023/jsf-and-javascript/": [
+    "gKU"
+  ],
+  "/nxdoc/2023/jsf-troubleshoot/": [
+    "vTe"
+  ],
+  "/nxdoc/2023/how-to-activate-ui-development-mode/": [
+    "5MT"
+  ],
+  "/nxdoc/2023/how-to-add-a-button-in-the-jsf-ui/": [
+    "83P"
+  ],
+  "/nxdoc/2023/how-to-bubble-errors-from-the-core-layer-in-the-jsf-ui/": [
+    "Lx0"
+  ],
+  "/nxdoc/2023/how-to-customize-startup-redirection/": [
+    "TEpC"
+  ],
+  "/nxdoc/2023/how-to-customize-the-bulk-edit-form/": [
+    "5zS"
+  ],
+  "/nxdoc/2023/how-to-customize-the-bulk-import-form/": [
+    "Pxw"
+  ],
+  "/nxdoc/2023/how-to-customize-the-dashboard/": [
+    "iIb"
+  ],
+  "/nxdoc/2023/how-to-customize-the-error-pages/": [
+    "6p4"
+  ],
+  "/nxdoc/2023/how-to-customize-the-html5-drag-and-drop-import-with-metadata-form/": [
+    "CGa"
+  ],
+  "/nxdoc/2023/how-to-customize-the-info-view-pop-up/": [
+    "KSH"
+  ],
+  "/nxdoc/2023/how-to-customize-the-login-page/": [
+    "AIj"
+  ],
+  "/nxdoc/2023/how-to-debug-slow-page-rendering/": [
+    "eZs"
+  ],
+  "/nxdoc/2023/how-to-display-a-button-a-tab-only-when-a-workflow-is-started-jsf/": [
+    "TcL"
+  ],
+  "/nxdoc/2023/how-to-enable-drag-and-drop-and-new-button-on-a-custom-content-view/": [
+    "9IK"
+  ],
+  "/nxdoc/2023/how-to-make-jsf-ui-the-default-ui/": [
+    "ICu"
+  ],
+  "/nxdoc/2023/how-to-override-a-seam-component/": [
+    "pFd"
+  ],
+  "/nxdoc/2023/how-to-override-a-template/": [
+    "QpG"
+  ],
+  "/nxdoc/2023/how-to-override-the-login-page/": [
+    "VvG"
+  ],
+  "/nxdoc/2023/how-to-use-plug-ins-in-tinymce-editor/": [
+    "nQU"
+  ],
+  "/nxdoc/2023/how-to-force-locale/": [
+    "VTV"
+  ],
+  "/nxdoc/2023/how-to-upload-labels-translations-in-nuxeo-studio-i18n/": [
+    "77D"
+  ],
+  "/nxdoc/2023/localization-and-translation-how-to-index/": [
+    "fyp"
+  ],
+  "/nxdoc/2023/default-url-patterns/": [
+    "38i"
+  ],
+  "/nxdoc/2023/urls-for-files/": [
+    "9EJ"
+  ],
+  "/nxdoc/2023/action-how-to-index/": [
+    "wGP"
+  ],
+  "/nxdoc/2023/actions-display/": [
+    "Gk9"
+  ],
+  "/nxdoc/2023/actions-overview/": [
+    "NOy"
+  ],
+  "/nxdoc/2023/custom-action-types/": [
+    "fXl"
+  ],
+  "/nxdoc/2023/incremental-layouts-and-actions/": [
+    "H83"
+  ],
+  "/nxdoc/2023/standard-action-types/": [
+    "Md7"
+  ],
+  "/nxdoc/2023/filters-and-access-controls/": [
+    "SS0"
+  ],
+  "/nxdoc/2023/how-to-add-a-new-action-category-on-a-document-tab/": [
+    "s8m"
+  ],
+  "/nxdoc/2023/how-to-hide-a-tab-a-link-or-a-button-for-a-group-or-a-user/": [
+    "R4u"
+  ],
+  "/nxdoc/2023/how-to-make-the-new-button-appear-on-a-custom-folderish-document/": [
+    "AcB"
+  ],
+  "/nxdoc/2023/content-view-how-to-index/": [
+    "v3_"
+  ],
+  "/nxdoc/2023/content-views-display/": [
+    "AWx7"
+  ],
+  "/nxdoc/2023/how-to-customize-the-default-content-and-trash-listings/": [
+    "N9-"
+  ],
+  "/nxdoc/2023/how-to-define-a-new-content-view/": [
+    "YP1"
+  ],
+  "/nxdoc/2023/how-to-display-non-folderish-documents-files-note-in-the-left-tree/": [
+    "yIy"
+  ],
+  "/nxdoc/2023/custom-layout-and-widget-templates/": [
+    "7hf"
+  ],
+  "/nxdoc/2023/custom-widget-types/": [
+    "bbK"
+  ],
+  "/nxdoc/2023/generic-layout-usage/": [
+    "hZL"
+  ],
+  "/nxdoc/2023/layout-and-widget-definitions/": [
+    "yKE"
+  ],
+  "/nxdoc/2023/layout-and-widget-display/": [
+    "geO"
+  ],
+  "/nxdoc/2023/layout-and-widget-how-to-index/": [
+    "qmE"
+  ],
+  "/nxdoc/2023/standard-layout-types/": [
+    "N02"
+  ],
+  "/nxdoc/2023/standard-widget-types/": [
+    "4ay"
+  ],
+  "/nxdoc/2023/field-binding-and-expressions/": [
+    "XRu"
+  ],
+  "/nxdoc/2023/layout-definitions/": [
+    "-w2"
+  ],
+  "/nxdoc/2023/layout-and-widget-modes/": [
+    "V1G"
+  ],
+  "/nxdoc/2023/widget-definitions/": [
+    "iTX"
+  ],
+  "/nxdoc/2023/how-to-add-a-new-widget-to-the-default-summary-layout/": [
+    "il_"
+  ],
+  "/nxdoc/2023/how-to-add-field-validation/": [
+    "pDX"
+  ],
+  "/nxdoc/2023/how-to-control-the-display-mode-of-a-widget/": [
+    "09W"
+  ],
+  "/nxdoc/2023/how-to-create-a-n-level-select-widget/": [
+    "7mq"
+  ],
+  "/nxdoc/2023/how-to-customize-the-versioning-and-comment-widget-on-document-edit-form/": [
+    "w3y"
+  ],
+  "/nxdoc/2023/how-to-make-a-selection-based-on-the-value-of-another-value-in-a-layout/": [
+    "2Gt"
+  ],
+  "/nxdoc/2023/how-to-set-a-default-date-on-a-field-at-document-creation/": [
+    "LAJ"
+  ],
+  "/nxdoc/2023/how-to-use-a-generic-widget-in-layouts/": [
+    "28W"
+  ],
+  "/nxdoc/2023/advanced-widget-types/": [
+    "9st"
+  ],
+  "/nxdoc/2023/aggregate-widget-types/": [
+    "-Bb"
+  ],
+  "/nxdoc/2023/basic-widget-types/": [
+    "R03"
+  ],
+  "/nxdoc/2023/decoration-widget-types/": [
+    "_WI"
+  ],
+  "/nxdoc/2023/default-widget-types-known-limitations/": [
+    "T7D"
+  ],
+  "/nxdoc/2023/listing-widget-types/": [
+    "_p3"
+  ],
+  "/nxdoc/2023/suggestion-widget-types/": [
+    "_3s"
+  ],
+  "/nxdoc/2023/summary-widget-types/": [
+    "wJo"
+  ],
+  "/nxdoc/2023/tab-designer-widget-types/": [
+    "VJh"
+  ],
+  "/nxdoc/2023/theme-how-to-index/": [
+    "glk"
+  ],
+  "/nxdoc/2023/how-to-declare-the-css-and-javascript-resources-used-in-your-templates/": [
+    "Nry"
+  ],
+  "/nxdoc/2023/how-to-override-a-default-style/": [
+    "Msb"
+  ],
+  "/nxdoc/2023/browsing-content/": [
+    "n8v"
+  ],
+  "/nxdoc/2023/case-management-with-the-nuxeo-platform/": [
+    "3al"
+  ],
+  "/nxdoc/2023/collaborative-features/": [
+    "hd9"
+  ],
+  "/nxdoc/2023/creating-content/": [
+    "PIN"
+  ],
+  "/nxdoc/2023/deleting-content/": [
+    "_Ld"
+  ],
+  "/nxdoc/2023/document-types/": [
+    "ojW"
+  ],
+  "/nxdoc/2023/editing-content/": [
+    "KfX"
+  ],
+  "/nxdoc/2023/exporting-documents/": [
+    "WyT"
+  ],
+  "/nxdoc/2023/local-configuration/": [
+    "NOg"
+  ],
+  "/nxdoc/2023/managing-permissions/": [
+    "Wq4"
+  ],
+  "/nxdoc/2023/managing-your-nuxeo-application/": [
+    "BFT"
+  ],
+  "/nxdoc/2023/nuxeo-platform-concepts/": [
+    "nxv"
+  ],
+  "/nxdoc/2023/publishing-content/": [
+    "lj9"
+  ],
+  "/nxdoc/2023/searching-the-nuxeo-platform/": [
+    "82R"
+  ],
+  "/nxdoc/2023/traceability/": [
+    "FKq"
+  ],
+  "/nxdoc/2023/user-home/": [
+    "z2N"
+  ],
+  "/nxdoc/2023/workflows-jsf-ui/": [
+    "ju9"
+  ],
+  "/nxdoc/2023/collections-jsf-ui/": [
+    "pAce"
+  ],
+  "/nxdoc/2023/preview-jsf-ui/": [
+    "6rA"
+  ],
+  "/nxdoc/2023/tags-jsf-ui/": [
+    "Rxu"
+  ],
+  "/nxdoc/2023/attachments/": [
+    "ONa"
+  ],
+  "/nxdoc/2023/using-workspace-templates/": [
+    "qOy"
+  ],
+  "/nxdoc/2023/working-with-webdav/": [
+    "qLm"
+  ],
+  "/nxdoc/2023/default-search/": [
+    "1it"
+  ],
+  "/nxdoc/2023/quick-search-jsf-ui/": [
+    "VE2"
+  ],
+  "/nxdoc/2023/saved-searches/": [
+    "pKC"
+  ],
+  "/nxdoc/2023/user-preferences/": [
+    "gAc"
+  ],
+  "/nxdoc/2023/abandoning-a-workflow/": [
+    "c5q"
+  ],
+  "/nxdoc/2023/delegating-a-task/": [
+    "lJl"
+  ],
+  "/nxdoc/2023/parallel-document-workflow/": [
+    "EWz"
+  ],
+  "/nxdoc/2023/reassigning-a-task/": [
+    "DG4"
+  ],
+  "/nxdoc/2023/serial-document-workflow/": [
+    "ptn"
+  ],
+  "/nxdoc/2023/managing-users-and-groups/": [
+    "TjC"
+  ],
+  "/nxdoc/2023/managing-vocabularies/": [
+    "8_F"
+  ],
+  "/nxdoc/2023/how-to-add-new-relation-types/": [
+    "zPSv"
+  ],
+  "/nxdoc/2023/administration/": [
+    "VaK"
+  ],
+  "/nxdoc/2023/advanced-topics/": [
+    "pP2"
+  ],
+  "/nxdoc/2023/authentication-and-user-management/": [
+    "Epb"
+  ],
+  "/nxdoc/2023/data-store/": [
+    "dXj"
+  ],
+  "/nxdoc/2023/events-and-messages/": [
+    "Iy-"
+  ],
+  "/nxdoc/2023/installation/": [
+    "ZxT"
+  ],
+  "/nxdoc/2023/nuxeo-data-privacy/": [
+    "SVVT"
+  ],
+  "/nxdoc/2023/nuxeo-integration/": [
+    "omw"
+  ],
+  "/nxdoc/2023/nuxeo-release-cycle/": [
+    "3Mp"
+  ],
+  "/nxdoc/2023/nuxeo-server-release-notes/": [
+    "Zhp"
+  ],
+  "/nxdoc/2023/nuxeo-server-roadmap/": [
+    "GcB"
+  ],
+  "/nxdoc/2023/nuxeo-server-tutorials/": [
+    "wLXC"
+  ],
+  "/nxdoc/2023/platform-services/": [
+    "LoW"
+  ],
+  "/nxdoc/2023/rest-api/": [
+    "kkF"
+  ],
+  "/nxdoc/2023/runtime-and-component-model/": [
+    "Fx_"
+  ],
+  "/nxdoc/2023/upgrading-the-nuxeo-platform/": [
+    "dSc"
+  ],
+  "/nxdoc/2023/adding-an-antivirus/": [
+    "Thq"
+  ],
+  "/nxdoc/2023/integrating-with-jpa/": [
+    "VPh"
+  ],
+  "/nxdoc/2023/nuxeo-distributions/": [
+    "0JnN"
+  ],
+  "/nxdoc/2023/call-external-app-from-nuxeo/": [
+    "qbW"
+  ],
+  "/nxdoc/2023/call-nuxeo-from-external-app/": [
+    "cnD"
+  ],
+  "/nxdoc/2023/NTLM-and-IE-Challenge-Response/": [
+    "kBZ"
+  ],
+  "/nxdoc/2023/authentication-and-user-management-tutorials/": [
+    "n7c"
+  ],
+  "/nxdoc/2023/authentication-chain-principles/": [
+    "ueH"
+  ],
+  "/nxdoc/2023/kerberos-authentication/": [
+    "z4g"
+  ],
+  "/nxdoc/2023/nuxeo-duoweb-two-factor-authentication/": [
+    "4XU"
+  ],
+  "/nxdoc/2023/saml-20-authentication/": [
+    "JiB"
+  ],
+  "/nxdoc/2023/shibboleth-authentication/": [
+    "WcR"
+  ],
+  "/nxdoc/2023/using-a-ldap-directory/": [
+    "3S2"
+  ],
+  "/nxdoc/2023/using-anonymous-authentication/": [
+    "c59"
+  ],
+  "/nxdoc/2023/using-basic-http-authentication/": [
+    "JAu"
+  ],
+  "/nxdoc/2023/using-cas2-authentication/": [
+    "cRN"
+  ],
+  "/nxdoc/2023/using-form-based-authentication/": [
+    "EHA"
+  ],
+  "/nxdoc/2023/using-generic-sso-authentication/": [
+    "Eig"
+  ],
+  "/nxdoc/2023/using-oauth2/": [
+    "5w4"
+  ],
+  "/nxdoc/2023/using-openid-oauth2-in-login-screen/": [
+    "NcK"
+  ],
+  "/nxdoc/2023/using-sso-portals/": [
+    "Tnk"
+  ],
+  "/nxdoc/2023/how-to-add-custom-ldap-fields-to-the-ui/": [
+    "N7f"
+  ],
+  "/nxdoc/2023/how-to-add-new-fields-to-the-user-profile-or-group-profile/": [
+    "Y5q"
+  ],
+  "/nxdoc/2023/how-to-assign-a-task-to-the-user-manager/": [
+    "rtE"
+  ],
+  "/nxdoc/2023/how-to-configure-a-multidirectory-for-users-and-groups/": [
+    "Ibx"
+  ],
+  "/nxdoc/2023/how-to-define-public-pages-viewable-by-anonymous-users/": [
+    "Jhe"
+  ],
+  "/nxdoc/2023/how-to-implement-local-groups-or-roles-using-computed-groups/": [
+    "fBn"
+  ],
+  "/nxdoc/2023/bulk-action-framework/": [
+    "t-A"
+  ],
+  "/nxdoc/2023/common-events/": [
+    "Lcn"
+  ],
+  "/nxdoc/2023/events-and-messages-how-to-index/": [
+    "nbT"
+  ],
+  "/nxdoc/2023/how-to-customize-email-templates/": [
+    "-hd"
+  ],
+  "/nxdoc/2023/nuxeo-stream/": [
+    "M_C"
+  ],
+  "/nxdoc/2023/scheduling-periodic-events/": [
+    "iuh"
+  ],
+  "/nxdoc/2023/work-and-workmanager/": [
+    "Ta-"
+  ],
+  "/nxdoc/2023/bulk-actions-directory/": [
+    "VEo"
+  ],
+  "/nxdoc/2023/runtime-and-component-model-tutorials/": [
+    "5Hv"
+  ],
+  "/nxdoc/2023/understanding-bundles-deployment/": [
+    "5rc"
+  ],
+  "/nxdoc/2023/how-to-contribute-to-an-extension/": [
+    "j9_"
+  ],
+  "/nxdoc/2023/how-to-create-a-service/": [
+    "OwD"
+  ],
+  "/nxdoc/2023/how-to-create-an-empty-bundle/": [
+    "d9T"
+  ],
+  "/nxdoc/2023/how-to-define-a-runtime-xmap-object/": [
+    "6F_"
+  ],
+  "/nxdoc/2023/howto-use-the-runtime-java-api/": [
+    "sxc"
+  ],
+  "/nxdoc/2023/howto-write-a-bundle-manifest/": [
+    "zKf"
+  ],
+  "/nxdoc/2023/upgrade-from-512-to-513/": [
+    "kJ3"
+  ],
+  "/nxdoc/2023/upgrade-from-516-with-jcr-postgresql-to-520/": [
+    "FwO"
+  ],
+  "/nxdoc/2023/upgrade-from-530-to-531/": [
+    "v1e"
+  ],
+  "/nxdoc/2023/upgrade-from-531-to-532/": [
+    "Sej"
+  ],
+  "/nxdoc/2023/upgrade-from-531-with-mysql-to-532/": [
+    "7a-"
+  ],
+  "/nxdoc/2023/upgrade-from-532-to-540/": [
+    "Ffa"
+  ],
+  "/nxdoc/2023/upgrade-from-541-to-542-with-oracle/": [
+    "abB"
+  ],
+  "/nxdoc/2023/upgrade-from-542-to-55/": [
+    "ss6"
+  ],
+  "/nxdoc/2023/upgrade-from-55-to-56/": [
+    "vHB"
+  ],
+  "/nxdoc/2023/upgrade-from-56-to-58/": [
+    "RbV"
+  ],
+  "/nxdoc/2023/upgrade-from-58-to-60/": [
+    "iGQ"
+  ],
+  "/nxdoc/2023/upgrade-from-60-to-lts-2015/": [
+    "r4J"
+  ],
+  "/nxdoc/2023/upgrade-from-lts-2015-following-fast-tracks/": [
+    "zHF"
+  ],
+  "/nxdoc/2023/upgrade-from-lts-2015-to-83/": [
+    "4MW"
+  ],
+  "/nxdoc/2023/upgrade-from-lts-2015-to-lts-2016/": [
+    "aQ1"
+  ],
+  "/nxdoc/2023/upgrade-from-lts-2016-following-fast-tracks/": [
+    "fTM"
+  ],
+  "/nxdoc/2023/upgrade-from-lts-2016-to-lts-2017/": [
+    "p-u"
+  ],
+  "/nxdoc/2023/upgrade-from-lts-2017-following-fast-tracks/": [
+    "-kR"
+  ],
+  "/nxdoc/2023/upgrade-from-lts-2017-to-lts-2019/": [
+    "dPg"
+  ],
+  "/nxdoc/2023/upgrade-from-lts-2019-to-lts-2021/": [
+    "WxU"
+  ],
+  "/nxdoc/2023/upgrade-from-lts-2021-to-lts-2023/": [
+    "Njwv"
+  ],
+  "/nxdoc/2023/from-the-old-workflow-system-to-the-new-54-workflow-system/": [
+    "b7h"
+  ],
+  "/nxdoc/2023/upgrade-to-54-and-jboss-5/": [
+    "T8Q"
+  ],
+  "/nxdoc/2023/query-models-and-result-providers-migration-to-content-views-and-page-providers/": [
+    "Pj4"
+  ],
+  "/nxdoc/2023/nuxeo-platform-60-packaging-changes-and-deprecations/": [
+    "W94"
+  ],
+  "/nxdoc/2023/admin-tab-overview/": [
+    "6kH"
+  ],
+  "/nxdoc/2023/authentication-users-and-groups/": [
+    "Qlb"
+  ],
+  "/nxdoc/2023/configuration-parameters-index-nuxeoconf/": [
+    "4U5"
+  ],
+  "/nxdoc/2023/configuration-templates/": [
+    "ta9"
+  ],
+  "/nxdoc/2023/database-configuration/": [
+    "Q2E"
+  ],
+  "/nxdoc/2023/file-storage-configuration/": [
+    "jkg"
+  ],
+  "/nxdoc/2023/how-to-change-context-path/": [
+    "Lmh"
+  ],
+  "/nxdoc/2023/http-and-https-reverse-proxy-configuration/": [
+    "aVw"
+  ],
+  "/nxdoc/2023/implementing-encryption/": [
+    "hVw"
+  ],
+  "/nxdoc/2023/internet-information-services-iis/": [
+    "SCS"
+  ],
+  "/nxdoc/2023/jdbc-datasource/": [
+    "Lzj"
+  ],
+  "/nxdoc/2023/kafka/": [
+    "hRv"
+  ],
+  "/nxdoc/2023/maintenance/": [
+    "jTV"
+  ],
+  "/nxdoc/2023/multiple-repositories-configuration/": [
+    "4AZ"
+  ],
+  "/nxdoc/2023/nuxeo-shell/": [
+    "QqT"
+  ],
+  "/nxdoc/2023/observability/": [
+    "FqP"
+  ],
+  "/nxdoc/2023/performances/": [
+    "Zcq"
+  ],
+  "/nxdoc/2023/ports-usage-and-firewall-considerations/": [
+    "RFJ"
+  ],
+  "/nxdoc/2023/read-acls/": [
+    "8Pn"
+  ],
+  "/nxdoc/2023/repository-configuration/": [
+    "yk8"
+  ],
+  "/nxdoc/2023/search-setup/": [
+    "JfQr"
+  ],
+  "/nxdoc/2023/security-recommendations/": [
+    "Hwm"
+  ],
+  "/nxdoc/2023/sensitive-configuration-data-encryption/": [
+    "bDx"
+  ],
+  "/nxdoc/2023/set-up-email-notification/": [
+    "Nsc"
+  ],
+  "/nxdoc/2023/setup-best-practices/": [
+    "KEp"
+  ],
+  "/nxdoc/2023/trust-store-and-key-store-configuration/": [
+    "opU"
+  ],
+  "/nxdoc/2023/workmanager-dlq/": [
+    "Xqf"
+  ],
+  "/nxdoc/2023/connecting-nuxeo-to-the-database/": [
+    "eW5"
+  ],
+  "/nxdoc/2023/h2-limitations/": [
+    "VGQ"
+  ],
+  "/nxdoc/2023/mariadb/": [
+    "8GJ"
+  ],
+  "/nxdoc/2023/marklogic/": [
+    "GwD"
+  ],
+  "/nxdoc/2023/microsoft-sql-server/": [
+    "gIb"
+  ],
+  "/nxdoc/2023/mongodb/": [
+    "qH1"
+  ],
+  "/nxdoc/2023/mysql/": [
+    "sTC"
+  ],
+  "/nxdoc/2023/oracle/": [
+    "Gg2"
+  ],
+  "/nxdoc/2023/postgresql/": [
+    "LQI"
+  ],
+  "/nxdoc/2023/backup-and-restore/": [
+    "MQL"
+  ],
+  "/nxdoc/2023/counting-documents/": [
+    "S4Z"
+  ],
+  "/nxdoc/2023/garbage-collecting-orphaned-binaries/": [
+    "v4H"
+  ],
+  "/nxdoc/2023/hotfixes-installation-notes-for-nuxeo-platform-lts-2023/": [
+    "NV2"
+  ],
+  "/nxdoc/2023/purging-audit-logs-nxp_logs/": [
+    "ZbO"
+  ],
+  "/nxdoc/2023/reporting-problems/": [
+    "dJZb"
+  ],
+  "/nxdoc/2023/health-check/": [
+    "3jz"
+  ],
+  "/nxdoc/2023/logs/": [
+    "yH1"
+  ],
+  "/nxdoc/2023/metrics/": [
+    "tUI"
+  ],
+  "/nxdoc/2023/profiling/": [
+    "vyU"
+  ],
+  "/nxdoc/2023/tracing/": [
+    "n4mU"
+  ],
+  "/nxdoc/2023/managing-performance/": [
+    "fhM"
+  ],
+  "/nxdoc/2023/tracking-the-performance-of-the-nuxeo-platform/": [
+    "6Ex"
+  ],
+  "/nxdoc/2023/extending-the-shell/": [
+    "hhO"
+  ],
+  "/nxdoc/2023/nuxeo-shell-batch-mode/": [
+    "E6N"
+  ],
+  "/nxdoc/2023/nuxeo-shell-command-index/": [
+    "2_P"
+  ],
+  "/nxdoc/2023/shell-commands/": [
+    "VC_"
+  ],
+  "/nxdoc/2023/shell-documentation/": [
+    "xQA"
+  ],
+  "/nxdoc/2023/shell-features/": [
+    "XJ6"
+  ],
+  "/nxdoc/2023/shell-namespaces/": [
+    "jH5"
+  ],
+  "/nxdoc/2023/built-in-commands/": [
+    "Qwd"
+  ],
+  "/nxdoc/2023/configuration-commands/": [
+    "rIH"
+  ],
+  "/nxdoc/2023/filesystem-commands/": [
+    "JCb"
+  ],
+  "/nxdoc/2023/nuxeo-automation-commands/": [
+    "OBv"
+  ],
+  "/nxdoc/2023/nuxeo-server-commands/": [
+    "9hw"
+  ],
+  "/nxdoc/2023/data-modeling/": [
+    "JT2"
+  ],
+  "/nxdoc/2023/indexing-and-query/": [
+    "BWE"
+  ],
+  "/nxdoc/2023/persistence-architecture/": [
+    "Q3d"
+  ],
+  "/nxdoc/2023/security/": [
+    "YSe"
+  ],
+  "/nxdoc/2023/acls/": [
+    "Wop"
+  ],
+  "/nxdoc/2023/file-download-security-policies/": [
+    "Od0"
+  ],
+  "/nxdoc/2023/how-to-grant-the-edit-permission-without-the-remove-permission/": [
+    "F8Z"
+  ],
+  "/nxdoc/2023/nuxeo-security-system/": [
+    "wox"
+  ],
+  "/nxdoc/2023/security-policy-service/": [
+    "sP2"
+  ],
+  "/nxdoc/2023/audit/": [
+    "Vq_"
+  ],
+  "/nxdoc/2023/available-facets/": [
+    "NQM"
+  ],
+  "/nxdoc/2023/data-lists-and-directories/": [
+    "8ij"
+  ],
+  "/nxdoc/2023/data-modeling-tutorials/": [
+    "pKK"
+  ],
+  "/nxdoc/2023/downloading-files/": [
+    "Ksb"
+  ],
+  "/nxdoc/2023/field-constraints-and-validation/": [
+    "SMD"
+  ],
+  "/nxdoc/2023/schema-fields/": [
+    "0dx"
+  ],
+  "/nxdoc/2023/versioning/": [
+    "yw_"
+  ],
+  "/nxdoc/2023/directory-and-ui/": [
+    "H_j"
+  ],
+  "/nxdoc/2023/how-to-add-a-new-vocabulary/": [
+    "cTi"
+  ],
+  "/nxdoc/2023/how-to-configure-a-new-directory-cache/": [
+    "BHi"
+  ],
+  "/nxdoc/2023/how-to-populate-a-directory-with-csv/": [
+    "aam"
+  ],
+  "/nxdoc/2023/how-to-translate-a-vocabulary/": [
+    "4jv"
+  ],
+  "/nxdoc/2023/how-to-add-complex-fields-on-your-document-type/": [
+    "Xmw"
+  ],
+  "/nxdoc/2023/how-to-customize-document-validation/": [
+    "zuH4"
+  ],
+  "/nxdoc/2023/how-to-define-a-document-type/": [
+    "TZi"
+  ],
+  "/nxdoc/2023/how-to-enable-add-ons-features-on-custom-document-type/": [
+    "tfO"
+  ],
+  "/nxdoc/2023/how-to-export-data-using-document-template-and-automation/": [
+    "GOJ"
+  ],
+  "/nxdoc/2023/how-to-override-existing-document-types/": [
+    "K7a"
+  ],
+  "/nxdoc/2023/how-to-use-trash-feature/": [
+    "NPd"
+  ],
+  "/nxdoc/2023/configuring-the-elasticsearch-mapping/": [
+    "nTW"
+  ],
+  "/nxdoc/2023/elasticsearch-highlights/": [
+    "SzN"
+  ],
+  "/nxdoc/2023/elasticsearch-hints-cheat-sheet/": [
+    "4gT"
+  ],
+  "/nxdoc/2023/elasticsearch-indexing-logic/": [
+    "xsu"
+  ],
+  "/nxdoc/2023/elasticsearch-passthrough/": [
+    "FcX"
+  ],
+  "/nxdoc/2023/full-text-queries/": [
+    "vjB"
+  ],
+  "/nxdoc/2023/indexing-and-querying-how-to-index/": [
+    "Wcm"
+  ],
+  "/nxdoc/2023/moving-load-from-database-to-elasticsearch/": [
+    "4WS"
+  ],
+  "/nxdoc/2023/nxql/": [
+    "xpm"
+  ],
+  "/nxdoc/2023/page-provider-aggregates/": [
+    "XbW"
+  ],
+  "/nxdoc/2023/page-providers/": [
+    "jWE"
+  ],
+  "/nxdoc/2023/quick-search/": [
+    "L-A"
+  ],
+  "/nxdoc/2023/how-to-make-elasticsearch-hints-extension-point/": [
+    "_jq"
+  ],
+  "/nxdoc/2023/how-to-configure-a-new-default-search-form-in-the-search-tab/": [
+    "ihv"
+  ],
+  "/nxdoc/2023/how-to-configure-a-search-filter-with-facets-and-other-aggregates/": [
+    "2tQ"
+  ],
+  "/nxdoc/2023/how-to-fetch-documents-with-a-query-on-date-parameters/": [
+    "NBK"
+  ],
+  "/nxdoc/2023/how-to-make-a-page-provider-or-content-view-query-elasticsearch-index/": [
+    "VFq"
+  ],
+  "/nxdoc/2023/using-cmisql-from-java/": [
+    "qbR"
+  ],
+  "/nxdoc/2023/dbs/": [
+    "MXW"
+  ],
+  "/nxdoc/2023/file-storage/": [
+    "n8o"
+  ],
+  "/nxdoc/2023/vcs/": [
+    "b30"
+  ],
+  "/nxdoc/2023/dbs-cache/": [
+    "smu"
+  ],
+  "/nxdoc/2023/examples-of-sql-generated-by-vcs/": [
+    "hJe"
+  ],
+  "/nxdoc/2023/internal-vcs-model/": [
+    "7i2W"
+  ],
+  "/nxdoc/2023/java-data-structures-and-caching/": [
+    "Y66"
+  ],
+  "/nxdoc/2023/performance-recommendations/": [
+    "MwO"
+  ],
+  "/nxdoc/2023/vcs-tables/": [
+    "V_k"
+  ],
+  "/nxdoc/2023/cmis/": [
+    "v4U"
+  ],
+  "/nxdoc/2023/content-enrichers/": [
+    "uhP"
+  ],
+  "/nxdoc/2023/cross-origin-resource-sharing-cors/": [
+    "KEr"
+  ],
+  "/nxdoc/2023/error-handling/": [
+    "OiQ"
+  ],
+  "/nxdoc/2023/json-marshalling/": [
+    "qlz"
+  ],
+  "/nxdoc/2023/nuxeo-api-playground/": [
+    "16F"
+  ],
+  "/nxdoc/2023/request-authentication/": [
+    "JwH"
+  ],
+  "/nxdoc/2023/rest-api-endpoints/": [
+    "f1w"
+  ],
+  "/nxdoc/2023/rest-api-entity-types/": [
+    "JaG"
+  ],
+  "/nxdoc/2023/rest-api-howtos/": [
+    "dIX"
+  ],
+  "/nxdoc/2023/rest-api-web-adapters/": [
+    "Xl6"
+  ],
+  "/nxdoc/2023/special-http-headers/": [
+    "rsV"
+  ],
+  "/nxdoc/2023/webdav/": [
+    "nFo"
+  ],
+  "/nxdoc/2023/creating-your-own-marshaller/": [
+    "3MT"
+  ],
+  "/nxdoc/2023/default-json-marshallers/": [
+    "DAd"
+  ],
+  "/nxdoc/2023/document-json-extended-fields/": [
+    "-QR"
+  ],
+  "/nxdoc/2023/enriching-extending-overriding-marshallers/": [
+    "P4p"
+  ],
+  "/nxdoc/2023/parameterizing-reusing-marshallers/": [
+    "iSH"
+  ],
+  "/nxdoc/2023/testing-json-data/": [
+    "5G_"
+  ],
+  "/nxdoc/2023/howto-contribute-to-the-rest-api/": [
+    "TP4"
+  ],
+  "/nxdoc/2023/howto-develop-with-angular2/": [
+    "RRc"
+  ],
+  "/nxdoc/2023/howto-upload-file-nuxeo-using-rest-api/": [
+    "jwR"
+  ],
+  "/nxdoc/2023/batch-upload-endpoint/": [
+    "jSn"
+  ],
+  "/nxdoc/2023/command-endpoint/": [
+    "Ysb"
+  ],
+  "/nxdoc/2023/document-resources-endpoints/": [
+    "WMS"
+  ],
+  "/nxdoc/2023/oauth2-endpoint/": [
+    "mRI"
+  ],
+  "/nxdoc/2023/query-endpoint/": [
+    "tRn"
+  ],
+  "/nxdoc/2023/search-endpoints/": [
+    "YNS"
+  ],
+  "/nxdoc/2023/workflow-task-endpoints/": [
+    "Rtqq"
+  ],
+  "/nxdoc/2023/filtering-exposed-operations/": [
+    "Kxa"
+  ],
+  "/nxdoc/2023/automation/": [
+    "Dau"
+  ],
+  "/nxdoc/2023/batch-handler/": [
+    "Kc6"
+  ],
+  "/nxdoc/2023/binary-metadata/": [
+    "RDq"
+  ],
+  "/nxdoc/2023/collections/": [
+    "1ds"
+  ],
+  "/nxdoc/2023/comments/": [
+    "AkQ7"
+  ],
+  "/nxdoc/2023/conversion/": [
+    "3Y4"
+  ],
+  "/nxdoc/2023/data-visualization/": [
+    "bOb"
+  ],
+  "/nxdoc/2023/file-manager/": [
+    "U7G"
+  ],
+  "/nxdoc/2023/nuxeo-core-import-export-api/": [
+    "MKZ"
+  ],
+  "/nxdoc/2023/preview/": [
+    "S-v"
+  ],
+  "/nxdoc/2023/publisher/": [
+    "FW7"
+  ],
+  "/nxdoc/2023/renditions/": [
+    "UcG"
+  ],
+  "/nxdoc/2023/tagging/": [
+    "jg8"
+  ],
+  "/nxdoc/2023/thumbnail/": [
+    "xw0"
+  ],
+  "/nxdoc/2023/transient-store/": [
+    "gP7"
+  ],
+  "/nxdoc/2023/trash-service/": [
+    "AoO"
+  ],
+  "/nxdoc/2023/webengine-jax-rs/": [
+    "mg-"
+  ],
+  "/nxdoc/2023/workflow/": [
+    "13H"
+  ],
+  "/nxdoc/2023/conversion-how-to-index/": [
+    "ti0"
+  ],
+  "/nxdoc/2023/how-to-automatically-convert-a-document-to-pdf/": [
+    "Efo"
+  ],
+  "/nxdoc/2023/how-to-contribute-a-command-line-converter/": [
+    "N5x"
+  ],
+  "/nxdoc/2023/how-to-use-pdf-conversion-operations-with-studio/": [
+    "ZDS"
+  ],
+  "/nxdoc/2023/how-to-change-the-default-document-type-when-importing-a-file-in-the-nuxeo-platform/": [
+    "LPX"
+  ],
+  "/nxdoc/2023/automation-chain-exception/": [
+    "eQu"
+  ],
+  "/nxdoc/2023/automation-chain/": [
+    "Si0"
+  ],
+  "/nxdoc/2023/automation-helpers/": [
+    "PLC"
+  ],
+  "/nxdoc/2023/automation-how-to-index/": [
+    "3TU"
+  ],
+  "/nxdoc/2023/automation-rest-response/": [
+    "2ax"
+  ],
+  "/nxdoc/2023/automation-scripting/": [
+    "_7x"
+  ],
+  "/nxdoc/2023/automation-tracing/": [
+    "YO1"
+  ],
+  "/nxdoc/2023/calling-automation-from-java/": [
+    "h2b"
+  ],
+  "/nxdoc/2023/content-automation-concepts/": [
+    "xDC"
+  ],
+  "/nxdoc/2023/contributing-an-operation/": [
+    "Pfv"
+  ],
+  "/nxdoc/2023/contributing-new-input-output-types/": [
+    "BVp"
+  ],
+  "/nxdoc/2023/debugging-automation-chains/": [
+    "-tq"
+  ],
+  "/nxdoc/2023/document-templates-and-automation-rendering-service/": [
+    "Y0e"
+  ],
+  "/nxdoc/2023/operations-index/": [
+    "GgK"
+  ],
+  "/nxdoc/2023/returning-a-custom-result-with-automation/": [
+    "EDZ"
+  ],
+  "/nxdoc/2023/use-of-mvel-in-automation-chains/": [
+    "NpJ"
+  ],
+  "/nxdoc/2023/using-curl/": [
+    "DHs"
+  ],
+  "/nxdoc/2023/how-to-create-an-automation-chain/": [
+    "KLi"
+  ],
+  "/nxdoc/2023/how-to-fetch-a-document-by-its-id-or-path/": [
+    "Hz_"
+  ],
+  "/nxdoc/2023/how-to-inherit-metadata-from-a-parent-document/": [
+    "obG"
+  ],
+  "/nxdoc/2023/how-to-quickly-generate-a-pdf-using-document-template/": [
+    "-_F"
+  ],
+  "/nxdoc/2023/how-to-write-reusable-automation-chains/": [
+    "pnZ"
+  ],
+  "/nxdoc/2023/howto-manage-relations/": [
+    "0Fy"
+  ],
+  "/nxdoc/2023/default-webengine-applications/": [
+    "J30"
+  ],
+  "/nxdoc/2023/session-and-transaction-management/": [
+    "daK"
+  ],
+  "/nxdoc/2023/webengine-tutorials/": [
+    "FEF"
+  ],
+  "/nxdoc/2023/hello-world/": [
+    "2KM"
+  ],
+  "/nxdoc/2023/module-extensibility/": [
+    "QgO"
+  ],
+  "/nxdoc/2023/using-freemarker-template-language-ftl/": [
+    "t52"
+  ],
+  "/nxdoc/2023/web-object-model/": [
+    "DeS"
+  ],
+  "/nxdoc/2023/working-with-documents/": [
+    "yEv"
+  ],
+  "/nxdoc/2023/about-tasks/": [
+    "TR0"
+  ],
+  "/nxdoc/2023/escalation-service/": [
+    "Fl9"
+  ],
+  "/nxdoc/2023/runtime-instantiation-and-execution-logic/": [
+    "M_J"
+  ],
+  "/nxdoc/2023/useful-definitions/": [
+    "S7N"
+  ],
+  "/nxdoc/2023/variables-available-in-the-automation-context/": [
+    "NwU"
+  ],
+  "/nxdoc/2023/workflow-apis/": [
+    "Fd7"
+  ],
+  "/nxdoc/2023/workflow-audit-log/": [
+    "CNy"
+  ],
+  "/nxdoc/2023/workflow-engine-faq/": [
+    "W7H"
+  ],
+  "/nxdoc/2023/workflow-how-to-index/": [
+    "gcz"
+  ],
+  "/nxdoc/2023/workflow-instance-properties/": [
+    "OIL"
+  ],
+  "/nxdoc/2023/workflow-models-packaging/": [
+    "D0w"
+  ],
+  "/nxdoc/2023/workflow-naming-conventions/": [
+    "ahd"
+  ],
+  "/nxdoc/2023/workflow-node-properties/": [
+    "fHB"
+  ],
+  "/nxdoc/2023/how-to-complete-a-workflow-task-programmatically/": [
+    "v2z"
+  ],
+  "/nxdoc/2023/how-to-display-a-buttona-tab-only-when-a-workflow-is-started/": [
+    "yuR"
+  ],
+  "/nxdoc/2023/how-to-follow-a-transition-if-user-is-member-of-a-group/": [
+    "ejh"
+  ],
+  "/nxdoc/2023/how-to-make-a-simple-task-assignment-to-one-or-many-users/": [
+    "Cp3"
+  ],
+  "/nxdoc/2023/how-to-modify-a-workflow-variable-outside-of-workflow-context/": [
+    "rTt"
+  ],
+  "/nxdoc/2023/how-to-programmatically-test-workflow/": [
+    "N7R"
+  ],
+  "/nxdoc/2023/how-to-query-workflow-objects/": [
+    "nXd"
+  ],
+  "/nxdoc/2023/how-to-refresh-the-task-widget-on-the-summary-tab/": [
+    "f-V"
+  ],
+  "/nxdoc/2023/how-to-save-work-in-progress-task/": [
+    "GJR"
+  ],
+  "/nxdoc/2023/how-to-set-a-default-value-on-a-date-field-of-a-task-form/": [
+    "sBS"
+  ],
+  "/nxdoc/2023/how-to-set-up-a-tasks-dashboard/": [
+    "n89"
+  ],
+  "/nxdoc/2023/compatibility-matrix/": [
+    "ihP"
+  ],
+  "/nxdoc/2023/docker-image/": [
+    "tSn"
+  ],
+  "/nxdoc/2023/how-to-estimate-volume-usage/": [
+    "jG1"
+  ],
+  "/nxdoc/2023/installation-next-steps/": [
+    "Oty5"
+  ],
+  "/nxdoc/2023/nuxeo-cluster-architecture/": [
+    "Kk4"
+  ],
+  "/nxdoc/2023/nuxeo-storage-alternatives/": [
+    "jyN"
+  ],
+  "/nxdoc/2023/nuxeoctl-and-control-panel-usage/": [
+    "nRz"
+  ],
+  "/nxdoc/2023/platform-as-a-service/": [
+    "cjF"
+  ],
+  "/nxdoc/2023/registering-your-nuxeo-instance/": [
+    "p13"
+  ],
+  "/nxdoc/2023/tomcat-server-zip/": [
+    "XvPQ"
+  ],
+  "/nxdoc/2023/build-a-custom-docker-image/": [
+    "PCi"
+  ],
+  "/nxdoc/2023/quickstart-docker-nuxeo/": [
+    "gAh"
+  ],
+  "/nxdoc/2023/installing-and-setting-up-related-software/": [
+    "gY3"
+  ],
+  "/nxdoc/2023/installing-the-nuxeo-platform-on-linux/": [
+    "yMT"
+  ],
+  "/nxdoc/2023/installing-the-nuxeo-platform-on-windows/": [
+    "8s6"
+  ],
+  "/nxdoc/2023/server-start-and-stop/": [
+    "aBJ"
+  ],
+  "/nxdoc/2023/configuring-the-nuxeo-platform-as-a-daemon-with-systemd/": [
+    "B1Z"
+  ],
+  "/nxdoc/2023/configuring-the-nuxeo-platform-as-a-daemon-with-sysvinit/": [
+    "Hrs"
+  ],
+  "/nxdoc/2023/installing-the-nuxeo-platform-as-a-windows-service/": [
+    "G-p"
+  ],
+  "/nxdoc/2023/running-multiple-server-instances-in-windows/": [
+    "xBE"
+  ],
+  "/nxdoc/2023/nuxeo-architecture-components/": [
+    "3R2"
+  ],
+  "/nxdoc/2023/nuxeo-architecture-introduction/": [
+    "0_C"
+  ],
+  "/nxdoc/2023/nuxeo-reference-architectures/": [
+    "iov"
+  ],
+  "/nxdoc/2023/nuxeo-scalability-options/": [
+    "KeN"
+  ],
+  "/nxdoc/2023/compact-architecture-with-kafka/": [
+    "1KY"
+  ],
+  "/nxdoc/2023/distributed-architecture-with-kafka/": [
+    "C3B"
+  ],
+  "/nxdoc/2023/database-architecture/": [
+    "ZjB"
+  ],
+  "/nxdoc/2023/elasticsearch-architecture/": [
+    "uXR"
+  ],
+  "/nxdoc/2023/file-storage-architecture/": [
+    "cch"
+  ],
+  "/nxdoc/2023/load-balancers-architecture/": [
+    "ksH"
+  ],
+  "/nxdoc/2023/messaging-system-architecture/": [
+    "vjA"
+  ],
+  "/nxdoc/2023/nuxeo-server-architecture/": [
+    "rTC"
+  ],
+  "/nxdoc/2023/reverse-proxy-architecture/": [
+    "o_V"
+  ],
+  "/nxdoc/2023/pubsub-architecture/": [
+    "rJD"
+  ],
+  "/nuxeo-cloud/nuxeo-cloud-customer-console/": [
+    "O-a"
+  ],
+  "/client-apps/5.2.10-nuxeo-drive-release-notes/": [
+    "V2y"
+  ],
+  "/client-apps/5.3.0-nuxeo-drive-release-notes/": [
+    "XKM"
+  ],
+  "/studio/studio-updates-2023-02/": [
+    "0OJ"
+  ],
+  "/studio/studio-updates-2023-04/": [
+    "MkG"
+  ],
+  "/studio/Studio-Features-Overview/": [
+    "N0I"
+  ],
+  "/nxdoc/master/web-ui-accessibility/": [
+    "95_"
+  ],
+  "/nxdoc/master/notify-behavior/": [
+    "Opc"
+  ],
+  "/nxdoc/master/web-ui-release-notes-3-0-0-to-3-0-5/": [
+    "X2j"
+  ],
+  "/nxdoc/master/web-ui-release-notes-3-0-10/": [
+    "GD-"
+  ],
+  "/nxdoc/master/web-ui-release-notes-3-0-11/": [
+    "_d3"
+  ],
+  "/nxdoc/master/web-ui-release-notes-3-0-12/": [
+    "8AB"
+  ],
+  "/nxdoc/master/web-ui-release-notes-3-0-13/": [
+    "nL6"
+  ],
+  "/nxdoc/master/web-ui-release-notes-3-0-14/": [
+    "wUgP"
+  ],
+  "/nxdoc/master/web-ui-release-notes-3-0-15/": [
+    "_dP"
+  ],
+  "/nxdoc/master/web-ui-release-notes-3-0-16/": [
+    "Rxk"
+  ],
+  "/nxdoc/master/web-ui-release-notes-3-0-17/": [
+    "S7k"
+  ],
+  "/nxdoc/master/web-ui-release-notes-3-0-18/": [
+    "G-a"
+  ],
+  "/nxdoc/master/web-ui-release-notes-3-0-19/": [
+    "LKn"
+  ],
+  "/nxdoc/master/web-ui-release-notes-3-0-20/": [
+    "cDk"
+  ],
+  "/nxdoc/master/web-ui-release-notes-3-0-21/": [
+    "KEy"
+  ],
+  "/nxdoc/master/web-ui-release-notes-3-0-6/": [
+    "sFX"
+  ],
+  "/nxdoc/master/web-ui-release-notes-3-0-7/": [
+    "IVF"
+  ],
+  "/nxdoc/master/web-ui-release-notes-3-0-8/": [
+    "PtI"
+  ],
+  "/nxdoc/master/web-ui-release-notes-3-0-9/": [
+    "X0R"
+  ],
+  "/nxdoc/master/web-ui-upgrade-notes-lts-2021/": [
+    "TCM"
+  ],
+  "/nxdoc/master/how-to-create-bulk-actions-studio/": [
+    "wuS"
+  ],
+  "/nxdoc/master/how-to-create-bulk-edit-form-studio/": [
+    "xUW"
+  ],
+  "/nxdoc/master/web-ui-bulk-actions/": [
+    "DIA"
+  ],
+  "/nxdoc/master/nuxeo-coldstorage/": [
+    "uBY"
+  ],
+  "/nxdoc/master/nuxeo-coldstorage-faq/": [
+    "uPw"
+  ],
+  "/nxdoc/master/nuxeo-coldstorage-installation/": [
+    "QI4Q"
+  ],
+  "/nxdoc/master/nuxeo-enhanced-viewer-release-notes-10-4-2/": [
+    "pYK"
+  ],
+  "/nxdoc/master/nuxeo-enhanced-viewer-release-notes-10-4-3/": [
+    "v-2"
+  ],
+  "/nxdoc/master/nuxeo-enhanced-viewer-release-notes-10-4-5/": [
+    "jtm"
+  ],
+  "/nxdoc/master/nuxeo-enhanced-viewer-release-notes-10-4-6/": [
+    "FUM"
+  ],
+  "/nxdoc/master/nuxeo-enhanced-viewer-release-notes-10-4-7/": [
+    "meD"
+  ],
+  "/nxdoc/master/nuxeo-enhanced-viewer-release-notes-10-5-1/": [
+    "hZ-"
+  ],
+  "/nxdoc/master/nuxeo-enhanced-viewer-release-notes-10-5-3/": [
+    "UWs"
+  ],
+  "/nxdoc/master/nuxeo-enhanced-viewer-release-notes-10-5-4/": [
+    "4NF"
+  ],
+  "/nxdoc/master/nuxeo-enhanced-viewer-release-notes-10-5/": [
+    "spz"
+  ],
+  "/nxdoc/master/nuxeo-enhanced-viewer-release-notes-10-6-10/": [
+    "n9y"
+  ],
+  "/nxdoc/master/nuxeo-enhanced-viewer-release-notes-10-6-11/": [
+    "NnA"
+  ],
+  "/nxdoc/master/nuxeo-enhanced-viewer-release-notes-10-6-2/": [
+    "tyy"
+  ],
+  "/nxdoc/master/nuxeo-enhanced-viewer-release-notes-10-6-3/": [
+    "BG5"
+  ],
+  "/nxdoc/master/nuxeo-enhanced-viewer-release-notes-10-6-4/": [
+    "toX"
+  ],
+  "/nxdoc/master/nuxeo-enhanced-viewer-release-notes-10-6-5/": [
+    "ooJ"
+  ],
+  "/nxdoc/master/nuxeo-enhanced-viewer-release-notes-10-6-6/": [
+    "zHdj"
+  ],
+  "/nxdoc/master/nuxeo-enhanced-viewer-release-notes-10-6-7/": [
+    "z0L"
+  ],
+  "/nxdoc/master/nuxeo-enhanced-viewer-release-notes-10-6-8/": [
+    "gmE"
+  ],
+  "/nxdoc/master/nuxeo-enhanced-viewer-release-notes-10-6-9/": [
+    "eao"
+  ],
+  "/nxdoc/master/nuxeo-enhanced-viewer-release-notes-2-0-0/": [
+    "lVc"
+  ],
+  "/nxdoc/master/nuxeo-enhanced-viewer-release-notes-2-1-0/": [
+    "CCh"
+  ],
+  "/nxdoc/master/nuxeo-enhanced-viewer-release-notes-2-1-2/": [
+    "GxM"
+  ],
+  "/nxdoc/master/nuxeo-enhanced-viewer-release-notes-2-1-3/": [
+    "wRe"
+  ],
+  "/nxdoc/master/nuxeo-enhanced-viewer-release-notes-2-1-4/": [
+    "Q5f"
+  ],
+  "/rest-api/1/capabilities-endpoint/": [
+    "Luo"
+  ],
+  "/rest-api/1/blobs-endpoint/": [
+    "4RV"
+  ],
+  "/rest-api/1/fulltext-endpoint/": [
+    "cv2"
+  ],
+  "/rest-api/1/migration-endpoint/": [
+    "jgB"
+  ],
+  "/rest-api/1/page-providers-endpoint/": [
+    "C26"
+  ],
+  "/rest-api/1/versions-endpoint/": [
+    "Yd0"
+  ],
+  "/rest-api/1/workflows-endpoint/": [
+    "RQP"
   ]
 }

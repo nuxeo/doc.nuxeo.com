@@ -71,13 +71,13 @@ default:
           no_versioning: true
         design:
           no_versioning: true
+        '2023':
+          label: 'LTS 2023'
+          order: 10
         '2021':
           label: 'LTS 2021'
-          order: 10
-        master:
-          label: 'none'
-          noindex: true
-          url_path: 'master'
+          order: 20
+          url_path: '2021'
         '1010':
           label: 'LTS 2019'
           noindex: true
@@ -101,6 +101,10 @@ default:
           label: 'none'
           noindex: true
           url_path: '60'
+        master:
+          label: 'none'
+          noindex: true
+          url_path: 'master'
     java:
       url: git@github.com:nuxeo/doc.nuxeo.com-client-java.git
       branches:
@@ -181,18 +185,3 @@ development:
     ga_exp_id: ''
     ga_id: ''
     segment_write_key: ''
-  # repositories:
-  #   platform:
-  #     url: git@github.com:nuxeo/doc.nuxeo.com-content.git
-  #     branches:
-  #       static:
-  #         no_versioning: true
-  #       '1010':
-  #         label: 'LTS 2019'
-  #         order: 10
-  #       master:
-  #         label: 'Next'
-  #         noindex: true
-  #         order: 20
-  #         menu_separator: true
-  #         url_path: 'next'
