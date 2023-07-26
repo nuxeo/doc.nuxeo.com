@@ -562,6 +562,7 @@
 
 # LTS2023 release 
 ^/nxdoc/hotfixes-installation-notes-for-nuxeo-platform-lts-2021/?$: /nxdoc/2021/hotfixes-installation-notes-for-nuxeo-platform-lts-2021
+^/nxdoc/elasticsearch-setup/?$: /nxdoc/search-setup
 
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
