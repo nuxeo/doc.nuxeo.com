@@ -1,0 +1,26 @@
+@media print {
+  #page_container .side-menu,
+  #toc,
+  #menu-top,
+  .heading-anchor,
+  .heading-group > div > a,
+  #versions_inline {
+    display: none;
+  }
+
+  a[href]::after {
+    text-transform: none;
+  }
+
+  a[href^='/']::after {
+    content: ' (https://doc.nuxeo.com' attr(href) ')';
+  }
+
+  #content_container {
+    width: 100%;
+  }
+
+  .max-900 {
+    max-width: none;
+  }
+}
