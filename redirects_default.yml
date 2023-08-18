@@ -611,3 +611,7 @@
 /javadoc/2021-lts/:
   target: https://community.nuxeo.com/api/nuxeo/2021/javadoc/
   type: reverse_proxy
+
+/javadoc/2023-lts/:
+  target: https://packages.nuxeo.com/repository/nuxeo-platform-javadoc/2023/apidocs/
+  type: reverse_proxy
