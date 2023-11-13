@@ -1,0 +1,52 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm ci
+
+    #  - name: Set up environment variables
+    #    run: echo "ALGOLIA_KEY=test" >> $GITHUB_ENV
+    #    shell: bash
+
+      - name: Run npm start
+        run: npm start
+
+      - name: Generate Nginx Redirects
+        run: bin/redirects-yml2nginx > redirects.txt
+
+      - name: Create empty redirects_pageid.txt
+        run: echo > redirects_pageid.txt
+
+      - name: Deploy to Server
+        run: |
+          rsync -Waxvuk --delete site/ root@doc:/opt/www/doc/
+          rsync redirects.txt root@doc:/etc/nginx/redirects.txt
+          rsync redirects_pageid.txt root@doc:/etc/nginx/redirects_pageid.txt
+          ssh root@doc "service nginx configtest && service nginx restart"
+
+      - name: Archive Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-artifacts
+          path: |
+            redirects_pageid.*
+            redirects.*
+            *.txt
+            npm-debug.log
