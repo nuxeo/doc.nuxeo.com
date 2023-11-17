@@ -1,8 +1,8 @@
 name: Build and Deploy Doc.Nuxeo.com
 
 on:
-  schedule:
-    - cron: '0 5 * * *'
+#  schedule:
+#    - cron: '0 5 * * *'
 
 jobs:
   build-and-deploy:
