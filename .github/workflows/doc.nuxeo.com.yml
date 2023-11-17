@@ -1,9 +1,8 @@
 name: Build and Deploy
 
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: '0 5 * * *'
 
 jobs:
   build-and-deploy:
@@ -18,15 +17,26 @@ jobs:
         with:
           node-version: '14'
 
+      - name: Check Versions
+        id: check-versions
+        run: |
+          RT="git $(git --version)"
+          RT+=" node version $(node --version)"
+          RT+=" npm version $(npm --version)"
+          RT+=" IP $(curl -s ipinfo.io/ip)"
+          echo "RT=${RT}" >> $GITHUB_ENV
+
+      - name: Remove logs directory
+        run: rm -rf ./logs/*
+
+      - name: Save runtime versions
+        run: echo "${RT}" > runtime-versions.txt
+
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --registry="https://registry.npmjs.org" || npm install --registry="https://registry.npmjs.org"
 
-    #  - name: Set up environment variables
-    #    run: echo "ALGOLIA_KEY=test" >> $GITHUB_ENV
-    #    shell: bash
-
-      - name: Run npm start
-        run: npm start
+      - name: Build
+        run: ALGOLIA_KEY=${{ secrets.NX_TOKEN }} DEBUG_FILE_LEVEL='debug' npm start
 
       - name: Generate Nginx Redirects
         run: bin/redirects-yml2nginx > redirects.txt
