@@ -1,19 +1,19 @@
 name: Build and Deploy Doc.Nuxeo.com
 
-on:
+on: workflow_dispatch
 #  schedule:
 #    - cron: '0 5 * * *'
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: doc
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: '14'
 
@@ -25,9 +25,6 @@ jobs:
           RT+=" npm version $(npm --version)"
           RT+=" IP $(curl -s ipinfo.io/ip)"
           echo "RT=${RT}" >> $GITHUB_ENV
-
-      - name: Remove logs directory
-        run: rm -rf ./logs/*
 
       - name: Save runtime versions
         run: echo "${RT}" > runtime-versions.txt
@@ -52,7 +49,7 @@ jobs:
           ssh root@doc "service nginx configtest && service nginx restart"
 
       - name: Archive Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: build-artifacts
           path: |
