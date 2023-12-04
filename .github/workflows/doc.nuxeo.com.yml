@@ -42,21 +42,17 @@ jobs:
         run: echo > redirects_pageid.txt
 
       - name: Deploy to Server
-        run: |
-          rsync -Waxvuk --delete site/ root@${{ secrets.DOCTEST_IP }}:/opt/www/doc/
-          rsync redirects.txt root@{{ secrets.DOCTEST_IP }}:/etc/nginx/redirects.txt
-          rsync redirects_pageid.txt root@{{ secrets.DOCTEST_IP }}:/etc/nginx/redirects_pageid.txt
-        env: |
-          SSH_PRIVATE_KEY: ${{ secrets.DOCTEST_SSH_PRIVATE_KEY }}
-
-
-      - name: Validate Nginx Configuration
-        run: |
-          ssh -i "${{ secrets.DOCTEST_SSH_PRIVATE_KEY }}" root@{{ secrets.DOCTEST_IP }} "service nginx configtest"
-      
-      - name: Restart Nginx
-        run: |
-          ssh -i "${{ secrets.DOCTEST_SSH_PRIVATE_KEY }}" root@{{ secrets.DOCTEST_IP }} "service nginx restart"
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+        host: ${{ secrets.DOCTEST_IP }}
+        username: ${{ secrets.DOCTEST_USERNAME }}
+        key: ${{ secrets.DOCTEST_SSH_PRIVATE_KEY }}
+        script: |
+          rsync -Waxvuk --delete site/ /opt/www/doc/
+          rsync redirects.txt /etc/nginx/redirects.txt
+          rsync redirects_pageid.txt /etc/nginx/redirects_pageid.txt
+          service nginx configtest
+          service nginx restart
 
       - name: Archive Artifacts
         uses: actions/upload-artifact@v3
