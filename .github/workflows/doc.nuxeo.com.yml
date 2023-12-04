@@ -43,10 +43,20 @@ jobs:
 
       - name: Deploy to Server
         run: |
-          rsync -Waxvuk --delete site/ root@doc:/opt/www/doc/
-          rsync redirects.txt root@doc:/etc/nginx/redirects.txt
-          rsync redirects_pageid.txt root@doc:/etc/nginx/redirects_pageid.txt
-          ssh root@doc "service nginx configtest && service nginx restart"
+          rsync -Waxvuk --delete site/ root@${{ secrets.DOCTEST_IP }}:/opt/www/doc/
+          rsync redirects.txt root@{{ secrets.DOCTEST_IP }}:/etc/nginx/redirects.txt
+          rsync redirects_pageid.txt root@{{ secrets.DOCTEST_IP }}:/etc/nginx/redirects_pageid.txt
+        env: |
+          SSH_PRIVATE_KEY: ${{ secrets.DOCTEST_SSH_PRIVATE_KEY }}
+
+
+      - name: Validate Nginx Configuration
+        run: |
+          ssh -i "${{ secrets.DOCTEST_SSH_PRIVATE_KEY }}" root@{{ secrets.DOCTEST_IP }} "service nginx configtest"
+      
+      - name: Restart Nginx
+        run: |
+          ssh -i "${{ secrets.DOCTEST_SSH_PRIVATE_KEY }}" root@{{ secrets.DOCTEST_IP }} "service nginx restart"
 
       - name: Archive Artifacts
         uses: actions/upload-artifact@v3
