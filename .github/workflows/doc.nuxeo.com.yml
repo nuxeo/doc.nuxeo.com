@@ -1,6 +1,7 @@
 name: Build and Deploy Doc.Nuxeo.com
 
-on: workflow_dispatch
+on: 
+  workflow_dispatch
 #  schedule:
 #    - cron: '0 5 * * *'
 
