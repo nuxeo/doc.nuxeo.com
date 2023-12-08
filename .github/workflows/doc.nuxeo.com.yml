@@ -1,73 +1,61 @@
-name: Build and Deploy Doc.Nuxeo.com
+name: Build and Deploy doc.nuxeo.com
 
 on:
   push:
     branches:
-      - main
+      - master
       - development
 
 jobs:
-  set-output:
+  set-environment:
     runs-on: doc
-    outputs:
-      my_env: ${{ needs.set-output.outputs.my_env }}
-    steps:
-      - name: Set Doc Environment based on branch name
-        id: test
-        run: |
-          TARGET_BRANCH=${{ github.ref }}
-          if [[ "$TARGET_BRANCH" == "refs/heads/main" ]]; then
-            echo "my_env=production" >> $GITHUB_ENV
-            echo "my_env=production" >> $GITHUB_PATH
-          elif [[ "$TARGET_BRANCH" == "refs/heads/development" ]]; then
-            echo "my_env=development" >> $GITHUB_ENV
-            echo "my_env=development" >> $GITHUB_PATH
-          else
-            echo "my_env=Wrong Environment" >> $GITHUB_ENV
-          fi
 
+    environment:
+      name: ${{ github.ref == 'refs/heads/master' && 'production' || github.ref == 'refs/heads/development' && 'development' || '' }}
+  
   build-and-deploy:
     steps:
       - name: Checkout code
-          uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
-        - name: Set up Node.js
-          uses: actions/setup-node@v4
-          with:
-            node-version: '14'
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '14'
 
-        - name: Check Versions
-          id: check-versions
-          run: |
-            RT="git $(git --version)"
-            RT+=" node version $(node --version)"
-            RT+=" npm version $(npm --version)"
-            RT+=" IP $(curl -s ipinfo.io/ip)"
-            echo "RT=${RT}" >> $GITHUB_ENV
+      - name: Check Versions and Save to File
+        run: |
+          echo "git $(git --version)" > runtime-versions.txt
+          echo "node version $(node --version)" >> runtime-versions.txt
+          echo "npm version $(npm --version)" >> runtime-versions.txt
+          echo "IP $(curl -s ipinfo.io/ip)" >> runtime-versions.txt
 
-        - name: Save runtime versions
-          run: echo "${RT}" > runtime-versions.txt
+      - name: Install dependencies
+        run: npm ci --registry="https://registry.npmjs.org" || npm install --registry="https://registry.npmjs.org"
 
-        - name: Install dependencies
-          run: npm ci --registry="https://registry.npmjs.org" || npm install --registry="https://registry.npmjs.org"
+      - name: Build
+        run: ALGOLIA_KEY=${{ secrets.NX_TOKEN }} DEBUG_FILE_LEVEL='debug' npm start
 
-        - name: Build
-          run: ALGOLIA_KEY=${{ secrets.NX_TOKEN }} DEBUG_FILE_LEVEL='debug' npm start
+      - name: Generate Nginx Redirects
+        run: |
+            bin/redirects-yml2nginx > redirects.txt
+            echo > redirects_pageid.txt 
 
-        - name: Generate Nginx Redirects
-          run: |
-              bin/redirects-yml2nginx > redirects.txt
-              echo > redirects_pageid.txt 
+      - name: Deploy to Server
+        with:
+          SERVER_SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_PRIVATE_KEY }}
+        run: |
+          rsync -Waxvuk --delete site/ ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/opt/www/doc/
+          sync redirects.txt ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/etc/nginx/redirects.txt
+          rsync redirects_pageid.txt ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/etc/nginx/redirects_pageid.txt
 
-        - name: Deploy to Server
-          run: |
-            rsync -Waxvuk --delete site/ /opt/www/doc/
-            rsync redirects.txt /etc/nginx/redirects.txt
-            rsync redirects_pageid.txt /etc/nginx/redirects_pageid.txt
-            service nginx configtest
-            service nginx restart
-
-        - name: Archive Artifacts
+      - name: Nginx Config Test and Restart
+        run: |
+          ssh -i "${{ secrets.SERVER_SSH_PRIVATE_KEY }}" \
+                 "${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }}" \
+                  "service nginx configtest && service nginx restart"
+       
+      - name: Archive Artifacts
           uses: actions/upload-artifact@v3
           with:
             name: build-artifacts
