@@ -27,10 +27,6 @@ jobs:
           fi
 
   build-and-deploy:
-    needs: set-output
-    runs-on: doc
-    environment:
-      name: ${{ needs.set-output.outputs.my_env }}
     steps:
       - name: Checkout code
           uses: actions/checkout@v4
