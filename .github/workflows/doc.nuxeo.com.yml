@@ -10,28 +10,21 @@ jobs:
   documentation_ci:
     name: Build & Publish documentation to ${{ github.ref_name == 'master' && 'production' || github.ref_name }}
     runs-on: doc
-
     environment:
       name: ${{ github.ref == 'refs/heads/master' && 'production' || github.ref == 'refs/heads/development' && 'development' || '' }}
-
     steps:
       - name: Set up SSH
-        uses: webfactory/ssh-agent@v0.8.0
+        uses: webfactory/ssh-agent@d4b9b8ff72958532804b70bbe600ad43b36d5f2e  #v0.8.0
         with:
-          ssh-private-key: ${{ secrets.SERVER_SSH_PRIVATE_KEY }}   
+          ssh-private-key: ${{ secrets.SERVER_SSH_PRIVATE_KEY }}
 
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 #v4.1.1
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65 #v4.0.0
         with:
           node-version: '14'
-
-      - name: Set up SSH
-        uses: webfactory/ssh-agent@v0.8.0
-        with:
-          ssh-private-key: ${{ secrets.SERVER_SSH_PRIVATE_KEY }}    
 
       - name: Check Versions and Save to File
         run: |
@@ -49,26 +42,25 @@ jobs:
       - name: Generate Nginx Redirects
         run: |
             bin/redirects-yml2nginx > redirects.txt
-            echo > redirects_pageid.txt 
+            echo > redirects_pageid.txt
 
       - name: Deploy to Server
         run: |
-          rsync -Wxvuk --delete -e "ssh -i ${{ secrets.SERVER_SSH_PRIVATE_KEY }}" site/ "${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/opt/www/doc/"
-          rsync -e "ssh -i ${{ secrets.SERVER_SSH_PRIVATE_KEY }}" redirects.txt "${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/etc/nginx/redirects.txt"
-          rsync  -e "ssh -i ${{ secrets.SERVER_SSH_PRIVATE_KEY }}" redirects_pageid.txt ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/etc/nginx/redirects_pageid.txt
+          rsync -Wxvuk --delete site/ "${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/opt/www/doc/"
+          rsync redirects.txt "${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/etc/nginx/redirects.txt"
+          rsync redirects_pageid.txt ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/etc/nginx/redirects_pageid.txt
 
       - name: Nginx Config Test and Restart
         run: |
-          ssh -i "${{ secrets.SERVER_SSH_PRIVATE_KEY }}" \
             "${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}" \
             "service nginx configtest && service nginx restart"
-       
+
       - name: Archive Artifacts
-          uses: actions/upload-artifact@v3
-          with:
-            name: build-artifacts
-            path: |
-              redirects_pageid.*
-              redirects.*
-              *.txt
-              npm-debug.log
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: |
+            redirects_pageid.*
+            redirects.*
+            *.txt
+            npm-debug.log
