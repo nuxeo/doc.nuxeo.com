@@ -7,7 +7,8 @@ on:
       - development
 
 jobs:
-  set-environment:
+  documentation_ci:
+    name: Build & Publish documentation to ${{ github.ref_name == 'master' && 'production' || github.ref_name }}
     runs-on: doc
 
     environment:
