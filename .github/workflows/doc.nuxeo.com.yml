@@ -52,8 +52,8 @@ jobs:
 
       - name: Nginx Config Test and Restart
         run: |
-            "${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}" \
-            "service nginx configtest && service nginx restart"
+            ssh "${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}" \
+                   "service nginx configtest && service nginx restart"
 
       - name: Archive Artifacts
         uses: actions/upload-artifact@v3
