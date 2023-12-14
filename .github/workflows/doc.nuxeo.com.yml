@@ -41,8 +41,8 @@ jobs:
 
       - name: Generate Nginx Redirects
         run: |
-            bin/redirects-yml2nginx > redirects.txt
-            echo > redirects_pageid.txt
+          bin/redirects-yml2nginx > redirects.txt
+          echo > redirects_pageid.txt
 
       - name: Deploy to Server
         run: |
