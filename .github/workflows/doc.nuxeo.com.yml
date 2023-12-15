@@ -8,7 +8,7 @@ on:
 
 jobs:
   documentation_ci:
-    name: Build & Publish documentation to ${{ github.ref_name == 'master' && 'production' || github.ref_name }}
+    name: Build & Publish documentation to ${{ github.ref_name == 'master' && 'production' || 'development' }}
     runs-on: doc
     environment:
       name: ${{ github.ref_name == 'master' && 'production' || github.ref_name }}
