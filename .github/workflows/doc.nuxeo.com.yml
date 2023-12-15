@@ -11,7 +11,7 @@ jobs:
     name: Build & Publish documentation to ${{ github.ref_name == 'master' && 'production' || 'development' }}
     runs-on: doc
     environment:
-      name: ${{ github.ref_name == 'master' && 'production' || github.ref_name }}
+      name: ${{ github.ref_name == 'master' && 'production' || 'development' }}
     steps:
       - name: Set up SSH
         uses: webfactory/ssh-agent@d4b9b8ff72958532804b70bbe600ad43b36d5f2e  # v0.8.0
