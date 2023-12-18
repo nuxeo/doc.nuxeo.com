@@ -22,7 +22,7 @@ if [ -d $REPO_DIR -a ! -L $REPO_DIR ]; then
 else
     git clone --depth=1 --no-single-branch $REPO_URL $REPO_ID && \
     cd $REPO_DIR && \
-    git lfs install && \
-    git lfs fetch --recent && \
+    git install && \
+    git fetch --recent && \
     git reset --hard;
 fi
