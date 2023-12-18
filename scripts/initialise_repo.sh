@@ -20,7 +20,7 @@ if [ -d $REPO_DIR -a ! -L $REPO_DIR ]; then
     git fetch --all && \
     git lfs fetch --recent;
 else
-    git lfs clone --depth=1 --no-single-branch $REPO_URL $REPO_ID && \
+    git clone --depth=1 --no-single-branch $REPO_URL $REPO_ID && \
     cd $REPO_DIR && \
     git lfs install && \
     git lfs fetch --recent && \
