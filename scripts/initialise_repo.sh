@@ -17,11 +17,9 @@ if [ -d $REPO_DIR -a ! -L $REPO_DIR ]; then
     echo "${REPO_DIR} exists.";
     cd $REPO_DIR && \
     git reset --hard && \
-    git fetch --all && \
-    git fetch --recent;
+    git fetch --all; 
 else
     git clone --depth=1 --no-single-branch $REPO_URL $REPO_ID && \
     cd $REPO_DIR && \
-    git fetch --recent && \
     git reset --hard;
 fi
