@@ -18,11 +18,10 @@ if [ -d $REPO_DIR -a ! -L $REPO_DIR ]; then
     cd $REPO_DIR && \
     git reset --hard && \
     git fetch --all && \
-    git lfs fetch --recent;
+    git fetch --recent;
 else
     git clone --depth=1 --no-single-branch $REPO_URL $REPO_ID && \
     cd $REPO_DIR && \
-    git install && \
     git fetch --recent && \
     git reset --hard;
 fi
