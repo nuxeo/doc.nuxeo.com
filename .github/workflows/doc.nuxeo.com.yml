@@ -5,6 +5,7 @@ on:
     branches:
       - master
       - development
+      - master-nx-assets
 
 jobs:
   documentation_ci:
