@@ -13,6 +13,7 @@ if [ -d $REPO_DIR -a ! -L $REPO_DIR ]; then
     popd;
     mkdir -p $TARGET_DIR;
     rsync -a --exclude=".*" $REPO_DIR $TARGET_DIR;
+    rsync -a --exclude=".*" $REPO_DIR/nx_assets/ ./nx_assets/;
 else
     echo "Failed to find: ${REPO_ID} - ${BRANCH}";
     exit 1;
