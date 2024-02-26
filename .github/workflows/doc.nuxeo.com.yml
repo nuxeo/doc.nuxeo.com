@@ -57,7 +57,7 @@ jobs:
 
       - name: Deploy to Server
         run: |
-          rsync -Wxvuk --delete site/ "${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/opt/www/doc/"
+          rsync -Wxvurk --delete site/ "${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/opt/www/doc/"
           rsync redirects.txt "${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/etc/nginx/redirects.txt"
           rsync redirects_pageid.txt ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/etc/nginx/redirects_pageid.txt
 

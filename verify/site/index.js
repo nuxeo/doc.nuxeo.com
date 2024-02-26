@@ -31,7 +31,7 @@ test('site should have key files', (assert) => {
     path.join(
       site_path,
       'nx_assets',
-      'a26bfade-2438-4d00-a5f3-676f719ed4a8-screenshot.png'
+      'a26bfade-2438-4d00-a5f3-676f719ed4a8.png'
     ),
   ];
   // Index of each of the spaces
