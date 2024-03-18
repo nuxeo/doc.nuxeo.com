@@ -5,6 +5,7 @@
 ## Requirements
 
 - [Git](https://git-scm.com/) - make sure your Privacy & Security settings allow to download applications from anywhere
+- [Git-LFS](https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage)
 - [SSH key associated with GitHub](https://help.github.com/articles/generating-an-ssh-key/).
   - Test access with `ssh -T git@github.com` - see [here](https://help.github.com/articles/testing-your-ssh-connection/) for help.
 - [Node.js](https://github.com/creationix/nvm#install-script) &mdash; Latest Active LTS: See [Release schedule](https://github.com/nodejs/LTS#lts_schedule)(e.g. v8.11.3)
