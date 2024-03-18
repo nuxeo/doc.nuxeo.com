@@ -27386,5 +27386,2492 @@
   ],
   "/rest-api/1/workflows-endpoint/": [
     "RQP"
+  ],
+  "/userdoc/2021/adding-features/": [
+    "GoX"
+  ],
+  "/userdoc/2021/from-jsf-ui-to-web-ui/": [
+    "dc8"
+  ],
+  "/userdoc/2021/icons-index/": [
+    "3NR"
+  ],
+  "/userdoc/2021/": [
+    "g9r"
+  ],
+  "/userdoc/2021/web-ui/": [
+    "S4b"
+  ],
+  "/userdoc/2021/digital-asset-management-with-the-nuxeo-platform/": [
+    "BPO"
+  ],
+  "/userdoc/2021/digital-signature/": [
+    "MHP"
+  ],
+  "/userdoc/2021/easyshare/": [
+    "-p5"
+  ],
+  "/userdoc/2021/nuxeo-agenda/": [
+    "ZDX"
+  ],
+  "/userdoc/2021/nuxeo-diff/": [
+    "YU8"
+  ],
+  "/userdoc/2021/nuxeo-groups-and-rights-audit/": [
+    "z_z"
+  ],
+  "/userdoc/2021/nuxeo-imap-connector/": [
+    "ALl"
+  ],
+  "/userdoc/2021/nuxeo-multi-tenant/": [
+    "pDH"
+  ],
+  "/userdoc/2021/browse/": [
+    "lLh"
+  ],
+  "/userdoc/2021/managing-accounts/": [
+    "tFD"
+  ],
+  "/userdoc/2021/managing-content/": [
+    "vGQ"
+  ],
+  "/userdoc/2021/organizing-content/": [
+    "TWo"
+  ],
+  "/userdoc/2021/administration/": [
+    "SUe"
+  ],
+  "/userdoc/2021/user-settings/": [
+    "8dC"
+  ],
+  "/userdoc/2021/content-create/": [
+    "s5r"
+  ],
+  "/userdoc/2021/content-delete/": [
+    "pPb"
+  ],
+  "/userdoc/2021/content-edit/": [
+    "B5q"
+  ],
+  "/userdoc/2021/content-lock/": [
+    "Tqb"
+  ],
+  "/userdoc/2021/history/": [
+    "V6jP"
+  ],
+  "/userdoc/2021/version/": [
+    "CN_"
+  ],
+  "/userdoc/2021/alerts/": [
+    "YBs"
+  ],
+  "/userdoc/2021/collections-web-ui/": [
+    "lj4"
+  ],
+  "/userdoc/2021/compare/": [
+    "voU"
+  ],
+  "/userdoc/2021/document-types-in-web-ui/": [
+    "7XA"
+  ],
+  "/userdoc/2021/favorites/": [
+    "8XV"
+  ],
+  "/userdoc/2021/permissions/": [
+    "2nE"
+  ],
+  "/userdoc/2021/search/": [
+    "K58X"
+  ],
+  "/userdoc/2021/share/": [
+    "Ypr"
+  ],
+  "/userdoc/2021/tags/": [
+    "yaS"
+  ],
+  "/userdoc/2021/task/": [
+    "1pD"
+  ],
+  "/userdoc/2021/delegating-task/": [
+    "o3C"
+  ],
+  "/userdoc/2021/document-workflow/": [
+    "aOn"
+  ],
+  "/userdoc/2021/handling-tasks/": [
+    "VIJ"
+  ],
+  "/userdoc/2021/reassigning-task/": [
+    "3Mz"
+  ],
+  "/nxdoc/2021/client-sdks/": [
+    "d6S"
+  ],
+  "/nxdoc/2021/contributing-to-an-extension-using-nuxeo-ide/": [
+    "uGz"
+  ],
+  "/nxdoc/2021/contributing-to-nuxeo/": [
+    "eTm"
+  ],
+  "/nxdoc/2021/custom-page-providers/": [
+    "jZz"
+  ],
+  "/nxdoc/2021/dam/": [
+    "Oza"
+  ],
+  "/nxdoc/2021/dbs-mongodb/": [
+    "6vC-"
+  ],
+  "/nxdoc/2021/generic-multi-excerpts/": [
+    "HJH"
+  ],
+  "/nxdoc/2021/getting-started/": [
+    "qdU"
+  ],
+  "/nxdoc/2021/how-to-configure-a-new-search-tab/": [
+    "Cl7"
+  ],
+  "/nxdoc/2021/": [
+    "FzX"
+  ],
+  "/nxdoc/2021/jsf-ui-to-web-ui/": [
+    "ksc"
+  ],
+  "/nxdoc/2021/licenses/": [
+    "A89"
+  ],
+  "/nxdoc/2021/nuxeo-add-ons/": [
+    "X4B"
+  ],
+  "/nxdoc/2021/nuxeo-server/": [
+    "3zD"
+  ],
+  "/nxdoc/2021/nuxeo-tools/": [
+    "JHC"
+  ],
+  "/nxdoc/2021/release-notes/": [
+    "hQb"
+  ],
+  "/nxdoc/2021/resources-endpoints/": [
+    "KRr"
+  ],
+  "/nxdoc/2021/supported-databases/": [
+    "wg4"
+  ],
+  "/nxdoc/2021/supported-application-servers/": [
+    "Wrj"
+  ],
+  "/nxdoc/2021/university/": [
+    "GAq"
+  ],
+  "/nxdoc/2021/web-ui/": [
+    "GHa"
+  ],
+  "/nxdoc/2021/java-client/": [
+    "xxH"
+  ],
+  "/nxdoc/2021/javascript-client/": [
+    "Bp_"
+  ],
+  "/nxdoc/2021/net-client/": [
+    "DYx"
+  ],
+  "/nxdoc/2021/php-automation-client/": [
+    "zVJr"
+  ],
+  "/nxdoc/2021/python-client/": [
+    "6d_"
+  ],
+  "/nxdoc/2021/how-to-submit-a-bug-report/": [
+    "Suz"
+  ],
+  "/nxdoc/2021/how-to-translate-the-nuxeo-platform/": [
+    "DBY"
+  ],
+  "/nxdoc/2021/is-source-code-needed/": [
+    "u_P"
+  ],
+  "/nxdoc/2021/digital-asset-management-dam/": [
+    "Ppn"
+  ],
+  "/nxdoc/2021/manage-and-organize/": [
+    "WL8"
+  ],
+  "/nxdoc/2021/search-and-find/": [
+    "i1N"
+  ],
+  "/nxdoc/2021/share-and-distribute/": [
+    "i7y"
+  ],
+  "/nxdoc/2021/upload-and-store/": [
+    "tWd"
+  ],
+  "/nxdoc/2021/alternative-command-parameters-for-prores-codec-users/": [
+    "vKL"
+  ],
+  "/nxdoc/2021/how-to-contribute-a-new-video-conversion/": [
+    "T5i"
+  ],
+  "/nxdoc/2021/how-to-contribute-picture-conversions/": [
+    "Kgu"
+  ],
+  "/nxdoc/2021/supported-file-formats/": [
+    "reB"
+  ],
+  "/nxdoc/2021/nuxeo-cli/": [
+    "Z-F"
+  ],
+  "/nxdoc/2021/nuxeo-dev-tools-extension/": [
+    "kaJ"
+  ],
+  "/nxdoc/2021/nuxeo-devcontainer/": [
+    "k_q"
+  ],
+  "/nxdoc/2021/discover-nuxeo-cli-by-example/": [
+    "edF"
+  ],
+  "/nxdoc/2021/best-practices/": [
+    "bWX"
+  ],
+  "/nxdoc/2021/essential-nuxeo-platform-terminology/": [
+    "KAP"
+  ],
+  "/nxdoc/2021/how-to-index/": [
+    "c3i"
+  ],
+  "/nxdoc/2021/quick-overview/": [
+    "mzI"
+  ],
+  "/nxdoc/2021/tracks/": [
+    "VYp"
+  ],
+  "/nxdoc/2021/use-cases/": [
+    "X5J"
+  ],
+  "/nxdoc/2021/choosing-how-to-import-data-in-the-nuxeo-platform/": [
+    "fyT"
+  ],
+  "/nxdoc/2021/understand-expression-and-scripting-languages-used-in-nuxeo/": [
+    "oa9"
+  ],
+  "/nxdoc/2021/bootstrap-your-case-management-project/": [
+    "pyb"
+  ],
+  "/nxdoc/2021/bootstrap-your-document-management-project/": [
+    "UPV"
+  ],
+  "/nxdoc/2021/develop-your-own-java-code/": [
+    "2Uc"
+  ],
+  "/nxdoc/2021/discover-nuxeo-platform-apis/": [
+    "Nut"
+  ],
+  "/nxdoc/2021/first-package-with-studio/": [
+    "vDQ"
+  ],
+  "/nxdoc/2021/package-publish-deploy-hotreload/": [
+    "tSL"
+  ],
+  "/nxdoc/2021/handling-permissions/": [
+    "k0I"
+  ],
+  "/nxdoc/2021/managing-files/": [
+    "Gmt"
+  ],
+  "/nxdoc/2021/manipulating-documents/": [
+    "vCX"
+  ],
+  "/nxdoc/2021/retrieving-audit-log/": [
+    "xjJ"
+  ],
+  "/nxdoc/2021/setting-up-your-javascript-environment/": [
+    "XjS"
+  ],
+  "/nxdoc/2021/setting-up-your-nuxeo-environment/": [
+    "MP4"
+  ],
+  "/nxdoc/2021/using-automation/": [
+    "jbz"
+  ],
+  "/nxdoc/2021/using-renditions/": [
+    "OjO"
+  ],
+  "/nxdoc/2021/using-workflows/": [
+    "Cnkq"
+  ],
+  "/nxdoc/2021/nuxeo-elements/": [
+    "-lol"
+  ],
+  "/nxdoc/2021/polymer-guide/": [
+    "dIZ"
+  ],
+  "/nxdoc/2021/web-ui-accessibility/": [
+    "NIf"
+  ],
+  "/nxdoc/2021/web-ui-functional-testing/": [
+    "P4B"
+  ],
+  "/nxdoc/2021/web-ui-overview/": [
+    "auj"
+  ],
+  "/nxdoc/2021/web-ui-performance/": [
+    "4c2"
+  ],
+  "/nxdoc/2021/web-ui-release-notes/": [
+    "md3"
+  ],
+  "/nxdoc/2021/web-ui-tutorials/": [
+    "Df1"
+  ],
+  "/nxdoc/2021/web-ui-upgrade-notes/": [
+    "SOKV"
+  ],
+  "/nxdoc/2021/notify-behavior/": [
+    "SrW"
+  ],
+  "/nxdoc/2021/nuxeo-elements-tutorial/": [
+    "eGr"
+  ],
+  "/nxdoc/2021/quality-assurance/": [
+    "sBN"
+  ],
+  "/nxdoc/2021/web-ui-release-notes-3-0-0-to-3-0-5/": [
+    "Jhd"
+  ],
+  "/nxdoc/2021/web-ui-release-notes-3-0-10/": [
+    "caq"
+  ],
+  "/nxdoc/2021/web-ui-release-notes-3-0-11/": [
+    "t2P"
+  ],
+  "/nxdoc/2021/web-ui-release-notes-3-0-12/": [
+    "VKK"
+  ],
+  "/nxdoc/2021/web-ui-release-notes-3-0-13/": [
+    "oKP"
+  ],
+  "/nxdoc/2021/web-ui-release-notes-3-0-14/": [
+    "Vgu6"
+  ],
+  "/nxdoc/2021/web-ui-release-notes-3-0-15/": [
+    "dKz"
+  ],
+  "/nxdoc/2021/web-ui-release-notes-3-0-16/": [
+    "_hC"
+  ],
+  "/nxdoc/2021/web-ui-release-notes-3-0-17/": [
+    "uPE"
+  ],
+  "/nxdoc/2021/web-ui-release-notes-3-0-18/": [
+    "0_C8"
+  ],
+  "/nxdoc/2021/web-ui-release-notes-3-0-19/": [
+    "BU6"
+  ],
+  "/nxdoc/2021/web-ui-release-notes-3-0-20/": [
+    "bTX"
+  ],
+  "/nxdoc/2021/web-ui-release-notes-3-0-21/": [
+    "IJY"
+  ],
+  "/nxdoc/2021/web-ui-release-notes-3-0-22/": [
+    "ySn"
+  ],
+  "/nxdoc/2021/web-ui-release-notes-3-0-23/": [
+    "hut"
+  ],
+  "/nxdoc/2021/web-ui-release-notes-3-0-24/": [
+    "x4b"
+  ],
+  "/nxdoc/2021/web-ui-release-notes-3-0-25/": [
+    "7iR"
+  ],
+  "/nxdoc/2021/web-ui-release-notes-3-0-27/": [
+    "Gp6"
+  ],
+  "/nxdoc/2021/web-ui-release-notes-3-0-6/": [
+    "tvp"
+  ],
+  "/nxdoc/2021/web-ui-release-notes-3-0-7/": [
+    "-O9"
+  ],
+  "/nxdoc/2021/web-ui-release-notes-3-0-8/": [
+    "8v-"
+  ],
+  "/nxdoc/2021/web-ui-release-notes-3-0-9/": [
+    "qpl"
+  ],
+  "/nxdoc/2021/web-ui-upgrade-notes-lts-2021/": [
+    "qlP"
+  ],
+  "/nxdoc/2021/how-to-add-a-header-and-a-footer/": [
+    "AyB"
+  ],
+  "/nxdoc/2021/how-to-create-and-customize-nuxeo-actions-menu/": [
+    "3sd"
+  ],
+  "/nxdoc/2021/how-to-create-and-reuse-custom-element/": [
+    "WKz"
+  ],
+  "/nxdoc/2021/how-to-create-bulk-actions-studio/": [
+    "Q9S"
+  ],
+  "/nxdoc/2021/how-to-create-bulk-edit-form-studio/": [
+    "RJJ"
+  ],
+  "/nxdoc/2021/how-to-customize-creation-form/": [
+    "dGJ"
+  ],
+  "/nxdoc/2021/how-to-disable-trash/": [
+    "MEK"
+  ],
+  "/nxdoc/2021/how-to-display-children-documents-listing/": [
+    "cPX"
+  ],
+  "/nxdoc/2021/how-to-display-user-information/": [
+    "EKv"
+  ],
+  "/nxdoc/2021/how-to-filter-data-in-directory-suggestion/": [
+    "Y62"
+  ],
+  "/nxdoc/2021/how-to-insert-user-action/": [
+    "VUr"
+  ],
+  "/nxdoc/2021/how-to-new-tab/": [
+    "hjt"
+  ],
+  "/nxdoc/2021/how-to-search-or-operator/": [
+    "-gq"
+  ],
+  "/nxdoc/2021/how-to-trigger-automation-dialog/": [
+    "Bfd"
+  ],
+  "/nxdoc/2021/how-to-update-default-nuxeo-page/": [
+    "mbc"
+  ],
+  "/nxdoc/2021/how-to-use-events/": [
+    "TRo"
+  ],
+  "/nxdoc/2021/how-to-use-rich-text-editor-rte-for-article-publishing/": [
+    "Iav"
+  ],
+  "/nxdoc/2021/how-to-validate-content/": [
+    "fKs"
+  ],
+  "/nxdoc/2021/howto-create-custom-dashboard-entries/": [
+    "8IT"
+  ],
+  "/nxdoc/2021/howto-execute-ui-functions/": [
+    "GvI"
+  ],
+  "/nxdoc/2021/web-ui-bulk-actions/": [
+    "6ox"
+  ],
+  "/nxdoc/2021/web-ui-configuration-properties/": [
+    "vvB"
+  ],
+  "/nxdoc/2021/web-ui-customization-tutorial/": [
+    "zFH"
+  ],
+  "/nxdoc/2021/web-ui-dashboard/": [
+    "hQJ"
+  ],
+  "/nxdoc/2021/web-ui-default-rendition/": [
+    "yEm"
+  ],
+  "/nxdoc/2021/web-ui-deployment/": [
+    "ZFi"
+  ],
+  "/nxdoc/2021/web-ui-diff/": [
+    "o2j"
+  ],
+  "/nxdoc/2021/web-ui-document-layouts/": [
+    "NCr"
+  ],
+  "/nxdoc/2021/web-ui-layouts/": [
+    "os_"
+  ],
+  "/nxdoc/2021/web-ui-routing/": [
+    "nCW"
+  ],
+  "/nxdoc/2021/web-ui-search/": [
+    "7wm"
+  ],
+  "/nxdoc/2021/web-ui-slots/": [
+    "AWc"
+  ],
+  "/nxdoc/2021/web-ui-theme-customization/": [
+    "Wo5"
+  ],
+  "/nxdoc/2021/web-ui-translations/": [
+    "kch"
+  ],
+  "/nxdoc/2021/web-ui-upload-providers/": [
+    "vb6"
+  ],
+  "/nxdoc/2021/web-ui-workflow-tasks/": [
+    "1VK"
+  ],
+  "/nxdoc/2021/web-ui-automated-translation-labels/": [
+    "rTw"
+  ],
+  "/nxdoc/2021/web-ui-managing-translations/": [
+    "fXg"
+  ],
+  "/nxdoc/2021/amazon-s3-direct-upload/": [
+    "YXy"
+  ],
+  "/nxdoc/2021/amazon-s3-online-storage/": [
+    "lJ4"
+  ],
+  "/nxdoc/2021/creating-nuxeo-packages/": [
+    "gZ5"
+  ],
+  "/nxdoc/2021/digital-signature/": [
+    "VNS"
+  ],
+  "/nxdoc/2021/easyshare/": [
+    "EWU"
+  ],
+  "/nxdoc/2021/explorer/": [
+    "o__"
+  ],
+  "/nxdoc/2021/google-storage/": [
+    "NDI"
+  ],
+  "/nxdoc/2021/installing-a-new-package-on-your-instance/": [
+    "M4m"
+  ],
+  "/nxdoc/2021/microsoft-azure-online-storage/": [
+    "7yM"
+  ],
+  "/nxdoc/2021/nuxeo-3d/": [
+    "9Is"
+  ],
+  "/nxdoc/2021/nuxeo-adobe-cc-connector/": [
+    "hD2"
+  ],
+  "/nxdoc/2021/nuxeo-agenda/": [
+    "p5m"
+  ],
+  "/nxdoc/2021/nuxeo-ai/": [
+    "5-T"
+  ],
+  "/nxdoc/2021/nuxeo-aspera-connector/": [
+    "fJL"
+  ],
+  "/nxdoc/2021/nuxeo-bulk-document-importer/": [
+    "UWY"
+  ],
+  "/nxdoc/2021/nuxeo-coldstorage/": [
+    "anq"
+  ],
+  "/nxdoc/2021/nuxeo-compound-documents/": [
+    "Ei3c"
+  ],
+  "/nxdoc/2021/nuxeo-csv/": [
+    "OD1"
+  ],
+  "/nxdoc/2021/nuxeo-datadog-reporter/": [
+    "kbZ"
+  ],
+  "/nxdoc/2021/nuxeo-diff-pictures/": [
+    "SfP"
+  ],
+  "/nxdoc/2021/nuxeo-diff/": [
+    "Kr2"
+  ],
+  "/nxdoc/2021/nuxeo-edge-cache/": [
+    "Iiy"
+  ],
+  "/nxdoc/2021/nuxeo-enhanced-viewer/": [
+    "v-l"
+  ],
+  "/nxdoc/2021/nuxeo-federation-framework/": [
+    "Tjc"
+  ],
+  "/nxdoc/2021/nuxeo-file-system-exporter/": [
+    "oiI"
+  ],
+  "/nxdoc/2021/nuxeo-for-adobe-cc/": [
+    "Bm2-"
+  ],
+  "/nxdoc/2021/nuxeo-for-salesforce/": [
+    "0g9"
+  ],
+  "/nxdoc/2021/nuxeo-frameio/": [
+    "Vao"
+  ],
+  "/nxdoc/2021/nuxeo-groups-and-rights-audit/": [
+    "JiP"
+  ],
+  "/nxdoc/2021/nuxeo-jsf-to-web-ui/": [
+    "NZZ"
+  ],
+  "/nxdoc/2021/nuxeo-jsf-ui/": [
+    "JCbH"
+  ],
+  "/nxdoc/2021/nuxeo-lambda-pictureview/": [
+    "DzV"
+  ],
+  "/nxdoc/2021/nuxeo-live-connect/": [
+    "ymP"
+  ],
+  "/nxdoc/2021/nuxeo-media-manipulation/": [
+    "SR6"
+  ],
+  "/nxdoc/2021/nuxeo-media-publishing/": [
+    "Od9"
+  ],
+  "/nxdoc/2021/nuxeo-multi-tenant/": [
+    "Qgk"
+  ],
+  "/nxdoc/2021/nuxeo-office-online-integration/": [
+    "O0Q"
+  ],
+  "/nxdoc/2021/nuxeo-outlook-connector/": [
+    "JyL"
+  ],
+  "/nxdoc/2021/nuxeo-platform-feature-table/": [
+    "VeL"
+  ],
+  "/nxdoc/2021/nuxeo-platform-user-registration/": [
+    "LKS"
+  ],
+  "/nxdoc/2021/nuxeo-quota/": [
+    "p_f"
+  ],
+  "/nxdoc/2021/nuxeo-retention-management/": [
+    "0dr"
+  ],
+  "/nxdoc/2021/nuxeo-sample-project/": [
+    "41Z"
+  ],
+  "/nxdoc/2021/nuxeo-shibboleth-invitation/": [
+    "3J_"
+  ],
+  "/nxdoc/2021/nuxeo-showcase-content/": [
+    "rOy"
+  ],
+  "/nxdoc/2021/nuxeo-sitecore-connector/": [
+    "w8i"
+  ],
+  "/nxdoc/2021/nuxeo-spreadsheet/": [
+    "3-e"
+  ],
+  "/nxdoc/2021/nuxeo-tree-snapshot/": [
+    "lNm"
+  ],
+  "/nxdoc/2021/nuxeo-virtual-navigation/": [
+    "xT0"
+  ],
+  "/nxdoc/2021/nuxeo-vision/": [
+    "CM_"
+  ],
+  "/nxdoc/2021/nuxeo-zapier/": [
+    "l36"
+  ],
+  "/nxdoc/2021/resources-compatibility/": [
+    "P1d"
+  ],
+  "/nxdoc/2021/scan-documents-importer/": [
+    "ng8"
+  ],
+  "/nxdoc/2021/template-rendering-addon/": [
+    "CTk"
+  ],
+  "/nxdoc/2021/amazon-cloudfront-distribution/": [
+    "OB_"
+  ],
+  "/nxdoc/2021/package-manifest/": [
+    "owm"
+  ],
+  "/nxdoc/2021/packaging-examples/": [
+    "i1Y"
+  ],
+  "/nxdoc/2021/scripting-commands/": [
+    "sST"
+  ],
+  "/nxdoc/2021/nuxeo-coldstorage-faq/": [
+    "FdH"
+  ],
+  "/nxdoc/2021/nuxeo-coldstorage-installation/": [
+    "2ii"
+  ],
+  "/nxdoc/2021/how-to-enable-csv-import-on-a-custom-document-type/": [
+    "kMr"
+  ],
+  "/nxdoc/2021/how-to-configure-adobe-connector/": [
+    "FUB"
+  ],
+  "/nxdoc/2021/nuxeo-salesforce-release-notes/": [
+    "5ZM"
+  ],
+  "/nxdoc/2021/how-to-contribute-a-new-user-registration-request-document-type/": [
+    "aUT"
+  ],
+  "/nxdoc/2021/how-to-enable-quotas-on-document-types/": [
+    "RcV"
+  ],
+  "/nxdoc/2021/how-to-add-a-new-virtual-navigation-entry/": [
+    "NkOI"
+  ],
+  "/nxdoc/2021/how-to-disable-by-coverage-and-by-subjects-virtual-navigations/": [
+    "2od"
+  ],
+  "/nxdoc/2021/nuxeo-aspera-release-notes/": [
+    "pvu"
+  ],
+  "/nxdoc/2021/nuxeo-aspera-upgrade-notes/": [
+    "Uty"
+  ],
+  "/nxdoc/2021/nuxeo-aspera-connector-2021-3-1/": [
+    "0dK"
+  ],
+  "/nxdoc/2021/nuxeo-aspera-connector-2021-3-10/": [
+    "oz4"
+  ],
+  "/nxdoc/2021/nuxeo-aspera-connector-2021-3-3/": [
+    "ocvJ"
+  ],
+  "/nxdoc/2021/nuxeo-aspera-connector-2021-3-4/": [
+    "yTB"
+  ],
+  "/nxdoc/2021/nuxeo-aspera-connector-2021-3-6/": [
+    "6Em"
+  ],
+  "/nxdoc/2021/nuxeo-aspera-connector-2021-3-8/": [
+    "8C9"
+  ],
+  "/nxdoc/2021/how-to-import-documents-with-annotations/": [
+    "XJB"
+  ],
+  "/nxdoc/2021/how-to-set-enhanced-viewer-as-default-document-preview/": [
+    "LVY"
+  ],
+  "/nxdoc/2021/how-to-use-content-redaction/": [
+    "oai"
+  ],
+  "/nxdoc/2021/how-to-use-renditions-on-nev/": [
+    "qkP"
+  ],
+  "/nxdoc/2021/nuxeo-enhanced-viewer-installation/": [
+    "gVy"
+  ],
+  "/nxdoc/2021/nuxeo-enhanced-viewer-release-notes/": [
+    "6zJ"
+  ],
+  "/nxdoc/2021/nuxeo-enhanced-viewer-release-notes-2-0-0/": [
+    "fZf"
+  ],
+  "/nxdoc/2021/nuxeo-enhanced-viewer-release-notes-2-1-0/": [
+    "Jsa"
+  ],
+  "/nxdoc/2021/nuxeo-enhanced-viewer-release-notes-2-1-2/": [
+    "Bl_"
+  ],
+  "/nxdoc/2021/nuxeo-enhanced-viewer-release-notes-2-1-3/": [
+    "0K1"
+  ],
+  "/nxdoc/2021/nuxeo-enhanced-viewer-release-notes-2-1-4/": [
+    "8Dj"
+  ],
+  "/nxdoc/2021/nuxeo-enhanced-viewer-release-notes-2-2-0/": [
+    "qVd"
+  ],
+  "/nxdoc/2021/nuxeo-enhanced-viewer-release-notes-2-2-1/": [
+    "aXh"
+  ],
+  "/nxdoc/2021/nuxeo-enhanced-viewer-release-notes-2-3-0/": [
+    "O6s"
+  ],
+  "/nxdoc/2021/nuxeo-enhanced-viewer-release-notes-2-3-1/": [
+    "OkP"
+  ],
+  "/nxdoc/2021/nuxeo-enhanced-viewer-release-notes-2021-1-1/": [
+    "uDd"
+  ],
+  "/nxdoc/2021/nuxeo-retention-functional-overview/": [
+    "aVz"
+  ],
+  "/nxdoc/2021/nuxeo-retention-howto-undeclare-records/": [
+    "mU3"
+  ],
+  "/nxdoc/2021/nuxeo-retention-installation/": [
+    "whB"
+  ],
+  "/nxdoc/2021/nuxeo-retention-technical-overview/": [
+    "jqw"
+  ],
+  "/nxdoc/2021/nuxeo-retention-installation-standard/": [
+    "Rq6"
+  ],
+  "/nxdoc/2021/nuxeo-retention-installation-strict/": [
+    "sy5"
+  ],
+  "/nxdoc/2021/jsf-ui-framework/": [
+    "ZBS"
+  ],
+  "/nxdoc/2021/jsf-ui-userdoc/": [
+    "vnj"
+  ],
+  "/nxdoc/2021/actions-links-buttons-icons-tabs-and-more/": [
+    "2rI"
+  ],
+  "/nxdoc/2021/content-views/": [
+    "OzT"
+  ],
+  "/nxdoc/2021/cross-validation-with-jsf/": [
+    "zms"
+  ],
+  "/nxdoc/2021/document-list-management/": [
+    "0NU"
+  ],
+  "/nxdoc/2021/documents-display-configuration/": [
+    "O29"
+  ],
+  "/nxdoc/2021/jsf-and-ajax-tips-and-how-to-index/": [
+    "pJd"
+  ],
+  "/nxdoc/2021/jsf-ui-framework-overview/": [
+    "OEM"
+  ],
+  "/nxdoc/2021/jsf-ui-how-to-index/": [
+    "e87"
+  ],
+  "/nxdoc/2021/labels-and-translations-management/": [
+    "PqZ"
+  ],
+  "/nxdoc/2021/layouts-and-widgets-forms-listings-grids/": [
+    "oq4"
+  ],
+  "/nxdoc/2021/navigation-urls/": [
+    "r_B"
+  ],
+  "/nxdoc/2021/theme/": [
+    "R-t"
+  ],
+  "/nxdoc/2021/upgrade-to-jsf2/": [
+    "rZf"
+  ],
+  "/nxdoc/2021/document-content-views/": [
+    "nGc"
+  ],
+  "/nxdoc/2021/document-layouts/": [
+    "ilj"
+  ],
+  "/nxdoc/2021/document-views/": [
+    "Q34"
+  ],
+  "/nxdoc/2021/drag-and-drop-service-for-content-capture-html5-based/": [
+    "p7x"
+  ],
+  "/nxdoc/2021/ajax-forms-and-actions/": [
+    "1V2"
+  ],
+  "/nxdoc/2021/ajax4jsf-best-practices/": [
+    "P-e"
+  ],
+  "/nxdoc/2021/configuring-the-jsf-number-of-views/": [
+    "tMZ"
+  ],
+  "/nxdoc/2021/double-click-shield/": [
+    "W3l"
+  ],
+  "/nxdoc/2021/how-to-add-a-jsf-form-validation/": [
+    "Wws"
+  ],
+  "/nxdoc/2021/how-to-impact-another-jsf-component-from-a-command-or-select/": [
+    "_UJ"
+  ],
+  "/nxdoc/2021/how-to-register-a-jsf-tag-library/": [
+    "kzx"
+  ],
+  "/nxdoc/2021/jsf-and-javascript/": [
+    "8Le"
+  ],
+  "/nxdoc/2021/jsf-troubleshoot/": [
+    "EsV"
+  ],
+  "/nxdoc/2021/how-to-activate-ui-development-mode/": [
+    "Bdo"
+  ],
+  "/nxdoc/2021/how-to-add-a-button-in-the-jsf-ui/": [
+    "P82"
+  ],
+  "/nxdoc/2021/how-to-bubble-errors-from-the-core-layer-in-the-jsf-ui/": [
+    "CHT"
+  ],
+  "/nxdoc/2021/how-to-customize-startup-redirection/": [
+    "h0_"
+  ],
+  "/nxdoc/2021/how-to-customize-the-bulk-edit-form/": [
+    "YXc"
+  ],
+  "/nxdoc/2021/how-to-customize-the-bulk-import-form/": [
+    "vDJ"
+  ],
+  "/nxdoc/2021/how-to-customize-the-dashboard/": [
+    "CHe"
+  ],
+  "/nxdoc/2021/how-to-customize-the-error-pages/": [
+    "zRv"
+  ],
+  "/nxdoc/2021/how-to-customize-the-html5-drag-and-drop-import-with-metadata-form/": [
+    "EH8"
+  ],
+  "/nxdoc/2021/how-to-customize-the-info-view-pop-up/": [
+    "YgY"
+  ],
+  "/nxdoc/2021/how-to-customize-the-login-page/": [
+    "zwo"
+  ],
+  "/nxdoc/2021/how-to-debug-slow-page-rendering/": [
+    "Pnr"
+  ],
+  "/nxdoc/2021/how-to-display-a-button-a-tab-only-when-a-workflow-is-started-jsf/": [
+    "v3D"
+  ],
+  "/nxdoc/2021/how-to-enable-drag-and-drop-and-new-button-on-a-custom-content-view/": [
+    "Ffz"
+  ],
+  "/nxdoc/2021/how-to-make-jsf-ui-the-default-ui/": [
+    "0ms"
+  ],
+  "/nxdoc/2021/how-to-override-a-seam-component/": [
+    "HaO"
+  ],
+  "/nxdoc/2021/how-to-override-a-template/": [
+    "PUy"
+  ],
+  "/nxdoc/2021/how-to-override-the-login-page/": [
+    "d5fI"
+  ],
+  "/nxdoc/2021/how-to-use-plug-ins-in-tinymce-editor/": [
+    "daX"
+  ],
+  "/nxdoc/2021/how-to-force-locale/": [
+    "CxR"
+  ],
+  "/nxdoc/2021/how-to-upload-labels-translations-in-nuxeo-studio-i18n/": [
+    "Pyv"
+  ],
+  "/nxdoc/2021/localization-and-translation-how-to-index/": [
+    "k_A"
+  ],
+  "/nxdoc/2021/default-url-patterns/": [
+    "KXa"
+  ],
+  "/nxdoc/2021/urls-for-files/": [
+    "5VJ"
+  ],
+  "/nxdoc/2021/action-how-to-index/": [
+    "mZz"
+  ],
+  "/nxdoc/2021/actions-display/": [
+    "Hre"
+  ],
+  "/nxdoc/2021/actions-overview/": [
+    "cif"
+  ],
+  "/nxdoc/2021/filters-and-access-controls/": [
+    "ZPO"
+  ],
+  "/nxdoc/2021/incremental-layouts-and-actions/": [
+    "a0b"
+  ],
+  "/nxdoc/2021/custom-action-types/": [
+    "b-S"
+  ],
+  "/nxdoc/2021/standard-action-types/": [
+    "htM"
+  ],
+  "/nxdoc/2021/how-to-add-a-new-action-category-on-a-document-tab/": [
+    "UyE"
+  ],
+  "/nxdoc/2021/how-to-hide-a-tab-a-link-or-a-button-for-a-group-or-a-user/": [
+    "iE_"
+  ],
+  "/nxdoc/2021/how-to-make-the-new-button-appear-on-a-custom-folderish-document/": [
+    "7Iw"
+  ],
+  "/nxdoc/2021/content-view-how-to-index/": [
+    "IX0"
+  ],
+  "/nxdoc/2021/content-views-display/": [
+    "mIQ"
+  ],
+  "/nxdoc/2021/how-to-define-a-new-content-view/": [
+    "B6U"
+  ],
+  "/nxdoc/2021/how-to-display-non-folderish-documents-files-note-in-the-left-tree/": [
+    "LHE"
+  ],
+  "/nxdoc/2021/how-to-customize-the-default-content-and-trash-listings/": [
+    "ogX"
+  ],
+  "/nxdoc/2021/custom-layout-and-widget-templates/": [
+    "Kxy"
+  ],
+  "/nxdoc/2021/custom-widget-types/": [
+    "xSv"
+  ],
+  "/nxdoc/2021/generic-layout-usage/": [
+    "can"
+  ],
+  "/nxdoc/2021/layout-and-widget-definitions/": [
+    "TWA"
+  ],
+  "/nxdoc/2021/layout-and-widget-display/": [
+    "v3p"
+  ],
+  "/nxdoc/2021/layout-and-widget-how-to-index/": [
+    "2bm"
+  ],
+  "/nxdoc/2021/standard-layout-types/": [
+    "Z8i"
+  ],
+  "/nxdoc/2021/standard-widget-types/": [
+    "ggb"
+  ],
+  "/nxdoc/2021/field-binding-and-expressions/": [
+    "Z9m"
+  ],
+  "/nxdoc/2021/layout-and-widget-modes/": [
+    "8K7"
+  ],
+  "/nxdoc/2021/layout-definitions/": [
+    "_Qk"
+  ],
+  "/nxdoc/2021/widget-definitions/": [
+    "7Wz"
+  ],
+  "/nxdoc/2021/how-to-add-a-new-widget-to-the-default-summary-layout/": [
+    "i9z"
+  ],
+  "/nxdoc/2021/how-to-add-field-validation/": [
+    "PdW"
+  ],
+  "/nxdoc/2021/how-to-control-the-display-mode-of-a-widget/": [
+    "VFV"
+  ],
+  "/nxdoc/2021/how-to-create-a-n-level-select-widget/": [
+    "0z3"
+  ],
+  "/nxdoc/2021/how-to-customize-the-versioning-and-comment-widget-on-document-edit-form/": [
+    "HGW"
+  ],
+  "/nxdoc/2021/how-to-make-a-selection-based-on-the-value-of-another-value-in-a-layout/": [
+    "-cL"
+  ],
+  "/nxdoc/2021/how-to-set-a-default-date-on-a-field-at-document-creation/": [
+    "dNGf"
+  ],
+  "/nxdoc/2021/how-to-use-a-generic-widget-in-layouts/": [
+    "90z"
+  ],
+  "/nxdoc/2021/advanced-widget-types/": [
+    "dXd"
+  ],
+  "/nxdoc/2021/aggregate-widget-types/": [
+    "zeZ"
+  ],
+  "/nxdoc/2021/basic-widget-types/": [
+    "-Hl"
+  ],
+  "/nxdoc/2021/decoration-widget-types/": [
+    "deb"
+  ],
+  "/nxdoc/2021/default-widget-types-known-limitations/": [
+    "6W-"
+  ],
+  "/nxdoc/2021/listing-widget-types/": [
+    "LtW"
+  ],
+  "/nxdoc/2021/suggestion-widget-types/": [
+    "ohO"
+  ],
+  "/nxdoc/2021/summary-widget-types/": [
+    "elk"
+  ],
+  "/nxdoc/2021/tab-designer-widget-types/": [
+    "VH8"
+  ],
+  "/nxdoc/2021/theme-how-to-index/": [
+    "oup"
+  ],
+  "/nxdoc/2021/how-to-declare-the-css-and-javascript-resources-used-in-your-templates/": [
+    "x0E"
+  ],
+  "/nxdoc/2021/how-to-override-a-default-style/": [
+    "OTS"
+  ],
+  "/nxdoc/2021/browsing-content/": [
+    "R2Z"
+  ],
+  "/nxdoc/2021/case-management-with-the-nuxeo-platform/": [
+    "1bu"
+  ],
+  "/nxdoc/2021/collaborative-features/": [
+    "E4f"
+  ],
+  "/nxdoc/2021/creating-content/": [
+    "Sm0L"
+  ],
+  "/nxdoc/2021/deleting-content/": [
+    "tk6"
+  ],
+  "/nxdoc/2021/document-types/": [
+    "NV1"
+  ],
+  "/nxdoc/2021/editing-content/": [
+    "CAs"
+  ],
+  "/nxdoc/2021/exporting-documents/": [
+    "Uk0"
+  ],
+  "/nxdoc/2021/local-configuration/": [
+    "Bic"
+  ],
+  "/nxdoc/2021/managing-permissions/": [
+    "WdP"
+  ],
+  "/nxdoc/2021/managing-your-nuxeo-application/": [
+    "Aqt"
+  ],
+  "/nxdoc/2021/nuxeo-platform-concepts/": [
+    "JYQ"
+  ],
+  "/nxdoc/2021/publishing-content/": [
+    "z6D"
+  ],
+  "/nxdoc/2021/searching-the-nuxeo-platform/": [
+    "WaG"
+  ],
+  "/nxdoc/2021/traceability/": [
+    "gm2"
+  ],
+  "/nxdoc/2021/user-home/": [
+    "tXn"
+  ],
+  "/nxdoc/2021/workflows-jsf-ui/": [
+    "40i"
+  ],
+  "/nxdoc/2021/collections-jsf-ui/": [
+    "uX4"
+  ],
+  "/nxdoc/2021/preview-jsf-ui/": [
+    "aOw"
+  ],
+  "/nxdoc/2021/tags-jsf-ui/": [
+    "zjm"
+  ],
+  "/nxdoc/2021/attachments/": [
+    "r9j"
+  ],
+  "/nxdoc/2021/using-workspace-templates/": [
+    "r3K"
+  ],
+  "/nxdoc/2021/working-with-webdav/": [
+    "PHv"
+  ],
+  "/nxdoc/2021/default-search/": [
+    "_k4"
+  ],
+  "/nxdoc/2021/quick-search-jsf-ui/": [
+    "-AR"
+  ],
+  "/nxdoc/2021/saved-searches/": [
+    "rwd"
+  ],
+  "/nxdoc/2021/user-preferences/": [
+    "6_R"
+  ],
+  "/nxdoc/2021/abandoning-a-workflow/": [
+    "YIa"
+  ],
+  "/nxdoc/2021/delegating-a-task/": [
+    "5qf"
+  ],
+  "/nxdoc/2021/parallel-document-workflow/": [
+    "IwQ"
+  ],
+  "/nxdoc/2021/reassigning-a-task/": [
+    "B-j"
+  ],
+  "/nxdoc/2021/serial-document-workflow/": [
+    "UEI"
+  ],
+  "/nxdoc/2021/managing-users-and-groups/": [
+    "GQ0"
+  ],
+  "/nxdoc/2021/managing-vocabularies/": [
+    "sZX"
+  ],
+  "/nxdoc/2021/how-to-add-new-relation-types/": [
+    "pl4"
+  ],
+  "/nxdoc/2021/administration/": [
+    "rEX"
+  ],
+  "/nxdoc/2021/advanced-topics/": [
+    "0kU"
+  ],
+  "/nxdoc/2021/authentication-and-user-management/": [
+    "rkQ"
+  ],
+  "/nxdoc/2021/data-store/": [
+    "r_S"
+  ],
+  "/nxdoc/2021/events-and-messages/": [
+    "c4a"
+  ],
+  "/nxdoc/2021/installation/": [
+    "CdB"
+  ],
+  "/nxdoc/2021/nuxeo-data-privacy/": [
+    "zXH"
+  ],
+  "/nxdoc/2021/nuxeo-integration/": [
+    "3ND"
+  ],
+  "/nxdoc/2021/nuxeo-release-cycle/": [
+    "A1c"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes/": [
+    "SWQ"
+  ],
+  "/nxdoc/2021/nuxeo-server-tutorials/": [
+    "lvr"
+  ],
+  "/nxdoc/2021/platform-services/": [
+    "HcM"
+  ],
+  "/nxdoc/2021/rest-api/": [
+    "j1l"
+  ],
+  "/nxdoc/2021/runtime-and-component-model/": [
+    "aGP"
+  ],
+  "/nxdoc/2021/upgrading-the-nuxeo-platform/": [
+    "yQu"
+  ],
+  "/nxdoc/2021/adding-an-antivirus/": [
+    "-bmO"
+  ],
+  "/nxdoc/2021/integrating-with-jpa/": [
+    "OLYN"
+  ],
+  "/nxdoc/2021/nuxeo-distributions/": [
+    "Ro4"
+  ],
+  "/nxdoc/2021/call-external-app-from-nuxeo/": [
+    "Up1"
+  ],
+  "/nxdoc/2021/call-nuxeo-from-external-app/": [
+    "K18"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-1/": [
+    "pq9"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-10/": [
+    "WaC3"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-11/": [
+    "dXs"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-12/": [
+    "pl1"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-13/": [
+    "0r5"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-14/": [
+    "xIO7"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-15/": [
+    "XCu"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-16/": [
+    "GzF"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-17/": [
+    "7N1"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-18/": [
+    "c1T"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-19/": [
+    "0Mm"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-2/": [
+    "NCv"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-20/": [
+    "0mA"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-21/": [
+    "-sp"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-22/": [
+    "FFK"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-23/": [
+    "y2U"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-24/": [
+    "z_R"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-25/": [
+    "D2T"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-26/": [
+    "Xt_"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-27/": [
+    "c71"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-28/": [
+    "s2U"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-29/": [
+    "gTO"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-3/": [
+    "aGWR"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-30/": [
+    "JJA"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-31/": [
+    "ogA"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-32/": [
+    "nLr"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-33/": [
+    "Vee"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-34/": [
+    "GwO"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-35/": [
+    "nml"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-36/": [
+    "I_J"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-37/": [
+    "EHb"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-38/": [
+    "zk5"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-39/": [
+    "nDC"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-4/": [
+    "5d-"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-40/": [
+    "LaY"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-41/": [
+    "CPc"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-42/": [
+    "Ab_"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-43/": [
+    "j9v"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-5/": [
+    "Xrq"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-6/": [
+    "r8a"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-7/": [
+    "gjV"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-8/": [
+    "u1S"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-9/": [
+    "Te7"
+  ],
+  "/nxdoc/2021/NTLM-and-IE-Challenge-Response/": [
+    "eBj"
+  ],
+  "/nxdoc/2021/authentication-and-user-management-tutorials/": [
+    "I63"
+  ],
+  "/nxdoc/2021/authentication-chain-principles/": [
+    "ECe"
+  ],
+  "/nxdoc/2021/kerberos-authentication/": [
+    "uuP"
+  ],
+  "/nxdoc/2021/nuxeo-duoweb-two-factor-authentication/": [
+    "Jj8"
+  ],
+  "/nxdoc/2021/saml-20-authentication/": [
+    "Lz9"
+  ],
+  "/nxdoc/2021/shibboleth-authentication/": [
+    "OQN"
+  ],
+  "/nxdoc/2021/using-a-ldap-directory/": [
+    "Lxx"
+  ],
+  "/nxdoc/2021/using-anonymous-authentication/": [
+    "pba"
+  ],
+  "/nxdoc/2021/using-basic-http-authentication/": [
+    "S2f"
+  ],
+  "/nxdoc/2021/using-cas2-authentication/": [
+    "6b1"
+  ],
+  "/nxdoc/2021/using-form-based-authentication/": [
+    "fan"
+  ],
+  "/nxdoc/2021/using-generic-sso-authentication/": [
+    "rJx"
+  ],
+  "/nxdoc/2021/using-oauth2/": [
+    "NKD"
+  ],
+  "/nxdoc/2021/using-openid-oauth2-in-login-screen/": [
+    "hIi"
+  ],
+  "/nxdoc/2021/using-sso-portals/": [
+    "8Cc"
+  ],
+  "/nxdoc/2021/how-to-add-custom-ldap-fields-to-the-ui/": [
+    "FEG"
+  ],
+  "/nxdoc/2021/how-to-add-new-fields-to-the-user-profile-or-group-profile/": [
+    "7Ch"
+  ],
+  "/nxdoc/2021/how-to-assign-a-task-to-the-user-manager/": [
+    "-br"
+  ],
+  "/nxdoc/2021/how-to-configure-a-multidirectory-for-users-and-groups/": [
+    "hQq"
+  ],
+  "/nxdoc/2021/how-to-define-public-pages-viewable-by-anonymous-users/": [
+    "a_h"
+  ],
+  "/nxdoc/2021/how-to-implement-local-groups-or-roles-using-computed-groups/": [
+    "xxN"
+  ],
+  "/nxdoc/2021/bulk-action-framework/": [
+    "7A2"
+  ],
+  "/nxdoc/2021/common-events/": [
+    "Uxj"
+  ],
+  "/nxdoc/2021/events-and-messages-how-to-index/": [
+    "pnW"
+  ],
+  "/nxdoc/2021/how-to-customize-email-templates/": [
+    "6ii"
+  ],
+  "/nxdoc/2021/nuxeo-stream/": [
+    "dBc"
+  ],
+  "/nxdoc/2021/scheduling-periodic-events/": [
+    "uTe"
+  ],
+  "/nxdoc/2021/work-and-workmanager/": [
+    "auo"
+  ],
+  "/nxdoc/2021/bulk-actions-directory/": [
+    "eWG"
+  ],
+  "/nxdoc/2021/runtime-and-component-model-tutorials/": [
+    "uuz"
+  ],
+  "/nxdoc/2021/understanding-bundles-deployment/": [
+    "wXD"
+  ],
+  "/nxdoc/2021/how-to-contribute-to-an-extension/": [
+    "WV9"
+  ],
+  "/nxdoc/2021/how-to-create-a-service/": [
+    "AZK"
+  ],
+  "/nxdoc/2021/how-to-create-an-empty-bundle/": [
+    "byK"
+  ],
+  "/nxdoc/2021/how-to-define-a-runtime-xmap-object/": [
+    "UgQ"
+  ],
+  "/nxdoc/2021/howto-use-the-runtime-java-api/": [
+    "sPe"
+  ],
+  "/nxdoc/2021/howto-write-a-bundle-manifest/": [
+    "lAs"
+  ],
+  "/nxdoc/2021/upgrade-from-512-to-513/": [
+    "8nU"
+  ],
+  "/nxdoc/2021/upgrade-from-516-with-jcr-postgresql-to-520/": [
+    "hlQ"
+  ],
+  "/nxdoc/2021/upgrade-from-530-to-531/": [
+    "b_B"
+  ],
+  "/nxdoc/2021/upgrade-from-531-to-532/": [
+    "iJ5"
+  ],
+  "/nxdoc/2021/upgrade-from-531-with-mysql-to-532/": [
+    "ge4"
+  ],
+  "/nxdoc/2021/upgrade-from-532-to-540/": [
+    "-l5"
+  ],
+  "/nxdoc/2021/upgrade-from-541-to-542-with-oracle/": [
+    "SOH"
+  ],
+  "/nxdoc/2021/upgrade-from-542-to-55/": [
+    "1A8"
+  ],
+  "/nxdoc/2021/upgrade-from-55-to-56/": [
+    "XiD"
+  ],
+  "/nxdoc/2021/upgrade-from-56-to-58/": [
+    "KKi"
+  ],
+  "/nxdoc/2021/upgrade-from-58-to-60/": [
+    "yiI"
+  ],
+  "/nxdoc/2021/upgrade-from-60-to-lts-2015/": [
+    "tfB"
+  ],
+  "/nxdoc/2021/upgrade-from-lts-2015-following-fast-tracks/": [
+    "2yc"
+  ],
+  "/nxdoc/2021/upgrade-from-lts-2015-to-83/": [
+    "5Ua"
+  ],
+  "/nxdoc/2021/upgrade-from-lts-2015-to-lts-2016/": [
+    "VOf"
+  ],
+  "/nxdoc/2021/upgrade-from-lts-2016-following-fast-tracks/": [
+    "Fbp"
+  ],
+  "/nxdoc/2021/upgrade-from-lts-2016-to-lts-2017/": [
+    "0Tk"
+  ],
+  "/nxdoc/2021/upgrade-from-lts-2017-following-fast-tracks/": [
+    "bM0"
+  ],
+  "/nxdoc/2021/upgrade-from-lts-2017-to-lts-2019/": [
+    "9h4"
+  ],
+  "/nxdoc/2021/upgrade-from-lts-2019-to-lts-2021/": [
+    "isp"
+  ],
+  "/nxdoc/2021/from-the-old-workflow-system-to-the-new-54-workflow-system/": [
+    "zQz"
+  ],
+  "/nxdoc/2021/upgrade-to-54-and-jboss-5/": [
+    "i9i"
+  ],
+  "/nxdoc/2021/query-models-and-result-providers-migration-to-content-views-and-page-providers/": [
+    "KUj"
+  ],
+  "/nxdoc/2021/nuxeo-platform-60-packaging-changes-and-deprecations/": [
+    "oLn"
+  ],
+  "/nxdoc/2021/admin-tab-overview/": [
+    "rCP"
+  ],
+  "/nxdoc/2021/authentication-users-and-groups/": [
+    "UG7"
+  ],
+  "/nxdoc/2021/configuration-parameters-index-nuxeoconf/": [
+    "_yC"
+  ],
+  "/nxdoc/2021/configuration-templates/": [
+    "mbZ"
+  ],
+  "/nxdoc/2021/database-configuration/": [
+    "A_Z"
+  ],
+  "/nxdoc/2021/elasticsearch-setup/": [
+    "rv9"
+  ],
+  "/nxdoc/2021/file-storage-configuration/": [
+    "bIB"
+  ],
+  "/nxdoc/2021/how-to-change-context-path/": [
+    "aA5"
+  ],
+  "/nxdoc/2021/how-to-clean-up-content/": [
+    "kbc"
+  ],
+  "/nxdoc/2021/http-and-https-reverse-proxy-configuration/": [
+    "gbX"
+  ],
+  "/nxdoc/2021/implementing-encryption/": [
+    "1oc"
+  ],
+  "/nxdoc/2021/internet-information-services-iis/": [
+    "oKd"
+  ],
+  "/nxdoc/2021/jdbc-datasource/": [
+    "-dS"
+  ],
+  "/nxdoc/2021/kafka/": [
+    "_8U"
+  ],
+  "/nxdoc/2021/multiple-repositories-configuration/": [
+    "Aqy"
+  ],
+  "/nxdoc/2021/maintenance/": [
+    "PzU"
+  ],
+  "/nxdoc/2021/nuxeo-shell/": [
+    "s3t"
+  ],
+  "/nxdoc/2021/observability/": [
+    "BCD"
+  ],
+  "/nxdoc/2021/performances/": [
+    "jpX"
+  ],
+  "/nxdoc/2021/ports-usage-and-firewall-considerations/": [
+    "8BI"
+  ],
+  "/nxdoc/2021/read-acls/": [
+    "BQP"
+  ],
+  "/nxdoc/2021/redis-configuration/": [
+    "diF"
+  ],
+  "/nxdoc/2021/repository-configuration/": [
+    "X6h"
+  ],
+  "/nxdoc/2021/security-recommendations/": [
+    "rJV"
+  ],
+  "/nxdoc/2021/sensitive-configuration-data-encryption/": [
+    "sSM"
+  ],
+  "/nxdoc/2021/set-up-email-notification/": [
+    "ebv"
+  ],
+  "/nxdoc/2021/setup-best-practices/": [
+    "aS9"
+  ],
+  "/nxdoc/2021/trust-store-and-key-store-configuration/": [
+    "sIg"
+  ],
+  "/nxdoc/2021/workmanager-dlq/": [
+    "jPp"
+  ],
+  "/nxdoc/2021/connecting-nuxeo-to-the-database/": [
+    "g4I"
+  ],
+  "/nxdoc/2021/h2-limitations/": [
+    "Cx8"
+  ],
+  "/nxdoc/2021/mariadb/": [
+    "OhN"
+  ],
+  "/nxdoc/2021/marklogic/": [
+    "3-L"
+  ],
+  "/nxdoc/2021/microsoft-sql-server/": [
+    "2Ao"
+  ],
+  "/nxdoc/2021/mongodb/": [
+    "AkI"
+  ],
+  "/nxdoc/2021/mysql/": [
+    "cCx"
+  ],
+  "/nxdoc/2021/oracle/": [
+    "srJ"
+  ],
+  "/nxdoc/2021/postgresql/": [
+    "G1A"
+  ],
+  "/nxdoc/2021/backup-and-restore/": [
+    "Bt1j"
+  ],
+  "/nxdoc/2021/counting-documents/": [
+    "_0_"
+  ],
+  "/nxdoc/2021/garbage-collecting-orphaned-binaries/": [
+    "OE3"
+  ],
+  "/nxdoc/2021/garbage-collecting-orphaned-blobs/": [
+    "krq"
+  ],
+  "/nxdoc/2021/hotfixes-installation-notes-for-nuxeo-platform-lts-2021/": [
+    "3D6"
+  ],
+  "/nxdoc/2021/purging-audit-logs-nxp_logs/": [
+    "ChD"
+  ],
+  "/nxdoc/2021/reporting-problems/": [
+    "3s8"
+  ],
+  "/nxdoc/2021/health-check/": [
+    "D2w"
+  ],
+  "/nxdoc/2021/logs/": [
+    "wjr"
+  ],
+  "/nxdoc/2021/metrics/": [
+    "dT6"
+  ],
+  "/nxdoc/2021/profiling/": [
+    "BVi"
+  ],
+  "/nxdoc/2021/tracing/": [
+    "3xn"
+  ],
+  "/nxdoc/2021/managing-performance/": [
+    "WEG"
+  ],
+  "/nxdoc/2021/tracking-the-performance-of-the-nuxeo-platform/": [
+    "I1z"
+  ],
+  "/nxdoc/2021/extending-the-shell/": [
+    "IG0"
+  ],
+  "/nxdoc/2021/nuxeo-shell-batch-mode/": [
+    "q83"
+  ],
+  "/nxdoc/2021/nuxeo-shell-command-index/": [
+    "HA2"
+  ],
+  "/nxdoc/2021/shell-commands/": [
+    "Ccf"
+  ],
+  "/nxdoc/2021/shell-documentation/": [
+    "Ft8"
+  ],
+  "/nxdoc/2021/shell-features/": [
+    "t3f"
+  ],
+  "/nxdoc/2021/shell-namespaces/": [
+    "nwM"
+  ],
+  "/nxdoc/2021/built-in-commands/": [
+    "61-"
+  ],
+  "/nxdoc/2021/configuration-commands/": [
+    "5pr"
+  ],
+  "/nxdoc/2021/filesystem-commands/": [
+    "hH6"
+  ],
+  "/nxdoc/2021/nuxeo-automation-commands/": [
+    "9IC"
+  ],
+  "/nxdoc/2021/nuxeo-server-commands/": [
+    "riy"
+  ],
+  "/nxdoc/2021/data-modeling/": [
+    "C3E"
+  ],
+  "/nxdoc/2021/indexing-and-query/": [
+    "Rhz"
+  ],
+  "/nxdoc/2021/persistence-architecture/": [
+    "u5E"
+  ],
+  "/nxdoc/2021/security/": [
+    "I_h"
+  ],
+  "/nxdoc/2021/acls/": [
+    "g0W"
+  ],
+  "/nxdoc/2021/file-download-security-policies/": [
+    "Tch"
+  ],
+  "/nxdoc/2021/how-to-grant-the-edit-permission-without-the-remove-permission/": [
+    "T6G"
+  ],
+  "/nxdoc/2021/nuxeo-security-system/": [
+    "ecp"
+  ],
+  "/nxdoc/2021/security-policy-service/": [
+    "nxF"
+  ],
+  "/nxdoc/2021/audit/": [
+    "jPy"
+  ],
+  "/nxdoc/2021/available-facets/": [
+    "Bg9"
+  ],
+  "/nxdoc/2021/data-lists-and-directories/": [
+    "EjJ"
+  ],
+  "/nxdoc/2021/data-modeling-tutorials/": [
+    "-jz"
+  ],
+  "/nxdoc/2021/downloading-files/": [
+    "va4"
+  ],
+  "/nxdoc/2021/field-constraints-and-validation/": [
+    "osh"
+  ],
+  "/nxdoc/2021/schema-fields/": [
+    "uHp"
+  ],
+  "/nxdoc/2021/versioning/": [
+    "2bH"
+  ],
+  "/nxdoc/2021/directory-and-ui/": [
+    "efF"
+  ],
+  "/nxdoc/2021/how-to-add-a-new-vocabulary/": [
+    "vTx"
+  ],
+  "/nxdoc/2021/how-to-configure-a-new-directory-cache/": [
+    "mCa"
+  ],
+  "/nxdoc/2021/how-to-populate-a-directory-with-csv/": [
+    "HJ8"
+  ],
+  "/nxdoc/2021/how-to-translate-a-vocabulary/": [
+    "N2i"
+  ],
+  "/nxdoc/2021/how-to-add-complex-fields-on-your-document-type/": [
+    "BrP"
+  ],
+  "/nxdoc/2021/how-to-customize-document-validation/": [
+    "wRG"
+  ],
+  "/nxdoc/2021/how-to-define-a-document-type/": [
+    "PR6"
+  ],
+  "/nxdoc/2021/how-to-enable-add-ons-features-on-custom-document-type/": [
+    "Fe7"
+  ],
+  "/nxdoc/2021/how-to-export-data-using-document-template-and-automation/": [
+    "-VX9"
+  ],
+  "/nxdoc/2021/how-to-override-existing-document-types/": [
+    "Nk6"
+  ],
+  "/nxdoc/2021/how-to-use-trash-feature/": [
+    "Var"
+  ],
+  "/nxdoc/2021/configuring-the-elasticsearch-mapping/": [
+    "qJx"
+  ],
+  "/nxdoc/2021/elasticsearch-highlights/": [
+    "1-l"
+  ],
+  "/nxdoc/2021/elasticsearch-hints-cheat-sheet/": [
+    "p8S"
+  ],
+  "/nxdoc/2021/elasticsearch-indexing-logic/": [
+    "bGC"
+  ],
+  "/nxdoc/2021/elasticsearch-passthrough/": [
+    "w0M"
+  ],
+  "/nxdoc/2021/full-text-queries/": [
+    "REwe"
+  ],
+  "/nxdoc/2021/moving-load-from-database-to-elasticsearch/": [
+    "KY1"
+  ],
+  "/nxdoc/2021/nxql/": [
+    "j_D"
+  ],
+  "/nxdoc/2021/indexing-and-querying-how-to-index/": [
+    "aEx"
+  ],
+  "/nxdoc/2021/page-provider-aggregates/": [
+    "ZR8"
+  ],
+  "/nxdoc/2021/page-providers/": [
+    "pwX"
+  ],
+  "/nxdoc/2021/quick-search/": [
+    "6oG"
+  ],
+  "/nxdoc/2021/how-to-make-elasticsearch-hints-extension-point/": [
+    "1iY"
+  ],
+  "/nxdoc/2021/how-to-configure-a-new-default-search-form-in-the-search-tab/": [
+    "faC"
+  ],
+  "/nxdoc/2021/how-to-configure-a-search-filter-with-facets-and-other-aggregates/": [
+    "_Uh"
+  ],
+  "/nxdoc/2021/how-to-fetch-documents-with-a-query-on-date-parameters/": [
+    "kze"
+  ],
+  "/nxdoc/2021/how-to-make-a-page-provider-or-content-view-query-elasticsearch-index/": [
+    "iSO"
+  ],
+  "/nxdoc/2021/using-cmisql-from-java/": [
+    "VUP"
+  ],
+  "/nxdoc/2021/dbs/": [
+    "eXu"
+  ],
+  "/nxdoc/2021/file-storage/": [
+    "IyS"
+  ],
+  "/nxdoc/2021/vcs/": [
+    "Kw6"
+  ],
+  "/nxdoc/2021/dbs-cache/": [
+    "NEIL"
+  ],
+  "/nxdoc/2021/examples-of-sql-generated-by-vcs/": [
+    "1jf"
+  ],
+  "/nxdoc/2021/internal-vcs-model/": [
+    "mx_"
+  ],
+  "/nxdoc/2021/java-data-structures-and-caching/": [
+    "ngK"
+  ],
+  "/nxdoc/2021/performance-recommendations/": [
+    "uwn"
+  ],
+  "/nxdoc/2021/vcs-tables/": [
+    "rCM"
+  ],
+  "/nxdoc/2021/automation/": [
+    "E1m"
+  ],
+  "/nxdoc/2021/batch-handler/": [
+    "dpu"
+  ],
+  "/nxdoc/2021/binary-metadata/": [
+    "N9v"
+  ],
+  "/nxdoc/2021/collections/": [
+    "hFg"
+  ],
+  "/nxdoc/2021/comments/": [
+    "6IJ"
+  ],
+  "/nxdoc/2021/conversion/": [
+    "jFX"
+  ],
+  "/nxdoc/2021/data-visualization/": [
+    "LP8Y"
+  ],
+  "/nxdoc/2021/file-manager/": [
+    "1Y1"
+  ],
+  "/nxdoc/2021/nuxeo-core-import-export-api/": [
+    "5EP"
+  ],
+  "/nxdoc/2021/preview/": [
+    "VNSM"
+  ],
+  "/nxdoc/2021/publisher/": [
+    "tp9"
+  ],
+  "/nxdoc/2021/renditions/": [
+    "xqW"
+  ],
+  "/nxdoc/2021/tagging/": [
+    "c7V"
+  ],
+  "/nxdoc/2021/thumbnail/": [
+    "qzc"
+  ],
+  "/nxdoc/2021/transient-store/": [
+    "UKu"
+  ],
+  "/nxdoc/2021/trash-service/": [
+    "lDnR"
+  ],
+  "/nxdoc/2021/webengine-jax-rs/": [
+    "fY8"
+  ],
+  "/nxdoc/2021/workflow/": [
+    "G4g"
+  ],
+  "/nxdoc/2021/conversion-how-to-index/": [
+    "LlV"
+  ],
+  "/nxdoc/2021/how-to-automatically-convert-a-document-to-pdf/": [
+    "Taa"
+  ],
+  "/nxdoc/2021/how-to-contribute-a-command-line-converter/": [
+    "Tj_"
+  ],
+  "/nxdoc/2021/how-to-use-pdf-conversion-operations-with-studio/": [
+    "vys"
+  ],
+  "/nxdoc/2021/how-to-change-the-default-document-type-when-importing-a-file-in-the-nuxeo-platform/": [
+    "ITf"
+  ],
+  "/nxdoc/2021/automation-chain-exception/": [
+    "Yll"
+  ],
+  "/nxdoc/2021/automation-chain/": [
+    "kBS"
+  ],
+  "/nxdoc/2021/automation-helpers/": [
+    "Cqg"
+  ],
+  "/nxdoc/2021/automation-how-to-index/": [
+    "tEV"
+  ],
+  "/nxdoc/2021/automation-rest-response/": [
+    "LLo"
+  ],
+  "/nxdoc/2021/automation-scripting/": [
+    "aiD"
+  ],
+  "/nxdoc/2021/automation-tracing/": [
+    "9lL"
+  ],
+  "/nxdoc/2021/calling-automation-from-java/": [
+    "sJr"
+  ],
+  "/nxdoc/2021/content-automation-concepts/": [
+    "JuLQ"
+  ],
+  "/nxdoc/2021/contributing-an-operation/": [
+    "fyg"
+  ],
+  "/nxdoc/2021/contributing-new-input-output-types/": [
+    "agF"
+  ],
+  "/nxdoc/2021/debugging-automation-chains/": [
+    "Qa-"
+  ],
+  "/nxdoc/2021/document-templates-and-automation-rendering-service/": [
+    "rI-"
+  ],
+  "/nxdoc/2021/operations-index/": [
+    "psX"
+  ],
+  "/nxdoc/2021/returning-a-custom-result-with-automation/": [
+    "QmQ"
+  ],
+  "/nxdoc/2021/use-of-mvel-in-automation-chains/": [
+    "hYU"
+  ],
+  "/nxdoc/2021/using-curl/": [
+    "xIo"
+  ],
+  "/nxdoc/2021/how-to-create-an-automation-chain/": [
+    "tuU"
+  ],
+  "/nxdoc/2021/how-to-fetch-a-document-by-its-id-or-path/": [
+    "BUt"
+  ],
+  "/nxdoc/2021/how-to-inherit-metadata-from-a-parent-document/": [
+    "rAg"
+  ],
+  "/nxdoc/2021/how-to-quickly-generate-a-pdf-using-document-template/": [
+    "Sx2"
+  ],
+  "/nxdoc/2021/how-to-write-reusable-automation-chains/": [
+    "Fg6"
+  ],
+  "/nxdoc/2021/howto-manage-relations/": [
+    "EJE"
+  ],
+  "/nxdoc/2021/default-webengine-applications/": [
+    "YJe"
+  ],
+  "/nxdoc/2021/session-and-transaction-management/": [
+    "_Wp"
+  ],
+  "/nxdoc/2021/webengine-tutorials/": [
+    "Sy5"
+  ],
+  "/nxdoc/2021/hello-world/": [
+    "z6J"
+  ],
+  "/nxdoc/2021/module-extensibility/": [
+    "qGS"
+  ],
+  "/nxdoc/2021/using-freemarker-template-language-ftl/": [
+    "H9X"
+  ],
+  "/nxdoc/2021/web-object-model/": [
+    "YSq"
+  ],
+  "/nxdoc/2021/working-with-documents/": [
+    "WkV"
+  ],
+  "/nxdoc/2021/about-tasks/": [
+    "tex"
+  ],
+  "/nxdoc/2021/escalation-service/": [
+    "LIt"
+  ],
+  "/nxdoc/2021/runtime-instantiation-and-execution-logic/": [
+    "WZq"
+  ],
+  "/nxdoc/2021/useful-definitions/": [
+    "TXW"
+  ],
+  "/nxdoc/2021/variables-available-in-the-automation-context/": [
+    "Ljn"
+  ],
+  "/nxdoc/2021/workflow-apis/": [
+    "VUm"
+  ],
+  "/nxdoc/2021/workflow-audit-log/": [
+    "aWj"
+  ],
+  "/nxdoc/2021/workflow-engine-faq/": [
+    "VeA"
+  ],
+  "/nxdoc/2021/workflow-how-to-index/": [
+    "32v"
+  ],
+  "/nxdoc/2021/workflow-instance-properties/": [
+    "Hvu"
+  ],
+  "/nxdoc/2021/workflow-models-packaging/": [
+    "-9z"
+  ],
+  "/nxdoc/2021/workflow-naming-conventions/": [
+    "323"
+  ],
+  "/nxdoc/2021/workflow-node-properties/": [
+    "SvpJ"
+  ],
+  "/nxdoc/2021/how-to-complete-a-workflow-task-programmatically/": [
+    "GHT"
+  ],
+  "/nxdoc/2021/how-to-display-a-buttona-tab-only-when-a-workflow-is-started/": [
+    "Scp"
+  ],
+  "/nxdoc/2021/how-to-follow-a-transition-if-user-is-member-of-a-group/": [
+    "rpB"
+  ],
+  "/nxdoc/2021/how-to-make-a-simple-task-assignment-to-one-or-many-users/": [
+    "P3D"
+  ],
+  "/nxdoc/2021/how-to-modify-a-workflow-variable-outside-of-workflow-context/": [
+    "Fi7"
+  ],
+  "/nxdoc/2021/how-to-programmatically-test-workflow/": [
+    "L3o"
+  ],
+  "/nxdoc/2021/how-to-query-workflow-objects/": [
+    "ZC8"
+  ],
+  "/nxdoc/2021/how-to-refresh-the-task-widget-on-the-summary-tab/": [
+    "LbA"
+  ],
+  "/nxdoc/2021/how-to-save-work-in-progress-task/": [
+    "1Fb"
+  ],
+  "/nxdoc/2021/how-to-set-a-default-value-on-a-date-field-of-a-task-form/": [
+    "-Q-"
+  ],
+  "/nxdoc/2021/how-to-set-up-a-tasks-dashboard/": [
+    "-3O"
+  ],
+  "/nxdoc/2021/cmis/": [
+    "uN_"
+  ],
+  "/nxdoc/2021/content-enrichers/": [
+    "QHr"
+  ],
+  "/nxdoc/2021/cross-origin-resource-sharing-cors/": [
+    "pAG"
+  ],
+  "/nxdoc/2021/error-handling/": [
+    "_ZJ"
+  ],
+  "/nxdoc/2021/json-marshalling/": [
+    "27G"
+  ],
+  "/nxdoc/2021/nuxeo-api-playground/": [
+    "IfS"
+  ],
+  "/nxdoc/2021/request-authentication/": [
+    "WEy"
+  ],
+  "/nxdoc/2021/rest-api-endpoints/": [
+    "MJe"
+  ],
+  "/nxdoc/2021/rest-api-entity-types/": [
+    "QYL"
+  ],
+  "/nxdoc/2021/rest-api-howtos/": [
+    "PNC"
+  ],
+  "/nxdoc/2021/rest-api-web-adapters/": [
+    "8LwM"
+  ],
+  "/nxdoc/2021/special-http-headers/": [
+    "YyA"
+  ],
+  "/nxdoc/2021/webdav/": [
+    "3dJ"
+  ],
+  "/nxdoc/2021/creating-your-own-marshaller/": [
+    "bde"
+  ],
+  "/nxdoc/2021/default-json-marshallers/": [
+    "MzP"
+  ],
+  "/nxdoc/2021/document-json-extended-fields/": [
+    "IqU"
+  ],
+  "/nxdoc/2021/enriching-extending-overriding-marshallers/": [
+    "Brt"
+  ],
+  "/nxdoc/2021/parameterizing-reusing-marshallers/": [
+    "eE5"
+  ],
+  "/nxdoc/2021/testing-json-data/": [
+    "gWL"
+  ],
+  "/nxdoc/2021/howto-contribute-to-the-rest-api/": [
+    "-lk"
+  ],
+  "/nxdoc/2021/howto-develop-with-angular2/": [
+    "9Vr"
+  ],
+  "/nxdoc/2021/howto-upload-file-nuxeo-using-rest-api/": [
+    "idK"
+  ],
+  "/nxdoc/2021/batch-upload-endpoint/": [
+    "Vj1"
+  ],
+  "/nxdoc/2021/command-endpoint/": [
+    "MEk"
+  ],
+  "/nxdoc/2021/document-resources-endpoints/": [
+    "Wkv"
+  ],
+  "/nxdoc/2021/oauth2-endpoint/": [
+    "01s"
+  ],
+  "/nxdoc/2021/query-endpoint/": [
+    "1bw"
+  ],
+  "/nxdoc/2021/search-endpoints/": [
+    "qpb"
+  ],
+  "/nxdoc/2021/workflow-task-endpoints/": [
+    "1CX"
+  ],
+  "/nxdoc/2021/filtering-exposed-operations/": [
+    "6WG"
+  ],
+  "/nxdoc/2021/compatibility-matrix/": [
+    "AbQ"
+  ],
+  "/nxdoc/2021/docker-image/": [
+    "M2M"
+  ],
+  "/nxdoc/2021/how-to-estimate-volume-usage/": [
+    "amH"
+  ],
+  "/nxdoc/2021/installation-next-steps/": [
+    "8X1"
+  ],
+  "/nxdoc/2021/nuxeo-and-redis/": [
+    "5ss"
+  ],
+  "/nxdoc/2021/nuxeo-cluster-architecture/": [
+    "o3x"
+  ],
+  "/nxdoc/2021/nuxeo-storage-alternatives/": [
+    "nt5"
+  ],
+  "/nxdoc/2021/nuxeoctl-and-control-panel-usage/": [
+    "jhD"
+  ],
+  "/nxdoc/2021/platform-as-a-service/": [
+    "Dm8"
+  ],
+  "/nxdoc/2021/registering-your-nuxeo-instance/": [
+    "CzJ"
+  ],
+  "/nxdoc/2021/tomcat-server-zip/": [
+    "4Nm"
+  ],
+  "/nxdoc/2021/build-a-custom-docker-image/": [
+    "t8Z"
+  ],
+  "/nxdoc/2021/quickstart-docker-nuxeo/": [
+    "fEQ"
+  ],
+  "/nxdoc/2021/installing-and-setting-up-related-software/": [
+    "u3K"
+  ],
+  "/nxdoc/2021/installing-the-nuxeo-platform-on-linux/": [
+    "qHL"
+  ],
+  "/nxdoc/2021/installing-the-nuxeo-platform-on-windows/": [
+    "bRP"
+  ],
+  "/nxdoc/2021/server-start-and-stop/": [
+    "aLO"
+  ],
+  "/nxdoc/2021/configuring-the-nuxeo-platform-as-a-daemon-with-systemd/": [
+    "xXm"
+  ],
+  "/nxdoc/2021/configuring-the-nuxeo-platform-as-a-daemon-with-sysvinit/": [
+    "Zia"
+  ],
+  "/nxdoc/2021/installing-the-nuxeo-platform-as-a-windows-service/": [
+    "UeY"
+  ],
+  "/nxdoc/2021/running-multiple-server-instances-in-windows/": [
+    "Okd"
+  ],
+  "/nxdoc/2021/nuxeo-architecture-components/": [
+    "Buu"
+  ],
+  "/nxdoc/2021/nuxeo-architecture-introduction/": [
+    "jS0"
+  ],
+  "/nxdoc/2021/nuxeo-reference-architectures/": [
+    "hY0"
+  ],
+  "/nxdoc/2021/nuxeo-scalability-options/": [
+    "8j7"
+  ],
+  "/nxdoc/2021/compact-architecture-with-kafka/": [
+    "WK5"
+  ],
+  "/nxdoc/2021/compact-architecture-with-redis/": [
+    "lmr"
+  ],
+  "/nxdoc/2021/distributed-architecture-with-kafka/": [
+    "RG5"
+  ],
+  "/nxdoc/2021/database-architecture/": [
+    "oxx"
+  ],
+  "/nxdoc/2021/elasticsearch-architecture/": [
+    "WQV"
+  ],
+  "/nxdoc/2021/file-storage-architecture/": [
+    "4cLz"
+  ],
+  "/nxdoc/2021/load-balancers-architecture/": [
+    "lqp"
+  ],
+  "/nxdoc/2021/messaging-system-architecture/": [
+    "HcS"
+  ],
+  "/nxdoc/2021/nuxeo-server-architecture/": [
+    "SmW"
+  ],
+  "/nxdoc/2021/reverse-proxy-architecture/": [
+    "LVJ"
+  ],
+  "/nxdoc/2021/pubsub-architecture/": [
+    "E0X"
+  ],
+  "/nxdoc/2021/redis-architecture/": [
+    "ZRV"
+  ],
+  "/nxdoc/web-ui-release-notes-3-1-2/": [
+    "g03"
+  ],
+  "/nxdoc/web-ui-release-notes-3-1-3/": [
+    "NMc"
+  ],
+  "/nxdoc/web-ui-upgrade-notes-lts-2023/": [
+    "KkFc"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2023-1/": [
+    "-AV"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2023-2/": [
+    "yAw"
+  ],
+  "/nxdoc/upgrade-from-lts-2021-to-lts-2023/": [
+    "5vm"
+  ],
+  "/nxdoc/search-setup/": [
+    "kJG"
+  ],
+  "/nxdoc/hotfixes-installation-notes-for-nuxeo-platform-lts-2023/": [
+    "76J"
+  ],
+  "/nxdoc/nuxeo-retention-ensure-file-deletion-traceability/": [
+    "Ida"
+  ],
+  "/nxdoc/nuxeo-retention-howto-undeclare-records/": [
+    "NwK"
+  ],
+  "/nxdoc/nuxeo-retention-installation-strict/": [
+    "js5"
+  ],
+  "/javadoc/2023-lts/": [
+    "3tI"
+  ],
+  "/client-apps/5.3.1-nuxeo-drive-release-notes/": [
+    "QjK"
+  ],
+  "/studio/Overview-of-Account-Management-Changes-with-2023.1-Release/": [
+    "84c"
+  ],
+  "/studio/studio-updates-2023-07/": [
+    "7jb"
+  ],
+  "/rest-api/1/configuration-endpoint/": [
+    "9HO"
+  ],
+  "/rest-api/1/scheduler-endpoint/": [
+    "2JO"
+  ],
+  "/client-apps/5.3.2-nuxeo-drive-release-notes/": [
+    "EsX"
+  ],
+  "/nxdoc/web-ui-release-notes-3-1-4/": [
+    "RLj"
+  ],
+  "/nxdoc/nuxeo-mail-amazon-ses/": [
+    "KQb"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2023-3/": [
+    "fqX"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2023-4/": [
+    "vpH"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2023-5/": [
+    "eFM"
+  ],
+  "/nxdoc/nuxeo-server-release-notes-2023-6/": [
+    "gHx"
+  ],
+  "/nxdoc/2021/web-ui-release-notes-3-0-28/": [
+    "3qt"
+  ],
+  "/nxdoc/2021/web-ui-release-notes-3-0-29/": [
+    "etg"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-44/": [
+    "VaL"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-45/": [
+    "dBf"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-46/": [
+    "TUS"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-47/": [
+    "0j7"
+  ],
+  "/nxdoc/2021/nuxeo-server-release-notes-2021-48/": [
+    "cIT"
   ]
 }

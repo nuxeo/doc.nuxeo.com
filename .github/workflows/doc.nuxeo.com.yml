@@ -1,0 +1,77 @@
+name: Build and Deploy doc.nuxeo.com
+
+on:
+  push:
+    branches:
+      - master
+      - development
+      - master-nx-assets
+
+jobs:
+  documentation_ci:
+    name: Build & Publish documentation to ${{ github.ref_name == 'master' && 'production' || 'development' }}
+    runs-on: doc
+    environment:
+      name: ${{ github.ref_name == 'master' && 'production' || 'development' }}
+    steps:
+      
+      - name: Configure SSH client
+        run: |
+          echo "$SSH_CONFIG" >> $HOME/.ssh/config
+        env:
+          SSH_CONFIG: "${{ secrets.SSH_CONFIG }}"
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@d4b9b8ff72958532804b70bbe600ad43b36d5f2e  # v0.8.0
+        with:
+          ssh-private-key: ${{ secrets.SERVER_SSH_PRIVATE_KEY }}
+
+      - name: Checkout code
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65 # v4.0.0
+        with:
+          node-version: '14'
+
+      - name: Check Versions and Save to File
+        run: |
+          echo "git $(git --version)" > runtime-versions.txt
+          echo "node version $(node --version)" >> runtime-versions.txt
+          echo "npm version $(npm --version)" >> runtime-versions.txt
+          echo "IP $(curl -s ipinfo.io/ip)" >> runtime-versions.txt
+
+      - name: Install dependencies
+        run: npm ci --registry="https://registry.npmjs.org" || npm install --registry="https://registry.npmjs.org"
+
+      - name: Build
+        env:
+          ALGOLIA_KEY: ${{ secrets.NX_TOKEN }}
+          DEBUG_FILE_LEVEL: debug
+        run: npm start
+
+      - name: Generate Nginx Redirects
+        run: |
+          bin/redirects-yml2nginx > redirects.txt
+          echo > redirects_pageid.txt
+
+      - name: Deploy to Server
+        run: |
+          rsync -Wxvurk --delete site/ "${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/opt/www/doc/"
+          rsync redirects.txt "${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/etc/nginx/redirects.txt"
+          rsync redirects_pageid.txt ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/etc/nginx/redirects_pageid.txt
+
+      - name: Nginx Config Test and Restart
+        run: |
+            ssh "${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}" \
+                   "service nginx configtest && service nginx restart"
+
+      - name: Archive Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: |
+            redirects_pageid.*
+            redirects.*
+            *.txt
+            npm-debug.log
