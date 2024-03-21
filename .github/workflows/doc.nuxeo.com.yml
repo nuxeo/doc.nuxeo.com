@@ -5,7 +5,9 @@ on:
     branches:
       - master
       - development
-      - master-nx-assets
+  schedule:
+    - cron: '0 0 * * *' # Every night at midnight
+  workflow_dispatch:  # Manual triggering
 
 jobs:
   documentation_ci:
