@@ -106,65 +106,70 @@ default:
     java:
       url: git@github.com:nuxeo/doc.nuxeo.com-client-java.git
       branches:
+        '3.14':
+          label: '3.14'
+          url_path: '3.14'
+          order: 0
         '3.13':
           label: '3.13'
           url_path: '3.13'
-          order: 0
+          noindex: true
+          order: 10
         '3.12':
           label: '3.12'
           url_path: '3.12'
           noindex: true
-          order: 10
+          order: 20
         '3.11':
           label: '3.11'
           url_path: '3.11'
           noindex: true
-          order: 20
+          order: 30
         '3.10':
           label: '3.10'
           url_path: '3.10'
           noindex: true
-          order: 30
+          order: 40
         '3.9':
           label: '3.9'
           url_path: '3.9'
           noindex: true
-          order: 40
+          order: 50
         '3.8':
           label: '3.8'
           url_path: '3.8'
           noindex: true
-          order: 50
+          order: 60
         '3.7':
           label: '3.7'
           url_path: '3.7'
           noindex: true
-          order: 60
+          order: 70
         '3.6':
           label: '3.6'
           url_path: '3.6'
           noindex: true
-          order: 70
+          order: 80
         '3.5':
           label: '3.5'
           url_path: '3.5'
           noindex: true
-          order: 80
+          order: 90
         '3.4':
           label: '3.4'
           url_path: '3.4'
           noindex: true
-          order: 90
+          order: 100
         '3.3':
           label: '3.3'
           url_path: '3.3'
           noindex: true
-          order: 100
+          order: 110
         '3.2':
           label: '3.2'
           url_path: '3.2'
           noindex: true
-          order: 110
+          order: 120
     rest:
       url: git@github.com:nuxeo/doc.nuxeo.com-rest-api.git
       branches:
