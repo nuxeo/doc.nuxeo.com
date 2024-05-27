@@ -9,7 +9,7 @@ on:
 jobs:
   documentation_ci:
     name: Build & Publish documentation to ${{ github.ref_name == 'master' && 'production' || 'development' }}
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     environment:
       name: ${{ github.ref_name == 'master' && 'production' || 'development' }}
     steps:
