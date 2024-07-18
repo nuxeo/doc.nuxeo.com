@@ -8,7 +8,7 @@ jobs:
     name: Build & Publish documentation to ${{ github.ref_name == 'master' && 'production' || 'development' || 'DevOps-268' }}
     runs-on: ubuntu-latest
     environment:
-      name: ${{ github.ref_name == 'master' && 'production'  || 'development' || 'DevOps-268' }}
+      name: ${{ github.ref_name == 'master' && 'production'  || github.ref_name }}
     steps:
       - name: Install SSH key for Bastion
         uses: shimataro/ssh-key-action@v2
