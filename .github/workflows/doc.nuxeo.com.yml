@@ -6,7 +6,7 @@ on:
 jobs:
   documentation_ci:
     name: Build & Publish documentation to ${{ github.ref_name == 'master' && 'production' || 'development' || 'DevOps-268' }}
-    runs-on: ubuntu-latest
+    runs-on: nuxeo-doc
     environment:
       name: ${{ github.ref_name == 'master' && 'production'  || 'development' || 'DevOps-268' }}
     steps:
