@@ -26,6 +26,12 @@ jobs:
           known_hosts: ${{ secrets.KNOWN_HOSTS_OF_TARGET }}
           config: ${{ secrets.CONFIG }}
 
+      - name: Setup SSH
+        run: |
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
       - name: Checkout code
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
