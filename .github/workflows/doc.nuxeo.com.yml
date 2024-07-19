@@ -18,22 +18,13 @@ jobs:
           known_hosts: ${{ secrets.KNOWN_HOSTS_OF_BASTION }}
           config: ${{ secrets.CONFIG }}
   
-<<<<<<< HEAD
       - name: Install SSH key of Lethe server
-=======
-      - name: Install SSH key of target
->>>>>>> 38cdd233a6dcd0b1660974cbb37c3a4fe5e4f090
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.DEV_TOOLS_EC2_PRIVATE_KEY }}
           name: id_rsa-target
           known_hosts: ${{ secrets.KNOWN_HOSTS_OF_TARGET }}
           config: ${{ secrets.CONFIG }}
-<<<<<<< HEAD
-=======
-
->>>>>>> 38cdd233a6dcd0b1660974cbb37c3a4fe5e4f090
-
 
       - name: Set up SSH for git checkout
         uses: webfactory/ssh-agent@d4b9b8ff72958532804b70bbe600ad43b36d5f2e  # v0.8.0
