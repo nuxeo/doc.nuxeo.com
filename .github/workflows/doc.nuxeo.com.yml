@@ -64,9 +64,9 @@ jobs:
 
       - name: Deploy to Server
         run: |
-          rsync -Wxvurk --delete site/ "ssh -o StrictHostKeyChecking=no" -vz lethe.nuxeo.com:"/opt/www/doc/"
-          rsync redirects.txt "ssh -o StrictHostKeyChecking=no" -vz lethe.nuxeo.com:"/tmp/redirects.txt"
-          rsync redirects_pageid.txt "ssh -o StrictHostKeyChecking=no" -vz lethe.nuxeo.com:"/tmp/redirects_pageid.txt"
+          rsync -Wxvurk --delete site/ "lethe.nuxeo.com:/opt/www/doc/"
+          rsync redirects.txt "lethe.nuxeo.com:/tmp/redirects.txt"
+          rsync redirects_pageid.txt "lethe.nuxeo.com:/tmp/redirects_pageid.txt"
           ssh -o StrictHostKeyChecking=no lethe.nuxeo.com "sudo mv /tmp/redirects.txt /etc/apache2/redirects.txt"
           ssh -o StrictHostKeyChecking=no lethe.nuxeo.com "sudo mv /tmp/redirects_pageid.txt /etc/apache2/redirects_pageid.txt"
 
