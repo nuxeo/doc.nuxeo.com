@@ -41,7 +41,7 @@ console.log(
   Object.entries(shortlinks)
     .map(([url, shortlink_arr]) =>
       shortlink_arr
-        .map((shortlink) => `rewrite ^/n/${shortlink}/?\t${url}\tpermanent;`)
+        .map((shortlink) => `RewriteRule ^/n/${shortlink}/?\t${url}\t[R=permanent,L]`)
         .join('\n')
     )
     .join('\n')
