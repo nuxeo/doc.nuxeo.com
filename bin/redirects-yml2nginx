@@ -25,7 +25,7 @@ const formater = {
     target = escape_spaces(target);
 
     // Build output string
-    return `RewriteRule ${source}\t${target}\t${type};`;
+    return `RewriteRule ${source}\t${target}\t${type}`;
   },
   reverse_proxy: (source, target) => `location ${source} {
     proxy_pass ${target};
