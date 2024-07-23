@@ -27,9 +27,10 @@ const formater = {
     // Build output string
     return `RewriteRule ${source}\t${target}\t${type}`;
   },
-  reverse_proxy: (source, target) => `location ${source} {
-    proxy_pass ${target};
-}`
+  reverse_proxy: (source, target) => `<Location ${source}>
+    ProxyPass ${target}
+    ProxyPassReverse ${target}
+  </Location>`
 };
 
 const default_type = '[R=permanent,L]';
@@ -72,7 +73,7 @@ console.log(
         target_config = { target: target_config };
       }
       const { target, type = default_type } = target_config;
-      const format_type = type === default_type ? 'redirect' : type;
+      const format_type = type === default_type ? '[R=302,L]' : type;
 
       if (typeof formater[format_type] === 'function') {
         return formater[format_type](source, target, type);
