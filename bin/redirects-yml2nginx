@@ -25,14 +25,14 @@ const formater = {
     target = escape_spaces(target);
 
     // Build output string
-    return `rewrite ${source}\t${target}\t${type};`;
+    return `RewriteRule ${source}\t${target}\t${type};`;
   },
   reverse_proxy: (source, target) => `location ${source} {
     proxy_pass ${target};
 }`
 };
 
-const default_type = 'permanent';
+const default_type = '[R=permanent,L]';
 
 debug('shortlinks', Object.entries(shortlinks).slice(0, 100));
 
@@ -41,7 +41,7 @@ console.log(
   Object.entries(shortlinks)
     .map(([url, shortlink_arr]) =>
       shortlink_arr
-        .map((shortlink) => `RewriteRule ^/n/${shortlink}/?\t${url}\t[R=permanent,L]`)
+        .map((shortlink) => `RewriteRule ^/n/${shortlink}/?$\t${url}\t[R=permanent,L]`)
         .join('\n')
     )
     .join('\n')
