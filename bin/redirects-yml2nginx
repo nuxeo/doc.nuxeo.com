@@ -73,10 +73,10 @@ console.log(
         target_config = { target: target_config };
       }
       const { target, type = default_type } = target_config;
-      const format_type = type === default_type ? '[R=302,L]' : type;
+      const format_type = type === default_type ? 'redirect' : type;
 
       if (typeof formater[format_type] === 'function') {
-        return formater[format_type](source, target, type);
+        return formater[format_type](source, target, [R=permanent,L]);
       } else {
         error(`generator.${format_type} not found`);
         return null;
