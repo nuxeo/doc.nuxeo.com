@@ -76,7 +76,7 @@ console.log(
       const format_type = type === default_type ? 'redirect' : type;
 
       if (typeof formater[format_type] === 'function') {
-        return formater[format_type](source, target, [R=permanent,L]);
+        return formater[format_type](source, target, default_type);
       } else {
         error(`generator.${format_type} not found`);
         return null;
