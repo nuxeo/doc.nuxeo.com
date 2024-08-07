@@ -25,7 +25,7 @@ const formater = {
     target = escape_spaces(target);
 
     // Build output string
-    return `RewriteRule ${source}\t${target}\t${type};`;
+    return `RewriteRule ${source}\t${target}\t${type}`;
   },
   reverse_proxy: (source, target) => `<Location ${source}>
     ProxyPass ${target}
@@ -73,10 +73,10 @@ console.log(
         target_config = { target: target_config };
       }
       const { target, type = default_type } = target_config;
-      const format_type = type === default_type ? 'redirect' : type;
+      const format_type = type === default_type ? '[R=302,L]' : type;
 
       if (typeof formater[format_type] === 'function') {
-        return formater[format_type](source, target, '[R=302,L]');
+        return formater[format_type](source, target, type);
       } else {
         error(`generator.${format_type} not found`);
         return null;
