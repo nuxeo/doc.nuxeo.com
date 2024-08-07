@@ -24,8 +24,12 @@ const formater = {
     source = escape_spaces(source);
     target = escape_spaces(target);
 
+    // Determine the redirect flag based on the type
+    const redirectFlag = type === '[R=permanent,L]' ? '[R=permanent,L]' : '[R=302,L]';
+
+
     // Build output string
-    return `RewriteRule ${source}\t${target}\t${type}`;
+    return `RewriteRule ${source}\t${target}\t${redirectFlag}`;
   },
   reverse_proxy: (source, target) => `<Location ${source}>
     ProxyPass ${target}
@@ -73,7 +77,7 @@ console.log(
         target_config = { target: target_config };
       }
       const { target, type = default_type } = target_config;
-      const format_type = type === default_type ? '[R=302,L]' : type;
+      const format_type = type === default_type ? 'redirect' : type;
 
       if (typeof formater[format_type] === 'function') {
         return formater[format_type](source, target, type);
