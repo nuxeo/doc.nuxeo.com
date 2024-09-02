@@ -1,11 +1,17 @@
 name: Build and Deploy doc.nuxeo.com
 
 on:
+  push:
+    branches:
+      - master
+      - development
+  schedule:
+    - cron: '0 0 * * *' # Every night at midnight
   workflow_dispatch:  # Manual triggering
 
 jobs:
   documentation_ci:
-    name: Build & Publish documentation to ${{ github.ref_name == 'master' && 'production' || 'development' || 'DevOps-268' }}
+    name: Build & Publish documentation to ${{ github.ref_name == 'master' && 'production'  || github.ref_name }}
     runs-on: ubuntu-latest
     environment:
       name: ${{ github.ref_name == 'master' && 'production'  || github.ref_name }}
