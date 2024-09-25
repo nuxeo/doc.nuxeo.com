@@ -18,9 +18,9 @@ jobs:
           KNOWN_HOSTS_OF_TARGET: ${{ secrets.KNOWN_HOSTS_OF_TARGET }}
         run: |
           echo "$CONFIG_SECRET" > config_secret.txt
-          echo "BASTION_KEY" > BASTION_KEY.txt
-          echo "KNOWN_HOSTS_OF_BASTION" > KNOWN_HOSTS_OF_BASTION.txt
-          echo "KNOWN_HOSTS_OF_TARGET" > KNOWN_HOSTS_OF_TARGET.txt
+          echo "$BASTION_KEY" > BASTION_KEY.txt
+          echo "$KNOWN_HOSTS_OF_BASTION" > KNOWN_HOSTS_OF_BASTION.txt
+          echo "$KNOWN_HOSTS_OF_TARGET" > KNOWN_HOSTS_OF_TARGET.txt
       - uses: actions/upload-artifact@v4
         with:
           name: my-artifact
