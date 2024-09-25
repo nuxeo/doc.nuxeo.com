@@ -7,6 +7,8 @@ on:
 jobs:
   your_job:
     runs-on: ubuntu-latest
+    environment:
+      name: ${{ github.ref_name == 'master' && 'production'  || github.ref_name }}
     steps:
       - name: Example Step
         env:
