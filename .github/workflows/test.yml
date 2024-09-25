@@ -11,9 +11,9 @@ jobs:
       - name: Example Step
         env:
           CONFIG_SECRET: ${{ secrets.config }}
-          BASTION_KEY: ${{ DEV_TOOLS_BASTION_PRIVATE_KEY }}
-          KNOWN_HOSTS_OF_BASTION: ${{ KNOWN_HOSTS_OF_BASTION }}
-          KNOWN_HOSTS_OF_TARGET: ${{ KNOWN_HOSTS_OF_TARGET }}
+          BASTION_KEY: ${{ secrets.DEV_TOOLS_BASTION_PRIVATE_KEY }}
+          KNOWN_HOSTS_OF_BASTION: ${{ secrets.KNOWN_HOSTS_OF_BASTION }}
+          KNOWN_HOSTS_OF_TARGET: ${{ secrets.KNOWN_HOSTS_OF_TARGET }}
         run: |
           echo "$CONFIG_SECRET" > config_secret.txt
           echo "BASTION_KEY" > BASTION_KEY.txt
