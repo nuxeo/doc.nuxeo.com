@@ -24,15 +24,20 @@ const formater = {
     source = escape_spaces(source);
     target = escape_spaces(target);
 
+    // Determine the redirect flag based on the type
+    const redirectFlag = type === '[R=permanent,L]' ? '[R=permanent,L]' : '[R=302,L]';
+
+
     // Build output string
-    return `rewrite ${source}\t${target}\t${type};`;
+    return `RewriteRule ${source}\t${target}\t${redirectFlag}`;
   },
-  reverse_proxy: (source, target) => `location ${source} {
-    proxy_pass ${target};
-}`
+  reverse_proxy: (source, target) => `<Location ${source}>
+    ProxyPass ${target}
+    ProxyPassReverse ${target}
+  </Location>`
 };
 
-const default_type = 'permanent';
+const default_type = '[R=permanent,L]';
 
 debug('shortlinks', Object.entries(shortlinks).slice(0, 100));
 
@@ -41,7 +46,7 @@ console.log(
   Object.entries(shortlinks)
     .map(([url, shortlink_arr]) =>
       shortlink_arr
-        .map((shortlink) => `rewrite ^/n/${shortlink}/?\t${url}\tpermanent;`)
+        .map((shortlink) => `RewriteRule ^/n/${shortlink}/?$\t${url}\t[R=permanent,L]`)
         .join('\n')
     )
     .join('\n')

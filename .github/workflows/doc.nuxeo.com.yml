@@ -11,25 +11,36 @@ on:
 
 jobs:
   documentation_ci:
-    name: Build & Publish documentation to ${{ github.ref_name == 'master' && 'production' || 'development' }}
-    runs-on: doc
+    name: Build & Publish documentation to ${{ github.ref_name == 'master' && 'production'  || github.ref_name }}
+    runs-on: ubuntu-latest
     environment:
-      name: ${{ github.ref_name == 'master' && 'production' || 'development' }}
+      name: ${{ github.ref_name == 'master' && 'production'  || github.ref_name }}
     steps:
-      
-      - name: Configure SSH client
-        run: |
-          echo "$SSH_CONFIG" >> $HOME/.ssh/config
-        env:
-          SSH_CONFIG: "${{ secrets.SSH_CONFIG }}"
+      - name: Install SSH key for Bastion
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.DEV_TOOLS_BASTION_PRIVATE_KEY }}
+          name: id_rsa-bastion
+          known_hosts: ${{ secrets.KNOWN_HOSTS_OF_BASTION }}
+          config: ${{ secrets.CONFIG }}
+  
+      - name: Install SSH key of Lethe server
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.DEV_TOOLS_EC2_PRIVATE_KEY }}
+          name: id_rsa-target
+          known_hosts: ${{ secrets.KNOWN_HOSTS_OF_TARGET }}
+          config: ${{ secrets.CONFIG }}
 
-      - name: Set up SSH
+      - name: Set up SSH for git checkout
         uses: webfactory/ssh-agent@d4b9b8ff72958532804b70bbe600ad43b36d5f2e  # v0.8.0
         with:
-          ssh-private-key: ${{ secrets.SERVER_SSH_PRIVATE_KEY }}
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Checkout code
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Set up Node.js
         uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65 # v4.0.0
@@ -52,21 +63,22 @@ jobs:
           DEBUG_FILE_LEVEL: debug
         run: npm start
 
-      - name: Generate Nginx Redirects
+      - name: Generate Apache Redirects
         run: |
           bin/redirects-yml2nginx > redirects.txt
           echo > redirects_pageid.txt
 
       - name: Deploy to Server
         run: |
-          rsync -Wxvurk --delete site/ "${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/opt/www/doc/"
-          rsync redirects.txt "${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/etc/nginx/redirects.txt"
-          rsync redirects_pageid.txt ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/etc/nginx/redirects_pageid.txt
+          rsync -Wxvurk --delete site/ "lethe.nuxeo.com:/opt/www/doc/"
+          rsync redirects.txt "lethe.nuxeo.com:/tmp/redirects.txt"
+          rsync redirects_pageid.txt "lethe.nuxeo.com:/tmp/redirects_pageid.txt"
+          ssh -o StrictHostKeyChecking=no lethe.nuxeo.com "sudo mv /tmp/redirects.txt /etc/apache2/redirects.txt"
+          ssh -o StrictHostKeyChecking=no lethe.nuxeo.com "sudo mv /tmp/redirects_pageid.txt /etc/apache2/redirects_pageid.txt"
 
-      - name: Nginx Config Test and Restart
+      - name: Apache Config Test and Restart
         run: |
-            ssh "${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}" \
-                   "service nginx configtest && service nginx restart"
+          ssh -o StrictHostKeyChecking=no -T lethe.nuxeo.com "apache2ctl configtest && sudo service apache2 restart"
 
       - name: Archive Artifacts
         uses: actions/upload-artifact@v3
