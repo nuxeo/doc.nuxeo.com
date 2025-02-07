@@ -2,7 +2,9 @@
 <div id="docs_footer" class="row expanded">
   {{> versions_inline}}
 
-  <nx-footer showlicense {{#unless homepage}}nolinks{{/unless}}></nx-footer>
+  <nx-footer showlicense {{#unless homepage}}nolinks{{/unless}}>
+    <hy-footer padding_size="0"></hy-footer>
+  </nx-footer>
 </div>
 
 <script type="text/javascript" src="/{{js.vendor}}"></script>
