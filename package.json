@@ -96,7 +96,7 @@
     "tap": "^15.0.9",
     "thenify": "^3.3.1",
     "tree-model": "^1.0.7",
-    "webpack": "^3.12.0",
+    "webpack": "^5.97.1",
     "what-input": "^5.2.10"
   },
   "devDependencies": {
