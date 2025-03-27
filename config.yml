@@ -17,8 +17,8 @@ default:
       - '**.DS_Store'
       - '*~'
       - '*.swp'
-    canonical_version_preference: 'LTS 2019'
-    new_version: '10.10'
+    canonical_version_preference: 'LTS 2025'
+    new_version: '2025'
 
     # Keys
     segment_write_key:
@@ -69,27 +69,30 @@ default:
           no_versioning: true
         design:
           no_versioning: true
+        '2025':
+          label: 'LTS 2025'
+          order: 10
         '2023':
           label: 'LTS 2023'
-          order: 10
+          order: 20
         '2021':
           label: 'LTS 2021'
-          order: 20
+          order: 30
           url_path: '2021'
         '1010':
           label: 'LTS 2019'
           noindex: true
-          order: 30
+          order: 40
           url_path: '1010'
         '910':
           label: 'LTS 2017'
           noindex: true
-          order: 40
+          order: 50
           url_path: '910'
         '810':
           label: 'LTS 2016'
           noindex: true
-          order: 50
+          order: 60
           url_path: '810'
         '710':
           label: 'none'
