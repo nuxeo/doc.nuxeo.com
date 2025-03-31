@@ -71,7 +71,7 @@
     "multimatch": "^4.0.0",
     "multisort": "^0.5.3",
     "node-fetch": "^2.6.1",
-    "node-sass": "^6.0.1",
+    "node-sass": "^7.0.0",
     "node-yaml-config": "0.0.6",
     "nuxeo": "github:nuxeo/nuxeo-js-client#master",
     "nuxeo-website-styles": "github:nuxeo/website-styles#v7.0.2",
