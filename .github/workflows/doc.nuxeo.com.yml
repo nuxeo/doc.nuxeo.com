@@ -24,7 +24,7 @@ jobs:
           SSH_CONFIG: "${{ secrets.SSH_CONFIG }}"
 
       - name: Set up SSH
-        uses: webfactory/ssh-agent@d4b9b8ff72958532804b70bbe600ad43b36d5f2e  # v0.8.0
+        uses: webfactory/ssh-agent@a6f90b1f127823b31d4d4a8d96047790581349bd  # v0.9.1
         with:
           ssh-private-key: ${{ secrets.SERVER_SSH_PRIVATE_KEY }}
 
