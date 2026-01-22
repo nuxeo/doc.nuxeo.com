@@ -446,6 +446,8 @@
 ^/nxdoc/cloud/develop-with-nuxeo-platform/?$: /nxdoc/develop-your-own-java-code
 ^/nxdoc/cloud/package-publish-deploy-hotreload/?$: /nxdoc/package-publish-deploy-hotreload
 
+^/nuxeo-cloud/start-developing/?$: /nuxeo-cloud/new-to-nuxeo-cloud
+
 
 ^/retention-management/?$: /nxdoc/master/nuxeo-retention-management/
 ^/retention-management/nuxeo-retention-functional-overview/?$: /nxdoc/master/nuxeo-retention-functional-overview/
