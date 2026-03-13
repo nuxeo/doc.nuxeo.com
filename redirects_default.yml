@@ -571,6 +571,8 @@
 # NXDOC-2773 
 ^/nxdoc/nuxeo-3d/?$: /nxdoc/nuxeo-3d-viewer
 
+^/main/search/?$: /nxdoc/search-setup/
+
 # Catch alls - keep at the bottom
 ^/display/USERDOC(/?|/.*): /userdoc/
 ^/display/NXDOC(/?|/.*): /nxdoc/
