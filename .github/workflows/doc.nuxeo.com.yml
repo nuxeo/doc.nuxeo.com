@@ -15,24 +15,22 @@ jobs:
     runs-on: doc
     environment:
       name: ${{ github.ref_name == 'master' && 'production' || 'development' }}
+    env:
+      SSH_OPTIONS: "-o PubkeyAcceptedKeyTypes=+ssh-rsa"
     steps:
-      
-      - name: Configure SSH client
-        run: |
-          echo "$SSH_CONFIG" >> $HOME/.ssh/config
-        env:
-          SSH_CONFIG: "${{ secrets.SSH_CONFIG }}"
 
       - name: Set up SSH
-        uses: webfactory/ssh-agent@d4b9b8ff72958532804b70bbe600ad43b36d5f2e  # v0.8.0
+        uses: webfactory/ssh-agent@e83874834305fe9a4a2997156cb26c5de65a8555 # v0.10.0
         with:
-          ssh-private-key: ${{ secrets.SERVER_SSH_PRIVATE_KEY }}
+          ssh-private-key: |
+            ${{ secrets.SERVER_SSH_PRIVATE_KEY }}
+            ${{ secrets.NUXEODEVOPS_SSH_PRIVATE_KEY }}
 
       - name: Checkout code
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Set up Node.js
-        uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65 # v4.0.0
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version: '14'
 
@@ -59,17 +57,17 @@ jobs:
 
       - name: Deploy to Server
         run: |
-          rsync -Wxvurk --delete site/ "${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/opt/www/doc/"
-          rsync redirects.txt "${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/etc/nginx/redirects.txt"
-          rsync redirects_pageid.txt ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}:/etc/nginx/redirects_pageid.txt
+          rsync -e "ssh $SSH_OPTIONS" -Wxvurk --delete site/ "${{ vars.SERVER_USERNAME }}@${{ vars.SERVER_IP }}:/opt/www/doc/"
+          rsync -e "ssh $SSH_OPTIONS" redirects.txt "${{ vars.SERVER_USERNAME }}@${{ vars.SERVER_IP }}:/etc/nginx/redirects.txt"
+          rsync -e "ssh $SSH_OPTIONS" redirects_pageid.txt ${{ vars.SERVER_USERNAME }}@${{ vars.SERVER_IP }}:/etc/nginx/redirects_pageid.txt
 
       - name: Nginx Config Test and Restart
         run: |
-            ssh "${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }}" \
+            ssh $SSH_OPTIONS "${{ vars.SERVER_USERNAME }}@${{ vars.SERVER_IP }}" \
                    "service nginx configtest && service nginx restart"
 
       - name: Archive Artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: build-artifacts
           path: |

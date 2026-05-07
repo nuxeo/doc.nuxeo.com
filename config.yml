@@ -185,11 +185,6 @@ default:
           label: '1'
           url_path: '1'
           order: 0
-    php:
-      url: git@github.com:nuxeo/doc.nuxeo.com-client-php.git
-      branches:
-        'main':
-          no_versioning: true
 development:
   isDev: true
   site:
