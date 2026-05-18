@@ -48,6 +48,7 @@ default:
         section_color: services
       - page: /nxdoc/nuxeo-tools
         section_color: tools
+      - page: /documentation-notice
   page_defaults:
     - pattern: '**/*.md'
       defaults:
