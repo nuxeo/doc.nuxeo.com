@@ -66,7 +66,7 @@
     "metalsmith-permalinks": "^2.2.0",
     "metalsmith-sitemap": "1.2.2",
     "mkdirp": "^1.0.4",
-    "moment": "^2.29.1",
+    "moment": "^2.29.4",
     "motion-ui": "^2.0.3",
     "multimatch": "^4.0.0",
     "multisort": "^0.5.3",
