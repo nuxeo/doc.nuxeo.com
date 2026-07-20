@@ -65,7 +65,17 @@ co(function* () {
   for (let i = 0; i < branches.length; i++) {
     const { repo_id, branch, target_source_path: source_path } = branches[i];
     info('Preparing Pre-Build - repo: %s, branch: %s', repo_id, branch);
-    pre_build.push(pre_builder({ repo_id, source_path, branch }));
+    pre_build.push(
+      pre_builder({ repo_id, source_path, branch }).catch(function (err) {
+        error(
+          'Pre-build failed for repo: %s, branch: %s - %s',
+          repo_id,
+          branch,
+          err.message
+        );
+        return {};
+      })
+    );
   }
   // Pre-build
   // console.time('prebuild');
